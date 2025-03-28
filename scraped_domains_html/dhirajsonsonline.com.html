@@ -1,0 +1,446 @@
+<!DOCTYPE html><html class="js sizes websockets customelements history postmessage webworkers picture pointerevents webanimations webgl srcset flexbox cssanimations csscolumns csscolumns-width csscolumns-span csscolumns-fill csscolumns-gap csscolumns-rule csscolumns-rulecolor csscolumns-rulestyle csscolumns-rulewidth csscolumns-breakbefore csscolumns-breakafter csscolumns-breakinside" lang="en"><head>
+    <meta charset="utf-8">
+    <title>Login - Dhirajsons</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="https://dhirajsonsonline.com/assets/imgs/theme/favicon.svg">
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="https://dhirajsonsonline.com/assets/css/mainc619.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <style>
+html{
+    overflow-x: hidden;
+}
+.Iam {
+  font: normal 40px/50px Montserrat, sans-serif;
+  color: #999;
+  display:flex;
+  flex-wrap:wrap;
+}
+
+.Iam p {
+  height: 50px;
+    float: left;
+    margin-right: 0.3em;
+    padding: 10px;
+    font-size: 33px;
+    color: #ffffff;
+}
+
+.Iam b {
+  float: left;
+  overflow: hidden;
+  position: relative;
+  height: 50px;
+}
+
+.info {
+    padding:15px;
+    color:#fff;
+    font-size:17px;
+}
+
+.Iam .innerIam {
+  display: inline-block;
+  color: #ffffff;
+  position: relative;
+  white-space: nowrap;
+  top: 0;
+  left: 0;
+  -webkit-text-stroke: #edd700;
+  -webkit-text-stroke-width: 0.5px;
+   /*text-shadow: 2px 2px 10px #edd700;*/
+
+  /*animation*/
+  -webkit-animation: move 5s;
+  -moz-animation: move 5s;
+  -ms-animation: move 5s;
+  -o-animation: move 5s;
+  animation: move 5s;
+
+  /*animation-iteration-count*/
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -ms-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+
+  /*animation-delay*/
+  -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  -ms-animation-delay: 1s;
+  -o-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+@keyframes  move {
+  0% {
+    top: 0px;
+  }
+  20% {
+    top: -50px;
+  }
+  40% {
+    top: -100px;
+  }
+  60% {
+    top: -150px;
+  }
+  80% {
+    top: -200px;
+  }
+}
+
+@-webkit-keyframes move {
+  0% {
+    top: 0px;
+  }
+  20% {
+    top: -50px;
+  }
+  40% {
+    top: -100px;
+  }
+  60% {
+    top: -150px;
+  }
+  80% {
+    top: -200px;
+  }
+}
+
+@-moz-keyframes move {
+  0% {
+    top: 0px;
+  }
+  20% {
+    top: -50px;
+  }
+  40% {
+    top: -100px;
+  }
+  60% {
+    top: -150px;
+  }
+  80% {
+    top: -200px;
+  }
+}
+
+@-o-keyframes move {
+  0% {
+    top: 0px;
+  }
+  20% {
+    top: -50px;
+  }
+  40% {
+    top: -100px;
+  }
+  60% {
+    top: -150px;
+  }
+  80% {
+    top: -200px;
+  }
+}
+
+@keyframes  move {
+  0% {
+    top: 0px;
+  }
+  20% {
+    top: -50px;
+  }
+  40% {
+    top: -100px;
+  }
+  60% {
+    top: -150px;
+  }
+  80% {
+    top: -200px;
+  }
+}
+
+/*neha*/
+/*.from-content{*/
+/*    margin: 0 auto;*/
+/*    backdrop-filter: blur(2px) saturate(152%);*/
+    /*background-color: rgba(255, 255, 255, 0.15);*/
+/*    border-radius: 12px;*/
+/*    padding: 30px 15px;*/
+/*    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;*/
+/*}*/
+.dhiraj-book .welcom-screen strong{
+    color: #fff;
+    font-size: 30px;
+    font-weight: 600;
+    background: #393185;
+    border-radius: 5px;
+    padding: 7px 10px;
+}
+.info strong{
+     color: #fff;
+  /*font-size:30px;*/
+  font-weight:700;
+  backdrop-filter: blur(2px) saturate(152%);
+}
+#spin {
+  color: #ffeb3b;
+  font-size:42px;
+  font-weight:600;
+  padding:10px;
+}
+#spin:after {
+  content:"";
+  animation: spin 5s linear infinite;
+}
+.pin-cen{
+    margin-bottom:40px;
+}
+@keyframes  spin {
+  0% { content:" Easy Shopping";}
+  25% { content:"Quality Products"}
+  50% { content:"Speedy Delivery";}
+  75% { content:" Payment Security";}
+
+}
+@media(max-width:991px){
+    #spin{
+        font-size:33px;
+    }
+}
+@media(max-width:576px){
+    #spin{
+        font-size:25px;
+    }
+    .dhiraj-book .welcom-screen strong {
+          font-size:23px;
+    }
+
+}
+@media(max-width:410px){
+    #spin{
+        font-size:19px;
+    }
+    .dhiraj-book .welcom-screen strong {
+          font-size:14px;
+    }
+
+}
+@media(min-width:1200px){
+    .pin-cen{
+        width:46%;
+    }
+}
+        </style>
+</head>
+
+<body><div class="body-overlay-1"></div>
+    
+    <!--End header-->
+    <header class="dhiraj-pin">
+        <div class="row ">
+            <div class="col-xl-12 col-lg-12 col-md-12">
+                <div class=" p-0 g-img">
+                    
+
+                    
+                </div>
+                <div class="container">
+                    <div class="row mt-0">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="sons-logo">
+                                <img src="https://dhirajsonsonline.com/assets/imgs/logo-bgremove.png" alt="" class="img-fluid" width="498" height="299">
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <section class="dhiraj-book card">
+                        <div class="container px-0">
+                            <div class="row align-items-start g-5">
+                                <div class="col-xl-6 pin-cen">
+                                    <div class="dhiraj-pincode">
+                                        <h1 class="mb-3" style="color:#ffffff">DHIRAJ SONS SUPER MARKET – ONLINE
+                                            GROCERY STORE</h1>
+                                        <p class="mb-30" style="color:#ffffff">Find unbeatable grocery deals and offers
+                                            here</p>
+
+                                        <form action="selectbranch" method="POST">
+                                            <input type="hidden" name="_token" value="wUPhYb1Sg2m5VqEhnrNH5Gx9v28kJPnwdmY6oG7l">                                            <div class="input-group mb-3">
+                                                <select class="form-select form-control h-55" aria-label="Default select example" name="branch" style="border-color: #393185;">
+                                                    <option selected="">Select Branch</option>
+                                                                                                            <option value="SANK">
+                                                            ANKLESHWAR
+                                                        </option>
+                                                                                                            <option value="SPP">
+                                                            PARLE POINT
+                                                        </option>
+                                                                                                            <option value="SVESU">
+                                                            VESU
+                                                        </option>
+                                                                                                    </select>
+                                                <button type="submit" class="input-group-text btn hover-up" id="basic-addon2">Submit</button>
+                                            </div>
+                                        </form>
+
+                                        
+                                        <br>
+                                        <h6 style="color:#ffffff">OUR BRANCHES IN GUJARAT</h6>
+                                        <p style="color:#fff">Parlepoint | Bharuch | Ankleshwar | Vesu</p>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6  from-content">
+                               <!--<div class="Iam">-->
+                                
+                               <!--   <b><p>We Provide</p>-->
+                               <!--     <div class="innerIam">-->
+                               <!--         Easy Shopping<br /> -->
+                               <!--         Quality Products<br />-->
+                               <!--         Speedy Delivery<br />-->
+                               <!--         Payment Security<br />-->
+                                     
+                               <!--     </div>-->
+                               <!--   </b>-->
+                               <!-- </div>-->
+                               <!--neha-->
+                               <p class="welcom-screen"><strong> We Provide</strong> <span id="spin"></span></p>
+                                <p class="info">Min  <strong>500 Rs*</strong> Order </p>
+                                <img class="wow fadeIn animated animated animated" src="https://dhirajsonsonline.com/assets/imgs/icons.png" alt="" style="visibility: hidden; padding-top: 10px; padding-left: 15px; animation-name: none;"><p></p>
+                                
+                                
+                              
+                                
+                                </div>
+                                
+                            </div>
+                        </div>
+            
+                    </section>
+                </div>
+            </div>
+            
+        </div>
+        <section class="dhiraj-icon">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 pe-0">
+                        <div class="icon-step">
+                            <i class="fa-brands fa-first-order"></i>
+                            <h1 class="my-3 ">Min Order 500 Rs.</h1>
+                            <p>Unlock a world of savings and convenience with a minimum order value of Rs. 500. Elevate your shopping journey as you explore a diverse range of products.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 pe-0">
+                        <div class="icon-step">
+                            <i class="fa-solid fa-location-crosshairs"></i>
+                            <h1 class="my-3 ">100% Quality Assurance</h1>
+                            <p>Dedicated to perfection, our products undergo thorough quality assurance checks, guaranteeing top-notch reliability and satisfaction. </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 pe-0">
+                        <div class="icon-step">
+                            <i class="fa-solid fa-truck-fast"></i>
+                            <h1 class="my-3 ">Lightning-Fast Delivery</h1>
+                            <p>Experience lightning-fast delivery that brings your purchases to your doorstep in record time. Swift and reliable, our delivery service ensures you get what you need when you need it.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="container">
+            <p class="font-sm mb-0 text-center">Copyright © 2022 Dhiraj Sons Super Market. All rights reserved.<a target="_blank" href="#"></a></p>
+        </div>
+    </header>
+
+    
+    <!-- Vendor JS-->
+    <script src="https://dhirajsonsonline.com/assets/js/vendor/modernizr-3.6.0.min.js"></script>
+    <script src="https://dhirajsonsonline.com/assets/js/vendor/jquery-3.6.0.min.js"></script>
+    <script src="https://dhirajsonsonline.com/assets/js/vendor/jquery-migrate-3.3.0.min.js"></script>
+    <script src="https://dhirajsonsonline.com/assets/js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="https://dhirajsonsonline.com/assets/js/plugins/slick.js"></script>
+    <script src="https://dhirajsonsonline.com/assets/js/plugins/jquery.syotimer.min.js"></script>
+    <script src="https://dhirajsonsonline.com/assets/js/plugins/wow.js"></script>
+    <script src="https://dhirajsonsonline.com/assets/js/plugins/jquery-ui.js"></script>
+    <script src="https://dhirajsonsonline.com/assets/js/plugins/perfect-scrollbar.js"></script>
+    <script src="https://dhirajsonsonline.com/assets/js/plugins/magnific-popup.js"></script>
+    <script src="https://dhirajsonsonline.com/assets/js/plugins/select2.min.js"></script>
+    <script src="https://dhirajsonsonline.com/assets/js/plugins/waypoints.js"></script>
+    <script src="https://dhirajsonsonline.com/assets/js/plugins/counterup.js"></script>
+    <script src="https://dhirajsonsonline.com/assets/js/plugins/jquery.countdown.min.js"></script>
+    <script src="https://dhirajsonsonline.com/assets/js/plugins/images-loaded.js"></script>
+    <script src="https://dhirajsonsonline.com/assets/js/plugins/isotope.js"></script>
+    <script src="https://dhirajsonsonline.com/assets/js/plugins/scrollup.js"></script>
+    <script src="https://dhirajsonsonline.com/assets/js/plugins/jquery.vticker-min.js"></script>
+    <script src="https://dhirajsonsonline.com/assets/js/plugins/jquery.theia.sticky.js"></script>
+    <script src="https://dhirajsonsonline.com/assets/js/plugins/jquery.elevatezoom.js"></script>
+    <!-- Template  JS -->
+    <script src="https://dhirajsonsonline.com/assets/js/main.js"></script><a id="scrollUp" href="#top" style="display: none; position: fixed; z-index: 2147483647;"><i class="fi-rs-arrow-small-up"></i></a>
+    <script src="https://dhirajsonsonline.com/assets/js/shop.js"></script>
+    <script>
+        //         // stop alert
+        //         setTimeout(function() {
+        //             $("#result-alert").fadeOut("slow", function() {
+        //                 $(this).remove();
+        //             });
+        //         }, 4000);
+
+        //         // card hover
+        //         const $card = document.querySelector('.card');
+        //         let bounds;
+
+        //         function rotateToMouse(e) {
+        //             const mouseX = e.clientX;
+        //             const mouseY = e.clientY;
+        //             const leftX = mouseX - bounds.x;
+        //             const topY = mouseY - bounds.y;
+        //             const center = {
+        //                 x: leftX - bounds.width / 2,
+        //                 y: topY - bounds.height / 2
+        //             }
+        //             const distance = Math.sqrt(center.x ** 2 + center.y ** 2);
+
+        //             $card.style.transform = `
+    //     scale3d(1.07, 1.07, 1.07)
+    //     rotate3d(
+    //       ${center.y / 100},
+    //       ${-center.x / 100},
+    //       0,
+    //       ${Math.log(distance)* 2}deg
+    //     )
+    //   `;
+
+        //             $card.querySelector('.glow').style.backgroundImage = `
+    //     radial-gradient(
+    //       circle at
+    //       ${center.x * 2 + bounds.width/2}px
+    //       ${center.y * 2 + bounds.height/2}px,
+    //       #ffffff55,
+    //       #0000000f
+    //     )
+    //   `;
+        //         }
+
+        //         $card.addEventListener('mouseenter', () => {
+        //             bounds = $card.getBoundingClientRect();
+        //             document.addEventListener('mousemove', rotateToMouse);
+        //         });
+
+        //         $card.addEventListener('mouseleave', () => {
+        //             document.removeEventListener('mousemove', rotateToMouse);
+        //             $card.style.transform = '';
+        //             $card.style.background = '';
+        //         });
+    </script>
+
+
+
+</body></html>

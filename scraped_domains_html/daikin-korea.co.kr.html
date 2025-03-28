@@ -1,0 +1,2206 @@
+<!DOCTYPE html><html lang="ja" class="JS no-touchevents" style=""><head><style>
+.round {width:14px; text-align: center; display:inline-block;}
+@media screen and (max-width: 960px){
+.set-responsiveWebDesign #GlobalNavWrapSp #GlobalNavAreaSp .GrobalNav_list + dl {padding: 0px !important;}
+}
+
+/* 팝업 */
+body.hidden{overflow:hidden;}
+.layerpopup.on{visibility:visible; opacity:1;}
+.layerpopup{overflow:hidden; visibility:hidden; display:flex; display:-ms-flex; align-items:center; position:fixed; top:0;left:0; width:100%; height:100%; z-index:100; opacity:0; transition:all .2s ease;}
+.layerpopup .pop_bg{position:fixed; right:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.5);}
+.layerpopup .lp_cont_wrap{margin:0 auto; animation:fadeInUp .4s ease-in-out forwards; z-index:100;}
+.layerpopup .lp_cont_wrap .lp_cont{position:relative;background:#fff; /*height:100%;*/ border-left:5px solid #fa5c00;}
+.layerpopup .lp_cont_wrap .lp_cont a.lp_close{display:inline-block; width:60px; height:60px; background:url('http://sigongtech.cdn3.cafe24.com/img/common/btn_pop_close.png') no-repeat center; background-size:contain; position:absolute; top:-80px; right:0;}
+.layerpopup .lp_cont_wrap .lp_cont .real_lp_cont{overflow:hidden;position:relative; word-break:break-all; padding:10px 3%;}
+.layerpopup .lp_cont_wrap .lp_cont .lp_top_bar{height:80px; padding:10px 3%; border-bottom:1px solid #DDD; display:table; width:100%;}
+.layerpopup .lp_cont_wrap .lp_cont .lp_top_bar h6{font-size:30px; display:table-cell; vertical-align:middle;}
+.layerpopup .lp_cont_wrap .lp_cont .lp_top_bar h6 span{font-size:15px; display:block;}
+.layerpopup .lp_cont_wrap .lp_cont .real_lp_cont .btn_area{text-align:center;}
+
+.layerpopup.for_eventpop{overflow-y:scroll; display:block; top:0; padding-top:8%; z-index:9999;}
+.layerpopup.for_eventpop .pop_event{margin:0 auto;}
+.layerpopup.for_eventpop .lp_cont_wrap{width:100%; margin:0 auto 50px; text-align:center;}
+.layerpopup.for_eventpop .lp_cont_wrap .lp_cont.pop_event{background:none; border-left:0; display: flex; justify-content: center;}
+.layerpopup.for_eventpop .lp_cont_wrap .lp_cont.pop_event .lp_top_bar{height:auto; border-bottom:0; padding:0;}
+.layerpopup.for_eventpop .lp_cont_wrap .lp_cont.pop_event .real_lp_cont{padding:0; margin-right:20px;}
+.layerpopup.for_eventpop .lp_cont_wrap .lp_cont.pop_event .real_lp_cont:last-child {margin-right:0;}
+.layerpopup.for_eventpop .lp_cont_wrap .btn_area a.btn_notsee_today{background:#333; display:inline-block; width:100%; height:100%; font-size:14px; padding:8px 0; color:#ffffff;}
+
+/* 230119_팝업2개일때만 */
+/* .layerpopup .pop_bg {background:0;} */
+/* .layerpopup.for_eventpop .lp_cont_wrap .lp_cont.pop_event .real_lp_cont {box-shadow: 0 0 10px 0px #00000080;}
+
+.layerpopup.for_eventpop .lp_cont_wrap .lp_cont.pop_event .real_lp_cont.on{display:block;}
+.layerpopup.for_eventpop .lp_cont_wrap .lp_cont.pop_event .real_lp_cont{display:none;} */
+/* 230119_팝업2개일때만 */
+
+.layerpopup.for_eventpop.open .pop_event{margin:0 auto;}
+.main.event_list {position:relative;max-width:550px; }
+
+.main.event_list li img {width:100%;}
+.main.event_list .close_btn {position:absolute; top:20px; right:20px;}
+
+@media screen and (max-width:840px){
+.layerpopup .lp_cont_wrap{width:90%; height:100%; height:calc(90% - 80px); }
+.layerpopup.for_snsjoin .lp_cont_wrap, .layerpopup.for_change_pw .lp_cont_wrap{width:90%;}
+.layerpopup.for_snsjoin .lp_cont_wrap .lp_cont .real_lp_cont, .layerpopup.for_change_pw .lp_cont_wrap .real_lp_cont{}
+.layerpopup .lp_cont_wrap .lp_cont .real_lp_cont .btn_area.basic_2 a.btn{width:48%; font-size:16px;}	
+.layerpopup .lp_cont_wrap .lp_cont .lp_top_bar h6 span{font-size:13px;}
+.layerpopup.for_change_pw .lp_cont_wrap .real_lp_cont{overflow-y:scroll;}
+.layerpopup.for_select_order_type .lp_cont_wrap, .layerpopup.for_cancel_reason .lp_cont_wrap{width:90%; height:auto;}
+.layerpopup.for_email_reject .lp_cont_wrap, .layerpopup.for_sleep_member .lp_cont_wrap{height:auto; width:90%}
+.layerpopup.for_eventpop{padding-top:100px;}
+.layerpopup.for_eventpop .lp_cont_wrap{width:100%; height:auto;}
+}
+
+
+@media screen and (max-width:640px){
+.layerpopup.for_eventpop .pop_event{width:80%;}
+
+/* 230119_팝업2개일때만 */
+/* .layerpopup.for_eventpop .pop_event{width:100%;}
+.layerpopup.for_eventpop .lp_cont_wrap .lp_cont.pop_event .real_lp_cont {margin-right:10px;}
+
+.layerpopup.for_eventpop .lp_cont_wrap .lp_cont.pop_event .real_lp_cont {max-width:250px;}
+.main.event_list {max-width:auto;}
+ */
+/* 230119_팝업2개일때만 */
+}
+
+@media screen and (max-width:574px){
+.layerpopup .lp_cont_wrap .lp_cont .real_lp_cont .btn_area {margin-top:-5px;}
+.layerpopup .lp_cont_wrap .lp_cont .real_lp_cont:last-child .btn_area {margin-top:0;}
+
+.main.event_list .close_btn img {width:15px;}
+.main.event_list .close_btn {top: 10px; right: 10px;}
+}
+
+@media screen and (max-width:480px){
+.layerpopup .lp_cont_wrap .lp_cont .real_lp_cont .btn_area.basic_2 a.btn{font-size:4vw;}
+.layerpopup.for_select_order_type .lp_cont_wrap .table_box.method span.sub_tit{font-size:1vw;}
+.layerpopup.for_select_order_type .lp_cont_wrap .table_box.method span.tit{font-size:5vw;}
+}
+@media screen and (max-width:400px){
+.layerpopup.for_eventpop .lp_cont_wrap .btn_area a.btn_notsee_today {font-size:12px; padding: 4px 0;}
+.main.event_list .close_btn img {width:10px;}
+.main.event_list .close_btn {top: 8px; right: 8px;}
+.layerpopup.for_eventpop .lp_cont_wrap .lp_cont.pop_event .real_lp_cont {height:100%;}
+
+.layerpopup .lp_cont_wrap .lp_cont .real_lp_cont .btn_area {margin-top:-6px;}
+
+/* 230119_팝업2개일때만 */
+/* .main.event_list {max-width:180px;} */
+/* 230119_팝업2개일때만 */
+}
+
+</style>
+
+
+
+    <meta charset="UTF-8">
+
+    <link rel="shortcut icon" href="/_public/Pdummy=1534386486_favicon.ico">
+<!--     <link rel="stylesheet" type="text/css" href="https://www.daikinchemicals.com/view_css.php?pageId=1228&amp;revision=0&amp;mode=0&amp;noTag=1&amp;blockId=0&amp;alias=jp" /> -->
+    <link rel="stylesheet" type="text/css" href="/publis.css">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+    <meta name="keywords" content="">
+    <meta name="description" content="다이킨 공업은 에어컨 제조 업체이자, 불소 화학 제품의 종합 메이커입니다. 불소 화합물의 다채롭고 독특한 특성을 살린 제품은 다양한 용도와 분야에서 활약하고 있습니다. 고객의 과제 해결에 공헌 할 수있는 불소 화학 제품을 다수 보유하고 있으므로 부담없이 문의하세요.">
+    <script type="text/javascript" src="/scripts/jquery-1.7.min.js"></script>
+    <script type="text/javascript">
+        <!--
+        var pbGlobalAliasBase = '/';
+        //
+        -->
+    </script>
+    <script type="text/javascript" src="/public.js"></script>
+
+
+    <meta property="og:url" content="https://www.daikin-korea.co.kr/">
+
+<!--     <link rel="canonical" href="/jp.html">
+     -->
+    <link type="image/png" rel="icon" href="/library/dg_common/images/android-chrome-192x192.png" sizes="192x192">
+    <link type="image/png" rel="icon" href="/library/dg_common/images/favicon-96x96.png" sizes="96x96">
+    <link rel="apple-touch-icon" href="/library/dg_common/images/apple-touch-icon-180x180.png" sizes="180x180">
+    <link type="text/css" rel="stylesheet" href="/library/dg_common/css/reset.css">
+    <link type="text/css" rel="stylesheet" href="/library/dg_common/css/base.css">
+    <link type="text/css" rel="stylesheet" href="/library/dg_common/css/fontface.css">
+    <link type="text/css" rel="stylesheet" href="/library/dg_common/css/header.css">
+    <link type="text/css" rel="stylesheet" href="/library/dg_common/css/globalnav.css">
+    <link type="text/css" rel="stylesheet" href="/library/dg_common/css/footer.css">
+    <link type="text/css" rel="stylesheet" href="/library/dg_common/css/print.css">
+    <link type="text/css" rel="stylesheet" href="/library/dil_common/css/module.css">
+    <link type="text/css" rel="stylesheet" href="/library/dil_common/en/css/module.css">
+	
+    <script src="/library/dg_common/js/jquery.js"></script>
+    <script src="/library/dg_common/js/plugins.js"></script>
+    <script src="/library/dg_common/js/scripts.js"></script>
+    <script src="/library/dg_common/js/webfonts.js"></script><script type="text/javascript" async="" src="https://fast.fonts.net/lt/trackingCode.js"></script><link type="text/css" rel="stylesheet" href="https://fast.fonts.net/lt/1.css?apiType=css&amp;c=1a1a37bc-f75e-4f80-911e-8df06b7af8c8&amp;fontids=724827,1572245">
+    <script src="/library/dil_common/js/plugins/lodash.js"></script>
+    <script src="/library/dil_common/js/plugins/slick.js"></script>
+    <script src="/library/dil_common/js/common.js"></script>
+    <script src="/library/dil_common/en/js/common.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/library/pb_common/css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/library/pb_common/js/slick-1.6.0/slick.css">
+    <link rel="stylesheet" type="text/css" href="/library/pb_common/js/slick-1.6.0/slick-theme.css">
+    <script type="text/javascript" src="/library/pb_common/js/slick-1.6.0/slick.min.js"></script>
+    <script type="text/javascript" src="/library/pb_common/js/jquery-match-height/jquery.matchHeight.js"></script>
+    <script type="text/javascript" src="/library/pb_common/js/jquery.ex-resize/jquery.exresize.js"></script>
+    <script type="text/javascript" src="/library/pb_common/js/ConnectedSelect/ConnectedSelect.js"></script>
+    <link rel="stylesheet" type="text/css" href="/library/pb_common/css/style.css">
+    <script type="text/javascript" src="/library/pb_common/js/script.js"></script>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="robots" content="noarchive">
+    <link rel="stylesheet" type="text/css" href="/library/pb_common/css/jp.css">
+    <script type="text/javascript" src="/library/pb_common/js/jp.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="/library/pb_common/css/home.css" /> -->
+	<script type="text/javascript" src="/include/js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="/include/js/jquery_maskedinput/inputmask.js"></script>
+	<script type="text/javascript" src="/include/js/jquery_maskedinput/jquery.inputmask.js"></script>
+	<script type="text/javascript" src="/include/js/jquery_maskedinput/inputmask.dependencyLib.jquery.js"></script>
+	<script type="text/javascript" src="/include/js/jquery_maskedinput/inputmask.extensions.js"></script>
+	<script type="text/javascript" src="/include/js/jquery_maskedinput/inputmask.regex.extensions.js"></script>
+	<script type="text/javascript" src="/include/js/jquery_maskedinput/inputmask.numeric.extensions.js"></script>
+	<script type="text/javascript" src="/include/js/jquery_number/jquery.number.min.js"></script>
+	<!-- <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet"> -->
+<title>다이킨코리아 주식회사</title><link rel="stylesheet" type="text/css" href="/library/pb_common/css/home.css"><link type="text/css" rel="stylesheet" href="https://fast.fonts.net/lt/1.css?c=1a1a37bc-f75e-4f80-911e-8df06b7af8c8&amp;fontids=724827,1572245"></head>
+
+
+
+
+<body class="g-page-dept g-page-categoryNav set-responsiveWebDesign">
+    <noscript>
+        <div id="NoScriptMessageWrap">
+            <p>To use all available functions on this website, JavaScript must be enabled in your browser.</p>
+            <!-- / #NoScriptMessageWrap -->
+        </div>
+    </noscript>
+    <div id="page" class="pbPage">
+        <div id="headerArea" class="pbHeaderArea">
+	<div id="area1" class="pbArea ">
+		<div class="pbNested ">
+			<div class="pbNested pbNestedWrapper " id="pbBlock548868">
+				<!-- Empty Block -->
+			</div>
+			<div class="  pbNested pbNestedWrapper " id="pbBlock548867">
+				<div class="pbNested ">
+					<div class="pbNested pbNestedWrapper " id="pbBlock548032">
+						<div class="BlockSkip"><a href="#ContentsWrap">Skip to main content</a></div>
+
+						<div id="HeaderShrinking" style="width: 100%; position: relative;"><div id="HeaderWrap">
+
+							<div id="HeaderArea">
+
+								<p class="Logo"><a href="/"><img src="/library/dg_common/images/logo_daikin.png" width="171" height="36" alt="DAIKIN"></a></p>
+								<p class="Region">KOREA</p>
+
+								<div class="HeaderLinks">
+
+									<ul>
+
+										<!-- <li><a href="https://www.daikin.co.jp/product/">제품정보</a></li> -->
+
+										<!-- <li><a href="https://www.daikin.co.jp/corporate/">기업정보</a></li>
+										
+										<li><a href="https://www.daikin.co.jp/inquiry/">문의(종합)</a></li> -->
+										<li><a href="/kr/newcontact/contact_kr.html">문의(종합)</a></li> 
+
+										<li><a href="/kr/sitemap.asp">사이트맵</a></li>
+
+
+
+
+
+										<li class="g-header_searchBtn"><a href="#g-header_search">검색</a></li>
+
+										<li id="GlobalNavBtn" class="Menu"><a href="javascript:void(0);"><span>Menu</span></a></li>
+
+									</ul>
+
+									<!-- <form id="g-header_search" method="get" action="https://www.daikin.co.jp/pbsearch/" class="g-header_search"> -->
+									<form id="g-header_search" method="get" action="/kr/results.asp" class="g-header_search">
+
+										<input type="text" name="q" value="">
+
+										<button type="submit">검색</button><i class="i-close"></i></form>
+
+									<div class="g-header_menu"></div>
+
+									<!-- / .HeaderLinks -->
+								</div>
+
+								<!-- / #HeaderArea -->
+							</div>
+
+							<!-- / #HeaderWrap -->
+						</div><div id="GlobalNavWrap">
+
+							<div id="GlobalNavArea">
+
+								<ul>
+
+									<li class="js-Disable current-home"><a href="/index.asp">홈</a></li>
+
+									<li class="current-products"><a href="javascript:void(0)">제품</a></li>
+
+									<li class="current-industries"><a href="javascript:void(0)">시장・용도</a></li>
+
+									<li class="current-technical"><a href="javascript:void(0)">특성</a></li>
+
+									<li class="current-company"><a href="javascript:void(0)">사업 소개</a></li>
+									
+									<li class="current-sustainability"><a href="https://www.daikin-korea.co.kr/kr/sustainability.asp">지속가능성</a></li>
+
+									<li class="current-download"><a href="javascript:void(0)">다운로드</a></li>
+
+									<li class="js-Disable current-magazine"><a href="/kr/magazine.asp">공지사항</a></li>
+
+									<li class="js-Disable directions"><a href="/kr/directions.asp">오시는 길</a></li>
+
+									<!-- 해당 헤더 클릭 시, class="js-Disable" 에 contact 가 붙게 해주세요 -->
+									<li class="js-Disable contacts"><a href="/kr/newcontact/contact_kr.html">문의</a></li>
+
+									<li class="js-Disable"><a href="https://www.daikinchemicals.com/" style="padding-top:12px;">ENGLISH</a></li>
+
+									<li class="js-Disable"><a href="https://www.daikinchemicals.com/jp.html" style="padding-top:12px;">JAPANESE</a></li>
+									
+								</ul>
+
+								<!-- / #GlobalNavArea -->
+							</div>
+
+							<div class="MegaMenuWrap">
+
+								<div class="MegaMenuArea">
+
+									<div class="MegaMenu_Content">
+
+										<div class="MegaMenu_ContentInner">
+
+											<!-- / .MegaMenu_ContentInner -->
+										</div>
+
+										<!-- / .MegaMenu_About -->
+									</div>
+
+									<div class="MegaMenu_Content MegaMenu_Products">
+
+										<div class="MegaMenu_ContentInner">
+
+											<div class="Category_Content">
+
+												<dl>
+
+													<dt class="Level2 gen-TextResetUppercase">수지・고무</dt>
+
+													<dd>
+
+														<ul class="List List--Link Layer--Lower">
+
+															<li><a href="/kr/solutions/products/fluoropolymers.asp"> <i class="Mkr"></i>불소수지</a></li>
+
+															<li><a href="/kr/solutions/products/dai-el-fluoroelastomers.asp"> <i class="Mkr"></i>불소고무</a></li>
+
+															<li><a href="/kr/solutions/products/fluoro-coatings.asp"> <i class="Mkr"></i>불소수지 도료</a></li>
+
+															<li><a href="/kr/solutions/products/polymer-additives.asp"> <i class="Mkr"></i>수지 첨가제</a></li>
+
+															<li><a href="/kr/solutions/products/neoflon-fluoropolymers-films.asp"> <i class="Mkr"></i>불소수지 필름</a></li>
+
+														</ul>
+
+													</dd>
+
+												</dl>
+
+												<dl>
+
+													<dt class="Level2 gen-TextResetUppercase">표면 기능재</dt>
+
+													<dd>
+
+														<ul class="List List--Link Layer--Lower">
+
+															<li><a href="/kr/solutions/products/optool-anti-smudge-coating.asp"> <i class="Mkr"></i>방오 코팅제</a></li>
+
+															<li><a href="/kr/solutions/products/optoace-conformal-coating.asp"> <i class="Mkr"></i>방수・방습 코팅제</a></li>
+
+															<li><a href="/kr/solutions/products/water-and-oil-repellents.asp"> <i class="Mkr"></i>발수・발유제</a></li>
+
+															<li><a href="/kr/solutions/products/coatings-resins.asp"> <i class="Mkr"></i>내후성 도료용 수지</a></li>
+
+															<li><a href="/kr/solutions/products/mold-release-agents.asp"> <i class="Mkr"></i>이형제</a></li>
+
+															<li><a href="/kr/solutions/products/fluorinated-oil-demnum.asp"> <i class="Mkr"></i>불소오일</a></li>
+
+														</ul>
+
+													</dd>
+
+												</dl>
+
+												<dl>
+
+													<dt class="Level2 gen-TextResetUppercase">스페셜리티</dt>
+
+													<dd>
+
+														<ul class="List List--Link Layer--Lower">
+
+															<li><a href="/kr/solutions/products/refrigerants.asp"> <i class="Mkr"></i>냉매</a></li>
+
+															<li><a href="/kr/solutions/products/fine-chemicals-and-intermediates.asp"> <i class="Mkr"></i>파인케미컬</a></li>
+
+															<li><a href="/kr/solutions/products/semicon-etching-agents.asp"> <i class="Mkr"></i>반도체용 에칭제</a></li>
+
+															<li><a href="/kr/solutions/products/battery-materials.asp"> <i class="Mkr"></i>배터리 재료</a></li>
+
+															<li><a href="/kr/solutions/products/optical-materials/optodyne-uv-clear-adhesives.asp"> <i class="Mkr"></i>광학 접착제</a></li>
+															
+															<li><a href="/kr/solutions/products/fluorine-liquid.asp"> <i class="Mkr"></i>불소계 액체</a></li>
+
+															<!-- <li><a href="/kr/solutions/products/dry.asp" onclick="ga('send', 'event', 'Mega Menu', 'スペシャリティ', this.href.toString());"> <i class="Mkr"></i>건식 제습기 HONEYDRY</a></li>
+															
+															<li><a href="/kr/solutions/products/voc.asp" onclick="ga('send', 'event', 'Mega Menu', 'スペシャリティ', this.href.toString());"> <i class="Mkr"></i>VOC 처리장치 DACS</a></li> -->
+
+														</ul>
+
+													</dd>
+
+												</dl>
+
+												<!-- / .Category_Content -->
+											</div>
+
+
+
+											<div class="Related_Content">
+
+												<ul class="List List--Link">
+
+													<li class="Level1"><a href="/kr/solutions.asp"><i class="Mkr"></i>모든 DAIKIN Solution</a>
+
+														<!--<p>ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト</p>-->
+
+													</li>
+
+												</ul>
+
+
+
+												<!--<div class="List--Image">
+
+													<div class="Level1">HIGHLIGHTS</div>
+
+													<ul>
+
+														<li>
+
+															<a href="/kr/e-juku.asp">
+
+																<p class="image"><img src="/library/pb_common/images/common/image_megamenu_banner01_jp.png" alt="ダイキン フッ素塾" title=""></p>
+
+																<ul class="List List--Link">
+
+																	<li>
+
+																		<i class="Mkr"></i>DAIKIN 불소 세미나
+
+																	</li>
+
+																</ul>
+
+															</a>
+
+														</li>
+
+														
+
+													</ul>
+
+												</div>-->
+
+
+
+												<!-- / .Related_Content -->
+											</div>
+
+											<!-- / .MegaMenu_ContentInner -->
+										</div>
+
+										<!-- / .MegaMenu_Products -->
+									</div>
+
+
+
+
+
+									<div class="MegaMenu_Content MegaMenu_Industries">
+
+										<div class="MegaMenu_ContentInner">
+
+											<div class="Category_Content">
+
+												<dl>
+
+													<dt class="Level2 gen-TextResetUppercase">시장</dt>
+
+													<dd>
+
+														<ul class="List List--Link Layer--Lower">
+
+															<li><a href="/kr/solutions/industries/automotive.asp"> <i class="Mkr"></i>자동차</a></li>
+
+															<li><a href="/kr/solutions/industries/semiconductor-manufacturing.asp"> <i class="Mkr"></i>반도체</a></li>
+
+															<li><a href="/kr/solutions/industries/electronics.asp"> <i class="Mkr"></i>일렉트로닉스</a></li>
+
+															<li><a href="/kr/solutions/industries/energy-solutions.asp"> <i class="Mkr"></i>배터리・에너지</a></li>
+
+															<li><a href="/kr/solutions/industries/home-and-living.asp"> <i class="Mkr"></i>주택・생활</a></li>
+
+															<li><a href="/kr/solutions/industries/building-and-construction.asp"> <i class="Mkr"></i>건축・도시 인프라</a></li>
+
+															<li><a href="/kr/solutions/industries/oil-and-gas.asp"> <i class="Mkr"></i>오일 &amp; 가스</a></li>
+
+															<li><a href="/kr/solutions/industries/aerospace.asp"> <i class="Mkr"></i>항공・우주</a></li>
+
+															<li><a href="/kr/solutions/industries/life-sciences.asp"> <i class="Mkr"></i>생명과학</a></li>
+
+													</ul></dd>
+
+												</dl>
+
+												<dl>
+
+													<dt class="Level2 gen-TextResetUppercase">용도</dt>
+
+													<dd>
+
+														<ul class="List List--Link Layer--Lower">
+
+															<li><a href="/kr/solutions/industries/wire-and-cable.asp"> <i class="Mkr"></i>전선・케이블</a></li>
+
+															<li><a href="/kr/solutions/industries/tube-and-hose.asp"> <i class="Mkr"></i>튜브・호스</a></li>
+
+															<li><a href="/kr/solutions/industries/film-and-sheet.asp"> <i class="Mkr"></i>필름・시트</a></li>
+
+															<li><a href="/kr/solutions/industries/textile-and-fabrics.asp"> <i class="Mkr"></i>섬유</a></li>
+
+															<li><a href="/kr/solutions/industries/paper-and-packaging.asp"> <i class="Mkr"></i>종이・패키지</a></li>
+															<li><a href="/kr/solutions/industries/nonwoven.asp"> <i class="Mkr"></i>부직포・필터</a></li>
+
+															<li><a href="/kr/solutions/industries/additive-manufacturing.asp"> <i class="Mkr"></i>3D 프린팅</a></li>
+															<li><a href="/kr/solutions/industries/thermal-management.asp"> <i class="Mkr"></i>열 매니지먼트</a></li>
+
+														</ul>
+
+
+
+													</dd>
+
+												</dl>
+
+												<!-- / .Category_Content -->
+											</div>
+
+											<div class="Related_Content">
+
+												<ul class="List List--Link">
+
+													<li class="Level1"><a href="/kr/solutions.asp"><i class="Mkr"></i>모든 DAIKIN Solution</a>
+
+														<!--V2<p>ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト</p>-->
+
+													</li>
+
+												</ul>
+
+												<!-- / .Related_Content -->
+											</div>
+
+											<!-- / .MegaMenu_ContentInner -->
+										</div>
+
+										<!--<div class="List--Image">
+
+											<div class="Level1">HIGHLIGHTS</div>
+
+											<ul>
+
+												<li>
+
+													<a href="/kr/e-juku.asp">
+
+														<p class="image"><img src="/library/pb_common/images/common/image_megamenu_banner01_jp.png" alt="ダイキン フッ素塾" title=""></p>
+
+														<ul class="List List--Link">
+
+															<li style="margin-bottom:100%;">
+
+																<i class="Mkr"></i>DAIKIN 불소 세미나
+
+															</li>
+
+														</ul>
+
+													</a>
+
+												</li>
+
+
+											</ul>
+
+										</div> -->
+
+										<!-- / .MegaMenu_Industries -->
+									</div>
+
+
+
+
+
+
+
+									<div class="MegaMenu_Content MegaMenu_Technical">
+
+										<div class="MegaMenu_ContentInner">
+
+											<div class="Category_Content">
+
+												<dl>
+
+													<dt class="Level2 gen-TextResetUppercase">특성</dt>
+
+													<dd>
+
+														<ul class="List List--Link Layer--Lower">
+
+															<li><a href="/kr/solutions/technical-challenges/heat-resistance.asp"> <i class="Mkr"></i>내열성</a></li>
+
+															<li><a href="/kr/solutions/technical-challenges/flame-retardant.asp"> <i class="Mkr"></i>난연성</a></li>
+
+															<li><a href="/kr/solutions/technical-challenges/chemical-resistance.asp"> <i class="Mkr"></i>내약품성</a></li>
+
+															<li><a href="/kr/solutions/technical-challenges/weatherability.asp"> <i class="Mkr"></i>내후성</a></li>
+
+															<li><a href="/kr/solutions/technical-challenges/lubricity.asp"> <i class="Mkr"></i>윤활성</a></li>
+
+														</ul>
+
+														<ul class="List List--Link Layer--Lower">
+
+															<li><a href="/kr/solutions/technical-challenges/anti-smudge.asp"> <i class="Mkr"></i>방오성</a></li>
+
+															<li><a href="/kr/solutions/technical-challenges/electrical-properties.asp"> <i class="Mkr"></i>전기 특성</a></li>
+
+															<!--V2<li> <i class="Mkr"></i>光学特性</li>-->
+
+															<li><a href="/kr/solutions/technical-challenges/water-and-oil-repellency.asp"> <i class="Mkr"></i>발수・발유성</a></li>
+															<!-- <li><a href="/kr/solutions/technical-challenges/thermal-conductivity.asp"> <i class="Mkr"></i>열전도성</a></li> -->
+
+															<!--V2<li> <i class="Mkr"></i>耐腐食性</li>-->
+
+														</ul>
+
+													</dd>
+
+												</dl>
+
+												<!-- / .Category_Content -->
+											</div>
+
+
+
+											<div class="Related_Content">
+
+												<ul class="List List--Link">
+
+													<li class="Level1"><a href="/kr/solutions.asp"><i class="Mkr"></i>모든 DAIKIN Solution</a>
+
+														<!--V2<p>ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト</p>-->
+
+													</li>
+
+												</ul>
+
+												<!-- / .Related_Content -->
+											</div>
+
+											<!-- / .MegaMenu_ContentInner -->
+										</div>
+
+										<!--<div class="List--Image">
+
+											<div class="Level1">HIGHLIGHTS</div>
+
+											<ul>
+
+												<li>
+
+													<a href="/kr/e-juku.asp">
+
+														<p class="image"><img src="/library/pb_common/images/common/image_megamenu_banner01_jp.png" alt="ダイキン フッ素塾" title=""></p>
+
+														<ul class="List List--Link">
+
+															<li style="margin-bottom:100%;">
+
+																<i class="Mkr"></i>DAIKIN 불소 세미나
+
+															</li>
+
+														</ul>
+
+													</a>
+
+												</li>
+
+												
+
+											</ul>
+
+										</div> -->
+
+										<!-- / .MegaMenu_TECHNICAL CHALLENGES -->
+									</div>
+
+
+
+
+
+
+
+									<div class="MegaMenu_Content MegaMenu_Technical">
+
+										<div class="MegaMenu_ContentInner">
+
+											<div class="Category_Content">
+
+												<dl>
+
+													<dt class="Level2 gen-TextResetUppercase">사업 소개</dt>
+
+													<dd>
+
+														<ul class="List List--Link Layer--Lower">
+
+															<li><a href="/kr/company.asp"> <i class="Mkr"></i>사업 소개 TOP</a></li>
+
+															<li><a href="/kr/company/leadership.asp"> <i class="Mkr"></i>대표이사 메시지</a></li>
+															
+															<li><a href="/kr/company/expertise.asp"> <i class="Mkr"></i>기술의 DAIKIN</a></li>
+															
+															<!-- <li><a href="/kr/company/sustainability.asp" > <i class="Mkr"></i>기업의 사회적 책임</a></li> -->
+															
+															<li><a href="/kr/company/important_notice.asp"> <i class="Mkr"></i>당사 제품의 사용에 있어서</a></li>
+															
+															<li><a href="/kr/company/wrongdoing_entry.asp"> <i class="Mkr"></i>연구 활동에 있어서의 부정행위 방지대책</a></li>
+
+														</ul>
+
+													</dd>
+
+												</dl>
+
+												<!-- / .Category_Content -->
+											</div>
+
+
+
+											<!-- / .MegaMenu_ContentInner -->
+										</div>
+
+										<!-- / .MegaMenu_OUR COMPANY -->
+									</div>
+									
+									<div class="MegaMenu_Content">
+										<!-- / .MegaMenu_ContentInner -->
+										<!-- / .MegaMenu_Careers -->
+									</div>
+
+									<div class="MegaMenu_Content MegaMenu_Technical">
+
+										<div class="MegaMenu_ContentInner">
+
+											<div class="Category_Content">
+
+												<dl>
+
+													<dt class="Level2 gen-TextResetUppercase">다운로드</dt>
+
+													<dd>
+
+														<ul class="List List--Link Layer--Lower">
+
+															<li><a href="/kr/downloads/technical-data-sheets.asp"> <i class="Mkr"></i>테크니컬 데이터 시트</a></li>
+
+															<li><a href="/kr/downloads/safety-data-sheets.asp"> <i class="Mkr"></i>물질안전보건자료(MSDS)</a></li>
+
+															<!--
+
+							<li> <i class="Mkr"></i>ホワイトペーパー</li>
+
+							<li> <i class="Mkr"></i>ウェビナー</li>
+
+							-->
+
+														</ul>
+
+													</dd>
+
+												</dl>
+
+												<!-- / .Category_Content -->
+											</div>
+
+
+
+											<div class="Related_Content">
+
+												<ul class="List List--Link">
+
+													<li class="Level1"><a href="/kr/solutions.asp"><i class="Mkr"></i>모든 DAIKIN Solution</a>
+
+														<!--V2<p>ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト</p>-->
+
+													</li>
+
+												</ul>
+
+												<!-- / .Related_Content -->
+											</div>
+
+											<!-- / .MegaMenu_ContentInner -->
+										</div>
+
+										<!-- / .MegaMenu_Downloads -->
+									</div>
+
+
+
+
+
+
+
+
+
+									<div class="MegaMenu_Content">
+
+										<div class="MegaMenu_ContentInner">
+
+											<!-- / .MegaMenu_ContentInner -->
+										</div>
+
+										<!-- / .MegaMenu_Careers -->
+									</div>
+
+									<div class="MegaMenu_Content">
+
+										<div class="MegaMenu_ContentInner">
+
+											<!-- / .MegaMenu_ContentInner -->
+										</div>
+
+										<!-- / .MegaMenu_News -->
+									</div>
+
+									<!-- / .MegaMenuArea -->
+								</div>
+
+								<!-- / .MegaMenuWrap -->
+							</div>
+
+							<!-- / #GlobalNavWrap -->
+						</div></div>
+
+
+
+						<!-- PC: #GlobalNavWrap, SP:#GlobalNavWrapSp -->
+
+						
+
+
+
+						<!-- SP:#GlobalNavWrapSp -->
+
+						<div id="GlobalNavWrapSp">
+
+							<div id="GlobalNavAreaSp">
+
+								<dl></dl>
+
+								<ul class="GrobalNav_list">
+
+									<li class="GrobalNav_list--global  current-home"><a href="/">홈</a></li>
+
+									<li class="GrobalNav_list--global  current-solutions"><a href="/kr/solutions.asp">모든 DAIKIN Solution</a></li>
+
+								</ul>
+
+								<dl style="padding:0;">
+									<dt class="current-products"><a href="">제품</a></dt>
+									<dd>
+										<ul class="GrobalNav_list">
+
+											<li><a href="/kr/solutions/products/fluoropolymers.asp"> <i class="Mkr"></i>불소수지</a></li>
+
+											<li><a href="/kr/solutions/products/dai-el-fluoroelastomers.asp"> <i class="Mkr"></i>불소고무</a></li>
+
+											<li><a href="/kr/solutions/products/fluoro-coatings.asp"> <i class="Mkr"></i>불소수지 도료</a></li>
+
+											<li><a href="/kr/solutions/products/polymer-additives.asp"> <i class="Mkr"></i>수지 첨가제</a></li>
+
+											<li><a href="/kr/solutions/products/neoflon-fluoropolymers-films.asp"> <i class="Mkr"></i>불소수지 필름</a></li>
+
+											<li><a href="/kr/solutions/products/optool-anti-smudge-coating.asp"> <i class="Mkr"></i>방오 코팅제</a></li>
+
+											<li><a href="/kr/solutions/products/optoace-conformal-coating.asp"> <i class="Mkr"></i>방수 방습 코팅제</a></li>
+
+											<li><a href="/kr/solutions/products/water-and-oil-repellents.asp"> <i class="Mkr"></i>발수 발유제</a></li>
+
+											<li><a href="/kr/solutions/products/coatings-resins.asp"> <i class="Mkr"></i>내후성 도료용 수지</a></li>
+
+											<li><a href="/kr/solutions/products/mold-release-agents.asp"> <i class="Mkr"></i>이형제</a></li>
+
+											<li><a href="/kr/solutions/products/fluorinated-oil-demnum.asp"> <i class="Mkr"></i>불소오일</a></li>
+
+											<li><a href="/kr/solutions/products/refrigerants.asp"> <i class="Mkr"></i>냉매</a></li>
+
+											<li><a href="/kr/solutions/products/fine-chemicals-and-intermediates.asp"> <i class="Mkr"></i>파인케미컬</a></li>
+
+											<li><a href="/kr/solutions/products/semicon-etching-agents.asp"> <i class="Mkr"></i>반도체용 에칭제</a></li>
+
+											<li><a href="/kr/solutions/products/battery-materials.asp"> <i class="Mkr"></i>배터리 재료</a></li>
+
+											<li><a href="/kr/solutions/products/optical-materials/optodyne-uv-clear-adhesives.asp"> <i class="Mkr"></i>광학 접착제</a></li>
+											
+											<li><a href="/kr/solutions/products/fluorine-liquid.asp"> <i class="Mkr"></i>불소계 액체</a></li>
+
+											<!-- <li><a href="/kr/solutions/products/dry.asp" > <i class="Mkr"></i>건식 제습기 HONEYDRY</a></li>
+											
+											<li><a href="/kr/solutions/products/voc.asp" > <i class="Mkr"></i>VOC 처리장치 DACS</a></li> -->
+										</ul>
+									</dd>
+								</dl>
+
+								<dl>
+									<dt class="current-industries"><a href="">시장・용도</a></dt>
+									<dd>
+										<ul class="GrobalNav_list">
+
+											<li><a href="/kr/solutions/industries/automotive.asp"> <i class="Mkr"></i>자동차</a></li>
+
+											<li><a href="/kr/solutions/industries/semiconductor-manufacturing.asp"> <i class="Mkr"></i>반도체</a></li>
+
+											<li><a href="/kr/solutions/industries/electronics.asp"> <i class="Mkr"></i>일렉트로닉스</a></li>
+
+											<li><a href="/kr/solutions/industries/energy-solutions.asp"> <i class="Mkr"></i>배터리・에너지</a></li>
+
+											<li><a href="/kr/solutions/industries/home-and-living.asp"> <i class="Mkr"></i>주택・생활</a></li>
+
+											<li><a href="/kr/solutions/industries/building-and-construction.asp"> <i class="Mkr"></i>건축・도시 인프라</a></li>
+
+											<li><a href="/kr/solutions/industries/oil-and-gas.asp"> <i class="Mkr"></i>오일 &amp; 가스</a></li>
+
+											<li><a href="/kr/solutions/industries/aerospace.asp"> <i class="Mkr"></i>항공・우주</a></li>
+
+											<li><a href="/kr/solutions/industries/life-sciences.asp"> <i class="Mkr"></i>생명과학</a></li>
+
+											<li><a href="/kr/solutions/industries/wire-and-cable.asp"> <i class="Mkr"></i>전선・케이블</a></li>
+
+											<li><a href="/kr/solutions/industries/tube-and-hose.asp"> <i class="Mkr"></i>튜브・호스</a></li>
+
+											<li><a href="/kr/solutions/industries/film-and-sheet.asp"> <i class="Mkr"></i>필름・시트</a></li>
+
+											<li><a href="/kr/solutions/industries/textile-and-fabrics.asp"> <i class="Mkr"></i>섬유</a></li>
+
+											<li><a href="/kr/solutions/industries/paper-and-packaging.asp"> <i class="Mkr"></i>종이・패키지</a></li>
+
+											<li><a href="/kr/solutions/industries/nonwoven.asp"> <i class="Mkr"></i>부직포・필터</a></li>
+
+											<!--V2<li> <i class="Mkr"></i>シール材・ライニング</li>-->
+
+											<li><a href="/kr/solutions/industries/additive-manufacturing.asp"> <i class="Mkr"></i>3D 프린팅</a></li>
+
+										</ul>
+
+									</dd>
+								</dl>
+
+								<dl>
+									<dt class="current-technical"><a href="">특성</a></dt>
+
+									<dd>
+
+										<ul class="GrobalNav_list">
+
+											<li><a href="/kr/solutions/technical-challenges/heat-resistance.asp"> <i class="Mkr"></i>내열성</a></li>
+
+											<li><a href="/kr/solutions/technical-challenges/flame-retardant.asp"> <i class="Mkr"></i>난연성</a></li>
+
+											<li><a href="/kr/solutions/technical-challenges/chemical-resistance.asp"> <i class="Mkr"></i>내약품성</a></li>
+
+											<li><a href="/kr/solutions/technical-challenges/weatherability.asp"> <i class="Mkr"></i>내후성</a></li>
+
+											<li><a href="/kr/solutions/technical-challenges/lubricity.asp"> <i class="Mkr"></i>윤활성</a></li>
+
+											<li><a href="/kr/solutions/technical-challenges/anti-smudge.asp"> <i class="Mkr"></i>방오성</a></li>
+
+											<li><a href="/kr/solutions/technical-challenges/electrical-properties.asp"> <i class="Mkr"></i>전기 특성</a></li>
+
+											<!--V2<li> <i class="Mkr"></i>光学特性</li>-->
+
+											<li><a href="/kr/solutions/technical-challenges/water-and-oil-repellency.asp"> <i class="Mkr"></i>발수・발유성</a></li>
+
+											<!--V2<li> <i class="Mkr"></i>耐腐食性</li>-->
+
+										</ul>
+
+									</dd>
+
+								</dl>
+
+								<dl>
+
+									<dt class="current-company"><a href="">사업 소개</a></dt>
+
+									<dd>
+
+										<ul class="GrobalNav_list">
+
+											<li><a href="/kr/company.asp"> <i class="Mkr"></i>사업 소개 TOP</a></li>
+
+											<li><a href="/kr/company/leadership.asp"> <i class="Mkr"></i>대표이사 메시지</a></li>
+
+											<li><a href="/kr/company/expertise.asp"> <i class="Mkr"></i>기술력의 DAIKIN</a></li>
+
+											<!-- <li><a href="/kr/company/sustainability.asp" > <i class="Mkr"></i>환경에 대한 대처</a></li> -->
+
+											<li><a href="/kr/company/important_notice.asp"> <i class="Mkr"></i>당사 제품의 사용에 있어서</a></li>
+
+											<li><a href="/kr/company/wrongdoing_entry.asp"> <i class="Mkr"></i>연구 활동에 있어서의 부정행위 방지대책</a></li>
+
+										</ul>
+
+									</dd>
+
+								</dl>
+								
+								<ul class="GrobalNav_list">
+									<li class="GrobalNav_list--global  current-home" style="border-top: 1px solid #d2d7d9;"><a href="https://www.daikin-korea.co.kr/kr/sustainability.asp">지속가능성</a></li>
+								</ul>
+
+								<dl>
+
+									<dt class="current-download"><a href="">다운로드</a></dt>
+
+									<dd>
+
+										<ul class="GrobalNav_list">
+
+											<li><a href="/kr/downloads/technical-data-sheets.asp"> <i class="Mkr"></i>테크니컬 데이터 시트</a></li>
+
+											<li><a href="/kr/downloads/safety-data-sheets.asp"> <i class="Mkr"></i>물질안전보건자료(MSDS)</a></li>
+
+											<!--
+
+			<li> <i class="Mkr"></i>ホワイトペーパー</li>
+
+			<li> <i class="Mkr"></i>ウェビナー</li>
+
+			-->
+
+										</ul>
+
+									</dd>
+
+								</dl>
+
+								<ul class="GrobalNav_list">
+
+									<li class="GrobalNav_list--global current-magazine"><a href="/kr/magazine.asp">공지사항</a></li>
+
+									<li class="GrobalNav_list--global"><a href="/kr/directions.asp">오시는 길</a></li>
+									<li class="GrobalNav_list--global"><a href="/kr/newcontact/contact_kr.html">문의</a></li>
+									<li class="GrobalNav_list--global"><a href="https://www.daikinchemicals.com/">ENGLISH</a></li>
+									<li class="GrobalNav_list--global"><a href="https://www.daikinchemicals.com/jp.html">JAPANESE</a></li>									
+
+									<ul class="g-hnav_pages">
+
+										<!-- <li><a href="https://www.daikin.co.jp/product/">제품 정보</a></li>
+										
+										<li><a href="https://www.daikin.co.jp/corporate/">기업 정보</a></li> -->
+
+										<!--<li><a href="/kr/contact.asp">문의</a></li>-->
+
+										<li><a href="/kr/sitemap.asp">사이트맵</a></li>
+
+									</ul>
+
+									<li class="GrobalNav_list_search">
+
+										<form action="https://www.daikin.co.jp/pbsearch/" method="get">
+
+											<div id="SearchAreaSp">
+
+												<p class="InputTxt"><input type="text" name="q" value="" placeholder="Search here. Find anything." class="searchBox"></p>
+
+												<p class="SearchButton"><button>Search</button></p>
+
+											</div>
+
+										</form>
+
+									</li>
+
+								</ul>
+
+								<!-- / #GlobalNavArea -->
+							</div>
+
+							<!-- / #GlobalNavWrapSp -->
+						</div>
+
+						<div id="MegaMenu_Overlay"></div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+</div>
+        <div id="areaWrapper1" class="pbAreaWrapper1">
+            <div id="areaWrapper2" class="pbAreaWrapper2">
+                <div id="mainArea" class="pbMainArea">
+                    <div id="area0" class="pbArea ">
+                        <div class="pbNested ">
+                            <div class="pbNested pbNestedWrapper " id="pbBlock548863">
+                                <div class="top-slider slick-initialized slick-slider">
+                                    <div aria-live="polite" class="slick-list draggable" style="height: 1px;"><div class="slick-track" role="listbox" style="opacity: 1; width: 1080px; transform: translate3d(0px, 0px, 0px);"><div class="top-slider__item slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide00" style="width: 1080px;">
+                                        <div class="top-slider__image"><img src="/library/pb_common/images/home/mainvisual.jpg"></div>
+                                        <div class="top-slider__box">
+                                            <div class="top-slider__title">Positively Innovative</div>
+                                            <div class="top-slider__text">
+                                                <div class="top-slider__line">We focus on genuine innovation to enable our partners</div>
+                                                <div class="top-slider__line">around the world to achieve real results.</div>
+                                            </div>
+                                            <!--<div class="top-slider__button"><a href="#">More</a></div>-->
+                                        </div>
+                                    </div></div></div>
+
+                                </div>
+                            </div>
+                            <div class="pbNested pbNestedWrapper " id="pbBlock548864">
+                                <div class="top-slider-sp slick-initialized slick-slider" style="">
+                                    <div aria-live="polite" class="slick-list draggable"><div class="slick-track" role="listbox" style="opacity: 1; width: 0px; transform: translate3d(0px, 0px, 0px);"><div class="top-slider__item slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide10" style="width: 0px;">
+                                        <div class="top-slider__image"><img src="/library/pb_common/images/home/mainvisual_sp.jpg"></div>
+                                        <div class="top-slider__box">
+                                            <div class="top-slider__title">Positively Innovative</div>
+                                            <div class="top-slider__text">We focus on genuine innovation to enable our partners around the world to achieve real results.</div>
+                                            <!--<div class="top-slider__button"><a href="#">More</a></div>-->
+                                        </div>
+                                    </div></div></div>
+                                </div>
+                            </div>
+                            <div class="top-column-type01 pbNested pbNestedWrapper " id="pbBlock548833">
+                                <div class="pbNested ">
+                                    <div class="top-column-type01__box pbNested pbNestedWrapper " id="pbBlock548834">
+                                        <div class="pbNested ">
+                                            <div class="top-column-type01__title pbNested pbNestedWrapper " id="pbBlock548835">
+                                                <div class="pbNested ">
+                                                    <div class="top-column-type01__label pbNested pbNestedWrapper " id="pbBlock548772">
+                                                        <div class="pbBlock pbBlockBase">
+                                                            <div>
+                                                                <p>
+                                                                    Partnership
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="top-column-type01__image pbNested pbNestedWrapper " id="pbBlock548773">
+                                                        <div class="pbBlock pbBlockBase">
+                                                            <div>
+                                                                <p>
+                                                                    <img src="/library/pb_common/images/home/image_appeal01.jpg" alt="Comitted" title="Comitted">
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="top-column-type01__text pbNested pbNestedWrapper " id="pbBlock548774">
+                                                <div class="pbBlock pbBlockBase">
+                                                    <div>
+                                                        <p>
+                                                            고객과의 인연을 귀중하게 여기며 친밀감과 배려를 담아 성실하게 대응하겠습니다.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="top-column-type01__box pbNested pbNestedWrapper " id="pbBlock548836">
+                                        <div class="pbNested ">
+                                            <div class="top-column-type01__title pbNested pbNestedWrapper " id="pbBlock548837">
+                                                <div class="pbNested ">
+                                                    <div class="top-column-type01__label pbNested pbNestedWrapper " id="pbBlock548776">
+                                                        <div class="pbBlock pbBlockBase">
+                                                            <div>
+                                                                <p>
+                                                                    Solution
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="top-column-type01__image pbNested pbNestedWrapper " id="pbBlock548775">
+                                                        <div class="pbBlock pbBlockBase">
+                                                            <div>
+                                                                <p>
+                                                                    <img src="/library/pb_common/images/home/image_appeal02.jpg" alt="Innovation" title="Innovation">
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="top-column-type01__text pbNested pbNestedWrapper " id="pbBlock548777">
+                                                <div class="pbBlock pbBlockBase">
+                                                    <div>
+                                                        <p>
+                                                            Market과 용도를 깊게 이해하고 고객의 결과에 공헌하는 Solution을 제안합니다.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="top-column-type01__box pbNested pbNestedWrapper " id="pbBlock548838">
+                                        <div class="pbNested ">
+                                            <div class="top-column-type01__title pbNested pbNestedWrapper " id="pbBlock548839">
+                                                <div class="pbNested ">
+                                                    <div class="top-column-type01__label pbNested pbNestedWrapper " id="pbBlock548779">
+                                                        <div class="pbBlock pbBlockBase">
+                                                            <div>
+                                                                <p>
+                                                                    Global
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="top-column-type01__image pbNested pbNestedWrapper " id="pbBlock548778">
+                                                        <div class="pbBlock pbBlockBase">
+                                                            <div>
+                                                                <p>
+                                                                    <img src="/library/pb_common/images/home/image_appeal03.jpg" alt="Global presence" title="Global presence" style="opacity: 1;">
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="top-column-type01__text pbNested pbNestedWrapper " id="pbBlock548780">
+                                                <div class="pbBlock pbBlockBase">
+                                                    <div>
+                                                        <p>
+                                                            <span>불소화학 Leading Company로서 Global하게 고객의 비즈니스를 서포트합니다.</span>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="top-column-type01__box pbNested pbNestedWrapper " id="pbBlock548840">
+                                        <div class="pbNested ">
+                                            <div class="top-column-type01__title pbNested pbNestedWrapper " id="pbBlock548841">
+                                                <div class="pbNested ">
+                                                    <div class="top-column-type01__label pbNested pbNestedWrapper " id="pbBlock548782">
+                                                        <div class="pbBlock pbBlockBase">
+                                                            <div>
+                                                                <p>
+                                                                    HR
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="top-column-type01__image pbNested pbNestedWrapper " id="pbBlock548781">
+                                                        <div class="pbBlock pbBlockBase">
+                                                            <div>
+                                                                <p>
+                                                                    <img src="/library/pb_common/images/home/image_appeal04.jpg" alt="Our people" title="Our people">
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="top-column-type01__text pbNested pbNestedWrapper " id="pbBlock548783">
+                                                <div class="pbBlock pbBlockBase">
+                                                    <div>
+                                                        <p>
+                                                            <span>한사람 한사람이 Innovator가 되어, 제품, 서비스의 향상에 노력합니다.</span>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="top-section-type01 pbNested pbNestedWrapper " id="pbBlock548822">
+                                <div class="pbNested ">
+                                    <div class="top-titleH2 pbNested pbNestedWrapper " id="pbBlock548768">
+                                        <div class="pbBlock pbBlockBase">
+                                            <div>
+                                                <h2>
+                                                    DAIKIN의 Solution
+                                                </h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="top-column-type02 pbNested pbNestedWrapper " id="pbBlock1844420">
+                                        <div class="pbNested ">
+                                            <div class="top-column-type02__box pbNested pbNestedWrapper " id="pbBlock1844433">
+                                                <div class="pbNested ">
+                                                    <div class="top-column-type02__image pbNested pbNestedWrapper " id="pbBlock1844434">
+                                                        <div class="pbBlock pbBlockBase">
+                                                            <div>
+                                                                <p>
+                                                                    <a href="/kr/solutions/industries/automotive.asp"><img src="/library/pb_common/images/home/image_industrychallenge_Automotive.png" alt="Automotive" title="Automotive"></a>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="top-column-type02__title pbNested pbNestedWrapper " id="pbBlock1844435">
+                                                        <div class="pbBlock pbBlockBase">
+                                                            <div>
+                                                                <p>
+                                                                    자동차
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="top-column-type02__box pbNested pbNestedWrapper " id="pbBlock1844430">
+                                                <div class="pbNested ">
+                                                    <div class="top-column-type02__image pbNested pbNestedWrapper " id="pbBlock1844431">
+                                                        <div class="pbBlock pbBlockBase">
+                                                            <div>
+                                                                <p>
+                                                                    <a href="/kr/solutions/industries/semiconductor-manufacturing.asp"><img src="/library/pb_common/images/home/image_industrychallenge_Semicon.png" alt="Semiconductor" title="Semiconductor"></a>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="top-column-type02__title pbNested pbNestedWrapper " id="pbBlock1844432">
+                                                        <div class="pbBlock pbBlockBase">
+                                                            <div>
+                                                                <p>
+                                                                    반도체
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="top-column-type02__box pbNested pbNestedWrapper " id="pbBlock1844427">
+                                                <div class="pbNested ">
+                                                    <div class="top-column-type02__image pbNested pbNestedWrapper " id="pbBlock1844428">
+                                                        <div class="pbBlock pbBlockBase">
+                                                            <div>
+                                                                <p>
+                                                                    <a href="/kr/solutions/industries/wire-and-cable.asp"><img src="/library/pb_common/images/home/image_industrychallenge_Wire-and-Cable.png" alt="Wire and Cable" title="Wire and Cable"></a>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="top-column-type02__title pbNested pbNestedWrapper " id="pbBlock1844429">
+                                                        <div class="pbBlock pbBlockBase">
+                                                            <div>
+                                                                <p>
+                                                                    전선
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="top-column-type02__box pbNested pbNestedWrapper " id="pbBlock1844424">
+                                                <div class="pbNested ">
+                                                    <div class="top-column-type02__image pbNested pbNestedWrapper " id="pbBlock1844425">
+                                                        <div class="pbBlock pbBlockBase">
+                                                            <div>
+                                                                <p>
+                                                                    <a href="/kr/solutions/industries/energy-solutions.asp"><img src="/library/pb_common/images/home/image_industrychallenge_Energy-solutions.png" alt="Energy solutions" title="Energy solutions"></a>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="top-column-type02__title pbNested pbNestedWrapper " id="pbBlock1844426">
+                                                        <div class="pbBlock pbBlockBase">
+                                                            <div>
+                                                                <p>
+                                                                    배터리<span class="round">・</span>에너지
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="top-column-type02__box pbNested pbNestedWrapper " id="pbBlock1844421">
+                                                <div class="pbNested ">
+                                                    <div class="top-column-type02__image pbNested pbNestedWrapper " id="pbBlock1844422">
+                                                        <div class="pbBlock pbBlockBase">
+                                                            <div>
+                                                                <p>
+                                                                    <a href="/kr/solutions/industries/electronics.asp"><img src="/library/pb_common/images/home/image_industrychallenge_Electronics.png" alt="Electronics" title="Electronics"></a>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="top-column-type02__title pbNested pbNestedWrapper " id="pbBlock1844423">
+                                                        <div class="pbBlock pbBlockBase">
+                                                            <div>
+                                                                <p>
+                                                                    일렉트로닉스
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="top-column-type02__box pbNested pbNestedWrapper " id="pbBlock1844444">
+                                                <div class="pbNested ">
+                                                    <div class="top-column-type02__image pbNested pbNestedWrapper " id="pbBlock1844445">
+                                                        <div class="pbBlock pbBlockBase">
+                                                            <div>
+                                                                <p>
+                                                                    <a href="/kr/solutions/industries/building-and-construction.asp"><img src="/library/pb_common/images/home/image_industrychallenge_Building-and-Construction.png" alt="Building and Construction" title="Building and Construction"></a>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="top-column-type02__title pbNested pbNestedWrapper " id="pbBlock1844446">
+                                                        <div class="pbBlock pbBlockBase">
+                                                            <div>
+                                                                <p>
+                                                                    건축<span class="round">・</span>도시 인프라
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="top-column-type02__box pbNested pbNestedWrapper " id="pbBlock1844441">
+                                                <div class="pbNested ">
+                                                    <div class="top-column-type02__image pbNested pbNestedWrapper " id="pbBlock1844442">
+                                                        <div class="pbBlock pbBlockBase">
+                                                            <div>
+                                                                <p>
+                                                                    <a href="/kr/solutions/industries/home-and-living.asp"><img src="/library/pb_common/images/home/image_industrychallenge_Home-and-Living.png" alt="Home and Living" title="Home and Living"></a>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="top-column-type02__title pbNested pbNestedWrapper " id="pbBlock1844443">
+                                                        <div class="pbBlock pbBlockBase">
+                                                            <div>
+                                                                <p>
+                                                                    주택<span class="round">・</span>생활
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="top-column-type02__box pbNested pbNestedWrapper " id="pbBlock1844436">
+                                                <div class="pbNested ">
+                                                    <div class="top-column-type02__image pbNested pbNestedWrapper " id="pbBlock1844440">
+                                                        <div class="pbBlock pbBlockBase">
+                                                            <div>
+                                                                <p>
+                                                                    <img src="/library/pb_common/images/home/image_industries08.jpg" alt="" title="">
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="top-column-type02__solutions pbNested pbNestedWrapper " id="pbBlock1844437">
+                                                        <div class="pbNested ">
+                                                            <div class="top-column-type02__text pbNested pbNestedWrapper " id="pbBlock1844438">
+                                                                <div class="pbBlock pbBlockBase">
+                                                                    <div>
+                                                                        <p>
+                                                                            모든 시장・용도 조회
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="top-column-type02__button pbNested pbNestedWrapper " id="pbBlock1844439">
+                                                                <div class="pbBlock pbBlockBase">
+                                                                    <div>
+                                                                        <p>
+                                                                            <a href="/kr/solutions.asp">DAIKIN의 Solution</a>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <!--<div class="top-banner pbNested pbNestedWrapper " id="pbBlock548770">
+                                        <div class="pbBlock pbBlockBase">
+                                            <div>
+                                                <p>
+                                                    <a href="/kr/e-juku.asp"><img src="/library/pb_common/images/home/bnr_FLUORO-PEDIA_jp.png" alt="DAIKIN 불소 세미나" title="DAIKIN 불소 세미나"></a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="top-banner-sp pbNested pbNestedWrapper " id="pbBlock548771">
+                                        <div class="pbBlock pbBlockBase">
+                                            <div>
+                                                <p>
+                                                    <a href="/kr/e-juku.asp"><img src="/library/pb_common/images/home/bnr_FLUORO-PEDIA_sp_jp.png" alt="DAIKIN 불소 세미나" title="DAIKIN 불소 세미나"></a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                </div>
+
+                            </div>
+                            <!-- <div class="top-section-type02 pbNested pbNestedWrapper " id="pbBlock548842">
+                                <div class="pbNested ">
+                                    <div class="top-titleH2 pbNested pbNestedWrapper " id="pbBlock548818">
+                                        <div class="pbBlock pbBlockBase">
+                                            <div>
+                                                <h2>
+                                                    신착정보
+                                                </h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="top-column-type03 pbNested pbNestedWrapper " id="pbBlock1929820">
+                                        <div class="pbNested ">
+                                        </div>
+                            
+                                    </div>
+                                    <div class="top-column-type03 pbNested pbNestedWrapper " id="pbBlock1928881">
+                                        <div class="pbNested ">
+                                            <div class="top-column-type03__image pbNested pbNestedWrapper " id="pbBlock1928889">
+                                                <div class="pbBlock pbBlockBase">
+                                                    <div>
+                                                        <p>
+                                                            <img src="/var/rev0/0000/5482/supermarket-trade-show_s.jpg" alt="supermarket-trade-show_s.jpg" title="">
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="top-column-type03__box pbNested pbNestedWrapper " id="pbBlock1928882">
+                                                <div class="pbNested ">
+                                                    <div class="top-column-type03__label pbNested pbNestedWrapper " id="pbBlock1928883">
+                                                        <div class="pbNested ">
+                                                            <div class="top-column-type03__category top-column-type03__category--color01 pbNested pbNestedWrapper " id="pbBlock1928884">
+                                                                <div class="pbBlock pbBlockBase">
+                                                                    <div>
+                                                                        <p>
+                                                                            Exhibition
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="top-column-type03__day pbNested pbNestedWrapper " id="pbBlock1928885">
+                                                                <div class="pbBlock pbBlockBase">
+                                                                    <div>
+                                                                        <p>
+                                                                            02/2020
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                            
+                                                    </div>
+                                                    <div class="top-column-type03__title pbNested pbNestedWrapper " id="pbBlock1928886">
+                                                        <div class="pbBlock pbBlockBase">
+                                                            <div>
+                                                                <p>
+                                                                    슈퍼마켓 트레이드쇼 2020에 출품합니다
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="top-column-type03__text pbNested pbNestedWrapper " id="pbBlock1928887">
+                                                        <div class="pbBlock pbBlockBase">
+                                                            <div>
+                                                                <p>
+                                                                    <span>2020년 2월 12~14일에 마쿠하리 멧세에서 개최되는 「슈퍼마켓 트레이드쇼 2020」에 출품해, 지구온난화 규제 대응 냉매인「클리어드 R-407H」와 곰팡이 방지 프리필터 등을 소개합니다.</span>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="top-column-type03__button pbNested pbNestedWrapper " id="pbBlock1928888">
+                                                        <div class="pbBlock pbBlockBase">
+                                                            <div>
+                                                                <p>
+                                                                    <a href="/kr/news/supermarket-trade-show-2020.asp">상세사항은 여기에서</a>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                            
+                                            </div>
+                                        </div>
+                            
+                                    </div> -->
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                <div class="pbHeight" style="position: absolute; top: 0px; visibility: hidden;">pbHeight</div></div>
+            </div>
+        
+        <div id="footerArea" class="pbFooterArea" style="width:100%; max-width: 100%;">
+	<div id="area4" class="pbArea ">
+		<div class="pbNested ">
+			<!-- <div class="  pbNested pbNestedWrapper " id="pbBlock548870">
+				<div class="pbNested ">
+					<div class="footer-receive pbNested pbNestedWrapper " id="pbBlock548028">
+						<div class="pbNested ">
+							<div class="footer-receive__title pbNested pbNestedWrapper " id="pbBlock548029">
+								<div class="pbBlock pbBlockBase">
+									<div>
+										<p>
+											DAIKIN Chemicals Newsletter에서 최신 정보를 전달합니다.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="pbNested pbNestedWrapper " id="pbBlock1805538">
+								<div class="pbBlock pbBlockBase">
+									<div>
+										<p style="text-align: center;">
+											<br>
+											<input style="background: #ffffff; padding: 5px 30px; border: 5px double #0097e0; color: #0097e0; font-size: 20px;" onclick="location.href='jp/daikin-chemicals-newsletter.html'" type="button" value="등록"> <a style="background: #ffffff; padding: 5px 30px; border: 5px double #0097e0; color: #0097e0; font-size: 20px;" href="/kr/daikin-chemicals-newsletter.asp">등록</a>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+			
+					</div>
+				</div> -->
+
+			</div>
+			<div class="  pbNested pbNestedWrapper " id="pbBlock548872">
+				<div class="pbNested ">
+					<div class="pbNested pbNestedWrapper " id="pbBlock548033">
+						<div id="FooterWrap">
+
+							<div id="FooterArea">
+
+								<div class="SiteNav">
+
+									<div class="SiteNav__Body">
+
+										<div class="SiteNav__Body__Inner">
+
+											<dl>
+
+												<dt><a href="/kr/solutions.asp" onclick="ga('send', 'event', 'Footer Sitemap', 'DAIKIN의 Solution', this.href.toString());"><i class="Mkr"></i>DAIKIN의 Solution</a></dt>
+
+												<dd>
+
+													<ul>
+
+														<li>
+
+															<ul>
+
+																<li class="title1">제품</li>
+
+																<li class="title2">수지・고무</li>
+
+																<li class="dai2"><a href="/kr/solutions/products/fluoropolymers.asp"> <i class="Mkr"></i>불소수지</a></li>
+
+																<li class="dai2"><a href="/kr/solutions/products/dai-el-fluoroelastomers.asp"> <i class="Mkr"></i>불소고무</a></li>
+
+																<li class="dai2"><a href="/kr/solutions/products/fluoro-coatings.asp"> <i class="Mkr"></i>불소수지 도료</a></li>
+
+																<li class="dai2"><a href="/kr/solutions/products/polymer-additives.asp"> <i class="Mkr"></i>수지 첨가제</a></li>
+
+																<li class="dai2"><a href="/kr/solutions/products/neoflon-fluoropolymers-films.asp"> <i class="Mkr"></i>불소수지 필름</a></li>
+
+															</ul>
+
+															<ul>
+
+																<li class="title2">표면 기능재</li>
+
+																<li class="dai2"><a href="/kr/solutions/products/optool-anti-smudge-coating.asp"> <i class="Mkr"></i>방오 코팅제</a></li>
+
+																<li class="dai2"><a href="/kr/solutions/products/optoace-conformal-coating.asp"> <i class="Mkr"></i>방수・방습 코팅제</a></li>
+
+																<li class="dai2"><a href="/kr/solutions/products/water-and-oil-repellents.asp"> <i class="Mkr"></i>발수・발유제</a></li>
+
+																<li class="dai2"><a href="/kr/solutions/products/coatings-resins.asp"> <i class="Mkr"></i>내후성 도료용 수지</a></li>
+
+																<li class="dai2"><a href="/kr/solutions/products/mold-release-agents.asp"> <i class="Mkr"></i>이형제</a></li>
+
+																<li class="dai2"><a href="/kr/solutions/products/fluorinated-oil-demnum.asp"> <i class="Mkr"></i>불소오일</a></li>
+
+
+
+															</ul>
+
+															<ul>
+
+																<li class="title2">스페셜리티</li>
+
+																<li class="dai2"><a href="/kr/solutions/products/refrigerants.asp"> <i class="Mkr"></i>냉매</a></li>
+
+																<li class="dai2"><a href="/kr/solutions/products/fine-chemicals-and-intermediates.asp"> <i class="Mkr"></i>파인케미컬</a></li>
+
+																<li class="dai2"><a href="/kr/solutions/products/semicon-etching-agents.asp"> <i class="Mkr"></i>반도체용 에칭제</a></li>
+
+																<li class="dai2"><a href="/kr/solutions/products/battery-materials.asp"> <i class="Mkr"></i>배터리 재료</a></li>
+
+																<li class="dai2"><a href="/kr/solutions/products/optical-materials/optodyne-uv-clear-adhesives.asp"> <i class="Mkr"></i>광학 접착제</a></li>
+																
+																<li class="dai2"><a href="/kr/solutions/products/fluorine-liquid.asp"> <i class="Mkr"></i>불소계 액체</a></li>
+
+																<!-- <li class="dai2"><a href="/kr/solutions/products/dry.asp" onclick="ga('send', 'event', 'Footer Sitemap', '스페셜리티', this.href.toString());"> <i class="Mkr"></i>건식 제습기 HONEYDRY</a></li>
+																
+																<li class="dai2"><a href="/kr/solutions/products/voc.asp" onclick="ga('send', 'event', 'Footer Sitemap', '스페셜리티', this.href.toString());"> <i class="Mkr"></i>VOC 처리장치 DACS</a></li> -->
+
+															</ul>
+
+														</li>
+
+														<li>
+
+															<ul>
+
+																<li class="title1">시장・용도</li>
+
+																<li class="title2">시장</li>
+
+																<li class="dai2"><a href="/kr/solutions/industries/automotive.asp"> <i class="Mkr"></i>자동차</a></li>
+
+																<li class="dai2"><a href="/kr/solutions/industries/semiconductor-manufacturing.asp"> <i class="Mkr"></i>반도체</a></li>
+
+																<li class="dai2"><a href="/kr/solutions/industries/electronics.asp"> <i class="Mkr"></i>일렉트로닉스</a></li>
+
+																<li class="dai2"><a href="/kr/solutions/industries/energy-solutions.asp"> <i class="Mkr"></i>배터리・에너지</a></li>
+
+																<li class="dai2"><a href="/kr/solutions/industries/home-and-living.asp"> <i class="Mkr"></i>주택・생활</a></li>
+
+																<li class="dai2"><a href="/kr/solutions/industries/building-and-construction.asp"> <i class="Mkr"></i>건축・도시 인프라</a></li>
+
+																<li class="dai2"><a href="/kr/solutions/industries/oil-and-gas.asp"> <i class="Mkr"></i>오일 &amp; 가스</a></li>
+
+																<li class="dai2"><a href="/kr/solutions/industries/aerospace.asp"> <i class="Mkr"></i>항공・우주</a></li>
+
+																<li class="dai2"><a href="/kr/solutions/industries/life-sciences.asp"> <i class="Mkr"></i>생명과학</a></li>
+
+															</ul>
+
+															<ul>
+
+																<li class="title2">용도</li>
+
+																<li class="dai2"><a href="/kr/solutions/industries/wire-and-cable.asp"> <i class="Mkr"></i>전선・케이블</a></li>
+
+																<li class="dai2"><a href="/kr/solutions/industries/tube-and-hose.asp"> <i class="Mkr"></i>튜브・호스</a></li>
+
+																<li class="dai2"><a href="/kr/solutions/industries/film-and-sheet.asp"> <i class="Mkr"></i>필름・시트</a></li>
+
+																<li class="dai2"><a href="/kr/solutions/industries/textile-and-fabrics.asp"> <i class="Mkr"></i>섬유</a></li>
+
+																<li class="dai2"><a href="/kr/solutions/industries/paper-and-packaging.asp"> <i class="Mkr"></i>종이・패키지</a></li>
+
+																<li class="dai2"><a href="/kr/solutions/industries/nonwoven.asp"> <i class="Mkr"></i>부직포・필터</a></li>
+
+																<!--V2
+
+								<li class="dai2"> <i class="Mkr"></i>シール材・ライニング</li>
+
+								-->
+
+																<li class="dai2"><a href="/kr/solutions/industries/additive-manufacturing.asp"> <i class="Mkr"></i>3D 프린팅</a></li>
+																<li class="dai2"><a href="/kr/solutions/industries/thermal-management.asp"> <i class="Mkr"></i>열 매니지먼트</a></li>
+
+
+
+															</ul>
+
+														</li>
+
+														<li>
+
+															<ul>
+
+																<li class="title1">특성</li>
+
+																<li class="dai2"><a href="/kr/solutions/technical-challenges/heat-resistance.asp"> <i class="Mkr"></i>내열성</a></li>
+
+																<li class="dai2"><a href="/kr/solutions/technical-challenges/flame-retardant.asp"> <i class="Mkr"></i>난연성</a></li>
+
+																<li class="dai2"><a href="/kr/solutions/technical-challenges/chemical-resistance.asp"> <i class="Mkr"></i>내약품성</a></li>
+
+																<li class="dai2"><a href="/kr/solutions/technical-challenges/weatherability.asp"> <i class="Mkr"></i>내후성</a></li>
+
+																<li class="dai2"><a href="/kr/solutions/technical-challenges/lubricity.asp"> <i class="Mkr"></i>윤활성</a></li>
+
+																<li class="dai2"><a href="/kr/solutions/technical-challenges/anti-smudge.asp"> <i class="Mkr"></i>방오성</a></li>
+
+																<li class="dai2"><a href="/kr/solutions/technical-challenges/electrical-properties.asp"> <i class="Mkr"></i>전기 특성</a></li>
+
+																<!--V2
+
+								<li class="dai2"> <i class="Mkr"></i>光学特性</li>
+
+								-->
+
+																<li class="dai2"><a href="/kr/solutions/technical-challenges/water-and-oil-repellency.asp"> <i class="Mkr"></i>발수・발유성</a></li>
+																<!-- <li class="dai2"><a href="/kr/solutions/technical-challenges/thermal-conductivity.asp"> <i class="Mkr"></i>열전도성</a></li> -->
+
+																<!--V2
+
+								<li class="dai2"> <i class="Mkr"></i>耐腐食性</li>
+
+								-->
+
+															</ul>
+
+														</li>
+
+													</ul>
+
+												</dd>
+
+											</dl>
+
+											<!-- / .SiteNav__Body__Inner -->
+										</div>
+
+										<div class="SiteNav__Body__Inner">
+
+
+
+											<dl>
+
+												<dt>사업 소개</dt>
+
+												<dd>
+
+													<ul>
+
+														<li class="dai2"><a href="/kr/company.asp"><i></i>사업 소개 TOP</a></li>
+
+														<li class="dai2"><a href="/kr/company/leadership.asp"><i></i>대표이사 메시지</a></li>
+														
+														<li class="dai2"><a href="/kr/company/expertise.asp"><i></i>기술력의 DAIKIN</a></li>
+														
+														<!-- <li class="dai2"><a href="/kr/company/sustainability.asp"><i></i>기업의 사회적 책임</a></li> -->
+														
+														<li class="dai2"><a href="/kr/company/important_notice.asp"><i></i>당사 제품의 사용에 있어서
+														
+														</a></li><li class="dai2"><a href="/kr/company/wrongdoing_entry.asp"><i></i>연구 활동에 있어서의 부정행위 방지대책</a></li>
+
+													</ul>
+
+												</dd>
+
+											</dl>
+											
+											<p class="SiteNav_Separate"><a href="https://www.daikin-korea.co.kr/kr/sustainability.asp"><i></i>지속가능성</a></p>
+
+											<dl class="SiteNav_Separate">
+
+												<dt>다운로드</dt>
+
+												<dd>
+
+													<ul>
+
+														<!--
+
+						<li class="dai2"><i></i>カタログ</li>
+
+						-->
+
+														<li class="dai2"><a href="/kr/downloads/technical-data-sheets.asp"><i></i>테크니컬 데이터 시트</a></li>
+
+														<li class="dai2"><a href="/kr/downloads/safety-data-sheets.asp"><i></i>물질안전보건자료(MSDS)</a></li>
+
+														<!--
+
+						<li class="dai2"><i></i>ホワイトペーパー</li>
+
+						-->
+
+														<!--
+
+						<li class="dai2"><i></i>ウェビナー</li>
+
+						-->
+
+													</ul>
+
+												</dd>
+
+											</dl>
+
+											<p class="SiteNav_Separate"><a href="/kr/magazine.asp"><i></i>공지사항</a></p>
+
+											<!-- <p class="SiteNav_Separate"><a href="/kr/news.asp" onclick="ga('send', 'event', 'Footer Sitemap', '신착정보', this.href.toString());"><i></i>신착정보</a></p> -->
+
+											<!--<p class="SiteNav_Separate"><a href="/kr/e-juku.asp"><i></i>DAIKIN 불소 세미나</a></p> -->
+
+											<!-- <p class="SiteNav_Separate"><a href="/_40.asp" onclick="ga('send', 'event', 'Footer Sitemap', '자재부 정보 페이지', this.href.toString());" target="_blank"><i></i>자재부 정보 페이지</a></p> -->
+
+											<p class="SiteNav_Separate"><a href="/kr/newcontact/contact_kr.html"><i></i>문의</a></p>
+
+											<p class="SiteNav_Separate"><a href="/kr/search.asp"><i></i>검색</a></p>
+
+											<dl class="SiteNav_Separate">
+
+												<dt>LANGUAGE</dt>
+
+												<dd>
+
+													<ul>
+
+														<li class="dai2"><a href="https://www.daikinchemicals.com/"><i></i>ENGLISH</a></li>
+
+														<li class="dai2"><a href="https://www.daikinchemicals.com/jp.html"><i></i>JAPANESE</a></li>
+
+													</ul>
+
+												</dd>
+
+											</dl>
+
+											<p class="SiteNav_Separate"><a href="/kr/directions.asp"><i></i>오시는 길</a></p>
+
+
+
+											<!-- / .SiteNav__Body__Inner -->
+										</div>
+
+										<!-- / .SiteNav__Body -->
+									</div>
+
+									<!-- / .SiteNav -->
+								</div>
+
+								<!-- / #FooterArea -->
+							</div>
+
+							<!-- / #FooterWrap -->
+						</div>
+
+
+
+						<!--probo_noindex-->
+
+						<style>
+						/* 20220916추가 */
+						.g-footer.ft14px {font-size:14px;}
+						.footer_wrap {display: flex;justify-content: space-between;}
+						.footer_wrap .info_wrap_main {display:flex; margin-bottom:25px;}
+						.footer_wrap .info_wrap_main:last-child {margin-bottom:0;}
+						.footer_wrap .info_wrap_main .title {margin-right:50px;}
+						.footer_wrap .info_wrap li {margin-bottom: 5px;display: flex;align-items: center;}
+						.footer_wrap .info_wrap li:last-child {margin-bottom:0;}
+						.footer_wrap .info_wrap li .icon0 {display: inline-block;width: 12px;height: 12px;margin-right: 10px;background-image: url(https://www.daikin-korea.co.kr/library/dg_common/images/footer_icon_post.png);}
+						.footer_wrap .info_wrap li .icon1 {display: inline-block;width: 12px;height: 12px;margin-right: 10px;background-image: url(https://www.daikin-korea.co.kr/library/dg_common/images/footer_icon_place.png);}
+						.footer_wrap .info_wrap li .icon2 {display: inline-block;width: 12px;height: 12px;margin-right: 10px;background-image: url(https://www.daikin-korea.co.kr/library/dg_common/images/footer_icon_number.png);}
+						.footer_wrap .info_wrap li .txt {display: inline-block;}
+
+						.footer_wrap .g-footer_copyright {display: block;float: inherit;margin-bottom: 5px;}
+						.footer_wrap .g-footer_pages {display: flex;float: inherit;justify-content: revert;}
+
+						@media screen and (max-width: 960px) {
+						.footer_wrap .info_wrap li .icon0 {margin-right:5px;}
+						.footer_wrap .info_wrap li .icon1 {margin-right:5px;}
+						.footer_wrap .info_wrap li .icon2 {margin-right:5px;}
+						.footer_wrap .g-footer_pages {justify-content: center; padding:0;}
+
+						.footer_wrap .info_wrap_main {display:block; text-align:left;}
+						.footer_wrap .info_wrap_main .title {margin-right:0; font-weight: bold; margin-bottom: 10px;}
+						}
+
+						@media screen and (max-width: 810px) {
+						.g-footer .g-box {margin-left: inherit;}
+						.footer_wrap {display:block;}
+						.footer_wrap .g-footer_pages {display:block;}
+						.copyright_wrap {text-align:left;}
+
+						.info_wrap {margin-bottom:20px !important;}
+						}
+
+						</style>
+
+						<div id="g-footer" class="g-footer ft14px">
+							<div class="g-box">
+								<div class="footer_wrap">
+									<div>
+										<div class="info_wrap_main">
+											<p class="title">서울사무소</p>
+											<ul class="info_wrap">
+												<li>
+													<p class="icon0"></p>
+													<p class="txt" style="">06142</p>
+												</li>
+												<li>
+													<p class="icon1"></p>
+													<p class="txt" style="">서울 강남구 테헤란로 223 큰길타워 602호</p>
+												</li>
+												<li>
+													<p class="icon2"></p>
+													<p class="txt">02-568-1722</p>
+												</li>
+											 </ul>
+										</div>
+
+										<div class="info_wrap_main">
+											<p class="title">개발센터&nbsp;&nbsp;&nbsp;</p>
+											<ul class="info_wrap">
+												<li>
+													<p class="icon0"></p>
+													<p class="txt" style="">31116</p>
+												</li>
+												<li>
+													<p class="icon1"></p>
+													<p class="txt" style="">충청남도 천안시 동남구 단대로 119 산학협력관 3층 306호</p>
+												</li>
+												<li>
+													<p class="icon2"></p>
+													<p class="txt">041-622-6495</p>
+												</li>
+											 </ul>
+										</div>
+									</div>
+									
+									<div class="copyright_wrap">
+										<p class="g-footer_copyright">Copyright (C) 2020 DAIKIN INDUSTRIES, LTD.,</p>
+										<ul class="g-footer_pages">
+											<li><a href="/kr/privacy.asp" style="font-weight: bold; color: #fff;">개인정보처리방침</a></li>
+											<li><a href="/kr/term-use.asp">이용약관</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--a id="g-pagetop" href="#g-wrapper" class="g-pagetop">ページの先頭へ</a--><a id="g-pagetop" href="#" class="g-pagetop" style="opacity: 0.869556;">ページの先頭へ</a>
+
+
+						<!--/probo_noindex-->
+					</div>
+				</div>
+
+			</div>
+			<div class="  pbNested pbNestedWrapper " id="pbBlock548871">
+				<div class="pbNested ">
+					<div class="footer-link pbNested pbNestedWrapper " id="pbBlock548024" style="height: 103px;">
+						<div class="pbNested ">
+							<div class="footer-link__search pbNested pbNestedWrapper " id="pbBlock548025">
+								<div class="pbBlock pbBlockBase">
+									<div>
+										<p>
+											<a href="/kr/search.asp" class="pbOpenNewWindow">사이트내검색</a>
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="footer-link__contact pbNested pbNestedWrapper " id="pbBlock548026">
+								<div class="pbBlock pbBlockBase">
+									<div>
+										<p>
+											<a href="/kr/newcontact/contact_kr.html">문의</a>
+										</p>
+									</div>
+								</div>
+							</div>
+							<!-- <div class="footer-link__share pbNested pbNestedWrapper " id="pbBlock548027">
+								<div class="pbBlock pbBlockBase">
+									<div>
+										<p>
+											<a href="https://www.linkedin.com/company/daikin-chemicals" class="pbOpenNewWindow">공유</a>
+										</p>
+									</div>
+								</div>
+							</div> -->
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+    
+
+<!-- 하단의 class="layerpopup for_eventpop"에 on을 붙이면 팝업이 활성화 됩니다! -->
+	<!-- 레이어 팝업 -->
+		<script type="text/javascript">
+		<!--
+			function setCookie(name, value, expiredays){
+				var todayDate = new Date();
+				todayDate.setDate( todayDate.getDate() + expiredays );
+				document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";";
+			}
+
+			function getCookie(name){
+				var nameOfCookie = name + "=";
+				var x = 0;
+				while (x <= document.cookie.length){
+					var y = (x+nameOfCookie.length);
+					if (document.cookie.substring( x, y ) == nameOfCookie) {
+						if ((endOfCookie=document.cookie.indexOf( ";", y )) == -1){
+							endOfCookie = document.cookie.length;
+						}
+						return unescape( document.cookie.substring( y, endOfCookie ) );
+					}
+					x = document.cookie.indexOf( " ", x ) + 1;
+					if ( x == 0 ){
+						break;
+					}
+				}
+				return "";
+			}
+
+			$(document).ready(function() {
+				/*$(".btn_notsee_today").click(function() {
+					
+						setCookie("layerpopup", "done1", 1);
+					
+					$("#layerpopup").removeClass('on');
+				});
+				$(".close_btn").click(function() {					
+					$("#layerpopup").removeClass('on');
+				});				
+
+				if ( getCookie("layerpopup") != "done1" ){
+					$("#layerpopup").addClass('on');					
+				}*/
+
+// ----------------------------------------------
+
+				$("#notsee_today_pop1").click(function() {
+					
+						setCookie("layerpopup1", "done1", 1);
+					
+					$("#pop_div_1").removeClass('on');
+					popBackgroundCheck();
+				});
+
+				$("#pop_close_1").click(function() {					
+					$("#pop_div_1").removeClass('on');
+					popBackgroundCheck();
+				});				
+
+				if ( getCookie("layerpopup1") != "done1" ){
+					$("#pop_div_1").addClass('on');					
+				}
+// ----------------------------------------------
+				/*$("#notsee_today_pop2").click(function() {
+					
+						setCookie("layerpopup2", "done2", 1);
+					
+					$("#pop_div_2").removeClass('on');
+				});
+
+				$("#pop_close_2").click(function() {					
+					$("#pop_div_2").removeClass('on');
+					popBackgroundCheck();
+				});				
+
+				if ( getCookie("layerpopup2") != "done2" ){
+					$("#pop_div_2").addClass('on');					
+				}*/
+
+				popBackgroundCheck();
+
+			});
+
+			
+
+			/*function popBackgroundCheck(){
+				if(!$("#pop_div_1").hasClass("on") && !$("#pop_div_2").hasClass("on")){
+					$("#layerpopup").removeClass("on");
+				}
+			}*/
+			function popBackgroundCheck(){
+				if(!$("#pop_div_1").hasClass("on")){
+					$("#layerpopup").removeClass("on");
+				}
+			}
+		-->
+		</script>
+<!-- <div id="layerpopup" class="layerpopup for_eventpop on" style="display:block;"> 
+	<div class="pop_bg"></div>
+	<div class="lp_cont_wrap">
+		<div class="lp_cont pop_event">
+			<div class="real_lp_cont" id="pop_div_1">
+				<ul class="main event_list">
+					<li class="close_btn" id="pop_close_1"><a href="javascript:void(0);"><img src="/img/popbn_close_icon.png" alt="배너 닫기 버튼"></a></li>
+					<li class="img">
+						<a href="https://interbattery.or.kr/fairDash.do" target="_blank"><img src="/img/250226_daikin_pop.jpg"></a>
+					</li>
+				</ul>
+				<div class="btn_area">
+					<a href="javascript:void(0);" class="btn_notsee_today" id="notsee_today_pop1" style="background:#000;">오늘 하루동안 이 창을 보지 않기</a>
+				</div>
+			</div>
+			<div class="real_lp_cont" id="pop_div_2">
+				<ul class="main event_list">
+					<li class="close_btn" id="pop_close_2"><a href="javascript:void(0);"><img src="/img/popbn_close_icon.png" alt="배너 닫기 버튼"></a></li>
+					<li class="img"><img src="/img/230119_daikin_pop.png" alt="메인배너"></li>
+				</ul>
+				<div class="btn_area">
+					<a href="javascript:void(0);" class="btn_notsee_today" id="notsee_today_pop2" style="background:#000;">오늘 하루동안 이 창을 보지 않기</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div> -->
+
+
+
+<div id="ModalOverlay" style="display: none;"></div><div id="ModalboxWrapper" style="display: none;"><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="ModalWrapper"><div><div id="ModalTopLeft" style="float: left;"></div><div id="ModalTopCenter" style="float: left;"></div><div id="ModalTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="ModalMiddleLeft" style="float: left;"></div><div id="ModalContent" style="float: left;"><div id="ModalTitle" style="float: left;"></div><div id="ModalCurrent" style="float: left;"></div><button type="button" id="ModalPrevious"></button><button type="button" id="ModalNext"></button><button id="ModalSlideshow"></button><div id="ModalLoadingOverlay" style="float: left;"></div><div id="ModalLoadingGraphic" style="float: left;"></div></div><div id="ModalMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="ModalBottomLeft" style="float: left;"></div><div id="ModalBottomCenter" style="float: left;"></div><div id="ModalBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div></div></div></body></html>

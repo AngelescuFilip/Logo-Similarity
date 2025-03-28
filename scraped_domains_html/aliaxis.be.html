@@ -1,0 +1,1647 @@
+<!DOCTYPE html><html lang="nl"><head>
+            
+
+    
+    
+    
+<script async="" src="https://analytics.aliaxis.be/gtm.js?id=GTM-KNKKNDNH"></script><script async="" src="https://analytics.aliaxis.be/gtm.js?id=GTM-WVPC7S3T"></script><script src="/aliaxis-group/js/gtmUtils.js"></script>
+<script>
+    window.udata = window.udata || [];
+
+                        window.udata = window.udata || [];
+                    udata.push( {"event_name":"page navigation","env_country":"be","page_language":"nl","page_template":"other","consent":[{"category":"necessary","choice":"no choice - accepted","type":"tracking"},{"category":"functional","choice":"rejected","type":"tracking"},{"category":"analytics","choice":"rejected","type":"tracking"},{"category":"advertising","choice":"rejected","type":"tracking"}]});
+            
+    
+    <!-- Google Tag Manager Function -->
+    function addGoogleTagManager(w, d, s, l, i, host, devMode) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        });
+        const f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l !== 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+            'https://' + host + '/gtm.js?id=' + i + dl + (typeof devMode !== 'undefined' && devMode !== '' ? devMode : '');
+        f.parentNode.insertBefore(j, f);
+    }
+    <!-- End Function Google Tag Manager -->
+
+    <!-- Google Tag Manager -->
+    // Add global tag manager
+    addGoogleTagManager(window, document, 'script', 'dataLayer', 'GTM-WVPC7S3T', 'analytics.aliaxis.be', );
+
+        // Add website tag manager
+    addGoogleTagManager(window, document, 'script', 'dataLayer', 'GTM-KNKKNDNH', 'analytics.aliaxis.be', );
+        <!-- End Google Tag Manager -->
+
+    window.onload = function(){
+        addGtmReadingAttributes();
+        addGtmVideoAttributes();
+    }
+</script>
+
+
+
+    
+            
+<link rel="stylesheet" href="/aliaxis-group/css/klaro.min.css">
+
+    
+
+<script defer="" type="application/javascript">
+
+    /*
+    To indicate if we need to send the choice of the user cookies the first time.
+    Indeed, klaro raised the event before the user give his consent.
+    */
+    let sendFirstChoice = false;
+
+    /*
+    To indicate if a modification in the cookies has been set by the user
+    to allow you to send the GTM event only when a modification is made
+    */
+    let hasModificationInGtmCookies = false;
+
+    function sendGtmConsentSubmit() {
+        hasModificationInGtmCookies = false;
+        pushGtmData(
+            {
+                'event_name': "consent submit",
+                'consent': klaroConfig.gtmCookies
+            }
+        );
+    }
+
+    function observeKlaroPopup() {
+        const klaroContainer = document.querySelector('#klaro > .klaro.ds-customize-klaro');
+
+        // We check if the klaroContainer is found, otherwise we set a timeout before calling again this method
+        if (klaroContainer) {
+
+            const observer = new MutationObserver((mutations) => {
+                mutations.forEach((mutation) => {
+                    // When the childList of the klaro container removed some nodes
+                    if (mutation.type === 'childList' && mutation.removedNodes.length > 0) {
+                        const klaroDivContainer = klaroContainer.querySelector("div");
+                        // We check if the content of the div container is empty and if we need to send the event to GTM (only on the first choice)
+                        if (klaroDivContainer && klaroDivContainer.innerHTML.trim() === '' && sendFirstChoice) {
+                            sendFirstChoice = false;
+                            sendGtmConsentSubmit();
+                        }
+                    }
+                });
+            });
+
+            observer.observe(klaroContainer, {
+                childList: true,
+                subtree: true
+            });
+
+            return;
+        }
+
+        setTimeout(function () {
+            observeKlaroPopup();
+        }, 250);
+    }
+
+    function modifiedGtmCookieConsent(consent, service) {
+        if (klaroConfig.gtmCookies.length < klaroConfig.services.length) {
+            return;
+        }
+
+        hasModificationInGtmCookies = true;
+        klaroConfig.gtmCookies.find((gtmCookie, index) => {
+            if (gtmCookie.category === service.name) {
+                gtmCookie.choice = getGtmCookieChoice(service, consent);
+                klaroConfig.gtmCookies[index] = gtmCookie;
+                return true;
+            }
+            return false;
+        });
+    }
+
+    function getGtmCookieChoice(app, consent) {
+        if (app.required) {
+            return "no choice - accepted"
+        }
+
+        if (consent) {
+            return "accepted"
+        }
+        return "rejected";
+    }
+
+    let timeoutSendGtm = undefined;
+
+    var klaroConfig = {
+        version: 1,
+        /*
+        You can customize the ID of the DIV element that Klaro will create when starting
+        up. By default, Klaro will use 'klaro'.
+        */
+        elementID: 'klaro',
+
+        /*
+        You can customize how Klaro persists consent information in the browser. Specify
+        either cookie' (the default) or 'localStorage'.
+        */
+        storageMethod: 'cookie',
+
+        /*
+        You can customize the name of the cookie or localStorage entry that Klaro will
+        use for storing the consent information. By default, Klaro will use 'klaro'.
+        */
+        cookieName: 'klaro',
+
+        /*
+        If set to `true`, Klaro will render the texts given in the
+        `consentModal.description` and `consentNotice.description` translations as HTML.
+        This enables you to e.g. add custom links or interactive content.
+        */
+        htmlTexts: true,
+
+        // Setting 'embedded' to true will render the Klaro modal and notice without
+        // the modal background, allowing you to e.g. embed them into a specific element
+        // of your website, such as your privacy notice.
+        embedded: false,
+
+        // You can group services by their purpose in the modal. This is advisable
+        // if you have a large number of services. Users can then enable or disable
+        // entire groups of services instead of having to enable or disable every service.
+        groupByPurpose: false,
+
+        /*
+        You can change the cookie domain for the consent manager itself. Use this if you
+        want to get consent once for multiple matching domains. By default, Klaro will
+        use the current domain. Only relevant if 'storageMethod' is set to 'cookie'.
+        */
+        cookieDomain: 'www.aliaxis.be',
+
+        /*
+        You can also set a custom expiration time for the Klaro cookie. By default, it
+        will expire after 30 days. Only relevant if 'storageMethod' is set to 'cookie'.
+        */
+        cookieExpiresAfterDays: 30,
+
+        /*
+        You can specify a link to your privacy policy here (relative or absolute), which
+        will then be shown in the notice and modal. You can also specify an object with
+        language-specific links and an optional fallback using the 'default' key:
+        privacyPolicy : {de: "/#datenschutz", en: "/#privacy", default: "/#privacy" },
+        privacyPolicy: 'https://www.fipnet.com/cookie-policy/'
+        */
+        privacyPolicy: '/nl/metanavigation/privacy-en-vertrouwelijkheidsverklaring',
+
+        /*
+        Defines the default state for applications in the consent modal (true=enabled by
+        default). You can override this setting in each app.
+        */
+        default: false,
+
+        /*
+        If 'mustConsent' is set to 'true', Klaro will directly display the consent
+        manager modal and not allow the user to close it before having actively
+        consented or declined the use of third-party applications.
+        */
+        mustConsent: false,
+
+        /*
+        Setting 'acceptAll' to 'true' will show an "accept all" button in the notice and
+        modal, which will enable all third-party apps if the user clicks on it. If set
+        to 'false', there will be an "accept" button that will only enable the apps that
+        are enabled in the consent modal.
+        */
+        acceptAll: true,
+
+        /*
+        Setting 'hideDeclineAll' to 'true' will hide the "decline" button in the consent
+        modal and force the user to open the modal in order to change his/her consent or
+        disable all third-party apps. We strongly advise you to not use this feature, as
+        it opposes the "privacy by default" and "privacy by design" principles of the
+        GDPR (but might be acceptable in other legislations such as under the CCPA)
+        */
+        hideDeclineAll: false,
+
+        /*
+        Setting 'hideLearnMore' to 'true' will hide the "learn more / customize" link in
+        the consent notice. We strongly advise against using this under most
+        circumstances, as it keeps the user from customizing his/her consent choices.
+        */
+        hideLearnMore: false,
+
+        // show cookie notice as modal
+        noticeAsModal: false,
+
+        // You can also remove the 'Realized with Klaro!' text in the consent modal.
+        // Please don't do this! We provide Klaro as a free open source tool.
+        // Placing a link to our website helps us spread the word about it,
+        // which ultimately enables us to make Klaro! better for everyone.
+        // So please be fair and keep the link enabled. Thanks :)
+        disablePoweredBy: true,
+
+        // you can specify an additional class (or classes) that will be added to the Klaro `div`
+        additionalClass: 'ds-customize-klaro',
+
+        // You can define the UI language directly here. If undefined, Klaro will
+        // use the value given in the global "lang" variable. If that does
+        // not exist, it will use the value given in the "lang" attribute of your
+        // HTML tag. If that also doesn't exist, it will use 'en'.
+        lang: 'nl',
+
+        // You can overwrite existing translations and add translations for your
+        // service descriptions and purposes. See `src/translations/` for a full
+        // list of translations that can be overwritten:
+        // https://github.com/KIProtect/klaro/tree/master/src/translations
+        translations: {
+            'nl': {
+                consentNotice: {
+                    description: 'Hallo\u0021\u0020Kunnen\u0020we\u0020alstublieft\u0020enkele\u0020extra\u0020diensten\u0020voor\u0020Analytics\u0020inschakelen\u003F',
+                    learnMore: 'Laat\u0020me\u0020kiezen',
+                    changeDescription: 'Er\u0020waren\u0020veranderingen\u0020sinds\u0020uw\u0020laatste\u0020bezoek,\u0020gelieve\u0020uw\u0020toestemming\u0020te\u0020hernieuwen.',
+                },
+                consentModal: {
+                    title: 'Diensten\u0020die\u0020we\u0020graag\u0020willen\u0020gebruiken',
+                    description: 'Deze\u0020website\u0020maakt\u0020gebruik\u0020van\u0020cookies\u0020voor\u0020het\u0020leveren\u0020van\u0020websitefunctionaliteit\u0020en\u0020voor\u0020analyses,\u0020reclame\u0020en\u0020het\u0020gebruik\u0020van\u0020sociale\u0020media.',
+                    privacyPolicy: {
+                        name: 'Cookieverklaring',
+                        text: 'Voor\u0020meer\u0020informatie\u0020over\u0020de\u0020cookies\u0020die\u0020wij\u0020plaatsen\u0020en\u0020hoe\u0020u\u0020uw\u0020cookie\u002Dinstellingen\u0020kunt\u0020wijzigen,\u0020zie\u0020onze\u0020\u007BprivacyPolicy\u007D.\u0020Je\u0020kunt\u0020de\u0020niet\u002Dessenti\u00EBle\u0020cookies\u0020op\u0020onze\u0020Website\u0020accepteren\u0020of\u0020weigeren\u0020door\u0020een\u0020van\u0020de\u0020volgende\u0020links\u0020te\u0020kiezen\u003A',
+                    }
+                },
+                necessary: {
+                    title: 'Noodzakelijk\u0020',
+                    description: 'Deze\u0020cookies\u0020zijn\u0020absoluut\u0020noodzakelijk\u0020om\u0020de\u0020basisfuncties\u0020zoals\u0020paginanavigatie,\u0020het\u0020invullen\u0020van\u0020formulieren\u0020en\u0020toegang\u0020tot\u0020beveiligde\u0020delen\u0020van\u0020de\u0020website\u0020mogelijk\u0020te\u0020maken.\u0020Zonder\u0020deze\u0020cookies\u0020kan\u0020de\u0020website\u0020niet\u0020naar\u0020behoren\u0020functioneren.\u0020Deze\u0020cookies\u0020slaan\u0020geen\u0020persoonlijk\u0020identificeerbare\u0020informatie\u0020op.',
+                },
+                functional: {
+                    title: 'Functioneel\u0020',
+                    description: 'Met\u0020deze\u0020cookies\u0020kan\u0020de\u0020website\u0020verbeterde\u0020functionaliteit\u0020en\u0020personalisatie\u0020bieden.\u0020Ze\u0020kunnen\u0020worden\u0020ingesteld\u0020door\u0020ons\u0020of\u0020door\u0020externe\u0020leveranciers\u0020wiens\u0020diensten\u0020we\u0020aan\u0020onze\u0020pagina\u0027s\u0020hebben\u0020toegevoegd.\u0020Als\u0020je\u0020deze\u0020cookies\u0020niet\u0020toestaat,\u0020is\u0020het\u0020mogelijk\u0020dat\u0020sommige\u0020of\u0020al\u0020deze\u0020diensten\u0020niet\u0020goed\u0020functioneren.',
+                },
+                analytics: {
+                    title: 'Analytisch\u0020',
+                    description: 'Met\u0020deze\u0020cookies\u0020kunnen\u0020we\u0020bezoeken\u0020en\u0020verkeersbronnen\u0020meten,\u0020zodat\u0020we\u0020de\u0020prestaties\u0020van\u0020onze\u0020site\u0020kunnen\u0020verbeteren.\u0020Ze\u0020helpen\u0020ons\u0020om\u0020te\u0020weten\u0020welke\u0020pagina\u0027s\u0020het\u0020meest\u0020en\u0020het\u0020minst\u0020populair\u0020zijn\u0020en\u0020om\u0020te\u0020zien\u0020hoe\u0020bezoekers\u0020zich\u0020door\u0020de\u0020site\u0020bewegen.\u0020Alle\u0020informatie\u0020die\u0020deze\u0020cookies\u0020verzamelen\u0020is\u0020gebundeld\u0020en\u0020daarom\u0020anoniem.',
+                },
+                advertising: {
+                    title: 'Marketing\u0020',
+                    description: 'Deze\u0020cookies\u0020kunnen\u0020via\u0020onze\u0020site\u0020worden\u0020ingesteld\u0020door\u0020onze\u0020reclamepartners\u0020om\u0020advertenties\u0020weer\u0020te\u0020geven\u0020die\u0020relevant\u0020zijn\u0020voor\u0020jouw\u0020interesses.\u0020Ze\u0020slaan\u0020geen\u0020directe\u0020persoonlijke\u0020informatie\u0020op,\u0020maar\u0020zijn\u0020gebaseerd\u0020op\u0020de\u0020unieke\u0020identificatie\u0020van\u0020jouw\u0020browser\u0020en\u0020internetapparaat.\u0020Als\u0020je\u0020deze\u0020cookies\u0020niet\u0020toestaat,\u0020krijg\u0020je\u0020minder\u0020gerichte\u0020advertenties\u0020te\u0020zien.',
+                },
+                acceptAll: 'Alles\u0020aanvaarden',
+                acceptSelected: 'Selectie\u0020aanvaarden',
+                close: 'Sluiten',
+                decline: 'Ik\u0020weiger\u0020cookies',
+                save: 'Opslaan',
+                ok: 'Ik\u0020accepteer\u0020cookies',
+                service: {
+                    disableAll: {
+                        title: 'Alles\u0020inschakelen\/uitschakelen',
+                        description: 'Activeert\/deactiveert\u0020alle\u0020diensten.',
+                    },
+                    purpose: 'Doel',
+                    required: {
+                        title: '\u0028verplicht\u0029',
+                    }
+                },
+                purposes: {
+                    necessary: {
+                        title:                         '[cookieConsent.purposeTitles.necessary]' ,
+                    },
+                    functional: {
+                        title:                         '[Dienstverlening]' ,
+                    },
+                    analytics: {
+                        title:                         '[cookieConsent.purposeTitles.analytics]' ,
+                    },
+                    advertising: {
+                        title:                         '[Advertenties]' ,
+                    },
+                },
+            }
+        },
+
+        /*
+        Here you specify the third-party apps that Klaro will manage for you.
+        */
+        services: [
+            {
+                /*
+                Each app must have a unique name. Klaro will look for HTML elements with a
+                matching 'data-name' attribute to identify elements that belong to this app.
+                */
+                name: 'necessary',
+
+                /*
+                If 'default' is set to 'true', the app will be enabled by default. This
+                overrides the global 'default' setting.
+                */
+                default: true,
+
+                /*
+                The title of you app as listed in the consent modal. You can also specify
+                translated app titles in the 'translations' section. In that case, you need to
+                leave the title attribute here unspecified.
+                */
+                title: null,
+
+                /*
+                The purpose(s) of this app that will be listed on the consent notice. Do not
+                forget to add translations for all purposes you list here.
+                */
+                purposes: [
+                                    ],
+
+                /*
+                The category of the consent. Within the “tracking” consent type, consider using the following values:
+                - necessary
+                - functional
+                - analytics
+                - advertising
+                */
+                gtmCategory: 'necessary',
+
+                /*
+                The type of consent. Consider using the following values:
+                - tracking
+                - other
+                */
+                gtmType: 'tracking',
+
+                /*
+                You can define an optional callback function that will be called each time the
+                consent state for the given app changes. The consent value will be passed as the
+                first parameter to the function (true=consented). The `app` config will be
+                passed as the second parameter.
+                */
+                callback: function (consent, service) {
+                },
+
+                /*
+                If 'required' is set to 'true', Klaro will not allow this app to be disabled by
+                the user. Use this for apps that are always required for your website to
+                function (e.g. shopping cart cookies).
+                */
+                required: true,
+
+                /*
+                If 'optOut' is set to 'true', Klaro will load this app even before the user has
+                given explicit consent. We strongly advise against this.
+                */
+                optOut: false,
+
+                /*
+                If 'onlyOnce' is set to 'true', the app will only be executed once regardless
+                how often the user toggles it on and off. This is relevant e.g. for tracking
+                scripts that would generate new page view events every time Klaro disables and
+                re-enables them due to a consent change by the user.
+                */
+                onlyOnce: true,
+            },
+            {
+                name: 'functional',
+                default: false,
+                purposes: [
+                                        'functional'
+                                    ],
+                gtmCategory: 'functional',
+                gtmType: 'tracking',
+                callback: function (consent, service) {
+                    modifiedGtmCookieConsent(consent, service);
+                },
+                required: false,
+                optOut: false,
+                onlyOnce: false,
+            },
+            {
+                name: 'analytics',
+                default: false,
+                purposes: [
+                                    ],
+                gtmCategory: 'analytics',
+                gtmType: 'tracking',
+                callback: function (consent, service) {
+                    modifiedGtmCookieConsent(consent, service);
+                },
+                required: false,
+                optOut: false,
+                onlyOnce: false,
+            },
+            {
+                name: 'advertising',
+                default: false,
+                purposes: [
+                                        'advertising'
+                                    ],
+                gtmCategory: 'advertising',
+                gtmType: 'tracking',
+                callback: function (consent, service) {
+                    modifiedGtmCookieConsent(consent, service);
+                },
+                required: false,
+                optOut: false,
+                onlyOnce: false,
+            }
+        ],
+
+        /*
+        Store the gtm cookie consents
+         */
+        gtmCookies: [],
+
+        /*
+        You can define an optional callback function that will be called each time the
+        consent state for any given app changes. The consent value will be passed as the
+        first parameter to the function (true=consented). The `app` config will be
+        passed as the second parameter.
+        */
+        callback: function (consent, app) {
+            const choice = getGtmCookieChoice(app, consent);
+
+            if (this.gtmCookies.length < this.services.length) {
+                this.gtmCookies.push(
+                    {
+                        'category': app.gtmCategory,
+                        'choice': choice,
+                        'type': app.gtmType
+                    }
+                );
+            }
+
+            let documentCookies = document.cookie.split(';').reduce((ac, str) => Object.assign(ac, {[str.split('=')[0].trim()]: str.split('=')[1]}), {});
+            // We need to check the cookies has not already sent by checking the key klaro in document cookies
+            // and there is no modification in the cookies consent from the user
+            if (!hasModificationInGtmCookies && this.cookieName in documentCookies) {
+                return;
+            }
+
+            console.log(
+                'User consent for app ' + app.name + ': consent=' + consent + ' => ' + choice
+            );
+
+            if (this.gtmCookies.length === this.services.length) {
+                // We need to check this condition to be sure to send the event when the user indicates his choice,
+                // so we delayed the event in the mutation observer
+                sendFirstChoice = false;
+                if (!(this.cookieName in documentCookies)) {
+                    sendFirstChoice = true;
+                    return;
+                }
+
+                // We need to have a timeout in order to avoid to send multiple time the consent submit event
+                // if the user accept multiple cookie at same time
+                if (timeoutSendGtm !== undefined) {
+                    clearTimeout(timeoutSendGtm);
+                    timeoutSendGtm = undefined;
+                }
+
+                timeoutSendGtm = setTimeout(function () {
+                    timeoutSendGtm = undefined;
+                    sendGtmConsentSubmit();
+                }, 250);
+            }
+        },
+    };
+
+    observeKlaroPopup();
+</script>
+
+<script defer="" type="application/javascript" src="/aliaxis-group/js/klaro-no-translations-no-css.js"></script>
+
+<script>
+    {
+        function initialize() {
+            function listener(event) {
+                event.preventDefault();
+                klaro.show();
+            }
+
+            document.querySelectorAll(".show-klaro").forEach(
+                (element) => {
+                    element.addEventListener("click", listener, true);
+                }
+            );
+        }
+
+        if (document.readyState === "complete") {
+            initialize();
+        } else {
+            window.addEventListener("load", () => {
+                initialize();
+            }, true);
+        }
+    }
+</script>
+    
+    <script src="/bundles/fosjsrouting/js/router.js"></script>
+    <script src="/js/routing?callback=fos.Router.setData"></script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    		
+	
+<link rel="canonical" href="https://www.aliaxis.be/">
+    
+
+                
+
+        
+    
+    
+        
+    
+    <title>Aliaxis Belgium</title>
+    
+
+
+            <link rel="alternate" href="https://www.aliaxis.be/" hreflang="nl-be">
+            <link rel="alternate" href="https://www.aliaxis.be/fr" hreflang="fr-be">
+    
+    <link rel="apple-touch-icon" sizes="57x57" href="/aliaxis-group/images/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/aliaxis-group/images/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/aliaxis-group/images/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/aliaxis-group/images/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/aliaxis-group/images/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/aliaxis-group/images/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/aliaxis-group/images/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/aliaxis-group/images/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/aliaxis-group/images/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/aliaxis-group/images/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/aliaxis-group/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/aliaxis-group/images/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/aliaxis-group/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/aliaxis-group/images/favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/aliaxis-group/images/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    
+    <link rel="preload" href="/aliaxis-group/fonts/Gilroy/Gilroy-Medium.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="/aliaxis-group/fonts/icomoon_2e6f7ea2ac13be08650f8fbd2628aa20.ttf" as="font" type="font/ttf" crossorigin="">
+<link rel="preload" href="/aliaxis-group/fonts/Gilroy/Gilroy-SemiBold.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="/aliaxis-group/fonts/Gilroy/Gilroy-Bold.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="/aliaxis-group/fonts/Gilroy/Gilroy-Bold.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="/aliaxis-group/_/node_modules/material-icons/iconfont/MaterialIcons-Regular_0509ab09c1b0d2200a4135803c91d6ce.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="/aliaxis-group/css/style.min.css" as="style">
+<link rel="preload" href="/aliaxis-group/css/swiper.min.css" as="style">
+<link rel="preload" href="/aliaxis-group/css/qw.css" as="style">
+<link rel="preload" href="/aliaxis-group/css/style.datasolution.css" as="style">        <link rel="stylesheet" href="/aliaxis-group/css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/aliaxis-group/css/style.min.css">
+    <link rel="stylesheet" href="/aliaxis-group/css/swiper.min.css">
+    <link rel="stylesheet" href="/aliaxis-group/css/qw.css">
+    <link rel="stylesheet" href="/aliaxis-group/css/msform.css">
+    <link rel="stylesheet" href="/aliaxis-group/css/style.datasolution.css">
+    
+
+<!-- Google Tag Manager -->
+<script type="text/plain" data-type="text/javascript" data-name="gtm">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TDDKH2H');</script>
+<!-- End Google Tag Manager -->
+
+</head>
+<body class="page page--landing page--corporate">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src=https://www.googletagmanager.com/ns.html?id=GTM-TDDKH2H
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+
+
+<!-- main-content -->
+            
+
+    
+        
+                    
+        
+        
+                    <header class="site-header  site-header--has-top-banner-header site-header--big site-header--blue site-header--landing bg--image bg--image-overlay" style="background-image: url(/website/aliaxis-templates/global/Training/Dummy-Images/image-thumb__22185__slider_background_image/image-2-864x576px.webp);">
+        
+                    <div class="top-banner-header-container">
+        
+
+
+
+<div class="alert alert--top-header-banner bg--redlight">
+    <div class="container">
+        <div class="alert__inner">
+            <div class="alert__text">
+                                                            <p>Onze website ondergaat op maandag 31 maart van 06.00 uur tot 18.00 uur gepland onderhoud. Gedurende deze periode kunt u tijdelijke onderbrekingen ervaren. Onze excuses voor het ongemak!</p>
+
+                                                </div>
+                    </div>
+    </div>
+</div>
+
+
+        <link href="/aliaxis-group/css/top-banner-header.css" rel="stylesheet">
+    </div>
+
+    <script src="/aliaxis-group/js/jquery-3.5.0.min.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+            const topHeaderBannerContainer = $(".top-banner-header-container");
+
+            // A property is stored in the local storage until the cookies will be removed in case we closed the top banner
+            let hideBanner = localStorage.getItem('topBannerHeaderHide') !== null && localStorage.getItem('topBannerHeaderHide') === 'true';
+            if(hideBanner){
+                topHeaderBannerContainer.addClass("d-none").hide();
+                return;
+            }
+
+            topHeaderBannerContainer.removeClass("d-none").show();
+
+            function convertRemToPixels(rem) {
+                return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
+            }
+
+            function calculateHeaderTop(animate = true){
+                let headerTopHeight = topHeaderBannerContainer.height();
+
+                const secondaryMenu = $(".site-header__secondary-menu");
+                const headerTop = $(".site-header__top");
+
+                let hasSecondaryMenu = false;
+
+                secondaryMenu.css("top", headerTopHeight);
+                if(secondaryMenu.length){
+                    if(secondaryMenu.not(":visible").length === 0){
+                        hasSecondaryMenu = true;
+                        headerTopHeight += secondaryMenu.height();
+                    }
+                }
+
+                const paddingTop = headerTopHeight + convertRemToPixels(7.5);
+
+                if(animate && hasSecondaryMenu){
+                    headerTop.animate({"top": parseInt(headerTopHeight)}, 100);
+                    $(".site-header__body").animate({"padding-top":parseInt(paddingTop)}, 100);
+                } else {
+                    headerTop.css("top", parseInt(headerTopHeight));
+                    $(".site-header__body").css("padding-top", parseInt(paddingTop));
+                }
+
+                let mql = window.matchMedia("(max-width: 991px)");
+                if (mql.matches) {
+                    headerTopHeight += headerTop.height();
+                    $(".form__search--mini").css("top", parseInt(headerTopHeight));
+                    $(".navbar--main").css("margin-top", parseInt(headerTopHeight) - 1);
+                    $(".nav-dropdown").attr("style", "margin-top:" + (parseInt(headerTopHeight) - 1) + "px !important;");
+                } else {
+                    $(".form__search--mini").css("top", '');
+                    $(".navbar--main").css("margin-top", '');
+                    $(".nav-dropdown").css("margin-top", '');
+                }
+
+                if ($(window).scrollTop() >= 10) {
+                    $('.alert--top-header-banner').addClass('banner-header__top--shrink');
+                } else {
+                    $('.alert--top-header-banner').removeClass('banner-header__top--shrink');
+                }
+            }
+
+            function resetHeaderCalculation(){
+                const secondaryMenu = $(".site-header__secondary-menu");
+                const headerTop = $(".site-header__top");
+
+                secondaryMenu.css("top", '');
+                headerTop.css("top", '');
+                $(".site-header__body").css("padding-top",  '');
+                $(".form__search--mini").css("top", '');
+                $(".navbar--main").css("margin-top", '');
+                $(".nav-dropdown").css("margin-top", '');
+                $('.alert--top-header-banner').removeClass('banner-header__top--shrink');
+            }
+
+            let doItOnResize;
+            // When resizing the windows, the header need to be recalculated due to some CSS rules
+            window.addEventListener('resize', function() {
+                if(hideBanner){
+                    return;
+                }
+                // We need to calculate the header top without animation to avoid bad UI effect
+                calculateHeaderTop(false);
+                // We create a timeout to recalculate the correct position of the header at the end of the resize event
+                clearTimeout(doItOnResize);
+                doItOnResize = setTimeout(function () {
+                    calculateHeaderTop();
+                }, 250);
+            }, true);
+
+            // When scroll is done, the header will be shrunk, so we need to calculate again the top position header
+            // but only one time because when the scroll is bigger than 10px.
+            let alreadyScroll = false;
+            let resetScroll = false;
+            window.addEventListener("scroll", function() {
+                if(hideBanner){
+                    return;
+                }
+
+                // To avoid to calculate and modify the css properties we check if it's necessary to calculate again the header
+                let needToCalculate = false;
+                if($(window).scrollTop() >= 10){
+                    if(!alreadyScroll){
+                        resetScroll = false;
+                        alreadyScroll = true;
+                        needToCalculate = true;
+                    }
+                } else {
+                    alreadyScroll = false;
+                    if(!resetScroll){
+                        resetScroll = true;
+                        needToCalculate = true;
+                    }
+                }
+
+                if(needToCalculate){
+                    // Due to animation on the second navigation top bar,
+                    // we need to delay the calculation of the header in order to have the correct values
+                    setTimeout(function () {
+                        calculateHeaderTop();
+                    }, 250);
+                }
+            }, true);
+
+            // We start calculating the position of the header
+            calculateHeaderTop();
+
+            // We need to delay to recalculate the position of the header in order to avoid some empty space
+            setTimeout(function () {
+                calculateHeaderTop();
+            }, 500);
+
+            // Close the banner and reset the position of the header
+            $(".js-alert--top-header-banner__close").on("click", function(){
+                hideBanner = true;
+                localStorage.setItem('topBannerHeaderHide', hideBanner);
+                topHeaderBannerContainer.addClass("d-none").hide();
+                resetHeaderCalculation();
+            });
+        });
+    </script>
+
+
+            
+                        <div class="site-header__top d-flex align-items-center w-100" style="top: 60px;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center align-items-center w-100">
+                            <!-- Logo -->
+<div class="site-header__logo ml-auto text-left">
+    <a id="logo" href="/" title="" class="d-inline-block">
+        <img src="/aliaxis-group/images/logo-white.svg" alt="Aliaxis" class="site-header__logo__image" width="170" height="40">
+    </a>
+</div>
+<!-- End Logo -->                                
+        
+    
+    
+    <nav class="navbar navbar--main navbar--single-lang d-flex align-items-lg-center flex-wrap flex-column " role="navigation" aria-label="Main Navigation">
+        <ul class="navbar-nav navbar-nav--main flex-column flex-lg-row align-items-center" id="main-nav" aria-label="Main Navigation">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+                                            <li class="nav-item nav-item--main">
+                            <a href="/nl/oplossingen" target="" class="nav-link nav-link--main">Oplossingen</a>
+                        </li>
+                                                                                                                                                                                                                                                                                                                                                                                                
+                    
+
+                        
+                                                                        
+                        
+                                                                                                                        
+                                                
+                        <li class="nav-item nav-item--main  closed">
+                            <a href="#dropdown-menu-2" class="nav-link nav-link--main collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="dropdown-menu-2">
+                                Kennis
+                            </a>
+
+                            <div class="nav-dropdown collapse" id="dropdown-menu-2">
+                                <div class="inner">
+                                    <div class="list-groups ">
+
+                                                                                    <ul class="list-group">
+                                                                                            <li class="nav-item d-block d-lg-none">
+                                                    <button class="nav-link dropdown-link btn--empty js-close-dropdown-menu">
+                                                        <i class="material-icons mr-2">arrow_back</i> Back
+                                                    </button>
+                                                </li>
+                                            
+                                                                                                                                                                                
+                                            
+                                                                                                                                        
+                                                                                            
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/nl/kennis/downloads" target="" class="nav-link dropdown-link">Downloads</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/nl/kennis/service-technische-ondersteuning" target="" class="nav-link dropdown-link">Service &amp; (technische) ondersteuning</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+                                            </ul>
+                                        
+                                        
+                                    </div>
+
+                                    
+                                                                                                        </div>
+                            </div>
+                        </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+                    
+
+                        
+                                                                        
+                        
+                                                                                                                        
+                                                
+                        <li class="nav-item nav-item--main  closed">
+                            <a href="#dropdown-menu-3" class="nav-link nav-link--main collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="dropdown-menu-3">
+                                Over ons
+                            </a>
+
+                            <div class="nav-dropdown collapse" id="dropdown-menu-3">
+                                <div class="inner">
+                                    <div class="list-groups ">
+
+                                                                                    <ul class="list-group">
+                                                                                            <li class="nav-item d-block d-lg-none">
+                                                    <button class="nav-link dropdown-link btn--empty js-close-dropdown-menu">
+                                                        <i class="material-icons mr-2">arrow_back</i> Back
+                                                    </button>
+                                                </li>
+                                            
+                                                                                                                                                                                
+                                            
+                                                                                                                                        
+                                                                                            
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/nl/over-ons/wij-zijn-aliaxis" target="" class="nav-link dropdown-link">Wij zijn Aliaxis</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/nl/over-ons/werken-bij" target="" class="nav-link dropdown-link">Werken bij</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/nl/over-ons/team" target="" class="nav-link dropdown-link">Team</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/nl/over-ons/nieuws" target="" class="nav-link dropdown-link">Nieuws</a>
+                                                            </li>
+                                                                                                                                                                                                        
+                                            </ul>
+                                        
+                                        
+                                    </div>
+
+                                    
+                                                                                                        </div>
+                            </div>
+                        </li>
+                                                                                                        
+                                            <li class="nav-item nav-item--main">
+                            <a href="/nl/contact" target="" class="nav-link nav-link--main">Contact</a>
+                        </li>
+                                                                                                                                                                                    </ul>
+    </nav>
+                            <nav class="navbar navbar--sub text-right d-flex align-items-center flex-wrap flex-row" role="navigation" aria-label="Sub Navigation">
+    <ul class="navbar-nav navbar-nav--sub flex-row ml-auto" id="sub-nav" aria-label="Sub Navigation">
+        
+
+
+	<li class="nav-item nav-item--sub nav-item--language d-lg-flex closed">
+	<a href="#language-header" class="nav-link nav-link--sub nav-link--sub--language language__toggle" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="language-header">
+		<i class="icon icon-Language mr-2"></i> NL
+	</a>
+	<div class="nav-dropdown nav-dropdown--language collapse" id="language-header">
+		<ul class="list-group">
+			<li class="nav-item d-block d-lg-none">
+				<button class="nav-link dropdown-link btn--empty js-close-dropdown-menu">
+					<i class="material-icons mr-2">arrow_back</i> back.link
+				</button>
+			</li>
+
+							<li class="nav-item dropdown-item">
+											<a href="https://www.aliaxis.be/" class="nav-link dropdown-link active">
+							Nederlands
+						</a>
+									</li>
+							<li class="nav-item dropdown-item">
+											<a href="https://www.aliaxis.be/fr" hreflang="fr" class="nav-link dropdown-link">
+							Frans
+						</a>
+									</li>
+					</ul>
+	</div>
+</li>
+        
+                    <li class="nav-item nav-item--sub nav-item--search">
+                <button class="form__search__toggle js-form__search__toggle">
+                    <i class="material-icons">close</i>
+                    <i class="material-icons">search</i>
+                </button>
+                <form action="/nl/globalsearch" class="form form__search form__search--mini">
+                    <div class="form__search-input-wrapper">
+                        <input type="search" name="q" placeholder="Zoek op website" class="form-control" value="">
+                        <button class="form__search__button mr-auto">
+                            <i class="material-icons">search</i>
+                        </button>
+                    </div>
+                </form>
+            </li>
+        
+                                                        <li class="nav-item nav-item--menu-toggle d-block d-lg-none">
+                    <button class="site-header__menu-toggle js-site-header__menu-toggle">
+                        <i class="material-icons">close</i>
+                        <i class="material-icons">menu</i>
+                    </button>
+                </li>
+                    
+                                                
+            </ul>
+</nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                            <div class="site-header__body text-center" style="padding-top: 171px;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="site-header__content">
+                                                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="pimcore_area_group_header_headline pimcore_area_content">            <h1 class="site-header__title alt">
+            Leidingsystemen voor <br>
+&nbsp;water en energie
+        </h1>
+    </div><div class="pimcore_area_group_header_wysiwyg pimcore_area_content">            <div class="site-header__intro">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h2>daar, waar mensen het nodig hebben.</h2>
+
+                </div>
+            </div>
+        </div>
+    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                                        <div class="shape shape--primary">
+                    <svg viewBox="0 0 100 6.1" style="">
+                                                                            <path d="M 0 10, 0 0 q 50 12.2 100 0, 100 10, 0 10" stroke="none" stroke-width="1" fill="#32aaff"></path>
+                                                                        Sorry, your browser does not support inline SVG.
+                    </svg>
+                </div>
+                    </header>
+    
+        <main>
+                    <div class="pimcore_area_group_intro pimcore_area_content">
+    <section class="section  intro intro--light  ">
+        <header class="section__header section__header--global intro__header">
+            <div class="shape shape--media shape--global mb-0">
+                                                                                        <img src="/website/aliaxis-templates/global/Training/Intro/circle-white.svg" class="intro__image" alt="" width="570" height="570">
+                                            
+                                            </div>
+                                            <div class="container">
+                    <div class="row">
+                                                <div class="col-12 col-lg-8 offset-lg-2">
+                                                            <h2 class="section__title intro__title h1 alt ">
+                                    we make life flow
+                                </h2>
+                            
+                                                            <div class="section__intro intro__introduction">
+                                    <div class="entry">
+                                        <p>Shaping a<br>
+better tomorrow by connecting<br>
+people with water and energy</p>
+
+<p>&nbsp;</p>
+
+<p><span style="font-size:26px">Het leven is afhankelijk van water en energie. Onze missie is om de wereld te helpen met schoon water, sanitaire voorzieningen, én energie toegankelijk te maken voor iedereen.</span></p>
+
+                                    </div>
+                                </div>
+                                                    </div>
+                    </div>
+                </div>
+                                    </header>
+
+                <div class="section__body intro__body text-center">
+            <div class="container">
+                <div class="row">
+                    
+                                        <div class="col-lg-8 offset-lg-2">
+                        <div class="intro__video">
+                            <div class="d-block">
+                            <div class="media">
+                                <div class="media__ratio media__ratio--video">
+                                    <!-- Video -->
+                                                                                                                        <div id="pimcore_video_content:1.content_video" class="pimcore_tag_video ">
+            <iframe width="100%" height="300" src="https://www.youtube-nocookie.com/embed/84mYO7dr5oY?wmode=transparent&amp;modestbranding=1&amp;rel=0" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+        </div>
+                                                                                                            </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+
+
+
+                    <div class="col-12 col-lg-6 offset-lg-3">
+
+                                                    <div class="intro__text">
+                                <div class="entry">
+                                    
+                                </div>
+                            </div>
+                        
+                                                    <div class="intro__actions">
+                                <a href="/nl/over-ons/wij-zijn-aliaxis" target="_blank" class="btn btn--gradient-blue btn--blur">
+                                    Over Aliaxis <i class="icon icon-Long-arrow"></i>
+                                </a>
+                            </div>
+                                            </div>
+                </div>
+            </div>
+        </div>
+            </section>
+
+    
+</div><div class="pimcore_area_group_offer_block pimcore_area_content">
+        <section class="section content-blocks content-blocks--offer offer mb-0" style="background-image: url(/website/aliaxis-templates/global/Training/Dummy-Images/image-thumb__26940__offer-block-background/home-bubbels.webp)">
+        <div class="offer__images offer__images--alt">
+            <div class="content ">
+                                                            <div class="offer__image-wrapper offer__image-wrapper-1">
+                            <div class="stretch-image bg--image-overlay">
+                                <img src="/website/aliaxis-be/Aliaxis%20-%20sfeer%20-%20corporate%20-%20toepassingen/sfeer-corporate/image-thumb__396631__offer-block-image/badderen-570x352.webp" class="offer__image offer__image--1" loading="lazy">
+                            </div>
+                        </div>
+                                                                                <div class="offer__image-wrapper offer__image-wrapper-2">
+                            <div class="stretch-image ">
+                                <img src="/website/aliaxis-be/Productcatalogus/Dakgoten/image-thumb__396635__offer-block-image/nicoll-dakgoot-hwa-604x403.webp" class="offer__image offer__image--2" loading="lazy">
+                            </div>
+                        </div>
+                                                                                <div class="offer__image-wrapper offer__image-wrapper-3">
+                            <div class="stretch-image ">
+                                <img src="/website/aliaxis-be/Aliaxis%20BE%20-%20intern/image-thumb__396636__offer-block-image/kind-regen-970x612.webp" class="offer__image offer__image--3" loading="lazy">
+                            </div>
+                        </div>
+                                                                                <div class="offer__image-wrapper offer__image-wrapper-4">
+                            <div class="stretch-image ">
+                                <img src="/website/aliaxis-be/Aliaxis%20-%20sfeer%20-%20corporate%20-%20toepassingen/sfeer-corporate/image-thumb__396777__offer-block-image/zwarte-laarsjes-regen.webp" class="offer__image offer__image--4" loading="lazy">
+                            </div>
+                        </div>
+                                                                                <div class="offer__image-wrapper offer__image-wrapper-5">
+                            <div class="stretch-image bg--image-overlay">
+                                <img src="/website/aliaxis-be/Productcatalogus/PE%20verbindingstechniek/image-thumb__396634__offer-block-image/friatec-1-604x464.webp" class="offer__image offer__image--5" loading="lazy">
+                            </div>
+                        </div>
+                                                </div>
+        </div>
+        <div class="content-block content-block--offer offer__content-block">
+            <div class="container">
+                <div class="row">
+                                            <div class="col-12">
+                            <div class="content-block__wrapper">
+                                <div class="row">
+                                    <div class="col-lg-6 offset-lg-6">
+                                        <div class="content-block__body content-block__body--spacier offer__body">
+                                            <div class="editmode-index">
+                                                <div class="pimcore_area_group_headline pimcore_area_content">
+            <div class="row">
+            <div class="col-12 text-left">
+                <h1 class="color--redlight">
+                    Wat hebben we jou te bieden
+                </h1>
+            </div>
+        </div>
+    </div><div class="pimcore_area_group_wysiwyg pimcore_area_content">    <p>We bieden een breed scala aan innovatieve producten en diensten voor gebouwen, infrastructuur en industrie, waarbij de voordelen voor de eindgebruiker altijd centraal staan. </p>
+
+</div><div class="pimcore_area_group_button pimcore_area_content">
+
+        
+    <div class="row">
+        <div class="col-12 text-left">
+                            <a href="/nl/oplossingen" class="btn btn--gradient-blue btn--blur " title="oplossingen">
+                    Ga naar onze oplossingen
+                    <i class="icon icon-Long-arrow"></i>
+                </a>
+                    </div>
+    </div>
+</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                                        </div>
+            </div>
+        </div>
+    </section>
+</div><div class="pimcore_area_group_content_block pimcore_area_content">                                                        <section class="section content-blocks content-blocks--type-6 mb-0">
+                                    <div class="content-block content-block--type-6 color--white bg--gradient-green-horizontal d-flex align-items-center">
+                                                    <div class="content bg--image d-none d-md-block" style="background-image: url(/website/aliaxis-be/Aliaxis%20-%20sfeer%20-%20corporate%20-%20toepassingen/sfeer-corporate/image-thumb__396640__content-block-bg-image/thomas-lambert-407374-unsplash_1.webp);"></div>
+                                                                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="content-block__wrapper content-block__wrapper--type-6">
+                                            <div class="row">
+                                                <div class="col-md-6 col-lg-5">
+                                                    <div class="content-block__body content-block__body--spacier">
+                                                        <div class="pimcore_area_group_headline pimcore_area_content">
+            <div class="row">
+            <div class="col-12 text-left">
+                <h1 class="color--white">
+                    The Aliaxis way
+                </h1>
+            </div>
+        </div>
+    </div><div class="pimcore_area_group_wysiwyg pimcore_area_content">    <h6><strong>Samen bereiken we meer.</strong></h6>
+
+<p> </p>
+
+<h6>Met ons lokale hart in België en een globale mindset staan we klaar om jou op een snelle en flexibele manier te helpen. Maar in het bijzonder willen we de kwaliteit van leven van mensen verbeteren door onze waarden na te leven en echt het verschil te maken.</h6>
+
+<p> </p>
+
+<h6>Zo werken we aan een <strong>betere</strong> en <strong>duurzamere</strong> toekomst!</h6>
+
+</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                            </div>
+                            </section>
+                                                
+                            </div><div class="pimcore_area_group_spacer pimcore_area_content">
+
+            <div class="extra-large-spacer"></div>
+    </div><div class="pimcore_area_group_container pimcore_area_content">                <div class="container-with-gradient container-fluid     ">
+                <div class="container">
+                        <div class="pimcore_area_group_columns pimcore_area_content">
+    
+    <div class="row justify-content-start align-items-stretch   ">
+                                                            <div class="  col">
+                <div class="pimcore_area_group_headline pimcore_area_content">
+            <div class="row">
+            <div class="col-12 text-center">
+                <h3 class="color--bluelight">
+                    Laatste nieuws en info!
+                </h3>
+            </div>
+        </div>
+    </div>
+            </div>
+            </div>
+</div>
+                    </div>
+            </div>
+</div><div class="pimcore_area_group_content_block pimcore_area_content">                                                                <section class="section content-blocks content-blocks--type-7 mb-0">
+                                                        
+                    <div class="content-block content-block--type-7 content-block--has-bg  bg--gray1 d-md-flex align-items-center">
+                                                    <div class="content-block__media content-block__media--type-7 content-block__media--right media">
+                                <div class="media__ratio">
+                                    <img src="/website/aliaxis-be/Aliaxis%20BE%20-%20intern/image-thumb__396852__content-block-image/building%20Herstal%20bleu%20logo%20aliaxis%20simulation.webp" class="media__source" loading="lazy">
+                                </div>
+                            </div>
+                                                                            <div class="container">
+                                <div class="row d-flex">
+                                    <div class="col-md-5">
+                                        <div class="content-block__body content-block__body--type-7">
+                                            <div class="pimcore_area_group_wysiwyg pimcore_area_content">    <h3>Nicoll België heet nu Aliaxis Belgium </h3>
+
+<p><strong>De vertrouwde kwaliteit van de Nicoll-oplossingen blijft.</strong></p>
+
+<p>U kan blijven rekenen op de vertrouwde kwaliteit van de Nicoll-oplossingen, zoals dakgoten, vloergoten, PVC-afvoer, sifons en beluchters.  <br>
+ <br>
+Daarnaast bieden we met andere A-merken een nog bredere range aan systemen, zoals sanitairtechnische producten van Jimten, drukverbindingen van Girpi, PE-leidingsystemen van Akatherm, PE-verbindingen van Friatec en rioleringhulpstukken van Redi.  <br>
+Ook bedrijven in infrastructuur bieden we hoge kwaliteit oplossingen.  </p>
+
+<p>Hiermee willen wij de sectoren bouw, infra en industrie helpen op een duurzame manier mensen te voorzien van schoon en veilig water, sanitaire voorzieningen en energie.</p>
+
+</div><div class="pimcore_area_group_button pimcore_area_content">
+
+        
+    <div class="row">
+        <div class="col-12 text-left">
+                            <a href="/nl/over-ons/wij-zijn-aliaxis" class="btn btn--gradient-blue btn--gray " title="wij-zijn-aliaxis">
+                    Lees meer over ons
+                    <i class="icon icon-Long-arrow"></i>
+                </a>
+                    </div>
+    </div>
+</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                            </div>
+                            </section>
+                                        
+                            </div><div class="pimcore_area_group_spacer pimcore_area_content">
+
+            <div class="extra-large-spacer"></div>
+    </div><div class="pimcore_area_newsteaser pimcore_area_content">                       <section class="section cards news card-teaser">
+        <div class="section__body">
+            <div class="container">
+                <div class="row card-row row-small-gutter">
+                                                                        <div class="col-12 col-sm-6 col-lg-4">
+                                <div class="card card--borderless">
+                                                                            <div class="card__header">
+                                            <div class="media">
+                                                <div class="media__ratio">
+                                                    <img src="/_default_upload_bucket/image-thumb__436861__news-604/news%20aquarama%202024_1.webp" class="media__source" alt="Aquarama 2024, bekijk ons programma !" loading="lazy">
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                                                                <div class="card__body">
+                                                                                            <div class="card__label d-flex align-items-center">
+                                                    Events
+                                                                                                    </div>
+                                                                                                                                        <div class="card__title">
+                                                                                                                                                                    <a href="/nl/over-ons/nieuws/details/1988431/aquarama-2024-bekijk-ons-programma" class="card__link stretched-link" title="Aquarama 2024, bekijk ons programma !">
+                                                            Aquarama 2024, bekijk ons programma !
+                                                        </a>
+                                                                                                                                                            </div>
+                                                                                                                                    
+                                                                                            <!-- Date -->
+                                                <div class="card__label d-flex align-items-center text--xs">
+                                                    19 september 2024
+                                                </div>
+                                                                                    </div>
+                                                                    </div>
+                            </div>
+                                                                                                <div class="col-12 col-sm-6 col-lg-4">
+                                <div class="card card--borderless">
+                                                                            <div class="card__header">
+                                            <div class="media">
+                                                <div class="media__ratio">
+                                                    <img src="/website/aliaxis-nl/Nieuws/image-thumb__430913__news-604/IFAT2022_hr_0036.webp" class="media__source" alt="Aliaxis aanwezig op de IFAT 2024" loading="lazy">
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                                                                <div class="card__body">
+                                                                                            <div class="card__label d-flex align-items-center">
+                                                    Evenementen
+                                                                                                    </div>
+                                                                                                                                        <div class="card__title">
+                                                                                                                                                                    <a href="/ifat2024" target="" class="card__link stretched-link" title="Aliaxis aanwezig op de IFAT 2024">
+                                                            Aliaxis aanwezig op de IFAT 2024
+                                                        </a>
+                                                                                                    </div>
+                                                                                                                                        <div class="card__label d-flex align-items-center">
+                                                    Ontdek Aliaxis' grensverleggende bijdragen aan duurzame wateroplossingen op IFAT München 2024. Bezoek onze stand in hal 3B, stand nr. 105/204 - van 13 t/m 17 mei. Ontdek hier onze innovatieve kunststof leidingsystemen die de wereldwijde uitdagingen op het gebied van water aanpakken.
+                                                </div>
+                                                                                        
+                                                                                            <!-- Date -->
+                                                <div class="card__label d-flex align-items-center text--xs">
+                                                    5 april 2024
+                                                </div>
+                                                                                    </div>
+                                                                    </div>
+                            </div>
+                                                                                                <div class="col-12 col-sm-6 col-lg-4">
+                                <div class="card card--borderless">
+                                                                            <div class="card__header">
+                                            <div class="media">
+                                                <div class="media__ratio">
+                                                    <img src="/website/aliaxis-be/Kennis/Downloads/image-thumb__431339__news-604/Aliaxis%20BE%20-%20Catalogus%20-%202023%20-%20BE%20-%20Omslag%20website%20preview.webp" class="media__source" alt="Download onze productenlijst 2024" loading="lazy">
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                                                                <div class="card__body">
+                                                                                            <div class="card__label d-flex align-items-center">
+                                                    Nieuws
+                                                                                                    </div>
+                                                                                                                                        <div class="card__title">
+                                                                                                                                                                    <a href="/productenlijst" target="" class="card__link stretched-link" title="Download onze productenlijst 2024">
+                                                            Download onze productenlijst 2024
+                                                        </a>
+                                                                                                    </div>
+                                                                                                                                        <div class="card__label d-flex align-items-center">
+                                                    Onze productenlijst is nu beschikbaar via onderstaande link. Deze lijst wordt regelmatig geactualiseerd en kan op elk moment worden geraadpleegd en gedownload.
+                                                </div>
+                                                                                        
+                                                                                            <!-- Date -->
+                                                <div class="card__label d-flex align-items-center text--xs">
+                                                    4 april 2024
+                                                </div>
+                                                                                    </div>
+                                                                    </div>
+                            </div>
+                                                                                                <div class="col-12 col-sm-6 col-lg-4">
+                                <div class="card card--borderless">
+                                                                            <div class="card__header">
+                                            <div class="media">
+                                                <div class="media__ratio">
+                                                    <img src="/website/aliaxis-be/Nieuws/image-thumb__431480__news-604/Algemeen%20Hippo%27s%20%281%29.webp" class="media__source" alt="Casino Night bij Van Marcke" loading="lazy">
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                                                                <div class="card__body">
+                                                                                            <div class="card__label d-flex align-items-center">
+                                                    Events
+                                                                                                    </div>
+                                                                                                                                        <div class="card__title">
+                                                                                                                                                                    <a href="/nl/over-ons/nieuws/details/1221136/casino-night-bij-van-marcke" class="card__link stretched-link" title="Casino Night bij Van Marcke">
+                                                            Casino Night bij Van Marcke
+                                                        </a>
+                                                                                                                                                            </div>
+                                                                                                                                        <div class="card__label d-flex align-items-center">
+                                                    Naar goede gewoonte zal Aliaxis Belgium dit jaar opnieuw aanwezig zijn op de komende Hippo Nights van Van Marcke !
+                                                </div>
+                                                                                        
+                                                                                            <!-- Date -->
+                                                <div class="card__label d-flex align-items-center text--xs">
+                                                    19 maart 2024
+                                                </div>
+                                                                                    </div>
+                                                                    </div>
+                            </div>
+                                                                                                <div class="col-12 col-sm-6 col-lg-4">
+                                <div class="card card--borderless">
+                                                                            <div class="card__header">
+                                            <div class="media">
+                                                <div class="media__ratio">
+                                                    <img src="/_default_upload_bucket/image-thumb__430643__news-604/Friatec.webp" class="media__source" alt="Cynerpro verdeelt voortaan Friatec producten" loading="lazy">
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                                                                <div class="card__body">
+                                                                                            <div class="card__label d-flex align-items-center">
+                                                    Nieuws
+                                                                                                    </div>
+                                                                                                                                        <div class="card__title">
+                                                                                                                                                                    <a href="/nl/over-ons/nieuws/details/1220432/cynerpro-verdeelt-voortaan-friatec-producten" class="card__link stretched-link" title="Cynerpro verdeelt voortaan Friatec producten">
+                                                            Cynerpro verdeelt voortaan Friatec producten
+                                                        </a>
+                                                                                                                                                            </div>
+                                                                                                                                        <div class="card__label d-flex align-items-center">
+                                                    Cynerpro gaat voortaan de Friatec-producten van Aliaxis verdelen in België. Deze samenwerking tussen twee leiders in hun respectievelijke domeinen belooft een perfecte match tussen productkwaliteit en kwalitatieve service. 
+                                                </div>
+                                                                                        
+                                                                                            <!-- Date -->
+                                                <div class="card__label d-flex align-items-center text--xs">
+                                                    4 maart 2024
+                                                </div>
+                                                                                    </div>
+                                                                    </div>
+                            </div>
+                                                                                                <div class="col-12 col-sm-6 col-lg-4">
+                                <div class="card card--borderless">
+                                                                            <div class="card__header">
+                                            <div class="media">
+                                                <div class="media__ratio">
+                                                    <img src="/_default_upload_bucket/image-thumb__430552__news-604/After%20Big%20Market.webp" class="media__source" alt=" Een super editie van de Big Market" loading="lazy">
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                                                                <div class="card__body">
+                                                                                            <div class="card__label d-flex align-items-center">
+                                                    Events
+                                                                                                    </div>
+                                                                                                                                        <div class="card__title">
+                                                                                                                                                                    <a href="/nl/over-ons/nieuws/details/1220273/een-super-editie-van-de-big-market" class="card__link stretched-link" title=" Een super editie van de Big Market">
+                                                             Een super editie van de Big Market
+                                                        </a>
+                                                                                                                                                            </div>
+                                                                                                                                    
+                                                                                            <!-- Date -->
+                                                <div class="card__label d-flex align-items-center text--xs">
+                                                    12 februari 2024
+                                                </div>
+                                                                                    </div>
+                                                                    </div>
+                            </div>
+                                                            </div>
+            </div>
+        </div>
+    </section>
+
+</div><div class="pimcore_area_group_spacer pimcore_area_content">
+
+            <div class="extra-large-spacer"></div>
+    </div>
+            </main>
+<!-- /main-content -->
+
+	
+							<!-- Custom Modal -->
+		<div id="modal-default-custom">
+			
+		</div>
+		<script src="/js/document/readiness.js"></script>
+		<script defer="" src="/js/document/modal/Modal.js"></script>
+		<script defer="" src="/js/document/modal/custom-modal.js"></script>
+		<!-- End Custom Modal -->
+	
+<footer class="site-footer">
+
+	<!-- Footer Shape Variation 1 -->
+	<div class="shape site-footer__shape">
+		<svg viewBox="0 0 100 6.1">
+			<path d="M 0 6.1 Q 50 -6.1 100 6.1 M 100 6.1, 100 0" stroke="none" stroke-width="1" fill="#32aaff"></path>
+			Sorry, your browser does not support inline SVG.
+		</svg>
+	</div>
+	<!-- End Footer Shape Variation 1 -->
+
+	<div class="site-footer__body">
+		<div class="container">
+									
+			<div class="row">
+	<div class="col-12">
+		<div class="site-footer__bottom text-center text-sm-left">
+			<div class="d-inline-block d-sm-flex align-items-center justify-content-between">
+				
+
+	
+	<div class="site-footer__language dropdown d-inline-block">
+		<p><strong>Taal</strong></p>
+		<button class="language__toggle dropdown-toggle" id="language-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+			<i class="icon icon-Language mr-2"></i> NL
+		</button>
+		<div class="dropdown-menu" aria-labelledby="language-toggle">
+			<ul class="list-group">
+									<li class="nav-item dropdown-item">
+													<a href="https://www.aliaxis.be/" class="nav-link dropdown-link active">
+								Nederlands
+							</a>
+											</li>
+									<li class="nav-item dropdown-item">
+													<a href="https://www.aliaxis.be/fr" hreflang="fr" class="nav-link dropdown-link">
+								Frans
+							</a>
+											</li>
+							</ul>
+		</div>
+	</div>
+									<link rel="stylesheet" href="/aliaxis-group/css/qw.css">
+
+<div class="container footer-images">
+	<div class="row">
+					<div class="col-12 d-flex flex-row flex-wrap justify-content-center justify-content-md-end">
+									<div class="d-inline-block">
+						
+																			
+																			
+						<img class="d-inline-block" style=";width:80px !important;height:80px !important" alt="" title="" src="/website/aliaxis-be/Logo%27s/Icons/ISO%209001%20-%20CMYK%20white.png">
+					</div>
+							</div>
+			</div>
+</div>
+
+    <nav class="site-footer__nav site-footer__nav--social-media ml-auto">
+        <ul class="navbar-nav flex-row" aria-label="Social Media">
+                            <li class="site-footer__nav-item site-footer__nav-item--social-media nav-item">
+                    <a href="https://www.linkedin.com/company/aliaxis-belgium/" target="_blank" class="site-footer__nav-link site-footer__nav-link--social-media nav-link" title="">
+                        <span class="icon-LinkedIn"></span>
+                    </a>
+                </li>
+                                        <li class="site-footer__nav-item site-footer__nav-item--social-media nav-item">
+                    <a href="https://www.facebook.com/aliaxisbelgium" target="_blank" class="site-footer__nav-link site-footer__nav-link--social-media nav-link" title="">
+                        <span class="icon-Facebook"></span>
+                    </a>
+                </li>
+                                                                            <li class="site-footer__nav-item site-footer__nav-item--social-media nav-item">
+                    <a href=" https://www.youtube.com/@aliaxisbelgium739/videos" target="_blank" class="site-footer__nav-link site-footer__nav-link--social-media nav-link" title="">
+                        <span class="icon-Youtube"></span>
+                    </a>
+                </li>
+                    </ul>
+    </nav>
+
+							</div>
+			<hr>
+			<div class="d-block d-sm-flex align-items-center justify-content-between">
+				<div class="site-footer__copyright order-2 order-sm-1">
+					© 2025 Aliaxis
+				</div>
+				
+								
+				
+								<nav class="site-footer__nav site-footer__nav--sub d-inline-block order-1 order-sm-2" role="navigation" aria-label="Footer Navigation">
+					<ul class="navbar-nav flex-row" aria-label="Footer Navigation">
+																					<li class="site-footer__nav-item site-footer__nav-item--sub nav-item">
+									<a href="/website/aliaxis-be/Downloads/algemeen/Aliaxis%20Belgium%20-%20Algemene%20verkoopvoorwaarden%202023.pdf" class="site-footer__nav-link site-footer__nav-link--sub nav-link" title="Algemene voorwaarden">
+										Algemene voorwaarden
+									</a>
+								</li>
+																												<li class="site-footer__nav-item site-footer__nav-item--sub nav-item">
+									<a href="/nl/metanavigation/privacy-policy" class="site-footer__nav-link site-footer__nav-link--sub nav-link" title="Privacyverklaring">
+										Privacyverklaring
+									</a>
+								</li>
+																		</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+</div>
+		</div>
+	</div>
+</footer>
+
+
+<button class="btn btn--square btn--blue-outline" onclick="scrollToTop(400)" id="scrool-to-top-btn">
+    <span class="material-icons-downloads">arrow_upward</span>
+</button>
+
+<script>
+
+    mybutton = document.getElementById("scrool-to-top-btn");
+
+    window.onscroll = function() {scrollFunction()};
+
+    var scrollOffset = 0;
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+
+        if(parseInt(document.getElementsByTagName('body')[0].style.width)>991) {
+            document.getElementById('main-nav').find('.nav-item.nav-item--main.open').removeClass('open').addClass('closed');
+            document.getElementById('main-nav').find('.nav-dropdown.collapse.show').removeClass('show');//.addClass('closed');
+        }
+
+    }
+
+    function topFunction() {
+
+
+
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+
+    function scrollToTop (duration) {
+        // cancel if already on top
+        if (document.scrollingElement.scrollTop === 0) return;
+
+        const totalScrollDistance = document.scrollingElement.scrollTop;
+        let scrollY = totalScrollDistance, oldTimestamp = null;
+
+        function step (newTimestamp) {
+            if (oldTimestamp !== null) {
+                // if duration is 0 scrollY will be -Infinity
+                scrollY -= totalScrollDistance * (newTimestamp - oldTimestamp) / duration;
+                if (scrollY <= 0) return document.scrollingElement.scrollTop = 0;
+                document.scrollingElement.scrollTop = scrollY;
+            }
+            oldTimestamp = newTimestamp;
+            window.requestAnimationFrame(step);
+        }
+        window.requestAnimationFrame(step);
+    }
+
+</script>
+
+
+            <script src="/aliaxis-group/js/bundle-main.js" defer=""></script>
+    
+    <script src="/aliaxis-group/js/jquery-3.5.0.min.js" defer=""></script>
+
+<script src="/aliaxis-group/js/jquery.fancybox.min.js" defer=""></script>
+<script src="/aliaxis-group/js/qw.min.js" defer=""></script>
+<script src="/aliaxis-group/js/bundle-msform.js" defer=""></script>
+
+
+    <button class="button is-success cookie-button" onclick="return klaro.show();"><img src="/aliaxis-group/images/cookie-bite-solid.svg" alt="Cookie"></button>
+
+
+<link rel="stylesheet" href="/css/global.css">
+
+
+<div id="klaro"><div lang="nl" class="klaro ds-customize-klaro"><div class="cookie-notice   "><div class="cn-body"><p><span>Hallo! Kunnen we alstublieft enkele extra diensten voor Analytics inschakelen?</span></p><div class="cn-ok"><a class="cm-link cn-learn-more" href="#">Laat me kiezen...</a><div class="cn-buttons"><button class="cm-btn cm-btn-danger cn-decline" type="button">Ik weiger cookies</button><button class="cm-btn cm-btn-success" type="button">Ik accepteer cookies</button></div></div></div></div></div></div></body></html>

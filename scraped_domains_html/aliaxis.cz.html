@@ -1,0 +1,2283 @@
+<!DOCTYPE html><html lang="cs"><head>
+            
+
+    
+    
+    
+<script async="" src="https://analytics.aliaxis.cz/gtm.js?id=GTM-N7DMVH2H"></script><script async="" src="https://analytics.aliaxis.cz/gtm.js?id=GTM-WVPC7S3T"></script><script src="/aliaxis-group/js/gtmUtils.js"></script>
+<script>
+    window.udata = window.udata || [];
+
+                        window.udata = window.udata || [];
+                    udata.push( {"event_name":"page navigation","env_country":"cz","page_language":"cs","page_template":"other","consent":[{"category":"necessary","choice":"no choice - accepted","type":"tracking"},{"category":"functional","choice":"rejected","type":"tracking"},{"category":"analytics","choice":"rejected","type":"tracking"},{"category":"advertising","choice":"rejected","type":"tracking"}]});
+            
+    
+    <!-- Google Tag Manager Function -->
+    function addGoogleTagManager(w, d, s, l, i, host, devMode) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        });
+        const f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l !== 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+            'https://' + host + '/gtm.js?id=' + i + dl + (typeof devMode !== 'undefined' && devMode !== '' ? devMode : '');
+        f.parentNode.insertBefore(j, f);
+    }
+    <!-- End Function Google Tag Manager -->
+
+    <!-- Google Tag Manager -->
+    // Add global tag manager
+    addGoogleTagManager(window, document, 'script', 'dataLayer', 'GTM-WVPC7S3T', 'analytics.aliaxis.cz', );
+
+        // Add website tag manager
+    addGoogleTagManager(window, document, 'script', 'dataLayer', 'GTM-N7DMVH2H', 'analytics.aliaxis.cz', );
+        <!-- End Google Tag Manager -->
+
+    window.onload = function(){
+        addGtmReadingAttributes();
+        addGtmVideoAttributes();
+    }
+</script>
+
+
+
+    
+            
+<link rel="stylesheet" href="/aliaxis-group/css/klaro.min.css">
+
+    
+
+<script defer="" type="application/javascript">
+
+    /*
+    To indicate if we need to send the choice of the user cookies the first time.
+    Indeed, klaro raised the event before the user give his consent.
+    */
+    let sendFirstChoice = false;
+
+    /*
+    To indicate if a modification in the cookies has been set by the user
+    to allow you to send the GTM event only when a modification is made
+    */
+    let hasModificationInGtmCookies = false;
+
+    function sendGtmConsentSubmit() {
+        hasModificationInGtmCookies = false;
+        pushGtmData(
+            {
+                'event_name': "consent submit",
+                'consent': klaroConfig.gtmCookies
+            }
+        );
+    }
+
+    function observeKlaroPopup() {
+        const klaroContainer = document.querySelector('#klaro > .klaro.ds-customize-klaro');
+
+        // We check if the klaroContainer is found, otherwise we set a timeout before calling again this method
+        if (klaroContainer) {
+
+            const observer = new MutationObserver((mutations) => {
+                mutations.forEach((mutation) => {
+                    // When the childList of the klaro container removed some nodes
+                    if (mutation.type === 'childList' && mutation.removedNodes.length > 0) {
+                        const klaroDivContainer = klaroContainer.querySelector("div");
+                        // We check if the content of the div container is empty and if we need to send the event to GTM (only on the first choice)
+                        if (klaroDivContainer && klaroDivContainer.innerHTML.trim() === '' && sendFirstChoice) {
+                            sendFirstChoice = false;
+                            sendGtmConsentSubmit();
+                        }
+                    }
+                });
+            });
+
+            observer.observe(klaroContainer, {
+                childList: true,
+                subtree: true
+            });
+
+            return;
+        }
+
+        setTimeout(function () {
+            observeKlaroPopup();
+        }, 250);
+    }
+
+    function modifiedGtmCookieConsent(consent, service) {
+        if (klaroConfig.gtmCookies.length < klaroConfig.services.length) {
+            return;
+        }
+
+        hasModificationInGtmCookies = true;
+        klaroConfig.gtmCookies.find((gtmCookie, index) => {
+            if (gtmCookie.category === service.name) {
+                gtmCookie.choice = getGtmCookieChoice(service, consent);
+                klaroConfig.gtmCookies[index] = gtmCookie;
+                return true;
+            }
+            return false;
+        });
+    }
+
+    function getGtmCookieChoice(app, consent) {
+        if (app.required) {
+            return "no choice - accepted"
+        }
+
+        if (consent) {
+            return "accepted"
+        }
+        return "rejected";
+    }
+
+    let timeoutSendGtm = undefined;
+
+    var klaroConfig = {
+        version: 1,
+        /*
+        You can customize the ID of the DIV element that Klaro will create when starting
+        up. By default, Klaro will use 'klaro'.
+        */
+        elementID: 'klaro',
+
+        /*
+        You can customize how Klaro persists consent information in the browser. Specify
+        either cookie' (the default) or 'localStorage'.
+        */
+        storageMethod: 'cookie',
+
+        /*
+        You can customize the name of the cookie or localStorage entry that Klaro will
+        use for storing the consent information. By default, Klaro will use 'klaro'.
+        */
+        cookieName: 'klaro',
+
+        /*
+        If set to `true`, Klaro will render the texts given in the
+        `consentModal.description` and `consentNotice.description` translations as HTML.
+        This enables you to e.g. add custom links or interactive content.
+        */
+        htmlTexts: true,
+
+        // Setting 'embedded' to true will render the Klaro modal and notice without
+        // the modal background, allowing you to e.g. embed them into a specific element
+        // of your website, such as your privacy notice.
+        embedded: false,
+
+        // You can group services by their purpose in the modal. This is advisable
+        // if you have a large number of services. Users can then enable or disable
+        // entire groups of services instead of having to enable or disable every service.
+        groupByPurpose: false,
+
+        /*
+        You can change the cookie domain for the consent manager itself. Use this if you
+        want to get consent once for multiple matching domains. By default, Klaro will
+        use the current domain. Only relevant if 'storageMethod' is set to 'cookie'.
+        */
+        cookieDomain: 'www.aliaxis.cz',
+
+        /*
+        You can also set a custom expiration time for the Klaro cookie. By default, it
+        will expire after 30 days. Only relevant if 'storageMethod' is set to 'cookie'.
+        */
+        cookieExpiresAfterDays: 30,
+
+        /*
+        You can specify a link to your privacy policy here (relative or absolute), which
+        will then be shown in the notice and modal. You can also specify an object with
+        language-specific links and an optional fallback using the 'default' key:
+        privacyPolicy : {de: "/#datenschutz", en: "/#privacy", default: "/#privacy" },
+        privacyPolicy: 'https://www.fipnet.com/cookie-policy/'
+        */
+        privacyPolicy: '/cs/metanavigation/gdpr',
+
+        /*
+        Defines the default state for applications in the consent modal (true=enabled by
+        default). You can override this setting in each app.
+        */
+        default: false,
+
+        /*
+        If 'mustConsent' is set to 'true', Klaro will directly display the consent
+        manager modal and not allow the user to close it before having actively
+        consented or declined the use of third-party applications.
+        */
+        mustConsent: false,
+
+        /*
+        Setting 'acceptAll' to 'true' will show an "accept all" button in the notice and
+        modal, which will enable all third-party apps if the user clicks on it. If set
+        to 'false', there will be an "accept" button that will only enable the apps that
+        are enabled in the consent modal.
+        */
+        acceptAll: true,
+
+        /*
+        Setting 'hideDeclineAll' to 'true' will hide the "decline" button in the consent
+        modal and force the user to open the modal in order to change his/her consent or
+        disable all third-party apps. We strongly advise you to not use this feature, as
+        it opposes the "privacy by default" and "privacy by design" principles of the
+        GDPR (but might be acceptable in other legislations such as under the CCPA)
+        */
+        hideDeclineAll: false,
+
+        /*
+        Setting 'hideLearnMore' to 'true' will hide the "learn more / customize" link in
+        the consent notice. We strongly advise against using this under most
+        circumstances, as it keeps the user from customizing his/her consent choices.
+        */
+        hideLearnMore: false,
+
+        // show cookie notice as modal
+        noticeAsModal: false,
+
+        // You can also remove the 'Realized with Klaro!' text in the consent modal.
+        // Please don't do this! We provide Klaro as a free open source tool.
+        // Placing a link to our website helps us spread the word about it,
+        // which ultimately enables us to make Klaro! better for everyone.
+        // So please be fair and keep the link enabled. Thanks :)
+        disablePoweredBy: true,
+
+        // you can specify an additional class (or classes) that will be added to the Klaro `div`
+        additionalClass: 'ds-customize-klaro',
+
+        // You can define the UI language directly here. If undefined, Klaro will
+        // use the value given in the global "lang" variable. If that does
+        // not exist, it will use the value given in the "lang" attribute of your
+        // HTML tag. If that also doesn't exist, it will use 'en'.
+        lang: 'cs',
+
+        // You can overwrite existing translations and add translations for your
+        // service descriptions and purposes. See `src/translations/` for a full
+        // list of translations that can be overwritten:
+        // https://github.com/KIProtect/klaro/tree/master/src/translations
+        translations: {
+            'cs': {
+                consentNotice: {
+                    description: 'Souhlas\u00EDte\u0020s\u0020pou\u017E\u00EDv\u00E1n\u00EDm\u0020Cookies\u0020a\u0020dla\u0161\u00EDch\u0020n\u00E1stroj\u016F\u0020na\u0020na\u0161em\u0020webu\u003F',
+                    learnMore: 'Zjistit\u0020v\u00EDce\u0020a\u0020vybrat',
+                    changeDescription: 'Od\u0020va\u0161\u00ED\u0020posledn\u00ED\u0020n\u00E1v\u0161t\u011Bvy\u0020do\u0161lo\u0020ke\u0020zm\u011Bn\u00E1m,\u0020obnovte\u0020pros\u00EDm\u0020sv\u016Fj\u0020souhlas.',
+                },
+                consentModal: {
+                    title: 'Souhlas\u00EDte\u0020s\u0020vyu\u017E\u00EDv\u00E1n\u00EDm\u0020t\u011Bchto\u0020n\u00E1stroj\u016F\u003F',
+                    description: 'Tento\u0020web\u0020pou\u017E\u00EDv\u00E1\u0020cookies',
+                    privacyPolicy: {
+                        name: 'Cookie\u0020Notice',
+                        text: 'Pro\u0020dal\u0161\u00ED\u0020informace\u0020ohledn\u011B\u0020pou\u017E\u00EDvan\u00FDch\u0020cookies\u0020a\u0020jejich\u0020nastaven\u00ED\u0020pros\u00EDm\u0020klikn\u011Bte\u0020na\u0020\u007BprivacyPolicy\u007D.\u0020M\u016F\u017Eete\u0020p\u0159ijmout\u0020\u010Di\u0020odm\u00EDtnout\u0020dal\u0161\u00ED\u0020cookies\u0020kliknut\u00EDm\u0020na\u0020jeden\u0020z\u0020t\u011Bchto\u0020odkaz\u016F.',
+                    }
+                },
+                necessary: {
+                    title: 'Nezbytn\u00E9\u0020',
+                    description: 'Tyto\u0020soubory\u0020cookie\u0020jsou\u0020nezbytn\u011B\u0020nutn\u00E9\u0020k\u0020zaji\u0161t\u011Bn\u00ED\u0020z\u00E1kladn\u00EDch\u0020funkc\u00ED,\u0020jako\u0020je\u0020navigace\u0020na\u0020webu,\u0020vypl\u0148ov\u00E1n\u00ED\u0020formul\u00E1\u0159\u016F\u0020a\u0020p\u0159\u00EDstup\u0020do\u0020zabezpe\u010Den\u00FDch\u0020oblast\u00ED\u0020webu.\u0020Bez\u0020nich\u0020nemohou\u0020str\u00E1nky\u0020spr\u00E1vn\u011B\u0020fungovat.\u0020Tyto\u0020soubory\u0020cookie\u0020neukl\u00E1daj\u00ED\u0020\u017E\u00E1dn\u00E9\u0020osobn\u00ED\u0020\u00FAdaje\u0020o\u0020v\u00E1s.',
+                },
+                functional: {
+                    title: 'Funk\u010Dn\u00ED\u0020',
+                    description: 'Tyto\u0020soubory\u0020cookie\u0020umo\u017E\u0148uj\u00ED\u0020webov\u00FDm\u0020str\u00E1nk\u00E1m\u0020poskytovat\u0020lep\u0161\u00ED\u0020funkce\u0020a\u0020personalizaci.\u0020Mohou\u0020b\u00FDt\u0020nastaveny\u0020n\u00E1mi\u0020nebo\u0020poskytovateli\u0020t\u0159et\u00EDch\u0020stran,\u0020jejich\u017E\u0020slu\u017Eby\u0020jsme\u0020p\u0159idali\u0020na\u0020na\u0161e\u0020str\u00E1nky.\u0020Pokud\u0020tyto\u0020soubory\u0020cookie\u0020nepovol\u00EDte,\u0020n\u011Bkter\u00E9\u0020nebo\u0020v\u0161echny\u0020tyto\u0020slu\u017Eby\u0020nemus\u00ED\u0020spr\u00E1vn\u011B\u0020fungovat.',
+                },
+                analytics: {
+                    title: 'Analytick\u00E9\u0020',
+                    description: 'Tyto\u0020soubory\u0020cookie\u0020n\u00E1m\u0020umo\u017E\u0148uj\u00ED\u0020po\u010D\u00EDtat\u0020n\u00E1v\u0161t\u011Bvy\u0020a\u0020zdroje\u0020n\u00E1v\u0161t\u011Bvnosti,\u0020abychom\u0020mohli\u0020m\u011B\u0159it\u0020a\u0020zlep\u0161ovat\u0020v\u00FDkon\u0020na\u0161ich\u0020webov\u00FDch\u0020str\u00E1nek\u0020Pom\u00E1haj\u00ED\u0020n\u00E1m\u0020zjistit,\u0020kter\u00E9\u0020str\u00E1nky\u0020jsou\u0020nejobl\u00EDben\u011Bj\u0161\u00ED\u0020a\u0020kter\u00E9\u0020nejm\u00E9n\u011B,\u0020a\u0020zjistit,\u0020jak\u0020se\u0020n\u00E1v\u0161t\u011Bvn\u00EDci\u0020na\u0020webu\u0020pohybuj\u00ED\u0020V\u0161echny\u0020informace\u0020shrom\u00E1\u017Ed\u011Bn\u00E9\u0020t\u011Bmito\u0020soubory\u0020cookie\u0020jsou\u0020souhrnn\u00E9,\u0020a\u0020tud\u00ED\u017E\u0020anonymn\u00ED.',
+                },
+                advertising: {
+                    title: 'Marketing',
+                    description: 'Tyto\u0020soubory\u0020cookie\u0020mohou\u0020b\u00FDt\u0020prost\u0159ednictv\u00EDm\u0020na\u0161ich\u0020webov\u00FDch\u0020str\u00E1nek\u0020nastaveny\u0020na\u0161imi\u0020reklamn\u00EDmi\u0020partnery\u0020za\u0020\u00FA\u010Delem\u0020zobrazen\u00ED\u0020reklamy\u0020odpov\u00EDdaj\u00EDc\u00ED\u0020va\u0161im\u0020z\u00E1jm\u016Fm.\u0020Neukl\u00E1daj\u00ED\u0020p\u0159\u00EDmo\u0020osobn\u00ED\u0020\u00FAdaje,\u0020ale\u0020spol\u00E9haj\u00ED\u0020na\u0020jedine\u010Dnou\u0020identifikaci\u0020prohl\u00ED\u017Ee\u010De\u0020a\u0020internetov\u00E9ho\u0020za\u0159\u00EDzen\u00ED\u0020u\u017Eivatele.\u0020Pokud\u0020pou\u017E\u00EDv\u00E1n\u00ED\u0020t\u011Bchto\u0020soubor\u016F\u0020cookie\u0020nepovol\u00EDte,\u0020budete\u0020dost\u00E1vat\u0020m\u00E9n\u011B\u0020personalizovanou\u0020reklamu.',
+                },
+                acceptAll: 'P\u0159ijmout\u0020v\u0161echny',
+                acceptSelected: 'P\u0159ijmout\u0020vybran\u00E9',
+                close: 'Zav\u0159\u00EDt',
+                decline: 'Odm\u00EDtnout\u0020cookies',
+                save: 'Ulo\u017Eit',
+                ok: 'P\u0159ij\u00EDm\u00E1m\u0020cookies',
+                service: {
+                    disableAll: {
+                        title: 'P\u0159ijmout\/odm\u00EDtnout\u0020v\u0161echny',
+                        description: 'P\u0159ijmout\/odm\u00EDtnout\u0020v\u0161echny',
+                    },
+                    purpose: '\u00DA\u010Del',
+                    required: {
+                        title: '\u0028vy\u017Eadov\u00E1no\u0029',
+                    }
+                },
+                purposes: {
+                    necessary: {
+                        title:                         '[cookieConsent.purposeTitles.necessary]' ,
+                    },
+                    functional: {
+                        title:                         '[Funk\u010Dn\u00ED]' ,
+                    },
+                    analytics: {
+                        title:                         '[cookieConsent.purposeTitles.analytics]' ,
+                    },
+                    advertising: {
+                        title:                         '[Reklamn\u00ED]' ,
+                    },
+                },
+            }
+        },
+
+        /*
+        Here you specify the third-party apps that Klaro will manage for you.
+        */
+        services: [
+            {
+                /*
+                Each app must have a unique name. Klaro will look for HTML elements with a
+                matching 'data-name' attribute to identify elements that belong to this app.
+                */
+                name: 'necessary',
+
+                /*
+                If 'default' is set to 'true', the app will be enabled by default. This
+                overrides the global 'default' setting.
+                */
+                default: true,
+
+                /*
+                The title of you app as listed in the consent modal. You can also specify
+                translated app titles in the 'translations' section. In that case, you need to
+                leave the title attribute here unspecified.
+                */
+                title: null,
+
+                /*
+                The purpose(s) of this app that will be listed on the consent notice. Do not
+                forget to add translations for all purposes you list here.
+                */
+                purposes: [
+                                    ],
+
+                /*
+                The category of the consent. Within the “tracking” consent type, consider using the following values:
+                - necessary
+                - functional
+                - analytics
+                - advertising
+                */
+                gtmCategory: 'necessary',
+
+                /*
+                The type of consent. Consider using the following values:
+                - tracking
+                - other
+                */
+                gtmType: 'tracking',
+
+                /*
+                You can define an optional callback function that will be called each time the
+                consent state for the given app changes. The consent value will be passed as the
+                first parameter to the function (true=consented). The `app` config will be
+                passed as the second parameter.
+                */
+                callback: function (consent, service) {
+                },
+
+                /*
+                If 'required' is set to 'true', Klaro will not allow this app to be disabled by
+                the user. Use this for apps that are always required for your website to
+                function (e.g. shopping cart cookies).
+                */
+                required: true,
+
+                /*
+                If 'optOut' is set to 'true', Klaro will load this app even before the user has
+                given explicit consent. We strongly advise against this.
+                */
+                optOut: false,
+
+                /*
+                If 'onlyOnce' is set to 'true', the app will only be executed once regardless
+                how often the user toggles it on and off. This is relevant e.g. for tracking
+                scripts that would generate new page view events every time Klaro disables and
+                re-enables them due to a consent change by the user.
+                */
+                onlyOnce: true,
+            },
+            {
+                name: 'functional',
+                default: false,
+                purposes: [
+                                        'functional'
+                                    ],
+                gtmCategory: 'functional',
+                gtmType: 'tracking',
+                callback: function (consent, service) {
+                    modifiedGtmCookieConsent(consent, service);
+                },
+                required: false,
+                optOut: false,
+                onlyOnce: false,
+            },
+            {
+                name: 'analytics',
+                default: false,
+                purposes: [
+                                    ],
+                gtmCategory: 'analytics',
+                gtmType: 'tracking',
+                callback: function (consent, service) {
+                    modifiedGtmCookieConsent(consent, service);
+                },
+                required: false,
+                optOut: false,
+                onlyOnce: false,
+            },
+            {
+                name: 'advertising',
+                default: false,
+                purposes: [
+                                        'advertising'
+                                    ],
+                gtmCategory: 'advertising',
+                gtmType: 'tracking',
+                callback: function (consent, service) {
+                    modifiedGtmCookieConsent(consent, service);
+                },
+                required: false,
+                optOut: false,
+                onlyOnce: false,
+            }
+        ],
+
+        /*
+        Store the gtm cookie consents
+         */
+        gtmCookies: [],
+
+        /*
+        You can define an optional callback function that will be called each time the
+        consent state for any given app changes. The consent value will be passed as the
+        first parameter to the function (true=consented). The `app` config will be
+        passed as the second parameter.
+        */
+        callback: function (consent, app) {
+            const choice = getGtmCookieChoice(app, consent);
+
+            if (this.gtmCookies.length < this.services.length) {
+                this.gtmCookies.push(
+                    {
+                        'category': app.gtmCategory,
+                        'choice': choice,
+                        'type': app.gtmType
+                    }
+                );
+            }
+
+            let documentCookies = document.cookie.split(';').reduce((ac, str) => Object.assign(ac, {[str.split('=')[0].trim()]: str.split('=')[1]}), {});
+            // We need to check the cookies has not already sent by checking the key klaro in document cookies
+            // and there is no modification in the cookies consent from the user
+            if (!hasModificationInGtmCookies && this.cookieName in documentCookies) {
+                return;
+            }
+
+            console.log(
+                'User consent for app ' + app.name + ': consent=' + consent + ' => ' + choice
+            );
+
+            if (this.gtmCookies.length === this.services.length) {
+                // We need to check this condition to be sure to send the event when the user indicates his choice,
+                // so we delayed the event in the mutation observer
+                sendFirstChoice = false;
+                if (!(this.cookieName in documentCookies)) {
+                    sendFirstChoice = true;
+                    return;
+                }
+
+                // We need to have a timeout in order to avoid to send multiple time the consent submit event
+                // if the user accept multiple cookie at same time
+                if (timeoutSendGtm !== undefined) {
+                    clearTimeout(timeoutSendGtm);
+                    timeoutSendGtm = undefined;
+                }
+
+                timeoutSendGtm = setTimeout(function () {
+                    timeoutSendGtm = undefined;
+                    sendGtmConsentSubmit();
+                }, 250);
+            }
+        },
+    };
+
+    observeKlaroPopup();
+</script>
+
+<script defer="" type="application/javascript" src="/aliaxis-group/js/klaro-no-translations-no-css.js"></script>
+
+<script>
+    {
+        function initialize() {
+            function listener(event) {
+                event.preventDefault();
+                klaro.show();
+            }
+
+            document.querySelectorAll(".show-klaro").forEach(
+                (element) => {
+                    element.addEventListener("click", listener, true);
+                }
+            );
+        }
+
+        if (document.readyState === "complete") {
+            initialize();
+        } else {
+            window.addEventListener("load", () => {
+                initialize();
+            }, true);
+        }
+    }
+</script>
+    
+    <script src="/bundles/fosjsrouting/js/router.js"></script>
+    <script src="/js/routing?callback=fos.Router.setData"></script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    		
+	
+<link rel="canonical" href="https://www.aliaxis.cz/">
+    
+
+                
+
+        
+    
+    
+        
+            
+        
+    
+    <title>Aliaxis Czech Republic</title>
+    <meta name="description" content="Společnost Aliaxis Česká republika na český trh dodává produkty pro inženýrské sítě, elektrotvarovky FRIALEN, hospodaření s dešťovou vodou, vnitřní instalace a sanitu.">
+
+
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/aliaxis-group/images/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/aliaxis-group/images/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/aliaxis-group/images/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/aliaxis-group/images/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/aliaxis-group/images/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/aliaxis-group/images/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/aliaxis-group/images/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/aliaxis-group/images/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/aliaxis-group/images/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/aliaxis-group/images/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/aliaxis-group/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/aliaxis-group/images/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/aliaxis-group/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/aliaxis-group/images/favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/aliaxis-group/images/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    
+    <link rel="preload" href="/aliaxis-group/fonts/Gilroy/Gilroy-Medium.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="/aliaxis-group/fonts/icomoon_2e6f7ea2ac13be08650f8fbd2628aa20.ttf" as="font" type="font/ttf" crossorigin="">
+<link rel="preload" href="/aliaxis-group/fonts/Gilroy/Gilroy-SemiBold.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="/aliaxis-group/fonts/Gilroy/Gilroy-Bold.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="/aliaxis-group/fonts/Gilroy/Gilroy-Bold.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="/aliaxis-group/_/node_modules/material-icons/iconfont/MaterialIcons-Regular_0509ab09c1b0d2200a4135803c91d6ce.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="/aliaxis-group/css/style.min.css" as="style">
+<link rel="preload" href="/aliaxis-group/css/swiper.min.css" as="style">
+<link rel="preload" href="/aliaxis-group/css/qw.css" as="style">
+<link rel="preload" href="/aliaxis-group/css/style.datasolution.css" as="style">        <link rel="stylesheet" href="/aliaxis-group/css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/aliaxis-group/css/style.min.css">
+    <link rel="stylesheet" href="/aliaxis-group/css/swiper.min.css">
+    <link rel="stylesheet" href="/aliaxis-group/css/qw.css">
+    <link rel="stylesheet" href="/aliaxis-group/css/msform.css">
+    <link rel="stylesheet" href="/aliaxis-group/css/style.datasolution.css">
+    
+
+<script type="text/plain" data-type="text/javascript" data-name="analytics">
+var gaProperty = 'UA-213736354-1';
+var disableStr = 'ga-disable-' + gaProperty;
+if (document.cookie.indexOf(disableStr + '=true') > -1) {
+    window[disableStr] = true;
+}
+function gaOptout() {
+    document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+    window[disableStr] = true;
+    alert('Das Tracking durch Google Analytics wurde in Ihrem Browser für diese Website deaktiviert.');
+}
+</script>
+<script type="text/plain" data-type="text/javascript" data-name="analytics" async="" src="https://www.googletagmanager.com/gtag/js?id=UA-213736354-1"></script>
+                    <script type="text/plain" data-type="text/javascript" data-name="analytics">
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments);}
+                        gtag('js', new Date());
+                        gtag('config', 'UA-213736354-1', { 'anonymize_ip': true });
+</script>
+
+
+
+<!-- Google Tag Manager -->
+
+<script type="text/plain" data-type="text/javascript" data-name="gtm">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WGJFCLH');</script>
+
+<!-- End Google Tag Manager -->
+
+</head>
+<body class="page page--landing page--corporate">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src=https://www.googletagmanager.com/ns.html?id=GTM-WGJFCLH
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+
+
+<!-- main-content -->
+            
+
+    
+        
+                    
+        
+        
+                    <header class="site-header  site-header--has-top-banner-header site-header--big site-header--blue site-header--landing bg--image bg--image-overlay" style="background-image: url(/website/aliaxis-cz/korporatni_fotky/image-thumb__30145__slider_background_image/918400278%201675.webp);">
+        
+                    <div class="top-banner-header-container">
+        
+
+
+
+<div class="alert alert--top-header-banner bg--redlight">
+    <div class="container">
+        <div class="alert__inner">
+            <div class="alert__text">
+                                                            <p>Naše webové stránky budou 31. března od 6:00 do 18:00 podléhat plánované údržbě. Během této doby můžete zaznamenat dočasné výpadky. Omlouváme se za případné nepříjemnosti a děkujeme za pochopení.</p>
+
+                                                </div>
+                    </div>
+    </div>
+</div>
+
+
+        <link href="/aliaxis-group/css/top-banner-header.css" rel="stylesheet">
+    </div>
+
+    <script src="/aliaxis-group/js/jquery-3.5.0.min.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+            const topHeaderBannerContainer = $(".top-banner-header-container");
+
+            // A property is stored in the local storage until the cookies will be removed in case we closed the top banner
+            let hideBanner = localStorage.getItem('topBannerHeaderHide') !== null && localStorage.getItem('topBannerHeaderHide') === 'true';
+            if(hideBanner){
+                topHeaderBannerContainer.addClass("d-none").hide();
+                return;
+            }
+
+            topHeaderBannerContainer.removeClass("d-none").show();
+
+            function convertRemToPixels(rem) {
+                return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
+            }
+
+            function calculateHeaderTop(animate = true){
+                let headerTopHeight = topHeaderBannerContainer.height();
+
+                const secondaryMenu = $(".site-header__secondary-menu");
+                const headerTop = $(".site-header__top");
+
+                let hasSecondaryMenu = false;
+
+                secondaryMenu.css("top", headerTopHeight);
+                if(secondaryMenu.length){
+                    if(secondaryMenu.not(":visible").length === 0){
+                        hasSecondaryMenu = true;
+                        headerTopHeight += secondaryMenu.height();
+                    }
+                }
+
+                const paddingTop = headerTopHeight + convertRemToPixels(7.5);
+
+                if(animate && hasSecondaryMenu){
+                    headerTop.animate({"top": parseInt(headerTopHeight)}, 100);
+                    $(".site-header__body").animate({"padding-top":parseInt(paddingTop)}, 100);
+                } else {
+                    headerTop.css("top", parseInt(headerTopHeight));
+                    $(".site-header__body").css("padding-top", parseInt(paddingTop));
+                }
+
+                let mql = window.matchMedia("(max-width: 991px)");
+                if (mql.matches) {
+                    headerTopHeight += headerTop.height();
+                    $(".form__search--mini").css("top", parseInt(headerTopHeight));
+                    $(".navbar--main").css("margin-top", parseInt(headerTopHeight) - 1);
+                    $(".nav-dropdown").attr("style", "margin-top:" + (parseInt(headerTopHeight) - 1) + "px !important;");
+                } else {
+                    $(".form__search--mini").css("top", '');
+                    $(".navbar--main").css("margin-top", '');
+                    $(".nav-dropdown").css("margin-top", '');
+                }
+
+                if ($(window).scrollTop() >= 10) {
+                    $('.alert--top-header-banner').addClass('banner-header__top--shrink');
+                } else {
+                    $('.alert--top-header-banner').removeClass('banner-header__top--shrink');
+                }
+            }
+
+            function resetHeaderCalculation(){
+                const secondaryMenu = $(".site-header__secondary-menu");
+                const headerTop = $(".site-header__top");
+
+                secondaryMenu.css("top", '');
+                headerTop.css("top", '');
+                $(".site-header__body").css("padding-top",  '');
+                $(".form__search--mini").css("top", '');
+                $(".navbar--main").css("margin-top", '');
+                $(".nav-dropdown").css("margin-top", '');
+                $('.alert--top-header-banner').removeClass('banner-header__top--shrink');
+            }
+
+            let doItOnResize;
+            // When resizing the windows, the header need to be recalculated due to some CSS rules
+            window.addEventListener('resize', function() {
+                if(hideBanner){
+                    return;
+                }
+                // We need to calculate the header top without animation to avoid bad UI effect
+                calculateHeaderTop(false);
+                // We create a timeout to recalculate the correct position of the header at the end of the resize event
+                clearTimeout(doItOnResize);
+                doItOnResize = setTimeout(function () {
+                    calculateHeaderTop();
+                }, 250);
+            }, true);
+
+            // When scroll is done, the header will be shrunk, so we need to calculate again the top position header
+            // but only one time because when the scroll is bigger than 10px.
+            let alreadyScroll = false;
+            let resetScroll = false;
+            window.addEventListener("scroll", function() {
+                if(hideBanner){
+                    return;
+                }
+
+                // To avoid to calculate and modify the css properties we check if it's necessary to calculate again the header
+                let needToCalculate = false;
+                if($(window).scrollTop() >= 10){
+                    if(!alreadyScroll){
+                        resetScroll = false;
+                        alreadyScroll = true;
+                        needToCalculate = true;
+                    }
+                } else {
+                    alreadyScroll = false;
+                    if(!resetScroll){
+                        resetScroll = true;
+                        needToCalculate = true;
+                    }
+                }
+
+                if(needToCalculate){
+                    // Due to animation on the second navigation top bar,
+                    // we need to delay the calculation of the header in order to have the correct values
+                    setTimeout(function () {
+                        calculateHeaderTop();
+                    }, 250);
+                }
+            }, true);
+
+            // We start calculating the position of the header
+            calculateHeaderTop();
+
+            // We need to delay to recalculate the position of the header in order to avoid some empty space
+            setTimeout(function () {
+                calculateHeaderTop();
+            }, 500);
+
+            // Close the banner and reset the position of the header
+            $(".js-alert--top-header-banner__close").on("click", function(){
+                hideBanner = true;
+                localStorage.setItem('topBannerHeaderHide', hideBanner);
+                topHeaderBannerContainer.addClass("d-none").hide();
+                resetHeaderCalculation();
+            });
+        });
+    </script>
+
+
+            
+                        <div class="site-header__top d-flex align-items-center w-100" style="top: 60px;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center align-items-center w-100">
+                            <!-- Logo -->
+<div class="site-header__logo ml-auto text-left">
+    <a id="logo" href="/" title="" class="d-inline-block">
+        <img src="/aliaxis-group/images/logo-white.svg" alt="Aliaxis" class="site-header__logo__image" width="170" height="40">
+    </a>
+</div>
+<!-- End Logo -->                                
+        
+    
+    
+    <nav class="navbar navbar--main navbar--single-lang d-flex align-items-lg-center flex-wrap flex-column " role="navigation" aria-label="Main Navigation">
+        <ul class="navbar-nav navbar-nav--main flex-column flex-lg-row align-items-center" id="main-nav" aria-label="Main Navigation">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+                    
+
+                        
+                                                                        
+                        
+                                                                                                                        
+                                                
+                        <li class="nav-item nav-item--main  closed">
+                            <a href="#dropdown-menu-1" class="nav-link nav-link--main collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="dropdown-menu-1">
+                                Produkty
+                            </a>
+
+                            <div class="nav-dropdown collapse" id="dropdown-menu-1">
+                                <div class="inner">
+                                    <div class="list-groups ">
+
+                                                                                    <ul class="list-group">
+                                                                                            <li class="nav-item d-block d-lg-none">
+                                                    <button class="nav-link dropdown-link btn--empty js-close-dropdown-menu">
+                                                        <i class="material-icons mr-2">arrow_back</i> Back
+                                                    </button>
+                                                </li>
+                                            
+                                                                                                                                                                                
+                                            
+                                                                                                                                        
+                                                                                            
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/cs/produkty/vsechny-produkty?segment=732314" target="" class="nav-link dropdown-link">Inženýrské sítě</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/cs/produkty/vsechny-produkty?segment=732315" target="" class="nav-link dropdown-link">Technika budov</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/cs/produkty/vsechny-produkty?segment=732316" target="" class="nav-link dropdown-link">Průmyslové rozvody</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                    
+                                            </ul>
+                                        
+                                        
+                                    </div>
+
+                                    
+                                                                                                                <div class="dropdown-divider"></div>
+
+                                                                                                                                                                        
+                                                                                                                                
+                                                                                                                                
+                                                                                                                                
+                                                                                                                                
+                                                                                                                                                                                                                            
+                                        
+                                        <ul class="list-group list-group--footer">
+                                            <li class="nav-item dropdown-item">
+                                                <div class="btn-group d-block d-lg-flex  one-button  ">
+
+                                                    
+                                                                                                                                                                    
+                                                                                                                                                                    
+                                                                                                                                                                    
+                                                                                                                                                                    
+                                                                                                                                                                    
+                                                                                                                                                                                                                                <a href="/cs/produkty" target="" class="btn btn--blue d-block d-lg-inline-flex">Online katalog</a>
+                                                        
+                                                                                                    </div>
+                                            </li>
+                                        </ul>
+                                                                    </div>
+                            </div>
+                        </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+                    
+
+                        
+                                                                        
+                        
+                                                                                                                                                                                                                                    
+                                                
+                        <li class="nav-item nav-item--main  has-megamenu  closed">
+                            <a href="#dropdown-menu-2" class="nav-link nav-link--main collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="dropdown-menu-2">
+                                Aplikace
+                            </a>
+
+                            <div class="nav-dropdown collapse" id="dropdown-menu-2">
+                                <div class="inner">
+                                    <div class="list-groups   list-groups--equal-columns ">
+
+                                                                                    <ul class="list-group">
+                                                                                            <li class="nav-item d-block d-lg-none">
+                                                    <button class="nav-link dropdown-link btn--empty js-close-dropdown-menu">
+                                                        <i class="material-icons mr-2">arrow_back</i> Back
+                                                    </button>
+                                                </li>
+                                            
+                                                                                                                                                                                
+                                            
+                                                                                                                                        
+                                                                                            
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/cs/aplikace/plynovody" target="" class="nav-link dropdown-link">Plynovody</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/cs/aplikace/kanalizace" target="" class="nav-link dropdown-link">Kanalizace</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/cs/aplikace/vodovody" target="" class="nav-link dropdown-link">Vodovody</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/cs/aplikace/upravny-vody" target="" class="nav-link dropdown-link">Úpravny vody</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/cs/aplikace/cov" target="" class="nav-link dropdown-link">ČOV</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/cs/aplikace/bytova-vystavba" target="" class="nav-link dropdown-link">Bytová výstavba</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                            
+                                            </ul>
+                                                                                    <ul class="list-group">
+                                            
+                                                                                                                                                                                
+                                            
+                                            
+                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/cs/aplikace/skoly-a-skolky" target="" class="nav-link dropdown-link">Školy a školská zařízení</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/cs/aplikace/ubytovaci-zarizeni" target="" class="nav-link dropdown-link">Ubytovací zařízení</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/cs/aplikace/rodinne-domy" target="" class="nav-link dropdown-link">Rodinné domy</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/cs/aplikace/zavlazovani" target="" class="nav-link dropdown-link">Zavlažování</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/cs/aplikace/vsakovaci-a-retencni-objekty" target="" class="nav-link dropdown-link">Vsakovací a retenční objekty a nádrže</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/cs/aplikace/vystavba-ve-zdravotnictvi" target="" class="nav-link dropdown-link">Zdravotnictví</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                            
+                                            </ul>
+                                                                                    <ul class="list-group">
+                                            
+                                                                                                                                                                                
+                                            
+                                            
+                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/cs/aplikace/chemicky-prumysl" target="" class="nav-link dropdown-link">Chemický průmysl</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/cs/aplikace/skladovani-logistika" target="" class="nav-link dropdown-link">Skladování, logistika a průmyslové objekty</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/cs/aplikace/administrativni-objekty" target="" class="nav-link dropdown-link">Administrativní a komerční objekty</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/cs/aplikace/bazeny-a-lazne" target="" class="nav-link dropdown-link">Bazény a lázně</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/cs/aplikace/technologicke-rozvody" target="" class="nav-link dropdown-link">Technologické rozvody</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/cs/aplikace/hvac" target="" class="nav-link dropdown-link">HVAC</a>
+                                                            </li>
+                                                                                                                                                                                                        
+                                            </ul>
+                                                                                    <ul class="list-group">
+                                            
+                                                                                                                                                                                
+                                            
+                                            
+                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                            
+                                            </ul>
+                                        
+                                        
+                                    </div>
+
+                                    
+                                                                                                                <div class="dropdown-divider"></div>
+
+                                                                                                                                                                                                                                                                    
+                                                                                                                                
+                                                                                                                                
+                                                                                                                                
+                                                                                                                                
+                                                                                                                                
+                                                                                                                                
+                                                                                                                                
+                                                                                                                                
+                                                                                                                                
+                                                                                                                                
+                                                                                                                                
+                                                                                                                                
+                                                                                                                                
+                                                                                                                                
+                                                                                                                                
+                                                                                                                                
+                                                                                                                                
+                                                                                                                                
+                                        
+                                        <ul class="list-group list-group--footer">
+                                            <li class="nav-item dropdown-item">
+                                                <div class="btn-group d-block d-lg-flex  one-button  ">
+
+                                                    
+                                                                                                                                                                                                                                <a href="/cs/aplikace/prehled-aplikaci" target="" class="btn btn--blue d-block d-lg-inline-flex">Přehled aplikací</a>
+                                                        
+                                                                                                                                                                    
+                                                                                                                                                                    
+                                                                                                                                                                    
+                                                                                                                                                                    
+                                                                                                                                                                    
+                                                                                                                                                                    
+                                                                                                                                                                    
+                                                                                                                                                                    
+                                                                                                                                                                    
+                                                                                                                                                                    
+                                                                                                                                                                    
+                                                                                                                                                                    
+                                                                                                                                                                    
+                                                                                                                                                                    
+                                                                                                                                                                    
+                                                                                                                                                                    
+                                                                                                                                                                    
+                                                                                                                                                                    
+                                                                                                    </div>
+                                            </li>
+                                        </ul>
+                                                                    </div>
+                            </div>
+                        </li>
+                                                                                                                                                    
+                                            <li class="nav-item nav-item--main">
+                            <a href="/cs/diy" target="" class="nav-link nav-link--main">DIY</a>
+                        </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+                    
+
+                        
+                                                                        
+                        
+                                                                                                                                                                                                                                    
+                                                
+                        <li class="nav-item nav-item--main  has-megamenu  closed">
+                            <a href="#dropdown-menu-4" class="nav-link nav-link--main collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="dropdown-menu-4">
+                                Technická podpora
+                            </a>
+
+                            <div class="nav-dropdown collapse" id="dropdown-menu-4">
+                                <div class="inner">
+                                    <div class="list-groups   list-groups--equal-columns ">
+
+                                                                                    <ul class="list-group">
+                                                                                            <li class="nav-item d-block d-lg-none">
+                                                    <button class="nav-link dropdown-link btn--empty js-close-dropdown-menu">
+                                                        <i class="material-icons mr-2">arrow_back</i> Back
+                                                    </button>
+                                                </li>
+                                            
+                                                                                                                                                                                
+                                            
+                                                                                                                                        
+                                                                                            
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/cs/technicka-podpora/dokumenty-ke-stazeni" target="" class="nav-link dropdown-link">Dokumenty ke stažení</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/cs/technicka-podpora/videa" target="" class="nav-link dropdown-link">Videa</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/cs/technicka-podpora/dokumenty-ke-stazeni?type=712517" target="" class="nav-link dropdown-link">CAD a BIM</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/cs/technicka-podpora/databaze-chemicke-odolnosti" target="" class="nav-link dropdown-link">Databáze chemické odolnosti</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/cs/technicka-podpora/valve-configurator" target="" class="nav-link dropdown-link">Konfigurátor ventilů</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/cs/technicka-podpora/kalkulatory" target="" class="nav-link dropdown-link">Kalkulátory</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/cs/technicka-podpora/reference" target="" class="nav-link dropdown-link">Reference</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/cs/technicka-podpora/servis-svarecek" target="" class="nav-link dropdown-link">Servis svářeček</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/cs/technicka-podpora/faq" target="" class="nav-link dropdown-link">FAQ</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+                                            </ul>
+                                                                                    <ul class="list-group">
+                                            
+                                                                                                                                                                                
+                                            
+                                            
+                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/cs/technicka-podpora/zapujcka-techniky" target="" class="nav-link dropdown-link">Zápůjčka techniky</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/cs/technicka-podpora/texty-pro-vyberova-rizeni" target="" class="nav-link dropdown-link">Texty pro výběrová řízení</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/cs/technicka-podpora/dokumenty-ke-stazeni?type=848614" target="" class="nav-link dropdown-link">Certifikáty a prohlášení o shodě</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/cs/technicka-podpora/webinare-skoleni" target="" class="nav-link dropdown-link">Webináře a školení</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/cs/technicka-podpora/workflow-digitalni-stavba" target="" class="nav-link dropdown-link">WorkFlow - digitální asistent </a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/cs/technicka-podpora/kalkulator-velikosti-nadrze" target="" class="nav-link dropdown-link">Konfigurátor nádrže na dešťovou vodu</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="https://aliaxis.flux-cms.de/Version-2/?region=CZ" target="" class="nav-link dropdown-link">Virtualní showroom</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/cs/technicka-podpora/vypocetni-nastroje" target="" class="nav-link dropdown-link">Nástroje pro výpočet</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                            
+                                            </ul>
+                                                                                    <ul class="list-group">
+                                            
+                                                                                                                                                                                
+                                            
+                                            
+                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                            
+                                            </ul>
+                                                                                    <ul class="list-group">
+                                            
+                                                                                                                                                                                
+                                            
+                                            
+                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                                                                            
+                                                
+                                                                                            
+                                            </ul>
+                                        
+                                        
+                                    </div>
+
+                                    
+                                                                                                        </div>
+                            </div>
+                        </li>
+                                                                                                        
+                                            <li class="nav-item nav-item--main">
+                            <a href="/cs/technicka-podpora/dokumenty-ke-stazeni?type=395088" target="" class="nav-link nav-link--main">Ceníky</a>
+                        </li>
+                                                                                                                                                                                                                                                                                                        
+                    
+
+                        
+                                                                        
+                        
+                                                                                                                        
+                                                
+                        <li class="nav-item nav-item--main  closed">
+                            <a href="#dropdown-menu-6" class="nav-link nav-link--main collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="dropdown-menu-6">
+                                O nás
+                            </a>
+
+                            <div class="nav-dropdown collapse" id="dropdown-menu-6">
+                                <div class="inner">
+                                    <div class="list-groups ">
+
+                                                                                    <ul class="list-group">
+                                                                                            <li class="nav-item d-block d-lg-none">
+                                                    <button class="nav-link dropdown-link btn--empty js-close-dropdown-menu">
+                                                        <i class="material-icons mr-2">arrow_back</i> Back
+                                                    </button>
+                                                </li>
+                                            
+                                                                                                                                                                                
+                                            
+                                                                                                                                        
+                                                                                            
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/cs/o-nas/novinky" target="" class="nav-link dropdown-link">Novinky</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/cs/o-nas/o-nas" target="" class="nav-link dropdown-link">O nás</a>
+                                                            </li>
+                                                                                                                                                                                                        
+                                            </ul>
+                                        
+                                        
+                                    </div>
+
+                                    
+                                                                                                        </div>
+                            </div>
+                        </li>
+                                                                                                        
+                                            <li class="nav-item nav-item--main">
+                            <a href="/cs/kontakt" target="" class="nav-link nav-link--main">Kontakt</a>
+                        </li>
+                                                                                                                                                        </ul>
+    </nav>
+                            <nav class="navbar navbar--sub text-right d-flex align-items-center flex-wrap flex-row" role="navigation" aria-label="Sub Navigation">
+    <ul class="navbar-nav navbar-nav--sub flex-row ml-auto" id="sub-nav" aria-label="Sub Navigation">
+        
+
+
+	        
+        
+                                                        <li class="nav-item nav-item--menu-toggle d-block d-lg-none">
+                    <button class="site-header__menu-toggle js-site-header__menu-toggle">
+                        <i class="material-icons">close</i>
+                        <i class="material-icons">menu</i>
+                    </button>
+                </li>
+                    
+                                                
+            </ul>
+</nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                            <div class="site-header__body text-center" style="padding-top: 171px;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="site-header__content">
+                                                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="pimcore_area_group_header_headline pimcore_area_content">            <h1 class="site-header__title alt">
+            &nbsp;Aliaxis Česká republika
+        </h1>
+    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                                        <div class="shape shape--primary">
+                    <svg viewBox="0 0 100 6.1" style="">
+                                                                            <path d="M 0 10, 0 0 q 50 12.2 100 0, 100 10, 0 10" stroke="none" stroke-width="1" fill="#32aaff"></path>
+                                                                        Sorry, your browser does not support inline SVG.
+                    </svg>
+                </div>
+                    </header>
+    
+        <main>
+                    <div class="pimcore_area_group_intro pimcore_area_content">
+    <section class="section  intro intro--light  ">
+        <header class="section__header section__header--global intro__header">
+            <div class="shape shape--media shape--global mb-0">
+                                                                                        <img src="/website/aliaxis-templates/global/Training/Intro/circle-white.svg" class="intro__image" alt="" width="570" height="570">
+                                            
+                                            </div>
+                                            <div class="container">
+                    <div class="row">
+                                                <div class="col-12 col-lg-8 offset-lg-2">
+                                                            <h2 class="section__title intro__title h1 alt ">
+                                    we make life flow
+                                </h2>
+                            
+                                                            <div class="section__intro intro__introduction">
+                                    <div class="entry">
+                                        <p>Voda je základem života. Zabraňujeme jejímu plýtvání,&nbsp;pomáháme s ní efektivně hospodařit a zpřístupňujeme ji lidem.</p>
+
+                                    </div>
+                                </div>
+                                                    </div>
+                    </div>
+                </div>
+                                    </header>
+
+                <div class="section__body intro__body text-center">
+            <div class="container">
+                <div class="row">
+                    
+                    
+
+
+
+
+                    <div class="col-12 col-lg-6 offset-lg-3">
+
+                                                    <div class="intro__text">
+                                <div class="entry">
+                                    <p>Jsme více než jen pouhý dodavatel materiálu. Aliaxis nabízí široké znalosti a dlouholeté zkušenosti z celosvětové sítě silných a uznávaných značek.</p>
+
+<p>Již více než 25 let navrhujeme na českém trhu řešení pro přepravu průmyslových médií, pro veřejné a soukromé distribuční sítě (pitná voda, odpadní voda, energetika, zavlažování), pro úpravny vod, podtlakové, tlakové i gravitační kanalizace a specifická řešení pro citlivé sítě (plyn, stlačený vzduch, uhlovodíky, kontaminované půdy, abrazivní média atd.). Dodáváme chytrá a ekologická řešení pro hospodaření s dešťovou vodou a odvodnění staveb uvnitř i vně budov.</p>
+
+                                </div>
+                            </div>
+                        
+                                                    <div class="intro__actions">
+                                <a href="/cs/o-nas/o-nas" class="btn btn--gradient-red btn--blur">
+                                    Více o nás <i class="icon icon-Long-arrow"></i>
+                                </a>
+                            </div>
+                                            </div>
+                </div>
+            </div>
+        </div>
+            </section>
+
+    
+</div><div class="pimcore_area_group_offer_block pimcore_area_content">
+        <section class="section content-blocks content-blocks--offer offer offer--alt mb-0" style="background-image: url(/website/aliaxis-templates/global/Training/Dummy-Images/image-thumb__26940__offer-block-background/home-bubbels.webp)">
+        <div class="offer__images offer__images--alt">
+            <div class="content ">
+                                                            <div class="offer__image-wrapper offer__image-wrapper-1">
+                            <div class="stretch-image bg--image-overlay">
+                                <img src="/website/aliaxis-cz/korporatni_fotky/image-thumb__30171__offer-block-image/490606938%202386%20-%20kopie.webp" class="offer__image offer__image--1" loading="lazy" width="650" height="433">
+                            </div>
+                        </div>
+                                                                                <div class="offer__image-wrapper offer__image-wrapper-2">
+                            <div class="stretch-image ">
+                                <img src="/website/aliaxis-cz/korporatni_fotky/image-thumb__30250__offer-block-image/FRIATEC%20TECH%20IMG_3999%202802.webp" class="offer__image offer__image--2" loading="lazy">
+                            </div>
+                        </div>
+                                                                                <div class="offer__image-wrapper offer__image-wrapper-3">
+                            <div class="stretch-image ">
+                                <img src="/website/aliaxis-cz/korporatni_fotky/image-thumb__30244__offer-block-image/Dollarphotoclub_94432295.webp" class="offer__image offer__image--3" loading="lazy" width="650" height="434">
+                            </div>
+                        </div>
+                                                                                <div class="offer__image-wrapper offer__image-wrapper-4">
+                            <div class="stretch-image ">
+                                <img src="/website/aliaxis-cz/korporatni_fotky/image-thumb__30174__offer-block-image/tbv%20Akatherm%204094.webp" class="offer__image offer__image--4" loading="lazy" width="650" height="433">
+                            </div>
+                        </div>
+                                                                                <div class="offer__image-wrapper offer__image-wrapper-5">
+                            <div class="stretch-image bg--image-overlay">
+                                <img src="/website/aliaxis-cz/korporatni_fotky/image-thumb__30167__offer-block-image/169270359%204055%20-%20kopie.webp" class="offer__image offer__image--5" loading="lazy" width="650" height="433">
+                            </div>
+                        </div>
+                                                </div>
+        </div>
+        <div class="content-block content-block--offer offer__content-block">
+            <div class="container">
+                <div class="row">
+                                                                <div class="col-12 col-xs-10 offset-xs-1 col-md-12 offset-md-0">
+                            <div class="content-block__wrapper">
+                                <div class="content-block__body offer__body text-center">
+                                    <div class="pimcore_area_group_headline pimcore_area_content">
+            <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="color--bluelight">
+                    Naše nabídka
+                </h2>
+            </div>
+        </div>
+    </div><div class="pimcore_area_group_offer_card pimcore_area_content">    <link href="/aliaxis-group/css/bootstrap.css" rel="stylesheet">
+    <div class="offer__sections d-block d-md-flex justify-content-around">
+                                <div class="offer__section bg--image bg--image-overlay" style="background-image: url(/website/aliaxis-cz/korporatni_fotky/image-thumb__30252__offer-card-image/947233074%201958_1.webp);">
+                <div class="content d-flex align-items-center flex-column justify-content-center">
+                    <h3 class="h2">
+                        Inženýrské sítě
+                    </h3>
+                                        <a href="/cs/produkty/inzenyrske-site" class="btn btn--gradient-blue btn--blur">
+                        Zobrazit produkty <i class="icon icon-Long-arrow"></i>
+                    </a>
+                </div>
+            </div>
+                                <div class="offer__section bg--image bg--image-overlay" style="background-image: url(/website/aliaxis-cz/korporatni_fotky/image-thumb__30151__offer-card-image/GettyImages-960679648%201689.webp);">
+                <div class="content d-flex align-items-center flex-column justify-content-center">
+                    <h3 class="h2">
+                        Technika budov
+                    </h3>
+                                        <a href="/cs/produkty/technika-budov" class="btn btn--gradient-red btn--blur">
+                        Zobrazit produkty <i class="icon icon-Long-arrow"></i>
+                    </a>
+                </div>
+            </div>
+                                <div class="offer__section bg--image bg--image-overlay" style="background-image: url(/website/aliaxis-cz/korporatni_fotky/image-thumb__30139__offer-card-image/863999086%201633.webp);">
+                <div class="content d-flex align-items-center flex-column justify-content-center">
+                    <h3 class="h2">
+                        Průmyslové rozvody
+                    </h3>
+                                        <a href="/cs/produkty/prumyslove-rozvody" class="btn btn--gradient-pink btn--blur">
+                        Zobrazit produkty <i class="icon icon-Long-arrow"></i>
+                    </a>
+                </div>
+            </div>
+            </div>
+</div>
+                                </div>
+                            </div>
+                        </div>
+                                    </div>
+            </div>
+        </div>
+    </section>
+</div><div class="pimcore_area_group_spacer pimcore_area_content">
+
+            <div class="large-spacer"></div>
+    </div><div class="pimcore_area_group_content_block pimcore_area_content">                                                                                <section class="section entry entry--work work collage">
+                <div class="collage__images collage__images--work-corporate">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8 offset-lg-2">
+                                                                                                        <div class="collage__image-wrapper collage__image-wrapper--1">
+                                                                                    <img src="/website/aliaxis-cz/korporatni_fotky/image-thumb__123584__content-bubbles-image/498334211%20%282%29.webp" alt="" class="collage__image collage__image--1" loading="lazy">
+                                                                            </div>
+                                                                                                        <div class="collage__image-wrapper collage__image-wrapper--2">
+                                                                                    <img src="/_default_upload_bucket/image-thumb__274795__content-bubbles-image/735894999.webp" alt="" class="collage__image collage__image--2" loading="lazy">
+                                                                            </div>
+                                                                                                        <div class="collage__image-wrapper collage__image-wrapper--3">
+                                                                                    <img src="/website/aliaxis-cz/korporatni_fotky/image-thumb__241645__content-bubbles-image/spici_dite.webp" alt="" class="collage__image collage__image--3" loading="lazy">
+                                                                            </div>
+                                                                                                        <div class="collage__image-wrapper collage__image-wrapper--4">
+                                                                                    <img src="/website/aliaxis-cz/korporatni_fotky/image-thumb__149459__content-bubbles-image/GettyImages-964454428.webp" alt="" class="collage__image collage__image--4" loading="lazy">
+                                                                            </div>
+                                                                                                        <div class="collage__image-wrapper collage__image-wrapper--5">
+                                                                                    <img src="/website/aliaxis-cz/korporatni_fotky/image-thumb__123739__content-bubbles-image/GettyImages-839317986.webp" alt="" class="collage__image collage__image--5" loading="lazy">
+                                                                            </div>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+                <header class="section__header work__header work__header--landing mb-0 work__header--landing mb-0">
+                                                                <div class="container">
+                            <div class="row">
+                                <div class="col-lg-8 offset-lg-2">
+                                                                            <h2 class="section__title h1 color--bluelight">
+                                            Jsme Aliaxis
+                                        </h2>
+                                                                                    <div class="d-block">
+                                                <div class="media">
+                                                    <div class="media__ratio media__ratio--video">
+                                                                                                                                                                                                                                                <div class="d-flex flex-column justify-content-center align-content-center">
+                                                                                                                                            <video autoplay="" muted="">
+                                                                            <source src="/website/aliaxis-cz/korporatni_fotky/Aliaxis%20External%20Brand%20Movie_2019_Final.mp4" type="video/mp4">
+                                                                        </video>
+                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </div>
+                                                </div>
+                                            </div>
+                                                                                                            </div>
+                            </div>
+                        </div>
+                                        </header>
+                                    <div class="section__body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-8 offset-lg-2">
+                                    <div class="entry__body work__body">
+                                        <div class="entry__introduction text-center">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                            </section>
+                        
+                            </div><div class="pimcore_area_group_container pimcore_area_content">                <div class="container-with-gradient container-fluid    container-with-gradient    ">
+                <div class="container">
+                        <div class="pimcore_area_group_columns pimcore_area_content">
+    
+    <div class="row justify-content-start align-items-stretch   ">
+                                                            <div class="  col">
+                <div class="pimcore_area_group_spacer pimcore_area_content">
+
+            <div class="large-spacer"></div>
+    </div><div class="pimcore_area_group_headline pimcore_area_content">
+            <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="color--bluelight">
+                    Novinky
+                </h2>
+            </div>
+        </div>
+    </div>
+            </div>
+            </div>
+</div>
+                    </div>
+            </div>
+</div><div class="pimcore_area_newsteaser pimcore_area_content">                       <section class="section cards news card-teaser">
+        <div class="section__body">
+            <div class="container">
+                <div class="row card-row row-small-gutter">
+                                                                        <div class="col-12 col-sm-6 col-lg-4">
+                                <div class="card card--borderless">
+                                                                            <div class="card__header">
+                                            <div class="media">
+                                                <div class="media__ratio">
+                                                    <img src="/website/aliaxis-it/LANDING%20PAGES%20%26%20FOCUS%20ON/Flange%203pi%C3%B9/image-thumb__436526__news-604/Aliaxis-Italia-flange-odt.webp" class="media__source" alt="Nové 3+ příruby jsou lehké, odolné a pro montáž jednoduché" loading="lazy">
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                                                                <div class="card__body">
+                                                                                            <div class="card__label d-flex align-items-center">
+                                                    Novinky
+                                                                                                    </div>
+                                                                                                                                        <div class="card__title">
+                                                                                                                                                                    <a href="https://www.aliaxis.cz/cs/o-nas/novinky/news/3plus-volne-priruby" target="" class="card__link stretched-link" title="Nové 3+ příruby jsou lehké, odolné a pro montáž jednoduché">
+                                                            Nové 3+ příruby jsou lehké, odolné a pro montáž jednoduché
+                                                        </a>
+                                                                                                    </div>
+                                                                                                                                        <div class="card__label d-flex align-items-center">
+                                                    Nové 3+ příruby jsou lehké, odolné a pro montáž jednoduché
+                                                </div>
+                                                                                        
+                                                                                            <!-- Date -->
+                                                <div class="card__label d-flex align-items-center text--xs">
+                                                    1. října 2024
+                                                </div>
+                                                                                    </div>
+                                                                    </div>
+                            </div>
+                                                                                                <div class="col-12 col-sm-6 col-lg-4">
+                                <div class="card card--borderless">
+                                                                            <div class="card__header">
+                                            <div class="media">
+                                                <div class="media__ratio">
+                                                    <img src="/_default_upload_bucket/image-thumb__436263__news-604/virtual%20showroom%201.webp" class="media__source" alt="Prozkoumejte výrobky Aliaxis ve virtuálních sítích. Spustili jsme virtuální showroom pro inženýrské sítě." loading="lazy">
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                                                                <div class="card__body">
+                                                                                            <div class="card__label d-flex align-items-center">
+                                                    Novinky
+                                                                                                    </div>
+                                                                                                                                        <div class="card__title">
+                                                                                                                                                                    <a href="/cs/technicka-podpora/virtualni-showroom" target="" class="card__link stretched-link" title="Prozkoumejte výrobky Aliaxis ve virtuálních sítích. Spustili jsme virtuální showroom pro inženýrské sítě.">
+                                                            Prozkoumejte výrobky Aliaxis ve virtuálních sítích. Spustili jsme virtuální showroom pro inženýrské sítě.
+                                                        </a>
+                                                                                                    </div>
+                                                                                                                                    
+                                                                                            <!-- Date -->
+                                                <div class="card__label d-flex align-items-center text--xs">
+                                                    24. června 2024
+                                                </div>
+                                                                                    </div>
+                                                                    </div>
+                            </div>
+                                                                                                <div class="col-12 col-sm-6 col-lg-4">
+                                <div class="card card--borderless">
+                                                                            <div class="card__header">
+                                            <div class="media">
+                                                <div class="media__ratio">
+                                                    <img src="/_default_upload_bucket/image-thumb__435889__news-604/TEPPFA.webp" class="media__source" alt="Nová studie TEPPFA potvrzuje životnost plastových potrubí nad 100 let" loading="lazy">
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                                                                <div class="card__body">
+                                                                                            <div class="card__label d-flex align-items-center">
+                                                    Novinky
+                                                                                                    </div>
+                                                                                                                                        <div class="card__title">
+                                                                                                                                                                    <a href="/cs/o-nas/novinky/details/1448735/nova-studie-teppfa-potvrzuje-zivotnost-plastovych-potrubi-nad-100-let" class="card__link stretched-link" title="Nová studie TEPPFA potvrzuje životnost plastových potrubí nad 100 let">
+                                                            Nová studie TEPPFA potvrzuje životnost plastových potrubí nad 100 let
+                                                        </a>
+                                                                                                                                                            </div>
+                                                                                                                                    
+                                                                                            <!-- Date -->
+                                                <div class="card__label d-flex align-items-center text--xs">
+                                                    3. června 2024
+                                                </div>
+                                                                                    </div>
+                                                                    </div>
+                            </div>
+                                                            </div>
+            </div>
+        </div>
+    </section>
+
+</div><div class="pimcore_area_group_container pimcore_area_content">                <div class="container-with-gradient container-fluid    container-with-gradient    ">
+                <div class="container">
+                        <div class="pimcore_area_group_columns pimcore_area_content">
+    
+    <div class="row justify-content-start align-items-stretch   ">
+                                                            <div class="  col">
+                <div class="pimcore_area_group_button pimcore_area_content">
+
+        
+    <div class="row">
+        <div class="col-12 text-right">
+                            <a href="https://www.aliaxis.cz/cs/o-nas/novinky?static" class="btn btn--full-gradient btn--full-gradient-blue " title="novinky?static">
+                    <span>Více novinek</span>
+                    <i class="icon icon-Long-arrow"></i>
+                </a>
+                    </div>
+    </div>
+</div>
+            </div>
+            </div>
+</div>
+                    </div>
+            </div>
+</div><div class="pimcore_area_group_container pimcore_area_content">                <div class="container-with-gradient container-fluid    container-with-gradient    ">
+                <div class="container">
+                        <div class="pimcore_area_group_columns pimcore_area_content">
+    
+    <div class="row justify-content-start align-items-stretch   ">
+                                                            <div class="  col">
+                <div class="pimcore_area_group_horizontalLine pimcore_area_content">    <div class="horizontalLine">
+        <hr>
+    </div>
+</div>
+            </div>
+            </div>
+</div>
+                    </div>
+            </div>
+</div><div class="pimcore_area_group_container pimcore_area_content">                <div class="container-with-gradient container-fluid    container-with-gradient    ">
+                <div class="container">
+                        <div class="pimcore_area_group_spacer pimcore_area_content">
+
+            <div class="medium-spacer"></div>
+    </div><div class="pimcore_area_group_columns pimcore_area_content">
+    
+    <div class="row justify-content-start align-items-stretch   ">
+                                                            <div class="  col">
+                <div class="pimcore_area_group_headline pimcore_area_content">
+            <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="color--bluelight">
+                    Nové produkty
+                </h2>
+            </div>
+        </div>
+    </div>
+            </div>
+            </div>
+</div>
+                    </div>
+            </div>
+</div><div class="pimcore_area_newsteaser pimcore_area_content">                       <section class="section cards news card-teaser">
+        <div class="section__body">
+            <div class="container">
+                <div class="row card-row row-small-gutter">
+                                                                        <div class="col-12 col-sm-6 col-lg-4">
+                                <div class="card card--borderless">
+                                                                            <div class="card__header">
+                                            <div class="media">
+                                                <div class="media__ratio">
+                                                    <img src="/website/aliaxis-cz/Images/BS/Leaf_Basic/image-thumb__430583__news-604/leaf_titulka.webp" class="media__source" alt="Lokální rekuperační jednotka Leaf Basic" loading="lazy">
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                                                                <div class="card__body">
+                                                                                            <div class="card__label d-flex align-items-center">
+                                                    Nové produkty
+                                                                                                    </div>
+                                                                                                                                        <div class="card__title">
+                                                                                                                                                                    <a href="/cs/produkty/technika-budov/rekuperace-leaf" target="" class="card__link stretched-link" title="Lokální rekuperační jednotka Leaf Basic">
+                                                            Lokální rekuperační jednotka Leaf Basic
+                                                        </a>
+                                                                                                    </div>
+                                                                                                                                    
+                                                                                            <!-- Date -->
+                                                <div class="card__label d-flex align-items-center text--xs">
+                                                    26. února 2024
+                                                </div>
+                                                                                    </div>
+                                                                    </div>
+                            </div>
+                                                                                                <div class="col-12 col-sm-6 col-lg-4">
+                                <div class="card card--borderless">
+                                                                            <div class="card__header">
+                                            <div class="media">
+                                                <div class="media__ratio">
+                                                    <img src="/_default_upload_bucket/image-thumb__429578__news-604/ALIAXIS_WorkFlow_Keyvisual_Graben_cmyk_1.webp" class="media__source" alt="Nový digitální asistent ro výstavbu potrubních sítí WorkFlow" loading="lazy">
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                                                                <div class="card__body">
+                                                                                            <div class="card__label d-flex align-items-center">
+                                                    Nové produkty
+                                                                                                    </div>
+                                                                                                                                        <div class="card__title">
+                                                                                                                                                                    <a href="/cs/technicka-podpora/workflow-digitalni-stavba" target="" class="card__link stretched-link" title="Nový digitální asistent ro výstavbu potrubních sítí WorkFlow">
+                                                            Nový digitální asistent ro výstavbu potrubních sítí WorkFlow
+                                                        </a>
+                                                                                                    </div>
+                                                                                                                                    
+                                                                                            <!-- Date -->
+                                                <div class="card__label d-flex align-items-center text--xs">
+                                                    19. června 2023
+                                                </div>
+                                                                                    </div>
+                                                                    </div>
+                            </div>
+                                                                                                <div class="col-12 col-sm-6 col-lg-4">
+                                <div class="card card--borderless">
+                                                                            <div class="card__header">
+                                            <div class="media">
+                                                <div class="media__ratio">
+                                                    <img src="/_default_upload_bucket/image-thumb__429577__news-604/colubus_13000_web_1.webp" class="media__source" alt="Nová velikost nádrže Columbus XL - 13 000 l" loading="lazy">
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                                                                <div class="card__body">
+                                                                                            <div class="card__label d-flex align-items-center">
+                                                    Nové produkty
+                                                                                                    </div>
+                                                                                                                                        <div class="card__title">
+                                                                                                                                                                    <a href="/cs/o-nas/novinky/news/nova-nadrz-colmbus-13000l" target="" class="card__link stretched-link" title="Nová velikost nádrže Columbus XL - 13 000 l">
+                                                            Nová velikost nádrže Columbus XL - 13 000 l
+                                                        </a>
+                                                                                                    </div>
+                                                                                                                                    
+                                                                                            <!-- Date -->
+                                                <div class="card__label d-flex align-items-center text--xs">
+                                                    5. června 2023
+                                                </div>
+                                                                                    </div>
+                                                                    </div>
+                            </div>
+                                                            </div>
+            </div>
+        </div>
+    </section>
+
+</div><div class="pimcore_area_group_container pimcore_area_content">                <div class="container-with-gradient container-fluid    container-with-gradient    ">
+                <div class="container">
+                        <div class="pimcore_area_group_spacer pimcore_area_content">
+
+            <div class="large-spacer"></div>
+    </div><div class="pimcore_area_group_columns pimcore_area_content">
+    
+    <div class="row justify-content-start align-items-stretch   ">
+                                                            <div class="  col">
+                <div class="pimcore_area_group_headline pimcore_area_content">
+            <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="color--bluelight">
+                    Kontaktujte nás
+                </h2>
+            </div>
+        </div>
+    </div>
+            </div>
+            </div>
+</div>
+                    </div>
+            </div>
+</div><div class="pimcore_area_group_contact pimcore_area_content">
+                        <section class="section content-blocks content-blocks--type-2">
+                <div class="content-block content-block--type-2">
+                                            <div class="content-block__media content-block__media--type-2 content-block__media--right media">
+                            <div class="media__ratio">
+                                                                <img src="/website/aliaxis-cz/korporatni_fotky/luis-villasmil-4V8uMZx8FYA-unsplash.jpg" class="media__source" loading="lazy" alt="">
+                            </div>
+                        </div>
+                                        <div class="container">
+                        <div class="row d-flex">
+                            <div class="col-md-4 offset-md-1">
+                                <div class="content-block__body pt-5">
+                                                                            <div class="content-block__subtitle">
+                                            Kde nás najdete
+                                        </div>
+                                                                                                                <h2 class="content-block__title h3 d-flex align-items-center">
+                                                                                        Aliaxis Česká republika s.r.o.
+                                        </h2>
+                                                                                                                <div class="content-block__text text--xl">
+                                                                                            <address class="location__address">
+                                                    <p>Průmyslová 367, 252 50 Vestec</p>
+
+<p><iframe align="right" frameborder="0" height="300" scrolling="no" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10261.977739436212!2d14.4889266!3d49.983339!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf2a1de909b5f4b9c!2sNicoll%20%C4%8Cesk%C3%A1%20republika%2C%20s.r.o.!5e0!3m2!1scs!2scz!4v1604502683616!5m2!1scs!2scz" style="border:0;" width="100%"></iframe></p>
+
+<hr>
+                                                </address>
+                                                                                                                                        <strong>
+                                                    <a href="tel:+420 272 084 611, 800 23 24 25" class="content-block__link" title="Aliaxis Česká republika s.r.o. Number">
+                                                        +420 272 084 611, 800 23 24 25
+                                                    </a>
+                                                </strong>
+                                                                                        <br>
+                                                                                            <strong>
+                                                    <a href="mailto:info.cz@aliaxis.com" class="content-block__link" title="Aliaxis Česká republika s.r.o. Mail">
+                                                        info.cz@aliaxis.com
+                                                    </a>
+                                                </strong>
+                                                                                    </div>
+                                                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+                    </div>
+            </main>
+<!-- /main-content -->
+
+	
+					
+<footer class="site-footer">
+
+	<!-- Footer Shape Variation 1 -->
+	<div class="shape site-footer__shape">
+		<svg viewBox="0 0 100 6.1">
+			<path d="M 0 6.1 Q 50 -6.1 100 6.1 M 100 6.1, 100 0" stroke="none" stroke-width="1" fill="#32aaff"></path>
+			Sorry, your browser does not support inline SVG.
+		</svg>
+	</div>
+	<!-- End Footer Shape Variation 1 -->
+
+	<div class="site-footer__body">
+		<div class="container">
+									
+			<div class="row">
+	<div class="col-12">
+		<div class="site-footer__bottom text-center text-sm-left">
+			<div class="d-inline-block d-sm-flex align-items-center justify-content-between">
+				
+
+	
+									<link rel="stylesheet" href="/aliaxis-group/css/qw.css">
+
+<div class="container footer-images">
+	<div class="row">
+					<div class="col-12 d-flex flex-row flex-wrap justify-content-center justify-content-md-end">
+							</div>
+			</div>
+</div>
+
+    <nav class="site-footer__nav site-footer__nav--social-media ml-auto">
+        <ul class="navbar-nav flex-row" aria-label="Social Media">
+                            <li class="site-footer__nav-item site-footer__nav-item--social-media nav-item">
+                    <a href="https://www.linkedin.com/company/nicoll-ceska-republika/" target="_blank" class="site-footer__nav-link site-footer__nav-link--social-media nav-link" title="">
+                        <span class="icon-LinkedIn"></span>
+                    </a>
+                </li>
+                                        <li class="site-footer__nav-item site-footer__nav-item--social-media nav-item">
+                    <a href="https://www.facebook.com/aliaxisceskarepublika" target="_blank" class="site-footer__nav-link site-footer__nav-link--social-media nav-link" title="">
+                        <span class="icon-Facebook"></span>
+                    </a>
+                </li>
+                                                                            <li class="site-footer__nav-item site-footer__nav-item--social-media nav-item">
+                    <a href="https://www.youtube.com/user/CZGLYNWED" target="_blank" class="site-footer__nav-link site-footer__nav-link--social-media nav-link" title="">
+                        <span class="icon-Youtube"></span>
+                    </a>
+                </li>
+                    </ul>
+    </nav>
+
+							</div>
+			<hr>
+			<div class="d-block d-sm-flex align-items-center justify-content-between">
+				<div class="site-footer__copyright order-2 order-sm-1">
+					© 2025 Aliaxis
+				</div>
+				
+								
+				
+								<nav class="site-footer__nav site-footer__nav--sub d-inline-block order-1 order-sm-2" role="navigation" aria-label="Footer Navigation">
+					<ul class="navbar-nav flex-row" aria-label="Footer Navigation">
+																					<li class="site-footer__nav-item site-footer__nav-item--sub nav-item">
+									<a href="/cs/metanavigation/gdpr" class="site-footer__nav-link site-footer__nav-link--sub nav-link" title="GDPR">
+										GDPR
+									</a>
+								</li>
+																												<li class="site-footer__nav-item site-footer__nav-item--sub nav-item">
+									<a href="/cs/kontakt" class="site-footer__nav-link site-footer__nav-link--sub nav-link" title="Kontakt">
+										Kontakt
+									</a>
+								</li>
+																		</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+</div>
+		</div>
+	</div>
+</footer>
+
+
+<button class="btn btn--square btn--blue-outline" onclick="scrollToTop(400)" id="scrool-to-top-btn">
+    <span class="material-icons-downloads">arrow_upward</span>
+</button>
+
+<script>
+
+    mybutton = document.getElementById("scrool-to-top-btn");
+
+    window.onscroll = function() {scrollFunction()};
+
+    var scrollOffset = 0;
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+
+        if(parseInt(document.getElementsByTagName('body')[0].style.width)>991) {
+            document.getElementById('main-nav').find('.nav-item.nav-item--main.open').removeClass('open').addClass('closed');
+            document.getElementById('main-nav').find('.nav-dropdown.collapse.show').removeClass('show');//.addClass('closed');
+        }
+
+    }
+
+    function topFunction() {
+
+
+
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+
+    function scrollToTop (duration) {
+        // cancel if already on top
+        if (document.scrollingElement.scrollTop === 0) return;
+
+        const totalScrollDistance = document.scrollingElement.scrollTop;
+        let scrollY = totalScrollDistance, oldTimestamp = null;
+
+        function step (newTimestamp) {
+            if (oldTimestamp !== null) {
+                // if duration is 0 scrollY will be -Infinity
+                scrollY -= totalScrollDistance * (newTimestamp - oldTimestamp) / duration;
+                if (scrollY <= 0) return document.scrollingElement.scrollTop = 0;
+                document.scrollingElement.scrollTop = scrollY;
+            }
+            oldTimestamp = newTimestamp;
+            window.requestAnimationFrame(step);
+        }
+        window.requestAnimationFrame(step);
+    }
+
+</script>
+
+
+            <script src="/aliaxis-group/js/bundle-main.js" defer=""></script>
+    
+    <script src="/aliaxis-group/js/jquery-3.5.0.min.js" defer=""></script>
+
+<script src="/aliaxis-group/js/jquery.fancybox.min.js" defer=""></script>
+<script src="/aliaxis-group/js/qw.min.js" defer=""></script>
+<script src="/aliaxis-group/js/bundle-msform.js" defer=""></script>
+
+
+    <button class="button is-success cookie-button" onclick="return klaro.show();"><img src="/aliaxis-group/images/cookie-bite-solid.svg" alt="Cookie"></button>
+
+
+<link rel="stylesheet" href="/css/global.css">
+
+
+<div id="klaro"><div lang="cs" class="klaro ds-customize-klaro"><div class="cookie-notice   "><div class="cn-body"><p><span>Souhlasíte s používáním Cookies a dlaších nástrojů na našem webu?</span></p><div class="cn-ok"><a class="cm-link cn-learn-more" href="#">Zjistit více a vybrat...</a><div class="cn-buttons"><button class="cm-btn cm-btn-danger cn-decline" type="button">Odmítnout cookies</button><button class="cm-btn cm-btn-success" type="button">Přijímám cookies</button></div></div></div></div></div></div></body></html>

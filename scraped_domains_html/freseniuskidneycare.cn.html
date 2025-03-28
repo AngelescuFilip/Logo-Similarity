@@ -1,0 +1,837 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    
+    <script src="https://hm.baidu.com/hm.js?c6aca1980388d148361a2a45882aecad"></script><script src="/scripts/jquery.js"></script>
+    <script src="/scripts/vue.js"></script>
+    <script src="/scripts/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/commonCss.css">
+    <link rel="stylesheet" href="/css/reset.css?id=20210428">
+<link rel="stylesheet" href="/css/header.css?id=20210428" type="text/css"></head>
+
+<body><div id="header" class="header"><div class="pop" style=""><p>Fresenius Medical Care在这个网站上使用cookie，以提高用户体验，并提供最好的服务。如果您接受所有cookie，请单击接受cookies。了解更多信息，请参阅我们的<a href="/pop">隐私政策</a></p> <button>接受</button> <img alt="" src="/media/jivlomhe/close.png"></div> <div class="rowHeader container"><img onclick="window.location.href='/'" src="/FrontEnd/header/logo.png" class="logo" width="270" height="60" style="cursor: pointer;"> <div class="center"><div><a href="/">首页</a></div> <div><p>肾病指南</p> <div><a href="/CKD">什么是慢性肾脏病</a> <a href="/treatment">治疗方式</a> <a href="/health">健康管理</a> <a href="/response">积极应对</a> <a href="/kidneyStory">肾友故事</a></div></div> <div><p>透析服务</p> <div><a href="/TravelDialysis">旅游透析</a> <a href="/assistCure">辅助诊疗服务</a> <a href="/centre">透析中心导览</a></div></div> <div><p>关于我们</p> <div><a href="/aboutFKC">关于费森尤斯医疗服务</a> <a href="/news">新闻中心</a> <a href="/cooperation">费森星联</a> <a href="/joinUs">加入我们</a> <a href="/environmentalProtection">环境保护</a></div></div></div> <div class="row_3"><li style="cursor: pointer;"><img alt="" src="/FrontEnd/header/center.png"><sapn>查找透析中心</sapn></li> <li class="line"></li> <li><img alt="" src="/FrontEnd/header/phone.png"><sapn>400 003 9181</sapn></li></div> <div class="search"><img alt="" src="/FrontEnd/header/serch.png"> <input placeholder="输入关键词查询" type="text" style="display: none;"></div> <div class="qrWrap" style="display: none;"><img src="/media/2f4d1bot/123.jpg" alt="公众号二维码"> <p>微信扫一扫<br>关注该公众号</p></div> <img alt="" src="/FrontEnd/header/wechat.png" class="wechat"> <div class="listBox"><img alt="" src="/FrontEnd/header/list.png" class="liebiao"> <div class="iconWrap" style="display: none;"><a href="/"><div><img alt="" src="/FrontEnd/header/icon1.png" class="icon"> <span>首页</span></div></a> <div class=""><div><img alt="" src="/FrontEnd/header/icon2.png" class="icon"> <img alt="" src="/FrontEnd/header/icon2-wap.png" class="icon"> <span>肾病指南</span></div></div> <div class=""><div><img alt="" src="/FrontEnd/header/icon3.png" class="icon"> <img alt="" src="/FrontEnd/header/icon3-wap.png" class="icon"> <span>透析服务</span></div></div> <div class=""><div><img alt="" src="/FrontEnd/header/icon4.png" class="icon"> <img alt="" src="/FrontEnd/header/icon4-wap.png" class="icon"> <span>关于我们</span></div></div> <div class="linkList" style="display: none;"><ul style="display: none;"><li><a href="/CKD">什么是慢性肾脏病</a></li> <li><a href="/treatment">治疗方式</a></li> <li><a href="/health">健康管理</a></li> <li><a href="/response">积极应对</a></li> <li><a href="/kidneyStory">肾友故事</a></li></ul> <ul style="display: none;"><li><a href="/choose">如何选择透析中心</a></li> <li><a href="/TravelDialysis">旅游透析</a></li> <li><a href="/assistCure">辅助诊疗服务</a></li> <li><a href="/centre">透析中心导览</a></li></ul> <ul style="display: none;"><li><a href="/aboutFKC">关于费森尤斯医疗服务</a></li> <li><a href="/news">新闻中心</a></li> <li><a href="/cooperation">费森星联</a></li> <li><a href="/joinUs">加入我们</a></li> <li><a href="/environmentalProtection">环境保护</a></li></ul></div></div></div></div></div>
+
+<script>
+ var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?c6aca1980388d148361a2a45882aecad";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    var header = new Vue({
+         el:"#header",
+        data:{
+            show:false,//总菜单栏
+            detailShow:true,//详细列表
+           detailListTitle:true,
+           popShow:false,
+           type:0,
+           wrapShow: false,
+           indexNow: 0,
+           title:"",
+           isQr:false,
+           searchText: '',
+           isSearch: false,
+            list:[
+                {
+                type:0,
+                title:"首页",
+                link:"https://fmcc2006.previ3w.com/",
+            },
+            {
+                index:1,
+                title:"关于我们",
+                link:"",
+                xianshi:false,
+                detailList:[
+                    
+                   {
+                     title:"关于费森尤斯医疗服务",
+                     link:"/aboutFKC"
+                   },
+                   {title:"新闻中心",
+                    link:"/news"
+                   },
+                   {title:"费森星联",
+                    link:"/cooperation"
+                   },
+                   {title:"加入我们",
+                    link:"/joinUs"
+                   }]
+            },
+            {  index:2,
+                title:"肾病指南",
+                xianshi:false,
+                link:"https://fmcc2006.previ3w.com/CKD",
+                detailList:[
+                    
+                    {
+                        title:"什么是慢性肾脏病",
+                        link:"/CKD"
+                    },
+                    {
+                        title:"治疗方式",
+                        link:"/treatment"
+                    },
+                    {
+                        title:"健康管理",
+                        link:"/health"
+                    },
+                    {
+                        title:"积极应对",
+                        link:"/response"
+                    },
+                    {
+                        title:"肾友故事",
+                        link:"/kidneyStory"
+                    },
+                    ]
+            },
+            {  index:3,
+                title:"透析服务",
+                link:"https://fmcc2006.previ3w.com/TravelDialysis",
+                xianshi:false,
+                detailList:[
+                    {
+                        title:"旅游透析",
+                        link:"/TravelDialysis"
+                    },
+                    {
+                        title:"辅助诊疗服务",
+                        link:"/assistCure"
+                    },
+                    {
+                        title:"透析中心导览",
+                        link:"/centre"
+                    },
+                    {
+                        title:"Care Alliance",
+                        link:"/choose"
+                    }
+                    ]
+            }
+            ]
+        },
+        methods:{
+            accept:function(){
+                this.popShow = false
+                this.type = 1
+                localStorage.setItem('type',this.type);
+                
+            },
+            handleClickSearch: function(){
+                if(this.isSearch && this.searchText){
+                    window.location.href = '/search?search=' + this.searchText
+                }
+                this.isSearch = !this.isSearch ? true : false
+            },
+            shiftList:function(index){
+                this.indexNow = index
+            },
+            shift:function(){
+                this.wrapShow = this.wrapShow ? false: true
+                if(!this.wrapShow){
+                    this.indexNow = 0
+                }
+            },
+            goPage: function(url){
+                window.location.href = url
+            }
+            // close:function(){
+            //     this.popShow = false
+            // },
+            // mouseOver:function(){
+            //     this.show = true
+            // },
+            // out:function(){
+            //     this.show = false
+            // },
+            // detailMouseover:function(){
+            //     this.detailShow = true
+            // },
+            // detailLeaver:function(){
+            //     this.detailShow = false
+            // },
+            // allTitle:function(allIndex){
+            //     this.list[allIndex].xianshi = true
+            // },
+            // allTitleIsShow:function(allIndex){
+            //     this.list[allIndex].xianshi = false
+            // }
+        },
+        mounted:function(){
+            
+            let _this = this
+            let type = localStorage.getItem('type');
+       if(type == 1){
+           _this.popShow = false
+       }else{
+           setTimeout(function(){
+                $(".pop").show("slow");
+            },1000);
+           _this.popShow = true
+          
+       }
+        }
+    })
+    
+</script>
+
+<div id="allContent">
+   
+
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/swiper.min.css">
+    <link rel="stylesheet" href="/css/citySelect.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/bannerPub.css?id=20201015">
+    <link rel="stylesheet" href="/css/makeShow.css">
+    <link rel="stylesheet" href="/css/index.css?id=20210428">
+    <title>首页</title>
+
+
+    <div id="app"><div class="g-bd g-banner-wrap"><div class="swiper-container swiper-containerTop swiper-container-horizontal"><div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-1400px, 0px, 0px);"><div class="swiper-slide g-banner2 swiper-slide-duplicate swiper-slide-prev" data-swiper-slide-index="2" style="cursor: pointer; width: 1400px;"><img src="/FrontEnd/choose/banner21.png" class="g-bannerImg"> <img src="/FrontEnd/choose/banner2-wap.png" class="g-bannerImg"> <div class="g-bannerText"><p>如何选择透析中心</p></div></div><div class="swiper-slide g-banner2 swiper-slide-active" data-swiper-slide-index="0" style="width: 1400px;"><div><img src="/media/xcrgywhq/banner-20210720-2.png" class="g-bannerImg"> <img src="/FrontEnd/images/banner2-wap.png" class="g-bannerImg"> <div class="g-bannerText"><p>费森尤斯医疗服务</p> <p>关注肾脏健康</p></div></div></div> <div class="swiper-slide g-banner2 swiper-slide-next" data-swiper-slide-index="1" style="cursor: pointer; width: 1400px;"><img src="/FrontEnd/CKD/banner21.jpg" class="g-bannerImg"> <img src="/FrontEnd/CKD/banner2-wap.png" class="g-bannerImg"> <div class="g-bannerText"><p>什么是慢性肾脏病</p></div></div> <div class="swiper-slide g-banner2 swiper-slide-duplicate-prev" data-swiper-slide-index="2" style="cursor: pointer; width: 1400px;"><img src="/FrontEnd/choose/banner21.png" class="g-bannerImg"> <img src="/FrontEnd/choose/banner2-wap.png" class="g-bannerImg"> <div class="g-bannerText"><p>如何选择透析中心</p></div></div><div class="swiper-slide g-banner2 swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="0" style="width: 1400px;"><div><img src="/media/xcrgywhq/banner-20210720-2.png" class="g-bannerImg"> <img src="/FrontEnd/images/banner2-wap.png" class="g-bannerImg"> <div class="g-bannerText"><p>费森尤斯医疗服务</p> <p>关注肾脏健康</p></div></div></div></div></div></div> <div class="m-phone"><div><div><img src="/FrontEnd/images/icon-chazhao.png" alt=""><span>查找透析中心</span></div> <div><img src="/FrontEnd/images/icon-dianhua.png" alt=""><span>400 003 9181</span></div></div></div> <span class="FKCTitle" style="cursor: pointer;">品牌故事</span> <p class="aboutInfo">费森尤斯透析中心在全球范围内拥有4,000余家透析中心、在全亚太地区有接近400家透析中心，为患者提供专业、全面、个性化的透析治疗服务。</p> <div class="g-video"><div class="g-videos"><div class="g-video-max"><div class="g-video-wrap"><video src="/FrontEnd/video/1.mp4" poster="/FrontEnd/video/fengmian1.jpg" class="videoEl"></video> <img src="/FrontEnd/images/Play.png" alt="" class="playEl"></div> <div class="g-video-info"><p>关于透析中心</p></div></div> <div class="g-video-min-wrap"><div class="swiper-container swiper-containerVideo swiper-container-horizontal"><div class="swiper-wrapper"><div class="swiper-slide g-video-min swiperGroup swiper-slide-active" style="margin-right: 20px;"><div class="g-video-wrap"><video src="/FrontEnd/video/2.mp4" poster="/FrontEnd/video/fengmian2-2.png" class="videoEl1"></video> <img src="/FrontEnd/images/Play.png" alt="" class="playEl"></div> <div class="g-video-info"><p>全球旅游透析攻略</p></div></div> <div class="swiper-slide g-video-min swiper-slide-next" style="width: 625px; margin-right: 20px;"><div class="g-video-wrap"><video src="/FrontEnd/video/7.mp4" poster="/FrontEnd/video/fengmian7.png" class="videoEl"></video> <img src="/FrontEnd/images/Play.png" alt="" class="playEl"></div> <div class="g-video-info"><p>FKC2022微笑绽放</p></div></div> <div class="swiper-slide g-video-min" style="width: 625px; margin-right: 20px;"><div class="g-video-wrap"><video src="/FrontEnd/video/homeVideo_FKC医师视频_ 福州梁医生.mp4" poster="/FrontEnd/video/homeVideo_FKC医师视频_ 福州梁医生_poster.jpg" class="videoEl"></video> <img src="/FrontEnd/images/Play.png" alt="" class="playEl"></div> <div class="g-video-info"><p>榜样的力量</p></div></div> <div class="swiper-slide g-video-min" style="width: 625px; margin-right: 20px;"><div class="g-video-wrap"><video src="/FrontEnd/video/homeVideo_FKC医师视频_ 泉州朱医生.mp4" poster="/FrontEnd/video/homeVideo_FKC医师视频_泉州朱医生_poster.jpg" class="videoEl"></video> <img src="/FrontEnd/images/Play.png" alt="" class="playEl"></div> <div class="g-video-info"><p>温暖的力量</p></div></div> <div class="swiper-slide g-video-min" style="width: 625px; margin-right: 20px;"><div class="g-video-wrap"><video src="/FrontEnd/video/3.mp4" poster="/FrontEnd/video/fengmian3.png" class="videoEl"></video> <img src="/FrontEnd/images/Play.png" alt="" class="playEl"></div> <div class="g-video-info"><p>Pascal Kopperschimidt博士30年透析励志故事</p></div></div> <div class="swiper-slide g-video-min" style="width: 625px; margin-right: 20px;"><div class="g-video-wrap"><video src="/FrontEnd/video/4.mp4" poster="/FrontEnd/video/fengmian4.png" class="videoEl"></video> <img src="/FrontEnd/images/Play.png" alt="" class="playEl"></div> <div class="g-video-info"><p>费森尤斯医疗服务医护人员的战“疫”暖心故事——危难中才能看到人的品质</p></div></div> <div class="swiper-slide g-video-min" style="width: 625px; margin-right: 20px;"><div class="g-video-wrap"><video src="/FrontEnd/video/5.mp4" poster="/FrontEnd/video/fengmian5.png" class="videoEl"></video> <img src="/FrontEnd/images/Play.png" alt="" class="playEl"></div> <div class="g-video-info"><p>费森尤斯医疗服务医护人员的战“疫”暖心故事——我必须为病人做点什么</p></div></div> <div class="swiper-slide g-video-min" style="width: 625px; margin-right: 20px;"><div class="g-video-wrap"><video src="/FrontEnd/video/6.mp4" poster="/FrontEnd/video/fengmian6.png" class="videoEl"></video> <img src="/FrontEnd/images/Play.png" alt="" class="playEl"></div> <div class="g-video-info"><p>费森尤斯医疗服务医护人员的战“疫”暖心故事——我们就是他们的希望</p></div></div></div> <div class="swiper-pagination swiper-paginationVideo swiper-pagination-progressbar"><span class="swiper-pagination-progressbar-fill" style="transform: translate3d(0px, 0px, 0px) scaleX(0.166667) scaleY(1); transition-duration: 300ms;"></span></div></div></div></div></div> <div class="g-story"><img src="/FrontEnd/images/wmcn.jpg" alt="" style="width: 100%;"></div> <div class="g-bd g-1st"><div class="g-1st-s"><p>个性化假日透析服务</p> <p>为患者提供专业、全面、个性化的透析治疗服务</p> <button>前往定制您的假日透析计划</button></div></div> <div class="g-bd g-3th"><p class="module-title" style="cursor: pointer;">透析中心导览</p> <div class="select-wrap"><div class="search"><div class="citySelect"><span class="cityName">请选择城市</span></div> <div class="dropDown"><div class="dropProv"><ul class="dropProvUl dropUl"><li class="dropProvLi">江苏</li><li class="dropProvLi">福建</li><li class="dropProvLi">云南</li><li class="dropProvLi">湖北</li></ul></div> <div class="dropCity"><ul class="dropCityUl dropUl"></ul></div></div></div> <select name="selectHospitalValue" id=""><option value="volvo">请选择透析中心</option> <option value="0">常熟费森尤斯血液透析中心</option><option value="1">大理费森尤斯血液透析中心</option><option value="2">昆明盘龙费森尤斯血液透析中心</option><option value="3">武汉江北费森安馨血液透析中心</option><option value="4">武汉江南费森安馨血液透析中心</option><option value="5">泉州费森安馨血液透析中心</option><option value="6">襄阳费森安馨血液透析中心</option><option value="7">福州费森尤斯血液透析中心</option><option value="8">红河蒙自费森尤斯血液透析中心</option><option value="9">宣威费森尤斯血液透析中心</option></select></div> <!----> <div class="swiper-container swiper-container2 swiper-container-horizontal swiper-container-multirow"><div class="swiper-wrapper" style="width: 2350px;"><div class="swiper-slide swiper-slide-active" data-swiper-column="0" data-swiper-row="0" style="width: 430px; margin-right: 40px;"><div><img src="/FrontEnd/hospital/guide1.jpg" alt=""> <div class="hospital-info"><p class="text-over">常熟费森尤斯血液透析中心</p> <p>江苏省常熟市虞山北路163号虞山天地1栋101-102号</p> <div><div class="pointer"><img src="/FrontEnd/images/yuyue.png" alt=""> <span>预约</span></div></div></div></div></div><div class="swiper-slide swiper-slide-next" data-swiper-column="1" data-swiper-row="0" style="width: 430px; margin-right: 40px;"><div><img src="/FrontEnd/hospital/guide11.jpg" alt=""> <div class="hospital-info"><p class="text-over">大理费森尤斯血液透析中心</p> <p>云南省大理白族自治州大理市下关镇环城南路53号</p> <div><div class="pointer"><img src="/FrontEnd/images/yuyue.png" alt=""> <span>预约</span></div></div></div></div></div><div class="swiper-slide" data-swiper-column="2" data-swiper-row="0" style="width: 430px; margin-right: 40px;"><div><img src="/FrontEnd/hospital/guide7.png" alt=""> <div class="hospital-info"><p class="text-over">昆明盘龙费森尤斯血液透析中心</p> <p>云南省昆明市盘龙区金江小区H栋1-2层</p> <div><div class="pointer"><img src="/FrontEnd/images/yuyue.png" alt=""> <span>预约</span></div></div></div></div></div><div class="swiper-slide" data-swiper-column="3" data-swiper-row="0" style="width: 430px; margin-right: 40px;"><div><img src="/FrontEnd/hospital/guide16.png" alt=""> <div class="hospital-info"><p class="text-over">武汉江北费森安馨血液透析中心</p> <p>武汉市巨龙大道盘龙城经济开发区F空港中心城商业街2楼</p> <div><div class="pointer"><img src="/FrontEnd/images/yuyue.png" alt=""> <span>预约</span></div></div></div></div></div><div class="swiper-slide" data-swiper-column="4" data-swiper-row="0" style="width: 430px; margin-right: 40px;"><div><img src="/FrontEnd/hospital/guide17.png" alt=""> <div class="hospital-info"><p class="text-over">武汉江南费森安馨血液透析中心</p> <p>湖北省武汉市江夏区大桥新区侨亚国际文化大厦1-2楼</p> <div><div class="pointer"><img src="/FrontEnd/images/yuyue.png" alt=""> <span>预约</span></div></div></div></div></div><div class="swiper-slide" data-swiper-column="0" data-swiper-row="1" style="margin-top: 40px; width: 430px; margin-right: 40px;"><div><img src="/FrontEnd/hospital/guide5.png" alt=""> <div class="hospital-info"><p class="text-over">泉州费森安馨血液透析中心</p> <p>泉州市鲤城区南环路5号</p> <div><div class="pointer"><img src="/FrontEnd/images/yuyue.png" alt=""> <span>预约</span></div></div></div></div></div><div class="swiper-slide" data-swiper-column="1" data-swiper-row="1" style="margin-top: 40px; width: 430px; margin-right: 40px;"><div><img src="/FrontEnd/hospital/guide18.png" alt=""> <div class="hospital-info"><p class="text-over">襄阳费森安馨血液透析中心</p> <p>襄阳市襄城区环城东路鑫地广场维也纳酒店西侧</p> <div><div class="pointer"><img src="/FrontEnd/images/yuyue.png" alt=""> <span>预约</span></div></div></div></div></div><div class="swiper-slide" data-swiper-column="2" data-swiper-row="1" style="margin-top: 40px; width: 430px; margin-right: 40px;"><div><img src="/FrontEnd/hospital/guide2.jpg" alt=""> <div class="hospital-info"><p class="text-over">福州费森尤斯血液透析中心</p> <p>福州市鼓楼区井大路68号建银大厦5楼</p> <div><div class="pointer"><img src="/FrontEnd/images/yuyue.png" alt=""> <span>预约</span></div></div></div></div></div><div class="swiper-slide" data-swiper-column="3" data-swiper-row="1" style="margin-top: 40px; width: 430px; margin-right: 40px;"><div><img src="/FrontEnd/hospital/guide19.png" alt=""> <div class="hospital-info"><p class="text-over">红河蒙自费森尤斯血液透析中心</p> <p>云南省红河哈尼族彝族自治州蒙自市民安路232号</p> <div><div class="pointer"><img src="/FrontEnd/images/yuyue.png" alt=""> <span>预约</span></div></div></div></div></div><div class="swiper-slide" data-swiper-column="4" data-swiper-row="1" style="margin-top: 40px; width: 430px; margin-right: 40px;"><div><img src="/FrontEnd/hospital/guide20.png" alt=""> <div class="hospital-info"><p class="text-over">宣威费森尤斯血液透析中心</p> <p>宣威费森尤斯血液透析中心位于宣威市龙堡中路金桥财富广场三楼</p> <div><div class="pointer"><img src="/FrontEnd/images/yuyue.png" alt=""> <span>预约</span></div></div></div></div></div></div> <div class="swiper-pagination swiper-pagination2 swiper-pagination-clickable swiper-pagination-bullets"><span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span></div></div> <div class="clickShow" style="display: none;"><span> &lt; 返回 </span> <div class="clickShow-con"><img alt=""> <div></div> <div><div><p>立即预约</p> <p>医院：</p> <p>地址：</p> <a href="tel:undefined">预约电话：</a></div></div></div></div></div> <div class="g-bd g-4th"><div class="g-4th-s"><p class="module-title">肾友指南</p> <div class="swiper-container swiper-container3 swiper-container-horizontal swiper-container-multirow"><div class="swiper-wrapper" style="width: 1440px;"><div class="swiper-slide swiper-slide-active" data-swiper-column="0" data-swiper-row="0" style="width: 680px; margin-right: 40px;"><img src="/FrontEnd/images/zhinan-1.png" alt=""> <div class="text-info pointer"><p class="text-title">什么是慢性肾脏病</p></div></div><div class="swiper-slide swiper-slide-next" data-swiper-column="1" data-swiper-row="0" style="width: 680px; margin-right: 40px;"><img src="/FrontEnd/images/zhinan-2.png" alt=""> <div class="text-info pointer"><p class="text-title">慢性肾脏病的治疗方式</p></div></div><div class="swiper-slide" data-swiper-column="0" data-swiper-row="1" style="margin-top: 40px; width: 680px; margin-right: 40px;"><img src="/FrontEnd/images/zhinan-3.png" alt=""> <div class="text-info pointer"><p class="text-title">慢性肾脏病的健康管理</p></div></div><div class="swiper-slide" data-swiper-column="1" data-swiper-row="1" style="margin-top: 40px; width: 680px; margin-right: 40px;"><img src="/FrontEnd/images/zhinan-4.png" alt=""> <div class="text-info pointer"><p class="text-title">积极应对慢性肾脏病</p></div></div></div> <div class="swiper-pagination swiper-pagination3 swiper-pagination-clickable swiper-pagination-bullets"><span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span></div></div></div></div> <div class="g-bd g-5th"><div class="g-5th-s"><p></p> <p>费森星联</p> <p>全方位透析服务解决方案</p> <button>进一步了解费森星联</button></div></div> <div class="g-bd g-6th"><p class="module-title" style="cursor: pointer;">新闻中心</p> <div class="g-6th-s"><div class="swiper-container swiper-container5 swiper-container-horizontal"><div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-1400px, 0px, 0px);"><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="0" style="width: 426.667px; margin-right: 40px;"><div><a href="https://mp.weixin.qq.com/s/x8gokM8DAxyDa-YIqxkF4Q" target="_blank"><img src="/FrontEnd/images/news1-T.jpg" alt=""> <div class="news-info"><p>透亮人生 遇见高品质透析|费森尤斯大庆透析中心开业典礼暨肾友会</p> <span>2019-03-05</span></div></a></div></div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="1" style="width: 426.667px; margin-right: 40px;"><div><a href="https://mp.weixin.qq.com/s/Hc7hMY-U7q4_B-7Q7Gukuw" target="_blank"><img src="/FrontEnd/images/news2-T.jpg" alt=""> <div class="news-info"><p>年末余岁中我们与您执笔共迎新一年的透亮人生</p> <span>2019-01-25</span></div></a></div></div><div class="swiper-slide swiper-slide-duplicate swiper-slide-prev" data-swiper-slide-index="2" style="width: 426.667px; margin-right: 40px;"><div><a href="https://mp.weixin.qq.com/s/_QnK-2PygjdpChO_KD3yRg" target="_blank"><img src="/FrontEnd/images/news3-T.jpg" alt=""> <div class="news-info"><p>遇见高品质透析|费森尤斯福州透析中心开业日暨肾友会</p> <span>2019-01-17</span></div></a></div></div><div class="swiper-slide swiper-slide-active" data-swiper-slide-index="0" style="width: 426.667px; margin-right: 40px;"><div><a href="https://mp.weixin.qq.com/s/x8gokM8DAxyDa-YIqxkF4Q" target="_blank"><img src="/FrontEnd/images/news1-T.jpg" alt=""> <div class="news-info"><p>透亮人生 遇见高品质透析|费森尤斯大庆透析中心开业典礼暨肾友会</p> <span>2019-03-05</span></div></a></div></div><div class="swiper-slide swiper-slide-next" data-swiper-slide-index="1" style="width: 426.667px; margin-right: 40px;"><div><a href="https://mp.weixin.qq.com/s/Hc7hMY-U7q4_B-7Q7Gukuw" target="_blank"><img src="/FrontEnd/images/news2-T.jpg" alt=""> <div class="news-info"><p>年末余岁中我们与您执笔共迎新一年的透亮人生</p> <span>2019-01-25</span></div></a></div></div><div class="swiper-slide swiper-slide-duplicate-prev" data-swiper-slide-index="2" style="width: 426.667px; margin-right: 40px;"><div><a href="https://mp.weixin.qq.com/s/_QnK-2PygjdpChO_KD3yRg" target="_blank"><img src="/FrontEnd/images/news3-T.jpg" alt=""> <div class="news-info"><p>遇见高品质透析|费森尤斯福州透析中心开业日暨肾友会</p> <span>2019-01-17</span></div></a></div></div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="0" style="width: 426.667px; margin-right: 40px;"><div><a href="https://mp.weixin.qq.com/s/x8gokM8DAxyDa-YIqxkF4Q" target="_blank"><img src="/FrontEnd/images/news1-T.jpg" alt=""> <div class="news-info"><p>透亮人生 遇见高品质透析|费森尤斯大庆透析中心开业典礼暨肾友会</p> <span>2019-03-05</span></div></a></div></div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="1" style="width: 426.667px; margin-right: 40px;"><div><a href="https://mp.weixin.qq.com/s/Hc7hMY-U7q4_B-7Q7Gukuw" target="_blank"><img src="/FrontEnd/images/news2-T.jpg" alt=""> <div class="news-info"><p>年末余岁中我们与您执笔共迎新一年的透亮人生</p> <span>2019-01-25</span></div></a></div></div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="2" style="width: 426.667px; margin-right: 40px;"><div><a href="https://mp.weixin.qq.com/s/_QnK-2PygjdpChO_KD3yRg" target="_blank"><img src="/FrontEnd/images/news3-T.jpg" alt=""> <div class="news-info"><p>遇见高品质透析|费森尤斯福州透析中心开业日暨肾友会</p> <span>2019-01-17</span></div></a></div></div></div> <div class="swiper-pagination swiper-pagination5 swiper-pagination-clickable swiper-pagination-bullets"><span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span></div></div></div></div> <div class="g-story"><p class="module-title" style="cursor: pointer;">肾友故事</p> <div class="g-story-s"><div><img src="/FrontEnd/images/story4_new.png" alt=""> <a href="https://mp.weixin.qq.com/s/UD6M9zRTMqneNxkY5muxlA"><p>汇聚微光，微笑绽放”</p> <p>属于你我的暖心故事</p></a></div> <div><img src="/FrontEnd/images/story2.png" alt=""> <a href="/story1"><p>透亮之星 | 战胜病魔华丽转身的她</p> <p>——韩雄</p></a></div> <div><img src="/FrontEnd/images/story3_new.png" alt=""> <a href="/story3"><p>是什么，让他从生命的暗角寻得希望之光</p> <p>一个既不幸却又很幸运的人——戴寰宇</p></a></div></div> <div class="more-wrap"><a href="/kidneyStory">查看更多</a></div></div></div>
+    <script src="/scripts/jquery.min.js"></script>
+    <script src="/scripts/bootstrap.min.js"></script>
+    <script src="/scripts/swiper.min.js"></script>
+    <script src="/scripts/citySelect.js"></script>
+    <script>
+        // var _hmt = _hmt || [];
+        // (function() {
+        //     var hm = document.createElement("script");
+        //     hm.src = "https://hm.baidu.com/hm.js?c6aca1980388d148361a2a45882aecad";
+        //     var s = document.getElementsByTagName("script")[0]; 
+        //     s.parentNode.insertBefore(hm, s);
+        // })();
+        var index = new Vue({
+        el:"#app",
+        data:{
+            ind:55,
+            yincang:false,
+            gengduo:true,
+            shouqi:false,
+            newsList: [
+                {
+                    id: 1,
+                    imgUrl: "/FrontEnd/images/news1-T.jpg",
+                    title: "透亮人生 遇见高品质透析|费森尤斯大庆透析中心开业典礼暨肾友会",
+                    link: 'https://mp.weixin.qq.com/s/x8gokM8DAxyDa-YIqxkF4Q',
+                    date: '2019-03-05'
+                },
+                {
+                    id: 2,
+                    imgUrl: "/FrontEnd/images/news2-T.jpg",
+                    title: "年末余岁中我们与您执笔共迎新一年的透亮人生",
+                    link: 'https://mp.weixin.qq.com/s/Hc7hMY-U7q4_B-7Q7Gukuw',
+                    date: '2019-01-25'
+                },
+                {
+                    id: 3,
+                    imgUrl: "/FrontEnd/images/news3-T.jpg",
+                    title: "遇见高品质透析|费森尤斯福州透析中心开业日暨肾友会",
+                    link: 'https://mp.weixin.qq.com/s/_QnK-2PygjdpChO_KD3yRg',
+                    date: '2019-01-17'
+                }
+            ],
+            listGuide:[
+                {
+                    id:1,
+                    imgUrl: "/FrontEnd/images/zhinan-1.png",
+                    pageUrl: "/CKD",
+                    textTitle: "什么是慢性肾脏病",
+                    textCon: "文字内容文字内容文字内容文字内容内容文字内容文字内容文字内容内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容。"
+                },
+                {
+                    id:2,
+                    imgUrl: "/FrontEnd/images/zhinan-2.png",
+                    pageUrl: "/treatment",
+                    textTitle: "慢性肾脏病的治疗方式",
+                    textCon: "文字内容文字内容文字内容文字内容内容文字内容文字内容文字内容内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容。"
+                },
+                {
+                    id:3,
+                    imgUrl: "/FrontEnd/images/zhinan-3.png",
+                    pageUrl: "/health",
+                    textTitle: "慢性肾脏病的健康管理",
+                    textCon: "文字内容文字内容文字内容文字内容内容文字内容文字内容文字内容内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容。"
+                },
+                {
+                    id:4,
+                    imgUrl: "/FrontEnd/images/zhinan-4.png",
+                    pageUrl: "/response",
+                    textTitle: "积极应对慢性肾脏病",
+                    textCon: "文字内容文字内容文字内容文字内容内容文字内容文字内容文字内容内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容。"
+                }
+            ],
+            listHospital: [
+                {
+                    id: 1,
+                    city: "常熟",
+                    imgUrl: "/FrontEnd/hospital/guide1.jpg",
+                    name: "常熟费森尤斯血液透析中心",
+                    num: 23,
+                    phone: "15370112681",
+                    dress: "江苏省常熟市虞山北路163号虞山天地1栋101-102号"
+                },
+                {
+                    id: 2,
+                    city: "大理州",
+                    imgUrl: "/FrontEnd/hospital/guide11.jpg",
+                    name: "大理费森尤斯血液透析中心",
+                    num: 41,
+                    phone: "0827-2162955",
+                    dress: "云南省大理白族自治州大理市下关镇环城南路53号"
+                },
+                {
+                    id: 3,
+                    city: "昆明",
+                    imgUrl: "/FrontEnd/hospital/guide7.png",
+                    name: "昆明盘龙费森尤斯血液透析中心",
+                    num: 26,
+                    phone: "17387172348",
+                    dress: "云南省昆明市盘龙区金江小区H栋1-2层"
+                },
+                {
+                    id: 4,
+                    city: "武汉",
+                    imgUrl: "/FrontEnd/hospital/guide16.png",
+                    name: "武汉江北费森安馨血液透析中心",
+                    num: 17,
+                    phone: "027-85092188",
+                    dress: "武汉市巨龙大道盘龙城经济开发区F空港中心城商业街2楼"
+                },
+                {
+                    id: 5,
+                    city: "武汉",
+                    imgUrl: "/FrontEnd/hospital/guide17.png",
+                    name: "武汉江南费森安馨血液透析中心",
+                    num: 19,
+                    phone: "027-81786661",
+                    dress: "湖北省武汉市江夏区大桥新区侨亚国际文化大厦1-2楼"
+                },
+              
+                {
+                    id: 9,
+                    city: "泉州",
+                    imgUrl: "/FrontEnd/hospital/guide5.png",
+                    name: "泉州费森安馨血液透析中心",
+                    num: 50,
+                    phone: "18005061017",
+                    dress: "泉州市鲤城区南环路5号"
+                },
+                {
+                    id: 10,
+                    city: "襄阳",
+                    imgUrl: "/FrontEnd/hospital/guide18.png",
+                    name: "襄阳费森安馨血液透析中心",
+                    num: 19,
+                    phone: "0710-3825887，18986397088",
+                    dress: "襄阳市襄城区环城东路鑫地广场维也纳酒店西侧"
+                },
+                {
+                    id: 11,
+                    city: "福州",
+                    imgUrl: "/FrontEnd/hospital/guide2.jpg",
+                    name: "福州费森尤斯血液透析中心",
+                    num: 29,
+                    phone: "18059007020",
+                    dress: "福州市鼓楼区井大路68号建银大厦5楼"
+                },
+                {
+                    id: 12,
+                    city: "蒙自",
+                    imgUrl: "/FrontEnd/hospital/guide19.png",
+                    name: "红河蒙自费森尤斯血液透析中心",
+                    num: 31,
+                    phone: "0873-3861210",
+                    dress: "云南省红河哈尼族彝族自治州蒙自市民安路232号"
+                },
+                {
+                    id: 13,
+                    city: "宣威",
+                    imgUrl: "/FrontEnd/hospital/guide20.png",
+                    name: "宣威费森尤斯血液透析中心",
+                    num: 44,
+                    phone: "0874-7120559",
+                    dress: "宣威费森尤斯血液透析中心位于宣威市龙堡中路金桥财富广场三楼"
+                }
+            ],
+            listHospital2: [
+                {
+                    id: 1,
+                    city: "常熟",
+                    imgUrl: "/FrontEnd/hospital/guide1.jpg",
+                    name: "常熟费森尤斯血液透析中心",
+                    num: 23,
+                    phone: "15370112681",
+                    dress: "江苏省常熟市虞山北路163号虞山天地1栋101-102号"
+                },
+                {
+                    id: 2,
+                    city: "大理州",
+                    imgUrl: "/FrontEnd/hospital/guide11.jpg",
+                    name: "大理费森尤斯血液透析中心",
+                    num: 41,
+                    phone: "0827-2162955",
+                    dress: "云南省大理白族自治州大理市下关镇环城南路53号"
+                },
+                {
+                    id: 3,
+                    city: "昆明",
+                    imgUrl: "/FrontEnd/hospital/guide7.png",
+                    name: "昆明盘龙费森尤斯血液透析中心",
+                    num: 26,
+                    phone: "0871-68305500",
+                    dress: "云南省昆明市盘龙区金江小区H栋1-2层"
+                },
+                {
+                    id: 4,
+                    city: "武汉",
+                    imgUrl: "/FrontEnd/hospital/guide16.png",
+                    name: "武汉江北费森安馨血液透析中心",
+                    num: 17,
+                    phone: "027-85092188",
+                    dress: "武汉市巨龙大道盘龙城经济开发区F空港中心城商业街2楼"
+                },
+                {
+                    id: 5,
+                    city: "武汉",
+                    imgUrl: "/FrontEnd/hospital/guide17.png",
+                    name: "武汉江南费森安馨血液透析中心",
+                    num: 19,
+                    phone: "027-81786661",
+                    dress: "湖北省武汉市江夏区大桥新区侨亚国际文化大厦1-2楼"
+                },
+                {
+                    id: 9,
+                    city: "泉州",
+                    imgUrl: "/FrontEnd/hospital/guide5.png",
+                    name: "泉州费森安馨血液透析中心",
+                    num: 50,
+                    phone: "18005061017",
+                    dress: "泉州市鲤城区南环路5号"
+                },
+                {
+                    id: 10,
+                    city: "襄阳",
+                    imgUrl: "/FrontEnd/hospital/guide18.png",
+                    name: "襄阳费森安馨血液透析中心",
+                    num: 19,
+                    phone: "0710-3825887，18986397088",
+                    dress: "襄阳市襄城区环城东路鑫地广场维也纳酒店西侧"
+                },
+                {
+                    id: 11,
+                    city: "福州",
+                    imgUrl: "/FrontEnd/hospital/guide2.jpg",
+                    name: "福州费森尤斯血液透析中心",
+                    num: 29,
+                    phone: "18059007020",
+                    dress: "福州市鼓楼区井大路68号建银大厦5楼"
+                },
+                {
+                    id: 12,
+                    city: "蒙自",
+                    imgUrl: "/FrontEnd/hospital/guide19.png",
+                    name: "红河蒙自费森尤斯血液透析中心",
+                    num: 31,
+                    phone: "0873-3861210",
+                    dress: "云南省红河哈尼族彝族自治州蒙自市民安路232号"
+                },
+                {
+                    id: 13,
+                    city: "宣威",
+                    imgUrl: "/FrontEnd/hospital/guide20.png",
+                    name: "宣威费森尤斯血液透析中心",
+                    num: 44,
+                    phone: "0874-7120559",
+                    dress: "宣威费森尤斯血液透析中心位于宣威市龙堡中路金桥财富广场三楼"
+                }
+            ],//医院信息备份
+            listHospital3: [],//地区医院备份
+            hospitalValue: 0,//选择的医院id
+            makeShow: false,//是否显示预约弹窗
+            makeShowInfo: {},//弹窗信息
+            clickSum: new Array(),//点击次数
+            localStorageList: [],//本地存储检测是否记录过预约
+        },
+        methods:{
+            end:function(i){
+                console.log(i,"11111")
+            },
+            seeMore:function(){
+              var _this = this
+              _this.yincang = true
+              _this.shouqi = true
+              _this.gengduo = false
+            },
+            noMore:function(){
+                var _this = this
+                _this.shouqi = false
+                _this.gengduo = true
+                _this.yincang = false
+            },
+            goPage: function(url){
+                console.log(url)
+                window.location.href= url
+            },
+            selectHospital: function($event){
+                let obj=this.listHospital[$event.target.value];
+                this.listHospital = new Array(JSON.parse(JSON.stringify(obj)));
+                setTimeout(this.swiperUp,0)
+            },
+            swiperUp: function(){
+                this.mySwiper2.update(true);
+            },
+            showPhone: function(id){
+                this.makeShowInfo = this.listHospital[id];
+                console.log(id);
+                this.makeShow = true;
+                let obj = {};
+                let arr = [];
+                arr.push(this.listHospital[id].id)
+                obj.id=this.listHospital[id].id;
+                obj.name=this.listHospital[id].name;
+                obj.oneNum=1;
+                obj.moreNum=1;
+                this.clickSum.push(obj);
+                for(let i=0;i<this.clickSum.length-1;i++){
+                    for(let j=i+1;j<this.clickSum.length;j++){
+                        if(this.clickSum[i].id==this.clickSum[j].id){
+                            this.clickSum[i].moreNum++;
+                            this.clickSum.splice(j,1);
+                        }
+                    }
+                }
+                this.localStorageList = Array.from(new Set(arr));
+            },
+            noShow: function(){
+                this.makeShow = false;
+            },
+            submitNum: function(){
+                if(!localStorage.getItem('localStorageList')){
+                    localStorage.setItem('localStorageList',JSON.stringify(this.localStorageList))
+                }else{
+                    let localArr = JSON.parse(localStorage.getItem('localStorageList'));
+                    for(let i = 0;i<this.clickSum.length;i++){
+                        if(localArr.includes(this.clickSum[i].id)){
+                            this.clickSum.splice(i,1)
+                            
+                        }
+                    }
+                }
+                localStorage.setItem('localStorageList',JSON.stringify(this.localStorageList))
+                let _that = this
+                this.clickSum.forEach(function(item){
+                    let postData = {
+                        collection: "FMCC_2006",
+                        json: item
+                    };
+                    _that.submit(postData)
+                })
+            },
+            submit: function(data){
+                console.log(data)
+                let _data = JSON.stringify(data);
+                $.ajax({
+                    contentType: 'application/json',
+                    type: "POST",
+                    url: "/jedi/add",
+                    data: _data,
+                    success: function(data){
+                    }
+                })
+            },
+            videoPlay: function(el){
+                console.log(el,"0000")
+                // this.ind = el;
+                $('.playEl')[el].style.display = 'none';
+                $('.videoEl')[el].play();
+                $('.videoEl')[el].setAttribute("controls","controls");
+                
+            },
+            videoParse: function(el){
+                // console.log('0',this.ind)
+                // console.log(this.ind != '')
+                if(this.ind < 8 || this.ind == 0){
+                    console.log(index.ind,"inde")
+                    $('.videoEl')[index.ind].pause();
+                }
+                this.ind = el;
+            }
+        },
+        mounted: function(){
+            $('.videoEl')[0].addEventListener('play',function (){
+                console.log("111")
+                index.videoParse(0)
+            })
+            $('.videoEl')[1].addEventListener('play',function (){
+                console.log("222")
+                index.videoParse(1)
+            })
+            $('.videoEl')[2].addEventListener('play',function (){
+                index.videoParse(2)
+            })
+            $('.videoEl')[3].addEventListener('play',function (){
+                index.videoParse(3)
+            })
+            $('.videoEl')[4].addEventListener('play',function (){
+                index.videoParse(4)
+            })
+            $('.videoEl')[5].addEventListener('play',function (){
+                index.videoParse(5)
+            })
+            $('.videoEl')[6].addEventListener('play',function (){
+                index.videoParse(6)
+            })
+            $('.videoEl')[7].addEventListener('play',function (){
+                index.videoParse(7)
+            })
+            window.onbeforeunload = function(event){
+                index.submitNum()
+            };
+            // this.mySwiperBanner = new Swiper('.swiper-banner', {
+            //     loop: true, //可循环
+            //     autoplay: false //可选选项，自动滑动
+            // })
+            this.mySwiper2 = new Swiper('.swiper-container2', {
+                autoplay: false, //可选选项，自动滑动
+                pagination: {
+                    el: '.swiper-pagination2',
+                    clickable: true,
+                }, //分页器
+                slidesPerColumn: 2,
+                slidesPerColumnFill: 'row', //排列方向
+                slidesPerView: 3,
+                spaceBetween: 40, //间隙
+                dynamicBullets: true,
+                breakpoints: {
+                    992: { //当屏幕宽度小于等于1280
+                        slidesPerView: 2,
+                        spaceBetween: 30, //间隙
+                    },
+                    420: {
+                        slidesPerView: 1,
+                        slidesPerColumn: 3,
+                        spaceBetween: 0, //间隙
+                    }
+                }
+            })
+            this.mySwiperVideo = new Swiper('.swiper-containerVideo', {
+                direction: 'horizontal',
+                slidesPerView: 2,
+                spaceBetween: 20,
+                mousewheel: true,
+                pagination: {
+                    el: '.swiper-paginationVideo',
+                    type: 'progressbar',
+                    progressbarOpposite: false,
+                },
+                breakpoints: {
+                    992: {
+                        direction: 'horizontal',
+                    }
+                }
+            })
+            this.mySwiper3 = new Swiper('.swiper-container3', {
+                autoplay: false, //可选选项，自动滑动
+                pagination: {
+                    el: '.swiper-pagination3',
+                    clickable: true,
+                }, //分页器
+                slidesPerColumn: 2,
+                slidesPerColumnFill: 'row', //排列方向
+                slidesPerView: 2,
+                slidesPerGroup: 1, //一组的数量
+                spaceBetween: 40, //间隙
+                breakpoints: {
+                    992: { //当屏幕宽度小于等于1280
+                        slidesPerView: 1,
+                        slidesPerColumn: 3,
+                        spaceBetween: 20, //间隙
+                    },
+                    420: {
+                        slidesPerView: 1,
+                        slidesPerColumn: 3,
+                        spaceBetween: 10, //间隙
+                    }
+                }
+            })
+            this.mySwiper5 = new Swiper('.swiper-container5', {
+                autoplay: true, //可选选项，自动滑动
+                loop: true,
+                pagination: {
+                    el: '.swiper-pagination5',
+                    clickable: true,
+                }, //分页器
+                slidesPerView: 3,
+                spaceBetween: 40, //间隙
+                dynamicBullets: true,
+                breakpoints: {
+                    992: { //当屏幕宽度小于等于1280
+                        slidesPerView: 2,
+                        spaceBetween: 30, //间隙
+                    },
+                    420: {
+                        slidesPerView: 1,
+                        spaceBetween: 0, //间隙
+                    }
+                }
+            })
+            this.mySwiperBanner = new Swiper('.swiper-containerTop',{
+                loop: true,
+                autoplay: false
+            })
+        },
+        beforedestory:function(){
+            this.submitNum()
+        }
+    })
+    </script>
+
+</div>
+<link rel="stylesheet" href="/css/footer.css?id=20210429" type="text/css">
+
+<div id="footer" class="footer"><div class="center container"><img alt="" src="/FrontEnd/header/logo.png" width="270" height="60"> <div class="sort"><li class="sortTitle"><span>肾病指南
+                <div class="detailList"><a href="/CKD"><li>什么是慢性肾脏病</li> <div style="clear: both;"></div></a></div><div class="detailList"><a href="treatment"><li>治疗方式</li> <div style="clear: both;"></div></a></div><div class="detailList"><a href="/health"><li>健康管理</li> <div style="clear: both;"></div></a></div><div class="detailList"><a href="/response"><li>积极应对</li> <div style="clear: both;"></div></a></div><div class="detailList"><a href="/kidneyStory"><li>肾友故事</li> <div style="clear: both;"></div></a></div></span></li><li class="sortTitle"><span>透析服务
+                <div class="detailList"><a href="/TravelDialysis"><li>旅游透析</li> <div style="clear: both;"></div></a></div><div class="detailList"><a href="/assistCure"><li>辅助治疗服务</li> <div style="clear: both;"></div></a></div><div class="detailList"><a href="/centre"><li>透析中心导览</li> <div style="clear: both;"></div></a></div><div class="detailList"><a href="/choose"><li>如何选择透析中心</li> <div style="clear: both;"></div></a></div></span></li><li class="sortTitle"><span>关于我们
+                <div class="detailList"><a href="/aboutFKC"><li>关于费森尤斯医疗服务</li> <div style="clear: both;"></div></a></div><div class="detailList"><a href="/news"><li>新闻中心</li> <div style="clear: both;"></div></a></div><div class="detailList"><a href="/cooperation"><li>费森星联</li> <div style="clear: both;"></div></a></div><div class="detailList"><a href="/joinUs"><li>加入我们</li> <div style="clear: both;"></div></a></div><div class="detailList"><a href="/environmentalProtection"><li>环境保护</li> <div style="clear: both;"></div></a></div></span></li></div></div> <div class="YdCenter container"><div class="footerWrap"><p>肾病指南</p> <ul><li><a href="/CKD">什么是慢性肾脏病</a></li><li><a href="treatment">治疗方式</a></li><li><a href="/health">健康管理</a></li><li><a href="/response">积极应对</a></li><li><a href="/kidneyStory">肾友故事</a></li></ul></div><div class="footerWrap"><p>透析服务</p> <ul><li><a href="/TravelDialysis">旅游透析</a></li><li><a href="/assistCure">辅助治疗服务</a></li><li><a href="/centre">透析中心导览</a></li><li><a href="/choose">如何选择透析中心</a></li></ul></div><div class="footerWrap"><p>关于我们</p> <ul><li><a href="/aboutFKC">关于费森尤斯医疗服务</a></li><li><a href="/news">新闻中心</a></li><li><a href="/cooperation">费森星联</a></li><li><a href="/joinUs">加入我们</a></li><li><a href="/environmentalProtection">环境保护</a></li></ul></div></div></div>
+<div class="deal">
+        <p>Copyright © 2019费森尤斯医疗用品（上海）有限公司版权</p>
+        <span> | </span>
+        <a href="https://beian.miit.gov.cn" alt="link">沪ICP备19036710号-4</a> 
+        <p><img src="/media/1r2dkhtl/beian.png" alt="icon"><a href="https://beian.miit.gov.cn/">沪公网安备31010402009146号</a></p>
+        <p></p>
+        <p><a style="color:#fff" href="/pop">隐私政策</a></p>
+        <p><a style="color:#fff" href="/version">版本说明</a></p>
+ </div>
+<script>
+    var footer = new Vue({
+        el:"#footer",
+        data:{
+            indexNow: 5,
+            footerList:[
+                {
+                    title:"肾病指南",
+                    link:"/CKD",
+                   list:[
+                      {
+                          title:"什么是慢性肾脏病",
+                          link:"/CKD"
+                      },
+                      {
+                          title:"治疗方式",
+                          link:"treatment"
+                      },{
+                          title:"健康管理",
+                          link:"/health"
+                      },{
+                          title:"积极应对",
+                          link:"/response"
+                      },
+                      {
+                          title:"肾友故事",
+                          link:"/kidneyStory"
+                      }
+                   ]
+                    
+                },
+                {
+                    title:"透析服务",
+                    link:"/TravelDialysis",
+                    list:[
+                         {
+                          title:"旅游透析",
+                          link:"/TravelDialysis"
+                      },
+                         {
+                          title:"辅助治疗服务",
+                          link:"/assistCure"
+                      },
+                         {
+                          title:"透析中心导览",
+                          link:"/centre"
+                      },
+                         {
+                          title:"如何选择透析中心",
+                          link:"/choose"
+                      }
+                      ]
+                    
+                },
+                {
+                    title:"关于我们",
+                    link:"",
+                    list:[ {
+                          title:"关于费森尤斯医疗服务",
+                          link:"/aboutFKC"
+                      },
+                      {
+                          title:"新闻中心",
+                          link:"/news"
+                      },{
+                          title:"费森星联",
+                          link:"/cooperation"
+                      },{
+                          title:"加入我们",
+                          link:"/joinUs"
+                      },{
+                          title:"环境保护",
+                          link:"/environmentalProtection"
+                      }
+                      ]
+                }
+                // ,
+                // {
+                //     title:"网点分布",
+                //     list:[
+                //         {
+                //           title:"昆明盘龙费森尤斯血液透析中心",
+                //           link:""
+                //       },
+                //       {
+                //           title:"合江康城肾病专科医院",
+                //           link:""
+                //       },
+                //       {
+                //           title:"资阳中欣肛肠医院",
+                //           link:""
+                //       },{
+                //           title:"泉州费森安馨血液透析中心",
+                //           link:""
+                //       },{
+                //           title:"常熟古里透析中心",
+                //           link:""
+                //       },{
+                //           title:"福州费森尤斯血液透析中心",
+                //           link:""
+                //       },{
+                //           title:"五华区保健医院",
+                //           link:""
+                //       },{
+                //           title:"大庆康达血液透析中心",
+                //           link:""
+                //       }
+                        
+                //         ]
+                    
+                // }
+                ]
+        },
+        methods:{
+            shift: function(index){
+                if(index == this.indexNow){
+                    this.indexNow = 5
+                }else{
+                    this.indexNow = index
+                }
+            }
+        }
+    })
+</script>
+
+
+
+</body></html>

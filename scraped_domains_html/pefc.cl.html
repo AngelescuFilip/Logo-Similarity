@@ -1,0 +1,2315 @@
+<!DOCTYPE html><html lang="en"><head>
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" href="/assets/favicon.ico">
+    <style>
+                :root {
+  --blue: #205076;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #cda320;
+  --green: #7ed321;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-light: #d1d1d1;
+  --gray-dark: #343a40;
+  --primary: #205076;
+  --secondary: #6c757d;
+  --success: #7ed321;
+  --info: #17a2b8;
+  --warning: #cda320;
+  --danger: #dc3545;
+  --light: #9b9b9b;
+  --dark: #343a40;
+  --white-gray: #f5f5f5;
+  --white: #fff;
+  --green: #7ed321;
+  --blue: #205076;
+  --yellow: #cda320;
+  --black: #151a14;
+  --green-dark: #207629;
+  --red: #8d1e1e;
+  --gray: #4a4a4a;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-xxl: 1366px;
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+}
+@-ms-viewport {
+  width: device-width;
+}
+header,
+section {
+  display: block;
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.125rem;
+  font-weight: normal;
+  line-height: 1.5;
+  color: #9b9b9b;
+  text-align: left;
+  background-color: #efefef;
+}
+h1,
+h2 {
+  margin-top: 0;
+  margin-bottom: 1.875rem;
+}
+p {
+  margin-top: 0;
+  margin-bottom: 1.875rem;
+}
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+::-webkit-file-upload-button {
+  font: inherit;
+  -webkit-appearance: button;
+}
+h1,
+h2 {
+  margin-bottom: 1.875rem;
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+  line-height: 1.1;
+  color: inherit;
+}
+h1 {
+  font-size: 3.6rem;
+}
+h2 {
+  font-size: 3rem;
+}
+.container-fluid {
+  width: 100%;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -0.75rem;
+  margin-left: -0.75rem;
+}
+.col-12 {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+}
+.col-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+.justify-content-end {
+  justify-content: flex-end !important;
+}
+.w-75 {
+  width: 75% !important;
+}
+.w-100 {
+  width: 100% !important;
+}
+.m-0 {
+  margin: 0 !important;
+}
+.pr-0 {
+  padding-right: 0 !important;
+}
+.pl-0 {
+  padding-left: 0 !important;
+}
+.pt-100 {
+  padding-top: 6.25rem !important;
+}
+.pb-60 {
+  padding-bottom: 3.75rem !important;
+}
+.pt-90 {
+  padding-top: 5.625rem !important;
+}
+@media (min-width: 576px) {
+  .pt-sm-80 {
+    padding-top: 5rem !important;
+  }
+  .pb-sm-100 {
+    padding-bottom: 6.25rem !important;
+  }
+}
+.text-white {
+  color: #fff !important;
+}
+.text-white {
+  color: #fff !important;
+}
+.bg-multiply-green {
+  background-blend-mode: multiply;
+  background-color: rgba(126, 211, 33, 0.24);
+  background-color: rgba(123, 193, 27, 0.35);
+  background-color: rgba(46, 74, 7, 0.4);
+  position: relative;
+}
+.bg-multiply-green::before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 20rem;
+  background: -moz-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(125, 185, 232, 0) 100%
+  );
+  background: -webkit-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(125, 185, 232, 0) 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(125, 185, 232, 0) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#000000", endColorstr="#007db9e8",GradientType=0 );
+}
+@media (max-width: 1199.98px) {
+  html {
+    font-size: 96%;
+  }
+}
+@media (max-width: 575.98px) {
+  html {
+    font-size: 94%;
+  }
+}
+.container-fluid {
+  max-width: 1600px;
+}
+.container-limited {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+@media (max-width: 1365.98px) {
+  .container-limited {
+    width: 84%;
+  }
+}
+@media (max-width: 991.98px) {
+  .container-limited {
+    width: 90%;
+  }
+}
+.container-fluid {
+  padding: 0;
+}
+@media (max-width: 991.98px) {
+  body #navigation {
+    background: rgba(0, 0, 0, 0);
+  }
+}
+body {
+  -webkit-font-smoothing: antialiased;
+}
+h1,
+h2 {
+  letter-spacing: -0.5px;
+}
+@media (max-width: 1199.98px) {
+  h1 {
+    font-size: 3.125rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 575.98px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 2.25rem;
+  }
+}
+header + #navigation .container-fluid {
+  background-color: rgba(0, 0, 0, 0);
+  box-shadow: none;
+}
+#navigation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1020;
+}
+@media (max-width: 991.98px) {
+  #navigation {
+    display: none;
+  }
+}
+#navigation .container-fluid {
+  position: relative;
+  background-color: #6cb61c;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1333333333);
+}
+#navigation #logo {
+  width: 5rem;
+  position: absolute;
+  top: 0.9375rem;
+  left: 1.5rem;
+  z-index: 10;
+}
+#navigation #logo h1 {
+  text-align: center;
+}
+@media (max-width: 1199.98px) {
+  #navigation #logo {
+    left: 1rem;
+  }
+}
+@media (min-width: 992px) {
+  #navigation #logo img {
+    height: 5rem;
+    width: auto !important;
+  }
+  #navigation.sticky {
+    position: fixed;
+  }
+  #navigation.sticky .container-fluid {
+    background-color: #6cb61c;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1333333333);
+  }
+  #navigation.sticky #logo img {
+    height: 4.6875rem;
+    width: auto !important;
+  }
+  #navigation .separator {
+    position: relative;
+    padding-left: 8.33333%;
+    height: 1px;
+    width: 100%;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  #navigation .separator {
+    padding-left: 9.6666%;
+  }
+}
+@media (min-width: 992px) {
+  #navigation .separator > div {
+    height: 1px;
+    width: 100%;
+    padding: 0 1.125rem;
+  }
+  #navigation .separator > div::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
+@media (min-width: 992px) {
+  #navigation #main-navigation {
+    position: relative;
+    z-index: 1;
+  }
+  #navigation #main-navigation > .nav {
+    padding-left: 8.33333%;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  #navigation #main-navigation > .nav {
+    padding-left: 9.6666%;
+    padding-right: 0.75rem;
+  }
+}
+@media (min-width: 992px) {
+  #navigation #main-navigation > .nav.open > .nav-item:hover > .nav-link,
+  #navigation #main-navigation > .nav .nav-item.hover > .nav-link {
+    color: #7ed321 !important;
+    background-color: #fff;
+    border-radius: 0.3rem 0.3rem 0 0;
+    position: relative;
+    z-index: 2;
+  }
+  #navigation
+    #main-navigation
+    > .nav.open
+    > .nav-item:hover
+    > .nav-link::before,
+  #navigation #main-navigation > .nav .nav-item.hover > .nav-link::before {
+    content: "";
+    position: absolute;
+    background: rgba(0, 0, 0, 0);
+    bottom: -10px;
+    top: -15px;
+    left: -100px;
+    right: -100px;
+    z-index: 2;
+  }
+  #navigation #main-navigation > .nav.open > .nav-item:hover > .nav.second,
+  #navigation #main-navigation > .nav .nav-item.hover > .nav.second {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+@media (min-width: 992px) {
+  #navigation #main-navigation > .nav > .nav-item.active > .nav-link {
+    border-bottom: 3px solid #fff;
+  }
+  #navigation #main-navigation > .nav > .nav-item:hover > .nav-link {
+    color: #fff;
+  }
+  #navigation #main-navigation > .nav > .nav-item > .nav-link {
+    color: #fff;
+    font-weight: bold;
+    position: relative;
+    padding: 0.875rem;
+    z-index: 3;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  #navigation #main-navigation > .nav > .nav-item > .nav-link {
+    padding-right: 0.3125rem;
+    padding-left: 0.3125rem;
+    font-size: 1rem;
+  }
+}
+@media (min-width: 992px) {
+  #navigation #main-navigation > .nav > .nav-item > .nav.second {
+    z-index: 1;
+    padding: 1.875rem 0;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-image: linear-gradient(-180deg, #ffffff 4%, #d8d8d8 100%);
+    clip-path: ellipse(200% 100% at 50% 0%);
+    -webkit-clip-path: ellipse(200% 100% at 50% 0%);
+  }
+  #navigation
+    #main-navigation
+    > .nav
+    > .nav-item
+    > .nav.second
+    > .nav-item
+    > .nav-link {
+    padding: 0;
+    border-radius: 0 0 0.3rem 0.3rem;
+    background-color: #fff;
+    font-family: "Oswald", sans-serif;
+    font-size: 1.5rem;
+    color: #9b9b9b;
+    line-height: 1.75rem;
+  }
+  #navigation
+    #main-navigation
+    > .nav
+    > .nav-item
+    > .nav.second
+    > .nav-item
+    > .nav-link
+    .img {
+    border-radius: 0.3rem 0.3rem 0 0;
+  }
+  #navigation
+    #main-navigation
+    > .nav
+    > .nav-item
+    > .nav.second
+    > .nav-item
+    > .nav-link
+    .link {
+    position: relative;
+    color: #757575;
+  }
+  #navigation
+    #main-navigation
+    > .nav
+    > .nav-item
+    > .nav.second
+    > .nav-item
+    > .nav-link
+    .link::after {
+    content: "";
+    font-size: 1.125rem;
+    line-height: 1.875rem;
+    font-family: "Font Awesome 5 Pro", sans-serif;
+    position: absolute;
+    top: 0.9375rem;
+    right: 0.3125rem;
+    margin-top: -1.0625rem;
+  }
+  #navigation
+    #main-navigation
+    > .nav
+    > .nav-item
+    > .nav.second
+    > .nav-item
+    > .nav-link
+    .text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+  #navigation
+    #main-navigation
+    > .nav
+    > .nav-item
+    > .nav.second
+    > .nav-item
+    > .nav-link:hover
+    .link {
+    color: #7ed321;
+  }
+  #navigation #main-navigation > .nav > .nav-item > .nav.second .nav.third {
+    padding-top: 0.625rem;
+  }
+  #navigation
+    #main-navigation
+    > .nav
+    > .nav-item
+    > .nav.second
+    .nav.third
+    > .nav-item
+    > .nav-link {
+    padding: 0.75rem 2rem 0.75rem 1rem;
+    font-size: 0.875rem;
+    color: #9b9b9b;
+    line-height: 1.4;
+    position: relative;
+  }
+  #navigation
+    #main-navigation
+    > .nav
+    > .nav-item
+    > .nav.second
+    .nav.third
+    > .nav-item
+    > .nav-link:hover {
+    color: #7ed321;
+  }
+  #navigation
+    #main-navigation
+    > .nav
+    > .nav-item
+    > .nav.second
+    .nav.third
+    > .nav-item
+    > .nav-link::after {
+    content: "";
+    font-size: 1.125rem;
+    font-family: "Font Awesome 5 Pro", sans-serif;
+    position: absolute;
+    right: 1rem;
+    line-height: 1.875rem;
+    top: 50%;
+    margin-top: -1.0625rem;
+  }
+  #navigation
+    #main-navigation
+    > .nav
+    > .nav-item
+    > .nav.second
+    .nav.third
+    > .nav-item:hover {
+    border-radius: 0.3rem;
+    background-color: #fff;
+  }
+  #navigation
+    #main-navigation
+    > .nav
+    > .nav-item
+    > .nav.second
+    .nav.third
+    > .nav-item:hover
+    + .nav-item
+    > .nav-link {
+    border-color: rgba(0, 0, 0, 0);
+  }
+  #navigation
+    #main-navigation
+    > .nav
+    > .nav-item
+    > .nav.second
+    .nav.third
+    > .nav-item:hover
+    > .nav-link {
+    border-color: rgba(0, 0, 0, 0) !important;
+  }
+  #navigation
+    #main-navigation
+    > .nav
+    > .nav-item
+    > .nav.second
+    .nav.third
+    > .nav-item
+    + .nav-item
+    > .nav-link {
+    border-top: 1px solid rgba(151, 151, 151, 0.3);
+  }
+}
+@media (min-width: 992px) {
+  #navigation #secondary-navigation {
+    padding: 0 1.125rem;
+    padding-left: 8.33333%;
+    position: relative;
+    z-index: 2;
+  }
+  #navigation #secondary-navigation > .nav {
+    padding-left: 1.125rem;
+    position: relative;
+  }
+  #navigation #secondary-navigation > .nav > .nav-item {
+    position: relative;
+  }
+  #navigation #secondary-navigation > .nav > .nav-item.has-pages .nav-link {
+    position: relative;
+  }
+  #navigation
+    #secondary-navigation
+    > .nav
+    > .nav-item.has-pages:hover
+    .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    left: 0.875rem;
+    right: 0.875rem;
+    height: 3px;
+    background-color: #fff;
+  }
+  #navigation #secondary-navigation > .nav > .nav-item:hover > .nav-link {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  #navigation #secondary-navigation > .nav > .nav-item.active > .nav-link {
+    border-bottom: 1px;
+    color: #fff;
+    font-weight: bold;
+  }
+  #navigation #secondary-navigation > .nav > .nav-item > .nav-link {
+    padding: 0.875rem;
+    font-size: 0.875rem;
+    color: #e8e8e8;
+  }
+  #navigation #secondary-navigation > .nav > .nav-item > .nav-link:hover {
+    color: #fff;
+  }
+  #navigation #secondary-navigation > .nav > .nav-item > .nav {
+    border-radius: 0.2rem;
+    border-top-left-radius: 0;
+    display: none;
+    background-color: #fff;
+    position: absolute;
+    top: 3rem;
+    left: 0.875rem;
+    padding: 0.4375rem;
+  }
+  #navigation
+    #secondary-navigation
+    > .nav
+    > .nav-item
+    > .nav
+    > .nav-item:hover
+    > .nav-link {
+    color: #7ed321;
+  }
+  #navigation
+    #secondary-navigation
+    > .nav
+    > .nav-item
+    > .nav
+    > .nav-item
+    > .nav-link {
+    font-size: 0.875rem;
+    color: #9b9b9b;
+  }
+  #navigation #secondary-navigation > .nav > .nav-item.last > .nav {
+    right: 0.875rem;
+    left: auto;
+    border-top-left-radius: 0.2rem;
+    border-top-right-radius: 0;
+  }
+  #navigation
+    #secondary-navigation
+    > .nav
+    > .nav-item:nth-last-child(-n + 1)
+    .nav-link {
+    padding-right: 0;
+  }
+}
+#navigation-mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0);
+}
+#navigation-mobile.sticky {
+  background-color: #6cb61c;
+}
+#navigation-mobile i {
+  font-size: 1.875rem;
+  color: #fff;
+}
+#navigation-mobile .col-logo {
+  max-width: 4.0625rem;
+}
+#navigation-mobile #mobile-nav {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  opacity: 0;
+}
+header {
+  background-color: #fff;
+}
+header .item {
+  background-position: center center;
+  background-size: cover;
+  clip-path: ellipse(180% 100% at 50% 0%);
+  -webkit-clip-path: ellipse(180% 100% at 50% 0%);
+}
+header .item h2 {
+  font-size: 4.5rem;
+}
+@media (max-width: 1199.98px) {
+  header .item h2 {
+    font-size: 3.5rem;
+  }
+}
+@media (max-width: 991.98px) {
+  header .item h2 {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 575.98px) {
+  header .item h2 {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 767.98px) {
+  header .item .w-75 {
+    width: 100% !important;
+  }
+}
+header .item p {
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+@media (max-width: 575.98px) {
+  header .item p {
+    font-size: 1.125rem;
+  }
+}
+@media (max-width: 575.98px) {
+  header .item h2 {
+    font-size: 2.5rem;
+  }
+  header .item p {
+    font-size: 1.125rem;
+    width: 100% !important;
+  }
+}
+            </style>
+    <meta charset="UTF-8">    <title>PEFC Chile</title>                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.5.0/css/lightgallery-bundle.min.css" integrity="sha512-lgRFGedXdci5Ykc5Wbgd8QCzt3lBmnkWcMRAS8myln2eMCDwQBrHmjqvUj9rBcKOyWMC+EYJnvEppggw1v+m8Q==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body class="has-header">
+
+<!--consent banner-->
+<section id="consent-banner" class="d-print-none active added">
+    <div class="container p-30">
+        <div class="row">
+            <div class="col-12">
+                <p class="text-center d-none d-md-block">
+                    <img width="80" height="80" style="opacity: 0.8" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9JzIwMCcgd2lkdGg9JzIwMCcgIGZpbGw9IiNmZmZmZmYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZlcnNpb249IjEuMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMDAgMTAwIiB4bWw6c3BhY2U9InByZXNlcnZlIj48Zz48Zz48Zz48cGF0aCBkPSJNNDUuMzM3LDcwLjEwNGMtMC45NC0wLjQ3MS0xLjg5OS0wLjYxOS0yLjk0LTAuNzA5Yy0xLjA4LTAuMDkyLTEuODQsMC4yNS0yLjY3LDAuOTA4Yy0wLjUyLDAuNDIyLTEuMDM5LDAuODMtMS41NiwxLjI1ICAgICBjLTAuMTQ5LDAuMTIxLTAuMjksMC4yMy0wLjQ0LDAuMzUybC0wLjAxLDAuMDFjMCwwLDAsMC4wMS0wLjAxLDAuMDFjLTAuNCwwLjQxLTAuNjcsMC45NzEtMC43NiwxLjUzOSAgICAgYzAsMC4wNy0wLjAxLDAuMTMxLTAuMDEsMC4yMDFjMCwwLjUsMC4xMjksMS4wMSwwLjM2OSwxLjQzOWMwLjAxLDAuMDIsMC4wMjEsMC4wMjksMC4wMywwLjA1MSAgICAgYzAuMTEsMC4xNDgsMC4yMiwwLjI5OSwwLjM0MSwwLjQzOWMwLjAxLDAuMDIsMC4wMiwwLjAyOSwwLjAzOSwwLjA1MWMxLjMzLDEuNzA5LDMuMDcsMy4wMiw1LjEzMSwzLjc2ICAgICBjMC43OTksMC4yOTksMi4wMjktMC4wMSwyLjU2OS0wLjY4YzEuMTItMS4zNzEsMi4wNS0yLjc4MSwyLjIyOS00LjU4QzQ3LjgxNiw3Mi40NzUsNDYuODE2LDcwLjg0NCw0NS4zMzcsNzAuMTA0eiAgICAgIE00My4wMjcsNzMuNTk0Yy0wLjAxLTAuMDItMC4wMy0wLjAyOS0wLjA1MS0wLjA1MWMwLjAyMSwwLjAxLDAuMDMxLDAuMDIxLDAuMDUxLDAuMDQxVjczLjU5NHoiPjwvcGF0aD48L2c+PGc+PHBhdGggZD0iTTM3LjcwNyw3MS45MjRjLTAuNCwwLjQxLTAuNjcsMC45NzEtMC43NiwxLjUzOUMzNi45ODcsNzIuODczLDM3LjIyNyw3Mi4zMDMsMzcuNzA3LDcxLjkyNHoiPjwvcGF0aD48L2c+PGc+PHBhdGggZD0iTTM3LjMwNyw3NS4xMDRjLTAuMzEtMC40My0wLjQyLTAuOTM5LTAuMzY5LTEuNDM5QzM2LjkzOCw3NC4xNjQsMzcuMDY2LDc0LjY3NCwzNy4zMDcsNzUuMTA0eiI+PC9wYXRoPjwvZz48Zz48cGF0aCBkPSJNNDMuMDI3LDczLjU4NHYwLjAxYy0wLjAxLTAuMDItMC4wMy0wLjAyOS0wLjA1MS0wLjA1MUM0Mi45OTcsNzMuNTUzLDQzLjAwOCw3My41NjQsNDMuMDI3LDczLjU4NHoiPjwvcGF0aD48L2c+PC9nPjxnPjxnPjxwYXRoIGQ9Ik02Ny42MjcsNjcuMTMxYy0xLjU4LTEuMTA5LTMuNTUtMS4zNzktNS4yOS0yLjE5OWMtMS4wNS0wLjQ5LTEuNTEtMS45Mi0xLjIxLTIuOThjMC4yOS0xLjAyOSwwLjU5LTIuMDQ5LDAuODgtMy4wOCAgICAgYzAuMTcxLTAuNjA5LDAuNDktMS4wNDksMC44OS0xLjM1bDAuMTIxLTAuMDljMS4wNDktMC43ODksMi4zNzktMC41MjksMy40MSwwLjI3YzIsMS41NjEsMy4zMjksMy44MTEsNC44MSw1LjgyICAgICBDNzIuODA3LDY1LjYzMSw2OS43MzcsNjguNjIxLDY3LjYyNyw2Ny4xMzF6Ij48L3BhdGg+PC9nPjwvZz48Zz48Zz48cGF0aCBkPSJNMzIuMTY3LDUzLjQ4NnYwLjAzMWMwLDEuNTU5LTAuMTQsMi45NjktMC44LDQuNDFjLTAuMzcsMC44MDktMS40MiwxLjMyLTIuMjgsMS4zMDljLTIuMDMtMC4wMjktMy43MjktMC42Ny00Ljk3OS0yLjI5OSAgICAgYy0xLjAxMS0xLjMxMS0xLjE3LTMuMTYtMS4xODEtNC43NWMtMC4wMjEtMS42NSwxLjctMy4wODEsMy4zNDEtMi41NDFjMS4zMTksMC40NCwyLjYzOSwwLjg4LDMuOTU5LDEuMzIgICAgIGMwLjIyMSwwLjA3LDAuNDMsMC4xNjksMC42MiwwLjNjMC42ODEsMC40LDEuMTUsMS4wNTksMS4yOCwxLjgyQzMyLjE1Niw1My4yMTcsMzIuMTY3LDUzLjM0OCwzMi4xNjcsNTMuNDg2eiI+PC9wYXRoPjwvZz48Zz48cGF0aCBkPSJNMzIuMTI3LDUzLjA4OGMtMC4xMy0wLjc2Mi0wLjYtMS40Mi0xLjI4LTEuODJDMzEuNDk3LDUxLjU5OCwzMi4wMDcsNTIuMjA3LDMyLjEyNyw1My4wODh6Ij48L3BhdGg+PC9nPjwvZz48Zz48Zz48cGF0aCBkPSJNNTEuODIyLDU2LjM1NGMtMC40MDktMC44Mi0xLjI2LTIuMzMtMS4xOC0yLjV2LTAuMDFjMC4xNi0wLjUsMC4yMTEtMC45OSwwLjI4LTEuNTFjMC4xNi0xLjE5OS0wLjkzLTIuMjItMS45NC0yLjU1ICAgICBjLTAuNTY5LTAuMi0xLjE4OS0wLjIyLTEuNzctMC40MWMtMS4wNjEtMC4zNS0yLjQ3LDAuMjEtMi45OCwxLjIyMWMtMC4yMDksMC40MS0wLjQzOSwwLjg1OS0wLjY4LDEuMzMgICAgIGMtMC44LDAuMTctMS40MzksMC42NDEtMS45NDksMS4zMmMtMC40NzEsMC42MjktMC41NTEsMS40NDktMC41MTEsMi4yMDljMC4wMywwLjU2MSwwLjIxLDAuOTksMC40NiwxLjM4MSAgICAgYy0wLjQsMS42MTktMC40MzksMy4yNCwwLjMwMSw0LjY1YzEuMzksMi42Niw0Ljc2LDEuODY5LDYuNzk5LDAuNjM5QzUwLjYwNCw2MC45NzUsNTMuMDgzLDU4Ljg3Myw1MS44MjIsNTYuMzU0eiI+PC9wYXRoPjwvZz48L2c+PGc+PGc+PHBhdGggZD0iTTUwLjE2NCwzNi4xOTNjLTEuMjYtMS4zOC0zLjQyLTEuNjg5LTUuMTgtMS43MWMtMS4xMDktMC4wMS0yLjMyLDAuODExLTIuNTUsMS45NGMtMC4xNCwwLjcyOS0wLjI5LDEuNDctMC40NCwyLjIgICAgIGMtMC4wMSwwLjA2LTAuMDIsMC4xMTktMC4wMiwwLjE4Yy0wLjAxLDAuMDEtMC4wMSwwLjAyLTAuMDEsMC4wM2MtMC4xMiwwLjg4LDAuMTMsMS43NSwwLjcxLDIuMzU5YzAuMDEsMCwwLjAxLDAsMC4wMSwwLjAxICAgICBjMC4wMTEsMC4wMTEsMC4wMjEsMC4wMjEsMC4wMywwLjAzYzEuMTYsMS4xMSwyLjY4OSwxLjk1LDQuMzQsMS44OGMxLjUyLTAuMDY5LDMuMTA5LTAuODU5LDMuODExLTIuMjcgICAgIEM1MS42NjQsMzkuMjMzLDUxLjM3NSwzNy41MTMsNTAuMTY0LDM2LjE5M3oiPjwvcGF0aD48L2c+PGc+PHBhdGggZD0iTTQyLjY3NSw0MS4xOTNjLTAuNjQtMC42Mi0wLjg3LTEuNTItMC43MS0yLjM1OUM0MS44NDUsMzkuNzEzLDQyLjA5NSw0MC41ODMsNDIuNjc1LDQxLjE5M3oiPjwvcGF0aD48L2c+PC9nPjxnPjxnPjxwYXRoIGQ9Ik03NC4yMjMsMTkuNDU1YzMuNDA4LDAsMy40MDgtNS4yODcsMC01LjI4N0M3MC44MTYsMTQuMTY3LDcwLjgxNiwxOS40NTUsNzQuMjIzLDE5LjQ1NUw3NC4yMjMsMTkuNDU1eiI+PC9wYXRoPjwvZz48L2c+PGc+PGc+PHBhdGggZD0iTTcxLjY2OCwzMi4zNjNjMy40MDcsMCwzLjQwNy01LjI4MiwwLTUuMjgyQzY4LjI2LDI3LjA4MSw2OC4yNiwzMi4zNjMsNzEuNjY4LDMyLjM2M0w3MS42NjgsMzIuMzYzeiI+PC9wYXRoPjwvZz48L2c+PGc+PGc+PHBhdGggZD0iTTg0LjIwNCw0MC4wMTNjMS45MTQsMCwxLjkxNC0yLjk2NywwLTIuOTY3QzgyLjI4OSwzNy4wNDYsODIuMjg5LDQwLjAxMyw4NC4yMDQsNDAuMDEzTDg0LjIwNCw0MC4wMTN6Ij48L3BhdGg+PC9nPjwvZz48Zz48cGF0aCBkPSJNNTAsOTEuMzgzYy0yMC40MDIsMC0zNy0xNi41OTgtMzctMzdjMC0yMC40MDIsMTYuNTk4LTM3LDM3LTM3YzEuODgxLDAsMy43NDIsMC4xNCw1LjUzMywwLjQxNGwyLjQ0OCwwLjM3NUw1Ny4xLDIwLjQ4NiAgICBjLTAuMTg2LDAuNDg2LTAuMjc5LDEuMDEtMC4yNzksMS41NThjMCwxLjgwMSwxLjAwMiwzLjQwNywyLjYxNCw0LjE5MWwxLjk5LDAuOTY5bC0xLjE2NCwxLjg4MyAgICBjLTEuMDQ3LDEuNjkxLTEuNjAxLDMuNjM3LTEuNjAxLDUuNjI3YzAsNS44ODQsNC43ODYsMTAuNjcsMTAuNjcsMTAuNjdjMS4zNTIsMCwyLjY0NS0wLjI0NCwzLjg0NS0wLjcyNmwxLjg4MS0wLjc1NmwwLjczLDEuODkyICAgIGMwLjk4LDIuNTQyLDMuNDc0LDQuMjUsNi4yMDQsNC4yNWMwLjc2MywwLDEuNTEzLTAuMTI5LDIuMjI5LTAuMzg0bDIuNDY4LTAuODc5bDAuMTk3LDIuNjEyQzg2Ljk2MSw1Mi40MSw4Nyw1My40MTgsODcsNTQuMzgzICAgIEM4Nyw3NC43ODUsNzAuNDAyLDkxLjM4Myw1MCw5MS4zODN6IE01MCwyMS4zODNjLTE4LjE5NiwwLTMzLDE0LjgwNC0zMywzM2MwLDE4LjE5NywxNC44MDQsMzMsMzMsMzNzMzMtMTQuODAzLDMzLTMzICAgIGMwLTAuMTI3LTAuMDAxLTAuMjU4LTAuMDAyLTAuMzg3Yy0wLjMzNCwwLjAzMS0wLjY3LDAuMDQ3LTEuMDA4LDAuMDQ3Yy0zLjcyNywwLTcuMTc5LTEuOTg4LTkuMDg5LTUuMDk5ICAgIGMtMS4xNTEsMC4yOTItMi4zNDcsMC40MzktMy41NzEsMC40MzljLTguMDg5LDAtMTQuNjctNi41ODEtMTQuNjctMTQuNjdjMC0yLjA3NywwLjQzOC00LjEyLDEuMjgtNi4wMDEgICAgYy0xLjk2MS0xLjYxOC0zLjEyLTQuMDMxLTMuMTItNi42NjljMC0wLjE4MiwwLjAwNi0wLjM2MSwwLjAxNy0wLjU0MUM1MS45MDMsMjEuNDIzLDUwLjk1NSwyMS4zODMsNTAsMjEuMzgzeiI+PC9wYXRoPjwvZz48L2c+PC9zdmc+" alt="">
+                </p>
+                <p class="text-white">
+                    Usamos varias cookies de tercera parte en nuestro sitio web para otorgar funciones de redes sociales
+y analizar nuestro tráfico de navegación. 
+Usted puede elegir aceptar todas las cookies o personalizar sus preferencias. 
+Puede cambiar la configuración de cookies en cualquier momento.                </p>
+            </div>
+
+            <div class="col-8 offset-2 pb-15 pt-15" id="consent-items">
+                <p class="consent-item text-white">
+                    <label class="switch float-left">
+                        <input type="checkbox" name="consent-ga">
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="ml-10">
+                        Análisis Google                    </span>
+                    <span class="clearfix"></span>
+                </p>
+                <p class="consent-item text-white">
+                    <label class="switch float-left">
+                        <input type="checkbox" name="consent-youtube">
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="ml-10">
+                        Vídeos YouTube                    </span>
+                    <span class="clearfix"></span>
+                </p>
+            </div>
+
+
+            <div class="col-12 text-center mt-md-15 mt-5">
+                <button class="btn btn-sm btn-green font-weight-bold text-white consent-btn" id="consent-allow">
+                    Aceptar cookies                </button>
+                <button class="btn btn-link font-weight-bold consent-btn" id="consent-customize">
+                    Configuración de cookies                </button>
+                <button class="btn btn-sm btn-green font-weight-bold text-white consent-apply">
+                    Aplicar configuración                </button>
+                <button class="btn btn-link font-weight-bold consent-close">
+                    Cancelar                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Search Box-->
+<div id="search-box">
+    <div class="wrapper d-flex align-items-top close-box">
+        <div class="container-fluid bg-white">
+            <form action="/buscar" method="get" autocomplete="off">
+                <div class="row justify-content-center pt-30">
+                    <div class="col-5">
+                        <div class="form-group material m-0">
+                            <input type="text" id="search-input" class="form-control" name="q" placeholder="Buscar por término.">
+                        </div>
+                    </div>
+                    <div class="col-1">
+                        <button type="submit" class="btn btn-green w-100 text-white btn-sm">
+                            <i class="far fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid" id="site">
+
+    <!--Carousel-->
+<header class="container-fluid p-0 d-print-none owl-carousel owl-loaded" id="carousel">
+
+    
+                
+    
+                
+    
+                
+    
+                
+    
+                
+    
+<div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-3240px, 0px, 0px); transition: all; width: 11880px;"><div class="owl-item cloned" style="width: 1080px;"><div class="item d-flex align-items-center w-100 bg-multiply-green" style="background-image: url(https://cdn.pefc.org/igen/pefc.cl/media/2024-08/4c5b9f9c-bbde-4b82-8fd0-acdb932b0264/f5f25e2c-99ca-5b08-8f2d-b6a933b1cc60.jpg?m%5B%5D=t%28cover%2C1600%2C540%29);" id="slide_67e482b32e91d">
+            <div class="w-100">
+
+                <div class="container-limited">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="text-white mb-0">
+                                Packaging Responsable                            </h2>
+                                                                                        <div class="mt-24">
+                                                                            <a href="https://pefc.cl/packaging-responsable" class="btn btn-md btn-success mr-5 text-white pr-sm-60 pl-sm-60 pr-30 pl-30 pt-sm-15 pb-sm-15">
+                                            <strong>Conozca la campaña</strong>
+                                        </a>
+                                    
+                                                                    </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div></div><div class="owl-item cloned" style="width: 1080px;"><div class="item d-flex align-items-center w-100 bg-multiply-green" style="background-image: url(https://cdn.pefc.org/igen/pefc.cl/media/2020-06/9df361dc-4493-432b-8836-8e31d5906239/9f8e8cbf-d410-5441-8eeb-eb2528f89886.JPG?m%5B%5D=t%28cover%2C1600%2C540%29);" id="slide_67e482b32e922">
+            <div class="w-100">
+
+                <div class="container-limited">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="text-white mb-0">
+                                PEFC en productos y empresas                            </h2>
+                                                                                        <div class="mt-24">
+                                                                            <a href="https://pefc.cl/mercados/empresas-de-la-cadena-de-suministro" class="btn btn-md btn-success mr-5 text-white pr-sm-60 pl-sm-60 pr-30 pl-30 pt-sm-15 pb-sm-15">
+                                            <strong>Conozca la certificación de Cadena de Custodia y usos de la marca PEFC</strong>
+                                        </a>
+                                    
+                                                                    </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div></div><div class="owl-item cloned" style="width: 1080px;"><div class="item d-flex align-items-center w-100 bg-multiply-green" style="background-image: url(https://cdn.pefc.org/igen/pefc.cl/media/2020-06/2cec9915-7ad4-4a8c-a7b8-8ad6fc75e1ca/1e9441b4-d688-5836-99ea-9c513a0ea186.JPG?m%5B%5D=t%28cover%2C1600%2C540%29);" id="slide_67e482b32e927">
+            <div class="w-100">
+
+                <div class="container-limited">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="text-white mb-0">
+                                ¿Qué es la gestión forestal sostenible?                            </h2>
+                                                            <div class="text-white m-0 w-75 mt-lg-24 mt-12">
+                                    <p style="margin:0cm;margin-bottom:.0001pt;font-size:15px;font-family:Arial;"><span style="font-size:24px;">Es un sistema de acción que regula la actividad forestal mediante un estándar de certificación, esto con el fin de asegurar la conservación de los beneficios ambientales, sociales y económicos del bosque a lo largo del tiempo. </span><span style="font-size:24px;"><a href="https://pefc.cl/mercados/propietarios-forestales">Leer más...</a></span></p>                                </div>
+                                                                                </div>
+                    </div>
+                </div>
+            </div>
+        </div></div><div class="owl-item active" style="width: 1080px;"><div class="item d-flex align-items-center w-100 bg-multiply-green" style="background-image: url(https://cdn.pefc.org/igen/pefc.cl/media/2025-01/449152cb-ac1f-4518-a126-1e8bf08ce110/97496756-85e2-56e4-8bfa-31bb3f926864.jpg?m%5B%5D=t%28cover%2C1600%2C540%29);" id="slide_67e482b32e908">
+            <div class="w-100">
+
+                <div class="container-limited">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="text-white mb-0">
+                                4ta Expo PEFC 2025                            </h2>
+                                                            <div class="text-white m-0 w-75 mt-lg-24 mt-12">
+                                    <p>Papeles y packaging</p><p><br></p>                                </div>
+                                                                                        <div class="mt-24">
+                                                                            <a href="https://pefc.cl/expopefc" class="btn btn-md btn-success mr-5 text-white pr-sm-60 pl-sm-60 pr-30 pl-30 pt-sm-15 pb-sm-15">
+                                            <strong>Ingresa aquí</strong>
+                                        </a>
+                                    
+                                                                    </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div></div><div class="owl-item" style="width: 1080px;"><div class="item d-flex align-items-center w-100 bg-multiply-green" style="background-image: url(https://cdn.pefc.org/igen/pefc.cl/media/2020-06/0c99c3c8-91ab-4864-82b6-64a93762d74a/ef30eb47-ab35-5581-8c05-37b4aac45d2f.jpg?m%5B%5D=t%28cover%2C1600%2C540%29);" id="slide_67e482b32e916">
+            <div class="w-100">
+
+                <div class="container-limited">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="text-white mb-0">
+                                Deforestación Cero en la gestión sostenible de los bosques                            </h2>
+                                                                                        <div class="mt-24">
+                                                                            <a href="https://pefc.cl/noticias/chile-es-el-primer-pais-de-sudamerica-en-comprometer-deforestacion-cero-para-la-gestion-sostenible-de-los-bosques" class="btn btn-md btn-success mr-5 text-white pr-sm-60 pl-sm-60 pr-30 pl-30 pt-sm-15 pb-sm-15">
+                                            <strong>Ver nota</strong>
+                                        </a>
+                                    
+                                                                            <a href="https://cdn.pefc.org/pefc.cl/media/2025-03/1354d310-85ec-4f36-ab3a-bc44d1e18c90/303e75cc-ef88-533c-8e8c-114375a01404.pdf" class="btn btn-md btn-outline-white pr-sm-60 pl-sm-60 pr-30 pl-30 pt-sm-15 pb-sm-15">
+                                            <strong>Descargar el nuevo estándar GFS</strong>
+                                        </a>
+                                                                    </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div></div><div class="owl-item" style="width: 1080px;"><div class="item d-flex align-items-center w-100 bg-multiply-green" style="background-image: url(https://cdn.pefc.org/igen/pefc.cl/media/2024-08/4c5b9f9c-bbde-4b82-8fd0-acdb932b0264/f5f25e2c-99ca-5b08-8f2d-b6a933b1cc60.jpg?m%5B%5D=t%28cover%2C1600%2C540%29);" id="slide_67e482b32e91d">
+            <div class="w-100">
+
+                <div class="container-limited">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="text-white mb-0">
+                                Packaging Responsable                            </h2>
+                                                                                        <div class="mt-24">
+                                                                            <a href="https://pefc.cl/packaging-responsable" class="btn btn-md btn-success mr-5 text-white pr-sm-60 pl-sm-60 pr-30 pl-30 pt-sm-15 pb-sm-15">
+                                            <strong>Conozca la campaña</strong>
+                                        </a>
+                                    
+                                                                    </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div></div><div class="owl-item" style="width: 1080px;"><div class="item d-flex align-items-center w-100 bg-multiply-green" style="background-image: url(https://cdn.pefc.org/igen/pefc.cl/media/2020-06/9df361dc-4493-432b-8836-8e31d5906239/9f8e8cbf-d410-5441-8eeb-eb2528f89886.JPG?m%5B%5D=t%28cover%2C1600%2C540%29);" id="slide_67e482b32e922">
+            <div class="w-100">
+
+                <div class="container-limited">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="text-white mb-0">
+                                PEFC en productos y empresas                            </h2>
+                                                                                        <div class="mt-24">
+                                                                            <a href="https://pefc.cl/mercados/empresas-de-la-cadena-de-suministro" class="btn btn-md btn-success mr-5 text-white pr-sm-60 pl-sm-60 pr-30 pl-30 pt-sm-15 pb-sm-15">
+                                            <strong>Conozca la certificación de Cadena de Custodia y usos de la marca PEFC</strong>
+                                        </a>
+                                    
+                                                                    </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div></div><div class="owl-item" style="width: 1080px;"><div class="item d-flex align-items-center w-100 bg-multiply-green" style="background-image: url(https://cdn.pefc.org/igen/pefc.cl/media/2020-06/2cec9915-7ad4-4a8c-a7b8-8ad6fc75e1ca/1e9441b4-d688-5836-99ea-9c513a0ea186.JPG?m%5B%5D=t%28cover%2C1600%2C540%29);" id="slide_67e482b32e927">
+            <div class="w-100">
+
+                <div class="container-limited">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="text-white mb-0">
+                                ¿Qué es la gestión forestal sostenible?                            </h2>
+                                                            <div class="text-white m-0 w-75 mt-lg-24 mt-12">
+                                    <p style="margin:0cm;margin-bottom:.0001pt;font-size:15px;font-family:Arial;"><span style="font-size:24px;">Es un sistema de acción que regula la actividad forestal mediante un estándar de certificación, esto con el fin de asegurar la conservación de los beneficios ambientales, sociales y económicos del bosque a lo largo del tiempo. </span><span style="font-size:24px;"><a href="https://pefc.cl/mercados/propietarios-forestales">Leer más...</a></span></p>                                </div>
+                                                                                </div>
+                    </div>
+                </div>
+            </div>
+        </div></div><div class="owl-item cloned" style="width: 1080px;"><div class="item d-flex align-items-center w-100 bg-multiply-green" style="background-image: url(https://cdn.pefc.org/igen/pefc.cl/media/2025-01/449152cb-ac1f-4518-a126-1e8bf08ce110/97496756-85e2-56e4-8bfa-31bb3f926864.jpg?m%5B%5D=t%28cover%2C1600%2C540%29);" id="slide_67e482b32e908">
+            <div class="w-100">
+
+                <div class="container-limited">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="text-white mb-0">
+                                4ta Expo PEFC 2025                            </h2>
+                                                            <div class="text-white m-0 w-75 mt-lg-24 mt-12">
+                                    <p>Papeles y packaging</p><p><br></p>                                </div>
+                                                                                        <div class="mt-24">
+                                                                            <a href="https://pefc.cl/expopefc" class="btn btn-md btn-success mr-5 text-white pr-sm-60 pl-sm-60 pr-30 pl-30 pt-sm-15 pb-sm-15">
+                                            <strong>Ingresa aquí</strong>
+                                        </a>
+                                    
+                                                                    </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div></div><div class="owl-item cloned" style="width: 1080px;"><div class="item d-flex align-items-center w-100 bg-multiply-green" style="background-image: url(https://cdn.pefc.org/igen/pefc.cl/media/2020-06/0c99c3c8-91ab-4864-82b6-64a93762d74a/ef30eb47-ab35-5581-8c05-37b4aac45d2f.jpg?m%5B%5D=t%28cover%2C1600%2C540%29);" id="slide_67e482b32e916">
+            <div class="w-100">
+
+                <div class="container-limited">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="text-white mb-0">
+                                Deforestación Cero en la gestión sostenible de los bosques                            </h2>
+                                                                                        <div class="mt-24">
+                                                                            <a href="https://pefc.cl/noticias/chile-es-el-primer-pais-de-sudamerica-en-comprometer-deforestacion-cero-para-la-gestion-sostenible-de-los-bosques" class="btn btn-md btn-success mr-5 text-white pr-sm-60 pl-sm-60 pr-30 pl-30 pt-sm-15 pb-sm-15">
+                                            <strong>Ver nota</strong>
+                                        </a>
+                                    
+                                                                            <a href="https://cdn.pefc.org/pefc.cl/media/2025-03/1354d310-85ec-4f36-ab3a-bc44d1e18c90/303e75cc-ef88-533c-8e8c-114375a01404.pdf" class="btn btn-md btn-outline-white pr-sm-60 pl-sm-60 pr-30 pl-30 pt-sm-15 pb-sm-15">
+                                            <strong>Descargar el nuevo estándar GFS</strong>
+                                        </a>
+                                                                    </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div></div><div class="owl-item cloned" style="width: 1080px;"><div class="item d-flex align-items-center w-100 bg-multiply-green" style="background-image: url(https://cdn.pefc.org/igen/pefc.cl/media/2024-08/4c5b9f9c-bbde-4b82-8fd0-acdb932b0264/f5f25e2c-99ca-5b08-8f2d-b6a933b1cc60.jpg?m%5B%5D=t%28cover%2C1600%2C540%29);" id="slide_67e482b32e91d">
+            <div class="w-100">
+
+                <div class="container-limited">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="text-white mb-0">
+                                Packaging Responsable                            </h2>
+                                                                                        <div class="mt-24">
+                                                                            <a href="https://pefc.cl/packaging-responsable" class="btn btn-md btn-success mr-5 text-white pr-sm-60 pl-sm-60 pr-30 pl-30 pt-sm-15 pb-sm-15">
+                                            <strong>Conozca la campaña</strong>
+                                        </a>
+                                    
+                                                                    </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div></div></div></div><div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><i class="far fa-arrow-left"></i></button><button type="button" role="presentation" class="owl-next"><i class="far fa-arrow-right"></i></button></div><div class="owl-dots"><button role="button" class="owl-dot active"><span></span></button><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot"><span></span></button></div></header>
+<!--Carousel-->
+
+    <!--Navigation-->
+    <section id="navigation" class="w-100 d-print-none">
+        <div class="container-fluid">
+            <div class="row justify-content-end m-0">
+                <div id="logo">
+                    <h1>
+                        <a href="/" title="Homepage">
+                                                            <img src="/assets/logo/pefc-24-01-01.svg" height="75" alt="PEFC Chile">
+                                                    </a>
+                    </h1>
+                </div>
+                <i class="fal fa-bars open-menu d-block d-lg-none cursor-pointer"></i>
+                <div class="col-12 d-flex d-lg-block flex-column p-0" id="navigation_wrapper">
+
+                    <i class="fal fa-times d-block d-lg-none close-menu"></i>
+                    <nav id="secondary-navigation" class="order-3">
+    <ul class="nav flex-column flex-lg-row justify-content-lg-end">
+                
+                        
+            <li class="nav-item   ">
+                                <a id="menu-10000754" class=" nav-link" href="/noticias">Noticias</a>
+
+
+                            </li>
+
+        
+                        
+            <li class="nav-item   ">
+                                <a id="menu-10000998" class=" nav-link" href="/eventos">Eventos</a>
+
+
+                            </li>
+
+        
+                        
+            <li class="nav-item  has-pages ">
+                                <a id="menu-10000917" class=" nav-link" href="/documentos">Documentos</a>
+
+
+                                    <ul class="nav flex-column">
+                                                    <li class="nav-item ">
+                                                                <a href="/documentos/documentos-tecnicos" target="" class=" nav-link">
+                                    Documentos&nbsp;Técnicos                                </a>
+                            </li>
+                                                    <li class="nav-item ">
+                                                                <a href="/documentos/memoria-anual" target="" class=" nav-link">
+                                    Memoria&nbsp;Anual                                </a>
+                            </li>
+                                                    <li class="nav-item ">
+                                                                <a href="/documentos/publicaciones" target="" class=" nav-link">
+                                    Publicaciones                                </a>
+                            </li>
+                                            </ul>
+                            </li>
+
+        
+                        
+            <li class="nav-item   ">
+                                <a id="menu-10000985" class=" nav-link" href="/contacto">Contacto</a>
+
+
+                            </li>
+
+        
+                        
+            <li class="nav-item   ">
+                                <a id="menu-10000756" class=" nav-link" href="/find-certified">Encontrar certificado</a>
+
+
+                            </li>
+
+        
+                        
+                <li class="nav-item">
+            <a class="nav-link" href="#" id="open-search-box"><i class="fal fa-search"></i></a>
+        </li>
+    </ul>
+</nav>
+                    <div class="separator d-none d-lg-block">
+                        <div></div>
+                    </div>
+                    
+<nav id="main-navigation" class="order-2">
+    <ul class="nav flex-column flex-lg-row justify-content-lg-between">
+
+        
+            
+                        <li class="nav-item ">
+                                <a id="menu-10002212" class=" nav-link text-uppercase" href="/expopefc">4ta Expo PEFC 2025</a>
+
+
+
+                            </li>
+        
+                        <li class="nav-item ">
+                                <a id="menu-10000763" class=" nav-link text-uppercase" href="/que-hacemos" target="_self">QUÉ HACEMOS</a>
+
+
+
+                                                        
+                    
+                                            <ul class="nav flex-column flex-lg-row second justify-content-lg-left pr-lg-120 pl-lg-120 pb-60 pt-0">
+                            
+                            
+
+                            
+
+                                
+                                <li class="nav-item col mt-30 ">
+                                    <a class="nav-link h-100" href="/que-hacemos/la-importancia-de-los-bosques">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.cl/media/2020-05/2f0bb116-3437-447f-b2d7-fa2227092a1d/1a76311a-3785-55ee-b05e-fe2a6ba7a346.jpg?m%5B%5D=t%28cover%2C248%2C104%29" alt="LA IMPORTANCIA DE LOS BOSQUES">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                LA IMPORTANCIA DE LOS BOSQUES                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    Los bosques tienen un rol crítico para el medioambiente mundial, la población y la economía. Además de aliviar los efectos del cambio climático y los desastres naturales, representan algunas de las áreas biológicas más ricas de la Tierra.                                                 </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col mt-30 ">
+                                    <a class="nav-link h-100" href="/que-hacemos/nuestro-enfoque">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.cl/media/2020-05/e07fc3ff-4f4b-4ebd-9ce3-59b364d319b4/50541c33-1172-5d7f-9a1a-704269564428.png?m%5B%5D=t%28cover%2C248%2C104%29" alt="NUESTRO ENFOQUE">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                NUESTRO ENFOQUE                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    En PEFC, cuidamos los bosques a nivel global y local. Trabajamos para proteger nuestros bosques promoviendo la gestión forestal sostenible a través de la certificación. Esto significa que todos podemos beneficiarnos de los muchos productos que los bosques proporcionan ahora, asegurando que estos bosques también estarán disponibles para las generaciones que vienen.                                                </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col mt-30 ">
+                                    <a class="nav-link h-100" href="/que-hacemos/alianzas-y-convenios">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.cl/media/2020-08/1d6feb72-cbdd-491b-bcae-e4f4caa543e3/5e3a5fe7-8a11-5a9a-9340-75ea94ee2141.png?m%5B%5D=t%28cover%2C248%2C104%29" alt="ALIANZAS Y CONVENIOS">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                ALIANZAS Y CONVENIOS                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    Creemos en el impacto colectivo de trabajar juntos por la conservación de los beneficios de nuestros bosques y promover la producción y consumo responsable en la cadena de valor.                                                </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col mt-30 ">
+                                    <a class="nav-link h-100" href="/que-hacemos/campanas">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.cl/media/2024-08/49651f45-f831-4b9a-ab0e-c72a197b3614/46f62f0c-00d2-5767-98c1-685fa0efc53f.jpg?m%5B%5D=t%28cover%2C248%2C104%29" alt="CAMPAÑAS ">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                CAMPAÑAS                                             </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    Promovemos la certificación con distintos sectores productivos a través de creativas propuestas de comunicación, actividades e iniciativas que permiten a las personas conocer más y mejor el impacto de la marca PEFC en los productos que se producen y consumen.                                                 </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col mt-30 ">
+                                    <a class="nav-link h-100" href="/que-hacemos/objetivos-de-desarrollo-sostenible">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.cl/media/2020-05/8d08dbc0-d0ba-4c41-a437-52a6e73e2e53/02352a21-896a-5254-bca5-636a5407d582.png?m%5B%5D=t%28cover%2C248%2C104%29" alt="OBJETIVOS DE DESARROLLO SOSTENIBLE">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                OBJETIVOS DE DESARROLLO SOSTENIBLE                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    PEFC contribuye a alcanzar los Objetivos de Desarrollo Sostenible (ODS) a medida que trabajamos para desbloquear todo el potencial de los bosques para un mundo sostenible.
+                                                </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+                                                    </ul>
+                                                </li>
+        
+                        <li class="nav-item ">
+                                <a id="menu-10000764" class=" nav-link text-uppercase" href="/lo-que-puedes-hacer">LO QUE PUEDES HACER</a>
+
+
+
+                                                        
+                    
+                                            <ul class="nav flex-column flex-lg-row second justify-content-lg-left pr-lg-120 pl-lg-120 pb-60 pt-0">
+                            
+                            
+
+                            
+
+                                
+                                <li class="nav-item col-lg-4 mt-30 ">
+                                    <a class="nav-link h-100" href="/lo-que-puedes-hacer/obtener-la-certificacion">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.cl/media/2020-06/701cd37d-dbc1-47b6-98e2-d35d3c4f7807/6d65d333-aed8-5600-8aef-b7ca9b38b461.JPG?m%5B%5D=t%28cover%2C430%2C180%29" alt="OBTENER LA CERTIFICACIÓN">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                OBTENER LA CERTIFICACIÓN                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    Si eres propietario de un bosque o una empresa dentro de la cadena de suministro forestal, obtenga la certificación PEFC y ayude a proteger los bosques del mundo.                                                </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col-lg-4 mt-30 ">
+                                    <a class="nav-link h-100" href="/lo-que-puedes-hacer/compra-productos-certificados-pefc">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.cl/media/2020-06/d59d582c-3800-42b5-91ef-37dd7a6070eb/034ba5be-d888-5cac-8e45-19c33efd56c9.jpg?m%5B%5D=t%28cover%2C430%2C180%29" alt="COMPRA PRODUCTOS CERTIFICADOS PEFC">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                COMPRA PRODUCTOS CERTIFICADOS PEFC                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    La mejor manera de conservar nuestros bosques es usarlos, siempre que lo hagamos de manera sostenible. Si hay un aporte que puedes hacer todos los días, es comprar productos certificados PEFC.                                                </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col-lg-4 mt-30 ">
+                                    <a class="nav-link h-100" href="/lo-que-puedes-hacer/elige-un-proveedor-certificado">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.cl/media/2020-06/fbf67425-0dc6-4616-ae42-870cb160574b/a58b343f-b748-5623-acdc-70e22f427e89.jpg?m%5B%5D=t%28cover%2C430%2C180%29" alt="ELIGE UN PROVEEDOR CERTIFICADO">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                ELIGE UN PROVEEDOR CERTIFICADO                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    Revisa los datos de contacto comercial de todas las empresas certificadas PEFC en Chile y elige comprar tu producto certificado con ellos.                                                </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col-lg-4 mt-30 ">
+                                    <a class="nav-link h-100" href="/lo-que-puedes-hacer/contribuye-a-los-estandares">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.cl/media/2020-06/f3c55d91-a8ef-4968-b217-b7d2d2dd607f/4e082e63-12ec-50d7-94b7-1c90df33ae63.jpg?m%5B%5D=t%28cover%2C430%2C180%29" alt="CONTRIBUYE A LOS ESTÁNDARES">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                CONTRIBUYE A LOS ESTÁNDARES                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    Desde enviar comentarios a través de una consulta pública en línea, hasta ayudar a impulsar el desarrollo de un estándar al unirse a un grupo de trabajo, puedes ayudarnos a garantizar que nuestros estándares PEFC, a nivel nacional e internacional, cumplan con tus expectativas.                                                </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col-lg-4 mt-30 ">
+                                    <a class="nav-link h-100" href="/lo-que-puedes-hacer/hazte-miembro">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.cl/media/2020-06/198eb9bb-380c-4325-81f2-68a1ac0ac0fd/4d5d1253-275b-516f-9d7f-e55c63bc6128.JPG?m%5B%5D=t%28cover%2C430%2C180%29" alt="HAZTE MIEMBRO">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                HAZTE MIEMBRO                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    Demuestre tu compromiso y activa tu apoyo a los bosques y conviértete en un miembro de partes interesadas de PEFC.
+                                                </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col-lg-4 mt-30 ">
+                                    <a class="nav-link h-100" href="/lo-que-puedes-hacer/busca-la-etiqueta-pefc">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.cl/media/2020-06/60dfb847-3a79-436e-9079-0b468c2ba153/54dad2e6-d520-5602-9a64-733b6331a4d0.JPG?m%5B%5D=t%28cover%2C430%2C180%29" alt="BUSCA LA ETIQUETA PEFC">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                BUSCA LA ETIQUETA PEFC                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    Una de las formas más sencillas en que puedes ayudar a proteger nuestros bosques es buscar la etiqueta PEFC en los productos. La próxima vez que vayas al supermercado o a una tienda de minoristas, ¡mira a tu alrededor! Puede sorprenderte cuántos productos llevan la etiqueta PEFC.                                                </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+                                                    </ul>
+                                                </li>
+        
+                        <li class="nav-item ">
+                                <a id="menu-10000862" class=" nav-link text-uppercase" href="/mercados">MERCADOS </a>
+
+
+
+                                                        
+                    
+                                            <ul class="nav flex-column flex-lg-row second justify-content-lg-left pr-lg-120 pl-lg-120 pb-60 pt-0">
+                            
+                            
+
+                            
+
+                                
+                                <li class="nav-item col-lg-3 mt-30 ">
+                                    <a class="nav-link h-100" href="/mercados/empresas-de-la-cadena-de-suministro">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.cl/media/2020-06/72fb4e0e-28d5-4866-8beb-12b98d6d9fb2/870839b8-deb8-5293-94c8-d3c14a6b2fc5.jpg?m%5B%5D=t%28cover%2C316%2C132%29" alt="EMPRESAS DE LA CADENA DE SUMINISTRO">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                EMPRESAS DE LA CADENA DE SUMINISTRO                                            </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col-lg-3 mt-30 ">
+                                    <a class="nav-link h-100" href="/mercados/marcas-y-retail">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.cl/media/2020-07/7a232089-2161-4493-bf81-e55b28422524/f48c69b5-10ba-56b6-9f0d-65a8f148f826.jpg?m%5B%5D=t%28cover%2C316%2C132%29" alt="MARCAS Y RETAIL">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                MARCAS Y RETAIL                                            </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col-lg-3 mt-30 ">
+                                    <a class="nav-link h-100" href="/mercados/propietarios-forestales">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.cl/media/2020-06/86a526de-acc2-42fc-aaf2-1321de7131e6/ebfa07d8-d68e-5a49-8b45-7e0a141d3304.JPG?m%5B%5D=t%28cover%2C316%2C132%29" alt="PROPIETARIOS FORESTALES">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                PROPIETARIOS FORESTALES                                            </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col-lg-3 mt-30 ">
+                                    <a class="nav-link h-100" href="/mercados/certificacion-y-organismos-de-acreditacion">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.cl/media/2020-06/f3c55d91-a8ef-4968-b217-b7d2d2dd607f/4e082e63-12ec-50d7-94b7-1c90df33ae63.jpg?m%5B%5D=t%28cover%2C316%2C132%29" alt="CERTIFICACIÓN Y ORGANISMOS DE ACREDITACIÓN">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                CERTIFICACIÓN Y ORGANISMOS DE ACREDITACIÓN                                            </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+                                                            <div class="col-12"></div>
+                                
+                                    
+                                                                            <div class="col-lg-3 mb-30">
+                                            <ul class="nav third flex-column">
+                                                
+                                                    
+                                                    <li class="nav-item ">
+                                                                                                                <a id="menu-10000859" class=" nav-link" href="/mercados/empresas-de-la-cadena-de-suministro/por-que-certificarse">¿Por qué certificarse?</a>
+                                                    </li>
+                                                
+                                                    
+                                                    <li class="nav-item ">
+                                                                                                                <a id="menu-10000972" class=" nav-link" href="/mercados/empresas-de-la-cadena-de-suministro/como-obtener-la-certificacion-cdc">¿Cómo obtener la certificación CdC?</a>
+                                                    </li>
+                                                
+                                                    
+                                                    <li class="nav-item ">
+                                                                                                                <a id="menu-10000974" class=" nav-link" href="/mercados/empresas-de-la-cadena-de-suministro/tarifas-de-la-certificacion-cdc">Tarifas de la certificación CdC</a>
+                                                    </li>
+                                                
+                                                    
+                                                    <li class="nav-item ">
+                                                                                                                <a id="menu-10000976" class=" nav-link" href="/mercados/empresas-de-la-cadena-de-suministro/transicion-a-los-ultimos-estandares">Transición a los últimos estándares</a>
+                                                    </li>
+                                                
+                                                    
+                                                    <li class="nav-item ">
+                                                                                                                <a id="menu-10000860" class=" nav-link" href="/mercados/empresas-de-la-cadena-de-suministro/usos-de-la-etiqueta-pefc">Usos de la etiqueta PEFC</a>
+                                                    </li>
+                                                
+                                                    
+                                                    <li class="nav-item ">
+                                                                                                                <a id="menu-10000863" class=" nav-link" href="/mercados/empresas-de-la-cadena-de-suministro/servicios-de-certificacion">Servicios de certificación</a>
+                                                    </li>
+                                                
+                                                    
+                                                    <li class="nav-item ">
+                                                                                                                <a id="menu-10000864" class=" nav-link" href="/mercados/empresas-de-la-cadena-de-suministro/certificacion-para-pequenas-empresas">Certificación para pequeñas empresas</a>
+                                                    </li>
+                                                
+                                                    
+                                                    <li class="nav-item ">
+                                                                                                                <a id="menu-10000865" class=" nav-link" href="/mercados/empresas-de-la-cadena-de-suministro/certificacion-para-empresas-con-multiples-locaciones">Certificación para empresas con múltiples locaciones</a>
+                                                    </li>
+                                                                                            </ul>
+                                        </div>
+                                    
+                                
+                                    
+                                                                            <div class="col-lg-3 mb-30">
+                                            <ul class="nav third flex-column">
+                                                
+                                                    
+                                                    <li class="nav-item ">
+                                                                                                                <a id="menu-10000979" class=" nav-link" href="/mercados/marcas-y-retail/beneficios-de-la-certificacion-pefc">Beneficios de la certificación PEFC</a>
+                                                    </li>
+                                                
+                                                    
+                                                    <li class="nav-item ">
+                                                                                                                <a id="menu-10000980" class=" nav-link" href="/mercados/marcas-y-retail/promociona-tu-material-sostenible">Promociona tu material sostenible</a>
+                                                    </li>
+                                                
+                                                    
+                                                    <li class="nav-item ">
+                                                                                                                <a id="menu-10000981" class=" nav-link" href="/mercados/marcas-y-retail/adquiere-productos-certificados-pefc">Adquiere productos certificados PEFC</a>
+                                                    </li>
+                                                                                            </ul>
+                                        </div>
+                                    
+                                
+                                    
+                                                                            <div class="col-lg-3 mb-30">
+                                            <ul class="nav third flex-column">
+                                                
+                                                    
+                                                    <li class="nav-item ">
+                                                                                                                <a id="menu-10000873" class=" nav-link" href="/mercados/propietarios-forestales/por-que-obtener-la-certificacion-pefc-de-gfs">¿Por qué obtener la certificación PEFC de GFS?</a>
+                                                    </li>
+                                                
+                                                    
+                                                    <li class="nav-item ">
+                                                                                                                <a id="menu-10000874" class=" nav-link" href="/mercados/propietarios-forestales/como-obtener-la-certificacion-forestal-pefc">¿Cómo obtener la certificación forestal PEFC?</a>
+                                                    </li>
+                                                
+                                                    
+                                                    <li class="nav-item ">
+                                                                                                                <a id="menu-10000875" class=" nav-link" href="/mercados/propietarios-forestales/certificacion-para-pequenos-propietarios-forestales">Certificación para pequeños propietarios forestales</a>
+                                                    </li>
+                                                                                            </ul>
+                                        </div>
+                                    
+                                
+                                    
+                                                                            <div class="col-lg-3 mb-30">
+                                            <ul class="nav third flex-column">
+                                                
+                                                    
+                                                    <li class="nav-item ">
+                                                                                                                <a id="menu-10000876" class=" nav-link" href="/mercados/certificacion-y-organismos-de-acreditacion/conviertete-en-un-organismo-certificador-reconocido-por-pefc">Conviértete en un organismo certificador reconocido por PEFC</a>
+                                                    </li>
+                                                
+                                                    
+                                                    <li class="nav-item ">
+                                                                                                                <a id="menu-10000877" class=" nav-link" href="/mercados/certificacion-y-organismos-de-acreditacion/como-ofrecer-la-certificacion-para-los-estandares-pefc-revisados">Cómo ofrecer la certificación para los estándares PEFC revisados</a>
+                                                    </li>
+                                                
+                                                    
+                                                    <li class="nav-item ">
+                                                                                                                <a id="menu-10000878" class=" nav-link" href="/mercados/certificacion-y-organismos-de-acreditacion/capacitacion-para-organismos-certificadores">Capacitación para organismos certificadores</a>
+                                                    </li>
+                                                
+                                                    
+                                                    <li class="nav-item ">
+                                                                                                                <a id="menu-10000983" class=" nav-link" href="/mercados/certificacion-y-organismos-de-acreditacion/conoce-los-organismos-de-certificacion-en-chile">Conoce los organismos de certificación en Chile</a>
+                                                    </li>
+                                                                                            </ul>
+                                        </div>
+                                    
+                                                                                    </ul>
+                                                </li>
+        
+                        <li class="nav-item ">
+                                <a id="menu-10000766" class=" nav-link text-uppercase" href="/estandares-e-implementacion">ESTÁNDARES E IMPLEMENTACIÓN</a>
+
+
+
+                                                        
+                    
+                                            <ul class="nav flex-column flex-lg-row second justify-content-lg-left pr-lg-120 pl-lg-120 pb-60 pt-0">
+                            
+                            
+
+                            
+
+                                
+                                <li class="nav-item col mt-30 ">
+                                    <a class="nav-link h-100" href="/estandares-e-implementacion/estandares-y-guias">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.cl/media/2020-06/81303dcc-ed38-4d74-9885-30d94c68f6d3/cf55526d-42d5-5324-a772-631cf0c607bd.jpg?m%5B%5D=t%28cover%2C248%2C104%29" alt="ESTÁNDARES Y GUÍAS">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                ESTÁNDARES Y GUÍAS                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    Revisa nuestros estándares y guías aplicables en Chile.
+                                                </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col mt-30 ">
+                                    <a class="nav-link h-100" href="/estandares-e-implementacion/como-se-desarrollan-nuestros-estandares">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.cl/media/2020-06/a8dcd546-ff1c-47ca-9313-2bfb6a3080ce/bf6145c2-d8f3-5209-8a9c-2fadc1619773.jpg?m%5B%5D=t%28cover%2C248%2C104%29" alt="CÓMO SE DESARROLLAN NUESTROS ESTÁNDARES">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                CÓMO SE DESARROLLAN NUESTROS ESTÁNDARES                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    Nuestros estándares nacionales pasan por un proceso de desarrollo detallado y riguroso que se basa en el consenso, es abierto y transparente, y está abierto a todas las partes interesadas.                                                </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col mt-30 ">
+                                    <a class="nav-link h-100" href="/estandares-e-implementacion/adaptando-estandares-locales-globalmente">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.cl/media/2020-06/7be0ce02-9449-42b3-8c8b-f7f12db1f99e/4fb99eaa-81b0-5aee-aa8d-52d20adf183b.jpg?m%5B%5D=t%28cover%2C248%2C104%29" alt="ADAPTANDO ESTÁNDARES LOCALES, GLOBALMENTE">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                ADAPTANDO ESTÁNDARES LOCALES, GLOBALMENTE                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    Nuestro estándar nacional de manejo forestal es desarrollado por partes interesadas locales y a su vez cumple con estándares internacionales de gestión sostenible.                                                </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col mt-30 ">
+                                    <a class="nav-link h-100" href="/estandares-e-implementacion/asegurando-el-cumplimiento">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.cl/media/2020-06/14a96ee7-6d60-4ffe-ab03-0d5448c03876/bf34a976-7db7-5d55-8713-ee8e894b5b3c.jpg?m%5B%5D=t%28cover%2C248%2C104%29" alt="ASEGURANDO EL CUMPLIMIENTO">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                ASEGURANDO EL CUMPLIMIENTO                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    Aseguramos que el proceso de certificación sea sólido y creíble mediante la separación de roles y la confianza en estándares ISO comprobados.                                                </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col mt-30 ">
+                                    <a class="nav-link h-100" href="/estandares-e-implementacion/actualizacion-2021-2022">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.cl/media/2020-06/0c99c3c8-91ab-4864-82b6-64a93762d74a/ef30eb47-ab35-5581-8c05-37b4aac45d2f.jpg?m%5B%5D=t%28cover%2C248%2C104%29" alt="ACTUALIZACIÓN 2021 - 2022">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                ACTUALIZACIÓN 2021 - 2022                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    Conoce el proceso, los comunicados oficiales, documentos y actividades del proceso de actualización hacia el Estándar de Gestión Forestal Sostenible para Plantaciones.                                                </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+                                                    </ul>
+                                                </li>
+        
+                        <li class="nav-item ">
+                                <a id="menu-10000762" class=" nav-link text-uppercase" href="/pefc-chile" target="_self">PEFC CHILE</a>
+
+
+
+                                                        
+                    
+                                            <ul class="nav flex-column flex-lg-row second justify-content-lg-left pr-lg-120 pl-lg-120 pb-60 pt-0">
+                            
+                            
+
+                            
+
+                                
+                                <li class="nav-item col-lg-4 mt-30 ">
+                                    <a class="nav-link h-100" href="/pefc-chile/que-es-pefc">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.cl/media/2020-08/83b1c871-7988-4ae7-bf13-407382cd5063/cce8ee5b-b34d-58fc-a35f-3f8a038d249f.png?m%5B%5D=t%28cover%2C430%2C180%29" alt="¿QUÉ ES PEFC?">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                ¿QUÉ ES PEFC?                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    Organización internacional, sin fines de lucro, que promueve la gestión forestal sostenible reconociendo sistemas nacional de certificación forestal y cadena de custodia.                                                </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col-lg-4 mt-30 ">
+                                    <a class="nav-link h-100" href="/pefc-chile/que-es-certfor-pefc-chile">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.cl/media/2020-08/b36e6044-63c0-41f4-973d-7682621d3888/208ec89a-936f-5d57-a596-8ef5685ec7e4.png?m%5B%5D=t%28cover%2C430%2C180%29" alt="¿QUÉ ES CERTFOR (PEFC Chile)?">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                ¿QUÉ ES CERTFOR (PEFC Chile)?                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    Sistema chileno de certificación forestal que en su origen se denominó CERTFOR y desde 2004 cuenta con el reconocimiento de PEFC Internacional. Hoy su nombre oficial de marca es PEFC Chile.                                                </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col-lg-4 mt-30 ">
+                                    <a class="nav-link h-100" href="/pefc-chile/datos-y-cifras">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.cl/media/2020-06/9ea7b667-bf6b-4b43-beee-f1b93c33f840/4a1f9c73-63a7-5cfc-9a4b-b374e3202ed4.jpg?m%5B%5D=t%28cover%2C430%2C180%29" alt="DATOS Y CIFRAS">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                DATOS Y CIFRAS                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    Revisa las cifras actualizadas de superficie forestal certificada y cadena de custodia de PEFC en el mundo y de PEFC Chile.                                                </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col-lg-4 mt-30 ">
+                                    <a class="nav-link h-100" href="/pefc-chile/gobernanza">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.cl/media/2020-08/9aa50784-82f9-48d6-86fd-19b535edc42d/0bb1563a-1d7e-58d6-8748-3a5da9919884.jpg?m%5B%5D=t%28cover%2C430%2C180%29" alt="GOBERNANZA">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                GOBERNANZA                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    La participación activa de todas las partes interesadas son nuestro motor de acción. Conoce la estructura corporativa de PEFC Chile y a quienes la conforman.                                                </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col-lg-4 mt-30 ">
+                                    <a class="nav-link h-100" href="/pefc-chile/conoce-nuestro-equipo">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.cl/media/2020-08/707cf42e-2a87-424e-bd68-b69c3e5c5f0c/a54396d0-9521-5e5c-b428-19ed0efd2a4e.jpg?m%5B%5D=t%28cover%2C430%2C180%29" alt="CONOCE NUESTRO EQUIPO">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                CONOCE NUESTRO EQUIPO                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    Te presentamos a los profesionales que hacen de PEFC Chile una realidad local con reconocimiento y alcance global.                                                </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col-lg-4 mt-30 ">
+                                    <a class="nav-link h-100" href="/pefc-chile/balance">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.cl/media/2020-06/6be1ae41-0817-46be-86d5-a8ae9f8fd3cb/1d7e9e54-07ee-5e57-a6c8-96d4b0cfd757.jpg?m%5B%5D=t%28cover%2C430%2C180%29" alt="BALANCE">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                BALANCE                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    Nuestra información de cuentas es de público conocimiento, puedes revisar el informe aprobado por auditoría externa del último año contable.
+                                                </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+                                                    </ul>
+                                                </li>
+            </ul>
+</nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Navigation-->
+
+
+    <section id="content">
+                
+    <div class="container-fluid mb-60 d-print-none">
+        <div id="top-home" class="bg-white-gray pt-30 ">
+            <div class="slide-top">
+
+                <!--Find Certified-->
+<div class="container-limited mb-60" id="find-certified">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row p-sm-10">
+                        <div class="col-12 col-lg-5">
+                            <h1 class="text-green text-uppercase m-0"><i class="fal fa-search mr-12 small"></i>
+                                ENCUENTRE CERTIFICADO
+                            </h1>
+                            <p class="m-0 mt-12">
+                                Una de las formas más sencillas en que puedes ayudar a proteger nuestros bosques es buscar la etiqueta PEFC en los productos. La próxima vez que vayas al supermercado o a una tienda de minoristas, ¡mira a tu alrededor! Puede sorprenderte cuántos productos llevan la etiqueta PEFC.                            </p>
+                        </div>
+                        <div class="col-12 col-lg-7 pt-5 d-flex align-items-center mt-30 mt-md-0">
+                            <form action="/find-certified" autocomplete="off" method="get" class="w-100" id="find-certified-widget-search">
+                                <div class="form-group material">
+                                    <input type="text" class="form-control form-control pl-0" name="certificate_number" placeholder="Número de licencia de la marca PEFC, número de certificado o nombre de la organización">
+                                    <input type="hidden" name="licence_number">
+                                    <input type="hidden" name="name">
+                                </div>
+                                <div class="mt-30">
+                                    <div class="row justify-content-center">
+                                        <div class="col-sm-4 col-12">
+                                            <button class="btn btn-md btn-green mr-5 text-white w-100 pt-sm-15 pb-sm-15" type="submit">
+                                                <strong>Buscar<i class="fal fa-search ml-12 small"></i></strong>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Find Certified-->
+
+                <!--Tunels Top-->
+                <div class="container-limited pb-60 pb-lg-0">
+                    <div class="row tunnels">
+                        
+
+<div class="col-12 mb-30 mb-lg-0 col-lg-4 h-100 tunnel pb-60">
+    <div class="card w-100">
+        <a href="/lo-que-puedes-hacer/obtener-la-certificacion" target="">
+            <div class="bg-image-wrapper h-100">
+                <div class="bg-image" style="background-image: url(https://cdn.pefc.org/igen/pefc.cl/media/2020-07/a884514a-179d-463a-b025-8261858b7880/456f883a-5f0a-5802-905d-d585840c5e55.png?m%5B%5D=t%28inside%2C400%2C400%29)">
+                    <div class="p-24 h-100 text-right">
+                        <h4 class="mb-12 text-uppercase  text-green">PROCESO PARA CERTIFICARSE</h4>
+                        <div class="line-height-1-2 m-0  ">
+                            <p>Revisa el paso a paso para la certificación PEFC</p>                        </div>
+                        <p class="mt-6 m-0 line-height-1-2 small text-uppercase pt-6  ">
+                            <strong class="text-dark">Leer más</strong> <i class="fal fa-angle-double-right"></i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+
+
+<div class="col-12 mb-30 mb-lg-0 col-lg-4 h-100 tunnel pb-60">
+    <div class="card w-100">
+        <a href="https://pefc.cl/pefc-chile/datos-y-cifras" target="">
+            <div class="bg-image-wrapper h-100">
+                <div class="bg-image" style="background-image: url(https://cdn.pefc.org/igen/pefc.cl/media/2023-08/f41ca10a-aad3-49b3-8bcb-7c03b0b7d00c/8a264213-44ff-5415-96c1-a53eb94a7524.png?m%5B%5D=t%28inside%2C400%2C400%29)">
+                    <div class="p-24 h-100 text-right">
+                        <h4 class="mb-12 text-uppercase  text-green">Datos y cifras</h4>
+                        <div class="line-height-1-2 m-0  ">
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;De PEFC en&nbsp; &nbsp; Chile y el mundo</p>                        </div>
+                        <p class="mt-6 m-0 line-height-1-2 small text-uppercase pt-6  ">
+                            <strong class="text-dark">Leer más</strong> <i class="fal fa-angle-double-right"></i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+
+
+<div class="col-12 mb-30 mb-lg-0 col-lg-4 h-100 tunnel pb-60">
+    <div class="card w-100">
+        <a href="/lo-que-puedes-hacer/elige-un-proveedor-certificado" target="">
+            <div class="bg-image-wrapper h-100">
+                <div class="bg-image" style="background-image: url(https://cdn.pefc.org/igen/pefc.cl/media/2020-07/6d45dd9f-7685-4001-a858-62a04490e4c6/cc996f89-631f-57d4-9248-149c8593b8d7.jpg?m%5B%5D=t%28inside%2C400%2C400%29)">
+                    <div class="p-24 h-100 text-right">
+                        <h4 class="mb-12 text-uppercase  text-green">BUSCADOR DE EMPRESAS CERTIFICADAS EN CHILE</h4>
+                        <div class="line-height-1-2 m-0  ">
+                                                    </div>
+                        <p class="mt-6 m-0 line-height-1-2 small text-uppercase pt-6  ">
+                            <strong class="text-dark">Leer más</strong> <i class="fal fa-angle-double-right"></i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+
+
+<div class="col-12 mb-30 mb-lg-0 col-lg-4 h-100 tunnel pb-60">
+    <div class="card w-100">
+        <a href="https://pefc.cl/estandares-e-implementacion/actualizacion-2021-2022" target="_blank">
+            <div class="bg-image-wrapper h-100">
+                <div class="bg-image" style="background-image: url(https://cdn.pefc.org/igen/pefc.cl/media/2022-07/1aec5ac2-c237-40ef-98e3-4ca0255d4dce/8056646d-b62a-5e9c-9340-3089d757f981.png?m%5B%5D=t%28inside%2C400%2C400%29)">
+                    <div class="p-24 h-100 text-right">
+                        <h4 class="mb-12 text-uppercase  text-green">Actualización del estándar de gestión forestal sostenible</h4>
+                        <div class="line-height-1-2 m-0  ">
+                                                    </div>
+                        <p class="mt-6 m-0 line-height-1-2 small text-uppercase pt-6  ">
+                            <strong class="text-dark">Leer más</strong> <i class="fal fa-angle-double-right"></i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+
+
+<div class="col-12 mb-30 mb-lg-0 col-lg-4 h-100 tunnel pb-60">
+    <div class="card w-100">
+        <a href="https://pefc.cl/documentos" target="">
+            <div class="bg-image-wrapper h-100">
+                <div class="bg-image" style="background-image: url(https://cdn.pefc.org/igen/pefc.cl/media/2022-03/fb9a460b-b864-4062-aff9-db5d96f0675c/f9f21b58-9ea9-59b0-b69c-3d2f2acb6093.png?m%5B%5D=t%28inside%2C400%2C400%29)">
+                    <div class="p-24 h-100 text-right">
+                        <h4 class="mb-12 text-uppercase  text-green">Documentación</h4>
+                        <div class="line-height-1-2 m-0  ">
+                            <p>Revisa los estándares y documentos de apoyo</p>                        </div>
+                        <p class="mt-6 m-0 line-height-1-2 small text-uppercase pt-6  ">
+                            <strong class="text-dark">Leer más</strong> <i class="fal fa-angle-double-right"></i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+
+
+<div class="col-12 mb-30 mb-lg-0 col-lg-4 h-100 tunnel pb-60">
+    <div class="card w-100">
+        <a href="https://lg.pefc.org/login" target="_blank">
+            <div class="bg-image-wrapper h-100">
+                <div class="bg-image" style="background-image: url(https://cdn.pefc.org/igen/pefc.cl/media/2022-03/3df46552-7804-4a37-8f1a-cc760ec09140/f59de21c-83a0-569b-b203-73b57fe65d1c.png?m%5B%5D=t%28inside%2C400%2C400%29)">
+                    <div class="p-24 h-100 text-right">
+                        <h4 class="mb-12 text-uppercase  text-green">NUEVO GENERADOR DE ETIQUETAS PEFC</h4>
+                        <div class="line-height-1-2 m-0  ">
+                            <p style="margin-left: 20px;">&nbsp; &nbsp; &nbsp;Para Cadena de Custodia 2020</p>                        </div>
+                        <p class="mt-6 m-0 line-height-1-2 small text-uppercase pt-6  ">
+                            <strong class="text-dark">Leer más</strong> <i class="fal fa-angle-double-right"></i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<div class="container-fluid">
+    <div class="container-limited">
+        <div class="row">
+            <div class="col-12">
+                <div class="row">
+                    
+    <div class="container-limited mb-60 w-100">
+        <div class="row">
+            <div class="col-12">
+
+                <h2 class="underline text-center text-uppercase text-green mb-48">
+                    <span>Noticias</span>
+                </h2>
+
+                <div class="row items-list">
+
+
+                                            <div class=" col-12 col-sm-6 col-lg-4 mb-30 content-item">
+    <a href="/noticias/chile-es-el-primer-pais-de-sudamerica-en-comprometer-deforestacion-cero-para-la-gestion-sostenible-de-los-bosques" target="">
+                    <div class="image-container rectangle-landscape rounded">
+                                    <div class="content" style="background-image: url(https://cdn.pefc.org/igen/pefc.cl/media/2025-03/af3bd525-7291-49e1-80f3-7e46fcab2f87/ec0bf806-e81f-5992-8e19-ef419cd0cb07.jpg?m%5B%5D=t%28inside%2C400%2C300%29)"></div>
+                            </div>
+            </a>
+
+            <p class="text-green text-uppercase mb-0 mt-lg-24 mt-12 date line-height-1">
+            <strong>6 de marzo de 2025</strong>
+        </p>
+
+        <h2 class="mt-12 mb-0">
+            <a href="/noticias/chile-es-el-primer-pais-de-sudamerica-en-comprometer-deforestacion-cero-para-la-gestion-sostenible-de-los-bosques" class="text-gray">
+                Chile es el primer país de Sudamérica en comprometer Deforestación Cero para la gestión sostenible de los bosques            </a>
+        </h2>
+
+                    <p class="mt-6 mb-0 small text">
+                <span class="category text-uppercase">Asuntos técnicos</span>
+            </p>
+        
+                    <p class="mt-12 mb-0 text">
+                La nueva normativa entra en vigencia a partir de marzo 2025 y tendrá un año de transición para su aplicación en el territorio nacional.            </p>
+            
+</div>
+                                            <div class=" col-12 col-sm-6 col-lg-4 mb-30 content-item">
+    <a href="/noticias/certificacion-pefc-de-la-deforestacion-cero-una-ventaja-competitiva" target="">
+                    <div class="image-container rectangle-landscape rounded">
+                                    <div class="content" style="background-image: url(https://cdn.pefc.org/igen/pefc.cl/media/2025-03/e9d8f686-5bdd-444c-8f1a-26cc64de46fa/3c3313a8-5f4e-50fc-b817-d7ec3a0a1d5e.png?m%5B%5D=t%28inside%2C400%2C300%29)"></div>
+                            </div>
+            </a>
+
+            <p class="text-green text-uppercase mb-0 mt-lg-24 mt-12 date line-height-1">
+            <strong>26 de marzo de 2025</strong>
+        </p>
+
+        <h2 class="mt-12 mb-0">
+            <a href="/noticias/certificacion-pefc-de-la-deforestacion-cero-una-ventaja-competitiva" class="text-gray">
+                Certificación PEFC de la Deforestación Cero: Una ventaja competitiva            </a>
+        </h2>
+
+                    <p class="mt-6 mb-0 small text">
+                <span class="category text-uppercase">Columna de opinión</span>
+            </p>
+        
+                    <p class="mt-12 mb-0 text">
+                PEFC Chile presenta los nuevos requisitos para la gestión de los bosques y la trazabilidad de sus productos derivados, en línea con el cumplimiento de la EUDR para la comercialización de productos de origen forestal.            </p>
+            
+</div>
+                                            <div class=" col-12 col-sm-6 col-lg-4 mb-30 content-item">
+    <a href="/noticias/lanzamiento-expo-pefc-2025-expositores" target="">
+                    <div class="image-container rectangle-landscape rounded">
+                                    <div class="content" style="background-image: url(https://cdn.pefc.org/igen/pefc.cl/media/2025-01/e09dac6f-6853-4f56-af68-4155c2c28234/0970e251-79f3-50a7-8654-f2ed962ebc62.jpg?m%5B%5D=t%28inside%2C400%2C300%29)"></div>
+                            </div>
+            </a>
+
+            <p class="text-green text-uppercase mb-0 mt-lg-24 mt-12 date line-height-1">
+            <strong>22 de enero de 2025</strong>
+        </p>
+
+        <h2 class="mt-12 mb-0">
+            <a href="/noticias/lanzamiento-expo-pefc-2025-expositores" class="text-gray">
+                Lanzamiento Expo PEFC 2025 (expositores)            </a>
+        </h2>
+
+                    <p class="mt-6 mb-0 small text">
+                <span class="category text-uppercase">Expo PEFC 2025</span>
+            </p>
+        
+                    <p class="mt-12 mb-0 text">
+                Invitamos a todas las empresas certificadas PEFC de los sectores comercialización de papel, imprentas y packaging a la reunión de lanzamiento de la 4ta Expo PEFC 2025.
+Reunión virtual | Enero 28 | 11:00am            </p>
+            
+</div>
+                    
+                </div>
+            </div>
+
+            <div class="col-12 text-right mt-24">
+                <p class="m-0 text-uppercase">
+                    <a class="read-more" href="/noticias">
+                        Mostrar todas las noticias<i class="fal fa-angle-double-right"></i>
+                    </a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                    </section>
+
+
+    <!--Footer-->
+    <!--Newsletter-->
+<div class="container-fluid bg-white d-print-none" id="keep-in-touch">
+    <div class="container-limited">
+        <div class="row pt-30 pb-30 pt-md-60 pb-md-60">
+            <div class="col-12 col-md-6 col-xl-7 mb-12 mb-md-0">
+                <h2 class="mb-0 text-uppercase pt-10">Estemos en contacto</h2>
+                <p class="text-uppercase m-0">Suscríbete a nuestro boletín de noticias</p>
+            </div>
+            <div class="col-12 col-md-6 col-xl-5 d-flex align-items-center">
+                <div class="form-group material m-0 w-100">
+                    <div class="input-group keep-in-touch-newsletter" id="keep-in-touch-input">
+
+                        <input type="email" class="keep-in-touch-input form-control pl-0 pt-0" id="newsletter_email" data-url="/cms/383d3def-2717-4acd-9ebc-ee5d5a9c23f9/newsletter" data-list_id="10001843" placeholder="Su correo electrónico">
+                        <div class="input-group-prepend" id="keep-in-touch-send">
+                            <div class="input-group-text keep-in-touch-send"><i class="fal text-green fa-paper-plane"></i></div>
+                        </div>
+
+                    </div>
+                    <p class="m-0 text-center keep-in-touch-loading" id="keep-in-touch-loading" style="display: none">
+                        <i class="fas fa-spinner-third text-green fa-spin"></i> <br>
+                        <span class="small text-uppercase pt-5">por favor espere</span>
+                    </p>
+
+                    <p class="m-0 text-center text-green keep-in-touch-success" id="keep-in-touch-success" style="display: none">
+                        <i class="fal fa-check-circle"></i> <br>
+                        Su registro fue exitoso.                    </p>
+
+                    <p class="m-0 text-center text-danger keep-in-touch-error" id="keep-in-touch-error" style="display: none">
+                        <i class="fal fa-exclamation-triangle"></i> <br>
+                        Hubo un problema durante su registro.<br>Por favor intente de nuevo.                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Newsletter-->
+<!--Tunnel Footer-->
+<section class="container-fluid bg-green d-print-none" id="tunnels-footer">
+
+    <div class="container-limited pt-60">
+
+        <div class="row">
+            <div class="col-12 col-sm-4">
+                                <a href="/mercados/empresas-de-la-cadena-de-suministro/como-obtener-la-certificacion-cdc">
+                                        <h3 class="text-white m-0 text-uppercase">
+                        <i class="fal fa-file-certificate mr-20 float-left"></i>
+                        Obtener la certificación                    </h3>
+                                    </a>
+                            <p class="text-white d-block d-sm-none">
+                    Al adquirir la certificación PEFC ayudas a proteger los bosques del mundo.                </p>
+            </div>
+
+            <div class="col-12 col-sm-4">
+                                <a href="/lo-que-puedes-hacer/elige-un-proveedor-certificado">
+                                    <h3 class="text-white m-0 text-uppercase">
+                    <i class="fal fa-hand-holding-seedling mr-20 float-left"></i>
+                    Proveedor certificado                </h3>
+                                    </a>
+                            <p class="text-white d-block d-sm-none">
+                    Juntos podemos conservar los beneficios nuestros bosques.                </p>
+            </div>
+
+            <div class="col-12 col-sm-4">
+                                <a href="https://pefc.cl/pefc-chile/conoce-nuestro-equipo">
+                                    <h3 class="text-white m-0 text-uppercase">
+                    <i class="fal fa-address-card mr-20 float-left"></i>
+                    Conócenos                </h3>
+                                    </a>
+                            <p class="text-white d-block d-sm-none">
+                    Contáctanos, nuestro equipo en Chile te brindará asesoría en lo que necesites.                </p>
+            </div>
+        </div>
+        <div class="row mt-12 d-none d-sm-flex">
+            <div class="col-4">
+                <p class="text-white m-0 pr-20">
+                    Al adquirir la certificación PEFC ayudas a proteger los bosques del mundo.                </p>
+            </div>
+            <div class="col-4">
+                <p class="text-white m-0 pr-20">
+                    Juntos podemos conservar los beneficios nuestros bosques.                </p>
+            </div>
+            <div class="col-4">
+                <p class="text-white m-0 pr-20">
+                    Contáctanos, nuestro equipo en Chile te brindará asesoría en lo que necesites.                </p>
+            </div>
+
+            <div class="col-12 mt-48">
+                <hr class="m-0">
+            </div>
+        </div>
+    </div>
+</section>
+<section class="container-fluid bg-green d-print-none" id="social-medias">
+
+    <div class="container-limited">
+
+        <div class="row pt-30 pb-30">
+            <div class="col col-logo">
+                                    <img class="w-100" height="75" loading="lazy" src="/assets/logo/pefc-24-01-01.svg" alt="PEFC Chile">
+                            </div>
+            <div class="col pl-0 pl-sm-auto align-items-center d-flex justify-content-end">
+                <nav>
+                    <ul class="nav justify-content-end">
+                        <li class="nav-item d-flex align-items-center mr-15 mr-sm-30">
+                            <a class="nav-link p-0 text-white">Síguenos</a>
+                        </li>
+                                                    <li class="nav-item d-flex justify-content-center align-items-center icon">
+                                <a class="nav-link text-white" href="https://www.facebook.com/PEFC.cl" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            </li>
+                                                                            <li class="nav-item d-flex justify-content-center align-items-center icon">
+                                <!-- Use two <a> HTML element to deal with show / hide in order to display correct svg icon -->
+                                <a id="twitter-x-green" class="justify-content-center align-items-center nav-link h-50 w-50" href="https://twitter.com/PEFC_cl" target="_blank">
+                                    <img class="d-block" src="/assets/icons/twitter-x-green.svg" alt="Twitter X">
+                                </a>
+                                <a id="twitter-x-white" class="justify-content-center align-items-center nav-link h-50 w-50" href="https://twitter.com/PEFC_cl" target="_blank">
+                                    <img class="d-block" src="/assets/icons/twitter-x-white.svg" alt="Twitter X">
+                                </a>
+                            </li>
+                                                                            <li class="nav-item d-flex justify-content-center align-items-center icon">
+                                <a class="nav-link text-white" href="https://www.linkedin.com/company/pefc-cl" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            </li>
+                                                                            <li class="nav-item d-flex justify-content-center align-items-center icon">
+                                <a class="nav-link text-white" href="https://www.instagram.com/pefc.cl/" target="_blank"><i class="fab fa-instagram"></i></a>
+                            </li>
+                                                                            <li class="nav-item d-flex justify-content-center align-items-center icon">
+                                <a class="nav-link text-white" href="https://youtube.com/@PEFC_cl" target="_blank"><i class="fab fa-youtube"></i></a>
+                            </li>
+                                            </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+    <!--Footer-->
+
+    <!--Footer Navigation-->
+    <footer class="container-fluid d-print-none">
+        <div class="container-limited">
+
+            <div class="row opacity-90" id="footer-mentions">
+                <div class="col-12">
+
+
+                    <div class="row d-none d-sm-flex pt-60 justify-content-center">
+                                    <div class="col-sm-4 col-md d-none d-sm-block mb-30 mb-md-0">
+                                <h5 class="text-green text-uppercase mb-20 d-flex align-items-end"><a id="menu-10002212" href="/expopefc">4ta Expo PEFC 2025</a></h5>
+                            </div>
+                                <div class="col-sm-4 col-md d-none d-sm-block mb-30 mb-md-0">
+                                <h5 class="text-green text-uppercase mb-20 d-flex align-items-end"><a id="menu-10000763" href="/que-hacemos" target="_self">QUÉ HACEMOS</a></h5>
+                                    <ul class="nav flex-column">
+                                                                                    <li class="nav-item">
+                                                                        <a id="menu-10000767" class=" nav-link text-white" href="/que-hacemos/la-importancia-de-los-bosques">LA IMPORTANCIA DE LOS BOSQUES</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10000768" class=" nav-link text-white" href="/que-hacemos/nuestro-enfoque">NUESTRO ENFOQUE</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10000847" class=" nav-link text-white" href="/que-hacemos/alianzas-y-convenios">ALIANZAS Y CONVENIOS</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10002186" class=" nav-link text-white" href="/que-hacemos/campanas">CAMPAÑAS </a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10000770" class=" nav-link text-white" href="/que-hacemos/objetivos-de-desarrollo-sostenible">OBJETIVOS DE DESARROLLO SOSTENIBLE</a>
+                                </li>
+                                                                        </ul>
+                            </div>
+                                <div class="col-sm-4 col-md d-none d-sm-block mb-30 mb-md-0">
+                                <h5 class="text-green text-uppercase mb-20 d-flex align-items-end"><a id="menu-10000764" href="/lo-que-puedes-hacer">LO QUE PUEDES HACER</a></h5>
+                                    <ul class="nav flex-column">
+                                                                                    <li class="nav-item">
+                                                                        <a id="menu-10000867" class=" nav-link text-white" href="/lo-que-puedes-hacer/obtener-la-certificacion">OBTENER LA CERTIFICACIÓN</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10000852" class=" nav-link text-white" href="/lo-que-puedes-hacer/compra-productos-certificados-pefc">COMPRA PRODUCTOS CERTIFICADOS PEFC</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10000868" class=" nav-link text-white" href="/lo-que-puedes-hacer/elige-un-proveedor-certificado">ELIGE UN PROVEEDOR CERTIFICADO</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10000853" class=" nav-link text-white" href="/lo-que-puedes-hacer/contribuye-a-los-estandares">CONTRIBUYE A LOS ESTÁNDARES</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10000854" class=" nav-link text-white" href="/lo-que-puedes-hacer/hazte-miembro">HAZTE MIEMBRO</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10000851" class=" nav-link text-white" href="/lo-que-puedes-hacer/busca-la-etiqueta-pefc">BUSCA LA ETIQUETA PEFC</a>
+                                </li>
+                                                                        </ul>
+                            </div>
+                                <div class="col-sm-4 col-md d-none d-sm-block mb-30 mb-md-0">
+                                <h5 class="text-green text-uppercase mb-20 d-flex align-items-end"><a id="menu-10000862" href="/mercados">MERCADOS </a></h5>
+                                    <ul class="nav flex-column">
+                                                                                    <li class="nav-item">
+                                                                        <a id="menu-10000855" class=" nav-link text-white" href="/mercados/empresas-de-la-cadena-de-suministro">EMPRESAS DE LA CADENA DE SUMINISTRO</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10000977" class=" nav-link text-white" href="/mercados/marcas-y-retail">MARCAS Y RETAIL</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10000857" class=" nav-link text-white" href="/mercados/propietarios-forestales">PROPIETARIOS FORESTALES</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10000858" class=" nav-link text-white" href="/mercados/certificacion-y-organismos-de-acreditacion">CERTIFICACIÓN Y ORGANISMOS DE ACREDITACIÓN</a>
+                                </li>
+                                                                        </ul>
+                            </div>
+                                <div class="col-sm-4 col-md d-none d-sm-block mb-30 mb-md-0">
+                                <h5 class="text-green text-uppercase mb-20 d-flex align-items-end"><a id="menu-10000766" href="/estandares-e-implementacion">ESTÁNDARES E IMPLEMENTACIÓN</a></h5>
+                                    <ul class="nav flex-column">
+                                                                                    <li class="nav-item">
+                                                                        <a id="menu-10000881" class=" nav-link text-white" href="/estandares-e-implementacion/estandares-y-guias">ESTÁNDARES Y GUÍAS</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10000882" class=" nav-link text-white" href="/estandares-e-implementacion/como-se-desarrollan-nuestros-estandares">CÓMO SE DESARROLLAN NUESTROS ESTÁNDARES</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10000984" class=" nav-link text-white" href="/estandares-e-implementacion/adaptando-estandares-locales-globalmente">ADAPTANDO ESTÁNDARES LOCALES, GLOBALMENTE</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10000885" class=" nav-link text-white" href="/estandares-e-implementacion/asegurando-el-cumplimiento">ASEGURANDO EL CUMPLIMIENTO</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10001559" class=" nav-link text-white" href="/estandares-e-implementacion/actualizacion-2021-2022">ACTUALIZACIÓN 2021 - 2022</a>
+                                </li>
+                                                                        </ul>
+                            </div>
+                                <div class="col-sm-4 col-md d-none d-sm-block mb-30 mb-md-0">
+                                <h5 class="text-green text-uppercase mb-20 d-flex align-items-end"><a id="menu-10000762" href="/pefc-chile" target="_self">PEFC CHILE</a></h5>
+                                    <ul class="nav flex-column">
+                                                                                    <li class="nav-item">
+                                                                        <a id="menu-10000886" class=" nav-link text-white" href="/pefc-chile/que-es-pefc">¿QUÉ ES PEFC?</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10000887" class=" nav-link text-white" href="/pefc-chile/que-es-certfor-pefc-chile">¿QUÉ ES CERTFOR (PEFC Chile)?</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10000888" class=" nav-link text-white" href="/pefc-chile/datos-y-cifras">DATOS Y CIFRAS</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10000889" class=" nav-link text-white" href="/pefc-chile/gobernanza">GOBERNANZA</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10000890" class=" nav-link text-white" href="/pefc-chile/conoce-nuestro-equipo" target="_blank">CONOCE NUESTRO EQUIPO</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10000891" class=" nav-link text-white" href="/pefc-chile/balance">BALANCE</a>
+                                </li>
+                                                                        </ul>
+                            </div>
+            </div>
+
+                    <div class="row pt-24 pb-24">
+                        <div class="col-12">
+                            <hr class="">
+                        </div>
+                        <div class="col-12 col-md-7">
+                            <ul class="nav justify-content-center justify-content-md-start signature_copyright_nav mb-12 mb-md-0">
+                                                                    <li class="nav-item">
+                                        <a class="nav-link open-cookie-settings">Configuración de cookies</a>
+                                    </li>
+                                                                                            </ul>
+                        </div>
+
+                        <div class="col-12 col-md-5">
+                            <p class="mb-0 text-md-right text-center small mb-6 mb-sm-0">
+                                Concepto, diseño y desarrollo de <a href="https://nimeo.io" target="_blank">nimeo creative solutions</a>
+                                <br>
+                                © derechos de autor 2025 PEFC. Todos los derechos reservados                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--Footer Navigation-->
+    </div>
+
+<link href="/dist/website.css?ck=aef-default-20250319t110453-5gkr" rel="stylesheet">
+<!--<link href="/dist/search-engine/search-engine.widget.css" rel="stylesheet">-->
+<link href="/dist/fontawesome.css?ck=aef-default-20250319t110453-5gkr" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<script defer="" src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="/dist/main.js?ck=aef-default-20250319t110453-5gkr" defer="" type="application/javascript"></script>
+<!--<script type="module" src="/dist/search-engine/search-engine.widget.js"></script>-->
+<script type="application/javascript" defer="defer" src="/dist/cookie-consent.js"></script>
+<script type="application/javascript" defer="defer" src="/dist/carousel.js"></script>
+<script type="application/javascript" defer="defer" src="/dist/newsletter.js"></script>
+
+</body></html>

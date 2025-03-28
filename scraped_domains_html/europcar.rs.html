@@ -1,0 +1,568 @@
+<!DOCTYPE html><html lang="rs"><head>
+    <meta charset="utf-8">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://europcar.rs/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://europcar.rs/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#009900">
+    <meta name="msapplication-TileImage" content="/mstile-150x150.png">
+    <meta name="theme-color" content="#009900">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&amp;family=Noto+Sans:wght@100;200;300;400;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-N6DPZXD"></script><script src="/js/wc-carousel-lite.js"></script>
+    <style>
+      wc-carousel-lite {
+        width: 100%;
+        margin: auto;
+        display: flex;
+        gap: 10px;
+        outline: none !important;
+        position: relative;
+      }
+      wc-carousel-lite .item {
+        min-height: 260px;
+        width: 320px;
+      }
+      wc-carousel-lite .item img {
+        border-radius: 0.8rem;
+      }
+      .carousel-wrapper {
+        position: relative;
+        padding-bottom: 2rem;
+      }
+      .carousel-wrapper > .prev,
+      .carousel-wrapper > .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        z-index: 1;
+        background-color: #fff;
+        color: #999;
+        width: 2.4rem;
+        height: 2.4rem;
+        line-height: 2.4rem;
+        border-radius: 50%;
+        box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.5);
+        font-size: 1.4rem;
+        transition: 0.3s;
+        text-align: center;
+        padding: 0;
+        font-weight: bold;
+      }
+      .carousel-wrapper > .prev {
+        left: -12px;
+      }
+      .carousel-wrapper > .next {
+        right: -12px;
+      }
+      wc-carousel-lite .vehicle-count {
+        color: #595959;
+        font-size: 1.4rem;
+      }
+      @media (min-width: 1000px) {
+        wc-carousel-lite.-count-4,
+        wc-carousel-lite.-count-3,
+        wc-carousel-lite.-count-2,
+        wc-carousel-lite.-count-1 {
+          display: grid;
+          gap: 2rem;
+        }
+        wc-carousel-lite.-count-4 .item,
+        wc-carousel-lite.-count-3 .item,
+        wc-carousel-lite.-count-2 .item,
+        wc-carousel-lite.-count-1 .item {
+          width: auto;
+        }
+        wc-carousel-lite.-count-4 {
+          grid-template-columns: repeat(4, 1fr);
+        }
+        wc-carousel-lite.-count-3 {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        wc-carousel-lite.-count-2 {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        wc-carousel-lite.-count-1 {
+          grid-template-columns: repeat(1, 1fr);
+        }
+        wc-carousel-lite .item.-count-4 img,
+        wc-carousel-lite .item.-count-3 img,
+        wc-carousel-lite .item.-count-2 img,
+        wc-carousel-lite .item.-count-1 img {
+          width: 100%;
+        }
+        .not-many-items,
+        .not-many-items + wc-carousel-lite > div:not(.item) {
+          display: none !important;
+        }
+
+        /* max-width 300px for 5+ items */
+        wc-carousel-lite .items-container .item img {
+          max-width: min(100%, 300px);
+        }
+        wc-carousel-lite.-count-1 .item img,
+        wc-carousel-lite.-count-2 .item img,
+        wc-carousel-lite.-count-3 .item img,
+        wc-carousel-lite.-count-4 .item img {
+          max-width: 100%;
+        }
+      }
+      @media (max-width: 768px) {
+        .carousel-wrapper > .prev,
+        .carousel-wrapper > .next {
+          display: none;
+        }
+        wc-carousel-lite .item {
+          min-height: 120px;
+          width: 240px;
+          padding: 0 0.5rem;
+        }
+      }
+    </style>
+    
+		<link href="../_app/immutable/assets/2.DnsaxRCH.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/Overlay.C8NtvIRy.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/4.CEj8qXT1.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/Filter.fXO21nOT.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/BottomNav.C44_Ec_Y.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/EditIcon.BapGNQgT.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/InfoIcon.CwYuxcBy.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/ChooseVehicle.DIVZruQ3.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/OfferInfo.YfYP5MkG.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/Header.CyLBOsAf.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/BookingCD.B9OugfZd.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/notifier.DbLvtVfH.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/DatePicker.CwZBec4H.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/PricePerDay.f2Hbo5zt.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/StickyHeader.fVUWAmZC.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/PRACDriverDetails.Jz6HhZtm.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/ErrorBox.D5rTHFqH.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/InsuranceList.DqYX94sw.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/ExtrasList.DfJyeU20.css" rel="stylesheet"><title>Rent a Car Beograd | Europcar iznajmljivanje vozila</title><!-- HTML_TAG_START --><!-- HTML_TAG_END --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-N6DPZXD');</script><script src="https://chat-widget.amio.io/static/amio-webchat-loader.min.js" type="text/javascript" data-svelte-h="svelte-1uqpmdd"></script><link rel="alternate" hreflang="rs" href="https://europcar.rs/rs/" class="svelte-chdl71"><link rel="alternate" hreflang="en" href="https://europcar.rs/en/" class="svelte-chdl71"><link rel="alternate" hreflang="x-default" href="https://europcar.rs/rs/" class="svelte-chdl71"><link rel="canonical" href="https://europcar.rs/rs/" class="svelte-chdl71"><meta content="Europcar Rent a Car Beograd - Najveća ponuda novih 2024. god. vozila" name="description"><meta content="Rent a Car Beograd | Europcar iznajmljivanje vozila" property="og:title"><meta content="Europcar Serbia" property="og:site_name"><meta content="https://europcar.rs/rs/" property="og:url"><meta content="Europcar Rent a Car Beograd - Najveća ponuda novih 2024. god. vozila" property="og:description"><meta content="website" property="og:type"><meta content="https://europcar.rs/media/img/booking/europcar-serbia_004_m.jpg" property="og:image"><!-- HTML_TAG_START --><!-- HTML_TAG_END -->
+  <style type="text/css">
+.amio_iframe {
+  background: none;
+  border: none;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  color-scheme: normal;
+}
+
+.amio_chat_wrapper_open {
+  margin-bottom: 10px;
+  margin-right: 10px;
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  max-width: 100%;
+  height: 800px;
+  max-height: calc(100% - 100px);
+  min-height: 400px;
+  z-index: 1000;
+}
+
+.amio_chat_wrapper_open-left {
+  width: 466px;
+}
+
+.amio_chat_wrapper_open-top {
+  width: 421px;
+}
+
+.amio_chat_wrapper_pop_up {
+  margin-bottom: 10px;
+  margin-right: 10px;
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  width: 340px;
+  max-width: 100%;
+  height: 400px;
+  max-height: calc(100% - 100px);
+  z-index: 1000;
+}
+
+.amio_chat_wrapper_full {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
+}
+
+.forced-full-screen {
+  
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    bottom: 0;
+    right: 0;
+    border-radius: 0;
+    margin-right: 0 !important;
+    margin-bottom: 0 !important;
+    z-index: 1000;
+
+}
+
+.amio_chat_wrapper_closed {
+  margin-bottom: 10px;
+  margin-right: 10px;
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  width: 270px;
+  height: 100px;
+  max-height: 100px;
+  z-index: 1000;
+}
+
+.hidden {
+  display: none;
+}
+
+.amio_chat_wrapper_closed.wide {
+  width: 270px;
+  height: 100px;
+}
+
+@media (max-width: 420px) {
+  .amio_chat_wrapper_open {
+    
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    bottom: 0;
+    right: 0;
+    border-radius: 0;
+    margin-right: 0 !important;
+    margin-bottom: 0 !important;
+    z-index: 1000;
+
+  }
+
+  .amio_chat_wrapper_closed.wide {
+    width: 100px;
+  }
+}
+</style><link rel="modulepreload" as="script" crossorigin="" href="https://europcar.rs/_app/immutable/nodes/0.C6y6CpFs.js"><link rel="modulepreload" as="script" crossorigin="" href="https://europcar.rs/_app/immutable/chunks/scheduler.YxfdEOY1.js"><link rel="modulepreload" as="script" crossorigin="" href="https://europcar.rs/_app/immutable/chunks/index.C_BXPtqd.js"><link rel="modulepreload" as="script" crossorigin="" href="https://europcar.rs/_app/immutable/nodes/1.C5LZNz8h.js"><link rel="modulepreload" as="script" crossorigin="" href="https://europcar.rs/_app/immutable/chunks/stores.C82-YfgH.js"><link rel="modulepreload" as="script" crossorigin="" href="https://europcar.rs/_app/immutable/chunks/entry.DgvTKOKP.js"><link rel="modulepreload" as="script" crossorigin="" href="https://europcar.rs/_app/immutable/chunks/index.DY6b21cv.js"><link rel="stylesheet" crossorigin="" href="https://europcar.rs/_app/immutable/assets/1.BVcXjfqL.css"><link rel="modulepreload" as="script" crossorigin="" href="https://europcar.rs/_app/immutable/nodes/2.C838yLTp.js"><link rel="modulepreload" as="script" crossorigin="" href="https://europcar.rs/_app/immutable/chunks/each.-l3vU0W8.js"><link rel="modulepreload" as="script" crossorigin="" href="https://europcar.rs/_app/immutable/chunks/prac.B-cuDa02.js"><link rel="modulepreload" as="script" crossorigin="" href="https://europcar.rs/_app/immutable/chunks/apiCall.TfIAjo-d.js"><link rel="modulepreload" as="script" crossorigin="" href="https://europcar.rs/_app/immutable/chunks/runtime.BVhHXiii.js"><link rel="modulepreload" as="script" crossorigin="" href="https://europcar.rs/_app/immutable/chunks/SessionTracker.Ck7KGXAJ.js"><link rel="modulepreload" as="script" crossorigin="" href="https://europcar.rs/_app/immutable/chunks/Overlay.CPa2DkTD.js"><link rel="modulepreload" as="script" crossorigin="" href="https://europcar.rs/_app/immutable/nodes/4.x4OLNMcb.js"><link rel="modulepreload" as="script" crossorigin="" href="https://europcar.rs/_app/immutable/chunks/Filter.dFL3Tr_S.js"><link rel="modulepreload" as="script" crossorigin="" href="https://europcar.rs/_app/immutable/chunks/BottomNav.sb_sRTaM.js"><link rel="modulepreload" as="script" crossorigin="" href="https://europcar.rs/_app/immutable/chunks/EditIcon.-XVHOsXy.js"><link rel="modulepreload" as="script" crossorigin="" href="https://europcar.rs/_app/immutable/chunks/InfoIcon.CeiBHe9W.js"><link rel="modulepreload" as="script" crossorigin="" href="https://europcar.rs/_app/immutable/chunks/ChooseVehicle.svelte_svelte_type_style_lang.BWlXMqS6.js"><link rel="modulepreload" as="script" crossorigin="" href="https://europcar.rs/_app/immutable/chunks/OfferInfo.D8wX0x_J.js"><link rel="modulepreload" as="script" crossorigin="" href="https://europcar.rs/_app/immutable/chunks/Header.OtuWgKrO.js"><link rel="modulepreload" as="script" crossorigin="" href="https://europcar.rs/_app/immutable/chunks/BookingCD.3oFnTyPw.js"><link rel="modulepreload" as="script" crossorigin="" href="https://europcar.rs/_app/immutable/chunks/notifier.bEMyx6pj.js"><link rel="modulepreload" as="script" crossorigin="" href="https://europcar.rs/_app/immutable/chunks/DatePicker.7JV6N78_.js"><link rel="modulepreload" as="script" crossorigin="" href="https://europcar.rs/_app/immutable/chunks/PricePerDay.CduoyrWX.js"><link rel="modulepreload" as="script" crossorigin="" href="https://europcar.rs/_app/immutable/chunks/StickyHeader.DNSIaaD3.js"><link rel="modulepreload" as="script" crossorigin="" href="https://europcar.rs/_app/immutable/chunks/PRACDriverDetails.BuHdv9jX.js"><link rel="modulepreload" as="script" crossorigin="" href="https://europcar.rs/_app/immutable/chunks/ErrorBox.BVcDitDU.js"><link rel="modulepreload" as="script" crossorigin="" href="https://europcar.rs/_app/immutable/chunks/InsuranceList.CEplKf7E.js"><link rel="modulepreload" as="script" crossorigin="" href="https://europcar.rs/_app/immutable/chunks/Star.CAX-bLCx.js"><link rel="modulepreload" as="script" crossorigin="" href="https://europcar.rs/_app/immutable/chunks/ExtrasList.BAzAXbLL.js"><script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AutoRental",
+      "@id": "AutoRental",
+      "areaServed": "Serbia",
+      
+      "currenciesAccepted": "EUR",
+      "description": "Europcar Rent a Car Beograd - Najveća ponuda novih 2024. god. vozila",
+      "email": "reservations@europcar.rs",
+      "image": "https://europcar.rs/media/img/booking/europcar-serbia_004_m.jpg",
+      "legalName": "Primero Rent a Car d.o.o. Beograd",
+      "logo": "https://europcar.rs/media/img/logo.png",
+      "telephone": ["+381 11 785 2820"],
+      "url": "https://europcar.rs/rs/"
+    }
+  </script></head>
+  <body class="green-theme">
+    <!-- data-sveltekit-preload-data="hover" -->
+    <div style="display: contents">   <script type="text/javascript">
+  window.amioWebchat.init({
+    channelId: '6993917345702627352',
+    logoUrl: 'https://europcar.rs/media/img/logo.png',
+    theme: 'europcar',
+    wideButton: false,
+    lang: 'rs-europcar',
+    zIndex: 1000
+  });
+</script>
+    <div class="page-content svelte-h1p79g"> <header class="header-block svelte-11cpqk"><div class="header-top-menu svelte-11cpqk"><div class="topLinks svelte-11cpqk"><a class="phone svelte-11cpqk" href="tel:+381117852820" type="phone">+381 11 785 2820</a> <a href="mailto:reservations@europcar.rs" target="_top" class="svelte-11cpqk"><span>reservations@europcar.rs</span></a> <div id="langs-chooser" class="svelte-11cpqk"><a class="lang svelte-11cpqk" href="/en/" rel="external">EN</a><a class="lang svelte-11cpqk -active-top-menu" href="/rs/" rel="external">RS</a></div></div></div> <div class="header-middle-menu svelte-11cpqk"><div class="middle-menu svelte-11cpqk"><a class="header-logo-link svelte-11cpqk" href="/rs/"><img class="header-logo svelte-11cpqk" alt="Rent-a-car" src="/media/img/logo.png"></a> <nav class="navigation svelte-11cpqk" style="background-color: rgba(0, 0, 0, 0.3);"><a class="nav-item svelte-11cpqk active" href="/rs/">Rent a Car</a><a class="nav-item svelte-11cpqk" href="/rs/poslovni-najam-vozila/">Poslovni Najam</a></nav> <button class="menu_button svelte-11cpqk" type="button"><div class="hamburger-icon svelte-17w0y47" data-svelte-h="svelte-wokiel"><div class="top svelte-17w0y47"></div> <svg class="middle" height="84" viewBox="0 0 84 84" width="84" xmlns="http://www.w3.org/2000/svg"><path d="M22,42h40 c5,0, 20, -10, 14.641,-20 A40,40, 0 0 0 42 2 A40,40, 0 0 0 2 42 A40 40 0 0 0 42 82 A40 40 0 0 0 82 42 A40 40 0 0 0 42 2 A40 40 0 0 0 2 42" fill="none" stroke-miterlimit="10" stroke-width="4" class="svelte-17w0y47"></path></svg> <div class="bottom svelte-17w0y47"></div> </div></button></div></div></header> <div class="image-wrapper svelte-chdl71" style="color: rgb(255, 255, 255); background-color: rgba(0, 0, 0, 0.3);"><img class="image -mobile svelte-chdl71" alt="" sizes="(max-width: 800px) 100vw, 100vw" src="/media/img/booking/europcar-serbia_004_m.jpg" style="background-color: rgba(0, 0, 0, 0.3);"> <img class="image -desktop svelte-chdl71" alt="" sizes="(max-width: 800px) 100vw, 100vw" src="/media/img/booking/europcar-serbia_004B.jpg" style="background-color: rgba(0, 0, 0, 0.3);"> <div class="gradient-overlay svelte-chdl71"></div> <div class="text-holder svelte-chdl71"><div class="text-wrapper svelte-chdl71"><h1 class="heading svelte-chdl71" style="background-color: rgba(0, 0, 0, 0.3);">Tražite vozilo? Na pravom ste mestu</h1> <p class="subtext svelte-chdl71" style="background-color: rgba(0, 0, 0, 0.3);">✓&nbsp;Najmlađa flota vozila&nbsp; ✓&nbsp;Neograničena kilometraža&nbsp; ✓&nbsp;Brza online rezervacija&nbsp; ✓&nbsp;Besplatno otkazivanje&nbsp; ✓&nbsp;Podrška 24/7</p></div></div></div>  <div class="booking-wrapper -prac svelte-c664c6"><div class="main-wrapper svelte-c664c6"><div class="tab-wrapper -prac svelte-c664c6"><a class="booking-tab prac svelte-c664c6" href="#top">Dnevni Najam</a> <a class="booking-tab mrac svelte-c664c6" href="/rs/rent-a-car/mesecni-najam-vozila/">Mesečni najam</a></div>  <div id="form-content" class="svelte-c664c6"><div id="pickup" class="pickup form-segment svelte-c664c6"><div class="form-group -select svelte-c664c6"><div class="dropdown"><label class="svelte-c664c6">Preuzimanje vozila <div id="openForm" class="group-bg -select svelte-c664c6"><img alt="Lokacija" src="/media/icons/location.svg" class="svelte-c664c6"> <input class="form-field dropdown-input svelte-c664c6" placeholder="Izaberi lokaciju" type="text" readonly=""> <div class="validation-alert svelte-c664c6">Obavezno polje</div></div></label></div></div> <div class="form-group -date svelte-c664c6"><div class="group-bg -date svelte-c664c6"><img alt="Kalendar" src="/media/icons/calendar.svg" class="svelte-c664c6"> <input class="form-field -date svelte-c664c6" autocomplete="off" data-role="dateInput" maxlength="10" placeholder="dd/mm/yyyy" type="text" name="pickUpDateDay" readonly=""> <div class="date-picker svelte-c664c6 hidden"><div class="calendar-wrapper svelte-1vnlm96"><div class="button-container svelte-1vnlm96"><button class="previous svelte-1vnlm96 invisible" type="button" data-svelte-h="svelte-1f3l8wn">‹</button> <div class="monthNames svelte-1vnlm96">Mart 2025 - April 2025</div> <button class="next svelte-1vnlm96" type="button" data-svelte-h="svelte-wu5tmp">›</button></div> <div class="calendars svelte-1vnlm96"><div class="calendar-days svelte-1vnlm96"><div class="day header svelte-1vnlm96" data-days="Pon">Pon</div><div class="day header svelte-1vnlm96" data-days="Uto">Uto</div><div class="day header svelte-1vnlm96" data-days="Sre">Sre</div><div class="day header svelte-1vnlm96" data-days="Čet">Čet</div><div class="day header svelte-1vnlm96" data-days="Pet">Pet</div><div class="day header svelte-1vnlm96" data-days="Sub">Sub</div><div class="day header svelte-1vnlm96" data-days="Ned">Ned</div> <button class="day undefined svelte-1vnlm96" type="button"></button><button class="day undefined svelte-1vnlm96" type="button"></button><button class="day undefined svelte-1vnlm96" type="button"></button><button class="day undefined svelte-1vnlm96" type="button"></button><button class="day undefined svelte-1vnlm96" type="button"></button><button class="day disabled svelte-1vnlm96" type="button">1</button><button class="day disabled svelte-1vnlm96" type="button">2</button><button class="day disabled svelte-1vnlm96" type="button">3</button><button class="day disabled svelte-1vnlm96" type="button">4</button><button class="day disabled svelte-1vnlm96" type="button">5</button><button class="day disabled svelte-1vnlm96" type="button">6</button><button class="day disabled svelte-1vnlm96" type="button">7</button><button class="day disabled svelte-1vnlm96" type="button">8</button><button class="day disabled svelte-1vnlm96" type="button">9</button><button class="day disabled svelte-1vnlm96" type="button">10</button><button class="day disabled svelte-1vnlm96" type="button">11</button><button class="day disabled svelte-1vnlm96" type="button">12</button><button class="day disabled svelte-1vnlm96" type="button">13</button><button class="day disabled svelte-1vnlm96" type="button">14</button><button class="day disabled svelte-1vnlm96" type="button">15</button><button class="day disabled svelte-1vnlm96" type="button">16</button><button class="day disabled svelte-1vnlm96" type="button">17</button><button class="day disabled svelte-1vnlm96" type="button">18</button><button class="day disabled svelte-1vnlm96" type="button">19</button><button class="day disabled svelte-1vnlm96" type="button">20</button><button class="day disabled svelte-1vnlm96" type="button">21</button><button class="day disabled svelte-1vnlm96" type="button">22</button><button class="day disabled svelte-1vnlm96" type="button">23</button><button class="day disabled svelte-1vnlm96" type="button">24</button><button class="day disabled svelte-1vnlm96" type="button">25</button><button class="day disabled svelte-1vnlm96" type="button">26</button><button class="day today svelte-1vnlm96" type="button">27</button><button class="day  svelte-1vnlm96" type="button">28</button><button class="day start svelte-1vnlm96" type="button">29</button><button class="day between svelte-1vnlm96" type="button">30</button><button class="day between svelte-1vnlm96" type="button">31</button></div> <div class="calendar-days svelte-1vnlm96"><div class="day header svelte-1vnlm96" data-days="Pon">Pon</div><div class="day header svelte-1vnlm96" data-days="Uto">Uto</div><div class="day header svelte-1vnlm96" data-days="Sre">Sre</div><div class="day header svelte-1vnlm96" data-days="Čet">Čet</div><div class="day header svelte-1vnlm96" data-days="Pet">Pet</div><div class="day header svelte-1vnlm96" data-days="Sub">Sub</div><div class="day header svelte-1vnlm96" data-days="Ned">Ned</div> <button class="day undefined svelte-1vnlm96" type="button"></button><button class="day between svelte-1vnlm96" type="button">1</button><button class="day between svelte-1vnlm96" type="button">2</button><button class="day between svelte-1vnlm96" type="button">3</button><button class="day between svelte-1vnlm96" type="button">4</button><button class="day end svelte-1vnlm96" type="button">5</button><button class="day future svelte-1vnlm96" type="button">6</button><button class="day future svelte-1vnlm96" type="button">7</button><button class="day future svelte-1vnlm96" type="button">8</button><button class="day future svelte-1vnlm96" type="button">9</button><button class="day future svelte-1vnlm96" type="button">10</button><button class="day future svelte-1vnlm96" type="button">11</button><button class="day future svelte-1vnlm96" type="button">12</button><button class="day future svelte-1vnlm96" type="button">13</button><button class="day future svelte-1vnlm96" type="button">14</button><button class="day future svelte-1vnlm96" type="button">15</button><button class="day future svelte-1vnlm96" type="button">16</button><button class="day future svelte-1vnlm96" type="button">17</button><button class="day future svelte-1vnlm96" type="button">18</button><button class="day future svelte-1vnlm96" type="button">19</button><button class="day future svelte-1vnlm96" type="button">20</button><button class="day future svelte-1vnlm96" type="button">21</button><button class="day future svelte-1vnlm96" type="button">22</button><button class="day future svelte-1vnlm96" type="button">23</button><button class="day future svelte-1vnlm96" type="button">24</button><button class="day future svelte-1vnlm96" type="button">25</button><button class="day future svelte-1vnlm96" type="button">26</button><button class="day future svelte-1vnlm96" type="button">27</button><button class="day future svelte-1vnlm96" type="button">28</button><button class="day future svelte-1vnlm96" type="button">29</button><button class="day future svelte-1vnlm96" type="button">30</button></div></div></div></div> <div class="validation-alert svelte-c664c6">* Obavezno polje</div></div> <div class="group-bg -time svelte-c664c6"><select class="form-field -time svelte-c664c6"><option data-svelte-h="svelte-1bm33ya" value="00:00">00:00</option> <option data-svelte-h="svelte-1y4grmg" value="00:30">00:30</option> <option data-svelte-h="svelte-2rw93g" value="01:00">01:00</option> <option data-svelte-h="svelte-np9n4i" value="01:30">01:30</option> <option data-svelte-h="svelte-16e7n7u" value="02:00">02:00</option> <option data-svelte-h="svelte-1qdodgk" value="02:30">02:30</option> <option data-svelte-h="svelte-1yhhoig" value="03:00">03:00</option> <option data-svelte-h="svelte-xbzgk2" value="03:30">03:30</option> <option data-svelte-h="svelte-cp934a" value="04:00">04:00</option> <option data-svelte-h="svelte-h5mhc0" value="04:30">04:30</option> <option data-svelte-h="svelte-13zutr8" value="05:00">05:00</option> <option data-svelte-h="svelte-1ucq95e" value="05:30">05:30</option> <option data-svelte-h="svelte-1386xpe" value="06:00">06:00</option> <option data-svelte-h="svelte-1rgacyc" value="06:30">06:30</option> <option data-svelte-h="svelte-kl92k8" value="07:00">07:00</option> <option data-svelte-h="svelte-4yc0lu" value="07:30">07:30</option> <option data-svelte-h="svelte-vkvn2q" value="08:00">08:00</option> <option data-svelte-h="svelte-t2vwaw" value="08:30">08:30</option> <option data-svelte-h="svelte-1y5dqt8" value="09:00">09:00</option> <option data-svelte-h="svelte-48w3te" value="09:30">09:30</option> <option data-svelte-h="svelte-1eqmtg8" value="10:00">10:00</option> <option data-svelte-h="svelte-f7969a" value="10:30">10:30</option> <option data-svelte-h="svelte-1x8sfre" value="11:00">11:00</option> <option data-svelte-h="svelte-jfub8w" value="11:30">11:30</option> <option data-svelte-h="svelte-66ir88" value="12:00">12:00</option> <option data-svelte-h="svelte-1ysft5e" value="12:30">12:30</option> <option data-svelte-h="svelte-15dy9hq" value="13:00">13:00</option> <option data-svelte-h="svelte-1tfmwt4" value="13:30">13:30</option> <option data-svelte-h="svelte-hgmuk0" value="14:00">14:00</option> <option data-svelte-h="svelte-1bty0om" value="14:30">14:30</option> <option data-svelte-h="svelte-1u2rq8y" value="15:00">15:00</option> <option data-svelte-h="svelte-vbxsps" value="15:30">15:30</option> <option data-svelte-h="svelte-1bujg1c" value="16:00">16:00</option> <option data-svelte-h="svelte-16esd76" value="16:30">16:30</option> <option data-svelte-h="svelte-pbjdoe" value="17:00">17:00</option> <option data-svelte-h="svelte-ni787s" value="17:30">17:30</option> <option data-svelte-h="svelte-mdy808" value="18:00">18:00</option> <option data-svelte-h="svelte-1xq3t6m" value="18:30">18:30</option> <option data-svelte-h="svelte-ho1x3e" value="19:00">19:00</option> <option data-svelte-h="svelte-rygdhc" value="19:30">19:30</option> <option data-svelte-h="svelte-14161xq" value="20:00">20:00</option> <option data-svelte-h="svelte-140mb9o" value="20:30">20:30</option> <option data-svelte-h="svelte-1fhkkwo" value="21:00">21:00</option> <option data-svelte-h="svelte-1op08s6" value="21:30">21:30</option> <option data-svelte-h="svelte-jvc8va" value="22:00">22:00</option> <option data-svelte-h="svelte-19xzas8" value="22:30">22:30</option> <option data-svelte-h="svelte-1f2qhlw" value="23:00">23:00</option> <option data-svelte-h="svelte-cxay7q" value="23:30">23:30</option></select> <div class="validation-alert -time svelte-c664c6">* Odabrano vreme preuzimanja vozila nije u radnom vremenu. Odaberite vreme preuzimanja u radno vreme.</div></div> <div class="svelte-c664c6 hidden"><div class="dropdown -calendar svelte-pypfb"><div class="dropdown-container svelte-pypfb"><div class="dropdown-locations svelte-pypfb"><span class="city svelte-pypfb">Belgrade</span> <div class="place svelte-pypfb airport" role="button" tabindex="0"><a class="place_link svelte-pypfb" data-code="BEGT1" href="#top">Belgrade airport</a> <button class="icon svelte-pypfb" type="button"><svg class="info svelte-pypfb" height="21" viewBox="0 0 21 21" width="21" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 0C4.701 0 0 4.701 0 10.5S4.701 21 10.5 21 21 16.299 21 10.5 16.299 0 10.5 0Z" stroke-width=".875" class="svelte-pypfb"></path><path d="M12.369 5.28c-.687-.167-1.133-.725-1.135-1.42-.004-1.067 1.174-1.916 2.23-1.61.838.244 1.262 1.022 1.006 1.845-.08.256-.17.394-.439.664-.287.289-.397.359-.715.457-.385.12-.651.137-.947.065zM8.477 18.632c-.407-.058-.756-.278-.942-.596-.145-.245-.154-.3-.153-.899 0-.628.005-.65.314-1.551.371-1.084.736-1.995 1.43-3.575.844-1.919.95-2.19.982-2.496.027-.263.016-.308-.113-.437-.177-.177-.355-.18-.759-.014-.346.142-.69.364-1.227.793l-.37.295-.211-.412-.212-.412.193-.201c.578-.602 1.624-1.234 2.576-1.556.529-.179.695-.21 1.247-.23.557-.021.678-.009.958.097.638.24.906.696.858 1.456-.037.577-.102.764-1.044 3.016-1.207 2.883-1.603 3.968-1.603 4.39 0 .3.151.473.405.466.38-.01 1.1-.42 1.832-1.042.198-.167.373-.305.389-.305.04 0 .422.69.422.761 0 .17-1.806 1.498-2.543 1.869-.505.254-1.275.518-1.626.558-.16.018-.342.04-.403.05a2.059 2.059 0 0 1-.4-.025z" class="svelte-pypfb" style="fill: rgb(255, 255, 255); fill-opacity: 1; stroke-linecap: round; stroke-width: 0.2771;"></path></svg></button> </div><div class="place svelte-pypfb town" role="button" tabindex="0"><a class="place_link svelte-pypfb" data-code="BEGT1" href="#top">Belgrade city center</a> <button class="icon svelte-pypfb" type="button"><svg class="info svelte-pypfb" height="21" viewBox="0 0 21 21" width="21" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 0C4.701 0 0 4.701 0 10.5S4.701 21 10.5 21 21 16.299 21 10.5 16.299 0 10.5 0Z" stroke-width=".875" class="svelte-pypfb"></path><path d="M12.369 5.28c-.687-.167-1.133-.725-1.135-1.42-.004-1.067 1.174-1.916 2.23-1.61.838.244 1.262 1.022 1.006 1.845-.08.256-.17.394-.439.664-.287.289-.397.359-.715.457-.385.12-.651.137-.947.065zM8.477 18.632c-.407-.058-.756-.278-.942-.596-.145-.245-.154-.3-.153-.899 0-.628.005-.65.314-1.551.371-1.084.736-1.995 1.43-3.575.844-1.919.95-2.19.982-2.496.027-.263.016-.308-.113-.437-.177-.177-.355-.18-.759-.014-.346.142-.69.364-1.227.793l-.37.295-.211-.412-.212-.412.193-.201c.578-.602 1.624-1.234 2.576-1.556.529-.179.695-.21 1.247-.23.557-.021.678-.009.958.097.638.24.906.696.858 1.456-.037.577-.102.764-1.044 3.016-1.207 2.883-1.603 3.968-1.603 4.39 0 .3.151.473.405.466.38-.01 1.1-.42 1.832-1.042.198-.167.373-.305.389-.305.04 0 .422.69.422.761 0 .17-1.806 1.498-2.543 1.869-.505.254-1.275.518-1.626.558-.16.018-.342.04-.403.05a2.059 2.059 0 0 1-.4-.025z" class="svelte-pypfb" style="fill: rgb(255, 255, 255); fill-opacity: 1; stroke-linecap: round; stroke-width: 0.2771;"></path></svg></button> </div><div class="place svelte-pypfb town" role="button" tabindex="0"><a class="place_link svelte-pypfb" data-code="BEGT1" href="#top">New Belgrade</a> <button class="icon svelte-pypfb" type="button"><svg class="info svelte-pypfb" height="21" viewBox="0 0 21 21" width="21" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 0C4.701 0 0 4.701 0 10.5S4.701 21 10.5 21 21 16.299 21 10.5 16.299 0 10.5 0Z" stroke-width=".875" class="svelte-pypfb"></path><path d="M12.369 5.28c-.687-.167-1.133-.725-1.135-1.42-.004-1.067 1.174-1.916 2.23-1.61.838.244 1.262 1.022 1.006 1.845-.08.256-.17.394-.439.664-.287.289-.397.359-.715.457-.385.12-.651.137-.947.065zM8.477 18.632c-.407-.058-.756-.278-.942-.596-.145-.245-.154-.3-.153-.899 0-.628.005-.65.314-1.551.371-1.084.736-1.995 1.43-3.575.844-1.919.95-2.19.982-2.496.027-.263.016-.308-.113-.437-.177-.177-.355-.18-.759-.014-.346.142-.69.364-1.227.793l-.37.295-.211-.412-.212-.412.193-.201c.578-.602 1.624-1.234 2.576-1.556.529-.179.695-.21 1.247-.23.557-.021.678-.009.958.097.638.24.906.696.858 1.456-.037.577-.102.764-1.044 3.016-1.207 2.883-1.603 3.968-1.603 4.39 0 .3.151.473.405.466.38-.01 1.1-.42 1.832-1.042.198-.167.373-.305.389-.305.04 0 .422.69.422.761 0 .17-1.806 1.498-2.543 1.869-.505.254-1.275.518-1.626.558-.16.018-.342.04-.403.05a2.059 2.059 0 0 1-.4-.025z" class="svelte-pypfb" style="fill: rgb(255, 255, 255); fill-opacity: 1; stroke-linecap: round; stroke-width: 0.2771;"></path></svg></button> </div><span class="city svelte-pypfb">Novi Sad</span> <div class="place svelte-pypfb town" role="button" tabindex="0"><a class="place_link svelte-pypfb" data-code="BEGT1" href="#top">Novi Sad city center</a> <button class="icon svelte-pypfb" type="button"><svg class="info svelte-pypfb" height="21" viewBox="0 0 21 21" width="21" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 0C4.701 0 0 4.701 0 10.5S4.701 21 10.5 21 21 16.299 21 10.5 16.299 0 10.5 0Z" stroke-width=".875" class="svelte-pypfb"></path><path d="M12.369 5.28c-.687-.167-1.133-.725-1.135-1.42-.004-1.067 1.174-1.916 2.23-1.61.838.244 1.262 1.022 1.006 1.845-.08.256-.17.394-.439.664-.287.289-.397.359-.715.457-.385.12-.651.137-.947.065zM8.477 18.632c-.407-.058-.756-.278-.942-.596-.145-.245-.154-.3-.153-.899 0-.628.005-.65.314-1.551.371-1.084.736-1.995 1.43-3.575.844-1.919.95-2.19.982-2.496.027-.263.016-.308-.113-.437-.177-.177-.355-.18-.759-.014-.346.142-.69.364-1.227.793l-.37.295-.211-.412-.212-.412.193-.201c.578-.602 1.624-1.234 2.576-1.556.529-.179.695-.21 1.247-.23.557-.021.678-.009.958.097.638.24.906.696.858 1.456-.037.577-.102.764-1.044 3.016-1.207 2.883-1.603 3.968-1.603 4.39 0 .3.151.473.405.466.38-.01 1.1-.42 1.832-1.042.198-.167.373-.305.389-.305.04 0 .422.69.422.761 0 .17-1.806 1.498-2.543 1.869-.505.254-1.275.518-1.626.558-.16.018-.342.04-.403.05a2.059 2.059 0 0 1-.4-.025z" class="svelte-pypfb" style="fill: rgb(255, 255, 255); fill-opacity: 1; stroke-linecap: round; stroke-width: 0.2771;"></path></svg></button> </div><span class="city svelte-pypfb">Niš</span> <div class="place svelte-pypfb airport" role="button" tabindex="0"><a class="place_link svelte-pypfb" data-code="BEGT1" href="#top">Nis airport</a> <button class="icon svelte-pypfb" type="button"><svg class="info svelte-pypfb" height="21" viewBox="0 0 21 21" width="21" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 0C4.701 0 0 4.701 0 10.5S4.701 21 10.5 21 21 16.299 21 10.5 16.299 0 10.5 0Z" stroke-width=".875" class="svelte-pypfb"></path><path d="M12.369 5.28c-.687-.167-1.133-.725-1.135-1.42-.004-1.067 1.174-1.916 2.23-1.61.838.244 1.262 1.022 1.006 1.845-.08.256-.17.394-.439.664-.287.289-.397.359-.715.457-.385.12-.651.137-.947.065zM8.477 18.632c-.407-.058-.756-.278-.942-.596-.145-.245-.154-.3-.153-.899 0-.628.005-.65.314-1.551.371-1.084.736-1.995 1.43-3.575.844-1.919.95-2.19.982-2.496.027-.263.016-.308-.113-.437-.177-.177-.355-.18-.759-.014-.346.142-.69.364-1.227.793l-.37.295-.211-.412-.212-.412.193-.201c.578-.602 1.624-1.234 2.576-1.556.529-.179.695-.21 1.247-.23.557-.021.678-.009.958.097.638.24.906.696.858 1.456-.037.577-.102.764-1.044 3.016-1.207 2.883-1.603 3.968-1.603 4.39 0 .3.151.473.405.466.38-.01 1.1-.42 1.832-1.042.198-.167.373-.305.389-.305.04 0 .422.69.422.761 0 .17-1.806 1.498-2.543 1.869-.505.254-1.275.518-1.626.558-.16.018-.342.04-.403.05a2.059 2.059 0 0 1-.4-.025z" class="svelte-pypfb" style="fill: rgb(255, 255, 255); fill-opacity: 1; stroke-linecap: round; stroke-width: 0.2771;"></path></svg></button> </div></div> </div></div></div></div></div> <div id="return" class="return form-segment svelte-c664c6"><div class="form-group -select svelte-c664c6"><div id="dropdownReturn" class="dropdown"><label class="svelte-c664c6">Vraćanje vozila <div class="group-bg -select svelte-c664c6"><img alt="Lokacija" src="/media/icons/location.svg" class="svelte-c664c6"> <input class="form-field dropdown-input svelte-c664c6" placeholder="Izaberi lokaciju" type="text" readonly=""> <div class="validation-alert svelte-c664c6">* Obavezno polje</div></div></label></div></div> <div class="form-group -date svelte-c664c6"><div class="group-bg -date svelte-c664c6"><img alt="Kalendar" src="/media/icons/calendar.svg" class="svelte-c664c6"> <input class="form-field -date svelte-c664c6" autocomplete="off" data-role="dateInput" maxlength="10" placeholder="dd/mm/yyyy" type="text" readonly=""> <div class="validation-alert svelte-c664c6">* Obavezno polje</div></div> <div class="group-bg -time svelte-c664c6"><select class="form-field -time dropOffDateHour svelte-c664c6"><option data-svelte-h="svelte-1bm33ya" value="00:00">00:00</option> <option data-svelte-h="svelte-1y4grmg" value="00:30">00:30</option> <option data-svelte-h="svelte-2rw93g" value="01:00">01:00</option> <option data-svelte-h="svelte-np9n4i" value="01:30">01:30</option> <option data-svelte-h="svelte-16e7n7u" value="02:00">02:00</option> <option data-svelte-h="svelte-1qdodgk" value="02:30">02:30</option> <option data-svelte-h="svelte-1yhhoig" value="03:00">03:00</option> <option data-svelte-h="svelte-xbzgk2" value="03:30">03:30</option> <option data-svelte-h="svelte-cp934a" value="04:00">04:00</option> <option data-svelte-h="svelte-h5mhc0" value="04:30">04:30</option> <option data-svelte-h="svelte-13zutr8" value="05:00">05:00</option> <option data-svelte-h="svelte-1ucq95e" value="05:30">05:30</option> <option data-svelte-h="svelte-1386xpe" value="06:00">06:00</option> <option data-svelte-h="svelte-1rgacyc" value="06:30">06:30</option> <option data-svelte-h="svelte-kl92k8" value="07:00">07:00</option> <option data-svelte-h="svelte-4yc0lu" value="07:30">07:30</option> <option data-svelte-h="svelte-vkvn2q" value="08:00">08:00</option> <option data-svelte-h="svelte-t2vwaw" value="08:30">08:30</option> <option data-svelte-h="svelte-1y5dqt8" value="09:00">09:00</option> <option data-svelte-h="svelte-48w3te" value="09:30">09:30</option> <option data-svelte-h="svelte-1eqmtg8" value="10:00">10:00</option> <option data-svelte-h="svelte-f7969a" value="10:30">10:30</option> <option data-svelte-h="svelte-1x8sfre" value="11:00">11:00</option> <option data-svelte-h="svelte-jfub8w" value="11:30">11:30</option> <option data-svelte-h="svelte-66ir88" value="12:00">12:00</option> <option data-svelte-h="svelte-1ysft5e" value="12:30">12:30</option> <option data-svelte-h="svelte-15dy9hq" value="13:00">13:00</option> <option data-svelte-h="svelte-1tfmwt4" value="13:30">13:30</option> <option data-svelte-h="svelte-hgmuk0" value="14:00">14:00</option> <option data-svelte-h="svelte-1bty0om" value="14:30">14:30</option> <option data-svelte-h="svelte-1u2rq8y" value="15:00">15:00</option> <option data-svelte-h="svelte-vbxsps" value="15:30">15:30</option> <option data-svelte-h="svelte-1bujg1c" value="16:00">16:00</option> <option data-svelte-h="svelte-16esd76" value="16:30">16:30</option> <option data-svelte-h="svelte-pbjdoe" value="17:00">17:00</option> <option data-svelte-h="svelte-ni787s" value="17:30">17:30</option> <option data-svelte-h="svelte-mdy808" value="18:00">18:00</option> <option data-svelte-h="svelte-1xq3t6m" value="18:30">18:30</option> <option data-svelte-h="svelte-ho1x3e" value="19:00">19:00</option> <option data-svelte-h="svelte-rygdhc" value="19:30">19:30</option> <option data-svelte-h="svelte-14161xq" value="20:00">20:00</option> <option data-svelte-h="svelte-140mb9o" value="20:30">20:30</option> <option data-svelte-h="svelte-1fhkkwo" value="21:00">21:00</option> <option data-svelte-h="svelte-1op08s6" value="21:30">21:30</option> <option data-svelte-h="svelte-jvc8va" value="22:00">22:00</option> <option data-svelte-h="svelte-19xzas8" value="22:30">22:30</option> <option data-svelte-h="svelte-1f2qhlw" value="23:00">23:00</option> <option data-svelte-h="svelte-cxay7q" value="23:30">23:30</option></select> <div class="validation-alert -time svelte-c664c6">* Odabrano vreme preuzimanja vozila nije u radnom vremenu. Odaberite vreme preuzimanja u radno vreme.</div></div></div></div> <div class="settings svelte-c664c6"><label class="form-group group-bg -age svelte-c664c6">God. vozača <select class="form-field svelte-c664c6"><option class="svelte-c664c6" data-svelte-h="svelte-1y9z8n2" value="21-24">21-24</option><option class="svelte-c664c6" data-svelte-h="svelte-exg8tg" value="25-27">25-27</option><option class="svelte-c664c6" data-svelte-h="svelte-muoej2" value="28-70">28-70</option><option class="svelte-c664c6" data-svelte-h="svelte-waiv00" value="71-75">71-75</option></select></label> <div class="form-group -promo svelte-c664c6"><label class="form-group -promo svelte-c664c6">Promo kod <input class="form-field svelte-c664c6" type="text"></label></div></div> <button class="submitButton svelte-c664c6" type="button">Izlistaj ponudu vozila</button></div></div> </div>  <main><div class="page-content svelte-chdl71"><h2>Poslovnice u Srbiji</h2>
+<p>Strateški smeštene na ključnim lokacijama, uključujući glavne aerodrome, naše poslovnice u Beogradu, Novom Sadu i Nišu nude vam pristup širokoj ponudi vozila i usluga najma vozila. Bilo da dolazite u Srbiju zbog posla ili zadovoljstva, naše poslovnice su idealno mesto za početak Vašeg putovanja.</p> <!-- Ovde određene fraze treba da linkuju na stranice kategorija voznog parka --> <div class="carousel-wrapper">
+<div class="prev " onclick="document.getElementById('carousel_825542').prev(1)">&lt;</div>
+ <wc-carousel-lite class="" id="carousel_825542" transition-duration="1000" tabindex="0">                                        <div style="display: flex; overflow: hidden; width: 100%;"><div class="items-container" style="display: flex; position: relative; transition: left 1000ms; left: -3200px;"><div class="item ">
+          <a href="/rs/rent-a-car/srbija/beograd/aerodrom/">
+            <img src="/images/locations/BEGT1.jpg" alt="Beograd aerodrom" width="510" height="357"> 
+            <div><strong>Beograd aerodrom</strong></div>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/srbija/beograd/centar-grada/">
+            <img src="/images/locations/BEGC5.jpg" alt="Beograd centar grada" width="510" height="357"> 
+            <div><strong>Beograd centar grada</strong></div>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/srbija/beograd/novi-beograd/">
+            <img src="/images/locations/BEGC1.jpg" alt="Novi Beograd" width="510" height="357"> 
+            <div><strong>Novi Beograd</strong></div>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/srbija/novi-sad/">
+            <img src="/images/locations/QNDC1.jpg" alt="Novi Sad"> 
+            <div><strong>Novi Sad</strong></div>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/srbija/nis/">
+            <img src="/images/locations/INIT1.jpg" alt="Niš aerodrom"> 
+            <div><strong>Niš aerodrom</strong></div>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/srbija/beograd/aerodrom/">
+            <img src="/images/locations/BEGT1.jpg" alt="Beograd aerodrom" width="510" height="357"> 
+            <div><strong>Beograd aerodrom</strong></div>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/srbija/beograd/centar-grada/">
+            <img src="/images/locations/BEGC5.jpg" alt="Beograd centar grada" width="510" height="357"> 
+            <div><strong>Beograd centar grada</strong></div>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/srbija/beograd/novi-beograd/">
+            <img src="/images/locations/BEGC1.jpg" alt="Novi Beograd" width="510" height="357"> 
+            <div><strong>Novi Beograd</strong></div>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/srbija/novi-sad/">
+            <img src="/images/locations/QNDC1.jpg" alt="Novi Sad"> 
+            <div><strong>Novi Sad</strong></div>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/srbija/nis/">
+            <img src="/images/locations/INIT1.jpg" alt="Niš aerodrom"> 
+            <div><strong>Niš aerodrom</strong></div>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/srbija/beograd/aerodrom/">
+            <img src="/images/locations/BEGT1.jpg" alt="Beograd aerodrom" width="510" height="357"> 
+            <div><strong>Beograd aerodrom</strong></div>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/srbija/beograd/centar-grada/">
+            <img src="/images/locations/BEGC5.jpg" alt="Beograd centar grada" width="510" height="357"> 
+            <div><strong>Beograd centar grada</strong></div>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/srbija/beograd/novi-beograd/">
+            <img src="/images/locations/BEGC1.jpg" alt="Novi Beograd" width="510" height="357"> 
+            <div><strong>Novi Beograd</strong></div>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/srbija/novi-sad/">
+            <img src="/images/locations/QNDC1.jpg" alt="Novi Sad"> 
+            <div><strong>Novi Sad</strong></div>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/srbija/nis/">
+            <img src="/images/locations/INIT1.jpg" alt="Niš aerodrom"> 
+            <div><strong>Niš aerodrom</strong></div>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/srbija/beograd/aerodrom/">
+            <img src="/images/locations/BEGT1.jpg" alt="Beograd aerodrom" width="510" height="357"> 
+            <div><strong>Beograd aerodrom</strong></div>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/srbija/beograd/centar-grada/">
+            <img src="/images/locations/BEGC5.jpg" alt="Beograd centar grada" width="510" height="357"> 
+            <div><strong>Beograd centar grada</strong></div>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/srbija/beograd/novi-beograd/">
+            <img src="/images/locations/BEGC1.jpg" alt="Novi Beograd" width="510" height="357"> 
+            <div><strong>Novi Beograd</strong></div>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/srbija/novi-sad/">
+            <img src="/images/locations/QNDC1.jpg" alt="Novi Sad"> 
+            <div><strong>Novi Sad</strong></div>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/srbija/nis/">
+            <img src="/images/locations/INIT1.jpg" alt="Niš aerodrom"> 
+            <div><strong>Niš aerodrom</strong></div>
+          </a>
+        </div></div></div></wc-carousel-lite>
+<div class="next " onclick="document.getElementById('carousel_825542').next(1)">&gt;</div>
+</div> <br><br>
+<h2>Ponuda vozila dostupnih za najam u Srbiji</h2>
+<p>Na raspolaganju vam je raznovrstan izbor vozila – od automobila sa automatskim menjačem, praktičnih gradskih modela, dinamičnih SUV-ova i 4x4 vozila, pa sve do luksuznih limuzina. Bez obzira na vaše potrebe, naši pažljivo odabrani automobili pružaju savršen spoj komfora, elegancije i funkcionalnosti, garantujući izvanredno iskustvo vožnje u svakoj situaciji.</p> <!-- Ovde određene fraze treba da linkuju na stranice kategorija voznog parka --> <div class="carousel-wrapper">
+<div class="prev " onclick="document.getElementById('carousel_cats_437488').prev(1)">&lt;</div>
+ <wc-carousel-lite class="" id="carousel_cats_437488" transition-duration="1000" tabindex="0">                                                        <div style="display: flex; overflow: hidden; width: 100%;"><div class="items-container" style="display: flex; position: relative; transition: left 1000ms; left: -4480px;"><div class="item ">
+          <a href="/rs/rent-a-car/c/">
+            <img src="/media/img/images/category/1.jpg" alt="Sva vozila"> 
+            <div><strong>Sva vozila</strong></div>
+            <p class="vehicle-count">57 dostupnih grupa vozila</p>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/c/luksuzna-vozila/">
+            <img src="/media/img/images/category/41.jpg" alt="Premium i luksuzna vozila"> 
+            <div><strong>Premium i luksuzna vozila</strong></div>
+            <p class="vehicle-count">21 dostupnih grupa vozila</p>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/c/limuzine/">
+            <img src="/media/img/images/category/42.jpg" alt="Limuzine"> 
+            <div><strong>Limuzine</strong></div>
+            <p class="vehicle-count">11 dostupnih grupa vozila</p>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/c/mala-gradska-vozila/">
+            <img src="/media/img/images/category/37.jpg" alt="Mala gradska vozila"> 
+            <div><strong>Mala gradska vozila</strong></div>
+            <p class="vehicle-count">14 dostupnih grupa vozila</p>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/c/automatik/">
+            <img src="/media/img/images/category/2.jpg" alt="Automatski menjač"> 
+            <div><strong>Automatski menjač</strong></div>
+            <p class="vehicle-count">50 dostupnih grupa vozila</p>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/c/suv-4x4/">
+            <img src="/media/img/images/category/18.jpg" alt="SUV &amp; 4x4"> 
+            <div><strong>SUV &amp; 4x4</strong></div>
+            <p class="vehicle-count">30 dostupnih grupa vozila</p>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/c/kabriolet/">
+            <img src="/media/img/images/category/39.jpg" alt="Kabrioleti"> 
+            <div><strong>Kabrioleti</strong></div>
+            <p class="vehicle-count">1 dostupnih grupa vozila</p>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/c/">
+            <img src="/media/img/images/category/1.jpg" alt="Sva vozila"> 
+            <div><strong>Sva vozila</strong></div>
+            <p class="vehicle-count">57 dostupnih grupa vozila</p>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/c/luksuzna-vozila/">
+            <img src="/media/img/images/category/41.jpg" alt="Premium i luksuzna vozila"> 
+            <div><strong>Premium i luksuzna vozila</strong></div>
+            <p class="vehicle-count">21 dostupnih grupa vozila</p>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/c/limuzine/">
+            <img src="/media/img/images/category/42.jpg" alt="Limuzine"> 
+            <div><strong>Limuzine</strong></div>
+            <p class="vehicle-count">11 dostupnih grupa vozila</p>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/c/mala-gradska-vozila/">
+            <img src="/media/img/images/category/37.jpg" alt="Mala gradska vozila"> 
+            <div><strong>Mala gradska vozila</strong></div>
+            <p class="vehicle-count">14 dostupnih grupa vozila</p>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/c/automatik/">
+            <img src="/media/img/images/category/2.jpg" alt="Automatski menjač"> 
+            <div><strong>Automatski menjač</strong></div>
+            <p class="vehicle-count">50 dostupnih grupa vozila</p>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/c/suv-4x4/">
+            <img src="/media/img/images/category/18.jpg" alt="SUV &amp; 4x4"> 
+            <div><strong>SUV &amp; 4x4</strong></div>
+            <p class="vehicle-count">30 dostupnih grupa vozila</p>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/c/kabriolet/">
+            <img src="/media/img/images/category/39.jpg" alt="Kabrioleti"> 
+            <div><strong>Kabrioleti</strong></div>
+            <p class="vehicle-count">1 dostupnih grupa vozila</p>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/c/">
+            <img src="/media/img/images/category/1.jpg" alt="Sva vozila"> 
+            <div><strong>Sva vozila</strong></div>
+            <p class="vehicle-count">57 dostupnih grupa vozila</p>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/c/luksuzna-vozila/">
+            <img src="/media/img/images/category/41.jpg" alt="Premium i luksuzna vozila"> 
+            <div><strong>Premium i luksuzna vozila</strong></div>
+            <p class="vehicle-count">21 dostupnih grupa vozila</p>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/c/limuzine/">
+            <img src="/media/img/images/category/42.jpg" alt="Limuzine"> 
+            <div><strong>Limuzine</strong></div>
+            <p class="vehicle-count">11 dostupnih grupa vozila</p>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/c/mala-gradska-vozila/">
+            <img src="/media/img/images/category/37.jpg" alt="Mala gradska vozila"> 
+            <div><strong>Mala gradska vozila</strong></div>
+            <p class="vehicle-count">14 dostupnih grupa vozila</p>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/c/automatik/">
+            <img src="/media/img/images/category/2.jpg" alt="Automatski menjač"> 
+            <div><strong>Automatski menjač</strong></div>
+            <p class="vehicle-count">50 dostupnih grupa vozila</p>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/c/suv-4x4/">
+            <img src="/media/img/images/category/18.jpg" alt="SUV &amp; 4x4"> 
+            <div><strong>SUV &amp; 4x4</strong></div>
+            <p class="vehicle-count">30 dostupnih grupa vozila</p>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/c/kabriolet/">
+            <img src="/media/img/images/category/39.jpg" alt="Kabrioleti"> 
+            <div><strong>Kabrioleti</strong></div>
+            <p class="vehicle-count">1 dostupnih grupa vozila</p>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/c/">
+            <img src="/media/img/images/category/1.jpg" alt="Sva vozila"> 
+            <div><strong>Sva vozila</strong></div>
+            <p class="vehicle-count">57 dostupnih grupa vozila</p>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/c/luksuzna-vozila/">
+            <img src="/media/img/images/category/41.jpg" alt="Premium i luksuzna vozila"> 
+            <div><strong>Premium i luksuzna vozila</strong></div>
+            <p class="vehicle-count">21 dostupnih grupa vozila</p>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/c/limuzine/">
+            <img src="/media/img/images/category/42.jpg" alt="Limuzine"> 
+            <div><strong>Limuzine</strong></div>
+            <p class="vehicle-count">11 dostupnih grupa vozila</p>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/c/mala-gradska-vozila/">
+            <img src="/media/img/images/category/37.jpg" alt="Mala gradska vozila"> 
+            <div><strong>Mala gradska vozila</strong></div>
+            <p class="vehicle-count">14 dostupnih grupa vozila</p>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/c/automatik/">
+            <img src="/media/img/images/category/2.jpg" alt="Automatski menjač"> 
+            <div><strong>Automatski menjač</strong></div>
+            <p class="vehicle-count">50 dostupnih grupa vozila</p>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/c/suv-4x4/">
+            <img src="/media/img/images/category/18.jpg" alt="SUV &amp; 4x4"> 
+            <div><strong>SUV &amp; 4x4</strong></div>
+            <p class="vehicle-count">30 dostupnih grupa vozila</p>
+          </a>
+        </div><div class="item ">
+          <a href="/rs/rent-a-car/c/kabriolet/">
+            <img src="/media/img/images/category/39.jpg" alt="Kabrioleti"> 
+            <div><strong>Kabrioleti</strong></div>
+            <p class="vehicle-count">1 dostupnih grupa vozila</p>
+          </a>
+        </div></div></div></wc-carousel-lite>
+<div class="next " onclick="document.getElementById('carousel_cats_437488').next(1)">&gt;</div>
+</div> <br><br>  </div></main></div> <footer class="svelte-185yo2o"><div class="footer-columns svelte-185yo2o"><div class="column svelte-185yo2o"><a class="header-logo-link svelte-185yo2o" href="/rs/"><img class="header-logo svelte-185yo2o" alt="Rent-a-car" src="/media/img/logo-footer.png"></a> <div class="social svelte-185yo2o"><a href="https://www.facebook.com/RentACarBeograd" rel="noopener noreferrer" target="_blank" class="svelte-185yo2o"><i class="fab fa-facebook-f svelte-185yo2o"></i> </a><a href="https://www.instagram.com/europcar_serbia/" rel="noopener noreferrer" target="_blank" class="svelte-185yo2o"><i class="fab fa-instagram svelte-185yo2o"></i> </a><a href="https://www.linkedin.com/showcase/europcar-serbia/" rel="noopener noreferrer" target="_blank" class="svelte-185yo2o"><i class="fab fa-linkedin svelte-185yo2o"></i> </a></div> <ul class="svelte-185yo2o"><li><a class="phone svelte-185yo2o" href="tel:+381117852820">+381 11 785 2820</a></li> <li><a href="mailto: reservations@europcar.rs" target="_top" class="svelte-185yo2o" style="text-align: left;">reservations@europcar.rs</a></li></ul></div> <div class="column svelte-185yo2o"><h5 class="column-title svelte-185yo2o">Primero rent</h5> <ul class="svelte-185yo2o"><li><a href="/rs/i/europcar-srbija/" title="" class="svelte-185yo2o">Europcar Srbija</a></li></ul> </div><div class="column svelte-185yo2o"><h5 class="column-title svelte-185yo2o">Korisnički centar</h5> <ul class="svelte-185yo2o"><li><a href="/rs/i/terms-conditions-serbia-srb.pdf" rel="external noopener noreferrer" target="_blank" class="svelte-185yo2o">Uslovi za najam vozila</a></li><li><a href="/rs/i/terms-conditions-serbia-cn.pdf" rel="external noopener noreferrer" target="_blank" class="svelte-185yo2o">租出车辆的条款及条件</a></li><li><a href="/rs/i/damage-matrix-rs.pdf" rel="external noopener noreferrer" target="_blank" class="svelte-185yo2o">Cenovnik šteta</a></li><li><a href="/rs/i/politika-privatnosti/" title="" class="svelte-185yo2o">Politika čuvanja privatnosti</a></li><li><a href="/rs/i/politika-kolacica/" title="" class="svelte-185yo2o">Politika o kolačićima</a></li></ul> </div><div class="column svelte-185yo2o"><h5 class="column-title svelte-185yo2o">Lokacije</h5> <ul class="svelte-185yo2o"><li><a href="/rs/rent-a-car/srbija/beograd/aerodrom/" title="" class="svelte-185yo2o">Rent a Car Beograd aerodrom</a></li><li><a href="/rs/rent-a-car/srbija/beograd/novi-beograd/" title="" class="svelte-185yo2o">Rent a Car Beograd centar grada</a></li><li><a href="/rs/rent-a-car/srbija/beograd/novi-beograd/" title="" class="svelte-185yo2o">Rent a Car Novi Beograd</a></li><li><a href="/rs/rent-a-car/srbija/novi-sad/" title="" class="svelte-185yo2o">Rent a Car Novi Sad</a></li><li><a href="/rs/rent-a-car/srbija/nis/" title="" class="svelte-185yo2o">Rent a Car Niš</a></li></ul> </div></div> <p class="copyright svelte-185yo2o">Copyright © Europcar.rs 2025</p></footer> <div class="cookie-banner svelte-18svpkm shown" role="banner"><span class="text">Koristimo kolačiće kako bismo poboljšali vaše iskustvo s našom stranicom. Nastavkom korištenja naše web stranice pristajete na našu upotrebu kolačića kako je opisano u <a href="https://docs.google.com/document/d/1wZLafXDc6E8XcTl5Au3892mVprz3p4MIzswty9HnIO4" rel="noopener noreferrer" target="_blank">Politika kolačića</a>.</span> <button class="accept-link svelte-18svpkm" type="button" data-svelte-h="svelte-1q7k6d0">Ok</button></div> <div id="svelte-announcer" aria-live="assertive" aria-atomic="true" style="position: absolute; left: 0px; top: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); overflow: hidden; white-space: nowrap; width: 1px; height: 1px;"></div></div><div class="amio_chat_wrapper_closed" id="_amio_webchat_container"><iframe src="https://chat-widget.static-amio.com/?channelId=6993917345702627352&amp;logoUrl=https%3A%2F%2Feuropcar.rs%2Fmedia%2Fimg%2Flogo.png&amp;theme=europcar&amp;lang=rs-europcar" class="amio_iframe"></iframe></div>
+  
+
+</body></html>

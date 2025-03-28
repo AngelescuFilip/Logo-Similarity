@@ -1,0 +1,221 @@
+<!DOCTYPE html><html ng-app="sec24App" dir="ltr" lang="en" class="no-js ng-scope"><!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]--><!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]--><!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]--><!--[if gt IE 8]><!--><!--<![endif]--><head><style type="text/css">[uib-typeahead-popup].dropdown-menu{display:block;}</style><style type="text/css">.uib-time input{width:50px;}</style><style type="text/css">.uib-datepicker .uib-title{width:100%;}.uib-day button,.uib-month button,.uib-year button{min-width:100%;}.uib-datepicker-popup.dropdown-menu{display:block;}.uib-button-bar{padding:10px 9px 2px;}</style><style type="text/css">.ng-animate.item:not(.left):not(.right){-webkit-transition:0s ease-in-out left;transition:0s ease-in-out left}</style><style type="text/css" data-tag-name="trix-editor">trix-editor:empty:not(:focus)::before {
+  content: attr(placeholder);
+  color: graytext;
+}
+
+trix-editor a[contenteditable=false] {
+  cursor: text;
+}
+
+trix-editor img {
+  max-width: 100%;
+  height: auto;
+}
+
+trix-editor [data-trix-attachment] figcaption textarea {
+  resize: none;
+}
+
+trix-editor [data-trix-attachment] figcaption textarea.trix-autoresize-clone {
+  position: absolute;
+  left: -9999px;
+  max-height: 0px;
+}
+
+trix-editor [data-trix-attachment] figcaption[data-trix-placeholder]:empty::before {
+  content: attr(data-trix-placeholder);
+  color: graytext;
+}
+
+trix-editor [data-trix-cursor-target] {
+  display: inline-block !important;
+  width: 1px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+}
+
+trix-editor [data-trix-cursor-target=left] {
+  vertical-align: top !important;
+  margin-left: -1px !important;
+}
+
+trix-editor [data-trix-cursor-target=right] {
+  vertical-align: bottom !important;
+  margin-right: -1px !important;
+}
+trix-editor { display: block; }</style><style type="text/css" data-tag-name="trix-toolbar">trix-toolbar {
+  white-space: nowrap;
+}
+
+trix-toolbar [data-trix-dialog] {
+  display: none;
+}
+
+trix-toolbar [data-trix-dialog][data-trix-active] {
+  display: block;
+}
+
+trix-toolbar [data-trix-dialog] [data-trix-validate]:invalid {
+  background-color: #ffdddd;
+}
+trix-toolbar { display: block; }</style><style></style><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <base href="/">
+
+    <!--<link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">-->
+    <title ng-bind-template="Airport Services | Porter &amp; Assistance - Securitas24" class="ng-binding">Airport Services | Porter &amp; Assistance - Securitas24</title>
+    <meta name="description" content="Our Porter &amp; Assistance staff supports you in your language and takes care of your baggage at the airports in Frankfurt and Munich.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <!-- ngRepeat: tmp_lang in langs --><link rel="alternate" ng-repeat="tmp_lang in langs" hreflang="en" href="https://www.securitas24.de/en" class="ng-scope"><!-- end ngRepeat: tmp_lang in langs --><link rel="alternate" ng-repeat="tmp_lang in langs" hreflang="de" href="https://www.securitas24.de/de" class="ng-scope"><!-- end ngRepeat: tmp_lang in langs -->
+    <link rel="alternate" hreflang="x-default" href="https://www.securitas24.de/">
+
+    <link rel="canonical" href="https://www.securitas24.de/en">
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="stylesheet" href="app/vendor.css">
+    <link rel="stylesheet" href="app/app.css">
+    <!--<link rel="stylesheet" href="assets/css/bootstrap-rtl.min.css" ng-if="lang.dir == 'rtl'" />-->
+
+    <!-- Google Webmaster Tools -->
+    <meta name="google-site-verification" content="ffzJX_eT0cfjw_PQj4M77qmwlD2ZaOhzZCEe7dMyIVM">
+  <style></style><script src="https://www.google.com/recaptcha/api.js?onload=vcRecaptchaApiLoaded&amp;render=explicit&amp;hl=en"></script></head>
+  <body class="startpage" ng-class="{'rtl': lang.dir == 'rtl'}">
+    <div class="mobile-right-space-fix">
+      <!--[if lt IE 7]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
+      </p>
+      <![endif]-->
+
+      <!-- Add your site or application content here -->
+      <!-- ngIf: !external --><navbar ng-if="!external" class="ng-scope"><!-- HEADER--><header class="l-header"><!-- Show cookie information --><div class="top-nav"><div class="inner-container text-right flip"><span class="top-help-link"><!--{{ 'header.help-text' | translate }} <a href="faq">FAQ</a> oder <a href="contact">Kontakt</a>.--><br></span></div></div><div class="main-nav"><div class="container"><div class="row"><div class="navbar" role="navigation" id="navbar-menu-mobile"><div class="container-fluid"><div class="navbar-header"><div class="row"><div class="menu-toggle"><button type="button" class="btn navbar-toggle collapsed ng-binding" data-toggle="collapse" data-target=".navbar-collapse" data-parent="#navbar-menu-mobile" ng-click="nav.isCollapsed = !nav.isCollapsed">Menu <span class="bar"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></span></button></div><div class="brand-logo"><a class="navbar-logo" href="/en"><img src="/assets/images/securitas-logo.svg" width="57" height="30" class="img-responsive" alt="Logo Securitas"></a></div></div></div><div uib-collapse="nav.isCollapsed" class="navbar-collapse collapse" style="height: 0px;"><!-- PUBLIC MENU --><!-- ngIf: !nav.isLoggedIn() || nav.getCurrentUser().role == 'webclient' --><ul class="nav navbar-nav navbar-left flip ng-scope" ng-if="!nav.isLoggedIn() || nav.getCurrentUser().role == 'webclient'"><!--<li><a has-role hide-roles="admin" ui-sref="app.book.travel-details({lang: lang.short})" class="call-to-action-button">{{ 'menu.book-service' | translate }}</a></li>--><!--<li><a has-role hide-roles="admin" ng-href="{{ lang.short }}/services">{{ 'menu.services' | translate }}</a></li>--><!--<li><a has-role hide-roles="admin" ng-href="{{ lang.short }}/about">{{ 'menu.about' | translate }}</a></li>--><!--<li><a has-role hide-roles="admin" ng-href="{{ lang.short }}/prices">{{ 'menu.pricing' | translate }}</a></li>--><!--<li><a href="{{ lang.short }}/about">{{ 'footer.links.about' | translate }}</a></li>--><li><a href="en/assistant" class="ng-binding">Assistant Service</a></li><li><a href="en/porter" class="ng-binding">Porter Service</a></li><li><a href="en/vip" class="ng-binding">VIP Service</a></li><!-- ngIf: !nav.isLoggedIn() --><li ng-if="!nav.isLoggedIn()" class="ng-scope"><a href="login" class="ng-binding">Login</a></li><!-- end ngIf: !nav.isLoggedIn() --><!-- ngIf: nav.isLoggedIn() --><!--/myroute--><li class="visible-xs dropdown" uib-dropdown=""><a uib-dropdown-toggle="" class="ng-binding dropdown-toggle" aria-haspopup="true" aria-expanded="false"><img class="flag" ng-src="assets/images/flags/en.png" alt="english flag" src="assets/images/flags/en.png"> english</a><ul class="dropdown-menu" uib-dropdown-menu="" role="menu"><!-- ngRepeat: lang in langs --><!-- ngIf: lang.short != nav.getSelectedLanguage().short --><!-- end ngRepeat: lang in langs --><!-- ngIf: lang.short != nav.getSelectedLanguage().short --><li ng-repeat="lang in langs" ng-click="nav.selectLanguage(lang)" ng-if="lang.short != nav.getSelectedLanguage().short" class="ng-binding ng-scope"><img class="flag" ng-src="assets/images/flags/de.png" alt="deutsch flag" src="assets/images/flags/de.png"> DEUTSCH</li><!-- end ngIf: lang.short != nav.getSelectedLanguage().short --><!-- end ngRepeat: lang in langs --></ul></li></ul><!-- end ngIf: !nav.isLoggedIn() || nav.getCurrentUser().role == 'webclient' --><!-- ADMIN MENU --><!-- ngIf: nav.isLoggedIn() --><!-- ngIf: nav.isLoggedIn() --><!-- ngIf: !nav.isLoggedIn() --><dl ng-if="!nav.isLoggedIn()" class="nav navbar-nav navbar-right flip language-selector language-selector-nav hidden-xs ng-scope"><dt><a class="ng-binding"><img class="flag" ng-src="assets/images/flags/en.png" alt="english flag" src="assets/images/flags/en.png"> english <i class="fa fa-caret-down"></i></a></dt><dd><ul><!-- ngRepeat: lang in langs --><li ng-repeat="lang in langs" ng-click="nav.selectLanguage(lang)" class="ng-binding ng-scope"><img class="flag" ng-src="assets/images/flags/en.png" alt="english flag" src="assets/images/flags/en.png"> english</li><!-- end ngRepeat: lang in langs --><li ng-repeat="lang in langs" ng-click="nav.selectLanguage(lang)" class="ng-binding ng-scope"><img class="flag" ng-src="assets/images/flags/de.png" alt="deutsch flag" src="assets/images/flags/de.png"> deutsch</li><!-- end ngRepeat: lang in langs --></ul></dd></dl><!-- end ngIf: !nav.isLoggedIn() --></div><!--/.nav-collapse main nav--></div><!--/.container-fluid --></div></div></div></div><div class="container alert-container"><!-- ngRepeat: alert in alerts --></div><div id="contact-client" class="hidden"><h5>Clients Language: #subtitle</h5><form id="contactForm" name="contactForm" class="ng-pristine ng-invalid ng-invalid-required"><div class="row"><div class="col-lg-12 col-md-12 col-xs-12"><div class="form-group"><label for="emailto">To*</label><input class="form-control ng-pristine ng-untouched ng-valid" placeholder="#contactEmail" ng-model="form.to" name="to" id="emailto" disabled=""></div></div></div><div class="row"><div class="col-lg-12 col-md-12 col-xs-12"><div class="form-group" ng-class="{'has-error':(contactForm.cc.$invalid &amp;&amp; !contactForm.cc.$pristine &amp;&amp; form.cc != '')}"><label for="subject">CC</label><input class="form-control ng-pristine ng-untouched ng-valid" ng-click="validateFormElement(contactForm.cc,form.cc,false)" ng-focus="validateFormElement(contactForm.cc,form.cc,false)" ng-blur="validateFormElement(contactForm.cc,form.cc,false)" ng-keyup="validateFormElement(contactForm.cc,form.cc,false)" placeholder="email@host.com,email@host.com" ng-model="form.cc" name="cc" id="cc"> <small ng-show="contactForm.cc.$invalid &amp;&amp; !contactForm.cc.$pristine &amp;&amp; form.cc != ''" class="ng-hide">Please enter Subject.</small></div></div></div><div class="row"><div class="col-lg-12 col-md-12 col-xs-12"><div class="form-group" ng-class="{'has-error':(contactForm.subject.$invalid &amp;&amp; !contactForm.subject.$pristine)}"><label for="subject">Subject *</label><input class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" ng-click="validateFormElement(contactForm.subject,form.subject,true)" ng-model="form.subject" name="subject" id="subject" required=""> <small ng-show="contactForm.subject.$invalid &amp;&amp; !contactForm.subject.$pristine" class="ng-hide">Please enter Subject.</small></div></div></div><div class="row"><div class="col-lg-12 col-md-12 col-xs-12"><div class="form-group" ng-class="{'has-error':(contactForm.message.$invalid &amp;&amp; !contactForm.message.$pristine)}"><label for="messages">Message *</label><textarea ng-click="validateFormElement(contactForm.message,form.message,true)" type="text" class="form-control resize-vertical ng-pristine ng-untouched ng-valid ng-valid-required" ng-init="form.message = '#emailTemplate'" style="min-height: 200px" ng-model="form.message" name="message" id="messages" ng-required="true" required="required">         #emailTemplate
+        </textarea><small ng-show="contactForm.message.$invalid &amp;&amp; !contactForm.message.$pristine" class="ng-hide">Please enter message.</small></div></div></div><div class="row"><div class="col-lg-12 col-md-12 col-xs-12"><button class="btn btn-primary btn-lg" ng-click="processForm(form, contactForm);">Send&nbsp;&nbsp; <i class="fa fa-paper-plane"></i></button>&nbsp;&nbsp; <button class="btn btn-danger btn-lg" ng-click="closeWithOptions(false)">close &nbsp;&nbsp; <i class="fa fa-times"></i></button></div></div></form></div></header></navbar><!-- end ngIf: !external -->
+      <!-- uiView:  --><div ui-view="" class="ng-scope"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --><!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]--><!-- TODO make this no-js menu load actual menu items and test it
+<noscript>
+  <div class="no-js-menu">
+    <div class="container">
+      <div class="row">
+        <ul class="tree-menu">
+          <li class="parent-1"><a href="/de/">securitas.de</a>
+            <ul>
+              <li class="parent-2"><a href="/de/ueber-uns/">&#220;ber uns</a>
+                <ul>
+                  <li class="parent"><a href="/de/ueber-uns/">&#220;ber uns</a></li>
+                  <li><a href="/de/ueber-uns/securitas-international/">Securitas international</a></li>
+                  <li ><a href="/de/ueber-uns/securitas-deutschland/">Securitas Deutschland</a></li>
+                  <li class="parent-3"><a href="/de/ueber-uns/unternehmensphilosophie/">Unternehmensphilosophie</a>
+                    <ul>
+                      <li class="parent"><a href="/de/ueber-uns/unternehmensphilosophie/">Unternehmensphilosophie</a></li>
+                      <li ><a href="/de/ueber-uns/unternehmensphilosophie/unsere-verantwortung/">Unsere Verantwortung</a></li>
+                      <li ><a href="/de/ueber-uns/unternehmensphilosophie/qualitaet/">Qualit&#228;t</a></li>
+                      <li ><a href="/de/ueber-uns/unternehmensphilosophie/strategie/">Strategie</a></li>
+                      <li ><a href="/de/ueber-uns/unternehmensphilosophie/securitas-integrity-line/">Securitas Integrity Line</a></li>
+                    </ul>
+                  </li>
+                </ul>
+
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</noscript>
+--><div class="l-main ng-scope"><div class="hero-section hidden-xs hidden-sm"><div ng-mouseenter="pause()" ng-mouseleave="play()" class="carousel ng-isolate-scope" ng-swipe-right="prev()" ng-swipe-left="next()" interval="4000" no-pause="true">
+  <div class="carousel-inner" ng-transclude=""><!-- ngRepeat: slide in main.slides track by $index --><div ng-class="{
+    'active': active
+  }" class="item text-center ng-isolate-scope active" ng-transclude="" ng-repeat="slide in main.slides track by $index" ng-style="{'background-image': 'url(assets/images/slides/'+ slide.image +')'}" index="$index" style="background-image: url(&quot;assets/images/slides/slide_1.jpg&quot;);"><div class="hero-section-text ng-scope"><div class="container"><div class="row"><div class="overlay text-left flip"><h1 class="hero-text text-left flip ng-binding">Arrival, Departure, Transfer at the airport?</h1><p class="ingress ng-binding">Securitas offers the best assistant service. Our international airport staff assists you in about 50 languages during your stay at the airport.</p><a href="en/book/travel-details" class="btn btn-startpage ng-binding">Book Assistant now</a></div></div></div></div></div><!-- end ngRepeat: slide in main.slides track by $index --><div ng-class="{
+    'active': active
+  }" class="item text-center ng-isolate-scope" ng-transclude="" ng-repeat="slide in main.slides track by $index" ng-style="{'background-image': 'url(assets/images/slides/'+ slide.image +')'}" index="$index" style="background-image: url(&quot;assets/images/slides/team2.jpg&quot;);"><div class="hero-section-text ng-scope"><div class="container"><div class="row"><div class="overlay text-left flip"><h1 class="hero-text text-left flip ng-binding">Luggage transportation at the airport</h1><p class="ingress ng-binding">With our porter staff at Frankfurt Airport we offer the best solution! Just let us know where we should pick your luggage up and where we should take it and we will handle your load.</p><a href="en/book/travel-details" class="btn btn-startpage ng-binding">Book Porter now</a></div></div></div></div></div><!-- end ngRepeat: slide in main.slides track by $index --></div>
+  <a role="button" href="" class="left carousel-control" ng-click="prev()" ng-show="slides.length > 1">
+    <span aria-hidden="true" class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">previous</span>
+  </a>
+  <a role="button" href="" class="right carousel-control" ng-click="next()" ng-show="slides.length > 1">
+    <span aria-hidden="true" class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">next</span>
+  </a>
+  <ol class="carousel-indicators" ng-show="slides.length > 1">
+    <!-- ngRepeat: slide in slides | orderBy:indexOfSlide track by $index --><li ng-repeat="slide in slides | orderBy:indexOfSlide track by $index" ng-class="{ active: isActive(slide) }" ng-click="select(slide)" class="ng-scope active">
+      <span class="sr-only ng-binding">slide 1 of 2<!-- ngIf: isActive(slide) --><span ng-if="isActive(slide)" class="ng-scope">, currently active</span><!-- end ngIf: isActive(slide) --></span>
+    </li><!-- end ngRepeat: slide in slides | orderBy:indexOfSlide track by $index --><li ng-repeat="slide in slides | orderBy:indexOfSlide track by $index" ng-class="{ active: isActive(slide) }" ng-click="select(slide)" class="ng-scope">
+      <span class="sr-only ng-binding">slide 2 of 2<!-- ngIf: isActive(slide) --></span>
+    </li><!-- end ngRepeat: slide in slides | orderBy:indexOfSlide track by $index -->
+  </ol>
+</div></div><!-- smaller devices get only the first slide --><div class="hero-section visible-xs visible-sm"><img class="hero-image" alt="Securitas offers the best assistant service. Our international airport staff assists you in about 50 languages during your stay at the airport." ng-src="assets/images/slides/slide_1.jpg" src="assets/images/slides/slide_1.jpg"><div class="hero-section-text"><div class="container-fluid"><div class="row"><div class="overlay"><h1 class="hero-text ng-binding">Arrival, Departure, Transfer at the airport?</h1><p class="ingress ng-binding">Securitas offers the best assistant service. Our international airport staff assists you in about 50 languages during your stay at the airport.</p><a href="en/book/travel-details" class="btn btn-startpage ng-binding">Book Assistant now</a></div></div></div></div></div><div class="main-section"><div class="container-fluid"><div class="row text-center flip services"><div class="col-lg-12"><h2 class="ng-binding">Our services at Frankfurt &amp; Munich airport</h2></div><div class="row"><div class="row-height"><!-- ngRepeat: service in main.services --><div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 service col-height var-height-mobile ng-scope" ng-repeat="service in main.services"><div class="card service-card border-bottom text-center"><div class="card-image"><img ng-src="assets/images/backgrounds/small_service_assistant.jpg" src="assets/images/backgrounds/small_service_assistant.jpg"></div><!-- description --><div class="card-info"><h3 class="ng-binding">Assistant</h3><p class="text-muted ng-scope ng-binding" translate="">Our agents will assist you in various languages. Just tell us your desired destination and where we should pick you up.
+<br><br>
+<ul class="slim-list no-margin text-black">
+	<li><i class="fa fa-check"></i> unlimited number of persons</li>
+	<li><i class="fa fa-check"></i> in your preferred language</li>
+	<li><i class="fa fa-check"></i> friendly staff</li>
+</ul></p><!-- ngIf: service != 'vip' --><a ng-if="service != 'vip'" href="en/book/travel-details?service=assistant" class="btn btn-startpage ng-binding ng-scope">Book now</a><!-- end ngIf: service != 'vip' --> <!-- ngIf: service == 'vip' --><br><!-- class btn gives it a good margin/padding --><a href="en/assistant" class="btn ng-binding">More about Assistant</a></div></div><div class="clearfix visible-sm"></div></div><!-- end ngRepeat: service in main.services --><div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 service col-height var-height-mobile ng-scope" ng-repeat="service in main.services"><div class="card service-card border-bottom text-center"><div class="card-image"><img ng-src="assets/images/backgrounds/small_service_porter.jpg" src="assets/images/backgrounds/small_service_porter.jpg"></div><!-- description --><div class="card-info"><h3 class="ng-binding">Porter</h3><p class="text-muted ng-scope ng-binding" translate="">Our porters in Frankfurt will disburden you and handle your luggage carefully.<br><br>
+<ul class="slim-list no-margin text-black">
+	<li><i class="fa fa-check"></i> normal luggage</li>
+	<li><i class="fa fa-check"></i> bulky luggage</li>
+	<li><i class="fa fa-check"></i> secure transportation</li>
+</ul></p><!-- ngIf: service != 'vip' --><a ng-if="service != 'vip'" href="en/book/travel-details?service=porter" class="btn btn-startpage ng-binding ng-scope">Book now</a><!-- end ngIf: service != 'vip' --> <!-- ngIf: service == 'vip' --><br><!-- class btn gives it a good margin/padding --><a href="en/porter" class="btn ng-binding">More about Porter</a></div></div><div class="clearfix visible-sm"></div></div><!-- end ngRepeat: service in main.services --><div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 service col-height var-height-mobile ng-scope" ng-repeat="service in main.services"><div class="card service-card border-bottom text-center"><div class="card-image"><img ng-src="assets/images/backgrounds/small_service_vip.jpg" src="assets/images/backgrounds/small_service_vip.jpg"></div><!-- description --><div class="card-info"><h3 class="ng-binding">VIP</h3><p class="text-muted ng-scope ng-binding" translate="">Amazing services are awaiting you. Porter and Assistant will be happy to support you.
+<br><br>
+<ul class="slim-list no-margin text-black">
+	<li><i class="fa fa-check"></i> assistant service included</li>
+	<li><i class="fa fa-check"></i> porter service included<br><small>(only FRA)</small></li>
+	<li><i class="fa fa-check"></i> visit luxurious lounges</li>
+	<li><i class="fa fa-check"></i> mobile phone number of assistant</li>
+</ul></p><!-- ngIf: service != 'vip' --> <!-- ngIf: service == 'vip' --><a ng-if="service == 'vip'" disabled="" class="btn btn-startpage ng-binding ng-scope">Coming soon!</a><!-- end ngIf: service == 'vip' --><br><!-- class btn gives it a good margin/padding --><a href="en/vip" class="btn ng-binding">More about VIP</a></div></div><div class="clearfix visible-sm"></div></div><!-- end ngRepeat: service in main.services --></div></div></div></div><section class="testimonial"><div class="container"><div class="row vertical-padding"><div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><img src="/assets/images/testimonial.png"></div><div class="col-lg-8 col-md-8 col-sm-8 col-xs-12"><p class="testimonial-cite ng-binding"><i class="fa fa-quote-left"></i> Awesome Service - I got picked up and well treated. I will definitely do it again!</p><p class="ng-binding">- Manfred Müller, 43 years old about Porter- and Assistant Service in Frankfurt Airport</p><!-- KEY --></div></div></div></section><div class="contact-section"><div class="row"><div class="col-lg-6 col-md-6 col-sm-6 col-lg-push-1 contact-text"><h2 class="ng-binding">What can we do for you?</h2><p class="ng-binding">For more information on our services send us an email</p><div class="row"><div class="col-lg-6"><h4 class="ng-binding">Frankfurt</h4><a class="text-white" href="mailto:contact.fra@securitas24.de">contact.fra@securitas24.de</a></div><div class="col-lg-6"><h4 class="ng-binding">Munich</h4><a class="text-white" href="mailto:contact.muc@securitas24.de">contact.muc@securitas24.de</a></div></div></div><div class="col-lg-4 col-md-5 col-sm-6 col-lg-push-1"><div class="contact-form"><form role="form" name="main.contactForm" ng-submit="main.sendContactRequest()" ng-hide="main.contactForm.success" class="ng-pristine ng-invalid ng-invalid-required ng-valid-email"><div class="form-group"><!--<label for="name" class="form-label">Name</label>--><div class="form-input required"><input ng-model="main.contactRequest.name" name="name" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" id="name" placeholder="Your name *" required=""></div></div><div class="form-group"><!--<label for="email" class="form-label">E-Mail-Adresse</label>--><div class="form-input required"><input type="email" ng-model="main.contactRequest.email" name="email" class="form-control ng-pristine ng-untouched ng-valid-email ng-invalid ng-invalid-required" id="email" placeholder="Your email address *" required=""></div></div><div class="form-group"><!--<label for="email" class="form-label">E-Mail-Adresse</label>--><div class="form-input required"><label for="airport_fra" class="ng-binding"><input type="radio" ng-model="main.contactRequest.airport" value="FRA" name="airport" id="airport_fra" required="" class="ng-pristine ng-untouched ng-invalid ng-invalid-required"> Frankfurt</label><label for="airport_muc" class="ng-binding"><input type="radio" ng-model="main.contactRequest.airport" value="MUC" name="airport" id="airport_muc" required="" class="ng-pristine ng-untouched ng-invalid ng-invalid-required"> Munich</label></div></div><div class="form-group"><div class="form-input required"><textarea ng-model="main.contactRequest.request" name="request" placeholder="Type your request here... *" cols="20" rows="4" required="" class="ng-pristine ng-untouched ng-invalid ng-invalid-required"></textarea></div></div><div vc-recaptcha="" id="recaptcha" key="main.recaptchaPublicKey" ng-model="main.contactRequest['g-recaptcha-response']" class="ng-pristine ng-untouched ng-valid ng-isolate-scope"></div><dl class="language-selector language-selector-contact hidden-xs"><dt><a class="btn btn-primary ng-binding"><img class="flag" ng-src="assets/images/flags/en.png" alt="english flag" src="assets/images/flags/en.png"> english <i class="fa fa-caret-down"></i></a></dt><dd><ul><!-- ngRepeat: lang in main.langs --><li ng-repeat="lang in main.langs" ng-click="main.selectContactLanguage(lang)" class="ng-binding ng-scope"><img class="flag" ng-src="assets/images/flags/en.png" alt="english flag" src="assets/images/flags/en.png"> english</li><!-- end ngRepeat: lang in main.langs --><li ng-repeat="lang in main.langs" ng-click="main.selectContactLanguage(lang)" class="ng-binding ng-scope"><img class="flag" ng-src="assets/images/flags/de.png" alt="deutsch flag" src="assets/images/flags/de.png"> deutsch</li><!-- end ngRepeat: lang in main.langs --></ul></dd></dl><button type="submit" class="btn btn-submit pull-right ng-binding">Submit</button><div style="clear:both"></div><p class="required-desc ng-binding">* Required</p></form><!-- ngIf: main.contactForm.spinner --><!-- ngIf: main.contactForm.error || main.contactForm.recaptchaError || (main.contactForm.$submitted && main.contactForm.$invalid) --><!-- ngIf: main.contactForm.success --></div></div></div></div><section class="big-numbers"><div class="container"><div class="row text-center"><div class="col-sm-4 col-xs-12"><span class="big-number">650</span><p class="ng-binding">Employees</p></div><div class="col-sm-4 col-xs-12"><span class="big-number">43</span><p class="ng-binding">Languages</p></div><div class="col-sm-4 col-xs-12"><span class="big-number">300.000+</span><p class="ng-binding">Happy Customers</p></div></div></div></section></div><!--<div class="sec-content-section">--><!--</div>--></div><!-- Old browser overlay script --><script class="ng-scope">var $buoop = {
+    vs: {
+      i: 7,
+      f: 3,
+      o: 9.63,
+      s: 2,
+      c: 10
+    },
+    // browser versions to notify
+    reminder: 24, // atfer how many hours should the message reappear
+    // 0 = show all the time
+    onshow: function (infos) {
+    },      // callback function after the bar has appeared
+    onclick: function (infos) {
+    },      // callback function if bar was clicked
+
+    l: false,                       // set a language for the message, e.g. "en"
+    // overrides the default detection
+    test: false,                    // true = always show the bar (for testing)
+    newwindow: true                 // open link in new window/tab
+  };
+
+  function $buo_f() {
+    var e = document.createElement("script");
+    e.src = "//browser-update.org/update.js";
+    document.body.appendChild(e);
+  }
+
+  try {
+    document.addEventListener("DOMContentLoaded", $buo_f, false);
+  } catch (e) {
+    window.attachEvent("onload", $buo_f);
+  }</script></div>
+      <script type="text/javascript" async="" src="https://ssl.google-analytics.com/ga.js"></script><!-- ngIf: !external && !adminPage --><script ng-if="!external &amp;&amp; !adminPage" src="https://cdnjs.cloudflare.com/ajax/libs/postscribe/2.0.8/postscribe.min.js" nonce="" class="ng-scope"></script><!-- end ngIf: !external && !adminPage -->
+      <!-- ngIf: !external && !adminPage --><footer ng-if="!external &amp;&amp; !adminPage" class="ng-scope footer"><div class="l-footer"><div class="wrapper"><div class="container"><div class="row"><div class="col-lg-3 col-md-3 col-sm-6 flip"><div class="column"><h4 class="ng-binding">Our Services</h4><!-- KEY --><ul class="footer-link-list"><!--<li><a href="{{ lang.short }}/about">{{ 'footer.links.about' | translate }} » </a></li>--><li><a href="en/assistant" class="ng-binding">Assistant Service »</a></li><li><a href="en/porter" class="ng-binding">Porter Service »</a></li><li><a href="en/vip" class="ng-binding">VIP Service »</a></li><!--<li><a href="{{ lang.short }}/jobs">Jobs &amp; Karriere » </a></li>--><!--<li><a href="{{ lang.short }}/book/travel-details">{{ 'footer.links.book' | translate }} » </a></li>&lt;!&ndash; KEY &ndash;&gt;--></ul></div></div><div class="col-lg-3 col-md-3 col-sm-6 flip"><div class="column"><h4 class="ng-binding">Useful Links</h4><ul class="footer-link-list"><li><a href="en/faq" class="ng-binding">Frequently Asked Questions (FAQ) »</a></li><!--<li><a href="{{ lang.short }}/contact">Kontakt » </a></li>--><li><a href="https://www.securitas24.de/sitemap.xml" target="_self" class="ng-binding">Sitemap »</a></li><li><a href="en/imprint" rel="nofollow" class="ng-binding">Imprint »</a></li><li><a href="de/agb" rel="nofollow" class="ng-binding">Business terms »</a></li><!-- AGB always in german --><li><a href="en/privacy" rel="nofollow" class="ng-binding">Privacy »</a></li></ul></div></div><div class="col-lg-3 col-md-3 col-sm-6 flip"><div class="column"><h4 class="ng-binding">Certified by</h4><img src="/assets/images/qds.png" class="footer-image"></div></div><div class="col-lg-3 col-md-3 col-sm-6 flip last"><div class="column"><h4 class="ng-binding">Payment methods</h4><img src="/assets/images/accepted-payments.png" class="footer-image"><br><br><h4 class="ng-binding">Secured by</h4><div id="ssl"><table width="135" border="0" cellpadding="2" cellspacing="0" title="Click to Verify - This site chose GeoTrust SSL for secure e-commerce and confidential communications."><tbody><tr><td width="135" align="center" valign="top"><span id="ssl_seal"></span><script>// postscribe('#ssl_seal', "<script type='text/javascript' src='https://seal.geotrust.com/getgeotrustsslseal?host_name=www.securitas24.de&amp;size=M&amp;lang=en'><\/script>");
+                      postscribe('#ssl_seal', "<script language='javascript' type='text/javascript' src='//smarticon.geotrust.com/si.js'><\/script>");</script><br><a href="http://www.geotrust.com/ssl/" target="_blank" style="color:#000000; text-decoration:none; font:bold 7px verdana,sans-serif; letter-spacing:.5px; text-align:center; margin:0px; padding:0px"></a></td></tr></tbody></table></div></div></div></div><div class="row footer-text"><div class="col-lg-12"><h3 class="ng-binding">Securitas24 - The Airport Specialists</h3><!-- KEY --><p translate="footer.text" class="ng-scope">Slack travelling for single travellers, families and travel groups - Securitas24 offers a result-oriented solution for private individuals, businesses and tour operators.<br><br>Porter Service, Assistant Service and VIP Service - we stand for our service quality at Frankfurt and Munich airport.</p><hr><span id="copyright" class="ng-binding">Copyright © 2025 Securitas Flugverkehr Services GmbH &amp; Co. KG</span></div></div></div></div><a class="btn back-to-top hidden ng-binding" data-action="back-to-top" href="#" ng-click="scrollToTop()">To top</a></div></footer><!-- end ngIf: !external && !adminPage -->
+
+      <!-- Google Analytics -->
+      <script src="app/ga.js" nonce=""></script>
+
+      <!--[if lt IE 9]>
+      <script src="bower_components/es5-shim/es5-shim.js" nonce="5p637SZnR9s93E2CSnpT4w=="></script>
+      <script src="bower_components/json3/lib/json3.min.js" nonce="5p637SZnR9s93E2CSnpT4w=="></script>
+      <![endif]-->
+      <script src="app/vendor.js" nonce=""></script>
+      <!-- ngIf: adminPage -->
+
+      <script src="app/app.js" nonce=""></script>
+    </div>
+
+  
+
+<input id="textAngular-editableFix-010203040506070809" style="width:1px;height:1px;border:none;margin:0;padding:0;position:absolute; top: -10000; left: -10000;" unselectable="on" tabindex="-1"></body></html>

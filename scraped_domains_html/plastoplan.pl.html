@@ -1,0 +1,154 @@
+<!DOCTYPE html><html lang="de"><head>
+    	<meta charset="UTF-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- SEO -->
+<title>Plastoplan Polska</title>
+<!-- og meta for facebook, googleplus -->
+<meta property="og:title" content="Plastoplan Polska">
+<meta property="og:description" content="">
+<meta property="og:url" content="https://www.plastoplan.pl">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://www.plastoplan.pl/wp-content/uploads/sites/5/start_bicycle-700x394.jpg">
+
+<!-- twitter meta -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Plastoplan Polska">
+<meta name="twitter:description" content="">
+<meta name="twitter:url" content="https://www.plastoplan.pl">
+<meta name="twitter:image" content="https://www.plastoplan.pl/wp-content/uploads/sites/5/start_bicycle-700x394.jpg">
+
+<link rel="icon" href="https://www.plastoplan.pl/wp-content/uploads/sites/5/cropped-Plastoplan-Icon-32x32.png" sizes="32x32">
+<link rel="icon" href="https://www.plastoplan.pl/wp-content/uploads/sites/5/cropped-Plastoplan-Icon-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="https://www.plastoplan.pl/wp-content/uploads/sites/5/cropped-Plastoplan-Icon-180x180.png">
+<meta name="msapplication-TileImage" content="https://www.plastoplan.pl/wp-content/uploads/sites/5/cropped-Plastoplan-Icon-270x270.png">
+<link rel="stylesheet" href="https://www.plastoplan.pl/wp-content/plugins/cmp-coming-soon-maintenance/themes/hardwork/style.css?v=4.1.13" type="text/css" media="all">
+<link rel="stylesheet" href="https://www.plastoplan.pl/wp-content/plugins/cmp-coming-soon-maintenance/css/animate.min.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700%7CMontserrat:400,700,400&amp;subset=latin-ext,cyrillic,latin,vietnamese,cyrillic-ext" rel="stylesheet">
+
+
+        <style>
+            body,input {font-family:'Montserrat', 'sans-serif';color:#0062a7;}
+                            .social-list {background-color: rgba(0,0,0,0.4);}
+                            a {color:#0062a7;}
+            h1,h2,h3,h4,h5,h6 {font-family:'Playfair Display', 'sans-serif';}
+            body {font-size:17px; letter-spacing: 0px; font-weight:400;; }
+            h1:not(.text-logo),h2, h3,h4,h5,h6,.text-logo-wrapper {font-size:2.3529411764706em;letter-spacing: 0px; font-weight:700;font-style: normal;; }
+            h1 {font-weight:700;font-style: normal;;}
+        </style>
+
+        
+
+<style>
+    .wp-video {margin: 0 auto;}
+    .wp-video-shortcode {max-width: 100%;}
+    .grecaptcha-badge {display: none!important;}
+    .text-logo {display: inline-block;}
+    #gdpr-checkbox {-webkit-appearance: checkbox;-moz-appearance: checkbox;width: initial;height: initial;}
+    #counter.expired {display: none; }
+    input, button {
+        box-shadow: inset 0 0 0 0 !important;
+        -webkit-box-shadow: inset 0 0 0 0 !important;
+        -webkit-appearance: none;
+        outline: none;
+    }
+</style>
+
+
+
+
+    </head>
+
+
+    <body id="body">
+        <div id="background-wrapper">
+
+         <div id="background-image" class="image" style="background-image:url('https://www.plastoplan.pl/wp-content/uploads/sites/5/start_bicycle.jpg')"></div><div class="background-overlay solid-color" style="background-color:#ffffff;opacity:0.9"></div>
+        </div>
+
+        
+        <section class="section section-body">
+            <div class="logo-wrapper image"><a href="https://www.plastoplan.pl" style="text-decoration:none"><img src="https://www.plastoplan.pl/wp-content/uploads/sites/5/logoweb_plastoplan-rs.png" class="graphic-logo" alt="logo" width="348" height="80"></a></div><h2 class="cmp-title animated ">The website is under construction.</h2>         
+         </section>
+        
+    <!-- Fade in background image after load -->
+    <script>
+        window.addEventListener("load",function(event) {
+            init();
+        });
+
+        function init(){
+
+            var image = document.getElementById('background-image');
+            var body = document.getElementById('body');
+            
+            if ( image === null ) {
+                image = document.getElementById('body');
+            } 
+
+            if ( image != null ) {
+                if ( image.className !== 'image-unsplash') {
+                    image.classList.add('loaded');
+                    body.classList.add('loaded');
+                }
+            }
+
+                    }
+    </script>
+
+    
+    <script>
+        /* Subscribe form script */
+        var ajaxWpUrl = 'https://www.plastoplan.pl/wp-admin/admin-ajax.php';
+        var {pathname} = new URL(ajaxWpUrl);
+        var ajaxurl = `${location.protocol}//${location.hostname}${pathname}`;
+        var security = '4b6689bb6f';
+        var msg = '';
+        subForm = function( form, resultElement, emailInput, firstnameInput, lastnameInput, token = '' ) {
+            if ( emailInput.value !== '' ) {
+                const firstname = firstnameInput === null ? '' : firstnameInput.value;
+                const lastname = lastnameInput === null ? '' : lastnameInput.value;
+
+                fetch( ajaxurl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
+                        'Access-Control-Allow-Origin': '*',
+                    },
+                    body: `action=niteo_subscribe&ajax=true&form_honeypot=&email=${ encodeURIComponent(emailInput.value) }&firstname=${ encodeURIComponent(firstname) }&lastname=${ encodeURIComponent(lastname) }&security=${ security }&token=${ token }`,
+                    credentials: 'same-origin'
+                } )
+                .then( (res) => {
+                    return res.json();
+                } )
+                .then( (data) => {
+                    resultElement.innerHTML = data.message; // Display the result inside result element.
+                    form.classList.add('-subscribed');
+                    if (data.status == 1) {
+                        form.classList.remove('-subscribe-failed');
+                        form.classList.add('-subscribe-successful');
+                        emailInput.value = '';
+                        firstnameInput ? firstnameInput.value = '' : null;
+                        lastnameInput ? lastnameInput.value = '' : null;
+                        
+                    } else {
+                        form.classList.add('-subscribe-failed');
+                    }
+                } )
+                .catch(function(error) { console.log(error.message); });
+
+            } else {
+                resultElement.innerHTML = 'Oops! Email is empty.';
+            }
+        }
+    </script>
+
+<!-- Build by CMP – Coming Soon Maintenance Plugin by NiteoThemes -->
+<!-- Visit plugin page https://wordpress.org/plugins/cmp-coming-soon-maintenance/ -->
+<!-- More CMP Themes on https://niteothemes.com -->
+    
+
+
+
+</body></html>

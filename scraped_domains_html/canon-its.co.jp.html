@@ -1,0 +1,2276 @@
+<!DOCTYPE html><html class="js no-applicationcache geolocation history postmessage svg websockets localstorage sessionstorage no-websqldatabase webworkers hashchange audio canvas canvastext webgl video cssgradients opacity multiplebgs rgba inlinesvg hsla supports svgclippaths smil generatedcontent fontface textshadow cssanimations borderimage backgroundsize boxshadow borderradius csscolumns csscolumns-width csscolumns-span csscolumns-fill csscolumns-gap csscolumns-rule csscolumns-rulecolor csscolumns-rulestyle csscolumns-rulewidth csscolumns-breakbefore csscolumns-breakafter csscolumns-breakinside flexbox cssreflections csstransforms csstransitions csstransforms3d indexeddb" lang="ja-JP" data-script-enabled="true" data-is-scrolling="false"><head>
+<link href="/-/media/Feature/Canon/CanonJP/Bootstrap-3-Custom/Bootstrap-3-Custom/Styles/optimized-min.css?t=20231008T011339Z" rel="stylesheet"><link href="/-/media/Base-Themes/Core-Libraries/styles/optimized-min.css?t=20231008T011343Z" rel="stylesheet"><link href="/-/media/Base-Themes/Main-Theme/styles/optimized-min.css?t=20231008T011352Z" rel="stylesheet"><link href="/-/media/Themes/Canon/CanonJP/CanonJP/styles/optimized-min.css?t=20241121T142035Z" rel="stylesheet">    
+    
+
+
+
+<meta charset="UTF-8">
+<meta name="format-detection" content="telephone=no">
+
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <title>キヤノンITソリューションズ株式会社｜キヤノンマーケティングジャパングループ</title>
+
+
+
+<meta name="description" content="私たちは、キヤノンマーケティングジャパングループのITソリューション事業の中核を担う企業です。「お客さまの想い」に寄り添い、お客さまと共にビジネスを創り出し、社会課題の解決に貢献してまいります。">
+    <link href="/-/media/Project/Canon/CanonITS/home/shared/image/icon/favicon/favicon.png?la=ja-JP" rel="shortcut icon">
+
+
+        <meta property="twitter:title" content="キヤノンITソリューションズ株式会社">
+        <meta property="twitter:site" content="@Canon_mj">
+        <meta property="twitter:description" content="私たちは、キヤノンマーケティングジャパングループのITソリューション事業の中核を担う企業です。「お客さまの想い」に寄り添い、お客さまと共にビジネスを創り出し、社会課題の解決に貢献してまいります。">
+        <meta property="twitter:image" content="https://www.canon-its.co.jp/-/media/Project/Canon/CanonITS/common/image/icon/ogp-image.png?la=ja-JP">
+        <meta property="twitter:card" content="summary_large_image">
+
+
+        <meta property="og:title" content="キヤノンITソリューションズ株式会社">
+        <meta property="og:url" content="https://www.canon-its.co.jp/">
+        <meta property="og:description" content="私たちは、キヤノンマーケティングジャパングループのITソリューション事業の中核を担う企業です。「お客さまの想い」に寄り添い、お客さまと共にビジネスを創り出し、社会課題の解決に貢献してまいります。">
+        <meta property="og:image" content="https://www.canon-its.co.jp/-/media/Project/Canon/CanonITS/common/image/icon/ogp-image.png?la=ja-JP">
+        <meta property="og:type" content="article">
+        <meta property="og:site_name" content="キヤノンITソリューションズ　Canon IT Solutions Inc.(Japan）">
+        <meta property="og:admins" content="381111741960060">
+        <meta property="fb:app_id" content="317061325518270">
+
+
+
+<link rel="canonical" href="//www.canon-its.co.jp">
+
+
+<!-- Common Head Tag -->
+<link rel="apple-touch-icon" href="/-/media/Project/Canon/CanonJP/Website/shared/image/icon/apple-touch-icon.png?la=ja-JP" sizes="180x180">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link href="/-/media/Project/Canon/CanonJP/shared/style/normalize.css" rel="stylesheet">
+<link href="/-/media/Project/Canon/CanonJP/shared/style/common.css?ver=1.1" rel="stylesheet">
+<link href="/-/media/Project/Canon/CanonJP/shared/style/style-cms.css?ver=1.0.8.2" rel="stylesheet">
+<link href="/-/media/Project/Canon/CanonJP/common/script/lib/css/air-datepicker.min.css" rel="stylesheet">
+<link href="/-/media/Project/Canon/CanonJP/common/script/lib/css/scroll-hint.css" rel="stylesheet">
+<link href="/-/media/Project/Canon/CanonJP/common/script/lib/css/swiper-bundle.min.css" rel="stylesheet">
+<link href="/-/media/Project/Canon/CanonJP/common/style/expansion-modules.css" rel="stylesheet">
+<script src="https://in.treasuredata.com/js/v3/event/layer0_task/layer0_cits_access_log?api_key=10820%2F9d2b508763e1fe1db611d737e43c3c7bdaa32261&amp;modified=1743032068086&amp;data=eyJ0ZF9nbG9iYWxfaWQiOiJ0ZF9nbG9iYWxfaWQiLCJ0ZF92ZXJzaW9uIjoiMi41LjEiLCJ0ZF9jbGllbnRfaWQiOiJlZGE3NjljMS1lNmM3LTQwODctOTA5Zi1iNTc3MjQ5NzYxNGEiLCJ0ZF9jaGFyc2V0IjoidXRmLTgiLCJ0ZF9sYW5ndWFnZSI6ImVuLXVzIiwidGRfY29sb3IiOiIyNC1iaXQiLCJ0ZF9zY3JlZW4iOiIxMDgweDYwMCIsInRkX3ZpZXdwb3J0IjoiMTA4MHg2MDAiLCJ0ZF90aXRsZSI6IuOCreODpOODjuODs0lU44K944Oq44Ol44O844K344On44Oz44K65qCq5byP5Lya56S%2B772c44Kt44Ok44OO44Oz44Oe44O844Kx44OG44Kj44Oz44Kw44K444Oj44OR44Oz44Kw44Or44O844OXIiwidGRfZGVzY3JpcHRpb24iOiLnp4HjgZ%2FjgaHjga%2FjgIHjgq3jg6Tjg47jg7Pjg57jg7zjgrHjg4bjgqPjg7PjgrDjgrjjg6Pjg5Hjg7PjgrDjg6vjg7zjg5fjga5JVOOCveODquODpeODvOOCt%2BODp%2BODs%2BS6i%2BalreOBruS4reaguOOCkuaLheOBhuS8gealreOBp%2BOBmeOAguOAjOOBiuWuouOBleOBvuOBruaDs%2BOBhOOAjeOBq%2BWvhOOCiua3u%2BOBhOOAgeOBiuWuouOBleOBvuOBqOWFseOBq%2BODk%2BOCuOODjeOCueOCkuWJteOCiuWHuuOBl%2BOAgeekvuS8muiqsumhjOOBruino%2BaxuuOBq%2BiyoueMruOBl%2BOBpuOBvuOBhOOCiuOBvuOBmeOAgiIsInRkX3VybCI6Imh0dHBzOi8vd3d3LmNhbm9uLWl0cy5jby5qcC8iLCJ0ZF91c2VyX2FnZW50IjoiTW96aWxsYS81LjAgKFgxMTsgTGludXggeDg2XzY0KSBBcHBsZVdlYktpdC81MzcuMzYgQ2hyb21lLzExNi4wLjAuMCBTYWZhcmkvNTM3LjM2IiwidGRfcGxhdGZvcm0iOiJXaW4zMiIsInRkX2hvc3QiOiJ3d3cuY2Fub24taXRzLmNvLmpwIiwidGRfcGF0aCI6Ii8iLCJ0ZF9yZWZlcnJlciI6IiIsInRkX2lwIjoidGRfaXAiLCJ0ZF9icm93c2VyIjoidGRfYnJvd3NlciIsInRkX2Jyb3dzZXJfdmVyc2lvbiI6InRkX2Jyb3dzZXJfdmVyc2lvbiIsInRkX29zIjoidGRfb3MiLCJ0ZF9vc192ZXJzaW9uIjoidGRfb3NfdmVyc2lvbiJ9&amp;callback=TreasureJSONPCallback0"></script><script type="text/javascript" async="" src="https://cdn.treasuredata.com/sdk/2.5/td.min.js"></script><script type="text/javascript" async="" src="https://tracker.shanon-services.com:443/tracker/create_new_id?_ct=1743032067521&amp;_camc=mqCgyhtCyg-503"></script><script async="" src="https://bat.bing.com/p/conversions/s/0.8.1"></script><script async="" src="https://bat.bing.com/p/conversions/t/211037180"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ua/linkid.js"></script><script async="" type="text/javascript" charset="utf-8" src="https://tracker.smartseminar.jp/static/js/cam3.js?_=1743032066314"></script><script type="text/javascript" async="" src="https://bat.bing.com/bat.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://buttons-config.sharethis.com/js/66610300f75dab0019ade98e.js"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-NLW38F"></script><script src="/-/media/Project/Canon/CanonJP/shared/init.js"></script>
+<script src="/-/media/Project/Canon/CanonJP/shared/jquery.min.js"></script>
+<script src="/-/media/Project/Canon/CanonJP/shared/slick.min.js"></script>
+<!-- Sharethis -->
+<script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=66610300f75dab0019ade98e&amp;product=inline-share-buttons" async="async"></script>
+
+
+<!-- Page Html Tags -->
+<link href="/-/media/Project/Canon/CanonITS/common/style/cits-modules.css" rel="stylesheet">
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NLW38F');</script>
+<!-- End Google Tag Manager -->
+<script src="https://bat.bing.com/p/action/211037180.js" type="text/javascript" async="" data-ueto="ueto_feaeba3d94"></script></head>
+<body class="default-device bodyclass" style="">
+    
+    <a href="#content" id="skipnav-content" tabindex="0" data-pageanchor="base">このページの本文へ</a>
+    
+    
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NLW38F"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Common Body  Top Tag -->
+    
+<!-- #wrapper -->
+<div id="wrapper">
+    <!-- #header -->
+    <header class="site-header">
+        <div id="header" class="container-fluid">
+            <div class="row">
+                
+
+
+
+
+
+
+
+
+
+
+
+<div class="site-header of-group-global-nav">
+    <div class="site-header__inner">
+        <a class="site-header__site-link" href="/">
+                <h1 class="site-header__title">
+                    <span class="site-header__logo">
+                        <img class="site-header__logo-img" src="/-/media/Project/Canon/CanonJP/common/image/Header/Canonlogo_global.svg?la=ja-JP&amp;hash=0435D0B79D37F7CA6D5BAF14D762FE88" width="95" height="20" alt="Canon">
+                    </span>
+                        <span class="site-header__sitename">キヤノンマーケティングジャパングループ</span>
+                </h1>
+        </a>
+
+
+
+        <div class="site-header__menu">
+            <div class="mod-header-sp-menu">
+                <ul class="mod-header-sp-menu__list">
+                    <li class="mod-header-sp-menu__item">
+                        <button type="button" class="mod-header-sp-menu__icon-button" data-icon="menu-open" data-drawer-open="drawer-site-menu" aria-label="サイトメニューを開く">
+                            <span class="mod-header-sp-menu__icon-label">メニュー</span>
+                            
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="mod-header-menu">
+                <ul class="mod-header-menu__list">
+                        <li class="mod-header-menu__item">
+                            <button type="button" class="mod-header-menu__pulldown" aria-label="キヤノン製品・サポート情報を開く" data-pulldown-open="pulldown-product-support">
+                                キヤノン製品・サポート情報
+                            </button>
+
+                            <div class="mod-pulldown anime--pulldown-fade" id="pulldown-product-support" aria-hidden="true">
+                                <div class="mod-pulldown__backdrop" tabindex="-1" data-pulldown-close=""></div>
+                                <div class="mod-pulldown__container" data-category-menu="product-support" role="dialog" aria-modal="true" aria-labelledby="pulldown-product-support--title">
+                                        <div class="mod-pulldown__header">
+                                            <h2 id="pulldown-product-support--title" class="mod-pulldown__title">キヤノン製品・サポート情報</h2>
+                                        </div>
+                                    <div id="pulldown-product-support--content" class="mod-pulldown__content">
+                                        <div class="mod-pulldown-menu">
+<div class="mod-pulldown-menu__category">
+<p class="mod-pulldown-menu__title">
+<a href="https://canon.jp/personal/?id=hn">個人のお客さま</a>
+</p>
+<ul class="mod-pulldown-menu__list">
+    <li>
+    <a href="https://personal.canon.jp/product/camera?id=hn">レンズ交換式カメラ</a>
+    </li>
+    <li>
+    <a href="https://personal.canon.jp/product/compact-digital-camera?id=hn">コンパクトデジタルカメラ</a>
+    </li>
+    <li>
+    <a href="https://personal.canon.jp/product/printer?id=hn">プリンター・コピー・スキャナー</a>
+    </li>
+    <li>
+    <a href="https://personal.canon.jp/product/business-tool?id=hn">電卓・その他ビジネスツール</a>
+    </li>
+</ul>
+</div><div class="mod-pulldown-menu__category">
+<p class="mod-pulldown-menu__title">
+<a href="https://canon.jp/biz/?id=hn">法人のお客さま</a>
+</p>
+<ul class="mod-pulldown-menu__list">
+    <li>
+    <a href="https://canon.jp/biz/solution?id=hn">ソリューション</a>
+    </li>
+    <li>
+    <a href="https://canon.jp/biz/product?id=hn">商品・サービス</a>
+    </li>
+    <li>
+    <a href="https://canon.jp/biz/case/?id=hn">導入事例</a>
+    </li>
+    <li>
+    <a href="https://canon.jp/biz/trend/?id=hn">ビジネストレンド</a>
+    </li>
+</ul>
+</div><div class="mod-pulldown-menu__category">
+<p class="mod-pulldown-menu__title">
+<a href="https://canon.jp/support/?id=hn">サポート</a>
+</p>
+<ul class="mod-pulldown-menu__list">
+    <li>
+    <a href="https://canon.jp/support/faq/?id=hn">よくあるご質問　</a>
+    </li>
+    <li>
+    <a href="https://canon.jp/support/manual/?id=hn">マニュアルダウンロード</a>
+    </li>
+    <li>
+    <a href="https://canon.jp/support/software/?id=hn">ソフトウエアダウンロード</a>
+    </li>
+    <li>
+    <a href="https://canon.jp/support/repair-index/?id=hn">修理メンテナンス</a>
+    </li>
+</ul>
+</div>                                        </div>
+                                    </div>
+                                    
+                                    <button type="button" class="mod-pulldown__close" aria-label="閉じる" data-pulldown-close=""></button>
+                                    
+                                </div>
+                            </div>
+                        </li>
+                                            <li class="mod-header-menu__item">
+                            <button type="button" class="mod-header-menu__pulldown" aria-label="グループ企業情報を開く" data-pulldown-open="pulldown-corporate">
+                                グループ企業情報
+                            </button>
+                            <div class="mod-pulldown anime--pulldown-fade" id="pulldown-corporate" aria-hidden="true">
+                                <div class="mod-pulldown__backdrop" tabindex="-1" data-pulldown-close=""></div>
+                                <div class="mod-pulldown__container" data-category-menu="corporate" role="dialog" aria-modal="true" aria-labelledby="pulldown-corporate--title">
+                                        <div class="mod-pulldown__header">
+                                            <h2 id="pulldown-corporate--title" class="mod-pulldown__title">グループ企業情報</h2>
+                                        </div>
+                                    <div id="pulldown-corporate--content" class="mod-pulldown__content">
+                                        <div class="mod-pulldown-menu">
+                                            <div class="mod-pulldown-menu__category">
+<p class="mod-pulldown-menu__title">
+<a href="https://corporate.jp.canon/?id=hn">キヤノンマーケティングジャパングループ企業情報</a>
+</p>
+<ul class=" mod-pulldown-menu__list" =""="">
+    <li>
+    <a href="https://corporate.jp.canon//profile/?id=hn">⁪キヤノンMJグループについて</a>
+    </li>
+    <li>
+    <a href="https://corporate.jp.canon//profile/group/?id=hn">グループ会社一覧</a>
+    </li>
+    <li>
+    <a href="https://corporate.jp.canon//sustainability/?id=hn">サステナビリティ</a>
+    </li>
+    <li>
+    <a href="https://corporate.jp.canon//ir/?id=hn">投資家向け情報</a>
+    </li>
+    <li>
+    <a href="https://corporate.jp.canon//recruit/?id=hn">採用情報</a>
+    </li>
+    <li>
+    <a href="https://corporate.jp.canon//newsrelease/?id=hn">ニュースリリース</a>
+    </li>
+</ul>
+</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <button type="button" class="mod-pulldown__close" aria-label="閉じる" data-pulldown-close=""></button>
+                                    
+                                </div>
+                            </div>
+                        </li>
+                </ul>
+
+                <div class="site-header__search">
+                    <button type="button" class="site-header__icon-button" aria-label="サイト内検索を開く" data-icon="search" data-pulldown-open="pulldown-search"></button>
+                    <div class="mod-pulldown anime--pulldown-fade" id="pulldown-search" aria-hidden="true">
+                        <div class="mod-pulldown__backdrop" tabindex="-1" data-pulldown-close=""></div>
+                        <div class="mod-pulldown__container of--icon-button-offset" data-category-menu="search" role="dialog" aria-modal="true" aria-labelledby="pulldown-search--title">
+                            <div class="mod-pulldown__header">
+                            	
+                                <h2 id="pulldown-search--title" class="mod-pulldown__title">サイト内検索</h2>
+                                
+                            </div>
+                            <div id="pulldown-search--content" class="mod-pulldown__content">
+                                <form action="/search" method="GET">
+    <div class="mod-pulldown-search">
+    <input class="mod-pulldown-search__field" type="text" name="q" id="MF_form_phrase" autocomplete="off" placeholder="キーワードを入力してください">
+    <button class="mod-pulldown-search__button" type="submit" aria-label="検索"></button>
+    </div>
+</form>
+                            </div>
+                            
+                            <button type="button" class="mod-pulldown__close" aria-label="閉じる" data-pulldown-close=""></button>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                    <div class="site-header__global-site">
+                        <button type="button" class="site-header__icon-button" aria-label="Global Networkを開く" data-icon="global" data-pulldown-open="pulldown-global"></button>
+                        <div class="mod-pulldown anime--pulldown-fade" id="pulldown-global" aria-hidden="true">
+                            <div class="mod-pulldown__backdrop" tabindex="-1" data-pulldown-close=""></div>
+                            <div class="mod-pulldown__container of--icon-button-offset" role="dialog" aria-modal="true" aria-labelledby="pulldown-global--title">
+                                    <div class="mod-pulldown__header">
+                                        <h2 id="pulldown-global--title" class="mod-pulldown__title">Global Network</h2>
+                                    </div>
+                                <div id="pulldown-global--content" class="mod-pulldown__content">
+                                    <div class="mod-pulldown-global">
+                                        <div class="mod-pulldown-global__detail">
+<p class="mod-pulldown-global__title"><strong>Canon Global</strong></p>
+<ul class="mod-pulldown-global__list">
+    <li>
+    <a href="https://global.canon/ja/">日本語</a>
+    </li>
+    <li>
+    <a href="https://global.canon/en/">English</a>
+    </li>
+</ul>
+</div>
+<div class="mod-pulldown-global__detail">
+<p class="mod-pulldown-global__title"><strong>Canon Marketing Japan Inc.</strong></p>
+<ul class="mod-pulldown-global__list">
+    <li>
+    <a href="https://canon.jp">日本語</a>
+    </li>
+    <li>
+    <a href="https://canon.jp/en">English</a>
+    </li>
+</ul>
+</div>
+                                    </div>
+                                </div>
+                                
+                                <button type="button" class="mod-pulldown__close" aria-label="閉じる" data-pulldown-close=""></button>
+                                
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="mod-drawer anime--drawer-fade" id="drawer-site-menu">
+        <div class="mod-drawer__container" role="dialog" aria-modal="true" aria-labelledby="drawer-site-menu--title">
+            <div class="mod-drawer__header">
+                <h2 id="drawer-site-menu--title" class="mod-drawer__title">
+                	
+                    <span>サイトメニュー</span>
+                    
+                </h2>
+            </div>
+            <div id="drawer-site-menu--content" class="mod-drawer__content js--drawer-slide-menu">
+                <div id="drawer-site-menu-lv1--top" class="mod-drawer-slide-menu" data-drawer-slide-menu="" aria-hidden="false">
+                    <form action="/search" method="GET">
+<div class="mod-drawer-search">
+<input class="mod-drawer-search__field" type="text" value="" name="q" id="MF_form_phrase" autocomplete="off" placeholder="サイト内検索">
+<button class="mod-drawer-search__button" type="submit" aria-label="検索"></button>
+</div>
+</form>
+                    <div class="mod-drawer-site-menu">
+                        <div class="mod-drawer-site-menu__category">
+                                <p class="mod-drawer-site-menu__title">キヤノンITソリューションズ株式会社</p>
+                            <ul class="mod-drawer-site-menu__list">
+                                <li>
+                                	
+                                    <a href="/">トップページ</a>
+                                    
+                                </li>
+                                            <li>
+                                                <a data-slide-to-href="" href="#drawer-site-menu-lv2--1930f573319e4a9f98c7b62648ee5ffa" data-pageanchor="base">ソリューション・製品</a>
+                                            </li>
+                                            <li>
+                                                <a href="/case">お客さま導入事例</a>
+                                            </li>
+                                            <li>
+                                                <a data-slide-to-href="" href="#drawer-site-menu-lv2--087fc9bd7b294d45a44e6a9292cd415b" data-pageanchor="base">コラム・ナレッジ</a>
+                                            </li>
+                                            <li>
+                                                <a data-slide-to-href="" href="#drawer-site-menu-lv2--07bde138b0884854b58a9058161a05e7" data-pageanchor="base">企業案内</a>
+                                            </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mod-drawer-category-menu">
+                        <ul class="mod-drawer-category-menu__list">
+                                        <li>
+                                            <a href="https://corporate.canon.jp/">グループ企業情報</a>
+                                        </li>
+                        </ul>
+                        <ul class="mod-drawer-category-menu__list of-small-padding">
+                                <li>
+                                    <a href="https://global.canon/ja/">キヤノングローバル</a>
+                                </li>
+                        </ul>
+                    </div>
+                </div>
+                            <div id="drawer-site-menu-lv2--1930f573319e4a9f98c7b62648ee5ffa" class="mod-drawer-slide-menu" data-drawer-slide-menu="" aria-hidden="true">
+                                <div class="mod-drawer-slide-menu__action">
+                                	
+                                    <a class="mod-drawer-slide-menu__back" data-slide-to-href="" href="#drawer-site-menu-lv1--top" data-pageanchor="base">戻る</a>
+                                    
+                                </div>
+                                <div class="mod-drawer-site-menu">
+                                    <div class="mod-drawer-site-menu__category">
+                                        <ul class="mod-drawer-site-menu__list">
+                                            <li>
+                                                <a href="/solution">ソリューション・製品</a>
+                                            </li>
+                                                        <li>
+                                                            <a data-slide-to-href="" href="#drawer-site-menu-lv3--ebd3cd5a3f574a1ead8d21ee36c0bd85" data-pageanchor="base">業種から探す</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/search">キーワード・条件指定検索</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/products/alphabet">製品一覧（アルファベット別）</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/products/kana">製品・サービス一覧（五十音順）</a>
+                                                        </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="drawer-site-menu-lv3--ebd3cd5a3f574a1ead8d21ee36c0bd85" class="mod-drawer-slide-menu" data-drawer-slide-menu="" aria-hidden="true">
+                                <div class="mod-drawer-slide-menu__action">
+                                	
+                                    <a class="mod-drawer-slide-menu__back" data-slide-to-href="" href="#drawer-site-menu-lv2--1930f573319e4a9f98c7b62648ee5ffa" data-pageanchor="base">戻る</a>
+                                    
+                                </div>
+                                <div class="mod-drawer-site-menu">
+                                    <div class="mod-drawer-site-menu__category">
+                                        <ul class="mod-drawer-site-menu__list">
+                                            <li>
+                                                <a href="/solution/industry">業種から探す</a>
+                                            </li>
+                                                        <li>
+                                                            <a data-slide-to-href="" href="#drawer-site-menu-lv4--4f52c3a7c66b4a4dbd12aadcc0e30867" data-pageanchor="base">製造業向け</a>
+                                                        </li>
+                                                        <li>
+                                                            <a data-slide-to-href="" href="#drawer-site-menu-lv4--3fe5ad6662254cec9ac1f8b8b9a3a466" data-pageanchor="base">流通業向け</a>
+                                                        </li>
+                                                        <li>
+                                                            <a data-slide-to-href="" href="#drawer-site-menu-lv4--add1b75270904c3bae2f05e7d15e7901" data-pageanchor="base">金融業向け</a>
+                                                        </li>
+                                                        <li>
+                                                            <a data-slide-to-href="" href="#drawer-site-menu-lv4--629d4a99ad6e4db795274c59ad960d59" data-pageanchor="base">文教向け</a>
+                                                        </li>
+                                                        <li>
+                                                            <a data-slide-to-href="" href="#drawer-site-menu-lv4--5d25626ba6674923b4b315aed9950fc4" data-pageanchor="base">ホテル・飲食業向け</a>
+                                                        </li>
+                                                        <li>
+                                                            <a data-slide-to-href="" href="#drawer-site-menu-lv4--4910304e53e040989745d05e12852bce" data-pageanchor="base">医療機関向け</a>
+                                                        </li>
+                                                        <li>
+                                                            <a data-slide-to-href="" href="#drawer-site-menu-lv4--2bd57e21dc5f456f938932935c0a0882" data-pageanchor="base">製薬業向け</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/society">社会公共向け</a>
+                                                        </li>
+                                                        <li>
+                                                            <a data-slide-to-href="" href="#drawer-site-menu-lv4--e664b72f85854f6a817c6e45f4e5a706" data-pageanchor="base">クロスインダストリー</a>
+                                                        </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="drawer-site-menu-lv4--4f52c3a7c66b4a4dbd12aadcc0e30867" class="mod-drawer-slide-menu" data-drawer-slide-menu="" aria-hidden="true">
+                                <div class="mod-drawer-slide-menu__action">
+                                	
+                                    <a class="mod-drawer-slide-menu__back" data-slide-to-href="" href="#drawer-site-menu-lv3--ebd3cd5a3f574a1ead8d21ee36c0bd85" data-pageanchor="base">戻る</a>
+                                    
+                                </div>
+                                <div class="mod-drawer-site-menu">
+                                    <div class="mod-drawer-site-menu__category">
+                                        <ul class="mod-drawer-site-menu__list">
+                                            <li>
+                                                <a href="/solution/industry/manufacturing">製造業向け</a>
+                                            </li>
+                                                        <li>
+                                                            <a href="/solution/industry/manufacturing/erp">基幹システム</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/manufacturing/scm">SCM／SCP</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/manufacturing/fa">FA</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/manufacturing/3d">3D</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/manufacturing/cad">CAD</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/manufacturing/cam">CAM</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/manufacturing/cae">CAE</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/manufacturing/plm">PDM／PLM</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/manufacturing/embedded">組込み</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/cross-industry/image-integration">映像解析</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/manufacturing/image">画像処理</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/manufacturing/xr">XR(MR/AR/VR)</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/manufacturing/global">グローバル</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/manufacturing/qv">品質検証</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/manufacturing/math">数理技術</a>
+                                                        </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="drawer-site-menu-lv4--3fe5ad6662254cec9ac1f8b8b9a3a466" class="mod-drawer-slide-menu" data-drawer-slide-menu="" aria-hidden="true">
+                                <div class="mod-drawer-slide-menu__action">
+                                	
+                                    <a class="mod-drawer-slide-menu__back" data-slide-to-href="" href="#drawer-site-menu-lv3--ebd3cd5a3f574a1ead8d21ee36c0bd85" data-pageanchor="base">戻る</a>
+                                    
+                                </div>
+                                <div class="mod-drawer-site-menu">
+                                    <div class="mod-drawer-site-menu__category">
+                                        <ul class="mod-drawer-site-menu__list">
+                                            <li>
+                                                <a href="/solution/industry/distribution">流通業向け</a>
+                                            </li>
+                                                        <li>
+                                                            <a href="/solution/industry/distribution/route-creator">輸配送計画自動化ソリューション</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/distribution/trade">貿易業務管理ソリューション</a>
+                                                        </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="drawer-site-menu-lv4--add1b75270904c3bae2f05e7d15e7901" class="mod-drawer-slide-menu" data-drawer-slide-menu="" aria-hidden="true">
+                                <div class="mod-drawer-slide-menu__action">
+                                	
+                                    <a class="mod-drawer-slide-menu__back" data-slide-to-href="" href="#drawer-site-menu-lv3--ebd3cd5a3f574a1ead8d21ee36c0bd85" data-pageanchor="base">戻る</a>
+                                    
+                                </div>
+                                <div class="mod-drawer-site-menu">
+                                    <div class="mod-drawer-site-menu__category">
+                                        <ul class="mod-drawer-site-menu__list">
+                                            <li>
+                                                <a href="/solution/industry/finance">金融業向け</a>
+                                            </li>
+                                                        <li>
+                                                            <a href="/solution/industry/finance/bank">銀行向けソリューション</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/finance/securities">証券会社向けソリューション</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/finance/pmodrive">金融機関向けPMO運営支援</a>
+                                                        </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="drawer-site-menu-lv4--629d4a99ad6e4db795274c59ad960d59" class="mod-drawer-slide-menu" data-drawer-slide-menu="" aria-hidden="true">
+                                <div class="mod-drawer-slide-menu__action">
+                                	
+                                    <a class="mod-drawer-slide-menu__back" data-slide-to-href="" href="#drawer-site-menu-lv3--ebd3cd5a3f574a1ead8d21ee36c0bd85" data-pageanchor="base">戻る</a>
+                                    
+                                </div>
+                                <div class="mod-drawer-site-menu">
+                                    <div class="mod-drawer-site-menu__category">
+                                        <ul class="mod-drawer-site-menu__list">
+                                            <li>
+                                                <a href="/solution/industry/education">文教向け</a>
+                                            </li>
+                                                        <li>
+                                                            <a href="/solution/industry/education/univ">大学向けソリューション</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/education/school">小中学校・高校向けソリューション</a>
+                                                        </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="drawer-site-menu-lv4--5d25626ba6674923b4b315aed9950fc4" class="mod-drawer-slide-menu" data-drawer-slide-menu="" aria-hidden="true">
+                                <div class="mod-drawer-slide-menu__action">
+                                	
+                                    <a class="mod-drawer-slide-menu__back" data-slide-to-href="" href="#drawer-site-menu-lv3--ebd3cd5a3f574a1ead8d21ee36c0bd85" data-pageanchor="base">戻る</a>
+                                    
+                                </div>
+                                <div class="mod-drawer-site-menu">
+                                    <div class="mod-drawer-site-menu__category">
+                                        <ul class="mod-drawer-site-menu__list">
+                                            <li>
+                                                <a href="/solution/industry/hotel">ホテル・飲食業向け</a>
+                                            </li>
+                                                        <li>
+                                                            <a href="/solution/industry/hotel/prevail">ホテルシステム（PMS）</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/hotel/prevailcleanup">清掃管理</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/hotel/maries">宴会システム</a>
+                                                        </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="drawer-site-menu-lv4--4910304e53e040989745d05e12852bce" class="mod-drawer-slide-menu" data-drawer-slide-menu="" aria-hidden="true">
+                                <div class="mod-drawer-slide-menu__action">
+                                	
+                                    <a class="mod-drawer-slide-menu__back" data-slide-to-href="" href="#drawer-site-menu-lv3--ebd3cd5a3f574a1ead8d21ee36c0bd85" data-pageanchor="base">戻る</a>
+                                    
+                                </div>
+                                <div class="mod-drawer-site-menu">
+                                    <div class="mod-drawer-site-menu__category">
+                                        <ul class="mod-drawer-site-menu__list">
+                                            <li>
+                                                <a href="/solution/industry/medical">医療機関向け</a>
+                                            </li>
+                                                        <li>
+                                                            <a href="/solution/industry/medical/cloudcomplianceservice">医療IT クラウドコンプライアンスサービス</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/medical/cloudconsultingservice">医療IT クラウドコンサルティングサービス</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/medical/conasas">医療機関向け医療DXサービス</a>
+                                                        </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="drawer-site-menu-lv4--2bd57e21dc5f456f938932935c0a0882" class="mod-drawer-slide-menu" data-drawer-slide-menu="" aria-hidden="true">
+                                <div class="mod-drawer-slide-menu__action">
+                                	
+                                    <a class="mod-drawer-slide-menu__back" data-slide-to-href="" href="#drawer-site-menu-lv3--ebd3cd5a3f574a1ead8d21ee36c0bd85" data-pageanchor="base">戻る</a>
+                                    
+                                </div>
+                                <div class="mod-drawer-site-menu">
+                                    <div class="mod-drawer-site-menu__category">
+                                        <ul class="mod-drawer-site-menu__list">
+                                            <li>
+                                                <a href="/solution/industry/pharma">製薬業向け</a>
+                                            </li>
+                                                        <li>
+                                                            <a href="/solution/industry/pharma/pvli-cr">副作用報告支援システム</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/pharma/pvli-rm">安全性情報進捗管理システム</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/pharma/pvli-rmcloud">安全性情報進捗管理クラウド</a>
+                                                        </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="drawer-site-menu-lv4--e664b72f85854f6a817c6e45f4e5a706" class="mod-drawer-slide-menu" data-drawer-slide-menu="" aria-hidden="true">
+                                <div class="mod-drawer-slide-menu__action">
+                                	
+                                    <a class="mod-drawer-slide-menu__back" data-slide-to-href="" href="#drawer-site-menu-lv3--ebd3cd5a3f574a1ead8d21ee36c0bd85" data-pageanchor="base">戻る</a>
+                                    
+                                </div>
+                                <div class="mod-drawer-site-menu">
+                                    <div class="mod-drawer-site-menu__category">
+                                        <ul class="mod-drawer-site-menu__list">
+                                            <li>
+                                                <a href="/solution/industry/cross-industry">クロスインダストリー</a>
+                                            </li>
+                                                        <li>
+                                                            <a href="/solution/industry/cross-industry/soltage">クラウド・ITインフラ</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/cross-industry/sec">セキュリティ</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/cross-industry/application">アプリケーション開発基盤</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/cross-industry/alm">ALM</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/cross-industry/accounting">会計・人事給与</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/cross-industry/workflow">ワークフロー</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/cross-industry/nenkin">年金</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/cross-industry/ai">AI</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/cross-industry/bi">BI</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/cross-industry/crm">CRM</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/cross-industry/eai">EAI</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/cross-industry/edi">EDI</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/cross-industry/fax">FAX/CTI</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/cross-industry/bigdata">ビッグデータ</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/cross-industry/database">データベース</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/cross-industry/smart-device">スマートデバイス</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/cross-industry/telework">テレワーク</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/cross-industry/contents">コンテンツソリューション</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/cross-industry/dmp">データマネジメント</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/cross-industry/ipaas">iPaaS 業務プロセス自動化支援サービス</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/cross-industry/emulator">端末エミュレータ</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/solution/industry/cross-industry/migration">マイグレーション</a>
+                                                        </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="drawer-site-menu-lv2--087fc9bd7b294d45a44e6a9292cd415b" class="mod-drawer-slide-menu" data-drawer-slide-menu="" aria-hidden="true">
+                                <div class="mod-drawer-slide-menu__action">
+                                	
+                                    <a class="mod-drawer-slide-menu__back" data-slide-to-href="" href="#drawer-site-menu-lv1--top" data-pageanchor="base">戻る</a>
+                                    
+                                </div>
+                                <div class="mod-drawer-site-menu">
+                                    <div class="mod-drawer-site-menu__category">
+                                        <ul class="mod-drawer-site-menu__list">
+                                            <li>
+                                                <a href="/column">コラム・ナレッジ</a>
+                                            </li>
+                                                        <li>
+                                                            <a href="/column/list">コラム一覧</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/column/event-report">イベント・セミナーレポート</a>
+                                                        </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="drawer-site-menu-lv2--07bde138b0884854b58a9058161a05e7" class="mod-drawer-slide-menu" data-drawer-slide-menu="" aria-hidden="true">
+                                <div class="mod-drawer-slide-menu__action">
+                                	
+                                    <a class="mod-drawer-slide-menu__back" data-slide-to-href="" href="#drawer-site-menu-lv1--top" data-pageanchor="base">戻る</a>
+                                    
+                                </div>
+                                <div class="mod-drawer-site-menu">
+                                    <div class="mod-drawer-site-menu__category">
+                                        <ul class="mod-drawer-site-menu__list">
+                                            <li>
+                                                <a href="/corporate">企業案内</a>
+                                            </li>
+                                                        <li>
+                                                            <a data-slide-to-href="" href="#drawer-site-menu-lv3--d9c3a40060734212aafb12ffea70e38b" data-pageanchor="base">キヤノンITソリューションズについて</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/corporate/newsrelease">ニュースリリース</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/corporate/sustainability">サステナビリティ</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/corporate/stic-dream">コミュニケーション誌</a>
+                                                        </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="drawer-site-menu-lv3--d9c3a40060734212aafb12ffea70e38b" class="mod-drawer-slide-menu" data-drawer-slide-menu="" aria-hidden="true">
+                                <div class="mod-drawer-slide-menu__action">
+                                	
+                                    <a class="mod-drawer-slide-menu__back" data-slide-to-href="" href="#drawer-site-menu-lv2--07bde138b0884854b58a9058161a05e7" data-pageanchor="base">戻る</a>
+                                    
+                                </div>
+                                <div class="mod-drawer-site-menu">
+                                    <div class="mod-drawer-site-menu__category">
+                                        <ul class="mod-drawer-site-menu__list">
+                                            <li>
+                                                <a href="/corporate/about">キヤノンITソリューションズについて</a>
+                                            </li>
+                                                        <li>
+                                                            <a href="/corporate/about/message">経営メッセージ</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/corporate/about/vision">経営ビジョン</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/corporate/about/business">事業内容</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/corporate/about/officer">役員一覧</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/corporate/about/location">事業所一覧</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/corporate/about/history">沿革</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/corporate/about/human">人材育成</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/corporate/about/quality">品質マネジメント</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/corporate/about/canon-mj-group">キヤノングループについて</a>
+                                                        </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+            </div>
+        </div>
+        <button type="button" class="mod-drawer__close" data-drawer-close="">
+        	
+            <span class="mod-drawer__close-label">閉じる</span>
+            
+        </button>
+    </div>
+</div>
+
+<nav class="site-nav-wide">
+    <div class="mod-global-nav-wide of--ui-cits" data-nav-type="global">
+        <div class="mod-global-nav-wide__container">
+                    <h1 class="mod-global-nav-wide__title"><a href="/">キヤノンITソリューションズ株式会社</a></h1>
+            <div class="mod-global-nav-wide__menu">
+                <ul class="mod-global-nav-wide__list">
+                                    <li>
+                                        <a href="/solution">ソリューション・製品</a>
+                                    </li>
+                                    <li>
+                                        <a href="/case">お客さま導入事例</a>
+                                    </li>
+                                    <li>
+                                        <a href="/seminar">セミナー・イベント</a>
+                                    </li>
+                                    <li>
+                                        <a href="/column">コラム・ナレッジ</a>
+                                    </li>
+                                    <li>
+                                        <a href="/corporate">企業案内</a>
+                                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+</nav>
+
+            </div>
+        </div>
+    </header>
+    <!-- /#header -->
+    <!-- #content -->
+    <main class="site-main">
+        <div id="content" class="container-fluid">
+            <div class="row">
+                <div class="component plain-html col-xs-12">
+    <div class="component-content">
+<!------------------------------------------------- メインビジュアルのhtmlを記述 ------------------------------------------------->
+<div class="str-outer of--cits-top-keyvisual">
+<div class="str-inner">
+<div class="component plain-html">
+<div class="component-content">
+<div class="mod--cits-top-keyvisual">
+<div class="js-carousel-cits-keyvisual" data-autoplay="" data-carousel-progress="play">
+<div data-carousel-slides="" class="swiper-fade swiper-initialized swiper-horizontal swiper-pointer-events swiper-watch-progress swiper-backface-hidden">
+<ul class="list swiper-wrapper" id="swiper-wrapper-97fd52e0ce467a29" aria-live="off" style="transition-duration: 0ms;"><li class="swiper-slide swiper-slide-duplicate swiper-slide-prev" data-swiper-slide-index="4" aria-label="5 / 5" aria-hidden="true" style="width: 1080px; transition-duration: 0ms; opacity: 1; transform: translate3d(0px, 0px, 0px);">
+<div class="mod--cits-top-keyvisual__item">
+<div class="mod--cits-top-keyvisual__image">
+<img class="of-wide" src="/-/media/Project/Canon/CanonITS/home/image/keyvisual/keyvisual20241202-2" alt="" hidden="">
+<img src="/-/media/Project/Canon/CanonITS/home/image/keyvisual/keyvisual20241202-2-sp" alt="">
+</div>
+<div class="mod--cits-top-keyvisual__content">
+<div class="mod--cits-top-keyvisual__text">
+<p class="mod--cits-top-keyvisual__title">異常発生をリアルタイムで検知し通知。<span class="txt--break of--block">画像処理による異常監視システム“ANOMALY WATCHER”</span></p>
+<p class="mod--cits-top-keyvisual__description">製造現場や倉庫などでの設備異常監視コスト低減と精度向上を実現。</p>
+</div>
+<a href="/solution/industry/manufacturing/embedded/anomaly-watcher/brand" class="mod--cits-top-keyvisual__link" tabindex="-1">
+<span class="btn">ANOMALY WATCHERブランドコンテンツへ</span>
+</a>
+</div>
+</div>
+</li>
+	
+<li class="swiper-slide swiper-slide-visible swiper-slide-active" data-swiper-slide-index="0" aria-label="1 / 5" tabindex="0" style="width: 1080px; transition-duration: 0ms; opacity: 1; transform: translate3d(-1080px, 0px, 0px);">
+<div class="mod--cits-top-keyvisual__item">
+<div class="mod--cits-top-keyvisual__image">
+<img class="of-wide" src="/-/media/Project/Canon/CanonITS/home/image/keyvisual/in-vehicle-system" alt="" hidden="" width="1920" height="590">
+<img src="/-/media/Project/Canon/CanonITS/home/image/keyvisual/in-vehicle-system-sp" alt="" width="750" height="880">
+</div>
+<div class="mod--cits-top-keyvisual__content">
+<div class="mod--cits-top-keyvisual__text">
+<p class="mod--cits-top-keyvisual__title">安心・安全なモビリティで<span class="txt--break of--block">”快適な移動を楽しめる未来を”</span></p>
+<p class="mod--cits-top-keyvisual__description">車載開発におけるさまざまな課題を<span class="txt--break of--block">当社の豊富な車載開発実績とソフトウェア技術力で支援します。</span></p>
+</div>
+<a href="/solution/industry/manufacturing/embedded/automotive" class="mod--cits-top-keyvisual__link">
+<span class="btn">車載システム開発へ</span>
+</a>
+</div>
+</div>
+</li>
+
+<li class="swiper-slide swiper-slide-next" data-swiper-slide-index="1" aria-label="2 / 5" tabindex="0" style="width: 1080px; transition-duration: 0ms; opacity: 0; transform: translate3d(-2160px, 0px, 0px);">
+<div class="mod--cits-top-keyvisual__item">
+<div class="mod--cits-top-keyvisual__image">
+<img class="of-wide" src="/-/media/Project/Canon/CanonITS/home/image/keyvisual/demand-forecast" alt="" hidden="" width="1920" height="590">
+<img src="/-/media/Project/Canon/CanonITS/home/image/keyvisual/demand-forecast-sp" alt="" width="880" height="750">
+</div>
+<div class="mod--cits-top-keyvisual__content">
+<div class="mod--cits-top-keyvisual__text">
+<p class="mod--cits-top-keyvisual__title">過去のデータや市場動向を分析し、<span class="txt--break of--block">将来の需要を予測。</span></p>
+<p class="mod--cits-top-keyvisual__description">科学的な需要予測に基づき、在庫管理、生産計画、販売戦略などを最適化。<span class="txt--break of--block">コスト削減や売上向上に繋げ、欠品なき在庫削減を実現。</span></p>
+</div>
+<a href="/solution/industry/manufacturing/scm/foremast" class="mod--cits-top-keyvisual__link">
+<span class="btn">需要予測・需給計画ソリューションへ</span>
+</a>
+</div>
+</div>
+</li>
+
+<li class="swiper-slide" data-swiper-slide-index="2" aria-label="3 / 5" tabindex="0" style="width: 1080px; transition-duration: 0ms; opacity: 0; transform: translate3d(-3240px, 0px, 0px);">
+<div class="mod--cits-top-keyvisual__item">
+<div class="mod--cits-top-keyvisual__image">
+<img class="of-wide" src="/-/media/Project/Canon/CanonITS/home/image/keyvisual/main-vasial-g" alt="共想創共創カンパーニーメインビジュアル画像" hidden="" width="1920" height="590">
+<img src="/-/media/Project/Canon/CanonITS/home/image/keyvisual/main-vasial-g-sp" alt="共想創共創カンパーニーメインビジュアル画像">
+</div>
+<div class="mod--cits-top-keyvisual__content">
+<div class="mod--cits-top-keyvisual__text">
+<p class="mod--cits-top-keyvisual__title">先進ICTと元気な社員で未来を拓く<span class="txt--break of--block">“共想共創カンパニー”</span></p>
+<p class="mod--cits-top-keyvisual__description"></p>
+</div>
+<a href="/corporate/about/vision" class="mod--cits-top-keyvisual__link">
+<span class="btn">経営ビジョン・VISION 2025へ</span>
+</a>
+</div>
+</div>
+</li>
+	
+<li class="swiper-slide" data-swiper-slide-index="3" aria-label="4 / 5" tabindex="0" style="width: 1080px; transition-duration: 0ms; opacity: 0; transform: translate3d(-4320px, 0px, 0px);">
+<div class="mod--cits-top-keyvisual__item">
+<div class="mod--cits-top-keyvisual__image">
+<img class="of-wide" src="/-/media/Project/Canon/CanonITS/home/image/keyvisual/keyvisual-bindvision" alt="" hidden="">
+<img src="/-/media/Project/Canon/CanonITS/home/image/keyvisual/keyvisual-bindvision-sp" alt="">
+</div>
+<div class="mod--cits-top-keyvisual__content">
+<div class="mod--cits-top-keyvisual__text">
+<p class="mod--cits-top-keyvisual__title">画像解析AIシステムをもっと身近に。<span class="txt--break of--block">”Bind Vision”</span></p>
+<p class="mod--cits-top-keyvisual__description">煙検出AI・水位測定AIが、防災用カメラシステムの映像から<span class="txt--break of--block">煙の発生、水位の異常を検知。AI防災による安心・安全な暮らしに貢献します。</span></p>
+</div>
+<a href="/solution/industry/cross-industry/image-integration/bindvision/brand" class="mod--cits-top-keyvisual__link">
+<span class="btn">Bind Visionブランドコンテンツへ</span>
+</a>
+</div>
+</div></li>
+	
+<li class="swiper-slide swiper-slide-duplicate-prev" data-swiper-slide-index="4" aria-label="5 / 5" tabindex="0" style="width: 1080px; transition-duration: 0ms; opacity: 0; transform: translate3d(-5400px, 0px, 0px);">
+<div class="mod--cits-top-keyvisual__item">
+<div class="mod--cits-top-keyvisual__image">
+<img class="of-wide" src="/-/media/Project/Canon/CanonITS/home/image/keyvisual/keyvisual20241202-2" alt="" hidden="">
+<img src="/-/media/Project/Canon/CanonITS/home/image/keyvisual/keyvisual20241202-2-sp" alt="">
+</div>
+<div class="mod--cits-top-keyvisual__content">
+<div class="mod--cits-top-keyvisual__text">
+<p class="mod--cits-top-keyvisual__title">異常発生をリアルタイムで検知し通知。<span class="txt--break of--block">画像処理による異常監視システム“ANOMALY WATCHER”</span></p>
+<p class="mod--cits-top-keyvisual__description">製造現場や倉庫などでの設備異常監視コスト低減と精度向上を実現。</p>
+</div>
+<a href="/solution/industry/manufacturing/embedded/anomaly-watcher/brand" class="mod--cits-top-keyvisual__link">
+<span class="btn">ANOMALY WATCHERブランドコンテンツへ</span>
+</a>
+</div>
+</div>
+</li>
+
+<!--<li class="swiper-slide">
+<div class="mod--cits-top-keyvisual__item">
+<div class="mod--cits-top-keyvisual__image">
+<img class="of-wide" src="/-/media/Project/Canon/CanonITS/home/image/keyvisual/keyvisual20241202-3" alt="MREAL x MIRAI VALUEイメージ画像" hidden>
+<img src="/-/media/Project/Canon/CanonITS/home/image/keyvisual/keyvisual20241202-3-sp" alt="">
+</div>
+<div class="mod--cits-top-keyvisual__content">
+<div class="mod--cits-top-keyvisual__text">
+<p class="mod--cits-top-keyvisual__title">キヤノンのMREALが<span class="txt--break of--block">映像体験の場常識を変える</span></p>
+<p class="mod--cits-top-keyvisual__description">MREAL x MIRAI VALUE</p>
+</div>
+<a href="/solution/industry/manufacturing/xr/mr/branding/mr-mv" class="mod--cits-top-keyvisual__link">
+<span class="btn">MREAL x MIRAI VALUEブランドコンテンツへ</span>
+</a>
+</div>
+</div>
+</li>
+<li class="swiper-slide">
+<div class="mod--cits-top-keyvisual__item">
+<div class="mod--cits-top-keyvisual__image">
+<img class="of-wide" src="/-/media/Project/Canon/CanonITS/home/image/keyvisual/keyvisual20241224-1" alt="STIC x DREAM vol.12イメージ画像" hidden>
+<img src="/-/media/Project/Canon/CanonITS/home/image/keyvisual/keyvisual20241224-1-sp" alt="">
+</div>
+<div class="mod--cits-top-keyvisual__content">
+<div class="mod--cits-top-keyvisual__text">
+<p class="mod--cits-top-keyvisual__title">キヤノンITSのコミュニケーション誌<span class="txt--break of--block">STIC x DREAM vol.12</span></p>
+<p class="mod--cits-top-keyvisual__description">特集：「バックオフィスDX」が今後の成長への鍵</p>
+</div>
+<a href="/corporate/stic-dream" class="mod--cits-top-keyvisual__link">
+<span class="btn">STIC x DREAMへ</span>
+</a>
+</div>
+</div>
+</li>-->
+<li class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="0" aria-label="1 / 5" aria-hidden="true" style="width: 1080px; transition-duration: 0ms; opacity: 0; transform: translate3d(-6480px, 0px, 0px);">
+<div class="mod--cits-top-keyvisual__item">
+<div class="mod--cits-top-keyvisual__image">
+<img class="of-wide" src="/-/media/Project/Canon/CanonITS/home/image/keyvisual/in-vehicle-system" alt="" hidden="" width="1920" height="590">
+<img src="/-/media/Project/Canon/CanonITS/home/image/keyvisual/in-vehicle-system-sp" alt="" width="750" height="880">
+</div>
+<div class="mod--cits-top-keyvisual__content">
+<div class="mod--cits-top-keyvisual__text">
+<p class="mod--cits-top-keyvisual__title">安心・安全なモビリティで<span class="txt--break of--block">”快適な移動を楽しめる未来を”</span></p>
+<p class="mod--cits-top-keyvisual__description">車載開発におけるさまざまな課題を<span class="txt--break of--block">当社の豊富な車載開発実績とソフトウェア技術力で支援します。</span></p>
+</div>
+<a href="/solution/industry/manufacturing/embedded/automotive" class="mod--cits-top-keyvisual__link" tabindex="-1">
+<span class="btn">車載システム開発へ</span>
+</a>
+</div>
+</div>
+</li></ul>
+<div data-carousel-controls="" class="swiper-controls">
+          <button type="button" data-carousel-prev="" aria-label="Previous slide"></button>
+          <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 1" aria-current="true"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 4"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 5"></span></div>
+          <div class="progress-circle">
+                                  <svg viewBox="0 0 100 100" class="progress-circle__svg-circle" aria-hidden="true">
+                                    <circle cx="50" cy="50" r="50" class="progress-circle__circle-base"></circle>
+                                    <circle cx="50" cy="50" r="25" class="progress-circle__progress a-progress-circle" data-carousel-progress="" style="animation-name: a-progress-circle; animation-duration: 12s; animation-play-state: running; animation-timing-function: linear;"></circle>
+                                  </svg>
+                                  <button type="button" class="progress-circle__play" data-carousel-play="" tabindex="-1"><span class="sr-label">play</span></button>
+                                  <button type="button" class="progress-circle__pause" data-carousel-pause="" tabindex="0"><span class="sr-label">pause</span></button>
+                                </div>
+          <button type="button" data-carousel-next="" aria-label="Next slide"></button>
+        </div>
+<!--/[data-carousel-slides] --><span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+<!-- /.js-carousel-cits-keyvisual --></div>
+<!-- /.mod--cits-top-keyvisual --></div>
+<!-- /.component-content --></div>
+<!-- /.component plain-html --></div>
+<!-- /.str-inner --></div>
+<!-- /.str-outer of--cits-top-keyvisual --></div>
+<!------------------------------------------------- メインビジュアルのhtmlを記述 ------------------------------------------------->    </div>
+</div>    <div class="component col-xs-12">
+        <div class="component-content">
+<div class="str-outer "><div class="str-inner">    <div class="component col-xs-12">
+        <div class="component-content">
+<div class="str-outer "><div class="str-inner">    <div class="component col-xs-12">
+        <div class="component-content">
+            <div class="mod-hdg-bl2 ">
+<h2><span>ニュースリリース・お知らせ</span></h2>            </div>
+        </div>
+    </div>
+
+<div class="component plain-html col-xs-12">
+    <div class="component-content">
+<div class="mod-notice of-white">
+  <div class="mod-notice__inner">
+    <a href="/corporate/info/2022/info-1228" class="mod-notice__link">
+      <p class="mod-notice__content">
+        <strong class="mod-notice__body">
+          <span class="mod-notice__title">ご注意ください</span>
+          <strong class="mod-notice__text">弊社の社名を無断使用した通販サイトに、ご注意ください</strong>
+        </strong>
+      </p>
+    </a>
+  <!-- /.mod-notice__inner --></div>
+<!-- /.mod-notice --></div>    </div>
+</div><div class="component tabs col-xs-12 initialized" data-properties="">
+    <div class="component-content">
+            <div class="mod-tab-ui js--tab-list">
+                <div class="mod-tab-ui__menu-current">
+                    <p class="mod-tab-ui__current-view"><span class="js--tab-list-current-view"></span></p>
+                    <button type="button" aria-label="選択メニューを開く" class="mod-tab-ui__dropdown-trigger js--tab-dropdown-trigger"></button>
+                </div>
+
+                <div class="mod-tab-ui__menu">
+                    <ul role="tablist" class="mod-tab-ui__list">
+
+
+    <li role="presentation" class="mod-tab-ui__list-item">
+        <button role="tab" aria-controls="panel6-1" aria-selected="true" class="mod-tab-ui__button" tabindex="0">
+ニュースリリース        </button>
+    </li>
+    <li role="presentation" class="mod-tab-ui__list-item">
+        <button role="tab" aria-controls="panel6-2" aria-selected="false" class="mod-tab-ui__button" tabindex="-1">
+お知らせ        </button>
+    </li>
+
+                    </ul>
+                </div>
+
+
+    <div id="panel6-1" role="tabpanel" aria-hidden="false" class="mod-tab-ui__panel" tabindex="0">
+                <div class="row">
+                    
+
+
+
+
+
+
+<div class="component col-xs-12">
+    <div class="component-content">
+            <div class="mod-list-news ">
+                <ul class="list">
+                        <li>
+                            <div class="state">
+                            	
+                                <span class="date">2025年3月26日</span>
+                                
+                                    <b class="tag">サービス／ソリューション</b>
+                            </div>
+                            <div class="content">
+                                <div class="summary">
+                                        <a href="/corporate/newsrelease/2025/pr-0326b">
+                                            業務のデジタル化を支援するプラットフォーム「WebPerformer-NX」がバージョンアップ<br>
+コード提案など生成AIを用いた新たな機能でDXを加速
+                                        </a>
+                                </div>
+                                
+                            </div>
+                        </li>
+                        <li>
+                            <div class="state">
+                            	
+                                <span class="date">2025年3月26日</span>
+                                
+                                    <b class="tag">人事</b>
+                            </div>
+                            <div class="content">
+                                <div class="summary">
+                                        <a href="/corporate/newsrelease/2025/pr-0326a">
+                                            <span style="color: #222222; background-color: #ffffff;">役員の異動に関するお知らせ</span>
+                                        </a>
+                                </div>
+                                
+                            </div>
+                        </li>
+                        <li>
+                            <div class="state">
+                            	
+                                <span class="date">2025年3月24日</span>
+                                
+                                    <b class="tag">サービス／ソリューション</b>
+                            </div>
+                            <div class="content">
+                                <div class="summary">
+                                        <a href="/corporate/newsrelease/2025/pr-0324">
+                                            標的型攻撃メール訓練/教育サービス「MudFix」の提供を開始<br>
+充実したテンプレートとカスタマイズで効果的な訓練を実現
+                                        </a>
+                                </div>
+                                
+                            </div>
+                        </li>
+                </ul>
+            </div>
+    </div>
+</div><div class="component col-xs-12" data-properties="">
+    <div class="component-content">
+                            <div class="mod-btn ">
+                <div class="inner">
+                    <div class="btn ">
+<a href="/corporate/newsrelease">ニュースリリース</a>                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+
+
+                </div>
+    </div>
+    <div id="panel6-2" role="tabpanel" aria-hidden="true" class="mod-tab-ui__panel" tabindex="0">
+                <div class="row">
+                    
+
+
+
+
+
+
+<div class="component col-xs-12">
+    <div class="component-content">
+            <div class="mod-list-news ">
+                <ul class="list">
+                        <li>
+                            <div class="state">
+                            	
+                                <span class="date">2025年3月14日</span>
+                                
+                            </div>
+                            <div class="content">
+                                <div class="summary">
+                                        <a href="/corporate/info/2025/info-0314">
+                                            みずほリサーチ＆テクノロジーズ株式会社に「EDI-Master」シリーズを導入<br>
+メインフレームからのオープン化とEDI環境のIP網への移行を同時に実現
+                                        </a>
+                                </div>
+                                
+                            </div>
+                        </li>
+                        <li>
+                            <div class="state">
+                            	
+                                <span class="date">2025年3月10日</span>
+                                
+                            </div>
+                            <div class="content">
+                                <div class="summary">
+                                        <a href="/corporate/info/2025/info-0310">
+                                            「Data Center Japan 2025」に協賛<br>
+データセンターサービスとITインフラサービスについて講演/展示
+                                        </a>
+                                </div>
+                                
+                            </div>
+                        </li>
+                        <li>
+                            <div class="state">
+                            	
+                                <span class="date">2025年3月3日</span>
+                                
+                            </div>
+                            <div class="content">
+                                <div class="summary">
+                                        <a href="/corporate/info/2025/info-0303">
+                                            「Security Days Spring 2025 Tokyo」に協賛<br>
+クラウドセキュリティに関する2つの講演と各種サービスを展示
+                                        </a>
+                                </div>
+                                
+                            </div>
+                        </li>
+                </ul>
+            </div>
+    </div>
+</div><div class="component col-xs-12" data-properties="">
+    <div class="component-content">
+                            <div class="mod-btn ">
+                <div class="inner">
+                    <div class="btn ">
+<a href="/corporate/info">お知らせ</a>                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+
+
+                </div>
+    </div>
+
+            </div>
+    </div>
+</div>
+
+
+
+</div></div>        </div>
+    </div>
+</div></div>        </div>
+    </div>
+    <div class="component col-xs-12">
+        <div class="component-content">
+<div class="str-outer var-02 mt-60"><div class="str-inner">    <div class="component col-xs-12">
+        <div class="component-content">
+            <div class="mod-hdg-bl2 ">
+<h2><span>ソリューション・製品を探す</span></h2>            </div>
+        </div>
+    </div>
+
+<div class="component col-xs-12" data-properties="">
+    <div class="component-content">
+                            <div class="mod-txt  ">
+                    <p>
+キヤノンITソリューションズでは、企業が抱える「業務上の課題・問題」を解決するため、様々なソリューションや製品・サービス情報を、ご提供しております。フリーワード検索や、各種一覧から、目的のソリューションをお探しください。詳しく、ご案内いたします。                    </p>
+            </div>
+    </div>
+</div>    <div class="component col-xs-12">
+        <div class="component-content">
+            <div class="mod-box ">
+                <div class="inner">
+<h3 class="title"><b><span style="font-weight: bolder; background-color: rgb(255, 255, 255);"><span scfieldtype="rich text" scdefaulttext="[No text in field]" class="scWebEditInput" id="fld_CF1A1A124A0C45F5A04FD4AD68BFFD02_B7224893D7704CA597AD3B1E73A36AA7_ja-JP_1_6ea458f3599f4a83b64687c8cd283a38_19210_edit" sc-part-of="field" style="outline-offset: 2px;">フリーワード検索</span></span></b></h3><div class="content"><div class="component plain-html col-xs-12">
+    <div class="component-content">
+<div id="pulldown-search--content" class="mod-pulldown__content">
+                                <form action="/search" method="GET">
+    <div class="mod-pulldown-search">
+    <input class="mod-pulldown-search__field" type="text" name="q" id="MF_form_phrase" autocomplete="off" placeholder="キーワードを入力してください">
+    <button class="mod-pulldown-search__button" type="submit" aria-label="検索"></button>
+    </div>
+</form>
+                            </div>    </div>
+</div><div class="component col-xs-12">
+    <div class="component-content">
+
+<hr class="pause-line">
+    </div>
+</div>
+    <div class="component col-xs-12">
+        <div class="component-content">
+            <div class="mod-hdg-al4 ">
+<h4><span>よく検索されているソリューション</span></h4>            </div>
+        </div>
+    </div>
+
+<div class="component col-xs-12" data-properties="">
+    <div class="component-content">
+                            <div class="mod-link-list of-horizontal-wide">
+                <ul class="list">
+                        <li>
+<a href="/solution/industry/cross-industry/migration">マイグレーション</a>                        </li>
+                        <li>
+<a href="/solution/industry/cross-industry/application/webperformer">ローコード開発</a>                        </li>
+                        <li>
+<a href="/solution/industry/cross-industry/edi">EDI（電子データ交換）</a>                        </li>
+                        <li>
+<a href="/solution/industry/manufacturing/xr/mr">MR（Mixed Reality：複合現実）</a>                        </li>
+                        <li>
+<a href="/solution/industry/manufacturing/image">画像処理</a>                        </li>
+                </ul>
+            </div>
+    </div>
+</div>
+</div>                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="component col-xs-12" data-properties="">
+    <div class="component-content">
+                            <div class="mod-btn " data-col="1" data-col-wide="3">
+                <div class="inner">
+                    <div class="btn ">
+<a href="/solution/industry">業種別から探す</a>                    </div>
+                    <div class="btn ">
+<a href="/solution/search">キーワード・条件指定検索</a>                    </div>
+                    <div class="btn ">
+<a href="/solution/products/kana">製品・サービス一覧から探す</a>                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+
+<div class="component col-xs-12" data-properties="">
+    <div class="component-content">
+                            <div class="mod-btn of-full">
+                <div class="inner">
+                    <div class="btn of-noFixWidth">
+<a href="/solution">ソリューション・製品</a>                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+
+</div></div>        </div>
+    </div>
+    <div class="component col-xs-12">
+        <div class="component-content">
+<div class="str-outer "><div class="str-inner">    <div class="component col-xs-12">
+        <div class="component-content">
+            <div class="mod-hdg-bl2 ">
+<h2><span>ピックアップコンテンツ</span></h2>            </div>
+        </div>
+    </div>
+
+
+
+<div class="component col-xs-12" data-properties="">
+    <div class="component-content">
+        
+                <div class="mod-pnl-04" data-col="1" data-col-wide="2">
+                    <ul class="list">
+                            <li>
+<a class="pnl" href="/solution/industry/cross-industry/soltage">                                        <div class="title"><span>ITインフラサービスSOLTAGE・ブランドコンテンツ</span></div>
+                                        <div class="description">
+                                            20年以上の実績あるITインフラサービスが、新ブランド「SOLTAGE」として“お客さまに寄り添う”サービスに生まれ変わります。
+                                        </div>
+                                    <div class="image">
+                                        <span>
+                                            <img src="/-/media/Project/Canon/CanonITS/home/image/pickup/soltage.png?h=444&amp;la=ja-JP&amp;w=720&amp;hash=081690EEBDBAD5CBF8B319AB4E1A0BF2" alt="" width="720" height="444">
+                                        </span>
+                                    </div>
+</a>                            </li>
+                            <li>
+<a class="pnl" href="/solution/industry/manufacturing/embedded/anomaly-watcher">                                        <div class="title"><span>ANOMALY WATCHERブランドサイト</span></div>
+                                        <div class="description">
+                                            定点カメラ映像に映る異常事象をリアルタイムで検知・通知するシステム。24時間見落としのない自動監視の実現が可能！
+                                        </div>
+                                    <div class="image">
+                                        <span>
+                                            <img src="/-/media/Project/Canon/CanonITS/home/image/pickup/anomaly-watcher.png?h=444&amp;la=ja-JP&amp;w=720&amp;hash=B73CA8251F1C303700FACD7E346A4F54" alt="" width="720" height="444">
+                                        </span>
+                                    </div>
+</a>                            </li>
+                            <li>
+<a class="pnl" href="/solution/industry/cross-industry/edi/edi-mastercloud/brand2">                                        <div class="title"><span>EDI-Master Cloudブランドサイト</span></div>
+                                        <div class="description">
+                                            クラウド型次世代EDIサービス「EDI-Master Cloud」をご紹介。EDIのクラウド移行はまとめてお任せください。
+                                        </div>
+                                    <div class="image">
+                                        <span>
+                                            <img src="/-/media/Project/Canon/CanonITS/home/image/pickup/edi-master-cloud.png?h=444&amp;la=ja-JP&amp;w=720&amp;hash=3471F2F21C1152D91978F07B27FEC841" alt="" width="720" height="444">
+                                        </span>
+                                    </div>
+</a>                            </li>
+                            <li>
+<a class="pnl" href="/solution/industry/cross-industry/image-integration/bindvision/brand">                                        <div class="title"><span>画像連携AIプラットフォーム Bind Vison</span></div>
+                                        <div class="description">
+                                            洗練されたダッシュボードによるデータの可視化が、エンドユーザーの確認作業と解析の効率化を図ります。
+                                        </div>
+                                    <div class="image">
+                                        <span>
+                                            <img src="/-/media/Project/Canon/CanonITS/home/image/pickup/bind-vision.png?h=444&amp;la=ja-JP&amp;w=720&amp;hash=6F01F0A3F28A458A5121B306E1B6E5AB" alt="" width="720" height="444">
+                                        </span>
+                                    </div>
+</a>                            </li>
+                    </ul>
+                </div>
+    </div>
+</div>
+    <div class="component col-xs-12">
+        <div class="component-content">
+            <div class="mod-hdg-bl2 ">
+<h2><span>セミナー・イベント</span></h2>            </div>
+        </div>
+    </div>
+
+    <div class="component col-xs-12">
+        <div class="component-content">
+            <div class="mod-box ">
+                <div class="inner">
+<p class="title"><b>注目のセミナー</b></p><div class="content">    <div class="component col-xs-12">
+        <div class="component-content">
+            <div class="mod-media-lyt " data-fix-media-ratio-wide="30">
+                <div class="inner">
+                    <div class="media">
+                        <div class="mod-media">
+                            <figure class="inner">
+                                        <div class="media">
+                                            <img src="/-/media/Project/Canon/CanonITS/home/seminar/image/seminar-pickup.jpg?h=222&amp;la=ja-JP&amp;w=360&amp;hash=A0F91F58853B1ECDA4E2AEC29E20B408" alt="" width="360" height="222">
+                                        </div>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="content">
+                        
+<div class="component general-filter-result col-xs-12">
+    <div class="component-content">
+            <div class="mod-general-search-result">
+                        <div class="notfound-search">
+                            <p>現在、開催予定のセミナーはありません。</p>
+                        </div>
+            </div>
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="component col-xs-12">
+        <div class="component-content">
+
+                    <div class="mod-hdg-al3 ">
+<h3><span>開催・出展予定の展示会・イベント</span></h3>                    </div>
+
+        </div>
+    </div>
+
+
+<div class="component general-filter-result col-xs-12">
+    <div class="component-content">
+            <div class="mod-general-search-result">
+                    <div class="output">
+                            <div class="mod-pnl-04" data-col="1" data-col-wide="2">
+                                <ul class="list">
+                                            <li class="js-filter-target" data-filter-keyword="">
+                                                <div>
+
+    
+
+    <a href="https://www.newpeaks.co.jp/speaks/manufacturing/?utm_source=email&amp;utm_campaign=canon" class="pnl">
+        <div class="title">
+                            <span>SPEAKS －製造業リーダーズサミット－</span>
+                    </div>
+        <div class="description">
+                            <p>本イベントは、「製造業のイノベーション」に向き合うすべてのビジネスパーソンのための学びの場です。キヤノンITソリューションズは、「キヤノンの光学技術が実現する​製造業イノベーションと具体事例​ ～キヤノンMRシステム「MREAL」～」の講演を行います。</p>
+                        <dl>
+                                    <dt>会期：</dt>
+                    <dd>2025年4月17日（木）<br>アーカイブ配信（申込者限定）あり</dd>
+                                                    <dt>会場：</dt>
+                    <dd>オンライン</dd>
+                            </dl>
+        </div>
+        <div class="image">
+            <span>
+                                <img src="/-/media/Project/Canon/CanonITS/home/seminar/event/image/speaks-mfg-2025.png?la=ja-JP&amp;hash=704905305DED49BAB59599BEF3ADF49F" alt="SPEAKS －製造業リーダーズサミット－" width="360" height="222">
+            </span>
+        </div>
+    </a>
+
+<ul class="tags">
+                        </ul></div>
+                                            </li>
+                                </ul>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div><div class="component col-xs-12" data-properties="">
+    <div class="component-content">
+                            <div class="mod-btn ">
+                <div class="inner">
+                    <div class="btn of-noFixWidth">
+<a href="/seminar">セミナー・イベント</a>                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+
+    <div class="component col-xs-12">
+        <div class="component-content">
+            <div class="mod-hdg-bl2 ">
+<h2><span>お客さま導入事例</span></h2>            </div>
+        </div>
+    </div>
+
+
+
+<div class="component col-xs-12" data-properties="">
+    <div class="component-content">
+                            <div class="mod-carousel-ref  js-carousel-ref " data-autoplay="">
+                <div class="mod-carousel-ref__inner">
+                    <div class="mod-carousel-ref__container">
+
+
+<div class="component col-xs-12" data-properties="">
+    <div class="component-content">
+        
+                <div class="mod-pnl-04 swiper-initialized swiper-horizontal swiper-pointer-events" data-col="2" data-col-wide="2" data-carousel-slides="">
+                    <ul class="list swiper-wrapper" id="swiper-wrapper-9a3ea3314205a928" aria-live="off" style="cursor: grab; transition-duration: 0ms; transform: translate3d(-2700px, 0px, 0px);"><li class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="4" aria-hidden="true">
+<a class="pnl" href="/solution/industry/education/case/education-21" tabindex="-1">                                        <div class="title"><span>学校法人津田塾大学 様</span></div>
+                                        <div class="description">
+                                            データセンター活用と学内ネットワーク増強に加え 統合ID 管理＋印刷管理のシステムを「in Campus シリーズ」で実現
+                                        </div>
+                                    <div class="image">
+                                        <span>
+                                            <img src="/-/media/Project/Canon/CanonITS/home/solution/industry/education/case/education_21/image/6639_ext_15_0.png?h=134&amp;la=ja-JP&amp;w=200&amp;hash=D45C58417C72413169969AEBD849F82F" alt="津田塾大学外観画像" width="200" height="134">
+                                        </span>
+                                    </div>
+</a>                            </li><li class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="0" aria-hidden="true">
+<a class="pnl" href="/solution/industry/manufacturing/case/mr-case-26" tabindex="-1">                                        <div class="title"><span>ダイキン工業株式会社様</span></div>
+                                        <div class="description">
+                                            「このスペースでは工具が入らない」製造上の問題をバーチャル空間で把握、早期に設計変更を行い計画遅延リスクを低減
+                                        </div>
+                                    <div class="image">
+                                        <span>
+                                            <img src="/-/media/Project/Canon/CanonITS/home/solution/industry/manufacturing/case/mr-case-26/image/daikin-pnl.jpg?h=444&amp;la=ja-JP&amp;w=720&amp;hash=69B97D58A9C67DF9C8B502162E4BFAF4" alt="ダイキン工業株式会社様" width="720" height="444">
+                                        </span>
+                                    </div>
+</a>                            </li><li class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="1" aria-hidden="true">
+<a class="pnl" href="/solution/industry/hotel/case/randb" tabindex="-1">                                        <div class="title"><span>ワシントンホテル株式会社 R&amp;Bホテル様</span></div>
+                                        <div class="description">
+                                            ２つのブランドで使用するホテル管理システム（PMS）の統一により、予約サイトコントローラーとの販売室数・料金の2WAY機能（レベニューコントロールへの応用）を実現しました。<br>
+                                        </div>
+                                    <div class="image">
+                                        <span>
+                                            <img src="/-/media/Project/Canon/CanonITS/home/solution/industry/hotel/case/randb/image/randb.jpg?h=444&amp;la=ja-JP&amp;w=720&amp;hash=5EB029B879864B0130F16A1448A06D5F" alt="写真：R&amp;Bホテル名古屋駅前" width="720" height="444">
+                                        </span>
+                                    </div>
+</a>                            </li><li class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="2" aria-hidden="true">
+<a class="pnl" href="/solution/industry/cross-industry/case/migration-10" tabindex="-1">                                        <div class="title"><span>みずほリサーチ＆テクノロジーズ株式会社様</span></div>
+                                        <div class="description">
+                                            メインフレームからのオープン化をリホストによるマイグレーションでオープン化。多様な言語で構成された複雑なシステムを短期間で刷新しました。<br>
+                                        </div>
+                                    <div class="image">
+                                        <span>
+                                            <img src="/-/media/Project/Canon/CanonITS/home/solution/industry/cross-industry/case/migration-10/image/migration-10.png?h=444&amp;la=ja-JP&amp;w=720&amp;hash=71563485C5B7C45261449802AAE8FB18" alt="みずほリサーチ＆テクノロジーズ株式会社様" width="720" height="444">
+                                        </span>
+                                    </div>
+</a>                            </li><li class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="3" aria-hidden="true">
+<a class="pnl" href="/solution/industry/manufacturing/case/scm-01" tabindex="-1">                                        <div class="title"><span>サッポロホールディングス株式会社様</span></div>
+                                        <div class="description">
+                                            物流キャパシティを考慮した生産・供給補充を計画<br>ドライバー不足、業務の属人化などの課題を解決<br>
+                                        </div>
+                                    <div class="image">
+                                        <span>
+                                            <img src="/-/media/Project/Canon/CanonITS/home/solution/industry/manufacturing/case/scm-01/image/10454_ext_15_0.png?h=444&amp;la=ja-JP&amp;w=720&amp;hash=2917B051869FE63547CB79AC8772AD72" alt="サッポロホールディングスロゴ画像" width="720" height="444">
+                                        </span>
+                                    </div>
+</a>                            </li><li class="swiper-slide swiper-slide-duplicate swiper-slide-prev" data-swiper-slide-index="4" aria-hidden="true">
+<a class="pnl" href="/solution/industry/education/case/education-21" tabindex="-1">                                        <div class="title"><span>学校法人津田塾大学 様</span></div>
+                                        <div class="description">
+                                            データセンター活用と学内ネットワーク増強に加え 統合ID 管理＋印刷管理のシステムを「in Campus シリーズ」で実現
+                                        </div>
+                                    <div class="image">
+                                        <span>
+                                            <img src="/-/media/Project/Canon/CanonITS/home/solution/industry/education/case/education_21/image/6639_ext_15_0.png?h=134&amp;la=ja-JP&amp;w=200&amp;hash=D45C58417C72413169969AEBD849F82F" alt="津田塾大学外観画像" width="200" height="134">
+                                        </span>
+                                    </div>
+</a>                            </li>
+                            <li class="swiper-slide swiper-slide-active" data-swiper-slide-index="0">
+<a class="pnl" href="/solution/industry/manufacturing/case/mr-case-26">                                        <div class="title"><span>ダイキン工業株式会社様</span></div>
+                                        <div class="description">
+                                            「このスペースでは工具が入らない」製造上の問題をバーチャル空間で把握、早期に設計変更を行い計画遅延リスクを低減
+                                        </div>
+                                    <div class="image">
+                                        <span>
+                                            <img src="/-/media/Project/Canon/CanonITS/home/solution/industry/manufacturing/case/mr-case-26/image/daikin-pnl.jpg?h=444&amp;la=ja-JP&amp;w=720&amp;hash=69B97D58A9C67DF9C8B502162E4BFAF4" alt="ダイキン工業株式会社様" width="720" height="444">
+                                        </span>
+                                    </div>
+</a>                            </li>
+                            <li class="swiper-slide swiper-slide-next" data-swiper-slide-index="1">
+<a class="pnl" href="/solution/industry/hotel/case/randb">                                        <div class="title"><span>ワシントンホテル株式会社 R&amp;Bホテル様</span></div>
+                                        <div class="description">
+                                            ２つのブランドで使用するホテル管理システム（PMS）の統一により、予約サイトコントローラーとの販売室数・料金の2WAY機能（レベニューコントロールへの応用）を実現しました。<br>
+                                        </div>
+                                    <div class="image">
+                                        <span>
+                                            <img src="/-/media/Project/Canon/CanonITS/home/solution/industry/hotel/case/randb/image/randb.jpg?h=444&amp;la=ja-JP&amp;w=720&amp;hash=5EB029B879864B0130F16A1448A06D5F" alt="写真：R&amp;Bホテル名古屋駅前" width="720" height="444">
+                                        </span>
+                                    </div>
+</a>                            </li>
+                            <li class="swiper-slide" data-swiper-slide-index="2">
+<a class="pnl" href="/solution/industry/cross-industry/case/migration-10">                                        <div class="title"><span>みずほリサーチ＆テクノロジーズ株式会社様</span></div>
+                                        <div class="description">
+                                            メインフレームからのオープン化をリホストによるマイグレーションでオープン化。多様な言語で構成された複雑なシステムを短期間で刷新しました。<br>
+                                        </div>
+                                    <div class="image">
+                                        <span>
+                                            <img src="/-/media/Project/Canon/CanonITS/home/solution/industry/cross-industry/case/migration-10/image/migration-10.png?h=444&amp;la=ja-JP&amp;w=720&amp;hash=71563485C5B7C45261449802AAE8FB18" alt="みずほリサーチ＆テクノロジーズ株式会社様" width="720" height="444">
+                                        </span>
+                                    </div>
+</a>                            </li>
+                            <li class="swiper-slide" data-swiper-slide-index="3">
+<a class="pnl" href="/solution/industry/manufacturing/case/scm-01">                                        <div class="title"><span>サッポロホールディングス株式会社様</span></div>
+                                        <div class="description">
+                                            物流キャパシティを考慮した生産・供給補充を計画<br>ドライバー不足、業務の属人化などの課題を解決<br>
+                                        </div>
+                                    <div class="image">
+                                        <span>
+                                            <img src="/-/media/Project/Canon/CanonITS/home/solution/industry/manufacturing/case/scm-01/image/10454_ext_15_0.png?h=444&amp;la=ja-JP&amp;w=720&amp;hash=2917B051869FE63547CB79AC8772AD72" alt="サッポロホールディングスロゴ画像" width="720" height="444">
+                                        </span>
+                                    </div>
+</a>                            </li>
+                            <li class="swiper-slide swiper-slide-duplicate-prev" data-swiper-slide-index="4">
+<a class="pnl" href="/solution/industry/education/case/education-21">                                        <div class="title"><span>学校法人津田塾大学 様</span></div>
+                                        <div class="description">
+                                            データセンター活用と学内ネットワーク増強に加え 統合ID 管理＋印刷管理のシステムを「in Campus シリーズ」で実現
+                                        </div>
+                                    <div class="image">
+                                        <span>
+                                            <img src="/-/media/Project/Canon/CanonITS/home/solution/industry/education/case/education_21/image/6639_ext_15_0.png?h=134&amp;la=ja-JP&amp;w=200&amp;hash=D45C58417C72413169969AEBD849F82F" alt="津田塾大学外観画像" width="200" height="134">
+                                        </span>
+                                    </div>
+</a>                            </li>
+                    <li class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="0" aria-hidden="true">
+<a class="pnl" href="/solution/industry/manufacturing/case/mr-case-26" tabindex="-1">                                        <div class="title"><span>ダイキン工業株式会社様</span></div>
+                                        <div class="description">
+                                            「このスペースでは工具が入らない」製造上の問題をバーチャル空間で把握、早期に設計変更を行い計画遅延リスクを低減
+                                        </div>
+                                    <div class="image">
+                                        <span>
+                                            <img src="/-/media/Project/Canon/CanonITS/home/solution/industry/manufacturing/case/mr-case-26/image/daikin-pnl.jpg?h=444&amp;la=ja-JP&amp;w=720&amp;hash=69B97D58A9C67DF9C8B502162E4BFAF4" alt="ダイキン工業株式会社様" width="720" height="444">
+                                        </span>
+                                    </div>
+</a>                            </li><li class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="1" aria-hidden="true">
+<a class="pnl" href="/solution/industry/hotel/case/randb" tabindex="-1">                                        <div class="title"><span>ワシントンホテル株式会社 R&amp;Bホテル様</span></div>
+                                        <div class="description">
+                                            ２つのブランドで使用するホテル管理システム（PMS）の統一により、予約サイトコントローラーとの販売室数・料金の2WAY機能（レベニューコントロールへの応用）を実現しました。<br>
+                                        </div>
+                                    <div class="image">
+                                        <span>
+                                            <img src="/-/media/Project/Canon/CanonITS/home/solution/industry/hotel/case/randb/image/randb.jpg?h=444&amp;la=ja-JP&amp;w=720&amp;hash=5EB029B879864B0130F16A1448A06D5F" alt="写真：R&amp;Bホテル名古屋駅前" width="720" height="444">
+                                        </span>
+                                    </div>
+</a>                            </li><li class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="2" aria-hidden="true">
+<a class="pnl" href="/solution/industry/cross-industry/case/migration-10" tabindex="-1">                                        <div class="title"><span>みずほリサーチ＆テクノロジーズ株式会社様</span></div>
+                                        <div class="description">
+                                            メインフレームからのオープン化をリホストによるマイグレーションでオープン化。多様な言語で構成された複雑なシステムを短期間で刷新しました。<br>
+                                        </div>
+                                    <div class="image">
+                                        <span>
+                                            <img src="/-/media/Project/Canon/CanonITS/home/solution/industry/cross-industry/case/migration-10/image/migration-10.png?h=444&amp;la=ja-JP&amp;w=720&amp;hash=71563485C5B7C45261449802AAE8FB18" alt="みずほリサーチ＆テクノロジーズ株式会社様" width="720" height="444">
+                                        </span>
+                                    </div>
+</a>                            </li><li class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="3" aria-hidden="true">
+<a class="pnl" href="/solution/industry/manufacturing/case/scm-01" tabindex="-1">                                        <div class="title"><span>サッポロホールディングス株式会社様</span></div>
+                                        <div class="description">
+                                            物流キャパシティを考慮した生産・供給補充を計画<br>ドライバー不足、業務の属人化などの課題を解決<br>
+                                        </div>
+                                    <div class="image">
+                                        <span>
+                                            <img src="/-/media/Project/Canon/CanonITS/home/solution/industry/manufacturing/case/scm-01/image/10454_ext_15_0.png?h=444&amp;la=ja-JP&amp;w=720&amp;hash=2917B051869FE63547CB79AC8772AD72" alt="サッポロホールディングスロゴ画像" width="720" height="444">
+                                        </span>
+                                    </div>
+</a>                            </li><li class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="4" aria-hidden="true">
+<a class="pnl" href="/solution/industry/education/case/education-21" tabindex="-1">                                        <div class="title"><span>学校法人津田塾大学 様</span></div>
+                                        <div class="description">
+                                            データセンター活用と学内ネットワーク増強に加え 統合ID 管理＋印刷管理のシステムを「in Campus シリーズ」で実現
+                                        </div>
+                                    <div class="image">
+                                        <span>
+                                            <img src="/-/media/Project/Canon/CanonITS/home/solution/industry/education/case/education_21/image/6639_ext_15_0.png?h=134&amp;la=ja-JP&amp;w=200&amp;hash=D45C58417C72413169969AEBD849F82F" alt="津田塾大学外観画像" width="200" height="134">
+                                        </span>
+                                    </div>
+</a>                            </li><li class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="0" aria-hidden="true">
+<a class="pnl" href="/solution/industry/manufacturing/case/mr-case-26" tabindex="-1">                                        <div class="title"><span>ダイキン工業株式会社様</span></div>
+                                        <div class="description">
+                                            「このスペースでは工具が入らない」製造上の問題をバーチャル空間で把握、早期に設計変更を行い計画遅延リスクを低減
+                                        </div>
+                                    <div class="image">
+                                        <span>
+                                            <img src="/-/media/Project/Canon/CanonITS/home/solution/industry/manufacturing/case/mr-case-26/image/daikin-pnl.jpg?h=444&amp;la=ja-JP&amp;w=720&amp;hash=69B97D58A9C67DF9C8B502162E4BFAF4" alt="ダイキン工業株式会社様" width="720" height="444">
+                                        </span>
+                                    </div>
+</a>                            </li></ul>
+                    <div data-carousel-controls="" class="swiper-controls">
+          <button type="button" data-carousel-prev="" aria-label="前へ"></button>
+          <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="スライド1に移動" aria-current="true"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="スライド2に移動"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="スライド3に移動"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="スライド4に移動"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="スライド5に移動"></span></div>
+          <div class="progress-circle">
+                                  <svg viewBox="0 0 100 100" class="progress-circle__svg-circle" aria-hidden="true">
+                                    <circle cx="50" cy="50" r="50" class="progress-circle__circle-base"></circle>
+                                    <circle cx="50" cy="50" r="25" class="progress-circle__progress" data-carousel-progress=""></circle>
+                                  </svg>
+                                  <button type="button" class="progress-circle__play" data-carousel-play=""><span class="sr-label">再生</span></button>
+                                  <button type="button" class="progress-circle__pause" data-carousel-pause=""><span class="sr-label">一時停止</span></button>
+                                </div>
+          <button type="button" data-carousel-next="" aria-label="次へ"></button>
+        </div>
+                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+
+    <div class="component col-xs-12">
+        <div class="component-content">
+                        <div class="mod-pnl-04" data-col="1" data-col-wide="3">
+                            <ul class="list">
+                                    <li>
+                                        <a href="/solution/industry/manufacturing/case/mr-case-30" class="pnl">
+                                            <div class="title"><span>東京セキスイハイム株式会社様</span></div>
+                                            <div class="description">
+まるで新居を訪れたような新感覚。ショールーム来場者に間取りやインテリアのバーチャル体験を提供                                                                                            </div>
+                                            <div class="image"><span><img src="/-/media/Project/Canon/CanonITS/home/solution/industry/manufacturing/case/mr-case-30/image/tokyosekisuiheim.jpg?la=ja-JP&amp;hash=525AC926982EFE4238551BFF7D28C961" alt="東京セキスイハイム株式会社様"></span></div>
+                                        </a>
+                                            <ul class="tags">
+                                            </ul>
+                                    </li>
+                                    <li>
+                                        <a href="/solution/industry/education/case/education-38" class="pnl">
+                                            <div class="title"><span>学校法人 廣池学園 麗澤大学様</span></div>
+                                            <div class="description">
+最新鋭の基盤システムへの更新により、シングルサインオン、遠隔印刷をはじめ、全学での BYOD 対応授業環境を整備                                                                                            </div>
+                                            <div class="image"><span><img src="/-/media/Project/Canon/CanonITS/home/solution/industry/education/case/education_38/education38.png?la=ja-JP&amp;hash=9E88AC6B5095417AA19676FD26240E25" alt=""></span></div>
+                                        </a>
+                                            <ul class="tags">
+                                            </ul>
+                                    </li>
+                                    <li>
+                                        <a href="/solution/industry/education/case/education-39" class="pnl">
+                                            <div class="title"><span>東京大学様</span></div>
+                                            <div class="description">
+コロナ禍を乗り越える過程で見えたいくつもの課題を in Campusで解決                                                                                            </div>
+                                            <div class="image"><span><img src="/-/media/Project/Canon/CanonITS/home/solution/industry/education/case/education_39/education39.png?la=ja-JP&amp;hash=91F31A4632606EF00B5CFC5E7A26D02A" alt=""></span></div>
+                                        </a>
+                                            <ul class="tags">
+                                            </ul>
+                                    </li>
+                            </ul>
+                        </div>
+        </div>
+    </div>
+
+<div class="component col-xs-12" data-properties="">
+    <div class="component-content">
+                            <div class="mod-btn ">
+                <div class="inner">
+                    <div class="btn ">
+<a href="/case">お客さま導入事例</a>                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+
+    <div class="component col-xs-12">
+        <div class="component-content">
+            <div class="mod-hdg-bl2 ">
+<h2><span>コラム・レポート</span></h2>            </div>
+        </div>
+    </div>
+
+
+
+<div class="component col-xs-12" data-properties="">
+    <div class="component-content">
+        
+                <div class="mod-pnl-04" data-col="2" data-col-wide="4" data-carousel-slides="">
+                    <ul class="list swiper-wrapper">
+                            <li class="swiper-slide">
+<a class="pnl" href="/column/img-column/01-40">                                        <div class="title"><span>画像処理IoTソリューション技術トレンド情報</span></div>
+                                        <div class="description">
+                                            画像処理のソリューション に携わること30年のシニアアプリケーションスペシャリストが解説する産業用ソリューションの技術トレンド解説です。
+                                        </div>
+                                    <div class="image">
+                                        <span>
+                                            <img src="/-/media/Project/Canon/CanonITS/home/column/image/10698_ext_06_0.jpg?h=180&amp;la=ja-JP&amp;w=270&amp;hash=758D7526AC22B51851E483B43ADCAE80" alt="画像技術トレンド情報" width="270" height="180">
+                                        </span>
+                                    </div>
+</a>                            </li>
+                            <li class="swiper-slide">
+<a class="pnl" href="/column/telework-column/14">                                        <div class="title"><span>日本テレワーク協会によるテレワークトレンド解説</span></div>
+                                        <div class="description">
+                                            多様な働き方を支援するテレワーク・ハイブリッドワーク。他社の採用状況から最新技術動向まで。一般社団法人日本テレワーク協会の村田氏に解説いただきます。
+                                        </div>
+                                    <div class="image">
+                                        <span>
+                                            <img src="/-/media/Project/Canon/CanonITS/home/column/image/10609_ext_06_0.jpg?h=180&amp;la=ja-JP&amp;w=270&amp;hash=B3FD53586DE686D0F9E98A36B62D48E8" alt="日本テレワーク協会によるテレワークトレンド解説 Vol.2" width="270" height="180">
+                                        </span>
+                                    </div>
+</a>                            </li>
+                            <li class="swiper-slide">
+<a class="pnl" href="/column/wp-column/03">                                        <div class="title"><span>ローコード開発プラットフォーム WebPerformerコラム</span></div>
+                                        <div class="description">
+                                            「ローコード開発のことは何となくわかるけど、選ぶ基準が難しい！」という方へ、選定ポイントをわかりやすく纏めました。
+                                        </div>
+                                    <div class="image">
+                                        <span>
+                                            <img src="/-/media/Project/Canon/CanonITS/home/column/list/images/10441_ext_06_0.png?h=180&amp;la=ja-JP&amp;w=270&amp;hash=89C6502EB3A0697A1696E0E555933CDB" alt="" width="270" height="180">
+                                        </span>
+                                    </div>
+</a>                            </li>
+                            <li class="swiper-slide">
+<a class="pnl" href="/column/foremast-column/19">                                        <div class="title"><span>需要予測・需給ソリューションコラム</span></div>
+                                        <div class="description">
+                                            在庫削減や適正化など、多くの企業にとって重要な経営課題である需要予測・需給計画。需要予測・需給計画の基本を分かりやすく解説します。
+                                        </div>
+                                    <div class="image">
+                                        <span>
+                                            <img src="/-/media/Project/Canon/CanonITS/home/column/list/images/10545_ext_06_0.png?h=180&amp;la=ja-JP&amp;w=270&amp;hash=363F0221DCEF595DBD880E2910E42481" alt="" width="270" height="180">
+                                        </span>
+                                    </div>
+</a>                            </li>
+                    </ul>
+                    <div data-carousel-controls=""></div>
+                </div>
+    </div>
+</div>
+<div class="component col-xs-12" data-properties="">
+    <div class="component-content">
+                            <div class="mod-btn ">
+                <div class="inner">
+                    <div class="btn ">
+<a href="/column">コラム・レポート</a>                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+
+    <div class="component col-xs-12">
+        <div class="component-content">
+            <div class="mod-hdg-bl2 ">
+<h2><span>企業案内</span></h2>            </div>
+        </div>
+    </div>
+
+
+
+<div class="component col-xs-12">
+    <div class="component-content">
+        <div class="mod-lyt " data-col="1" data-col-wide="2">
+            <div class="inner">
+                    <div class="col">
+    <div class="component col-xs-12">
+        <div class="component-content">
+            <div class="mod-media ">
+<figure class="inner"><div class="media"><img src="/-/media/Project/Canon/CanonITS/home/image/tennouzu-office.jpg?h=586&amp;la=ja-JP&amp;w=880&amp;hash=7AC1F4A83DAFB88C4D22A37971F83864" alt="写真：天王洲事業所" width="880" height="586" data-variantitemid="{AF2C3566-1DCF-4BEF-8010-BD7D91AFC4E8}" data-variantfieldname="Image"></div></figure>            </div>
+        </div>
+    </div>
+
+<div class="component col-xs-12" data-properties="">
+    <div class="component-content">
+                            <div class="mod-txt  ">
+                    <p>
+お客さまと共に考え、共にビジネスを創り出せるような会社であり続けたいという想いを込めたメッセージです。社員が自慢できる会社、さまざまなお客さまが真っ先に相談したい会社、このような企業をめざしています。                    </p>
+            </div>
+    </div>
+</div><div class="component col-xs-12" data-properties="">
+    <div class="component-content">
+                            <div class="mod-btn ">
+                <div class="inner">
+                    <div class="btn ">
+<a href="/corporate">企業案内</a>                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+
+
+                    </div>
+                    <div class="col">
+    <div class="component col-xs-12">
+        <div class="component-content">
+            <div class="mod-media ">
+<figure class="inner"><div class="media"><img src="/-/media/Project/Canon/CanonITS/home/image/randd.jpg?h=586&amp;la=ja-JP&amp;w=880&amp;hash=F0B59F1E1B498D644DB87048E6EEE652" alt="写真：R&amp;D（研究開発・先進技術の取り組みイメージ）" width="880" height="586" data-variantitemid="{A8E98467-DD93-4020-A817-4F7126248A33}" data-variantfieldname="Image"></div></figure>            </div>
+        </div>
+    </div>
+
+<div class="component col-xs-12" data-properties="">
+    <div class="component-content">
+                            <div class="mod-txt  ">
+                    <p>
+長年蓄積してきたソフトウェア技術、数理技術、言語処理技術、映像解析技術の研究成果をベースに、お客さまに新たな価値を提供する独自のソリューションの開発、サービスの実現に努めています。                    </p>
+            </div>
+    </div>
+</div><div class="component col-xs-12" data-properties="">
+    <div class="component-content">
+                            <div class="mod-btn ">
+                <div class="inner">
+                    <div class="btn ">
+<a href="/corporate/randd">研究開発・先進技術への取り組み</a>                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+
+
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>    <div class="component col-xs-12">
+        <div class="component-content">
+            <div class="mod-box ">
+                <div class="inner">
+<p class="title"><b>ご相談・お問い合わせ</b></p><div class="content">    <div class="component col-xs-12">
+        <div class="component-content">
+            <div class="mod-media-lyt " data-fix-media-ratio-wide="40">
+                <div class="inner">
+                    <div class="media">
+                        <div class="mod-media">
+                            <figure class="inner">
+                                        <div class="media">
+                                            <img src="/-/media/Project/Canon/CanonITS/home/image/contact-us.png?h=222&amp;la=ja-JP&amp;w=360&amp;hash=A8080D161B2E30E4A559E72E7776AEDA" alt="Contact usイメージ画像" width="360" height="222">
+                                        </div>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="content">
+                            <div class="mod-txt">
+                                <p>当社がご提供する製品・サービスをはじめとする各種ソリューションについてのご相談、お見積り、または、商品・サービス関連以外の当社に関するご意見・ご要望などを承っております。<br>また、報道関係者の方からの取材のお申し込み、ご相談、当社の事業活動についてなどのお問い合わせなども、こちらからお問い合わせください。</p>
+                            </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="component col-xs-12" data-properties="">
+    <div class="component-content">
+                            <div class="mod-btn ">
+                <div class="inner">
+                    <div class="btn ">
+<a href="/contact">お問い合わせ</a>                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+
+</div>                </div>
+            </div>
+        </div>
+    </div>
+
+</div></div>        </div>
+    </div>
+
+            </div>
+        </div>
+    </main>
+    <!-- /#content -->
+    <!-- #footer -->
+    <footer class="site-footer">
+        <div id="footer" class="container-fluid">
+            <div class="row">
+                
+
+
+
+
+
+
+
+
+<div class="component cmj_bottom_breadcrumb">
+    <div class="nav-location">
+    	
+        <h2 class="str-invisible">サイト内の現在位置</h2>
+        
+        <div class="inner">
+            <ul class="list">
+
+                    <li>
+                                    <a aria-current="page">HOME</a>
+
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="component footer">
+        <div class="site-footer__inner">
+<div class="site-footer__inner">
+<div class="mod-footer-menu">
+  <div class="row" data-nav-type="site">
+    <div class="col" data-col-site-title="">
+      <p class="mod-footer-menu__title"><strong><a href="https://www.canon-its.co.jp">キヤノンITソリューションズ株式会社</a></strong></p>
+    </div>
+    <div class="col">
+      <p class="mod-footer-menu__subtitle"><a href="/solution">ソリューション・製品</a></p>
+      <ul class="mod-footer-menu__list">
+        <li>
+          <a href="/solution/industry">業種から探す</a>
+          <ul class="mod-footer-menu__list" data-list-level="2">
+        <li>
+          <a href="/solution/industry/manufacturing">製造業向けソリューション</a>
+        </li>
+        <li>
+          <a href="/solution/industry/distribution">流通業向けソリューション</a>
+        </li>
+        <li>
+          <a href="/solution/industry/finance">金融業向けソリューション</a>
+        </li>
+        <li>
+          <a href="/solution/industry/education">文教向けソリューション</a>
+        </li>
+        <li>
+          <a href="/solution/industry/hotel">ホテル向けソリューション</a>
+        </li>			  
+        <li>
+          <a href="/solution/industry/medical">医療機関向けソリューション</a>
+        </li>
+        <li>
+          <a href="/solution/industry/pharma">製薬業向けソリューション</a>
+        </li>
+        <li>
+          <a href="/solution/industry/society">社会公共向けソリューション</a>
+        </li>		  
+		<li>
+          <a href="/solution/industry/cross-industry">クロスインダストリーソリューション</a>
+        </li>
+</ul>
+        </li>
+
+  		<li>
+          <a href="/solution/search">キーワード検索・条件指定検索</a>
+        </li>
+		    		<li>
+          <a href="/solution/products/kana">製品・サービス一覧（五十音順）</a>
+        </li>
+		    		<li>
+          <a href="/solution/products/alphabet">製品・サービス一覧（アルファベット別）</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col">
+      <p class="mod-footer-menu__subtitle"><a href="/case">お客さま導入事例</a></p>
+
+      <p class="mod-footer-menu__subtitle"><a href="/column">コラム・ナレッジ</a></p>
+      <ul class="mod-footer-menu__list">
+        <li>
+          <a href="/column/list">コラム一覧</a>
+        </li>
+        <li>
+          <a href="/column/tech-report">テクニカルレポート一覧</a>
+        </li>
+        <li>
+          <a href="/column/event-report">イベント・セミナーレポート一覧</a>
+        </li>
+      </ul>
+    </div> 
+  <div class="col">
+      <p class="mod-footer-menu__subtitle"><a href="/seminar">セミナー・イベント</a></p>
+      <ul class="mod-footer-menu__list">
+        <li>
+          <a href="/seminar/seminar">セミナー一覧</a>
+        </li>
+        <li>
+          <a href="/seminar/regular">定期講習会・トレーニング</a>
+        </li>
+        <li>
+          <a href="/seminar/experience">体験セミナー・ハンズオンセミナー</a>
+        </li>
+      </ul>
+    </div>
+  
+    <div class="col">
+      <p class="mod-footer-menu__subtitle"><a href="/corporate">企業案内</a></p>
+      <ul class="mod-footer-menu__list">
+        <li>
+          <a href="/corporate/about">キヤノンITソリューションズについて</a>
+          <ul class="mod-footer-menu__list" data-list-level="2">
+            <li>
+              <a href="/corporate/about/message">経営メッセージ</a>
+            </li>
+            <li>
+              <a href="/corporate/about/vision">ビジョン</a>
+            </li>
+            <li>
+              <a href="/corporate/about/business">事業内容</a>
+            </li>
+            <li>
+              <a href="/corporate/about/officer">役員一覧</a>
+            </li>
+            <li>
+              <a href="/corporate/about/location">事業所一覧</a>
+            </li>
+            <li>
+              <a href="/corporate/about/quality">品質マネジメント</a>
+            </li>
+          </ul>
+        </li>
+             <li>
+              <a href="/corporate/randd">研究開発・先進技術の取り組み</a>
+            </li>
+		  <li>
+              <a href="/corporate/sustainability">サステナビリティ</a>
+            </li>
+        <li>
+          <a href="/corporate/newsrelease">ニュースリリース</a>
+        </li>
+        <li>
+          <a href="/corporate/info">お知らせ</a>
+        </li>
+        <li>
+          <a href="/corporate/recruit">採用情報</a>
+          <ul class="mod-footer-menu__list" data-list-level="2">
+            <li>
+              <a href="https://www.i-note.jp/canon-its/contents/index.html">新卒採用/1day仕事体験情報</a>
+            </li>
+<li>
+              <a href="https://canon-its.official.career/">キャリア採用</a>
+            </li>
+			  <li>
+              <a href="https://canon-its.official.career/disability">障がい者採用</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>	  
+
+
+
+    
+  </div>
+  
+  <div class="row" data-nav-type="top-link">
+    <div class="col">
+      <a class="mod-footer-menu__top-link" href="https://www.canon-its.co.jp">キヤノンITソリューションズ トップへ</a>
+    </div>
+  </div>
+</div>            <div class="pagetop js-footer-pagetop is-invisible is-fixed">
+                <div class="wrap">
+                    <p class="link"><a href="#" data-pageanchor="base" tabindex="-1"><span class="sr-label">ページトップへ</span></a></p>
+                </div>
+            </div>
+
+        </div>            <div class="pagetop js-footer-pagetop">
+                <div class="wrap">
+                	
+                    <p class="link"><a href="#" data-pageanchor="base"><span class="sr-label">ページトップへ</span></a></p>
+                    
+                </div>
+            </div>
+            <div class="mod-footer-infomation">
+                <div class="mod-footer-infomation__inner">
+                        <ul class="mod-footer-infomation__list">
+                                    <li>
+                                        <a href="/contact">お問い合わせ</a>
+                                    </li>
+                                    <li>
+                                        <a href="/privacy-policy">個人情報の取り扱いについて</a>
+                                    </li>
+                                    <li>
+                                        <a href="/term-of-use">サイトのご利用について</a>
+                                    </li>
+                                    <li>
+                                        <a href="/sitemap">サイトマップ</a>
+                                    </li>
+                        </ul>
+                                            <p class="mod-footer-infomation__copyright">
+                            <small>© Canon IT Solutions Inc.</small>
+                        </p>
+                </div>
+            </div>
+        </div>
+</div>
+            </div>
+        </div>
+    </footer>
+    <!-- /#footer -->
+</div>
+<!-- /#wrapper -->
+
+    
+
+
+
+
+<!-- Common Body  Bottom Tag -->
+<script src="https://canon.jp/-/media/Project/Canon/CanonJP/shared/script.js?ver=1.0.7"></script><script id="" text="" charset="" type="text/javascript" src="https://s.yimg.jp/images/listing/tool/cv/ytag.js"></script>
+<script type="text/javascript" id="" charset="">(function(b){var a=window,c=document;a.ShanonCAMObject=b;a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)};a[b].date=1*new Date;var d=c.createElement("script");c=c.getElementsByTagName("script")[0];d.async=1;d.type="text/javascript";d.charset="utf-8";d.src="https://tracker.smartseminar.jp/static/js/cam3.js?_\x3d"+a[b].date;c.parentNode.insertBefore(d,c)})("_cam");_cam("create","mqCgyhtCyg-503");_cam("require","crossLinker");
+_cam("crossLinker:allLink",["www.canon-its.co.jp","www.canon-its.jp","search.canon-its.co.jp","reg.canon-its.co.jp"]);_cam("send");document.addEventListener("DOMContentLoaded",function(b){b=document.querySelectorAll("a");len=b.length;var a;for(a=0;a<len;a++){var c=b[a];c.addEventListener("click",function(a){a=a.target||a.srcElement;var b=a.href;0<b.lastIndexOf(".pdf")&&_cam("send",{url:a.href,title:a.href})})}});</script><div id="usonar-tracking" data-client="LID0tfrk7tkv9486" style="display: none;"></div>
+<iframe height="0" width="0" style="display: none; visibility: hidden;"></iframe><script id="" text="" charset="utf-8" type="text/javascript" src="//cdn.cookie.sync.usonar.jp/live_acsess/LID0tfrk7tkv9486.js"></script>
+<script type="text/javascript" id="" charset="">window.yjDataLayer=window.yjDataLayer||[];function ytag(){yjDataLayer.push(arguments)}ytag({type:"ycl_cookie",config:{ycl_use_non_cookie_storage:!0}});ytag({type:"ycl_cookie_extended"});</script><div class="func-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-expanded="false"><div class="modal-wrapper"><div class="modal-close"><span>Escキーで閉じる</span><button type="button"><span>モーダルを閉じる</span></button></div><div tabindex="0" class="modal-inner"></div></div></div>
+<script src="https://canon.jp/-/media/Project/Canon/CanonJP/common/script/lib/air-datepicker.min.js"></script>
+<script src="https://canon.jp/-/media/Project/Canon/CanonJP/common/script/lib/scroll-hint.min.js"></script>
+<script src="https://canon.jp/-/media/Project/Canon/CanonJP/common/script/lib/micromodal.min.js"></script>
+<script src="https://canon.jp/-/media/Project/Canon/CanonJP/common/script/lib/swiper-bundle.min.js"></script>
+<script src="https://canon.jp/-/media/Project/Canon/CanonJP/common/script/jquery.expansion-modules.js"></script>
+
+<script src="/-/media/Project/Canon/CanonITS/common/script/gsap.min.js"></script>
+<script src="/-/media/Project/Canon/CanonITS/common/script/scrollTrigger.min.js"></script>
+<script src="/-/media/Project/Canon/CanonITS/common/script/cits-modules.js"></script>
+
+
+<script src="/-/media/Base-Themes/Core-Libraries/scripts/optimized-min.js?t=20240404T091847Z"></script><script src="/-/media/Base-Themes/XA-API/Scripts/optimized-min.js?t=20231008T011345Z"></script><script src="/-/media/Base-Themes/Main-Theme/scripts/optimized-min.js?t=20231008T011348Z"></script><script src="/-/media/Base-Themes/Google-Maps-JS-Connector/Scripts/optimized-min.js?t=20240404T091855Z"></script><script src="/-/media/Base-Themes/Maps/Scripts/optimized-min.js?t=20231008T011356Z"></script><script src="/-/media/Base-Themes/SearchTheme/Scripts/optimized-min.js?t=20240404T091911Z"></script><script src="/-/media/Base-Themes/Components-Theme/Scripts/optimized-min.js?t=20231008T011359Z"></script><script src="/-/media/Base-Themes/Resolve-Conflicts/Scripts/optimized-min.js?t=20231008T011402Z"></script><script src="/-/media/Themes/Canon/CanonJP/CanonJP/Scripts/optimized-min.js?t=20241121T142035Z"></script>    <!-- /#wrapper -->
+<script type="text/javascript" src="/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&amp;ns=1&amp;cb=86174151" async=""></script>
+<div id="batBeacon835369601837" style="width: 0px; height: 0px; display: none; visibility: hidden;"><img id="batBeacon563215722484" width="0" height="0" alt="" src="https://bat.bing.com/action/0?ti=211037180&amp;tm=gtm002&amp;Ver=2&amp;mid=b6c69c27-27e9-4b26-aa5c-4e2aa9218394&amp;bo=1&amp;sid=dbf722400a9a11f0807e11e23704f37e&amp;vid=dbf739000a9a11f08700addc77398b36&amp;vids=1&amp;msclkid=N&amp;pi=918639831&amp;lg=en-US&amp;sw=1080&amp;sh=600&amp;sc=24&amp;tl=%E3%82%AD%E3%83%A4%E3%83%8E%E3%83%B3IT%E3%82%BD%E3%83%AA%E3%83%A5%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%BA%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE%EF%BD%9C%E3%82%AD%E3%83%A4%E3%83%8E%E3%83%B3%E3%83%9E%E3%83%BC%E3%82%B1%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%B8%E3%83%A3%E3%83%91%E3%83%B3%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97&amp;p=https%3A%2F%2Fwww.canon-its.co.jp%2F&amp;r=&amp;lt=5986&amp;evt=pageLoad&amp;sv=1&amp;cdb=AQAQ&amp;rn=197711" style="width: 0px; height: 0px; display: none; visibility: hidden;"></div><div style="display: none; visibility: hidden;">
+<script type="text/javascript">!function(b,c){if(void 0===c[b]){c[b]=function(){c[b].clients.push(this);this._init=[Array.prototype.slice.call(arguments)]};c[b].clients=[];for(var a=function(e){return function(){return this["_"+e]=this["_"+e]||[],this["_"+e].push(Array.prototype.slice.call(arguments)),this}},d="addRecord blockEvents fetchServerCookie fetchGlobalID fetchUserSegments resetUUID ready setSignedMode setAnonymousMode set trackEvent trackPageview trackClicks unblockEvents".split(" "),f=0;f<d.length;f++){var g=d[f];c[b].prototype[g]=
+a(g)}a=document.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===document.location.protocol?"https:":"http:")+"//cdn.treasuredata.com/sdk/2.5/td.min.js";d=document.getElementsByTagName("script")[0];d.parentNode.insertBefore(a,d)}}("Treasure",this);</script>
+
+<script type="text/javascript">var td=new Treasure({database:"layer0_task",writeKey:"10820/9d2b508763e1fe1db611d737e43c3c7bdaa32261",host:"in.treasuredata.com"});td.setSignedMode();td.set("$global","td_global_id","td_global_id");td.trackPageview("layer0_cits_access_log");</script>
+</div></body></html>

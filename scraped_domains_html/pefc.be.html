@@ -1,0 +1,2242 @@
+<!DOCTYPE html><html lang="en"><head>
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" href="/assets/favicon.ico">
+    <style>
+                :root {
+  --blue: #205076;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #cda320;
+  --green: #7ed321;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-light: #d1d1d1;
+  --gray-dark: #343a40;
+  --primary: #205076;
+  --secondary: #6c757d;
+  --success: #7ed321;
+  --info: #17a2b8;
+  --warning: #cda320;
+  --danger: #dc3545;
+  --light: #9b9b9b;
+  --dark: #343a40;
+  --white-gray: #f5f5f5;
+  --white: #fff;
+  --green: #7ed321;
+  --blue: #205076;
+  --yellow: #cda320;
+  --black: #151a14;
+  --green-dark: #207629;
+  --red: #8d1e1e;
+  --gray: #4a4a4a;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-xxl: 1366px;
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+}
+@-ms-viewport {
+  width: device-width;
+}
+header,
+section {
+  display: block;
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.125rem;
+  font-weight: normal;
+  line-height: 1.5;
+  color: #9b9b9b;
+  text-align: left;
+  background-color: #efefef;
+}
+h1,
+h2 {
+  margin-top: 0;
+  margin-bottom: 1.875rem;
+}
+p {
+  margin-top: 0;
+  margin-bottom: 1.875rem;
+}
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+::-webkit-file-upload-button {
+  font: inherit;
+  -webkit-appearance: button;
+}
+h1,
+h2 {
+  margin-bottom: 1.875rem;
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+  line-height: 1.1;
+  color: inherit;
+}
+h1 {
+  font-size: 3.6rem;
+}
+h2 {
+  font-size: 3rem;
+}
+.container-fluid {
+  width: 100%;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -0.75rem;
+  margin-left: -0.75rem;
+}
+.col-12 {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+}
+.col-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+.justify-content-end {
+  justify-content: flex-end !important;
+}
+.w-75 {
+  width: 75% !important;
+}
+.w-100 {
+  width: 100% !important;
+}
+.m-0 {
+  margin: 0 !important;
+}
+.pr-0 {
+  padding-right: 0 !important;
+}
+.pl-0 {
+  padding-left: 0 !important;
+}
+.pt-100 {
+  padding-top: 6.25rem !important;
+}
+.pb-60 {
+  padding-bottom: 3.75rem !important;
+}
+.pt-90 {
+  padding-top: 5.625rem !important;
+}
+@media (min-width: 576px) {
+  .pt-sm-80 {
+    padding-top: 5rem !important;
+  }
+  .pb-sm-100 {
+    padding-bottom: 6.25rem !important;
+  }
+}
+.text-white {
+  color: #fff !important;
+}
+.text-white {
+  color: #fff !important;
+}
+.bg-multiply-green {
+  background-blend-mode: multiply;
+  background-color: rgba(126, 211, 33, 0.24);
+  background-color: rgba(123, 193, 27, 0.35);
+  background-color: rgba(46, 74, 7, 0.4);
+  position: relative;
+}
+.bg-multiply-green::before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 20rem;
+  background: -moz-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(125, 185, 232, 0) 100%
+  );
+  background: -webkit-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(125, 185, 232, 0) 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(125, 185, 232, 0) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#000000", endColorstr="#007db9e8",GradientType=0 );
+}
+@media (max-width: 1199.98px) {
+  html {
+    font-size: 96%;
+  }
+}
+@media (max-width: 575.98px) {
+  html {
+    font-size: 94%;
+  }
+}
+.container-fluid {
+  max-width: 1600px;
+}
+.container-limited {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+@media (max-width: 1365.98px) {
+  .container-limited {
+    width: 84%;
+  }
+}
+@media (max-width: 991.98px) {
+  .container-limited {
+    width: 90%;
+  }
+}
+.container-fluid {
+  padding: 0;
+}
+@media (max-width: 991.98px) {
+  body #navigation {
+    background: rgba(0, 0, 0, 0);
+  }
+}
+body {
+  -webkit-font-smoothing: antialiased;
+}
+h1,
+h2 {
+  letter-spacing: -0.5px;
+}
+@media (max-width: 1199.98px) {
+  h1 {
+    font-size: 3.125rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 575.98px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 2.25rem;
+  }
+}
+header + #navigation .container-fluid {
+  background-color: rgba(0, 0, 0, 0);
+  box-shadow: none;
+}
+#navigation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1020;
+}
+@media (max-width: 991.98px) {
+  #navigation {
+    display: none;
+  }
+}
+#navigation .container-fluid {
+  position: relative;
+  background-color: #6cb61c;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1333333333);
+}
+#navigation #logo {
+  width: 5rem;
+  position: absolute;
+  top: 0.9375rem;
+  left: 1.5rem;
+  z-index: 10;
+}
+#navigation #logo h1 {
+  text-align: center;
+}
+@media (max-width: 1199.98px) {
+  #navigation #logo {
+    left: 1rem;
+  }
+}
+@media (min-width: 992px) {
+  #navigation #logo img {
+    height: 5rem;
+    width: auto !important;
+  }
+  #navigation.sticky {
+    position: fixed;
+  }
+  #navigation.sticky .container-fluid {
+    background-color: #6cb61c;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1333333333);
+  }
+  #navigation.sticky #logo img {
+    height: 4.6875rem;
+    width: auto !important;
+  }
+  #navigation .separator {
+    position: relative;
+    padding-left: 8.33333%;
+    height: 1px;
+    width: 100%;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  #navigation .separator {
+    padding-left: 9.6666%;
+  }
+}
+@media (min-width: 992px) {
+  #navigation .separator > div {
+    height: 1px;
+    width: 100%;
+    padding: 0 1.125rem;
+  }
+  #navigation .separator > div::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
+@media (min-width: 992px) {
+  #navigation #main-navigation {
+    position: relative;
+    z-index: 1;
+  }
+  #navigation #main-navigation > .nav {
+    padding-left: 8.33333%;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  #navigation #main-navigation > .nav {
+    padding-left: 9.6666%;
+    padding-right: 0.75rem;
+  }
+}
+@media (min-width: 992px) {
+  #navigation #main-navigation > .nav.open > .nav-item:hover > .nav-link,
+  #navigation #main-navigation > .nav .nav-item.hover > .nav-link {
+    color: #7ed321 !important;
+    background-color: #fff;
+    border-radius: 0.3rem 0.3rem 0 0;
+    position: relative;
+    z-index: 2;
+  }
+  #navigation
+    #main-navigation
+    > .nav.open
+    > .nav-item:hover
+    > .nav-link::before,
+  #navigation #main-navigation > .nav .nav-item.hover > .nav-link::before {
+    content: "";
+    position: absolute;
+    background: rgba(0, 0, 0, 0);
+    bottom: -10px;
+    top: -15px;
+    left: -100px;
+    right: -100px;
+    z-index: 2;
+  }
+  #navigation #main-navigation > .nav.open > .nav-item:hover > .nav.second,
+  #navigation #main-navigation > .nav .nav-item.hover > .nav.second {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+@media (min-width: 992px) {
+  #navigation #main-navigation > .nav > .nav-item.active > .nav-link {
+    border-bottom: 3px solid #fff;
+  }
+  #navigation #main-navigation > .nav > .nav-item:hover > .nav-link {
+    color: #fff;
+  }
+  #navigation #main-navigation > .nav > .nav-item > .nav-link {
+    color: #fff;
+    font-weight: bold;
+    position: relative;
+    padding: 0.875rem;
+    z-index: 3;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  #navigation #main-navigation > .nav > .nav-item > .nav-link {
+    padding-right: 0.3125rem;
+    padding-left: 0.3125rem;
+    font-size: 1rem;
+  }
+}
+@media (min-width: 992px) {
+  #navigation #main-navigation > .nav > .nav-item > .nav.second {
+    z-index: 1;
+    padding: 1.875rem 0;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-image: linear-gradient(-180deg, #ffffff 4%, #d8d8d8 100%);
+    clip-path: ellipse(200% 100% at 50% 0%);
+    -webkit-clip-path: ellipse(200% 100% at 50% 0%);
+  }
+  #navigation
+    #main-navigation
+    > .nav
+    > .nav-item
+    > .nav.second
+    > .nav-item
+    > .nav-link {
+    padding: 0;
+    border-radius: 0 0 0.3rem 0.3rem;
+    background-color: #fff;
+    font-family: "Oswald", sans-serif;
+    font-size: 1.5rem;
+    color: #9b9b9b;
+    line-height: 1.75rem;
+  }
+  #navigation
+    #main-navigation
+    > .nav
+    > .nav-item
+    > .nav.second
+    > .nav-item
+    > .nav-link
+    .img {
+    border-radius: 0.3rem 0.3rem 0 0;
+  }
+  #navigation
+    #main-navigation
+    > .nav
+    > .nav-item
+    > .nav.second
+    > .nav-item
+    > .nav-link
+    .link {
+    position: relative;
+    color: #757575;
+  }
+  #navigation
+    #main-navigation
+    > .nav
+    > .nav-item
+    > .nav.second
+    > .nav-item
+    > .nav-link
+    .link::after {
+    content: "";
+    font-size: 1.125rem;
+    line-height: 1.875rem;
+    font-family: "Font Awesome 5 Pro", sans-serif;
+    position: absolute;
+    top: 0.9375rem;
+    right: 0.3125rem;
+    margin-top: -1.0625rem;
+  }
+  #navigation
+    #main-navigation
+    > .nav
+    > .nav-item
+    > .nav.second
+    > .nav-item
+    > .nav-link
+    .text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+  #navigation
+    #main-navigation
+    > .nav
+    > .nav-item
+    > .nav.second
+    > .nav-item
+    > .nav-link:hover
+    .link {
+    color: #7ed321;
+  }
+  #navigation #main-navigation > .nav > .nav-item > .nav.second .nav.third {
+    padding-top: 0.625rem;
+  }
+  #navigation
+    #main-navigation
+    > .nav
+    > .nav-item
+    > .nav.second
+    .nav.third
+    > .nav-item
+    > .nav-link {
+    padding: 0.75rem 2rem 0.75rem 1rem;
+    font-size: 0.875rem;
+    color: #9b9b9b;
+    line-height: 1.4;
+    position: relative;
+  }
+  #navigation
+    #main-navigation
+    > .nav
+    > .nav-item
+    > .nav.second
+    .nav.third
+    > .nav-item
+    > .nav-link:hover {
+    color: #7ed321;
+  }
+  #navigation
+    #main-navigation
+    > .nav
+    > .nav-item
+    > .nav.second
+    .nav.third
+    > .nav-item
+    > .nav-link::after {
+    content: "";
+    font-size: 1.125rem;
+    font-family: "Font Awesome 5 Pro", sans-serif;
+    position: absolute;
+    right: 1rem;
+    line-height: 1.875rem;
+    top: 50%;
+    margin-top: -1.0625rem;
+  }
+  #navigation
+    #main-navigation
+    > .nav
+    > .nav-item
+    > .nav.second
+    .nav.third
+    > .nav-item:hover {
+    border-radius: 0.3rem;
+    background-color: #fff;
+  }
+  #navigation
+    #main-navigation
+    > .nav
+    > .nav-item
+    > .nav.second
+    .nav.third
+    > .nav-item:hover
+    + .nav-item
+    > .nav-link {
+    border-color: rgba(0, 0, 0, 0);
+  }
+  #navigation
+    #main-navigation
+    > .nav
+    > .nav-item
+    > .nav.second
+    .nav.third
+    > .nav-item:hover
+    > .nav-link {
+    border-color: rgba(0, 0, 0, 0) !important;
+  }
+  #navigation
+    #main-navigation
+    > .nav
+    > .nav-item
+    > .nav.second
+    .nav.third
+    > .nav-item
+    + .nav-item
+    > .nav-link {
+    border-top: 1px solid rgba(151, 151, 151, 0.3);
+  }
+}
+@media (min-width: 992px) {
+  #navigation #secondary-navigation {
+    padding: 0 1.125rem;
+    padding-left: 8.33333%;
+    position: relative;
+    z-index: 2;
+  }
+  #navigation #secondary-navigation > .nav {
+    padding-left: 1.125rem;
+    position: relative;
+  }
+  #navigation #secondary-navigation > .nav > .nav-item {
+    position: relative;
+  }
+  #navigation #secondary-navigation > .nav > .nav-item.has-pages .nav-link {
+    position: relative;
+  }
+  #navigation
+    #secondary-navigation
+    > .nav
+    > .nav-item.has-pages:hover
+    .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    left: 0.875rem;
+    right: 0.875rem;
+    height: 3px;
+    background-color: #fff;
+  }
+  #navigation #secondary-navigation > .nav > .nav-item:hover > .nav-link {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  #navigation #secondary-navigation > .nav > .nav-item.active > .nav-link {
+    border-bottom: 1px;
+    color: #fff;
+    font-weight: bold;
+  }
+  #navigation #secondary-navigation > .nav > .nav-item > .nav-link {
+    padding: 0.875rem;
+    font-size: 0.875rem;
+    color: #e8e8e8;
+  }
+  #navigation #secondary-navigation > .nav > .nav-item > .nav-link:hover {
+    color: #fff;
+  }
+  #navigation #secondary-navigation > .nav > .nav-item > .nav {
+    border-radius: 0.2rem;
+    border-top-left-radius: 0;
+    display: none;
+    background-color: #fff;
+    position: absolute;
+    top: 3rem;
+    left: 0.875rem;
+    padding: 0.4375rem;
+  }
+  #navigation
+    #secondary-navigation
+    > .nav
+    > .nav-item
+    > .nav
+    > .nav-item:hover
+    > .nav-link {
+    color: #7ed321;
+  }
+  #navigation
+    #secondary-navigation
+    > .nav
+    > .nav-item
+    > .nav
+    > .nav-item
+    > .nav-link {
+    font-size: 0.875rem;
+    color: #9b9b9b;
+  }
+  #navigation #secondary-navigation > .nav > .nav-item.last > .nav {
+    right: 0.875rem;
+    left: auto;
+    border-top-left-radius: 0.2rem;
+    border-top-right-radius: 0;
+  }
+  #navigation
+    #secondary-navigation
+    > .nav
+    > .nav-item:nth-last-child(-n + 1)
+    .nav-link {
+    padding-right: 0;
+  }
+}
+#navigation-mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0);
+}
+#navigation-mobile.sticky {
+  background-color: #6cb61c;
+}
+#navigation-mobile i {
+  font-size: 1.875rem;
+  color: #fff;
+}
+#navigation-mobile .col-logo {
+  max-width: 4.0625rem;
+}
+#navigation-mobile #mobile-nav {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  opacity: 0;
+}
+header {
+  background-color: #fff;
+}
+header .item {
+  background-position: center center;
+  background-size: cover;
+  clip-path: ellipse(180% 100% at 50% 0%);
+  -webkit-clip-path: ellipse(180% 100% at 50% 0%);
+}
+header .item h2 {
+  font-size: 4.5rem;
+}
+@media (max-width: 1199.98px) {
+  header .item h2 {
+    font-size: 3.5rem;
+  }
+}
+@media (max-width: 991.98px) {
+  header .item h2 {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 575.98px) {
+  header .item h2 {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 767.98px) {
+  header .item .w-75 {
+    width: 100% !important;
+  }
+}
+header .item p {
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+@media (max-width: 575.98px) {
+  header .item p {
+    font-size: 1.125rem;
+  }
+}
+@media (max-width: 575.98px) {
+  header .item h2 {
+    font-size: 2.5rem;
+  }
+  header .item p {
+    font-size: 1.125rem;
+    width: 100% !important;
+  }
+}
+            </style>
+    <meta charset="UTF-8">    <title>PEFC Belgique</title>                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.5.0/css/lightgallery-bundle.min.css" integrity="sha512-lgRFGedXdci5Ykc5Wbgd8QCzt3lBmnkWcMRAS8myln2eMCDwQBrHmjqvUj9rBcKOyWMC+EYJnvEppggw1v+m8Q==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body class="has-header">
+
+<!--consent banner-->
+<section id="consent-banner" class="d-print-none active added">
+    <div class="container p-30">
+        <div class="row">
+            <div class="col-12">
+                <p class="text-center d-none d-md-block">
+                    <img width="80" height="80" style="opacity: 0.8" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9JzIwMCcgd2lkdGg9JzIwMCcgIGZpbGw9IiNmZmZmZmYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZlcnNpb249IjEuMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMDAgMTAwIiB4bWw6c3BhY2U9InByZXNlcnZlIj48Zz48Zz48Zz48cGF0aCBkPSJNNDUuMzM3LDcwLjEwNGMtMC45NC0wLjQ3MS0xLjg5OS0wLjYxOS0yLjk0LTAuNzA5Yy0xLjA4LTAuMDkyLTEuODQsMC4yNS0yLjY3LDAuOTA4Yy0wLjUyLDAuNDIyLTEuMDM5LDAuODMtMS41NiwxLjI1ICAgICBjLTAuMTQ5LDAuMTIxLTAuMjksMC4yMy0wLjQ0LDAuMzUybC0wLjAxLDAuMDFjMCwwLDAsMC4wMS0wLjAxLDAuMDFjLTAuNCwwLjQxLTAuNjcsMC45NzEtMC43NiwxLjUzOSAgICAgYzAsMC4wNy0wLjAxLDAuMTMxLTAuMDEsMC4yMDFjMCwwLjUsMC4xMjksMS4wMSwwLjM2OSwxLjQzOWMwLjAxLDAuMDIsMC4wMjEsMC4wMjksMC4wMywwLjA1MSAgICAgYzAuMTEsMC4xNDgsMC4yMiwwLjI5OSwwLjM0MSwwLjQzOWMwLjAxLDAuMDIsMC4wMiwwLjAyOSwwLjAzOSwwLjA1MWMxLjMzLDEuNzA5LDMuMDcsMy4wMiw1LjEzMSwzLjc2ICAgICBjMC43OTksMC4yOTksMi4wMjktMC4wMSwyLjU2OS0wLjY4YzEuMTItMS4zNzEsMi4wNS0yLjc4MSwyLjIyOS00LjU4QzQ3LjgxNiw3Mi40NzUsNDYuODE2LDcwLjg0NCw0NS4zMzcsNzAuMTA0eiAgICAgIE00My4wMjcsNzMuNTk0Yy0wLjAxLTAuMDItMC4wMy0wLjAyOS0wLjA1MS0wLjA1MWMwLjAyMSwwLjAxLDAuMDMxLDAuMDIxLDAuMDUxLDAuMDQxVjczLjU5NHoiPjwvcGF0aD48L2c+PGc+PHBhdGggZD0iTTM3LjcwNyw3MS45MjRjLTAuNCwwLjQxLTAuNjcsMC45NzEtMC43NiwxLjUzOUMzNi45ODcsNzIuODczLDM3LjIyNyw3Mi4zMDMsMzcuNzA3LDcxLjkyNHoiPjwvcGF0aD48L2c+PGc+PHBhdGggZD0iTTM3LjMwNyw3NS4xMDRjLTAuMzEtMC40My0wLjQyLTAuOTM5LTAuMzY5LTEuNDM5QzM2LjkzOCw3NC4xNjQsMzcuMDY2LDc0LjY3NCwzNy4zMDcsNzUuMTA0eiI+PC9wYXRoPjwvZz48Zz48cGF0aCBkPSJNNDMuMDI3LDczLjU4NHYwLjAxYy0wLjAxLTAuMDItMC4wMy0wLjAyOS0wLjA1MS0wLjA1MUM0Mi45OTcsNzMuNTUzLDQzLjAwOCw3My41NjQsNDMuMDI3LDczLjU4NHoiPjwvcGF0aD48L2c+PC9nPjxnPjxnPjxwYXRoIGQ9Ik02Ny42MjcsNjcuMTMxYy0xLjU4LTEuMTA5LTMuNTUtMS4zNzktNS4yOS0yLjE5OWMtMS4wNS0wLjQ5LTEuNTEtMS45Mi0xLjIxLTIuOThjMC4yOS0xLjAyOSwwLjU5LTIuMDQ5LDAuODgtMy4wOCAgICAgYzAuMTcxLTAuNjA5LDAuNDktMS4wNDksMC44OS0xLjM1bDAuMTIxLTAuMDljMS4wNDktMC43ODksMi4zNzktMC41MjksMy40MSwwLjI3YzIsMS41NjEsMy4zMjksMy44MTEsNC44MSw1LjgyICAgICBDNzIuODA3LDY1LjYzMSw2OS43MzcsNjguNjIxLDY3LjYyNyw2Ny4xMzF6Ij48L3BhdGg+PC9nPjwvZz48Zz48Zz48cGF0aCBkPSJNMzIuMTY3LDUzLjQ4NnYwLjAzMWMwLDEuNTU5LTAuMTQsMi45NjktMC44LDQuNDFjLTAuMzcsMC44MDktMS40MiwxLjMyLTIuMjgsMS4zMDljLTIuMDMtMC4wMjktMy43MjktMC42Ny00Ljk3OS0yLjI5OSAgICAgYy0xLjAxMS0xLjMxMS0xLjE3LTMuMTYtMS4xODEtNC43NWMtMC4wMjEtMS42NSwxLjctMy4wODEsMy4zNDEtMi41NDFjMS4zMTksMC40NCwyLjYzOSwwLjg4LDMuOTU5LDEuMzIgICAgIGMwLjIyMSwwLjA3LDAuNDMsMC4xNjksMC42MiwwLjNjMC42ODEsMC40LDEuMTUsMS4wNTksMS4yOCwxLjgyQzMyLjE1Niw1My4yMTcsMzIuMTY3LDUzLjM0OCwzMi4xNjcsNTMuNDg2eiI+PC9wYXRoPjwvZz48Zz48cGF0aCBkPSJNMzIuMTI3LDUzLjA4OGMtMC4xMy0wLjc2Mi0wLjYtMS40Mi0xLjI4LTEuODJDMzEuNDk3LDUxLjU5OCwzMi4wMDcsNTIuMjA3LDMyLjEyNyw1My4wODh6Ij48L3BhdGg+PC9nPjwvZz48Zz48Zz48cGF0aCBkPSJNNTEuODIyLDU2LjM1NGMtMC40MDktMC44Mi0xLjI2LTIuMzMtMS4xOC0yLjV2LTAuMDFjMC4xNi0wLjUsMC4yMTEtMC45OSwwLjI4LTEuNTFjMC4xNi0xLjE5OS0wLjkzLTIuMjItMS45NC0yLjU1ICAgICBjLTAuNTY5LTAuMi0xLjE4OS0wLjIyLTEuNzctMC40MWMtMS4wNjEtMC4zNS0yLjQ3LDAuMjEtMi45OCwxLjIyMWMtMC4yMDksMC40MS0wLjQzOSwwLjg1OS0wLjY4LDEuMzMgICAgIGMtMC44LDAuMTctMS40MzksMC42NDEtMS45NDksMS4zMmMtMC40NzEsMC42MjktMC41NTEsMS40NDktMC41MTEsMi4yMDljMC4wMywwLjU2MSwwLjIxLDAuOTksMC40NiwxLjM4MSAgICAgYy0wLjQsMS42MTktMC40MzksMy4yNCwwLjMwMSw0LjY1YzEuMzksMi42Niw0Ljc2LDEuODY5LDYuNzk5LDAuNjM5QzUwLjYwNCw2MC45NzUsNTMuMDgzLDU4Ljg3Myw1MS44MjIsNTYuMzU0eiI+PC9wYXRoPjwvZz48L2c+PGc+PGc+PHBhdGggZD0iTTUwLjE2NCwzNi4xOTNjLTEuMjYtMS4zOC0zLjQyLTEuNjg5LTUuMTgtMS43MWMtMS4xMDktMC4wMS0yLjMyLDAuODExLTIuNTUsMS45NGMtMC4xNCwwLjcyOS0wLjI5LDEuNDctMC40NCwyLjIgICAgIGMtMC4wMSwwLjA2LTAuMDIsMC4xMTktMC4wMiwwLjE4Yy0wLjAxLDAuMDEtMC4wMSwwLjAyLTAuMDEsMC4wM2MtMC4xMiwwLjg4LDAuMTMsMS43NSwwLjcxLDIuMzU5YzAuMDEsMCwwLjAxLDAsMC4wMSwwLjAxICAgICBjMC4wMTEsMC4wMTEsMC4wMjEsMC4wMjEsMC4wMywwLjAzYzEuMTYsMS4xMSwyLjY4OSwxLjk1LDQuMzQsMS44OGMxLjUyLTAuMDY5LDMuMTA5LTAuODU5LDMuODExLTIuMjcgICAgIEM1MS42NjQsMzkuMjMzLDUxLjM3NSwzNy41MTMsNTAuMTY0LDM2LjE5M3oiPjwvcGF0aD48L2c+PGc+PHBhdGggZD0iTTQyLjY3NSw0MS4xOTNjLTAuNjQtMC42Mi0wLjg3LTEuNTItMC43MS0yLjM1OUM0MS44NDUsMzkuNzEzLDQyLjA5NSw0MC41ODMsNDIuNjc1LDQxLjE5M3oiPjwvcGF0aD48L2c+PC9nPjxnPjxnPjxwYXRoIGQ9Ik03NC4yMjMsMTkuNDU1YzMuNDA4LDAsMy40MDgtNS4yODcsMC01LjI4N0M3MC44MTYsMTQuMTY3LDcwLjgxNiwxOS40NTUsNzQuMjIzLDE5LjQ1NUw3NC4yMjMsMTkuNDU1eiI+PC9wYXRoPjwvZz48L2c+PGc+PGc+PHBhdGggZD0iTTcxLjY2OCwzMi4zNjNjMy40MDcsMCwzLjQwNy01LjI4MiwwLTUuMjgyQzY4LjI2LDI3LjA4MSw2OC4yNiwzMi4zNjMsNzEuNjY4LDMyLjM2M0w3MS42NjgsMzIuMzYzeiI+PC9wYXRoPjwvZz48L2c+PGc+PGc+PHBhdGggZD0iTTg0LjIwNCw0MC4wMTNjMS45MTQsMCwxLjkxNC0yLjk2NywwLTIuOTY3QzgyLjI4OSwzNy4wNDYsODIuMjg5LDQwLjAxMyw4NC4yMDQsNDAuMDEzTDg0LjIwNCw0MC4wMTN6Ij48L3BhdGg+PC9nPjwvZz48Zz48cGF0aCBkPSJNNTAsOTEuMzgzYy0yMC40MDIsMC0zNy0xNi41OTgtMzctMzdjMC0yMC40MDIsMTYuNTk4LTM3LDM3LTM3YzEuODgxLDAsMy43NDIsMC4xNCw1LjUzMywwLjQxNGwyLjQ0OCwwLjM3NUw1Ny4xLDIwLjQ4NiAgICBjLTAuMTg2LDAuNDg2LTAuMjc5LDEuMDEtMC4yNzksMS41NThjMCwxLjgwMSwxLjAwMiwzLjQwNywyLjYxNCw0LjE5MWwxLjk5LDAuOTY5bC0xLjE2NCwxLjg4MyAgICBjLTEuMDQ3LDEuNjkxLTEuNjAxLDMuNjM3LTEuNjAxLDUuNjI3YzAsNS44ODQsNC43ODYsMTAuNjcsMTAuNjcsMTAuNjdjMS4zNTIsMCwyLjY0NS0wLjI0NCwzLjg0NS0wLjcyNmwxLjg4MS0wLjc1NmwwLjczLDEuODkyICAgIGMwLjk4LDIuNTQyLDMuNDc0LDQuMjUsNi4yMDQsNC4yNWMwLjc2MywwLDEuNTEzLTAuMTI5LDIuMjI5LTAuMzg0bDIuNDY4LTAuODc5bDAuMTk3LDIuNjEyQzg2Ljk2MSw1Mi40MSw4Nyw1My40MTgsODcsNTQuMzgzICAgIEM4Nyw3NC43ODUsNzAuNDAyLDkxLjM4Myw1MCw5MS4zODN6IE01MCwyMS4zODNjLTE4LjE5NiwwLTMzLDE0LjgwNC0zMywzM2MwLDE4LjE5NywxNC44MDQsMzMsMzMsMzNzMzMtMTQuODAzLDMzLTMzICAgIGMwLTAuMTI3LTAuMDAxLTAuMjU4LTAuMDAyLTAuMzg3Yy0wLjMzNCwwLjAzMS0wLjY3LDAuMDQ3LTEuMDA4LDAuMDQ3Yy0zLjcyNywwLTcuMTc5LTEuOTg4LTkuMDg5LTUuMDk5ICAgIGMtMS4xNTEsMC4yOTItMi4zNDcsMC40MzktMy41NzEsMC40MzljLTguMDg5LDAtMTQuNjctNi41ODEtMTQuNjctMTQuNjdjMC0yLjA3NywwLjQzOC00LjEyLDEuMjgtNi4wMDEgICAgYy0xLjk2MS0xLjYxOC0zLjEyLTQuMDMxLTMuMTItNi42NjljMC0wLjE4MiwwLjAwNi0wLjM2MSwwLjAxNy0wLjU0MUM1MS45MDMsMjEuNDIzLDUwLjk1NSwyMS4zODMsNTAsMjEuMzgzeiI+PC9wYXRoPjwvZz48L2c+PC9zdmc+" alt="">
+                </p>
+                <p class="text-white">
+                    Nous utilisons divers cookies extérieurs sur notre site web pour fournir des fonctionnalités de médias sociaux et pour analyser notre trafic.
+                    Vous pouvez choisir d'accepter tous les cookies ou de personnaliser vos préférences. 
+                    Vous pouvez modifier vos paramètres de cookies à tout moment.                </p>
+            </div>
+
+            <div class="col-8 offset-2 pb-15 pt-15" id="consent-items">
+                <p class="consent-item text-white">
+                    <label class="switch float-left">
+                        <input type="checkbox" name="consent-ga">
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="ml-10">
+                        Google Analytics                    </span>
+                    <span class="clearfix"></span>
+                </p>
+                <p class="consent-item text-white">
+                    <label class="switch float-left">
+                        <input type="checkbox" name="consent-youtube">
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="ml-10">
+                        Vidéos Youtube                    </span>
+                    <span class="clearfix"></span>
+                </p>
+            </div>
+
+
+            <div class="col-12 text-center mt-md-15 mt-5">
+                <button class="btn btn-sm btn-green font-weight-bold text-white consent-btn" id="consent-allow">
+                    Accepter les cookies                </button>
+                <button class="btn btn-link font-weight-bold consent-btn" id="consent-customize">
+                    Paramètres des cookies                </button>
+                <button class="btn btn-sm btn-green font-weight-bold text-white consent-apply">
+                    Appliquer les paramètres                </button>
+                <button class="btn btn-link font-weight-bold consent-close">
+                    Annuler                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Search Box-->
+<div id="search-box">
+    <div class="wrapper d-flex align-items-top close-box">
+        <div class="container-fluid bg-white">
+            <form action="/cms/4e9cc35b-9f78-4f57-a9ba-153e008ad5d7/search" method="get" autocomplete="off">
+                <div class="row justify-content-center pt-30">
+                    <div class="col-5">
+                        <div class="form-group material m-0">
+                            <input type="text" id="search-input" class="form-control" name="q" placeholder="Critère de recherche...">
+                        </div>
+                    </div>
+                    <div class="col-1">
+                        <button type="submit" class="btn btn-green w-100 text-white btn-sm">
+                            <i class="far fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid" id="site">
+
+    <!--Carousel-->
+<header class="container-fluid p-0 d-print-none owl-carousel bg-white owl-loaded" id="carousel">
+
+    
+                
+    
+                
+    
+                
+    
+                
+    
+                
+    
+<div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-3240px, 0px, 0px); transition: all; width: 11880px;"><div class="owl-item cloned" style="width: 1080px;"><div class="item d-flex align-items-center w-100 bg-multiply-green" style="background-image: url(https://cdn.pefc.org/igen/pefc.be/media/2023-09/e22d45cb-d93c-4906-ab53-c9d9291e2490/209f8e0e-0107-5f9a-b31b-62f3a4eeb529.png?m%5B%5D=t%28cover%2C1600%2C540%29);" id="slide_67e46f6905e04">
+            <div class="w-100">
+
+                <div class="container-limited">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="text-white mb-0">
+                                Agir aujourd'hui pour les forêts de demain                            </h2>
+                                                            <div class="text-white m-0 w-75 mt-lg-24 mt-12">
+                                    <p>Nous travaillons à la gestion durable des forêts. En collaboration avec les propriétaires forestiers et les entreprises certifiées, PEFC promeut une utilisation durable et responsable de la forêt. Nous voulons que la société ait accès à des matières premières forestières produites de manière durable, renouvelables et respectueuses du climat grâce à une certification par une tierce partie indépendante - de la forêt au produit fini.</p>                                </div>
+                                                                                        <div class="mt-24">
+                                                                            <a href="https://www.pefc.be/fr/a-propos" class="btn btn-md btn-success mr-5 text-white pr-sm-60 pl-sm-60 pr-30 pl-30 pt-sm-15 pb-sm-15">
+                                            <strong>En savoir plus</strong>
+                                        </a>
+                                    
+                                                                    </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div></div><div class="owl-item cloned" style="width: 1080px;"><div class="item d-flex align-items-center w-100 bg-multiply-green" style="background-image: url(https://cdn.pefc.org/igen/pefc.be/media/2023-11/07cffba7-2326-44e9-91df-151ab68eaa9c/ab13a7d8-0cdf-51df-aeef-31a6733ce857.jpg?m%5B%5D=t%28cover%2C1600%2C540%29);" id="slide_67e46f6905e0b">
+            <div class="w-100">
+
+                <div class="container-limited">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="text-white mb-0">
+                                Responsible Packaging                            </h2>
+                                                            <div class="text-white m-0 w-75 mt-lg-24 mt-12">
+                                    <p>Comment les marques et les retailers peuvent-ils faire un choix responsable en matière d'emballage ? Le PEFC est là pour aider !</p>                                </div>
+                                                                                        <div class="mt-24">
+                                                                            <a href="https://www.pefc.be/fr/agir-en-tant-que/marque-detaillant-et-distributeur/responsible-packaging" class="btn btn-md btn-success mr-5 text-white pr-sm-60 pl-sm-60 pr-30 pl-30 pt-sm-15 pb-sm-15">
+                                            <strong>En savoir plus</strong>
+                                        </a>
+                                    
+                                                                    </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div></div><div class="owl-item cloned" style="width: 1080px;"><div class="item d-flex align-items-center w-100 bg-multiply-green" style="background-image: url(https://cdn.pefc.org/igen/pefc.be/media/2023-09/dde96bca-92ba-4540-b0b4-0fb82c9e00a4/f792ac84-ef5b-52aa-9030-34aaa8d9add1.jpg?m%5B%5D=t%28cover%2C1600%2C540%29);" id="slide_67e46f6905e11">
+            <div class="w-100">
+
+                <div class="container-limited">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="text-white mb-0">
+                                Construction durable et bois certifié                            </h2>
+                                                            <div class="text-white m-0 w-75 mt-lg-24 mt-12">
+                                    <p>L'élément-clé de la conception de bâtiments durables. Découvrez comment choisir du bois durable pour votre projet.</p>                                </div>
+                                                                                        <div class="mt-24">
+                                                                            <a href="https://www.pefc.be/fr/agir-en-tant-que/architecte-ou-constructeur" class="btn btn-md btn-success mr-5 text-white pr-sm-60 pl-sm-60 pr-30 pl-30 pt-sm-15 pb-sm-15">
+                                            <strong>Lire plus</strong>
+                                        </a>
+                                    
+                                                                    </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div></div><div class="owl-item active" style="width: 1080px;"><div class="item d-flex align-items-center w-100 bg-multiply-green" style="background-image: url(https://cdn.pefc.org/igen/pefc.be/media/2023-10/5ef19f5d-8e4e-48b1-a528-2d286dda1d4b/79cbbbff-692f-5472-b9cf-ee47de66a568.png?m%5B%5D=t%28cover%2C1600%2C540%29);" id="slide_67e46f6905dec">
+            <div class="w-100">
+
+                <div class="container-limited">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="text-white mb-0">
+                                PEFC - votre partenaire pour l'EUDR                            </h2>
+                                                            <div class="text-white m-0 w-75 mt-lg-24 mt-12">
+                                    <p>Découvrez comment PEFC prévoit d'aligner ses standards sur l’EUDR et de vous apporter une solution qui facilitera votre mise en conformité avec cette règlementation.</p>                                </div>
+                                                                                        <div class="mt-24">
+                                                                            <a href="https://www.pefc.be/fr/eudr" class="btn btn-md btn-success mr-5 text-white pr-sm-60 pl-sm-60 pr-30 pl-30 pt-sm-15 pb-sm-15">
+                                            <strong>En savoir plus</strong>
+                                        </a>
+                                    
+                                                                    </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div></div><div class="owl-item" style="width: 1080px;"><div class="item d-flex align-items-center w-100 bg-multiply-green" style="background-image: url(https://cdn.pefc.org/igen/pefc.be/media/2024-11/5c9d93fe-600d-44bc-8158-b60da4b15176/e50e2ef9-2bde-5b87-a4c7-58b77bf1bebf.jpg?m%5B%5D=t%28cover%2C1600%2C540%29);" id="slide_67e46f6905dfe">
+            <div class="w-100">
+
+                <div class="container-limited">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="text-white mb-0">
+                                Standards PEFC et conformité à la directive européenne RED II                            </h2>
+                                                            <div class="text-white m-0 w-75 mt-lg-24 mt-12">
+                                    <p>Les standards PEFC RED II offrent aux entreprises un outil leur permettant de démontrer leur conformité aux critères de durabilité et de réduction des gaz à effet de serre définis par la règlementation européenne RED II.</p>                                </div>
+                                                                                        <div class="mt-24">
+                                                                            <a href="https://www.pefc.be/fr/news/aider-les-entreprises-a-demontrer-leur-conformite-a-la-directive-de-lue-les-standards-pefc-red-ii" class="btn btn-md btn-success mr-5 text-white pr-sm-60 pl-sm-60 pr-30 pl-30 pt-sm-15 pb-sm-15">
+                                            <strong>En savoir plus</strong>
+                                        </a>
+                                    
+                                                                    </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div></div><div class="owl-item" style="width: 1080px;"><div class="item d-flex align-items-center w-100 bg-multiply-green" style="background-image: url(https://cdn.pefc.org/igen/pefc.be/media/2023-09/e22d45cb-d93c-4906-ab53-c9d9291e2490/209f8e0e-0107-5f9a-b31b-62f3a4eeb529.png?m%5B%5D=t%28cover%2C1600%2C540%29);" id="slide_67e46f6905e04">
+            <div class="w-100">
+
+                <div class="container-limited">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="text-white mb-0">
+                                Agir aujourd'hui pour les forêts de demain                            </h2>
+                                                            <div class="text-white m-0 w-75 mt-lg-24 mt-12">
+                                    <p>Nous travaillons à la gestion durable des forêts. En collaboration avec les propriétaires forestiers et les entreprises certifiées, PEFC promeut une utilisation durable et responsable de la forêt. Nous voulons que la société ait accès à des matières premières forestières produites de manière durable, renouvelables et respectueuses du climat grâce à une certification par une tierce partie indépendante - de la forêt au produit fini.</p>                                </div>
+                                                                                        <div class="mt-24">
+                                                                            <a href="https://www.pefc.be/fr/a-propos" class="btn btn-md btn-success mr-5 text-white pr-sm-60 pl-sm-60 pr-30 pl-30 pt-sm-15 pb-sm-15">
+                                            <strong>En savoir plus</strong>
+                                        </a>
+                                    
+                                                                    </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div></div><div class="owl-item" style="width: 1080px;"><div class="item d-flex align-items-center w-100 bg-multiply-green" style="background-image: url(https://cdn.pefc.org/igen/pefc.be/media/2023-11/07cffba7-2326-44e9-91df-151ab68eaa9c/ab13a7d8-0cdf-51df-aeef-31a6733ce857.jpg?m%5B%5D=t%28cover%2C1600%2C540%29);" id="slide_67e46f6905e0b">
+            <div class="w-100">
+
+                <div class="container-limited">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="text-white mb-0">
+                                Responsible Packaging                            </h2>
+                                                            <div class="text-white m-0 w-75 mt-lg-24 mt-12">
+                                    <p>Comment les marques et les retailers peuvent-ils faire un choix responsable en matière d'emballage ? Le PEFC est là pour aider !</p>                                </div>
+                                                                                        <div class="mt-24">
+                                                                            <a href="https://www.pefc.be/fr/agir-en-tant-que/marque-detaillant-et-distributeur/responsible-packaging" class="btn btn-md btn-success mr-5 text-white pr-sm-60 pl-sm-60 pr-30 pl-30 pt-sm-15 pb-sm-15">
+                                            <strong>En savoir plus</strong>
+                                        </a>
+                                    
+                                                                    </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div></div><div class="owl-item" style="width: 1080px;"><div class="item d-flex align-items-center w-100 bg-multiply-green" style="background-image: url(https://cdn.pefc.org/igen/pefc.be/media/2023-09/dde96bca-92ba-4540-b0b4-0fb82c9e00a4/f792ac84-ef5b-52aa-9030-34aaa8d9add1.jpg?m%5B%5D=t%28cover%2C1600%2C540%29);" id="slide_67e46f6905e11">
+            <div class="w-100">
+
+                <div class="container-limited">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="text-white mb-0">
+                                Construction durable et bois certifié                            </h2>
+                                                            <div class="text-white m-0 w-75 mt-lg-24 mt-12">
+                                    <p>L'élément-clé de la conception de bâtiments durables. Découvrez comment choisir du bois durable pour votre projet.</p>                                </div>
+                                                                                        <div class="mt-24">
+                                                                            <a href="https://www.pefc.be/fr/agir-en-tant-que/architecte-ou-constructeur" class="btn btn-md btn-success mr-5 text-white pr-sm-60 pl-sm-60 pr-30 pl-30 pt-sm-15 pb-sm-15">
+                                            <strong>Lire plus</strong>
+                                        </a>
+                                    
+                                                                    </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div></div><div class="owl-item cloned" style="width: 1080px;"><div class="item d-flex align-items-center w-100 bg-multiply-green" style="background-image: url(https://cdn.pefc.org/igen/pefc.be/media/2023-10/5ef19f5d-8e4e-48b1-a528-2d286dda1d4b/79cbbbff-692f-5472-b9cf-ee47de66a568.png?m%5B%5D=t%28cover%2C1600%2C540%29);" id="slide_67e46f6905dec">
+            <div class="w-100">
+
+                <div class="container-limited">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="text-white mb-0">
+                                PEFC - votre partenaire pour l'EUDR                            </h2>
+                                                            <div class="text-white m-0 w-75 mt-lg-24 mt-12">
+                                    <p>Découvrez comment PEFC prévoit d'aligner ses standards sur l’EUDR et de vous apporter une solution qui facilitera votre mise en conformité avec cette règlementation.</p>                                </div>
+                                                                                        <div class="mt-24">
+                                                                            <a href="https://www.pefc.be/fr/eudr" class="btn btn-md btn-success mr-5 text-white pr-sm-60 pl-sm-60 pr-30 pl-30 pt-sm-15 pb-sm-15">
+                                            <strong>En savoir plus</strong>
+                                        </a>
+                                    
+                                                                    </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div></div><div class="owl-item cloned" style="width: 1080px;"><div class="item d-flex align-items-center w-100 bg-multiply-green" style="background-image: url(https://cdn.pefc.org/igen/pefc.be/media/2024-11/5c9d93fe-600d-44bc-8158-b60da4b15176/e50e2ef9-2bde-5b87-a4c7-58b77bf1bebf.jpg?m%5B%5D=t%28cover%2C1600%2C540%29);" id="slide_67e46f6905dfe">
+            <div class="w-100">
+
+                <div class="container-limited">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="text-white mb-0">
+                                Standards PEFC et conformité à la directive européenne RED II                            </h2>
+                                                            <div class="text-white m-0 w-75 mt-lg-24 mt-12">
+                                    <p>Les standards PEFC RED II offrent aux entreprises un outil leur permettant de démontrer leur conformité aux critères de durabilité et de réduction des gaz à effet de serre définis par la règlementation européenne RED II.</p>                                </div>
+                                                                                        <div class="mt-24">
+                                                                            <a href="https://www.pefc.be/fr/news/aider-les-entreprises-a-demontrer-leur-conformite-a-la-directive-de-lue-les-standards-pefc-red-ii" class="btn btn-md btn-success mr-5 text-white pr-sm-60 pl-sm-60 pr-30 pl-30 pt-sm-15 pb-sm-15">
+                                            <strong>En savoir plus</strong>
+                                        </a>
+                                    
+                                                                    </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div></div><div class="owl-item cloned" style="width: 1080px;"><div class="item d-flex align-items-center w-100 bg-multiply-green" style="background-image: url(https://cdn.pefc.org/igen/pefc.be/media/2023-09/e22d45cb-d93c-4906-ab53-c9d9291e2490/209f8e0e-0107-5f9a-b31b-62f3a4eeb529.png?m%5B%5D=t%28cover%2C1600%2C540%29);" id="slide_67e46f6905e04">
+            <div class="w-100">
+
+                <div class="container-limited">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="text-white mb-0">
+                                Agir aujourd'hui pour les forêts de demain                            </h2>
+                                                            <div class="text-white m-0 w-75 mt-lg-24 mt-12">
+                                    <p>Nous travaillons à la gestion durable des forêts. En collaboration avec les propriétaires forestiers et les entreprises certifiées, PEFC promeut une utilisation durable et responsable de la forêt. Nous voulons que la société ait accès à des matières premières forestières produites de manière durable, renouvelables et respectueuses du climat grâce à une certification par une tierce partie indépendante - de la forêt au produit fini.</p>                                </div>
+                                                                                        <div class="mt-24">
+                                                                            <a href="https://www.pefc.be/fr/a-propos" class="btn btn-md btn-success mr-5 text-white pr-sm-60 pl-sm-60 pr-30 pl-30 pt-sm-15 pb-sm-15">
+                                            <strong>En savoir plus</strong>
+                                        </a>
+                                    
+                                                                    </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div></div></div></div><div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><i class="far fa-arrow-left"></i></button><button type="button" role="presentation" class="owl-next"><i class="far fa-arrow-right"></i></button></div><div class="owl-dots"><button role="button" class="owl-dot active"><span></span></button><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot"><span></span></button></div></header>
+<!--Carousel-->
+
+    <!--Navigation-->
+    <section id="navigation" class="w-100 d-print-none">
+        <div class="container-fluid">
+            <div class="row justify-content-end m-0">
+                <div id="logo">
+                    <h1>
+                        <a href="/fr" title="Homepage">
+                                                            <img src="/assets/logo/pefc-07-01-01.svg" height="75" alt="PEFC Belgium">
+                                                    </a>
+                    </h1>
+                </div>
+                <i class="fal fa-bars open-menu d-block d-lg-none cursor-pointer"></i>
+                <div class="col-12 d-flex d-lg-block flex-column p-0" id="navigation_wrapper">
+
+                    <i class="fal fa-times d-block d-lg-none close-menu"></i>
+                    <nav id="secondary-navigation" class="order-3">
+    <ul class="nav flex-column flex-lg-row justify-content-lg-end">
+                
+                        
+            <li class="nav-item   ">
+                                <a id="menu-10000425" class=" nav-link" href="/fr/news">Actualités</a>
+
+
+                            </li>
+
+        
+                        
+            <li class="nav-item   ">
+                                <a id="menu-10002123" class=" nav-link" href="/fr/eudr" target="_self">EUDR</a>
+
+
+                            </li>
+
+        
+                        
+            <li class="nav-item   ">
+                                <a id="menu-10001519" class=" nav-link" href="/fr/evenements">Evènements</a>
+
+
+                            </li>
+
+        
+                        
+            <li class="nav-item   ">
+                                <a id="menu-10001639" class=" nav-link" href="/fr/case-stories" target="_self">Case stories</a>
+
+
+                            </li>
+
+        
+                        
+            <li class="nav-item   ">
+                                <a id="menu-10002150" class=" nav-link" href="/fr/calculateur-de-co2" target="_self">Calculateur de CO2</a>
+
+
+                            </li>
+
+        
+                        
+            <li class="nav-item   ">
+                                <a id="menu-10001625" class=" nav-link" href="/fr/publications">Publications</a>
+
+
+                            </li>
+
+        
+                        
+            <li class="nav-item   ">
+                                <a id="menu-10000426" class=" nav-link" href="/fr/documents-techniques-1">Documents techniques</a>
+
+
+                            </li>
+
+        
+                        
+            <li class="nav-item   last">
+                                <a id="menu-10000427" class=" nav-link" href="/fr/contact">Contact</a>
+
+
+                            </li>
+
+        
+        
+            <li class="nav-item ml-5" id="language-selector">
+                <span class="nav-link d-flex align-items-center">
+                    <span>Français</span> <img src="/assets/flags/FR.svg" alt="French"> <i class="fas fa-caret-down"></i>
+                </span>
+
+                <div class="selector card">
+                    <div class="card-body">
+                                                                            <a href="/nl" class="d-flex align-items-center justify-content-end"><span>Nederlands</span> <img src="/assets/flags/NL.svg" alt="French"></a>
+                                            </div>
+                </div>
+            </li>
+                <li class="nav-item">
+            <a class="nav-link" href="#" id="open-search-box"><i class="fal fa-search"></i></a>
+        </li>
+    </ul>
+</nav>
+                    <div class="separator d-none d-lg-block">
+                        <div></div>
+                    </div>
+                    
+<nav id="main-navigation" class="order-2">
+    <ul class="nav flex-column flex-lg-row justify-content-lg-between">
+
+        
+                        <li class="nav-item active">
+                                <a id="menu-10000378" class=" nav-link text-uppercase" href="/fr/home" target="_self" aria-current="page">Accueil</a>
+
+
+
+                            </li>
+        
+                        <li class="nav-item ">
+                                <a id="menu-10000595" class=" nav-link text-uppercase" href="/fr/se-certifier">Se certifier</a>
+
+
+
+                            </li>
+        
+                        <li class="nav-item ">
+                                <a id="menu-10000388" class=" nav-link text-uppercase" href="/fr/agir-en-tant-que">Agir en tant que</a>
+
+
+
+                                                        
+                    
+                                            <ul class="nav flex-column flex-lg-row second justify-content-lg-left pr-lg-120 pl-lg-120 pb-60 pt-0">
+                            
+                            
+
+                            
+
+                                
+                                <li class="nav-item col-lg-4 mt-30 ">
+                                    <a class="nav-link h-100" href="/fr/agir-en-tant-que/proprietaire-forestier">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.be/media/2021-03/e2f6c218-1398-42d9-a0f2-286e4ab05ebe/96597425-2336-591d-92da-8927d247f4f2.png?m%5B%5D=t%28cover%2C430%2C180%29" alt="Propriétaire forestier">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                Propriétaire forestier                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    Découvrez les bénéfices de la certification pour votre forêt.                                                </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col-lg-4 mt-30 ">
+                                    <a class="nav-link h-100" href="/fr/agir-en-tant-que/entreprise-coc">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.be/media/2021-03/889611c0-7975-4b8d-a6d6-240555f45962/ae774ff5-d5a0-5d86-8f95-d245cce20b76.jpg?m%5B%5D=t%28cover%2C430%2C180%29" alt="Entreprise de la filière bois">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                Entreprise de la filière bois                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    Faites certifier votre entreprise.                                                </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col-lg-4 mt-30 ">
+                                    <a class="nav-link h-100" href="/fr/agir-en-tant-que/architecte-ou-constructeur">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.be/media/2021-03/71bd740e-d4e7-4c2e-bb97-817b1702625e/cee6a88a-a952-5d9b-a329-daedebae0ddc.png?m%5B%5D=t%28cover%2C430%2C180%29" alt="Architecte ou constructeur">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                Architecte ou constructeur                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    Découvrez comment construire la société de demain avec du bois durable et local.                                                </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col-lg-4 mt-30 ">
+                                    <a class="nav-link h-100" href="/fr/agir-en-tant-que/marque-detaillant-et-distributeur">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.be/media/2021-03/0eac70a8-b9a6-4144-a2ae-9bf6306ccfea/76763243-95a5-58ef-9a73-80b1c3c688b9.png?m%5B%5D=t%28cover%2C430%2C180%29" alt="Marque, détaillant et distributeur">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                Marque, détaillant et distributeur                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    Découvrez comment répondre aux attentes de vos consommateurs et des règlementations en vigueur.                                                </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col-lg-4 mt-30 ">
+                                    <a class="nav-link h-100" href="/fr/agir-en-tant-que/pouvoir-public">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.be/media/2021-03/9649598a-ff99-40a7-a43a-37e7be04309f/585ce823-f6fa-593b-b69c-91cd4d4f080d.png?m%5B%5D=t%28cover%2C430%2C180%29" alt="Pouvoir public">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                Pouvoir public                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    Découvrez comment intégrer du bois légal et durable dans vos cahiers des charges.                                                </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col-lg-4 mt-30 ">
+                                    <a class="nav-link h-100" href="/fr/agir-en-tant-que/consommateur">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.be/media/2021-03/d0e4d1ba-4b38-4442-8060-1ccc6f475f17/224d6e80-ef38-582b-be90-058a995b3ab9.png?m%5B%5D=t%28cover%2C430%2C180%29" alt="Consommateur">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                Consommateur                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    Faites la différence : assurez l’avenir de nos forêts !                                                </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+                                                    </ul>
+                                                </li>
+        
+            
+                        <li class="nav-item ">
+                                <a id="menu-10000398" class=" nav-link text-uppercase" href="/fr/a-propos">A propos</a>
+
+
+
+                                                        
+                    
+                                            <ul class="nav flex-column flex-lg-row second justify-content-lg-left pr-lg-120 pl-lg-120 pb-60 pt-0">
+                            
+                            
+
+                            
+
+                                
+                                <li class="nav-item col-lg-4 mt-30 ">
+                                    <a class="nav-link h-100" href="/fr/a-propos/qui-sommes-nous">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.be/media/2021-03/34393950-d0b8-454e-9eba-475ddf8ce197/bbea46e1-4f67-53c4-8c5e-29eb5e18a0ff.jpg?m%5B%5D=t%28cover%2C430%2C180%29" alt="Qui sommes nous ?">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                Qui sommes nous ?                                            </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col-lg-4 mt-30 ">
+                                    <a class="nav-link h-100" href="/fr/a-propos/nos-principes">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.be/media/2021-03/51b7600f-8b97-4db5-abf6-ceb234ac8bb4/c62dcbe4-b490-5d06-a166-5e0089028c8e.jpg?m%5B%5D=t%28cover%2C430%2C180%29" alt="Nos principes">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                Nos principes                                            </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col-lg-4 mt-30 ">
+                                    <a class="nav-link h-100" href="/fr/a-propos/gouvernance">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.be/media/2021-03/f9e06795-1459-4f32-b5a4-82c41ac5af7d/d577e633-49c6-5782-bf22-09d35ed83aeb.jpg?m%5B%5D=t%28cover%2C430%2C180%29" alt="Gouvernance">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                Gouvernance                                            </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col-lg-4 mt-30 ">
+                                    <a class="nav-link h-100" href="/fr/a-propos/equipe">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.be/media/2021-03/0ce2785f-59bf-40ff-8055-5fae0c827d27/d46a1fa7-291a-5929-be44-722ec1560471.jpg?m%5B%5D=t%28cover%2C430%2C180%29" alt="Equipe">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                Equipe                                            </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col-lg-4 mt-30 ">
+                                    <a class="nav-link h-100" href="/fr/a-propos/les-objectifs-de-developpement-durable">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.be/media/2021-03/08f8dd95-8cf2-46a0-aa82-5a9b5d5d088f/54149163-eca9-57c6-94f2-bc8a87f6ee94.png?m%5B%5D=t%28cover%2C430%2C180%29" alt="Les Objectifs de Développement Durable">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                Les Objectifs de Développement Durable                                            </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col-lg-4 mt-30 ">
+                                    <a class="nav-link h-100" href="/fr/a-propos/mentions-legales">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.be/media/2021-03/5eb69444-c06f-416f-a8d9-8c97f7be771e/bc1db073-2d0e-5153-b478-5c65dc5d1a89.jpg?m%5B%5D=t%28cover%2C430%2C180%29" alt="Mentions légales">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                Mentions légales                                            </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+                                                    </ul>
+                                                </li>
+        
+                        <li class="nav-item ">
+                                <a id="menu-10002234" class=" nav-link text-uppercase" href="/fr/faq" target="_self">FAQ</a>
+
+
+
+                            </li>
+        
+                        <li class="nav-item ">
+                                <a id="menu-10000399" class=" nav-link text-uppercase" href="/fr/trouver-du-pefc">Trouver du PEFC</a>
+
+
+
+                                                        
+                    
+                                                </li>
+            </ul>
+</nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Navigation-->
+
+
+    <section id="content">
+                <div class="container-fluid mb-60" id="overview">
+    <div class="container-limited">
+        <div class="row pt-md-30 d-print-none">
+            <div class="col pr-md-36 align-items-center d-none d-md-block">
+                
+<nav aria-label="breadcrumb" id="breadcrumbs" class="d-none d-md-block">
+    <ol class="breadcrumb m-0">
+        <li class="breadcrumb-item">
+            <a href="/">Accueil</a>
+        </li>
+        <li class="breadcrumb-item">
+        <a id="breadcrumbs-10000378" href="/fr/home" target="_self" aria-current="page">Accueil</a>        </li>
+    </ol>
+</nav>
+
+            </div>
+        </div>
+        <div class="row pt-30">
+            <div class="col pr-md-36">
+
+                <div class="row">
+                                    </div>
+
+                <div class="row">
+                    <div class="col-12 widget-title ">
+            <h2 class="underline text-green mb-36 text-center">
+            <span>Contribuez avec nous à assurer l’avenir de nos forêts</span>
+        </h2>
+        </div>
+
+
+
+
+
+
+    <div class="col-12 col-md-4 widget widget-block mb-60">
+
+        
+        <a href="/fr/agir-en-tant-que/proprietaire-forestier" class="d-block" target="">
+            <div class="image-wrapper format_16_9 ">
+                <div class="content rounded bg-image " style="background-image: url(https://cdn.pefc.org/igen/pefc.be/media/2021-03/e2f6c218-1398-42d9-a0f2-286e4ab05ebe/96597425-2336-591d-92da-8927d247f4f2.png?m%5B%5D=t%28cover%2C1200%2C678%29)">
+                    <div class="p-24 d-flex flex-column h-100">
+                        <h3 class="m-0 mt-auto text-white d-none">Propriétaire forestier</h3>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="/fr/agir-en-tant-que/proprietaire-forestier" class="d-block">
+                            <h3 class="mt-20 mb-6 text-dark">Propriétaire forestier</h3>
+                    </a>
+                    <p>Participez à la promotion du bois en tant que matériau écologique et renouvelable, et inscrivez-vous dans une démarche à long terme de protection de la forêt.</p>                <p class="m-0 mt-12 text-right">
+            <a href="/fr/agir-en-tant-que/proprietaire-forestier" class="text-uppercase read-more">Lire plus <i class="fal fa-angle-double-right"></i></a>
+        </p>
+    </div>
+
+
+
+
+
+
+
+
+    <div class="col-12 col-md-4 widget widget-block mb-60">
+
+        
+        <a href="/fr/agir-en-tant-que/entreprise-coc" class="d-block" target="">
+            <div class="image-wrapper format_16_9 ">
+                <div class="content rounded bg-image " style="background-image: url(https://cdn.pefc.org/igen/pefc.be/media/2021-03/889611c0-7975-4b8d-a6d6-240555f45962/ae774ff5-d5a0-5d86-8f95-d245cce20b76.jpg?m%5B%5D=t%28cover%2C1200%2C678%29)">
+                    <div class="p-24 d-flex flex-column h-100">
+                        <h3 class="m-0 mt-auto text-white d-none">Entreprise de la filière bois/papier</h3>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="/fr/agir-en-tant-que/entreprise-coc" class="d-block">
+                            <h3 class="mt-20 mb-6 text-dark">Entreprise de la filière bois/papier</h3>
+                    </a>
+                    <p>Assurez votre compétitivité et démontrez votre engagement sociétal : choisissez la certification chaîne de contrôle PEFC.</p>                <p class="m-0 mt-12 text-right">
+            <a href="/fr/agir-en-tant-que/entreprise-coc" class="text-uppercase read-more">Lire plus <i class="fal fa-angle-double-right"></i></a>
+        </p>
+    </div>
+
+
+
+
+
+
+
+
+    <div class="col-12 col-md-4 widget widget-block mb-60">
+
+        
+        <a href="/fr/agir-en-tant-que/architecte-ou-constructeur" class="d-block" target="">
+            <div class="image-wrapper format_16_9 ">
+                <div class="content rounded bg-image " style="background-image: url(https://cdn.pefc.org/igen/pefc.be/media/2021-03/71bd740e-d4e7-4c2e-bb97-817b1702625e/cee6a88a-a952-5d9b-a329-daedebae0ddc.png?m%5B%5D=t%28cover%2C1200%2C678%29)">
+                    <div class="p-24 d-flex flex-column h-100">
+                        <h3 class="m-0 mt-auto text-white d-none">Architecte ou constructeur</h3>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="/fr/agir-en-tant-que/architecte-ou-constructeur" class="d-block">
+                            <h3 class="mt-20 mb-6 text-dark">Architecte ou constructeur</h3>
+                    </a>
+                    <p>Répondez aux exigences de vos clients, de la législation et du marché : choisissez des produits labellisés PEFC pour vos projets.</p>                <p class="m-0 mt-12 text-right">
+            <a href="/fr/agir-en-tant-que/architecte-ou-constructeur" class="text-uppercase read-more">Lire plus <i class="fal fa-angle-double-right"></i></a>
+        </p>
+    </div>
+
+
+
+
+
+
+
+
+    <div class="col-12 col-md-4 widget widget-block mb-60">
+
+        
+        <a href="/fr/agir-en-tant-que/marque-detaillant-et-distributeur" class="d-block" target="">
+            <div class="image-wrapper format_16_9 ">
+                <div class="content rounded bg-image " style="background-image: url(https://cdn.pefc.org/igen/pefc.be/media/2021-03/0eac70a8-b9a6-4144-a2ae-9bf6306ccfea/76763243-95a5-58ef-9a73-80b1c3c688b9.png?m%5B%5D=t%28cover%2C1200%2C678%29)">
+                    <div class="p-24 d-flex flex-column h-100">
+                        <h3 class="m-0 mt-auto text-white d-none">Marque ou distributeur</h3>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="/fr/agir-en-tant-que/marque-detaillant-et-distributeur" class="d-block">
+                            <h3 class="mt-20 mb-6 text-dark">Marque ou distributeur</h3>
+                    </a>
+                    <p>Découvrez comment répondre aux attentes des consommateurs et des règlementations en vigueur.</p>                <p class="m-0 mt-12 text-right">
+            <a href="/fr/agir-en-tant-que/marque-detaillant-et-distributeur" class="text-uppercase read-more">Lire plus <i class="fal fa-angle-double-right"></i></a>
+        </p>
+    </div>
+
+
+
+
+
+
+
+
+    <div class="col-12 col-md-4 widget widget-block mb-60">
+
+        
+        <a href="/fr/agir-en-tant-que/pouvoir-public" class="d-block" target="">
+            <div class="image-wrapper format_16_9 ">
+                <div class="content rounded bg-image " style="background-image: url(https://cdn.pefc.org/igen/pefc.be/media/2021-03/9649598a-ff99-40a7-a43a-37e7be04309f/585ce823-f6fa-593b-b69c-91cd4d4f080d.png?m%5B%5D=t%28cover%2C1200%2C678%29)">
+                    <div class="p-24 d-flex flex-column h-100">
+                        <h3 class="m-0 mt-auto text-white d-none">Pouvoir public</h3>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="/fr/agir-en-tant-que/pouvoir-public" class="d-block">
+                            <h3 class="mt-20 mb-6 text-dark">Pouvoir public</h3>
+                    </a>
+                    <p>Optez pour des produits certifiés dans votre politique d'achat et agissez pour l'avenir de nos forêts.</p>                <p class="m-0 mt-12 text-right">
+            <a href="/fr/agir-en-tant-que/pouvoir-public" class="text-uppercase read-more">Lire plus <i class="fal fa-angle-double-right"></i></a>
+        </p>
+    </div>
+
+
+
+
+
+
+
+
+    <div class="col-12 col-md-4 widget widget-block mb-60">
+
+        
+        <a href="/fr/agir-en-tant-que/consommateur" class="d-block" target="">
+            <div class="image-wrapper format_16_9 ">
+                <div class="content rounded bg-image " style="background-image: url(https://cdn.pefc.org/igen/pefc.be/media/2021-03/d0e4d1ba-4b38-4442-8060-1ccc6f475f17/224d6e80-ef38-582b-be90-058a995b3ab9.png?m%5B%5D=t%28cover%2C1200%2C678%29)">
+                    <div class="p-24 d-flex flex-column h-100">
+                        <h3 class="m-0 mt-auto text-white d-none">Consommateur</h3>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="/fr/agir-en-tant-que/consommateur" class="d-block">
+                            <h3 class="mt-20 mb-6 text-dark">Consommateur</h3>
+                    </a>
+                    <p>Contribuez à la préservation des forêts en achetant des produits portant le label PEFC.</p>                <p class="m-0 mt-12 text-right">
+            <a href="/fr/agir-en-tant-que/consommateur" class="text-uppercase read-more">Lire plus <i class="fal fa-angle-double-right"></i></a>
+        </p>
+    </div>
+
+
+<div class="col-12 widget-title ">
+            <h2 class="underline text-green mb-36 text-center">
+            <span>Nos forêts ont besoin de vous !</span>
+        </h2>
+                <div class="mr-auto ml-auto w-75 text mb-36">
+                <p class="lead">La préservation de notre planète commence par celle de nos forêts</p><p>Les forêts jouent un rôle crucial tant au niveau de <strong>l’environnement</strong> et des <strong>populations</strong> que de <strong>l’économie</strong> mondiale.&nbsp;</p><p>Préserver les forêts de notre planète est essentiel dans l’accomplissement des efforts mondiaux visant à réduire la pauvreté, à remédier à la pénurie d’eau et à la perte de biodiversité, et à atténuer le changement climatique.</p>        </div>
+    </div>
+
+
+
+
+
+
+    
+    <div class="col-12 full-width widget widget-block mb-20">
+
+        <div class="bg-background rounded block-item bg-block-dark-green d-md-flex">
+                        <div class="col-12  p-24 d-flex flex-column">
+
+                                    <a href="https://www.pefc.be/fr/agir-en-tant-que/proprietaire-forestier/pourquoi-et-comment-rejoindre-pefc" class="d-block" target="">
+                                                    <h2 class="m-0 mb-24 ">Renouvelez la certification de votre forêt</h2>
+                                            </a>
+                                            <p>Les standards PEFC de gestion forestière en Région wallonne viennent d'être revus. Votre forêt (privée ou publique) est certifiée ? Renouvelez dès aujourd'hui votre adhésion au PEFC et poursuivez votre engagement pour les forêts de demain.&nbsp;<br><a href="https://www.pefc.be/fr/agir-en-tant-que/proprietaire-forestier/pourquoi-et-comment-rejoindre-pefc">Découvrez ici comment</a>.</p>                                                </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="container-limited mb-60 w-100">
+        <div class="row">
+            <div class="col-12">
+
+                <h2 class="underline text-center text-uppercase text-green mb-48">
+                    <span>Actualités sous les projecteurs</span>
+                </h2>
+
+                <div class="row items-list">
+
+
+                                            <div class=" col-12 col-sm-6 col-lg-4 mb-30 content-item">
+    <a href="/fr/news/construire-un-avenir-bas-carbone-avec-le-bois" target="">
+                    <div class="image-container rectangle-landscape rounded">
+                                    <div class="content" style="background-image: url(https://cdn.pefc.org/igen/pefc.be/media/2025-02/40b7f1cb-ee57-424d-ada6-f2318926888b/6300eab3-b89b-5a70-8790-e4404990681a.jpg?m%5B%5D=t%28inside%2C400%2C300%29)"></div>
+                            </div>
+            </a>
+
+            <p class="text-green text-uppercase mb-0 mt-lg-24 mt-12 date line-height-1">
+            <strong>11 mars 2025</strong>
+        </p>
+
+        <h2 class="mt-12 mb-0">
+            <a href="/fr/news/construire-un-avenir-bas-carbone-avec-le-bois" class="text-gray">
+                Construire un avenir bas carbone avec le bois            </a>
+        </h2>
+
+                    <p class="mt-6 mb-0 small text">
+                <span class="category text-uppercase">Grand public &amp; consommateurs</span>
+            </p>
+        
+                    <p class="mt-12 mb-0 text">
+                Le bois, un allié pour réduire l’empreinte carbone de la construction. Performant et renouvelable, il stocke le CO2 tout en offrant des avantages environnementaux et architecturaux. Découvrez son potentiel et notre présence à Bois &amp; Habitat 2025 !            </p>
+            
+</div>
+                                            <div class=" col-12 col-sm-6 col-lg-4 mb-30 content-item">
+    <a href="/fr/news/aider-les-entreprises-a-demontrer-leur-conformite-a-la-directive-de-lue-les-standards-pefc-red-ii" target="">
+                    <div class="image-container rectangle-landscape rounded">
+                                    <div class="content" style="background-image: url(https://cdn.pefc.org/igen/pefc.be/media/2024-11/79e0790c-2931-4ab5-aee4-709c10c3eafb/afdf1752-f3a5-50a5-b7e5-bf77c8b6c3f9.jpg?m%5B%5D=t%28inside%2C400%2C300%29)"></div>
+                            </div>
+            </a>
+
+            <p class="text-green text-uppercase mb-0 mt-lg-24 mt-12 date line-height-1">
+            <strong>20 novembre 2024</strong>
+        </p>
+
+        <h2 class="mt-12 mb-0">
+            <a href="/fr/news/aider-les-entreprises-a-demontrer-leur-conformite-a-la-directive-de-lue-les-standards-pefc-red-ii" class="text-gray">
+                Aider les entreprises à démontrer leur conformité à la directive de l'UE : les standards PEFC RED II            </a>
+        </h2>
+
+                    <p class="mt-6 mb-0 small text">
+                <span class="category text-uppercase">Entreprises - Chaîne de Contrôle</span>
+            </p>
+        
+                    <p class="mt-12 mb-0 text">
+                Les standards PEFC RED II offrent aux entreprises un outil leur permettant de démontrer leur conformité aux critères de durabilité et de réduction des gaz à effet de serre définis par la règlementation européenne RED II.            </p>
+            
+</div>
+                                            <div class=" col-12 col-sm-6 col-lg-4 mb-30 content-item">
+    <a href="/fr/news/week-end-du-bois-partez-a-la-decouverte-des-metiers-du-bois-en-wallonie" target="">
+                    <div class="image-container rectangle-landscape rounded">
+                                    <div class="content" style="background-image: url(https://cdn.pefc.org/igen/pefc.be/media/2024-09/b0e81dbb-e058-4847-8369-cc2053efed49/42c42db0-371a-5e22-a85e-34d48cdfd9ff.jpg?m%5B%5D=t%28inside%2C400%2C300%29)"></div>
+                            </div>
+            </a>
+
+            <p class="text-green text-uppercase mb-0 mt-lg-24 mt-12 date line-height-1">
+            <strong>9 septembre 2024</strong>
+        </p>
+
+        <h2 class="mt-12 mb-0">
+            <a href="/fr/news/week-end-du-bois-partez-a-la-decouverte-des-metiers-du-bois-en-wallonie" class="text-gray">
+                Week-end du Bois : partez à la découverte des métiers du bois en Wallonie            </a>
+        </h2>
+
+                    <p class="mt-6 mb-0 small text">
+                <span class="category text-uppercase">Grand public &amp; consommateurs</span>
+            </p>
+        
+                    <p class="mt-12 mb-0 text">
+                Les 18, 19 et 20 octobre, le Week-end du Bois mettra en lumière les forêts wallonnes et les entreprises qui travaillent le bois. L’occasion de se mettre au vert, de soutenir l’entrepreneuriat local et de découvrir les métiers liés au travail du bois.            </p>
+            
+</div>
+                    
+                </div>
+            </div>
+
+            <div class="col-12 text-right mt-24">
+                <p class="m-0 text-uppercase">
+                    <a class="read-more" href="/fr/news">
+                        Montrer toutes les actualités<i class="fal fa-angle-double-right"></i>
+                    </a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <div class="container-limited mb-60">
+        <div class="row">
+            <div class="col-12">
+
+                <h2 class="underline text-center text-uppercase text-green mb-48">
+                    <span>Evenements</span>
+                </h2>
+
+                <div class="row items-list">
+
+
+                                            <div class=" col-12 col-sm-6 col-lg-4 mb-30 content-item">
+    <a href="/fr/evenements/bois-habitat-2025" target="">
+                    <div class="image-container rectangle-landscape rounded">
+                                    <div class="content" style="background-image: url(https://cdn.pefc.org/igen/pefc.be/media/2025-02/40b7f1cb-ee57-424d-ada6-f2318926888b/6300eab3-b89b-5a70-8790-e4404990681a.jpg?m%5B%5D=t%28inside%2C400%2C300%29)"></div>
+                            </div>
+            </a>
+
+            <div class="row mt-24">
+            <div class="col-2 item-dates pr-0">
+                                    <div class="date-square">
+                        <div class="image-wrapper">
+                            <div class="content rounded d-flex align-items-end flex-column">
+                                <div class="number-and-month w-100 mt-auto mb-auto">
+                                    <span class="text-uppercase">mars</span>
+                                    <div>28</div>
+                                </div>
+                                <div class="year w-100">
+                                    2025                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                                    <div class="separator"></div>
+
+                    <div class="date-square d-block">
+                        <div class="image-wrapper">
+                            <div class="content rounded d-flex align-items-end flex-column">
+                                <div class="number-and-month w-100 mt-auto mb-auto">
+                                    <span class="text-uppercase">mars</span>
+                                    <div>31</div>
+                                </div>
+                                <div class="year w-100">
+                                    2025                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                
+            </div>
+            <div class="col-10">
+                <h2 class="m-0">
+                    <a href="/fr/evenements/bois-habitat-2025" class="text-gray">
+                        Bois &amp; Habitat 2025                    </a>
+                </h2>
+
+                                    <p class="mt-6 mb-0 small text">
+                        <span class="category text-uppercase">Grand public &amp; consommateurs</span>
+                    </p>
+                
+                
+            </div>
+        </div>
+    
+</div>
+                                            <div class=" col-12 col-sm-6 col-lg-4 mb-30 content-item">
+    <a href="/fr/evenements/rencontres-filiere-bois-2025" target="">
+                    <div class="image-container rectangle-landscape rounded">
+                                    <div class="content" style="background-image: url(https://cdn.pefc.org/igen/pefc.be/media/2025-03/b39fedfc-e656-4d30-95e5-011709b7574d/bcc8a881-4b2c-5cb3-b2b7-aaad105eed94.jpg?m%5B%5D=t%28inside%2C400%2C300%29)"></div>
+                            </div>
+            </a>
+
+            <div class="row mt-24">
+            <div class="col-2 item-dates pr-0">
+                                    <div class="date-square">
+                        <div class="image-wrapper">
+                            <div class="content rounded d-flex align-items-end flex-column">
+                                <div class="number-and-month w-100 mt-auto mb-auto">
+                                    <span class="text-uppercase">avr.</span>
+                                    <div>15</div>
+                                </div>
+                                <div class="year w-100">
+                                    2025                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                
+            </div>
+            <div class="col-10">
+                <h2 class="m-0">
+                    <a href="/fr/evenements/rencontres-filiere-bois-2025" class="text-gray">
+                        Rencontres Filière Bois 2025                    </a>
+                </h2>
+
+                                    <p class="mt-6 mb-0 small text">
+                        <span class="category text-uppercase">Entreprises - Chaîne de Contrôle</span>
+                    </p>
+                
+                
+            </div>
+        </div>
+    
+</div>
+                                            <div class=" col-12 col-sm-6 col-lg-4 mb-30 content-item">
+    <a href="/fr/evenements/municipalia-le-salon-des-mandataires-2025" target="">
+                    <div class="image-container rectangle-landscape rounded">
+                                    <div class="content" style="background-image: url(https://cdn.pefc.org/igen/pefc.be/media/2025-03/cd653354-737d-4734-9648-246411a332f3/5ef25da3-4c39-5d49-8190-a388d37c828d.jpg?m%5B%5D=t%28inside%2C400%2C300%29)"></div>
+                            </div>
+            </a>
+
+            <div class="row mt-24">
+            <div class="col-2 item-dates pr-0">
+                                    <div class="date-square">
+                        <div class="image-wrapper">
+                            <div class="content rounded d-flex align-items-end flex-column">
+                                <div class="number-and-month w-100 mt-auto mb-auto">
+                                    <span class="text-uppercase">avr.</span>
+                                    <div>17</div>
+                                </div>
+                                <div class="year w-100">
+                                    2025                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                                    <div class="separator"></div>
+
+                    <div class="date-square d-block">
+                        <div class="image-wrapper">
+                            <div class="content rounded d-flex align-items-end flex-column">
+                                <div class="number-and-month w-100 mt-auto mb-auto">
+                                    <span class="text-uppercase">avr.</span>
+                                    <div>18</div>
+                                </div>
+                                <div class="year w-100">
+                                    2025                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                
+            </div>
+            <div class="col-10">
+                <h2 class="m-0">
+                    <a href="/fr/evenements/municipalia-le-salon-des-mandataires-2025" class="text-gray">
+                        Municipalia - Le Salon des Mandataires 2025                    </a>
+                </h2>
+
+                                    <p class="mt-6 mb-0 small text">
+                        <span class="category text-uppercase">Pouvoirs publics</span>
+                    </p>
+                
+                
+            </div>
+        </div>
+    
+</div>
+                    
+                </div>
+            </div>
+
+            <div class="col-12 text-right mt-12">
+                <p class="m-0 text-uppercase">
+                    <a class="read-more" href="/fr/evenements">Montrer tous les évènements                        <i class="fal fa-angle-double-right"></i></a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="container-limited mb-60">
+        <div class="row">
+            <div class="col-12">
+
+                <h2 class="underline text-center text-uppercase text-green mb-48">
+                    <span>Case stories</span>
+                </h2>
+
+                <div class="row items-list">
+
+
+                                            <div class=" col-12 col-sm-6 col-lg-4 mb-30 content-item">
+    <a href="/fr/case-stories/maison-jolly-des-logements-de-qualite-pour-les-plus-precarises" target="">
+                    <div class="image-container rectangle-landscape rounded">
+                                    <div class="content" style="background-image: url(https://cdn.pefc.org/igen/pefc.be/media/2024-10/1b361aaf-22fd-4f68-852b-8deb9780f951/4eb82bb6-cb22-5ebf-9391-2e75c655c28f.jpg?m%5B%5D=t%28inside%2C400%2C300%29)"></div>
+                            </div>
+            </a>
+
+            <p class="text-green text-uppercase mb-0 mt-lg-24 mt-12 date line-height-1">
+            <strong>6 novembre 2024</strong>
+        </p>
+
+        <h2 class="mt-12 mb-0">
+            <a href="/fr/case-stories/maison-jolly-des-logements-de-qualite-pour-les-plus-precarises" class="text-gray">
+                Maison Jolly : des logements de qualité pour les plus précarisés            </a>
+        </h2>
+
+                    <p class="mt-6 mb-0 small text">
+                <span class="category text-uppercase">Construction</span>
+            </p>
+        
+                    <p class="mt-12 mb-0 text">
+                Lauréat be.exemplary, Jolly est un projet exemplaire, tant sur le plan social que dans son approche constructive. Ce bâtiment préfabriqué est constitué d’un mix CLT et ossature, entièrement certifié PEFC.            </p>
+            
+</div>
+                                            <div class=" col-12 col-sm-6 col-lg-4 mb-30 content-item">
+    <a href="/fr/case-stories/wood-hub-une-nouvelle-reference-en-matiere-de-construction-durable-et-innovante" target="">
+                    <div class="image-container rectangle-landscape rounded">
+                                    <div class="content" style="background-image: url(https://cdn.pefc.org/igen/pefc.be/media/2024-09/eb5dc306-3a9f-41f1-80a5-be71e7ed4ba4/be9c815c-f30d-5ff2-84fa-bbeec8635d24.jpg?m%5B%5D=t%28inside%2C400%2C300%29)"></div>
+                            </div>
+            </a>
+
+            <p class="text-green text-uppercase mb-0 mt-lg-24 mt-12 date line-height-1">
+            <strong>2 septembre 2024</strong>
+        </p>
+
+        <h2 class="mt-12 mb-0">
+            <a href="/fr/case-stories/wood-hub-une-nouvelle-reference-en-matiere-de-construction-durable-et-innovante" class="text-gray">
+                Wood Hub : une nouvelle référence en matière de construction durable et innovante            </a>
+        </h2>
+
+                    <p class="mt-6 mb-0 small text">
+                <span class="category text-uppercase">Construction</span>
+            </p>
+        
+                    <p class="mt-12 mb-0 text">
+                Structure CREE® mixte bois/béton, approche modulaire et circulaire, performance énergétique, certifications WELL®, BREEAM et utilisation exclusive de bois certifié PEFC : l'accent a été mis sur la durabilité, l'innovation et le bien-être des employés pour construire le nouveau siège du groupe CFE à Bruxelles.            </p>
+            
+</div>
+                                            <div class=" col-12 col-sm-6 col-lg-4 mb-30 content-item">
+    <a href="/fr/case-stories/buda-le-nouveau-site-de-bruxelles-proprete-en-bois-local-pefc" target="">
+                    <div class="image-container rectangle-landscape rounded">
+                                    <div class="content" style="background-image: url(https://cdn.pefc.org/igen/pefc.be/media/2024-06/266e1806-2813-4a36-ac71-b8278f613cee/6242acf3-9b6e-5d7a-8019-203e2914269f.jpg?m%5B%5D=t%28inside%2C400%2C300%29)"></div>
+                            </div>
+            </a>
+
+            <p class="text-green text-uppercase mb-0 mt-lg-24 mt-12 date line-height-1">
+            <strong>11 juin 2024</strong>
+        </p>
+
+        <h2 class="mt-12 mb-0">
+            <a href="/fr/case-stories/buda-le-nouveau-site-de-bruxelles-proprete-en-bois-local-pefc" class="text-gray">
+                Buda, le nouveau site de Bruxelles propreté en bois local PEFC            </a>
+        </h2>
+
+                    <p class="mt-6 mb-0 small text">
+                <span class="category text-uppercase">Construction</span>
+            </p>
+        
+                    <p class="mt-12 mb-0 text">
+                D'une superficie de 31 000 m², Buda est le plus grand centre de tri de la capitale. Le bois occupe une place de choix dans ce vaste centre axé sur le recyclage et la circularité : au total plus de 1 000 m³ de bois, issus de forêts locales certifiées PEFC.            </p>
+            
+</div>
+                    
+                </div>
+            </div>
+
+            <div class="col-12 text-right mt-24">
+                <p class="m-0 text-uppercase">
+                    <a class="read-more" href="/fr/case-stories">
+                        Show all stories<i class="fal fa-angle-double-right"></i>
+                    </a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                    </section>
+
+
+    <!--Footer-->
+    <!--Newsletter-->
+<div class="container-fluid bg-white d-print-none" id="keep-in-touch">
+    <div class="container-limited">
+        <div class="row pt-30 pb-30 pt-md-60 pb-md-60">
+            <div class="col-12 col-md-6 col-xl-7 mb-12 mb-md-0">
+                <h2 class="mb-0 text-uppercase pt-10">Restez en contact</h2>
+                <p class="text-uppercase m-0">Recevez notre newsletter tous les 2 mois</p>
+            </div>
+            <div class="col-12 col-md-6 col-xl-5 d-flex align-items-center">
+                <div class="form-group material m-0 w-100">
+                    <div class="input-group keep-in-touch-newsletter" id="keep-in-touch-input">
+
+                        <input type="email" class="keep-in-touch-input form-control pl-0 pt-0" id="newsletter_email" data-url="/cms/4e9cc35b-9f78-4f57-a9ba-153e008ad5d7/newsletter" data-list_id="10004474" placeholder="Votre adresse e-mail">
+                        <div class="input-group-prepend" id="keep-in-touch-send">
+                            <div class="input-group-text keep-in-touch-send"><i class="fal text-green fa-paper-plane"></i></div>
+                        </div>
+
+                    </div>
+                    <p class="m-0 text-center keep-in-touch-loading" id="keep-in-touch-loading" style="display: none">
+                        <i class="fas fa-spinner-third text-green fa-spin"></i> <br>
+                        <span class="small text-uppercase pt-5">veuillez patienter</span>
+                    </p>
+
+                    <p class="m-0 text-center text-green keep-in-touch-success" id="keep-in-touch-success" style="display: none">
+                        <i class="fal fa-check-circle"></i> <br>
+                        Votre inscription est validée.                    </p>
+
+                    <p class="m-0 text-center text-danger keep-in-touch-error" id="keep-in-touch-error" style="display: none">
+                        <i class="fal fa-exclamation-triangle"></i> <br>
+                        Un problème est survenu pendant votre inscription. Veuillez réessayer plus tard.                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Newsletter-->
+<!--Tunnel Footer-->
+<section class="container-fluid bg-green d-print-none" id="tunnels-footer">
+
+    <div class="container-limited pt-60">
+
+        <div class="row">
+            <div class="col-12 col-sm-4">
+                                <a href="/fr/a-propos/mentions-legales">
+                                        <h3 class="text-white m-0 text-uppercase">
+                        <i class="fal fa-file-certificate mr-20 float-left"></i>
+                        Mentions légales                    </h3>
+                                    </a>
+                            <p class="text-white d-block d-sm-none">
+                    PEFC Belgium asbl | Boulevard Bischoffsheim 1-8, bte 3 - 1000 Bruxelles | N° de TVA : BE 0461.993.776
+                </p>
+            </div>
+
+            <div class="col-12 col-sm-4">
+                                <h3 class="text-white m-0 text-uppercase">
+                    <i class=" mr-20 float-left"></i>
+                                    </h3>
+                                    <p class="text-white d-block d-sm-none">
+                                    </p>
+            </div>
+
+            <div class="col-12 col-sm-4">
+                                <a href="/fr/a-propos/mentions-legales/faire-un-don">
+                                    <h3 class="text-white m-0 text-uppercase">
+                    <i class="fal fa-hand-holding-seedling mr-20 float-left"></i>
+                    Faire un don                </h3>
+                                    </a>
+                            <p class="text-white d-block d-sm-none">
+                    Votre soutien financier apporte une contribution importante à la réalisation de nos activités et de ce fait à la durabilité de nos forêts.                </p>
+            </div>
+        </div>
+        <div class="row mt-12 d-none d-sm-flex">
+            <div class="col-4">
+                <p class="text-white m-0 pr-20">
+                    PEFC Belgium asbl | Boulevard Bischoffsheim 1-8, bte 3 - 1000 Bruxelles | N° de TVA : BE 0461.993.776
+                </p>
+            </div>
+            <div class="col-4">
+                <p class="text-white m-0 pr-20">
+                                    </p>
+            </div>
+            <div class="col-4">
+                <p class="text-white m-0 pr-20">
+                    Votre soutien financier apporte une contribution importante à la réalisation de nos activités et de ce fait à la durabilité de nos forêts.                </p>
+            </div>
+
+            <div class="col-12 mt-48">
+                <hr class="m-0">
+            </div>
+        </div>
+    </div>
+</section>
+<section class="container-fluid bg-green d-print-none" id="social-medias">
+
+    <div class="container-limited">
+
+        <div class="row pt-30 pb-30">
+            <div class="col col-logo">
+                                    <img class="w-100" height="75" loading="lazy" src="/assets/logo/pefc-07-01-01.svg" alt="PEFC Belgium">
+                            </div>
+            <div class="col pl-0 pl-sm-auto align-items-center d-flex justify-content-end">
+                <nav>
+                    <ul class="nav justify-content-end">
+                        <li class="nav-item d-flex align-items-center mr-15 mr-sm-30">
+                            <a class="nav-link p-0 text-white">Suivez-nous</a>
+                        </li>
+                                                    <li class="nav-item d-flex justify-content-center align-items-center icon">
+                                <a class="nav-link text-white" href="https://www.facebook.com/PEFCBelgium" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            </li>
+                                                                                                    <li class="nav-item d-flex justify-content-center align-items-center icon">
+                                <a class="nav-link text-white" href="https://www.linkedin.com/company/pefc-belgium/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            </li>
+                                                                            <li class="nav-item d-flex justify-content-center align-items-center icon">
+                                <a class="nav-link text-white" href="https://www.instagram.com/pefcbelgium/" target="_blank"><i class="fab fa-instagram"></i></a>
+                            </li>
+                                                                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+    <!--Footer-->
+
+    <!--Footer Navigation-->
+    <footer class="container-fluid d-print-none">
+        <div class="container-limited">
+
+            <div class="row opacity-90" id="footer-mentions">
+                <div class="col-12">
+
+
+                    <div class="row d-none d-sm-flex pt-60 justify-content-center">
+                        <div class="col-sm-4 col-md d-none d-sm-block mb-30 mb-md-0">
+                                <h5 class="text-green text-uppercase mb-20 d-flex align-items-end"><a id="menu-10000378" href="/fr/home" target="_self" aria-current="page">Accueil</a></h5>
+                            </div>
+                                <div class="col-sm-4 col-md d-none d-sm-block mb-30 mb-md-0">
+                                <h5 class="text-green text-uppercase mb-20 d-flex align-items-end"><a id="menu-10000595" href="/fr/se-certifier">Se certifier</a></h5>
+                            </div>
+                                <div class="col-sm-4 col-md d-none d-sm-block mb-30 mb-md-0">
+                                <h5 class="text-green text-uppercase mb-20 d-flex align-items-end"><a id="menu-10000388" href="/fr/agir-en-tant-que">Agir en tant que</a></h5>
+                                    <ul class="nav flex-column">
+                                                                                    <li class="nav-item">
+                                                                        <a id="menu-10001279" class=" nav-link text-white" href="/fr/agir-en-tant-que/proprietaire-forestier">Propriétaire forestier</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10001284" class=" nav-link text-white" href="/fr/agir-en-tant-que/entreprise-coc">Entreprise de la filière bois</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10001280" class=" nav-link text-white" href="/fr/agir-en-tant-que/architecte-ou-constructeur">Architecte ou constructeur</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10000389" class=" nav-link text-white" href="/fr/agir-en-tant-que/marque-detaillant-et-distributeur">Marque, détaillant et distributeur</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10001283" class=" nav-link text-white" href="/fr/agir-en-tant-que/pouvoir-public">Pouvoir public</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10001282" class=" nav-link text-white" href="/fr/agir-en-tant-que/consommateur">Consommateur</a>
+                                </li>
+                                                                        </ul>
+                            </div>
+                                            <div class="col-sm-4 col-md d-none d-sm-block mb-30 mb-md-0">
+                                <h5 class="text-green text-uppercase mb-20 d-flex align-items-end"><a id="menu-10000398" href="/fr/a-propos">A propos</a></h5>
+                                    <ul class="nav flex-column">
+                                                                                    <li class="nav-item">
+                                                                        <a id="menu-10001287" class=" nav-link text-white" href="/fr/a-propos/qui-sommes-nous">Qui sommes nous ?</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10001288" class=" nav-link text-white" href="/fr/a-propos/nos-principes">Nos principes</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10001382" class=" nav-link text-white" href="/fr/a-propos/gouvernance">Gouvernance</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10001292" class=" nav-link text-white" href="/fr/a-propos/equipe">Equipe</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10001289" class=" nav-link text-white" href="/fr/a-propos/les-objectifs-de-developpement-durable">Les Objectifs de Développement Durable</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10001379" class=" nav-link text-white" href="/fr/a-propos/mentions-legales">Mentions légales</a>
+                                </li>
+                                                                        </ul>
+                            </div>
+                                <div class="col-sm-4 col-md d-none d-sm-block mb-30 mb-md-0">
+                                <h5 class="text-green text-uppercase mb-20 d-flex align-items-end"><a id="menu-10002234" href="/fr/faq" target="_self">FAQ</a></h5>
+                            </div>
+                                <div class="col-sm-4 col-md d-none d-sm-block mb-30 mb-md-0">
+                                <h5 class="text-green text-uppercase mb-20 d-flex align-items-end"><a id="menu-10000399" href="/fr/trouver-du-pefc">Trouver du PEFC</a></h5>
+                                    <ul class="nav flex-column">
+                                                                                                </ul>
+                            </div>
+            </div>
+
+                    <div class="row pt-24 pb-24">
+                        <div class="col-12">
+                            <hr class="">
+                        </div>
+                        <div class="col-12 col-md-7">
+                            <ul class="nav justify-content-center justify-content-md-start signature_copyright_nav mb-12 mb-md-0">
+                                                                    <li class="nav-item">
+                                        <a class="nav-link open-cookie-settings">Paramètres des cookies</a>
+                                    </li>
+                                                                                            </ul>
+                        </div>
+
+                        <div class="col-12 col-md-5">
+                            <p class="mb-0 text-md-right text-center small mb-6 mb-sm-0">
+                                Conception, design et développement par <a href="https://nimeo.io" target="_blank">nimeo creative solutions</a>
+                                <br>
+                                © copyright 2025 PEFC. Tous droits réservés                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--Footer Navigation-->
+    </div>
+
+<link href="/dist/website.css?ck=aef-default-20250319t110453-7p2x" rel="stylesheet">
+<!--<link href="/dist/search-engine/search-engine.widget.css" rel="stylesheet">-->
+<link href="/dist/fontawesome.css?ck=aef-default-20250319t110453-7p2x" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<script defer="" src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="/dist/main.js?ck=aef-default-20250319t110453-7p2x" defer="" type="application/javascript"></script>
+<!--<script type="module" src="/dist/search-engine/search-engine.widget.js"></script>-->
+<script type="application/javascript" defer="defer" src="/dist/cookie-consent.js"></script>
+<script type="application/javascript" defer="defer" src="/dist/carousel.js"></script>
+<script type="application/javascript" defer="defer" src="/dist/newsletter.js"></script>
+
+</body></html>

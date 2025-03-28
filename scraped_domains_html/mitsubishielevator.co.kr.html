@@ -1,0 +1,2786 @@
+<!DOCTYPE html><html lang="ko"><head><meta http-equiv="origin-trial" content="A7vZI3v+Gz7JfuRolKNM4Aff6zaGuT7X0mf3wtoZTnKv6497cVMnhy03KDqX7kBz/q/iidW7srW31oQbBt4VhgoAAACUeyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGUuY29tOjQ0MyIsImZlYXR1cmUiOiJEaXNhYmxlVGhpcmRQYXJ0eVN0b3JhZ2VQYXJ0aXRpb25pbmczIiwiZXhwaXJ5IjoxNzU3OTgwODAwLCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ==">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta http-equiv="X-UA-compatible" content="IE=edge, chrome=1">
+<meta http-equiv="subject" content="">
+<meta http-equiv="title" content="">
+<meta http-equiv="author" content="미쓰비시 엘레베이터">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta property="og:type" content="website">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<link rel="stylesheet" type="text/css" href="/web/common/ko/css/jquery-ui.min.css">
+<link rel="stylesheet" type="text/css" href="/web/common/ko/css/swiper.min.css">
+<link rel="stylesheet" type="text/css" href="/web/common/ko/css/jquery.mCustomScrollbar.css">
+<link rel="stylesheet" type="text/css" href="/web/common/ko/css/common.css">
+<link rel="stylesheet" type="text/css" href="/web/common/ko/css/layout.css?ver=20220405">
+<link rel="stylesheet" type="text/css" href="/web/common/ko/css/contents.css?ver=20220525">
+<link rel="apple-touch-icon" href="/web/common/ko/img/contents/apple-touch-icon_ios.png">
+<link rel="shortcut icon" href="/web/common/ko/img/contents/android-touch-icon_android.png">
+<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-NK0D9VYZL9&amp;l=dataLayer&amp;cx=c&amp;gtm=457e53p4za200&amp;tag_exp=102482433~102788824~102803279~102813109~102887799~102926062"></script><script type="text/javascript" async="" charset="utf-8" src="https://www.gstatic.com/recaptcha/releases/bUO1BXI8H9PgjAPSW9hwuSeI/recaptcha__en.js" crossorigin="anonymous" integrity="sha384-W6vGSa1gNU2JYZ4aYa4y4W3SgdiTlWqPltQiHH1/PEEh6w3sEdnuACkbWBJN1UBJ"></script><script>
+	var baseUri= "/web/index.php"; // site base uri
+</script>
+<script type="text/javascript" src="/web/common/ko/js/lib/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="/web/common/ko/js/lib/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/web/common/ko/js/lib/swiper.min.js"></script>
+<script type="text/javascript" src="/web/common/ko/js/lib/jquery.mCustomScrollbar.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+<script type="text/javascript" src="/web/common/ko/js/program.js"></script>
+<script type="text/javascript" src="/web/common/ko/js/common.js"></script>
+<script type="text/javascript" src="/web/common/ko/js/menu.js?v=20250327080638"></script>
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans&amp;display=swap" rel="stylesheet">
+<link rel="shortcut icon" href="/web/common/ko/img/layout/favicon.ico"><!-- 06.17 파비콘 추가-->
+
+<title>미쓰비시 엘레베이터</title>
+<link rel="stylesheet" type="text/css" href="/web/common/ko/css/main.css">
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=21840191ce2235f64ae0f88c25dc767e"></script><script charset="UTF-8" src="https://t1.daumcdn.net/mapjsapi/js/main/4.4.19/kakao.js"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-150671400-1"></script>
+<script src="https://www.google.com/recaptcha/api.js?render=6LeywdYqAAAAAIYkX-4fs3oJHFUeVtxChq2d3lvu"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-150671400-1');
+</script>
+<script>
+
+	//document.cookie = "safeCookie1=foo; SameSite=Lax";
+	//document.cookie = "safeCookie2=foo; SameSite=Lax";
+	//document.cookie = "crossCookie=bar; SameSite=None; Secure";
+
+	// 중복등록 방지용
+	var doubleSubmitFlag = false;
+	function doubleSubmitCheck(){
+		if(doubleSubmitFlag){
+			return doubleSubmitFlag;
+		}else{
+			doubleSubmitFlag = true;
+			return false;
+		}
+	}
+
+	// 404 페이지 타이머
+	var count = 8;
+	function countdown(){
+		if( count == 0 ){
+			location.href = baseUri+"/web/ko/main";
+		} else {
+			$(".errorCon .count span").text(count);
+			//setTimeout("countdown()",1000);
+			count--;
+		}
+	}
+
+	function go_search(sub_nm) {
+		var keyword = $("#id_keyword_"+sub_nm).val();
+		$("#search_keyword").val(keyword);
+		$("#searchform").submit();
+	}
+
+	function go_search_ev(ev, sub_nm) {
+		if( ev.keyCode == 13 ){
+			go_search(sub_nm);
+		}
+	}
+
+	function go_search_ev_ref(ev, tabno, sub_nm, ap_id, gbn) {
+		if( ev.keyCode == 13 ){
+			go_search_tabno(tabno, sub_nm, ap_id, gbn);
+		}
+	}
+
+	function go_search_tabno(tabno, sub_nm, ap_id, gbn) {
+		// tab 초기화
+		$("#id_li_ref_tabno_16").removeClass("on");
+		$("#id_li_ref_tabno_17").removeClass("on");
+		$("#id_li_ref_tabno_18").removeClass("on");
+
+		// 버튼 초기화
+		$("#id_div_more_ref").hide();
+
+		$("#id_li_ref_tabno_" + tabno).addClass("on");
+
+		var keyword = "";
+		if( gbn == "1" ) {
+			keyword = $("#id_keyword_"+sub_nm).val();
+		}else{
+			$("#id_keyword_"+sub_nm).val("");
+		}
+		$("#search_keyword").val(keyword);
+		$("#search_tabno").val(tabno);
+
+		$.ajax({
+			type: "POST",
+			url: baseUri+"/web/ko/customer/reference/get_lst_page",
+			data: $("#searchform").serialize(),
+			success:function(data) {
+				$("#" + ap_id).html(data);
+
+				// toggle effect set
+				set_toggle_dt();
+			},
+			error:function(r) {
+				//alert(r.status);
+			},
+			dataType: "html"
+		});
+	}
+
+	function set_toggle_dt() {
+		/*
+		$(".toggle-list > dt").click(function(){
+			if ( !$(this).hasClass("active") ){
+				$(".toggle-list > dd").stop().slideUp();
+				$(this).next("dd").stop().slideDown();
+
+				$(".toggle-list > dt").removeClass("active");
+				$(this).addClass("active");
+			} else {
+				$(this).siblings("dd").stop().slideUp();
+				$(this).removeClass("active");
+			}
+		});*/
+	}
+
+	function file_download(sub_nm, no) {
+		var src_url = baseUri+"/web/ko/main/file_download?sub_nm="+sub_nm+"&no="+no;
+
+		document.location.href = src_url;
+	}
+
+	function file_zip_download(sub_nm, no) {
+		var src_url = baseUri+"/web/ko/main/file_zip_download?sub_nm="+sub_nm+"&no="+no;
+
+		document.location.href = src_url;
+	}
+
+	// 이전글 다음글
+	function get_pre_next(sub_nm, no, ap_id) {
+
+		var tabno = 0;
+		var pre_next_url = "";
+		if( sub_nm != "" ) {
+			switch(sub_nm) {
+				case "news" :
+					pre_next_url = baseUri+"/web/ko/newsroom/get_pre_next";
+					break;
+                case "videos" :
+                    pre_next_url = baseUri+"/web/ko/newsVideos/get_pre_next";
+                    break;
+			}
+		}
+
+		if( pre_next_url != "" ) {
+			$.ajax({
+				type: "POST",
+				url: pre_next_url,
+				data: {"no":no, "tabno":tabno},
+				success:function(data) {
+					$("#" + ap_id).html(data);
+				},
+				error:function(r) {
+					//alert(r.status);
+				},
+				dataType: "html"
+			});
+		}
+	}
+
+	// 더보기
+	function get_lst(ap_id, sub_nm) {
+		if(doubleSubmitCheck()) return;
+
+		var get_url = "";
+		var s_keyword = "";
+		if( sub_nm != "" ) {
+			switch(sub_nm) {
+				case "ref" :
+					get_url = baseUri+"/web/ko/customer/reference/get_lst";
+					break;
+				case "news" :
+					get_url = baseUri+"/web/ko/newsroom/get_lst";
+					break;
+                case "videos" :
+                    get_url = baseUri+"/web/ko/newsVideos/get_lst";
+                    break;
+				case "faq" :
+					get_url = baseUri+"/web/ko/careers/recruit/get_lst";
+					break;
+			}
+		}
+
+		var tot_cnt = $("#id_total_cnt_"+sub_nm).val();
+		var now_cnt = $("#id_now_cnt_"+sub_nm).val();
+		var tabno	= $("#id_tabno_"+sub_nm).val();
+
+		var cnt = parseInt(tot_cnt) - parseInt(now_cnt);
+
+		if( cnt > 0 ) {
+			if( get_url != "" ) {
+				$.ajax({
+					type: "POST",
+					url: get_url,
+					data: {"cnt": now_cnt, "tot_cnt": tot_cnt, "keyword":s_keyword, "tabno":tabno},
+					success:function(data) {
+						$("#" + ap_id).append(data);
+						doubleSubmitFlag = false;
+					},
+					error:function(r) {
+						//alert(r.status);
+					},
+					dataType: "html"
+				});
+			}
+		}else{
+			//$("#id_page_cnt").val("0");
+			if(doubleSubmitCheck()) return;
+			return;
+		}
+	}
+
+	function set_count(sub_nm, cnt) {
+		var old_cnt = $("#id_now_cnt_"+sub_nm).val();
+		var now_cnt = parseInt(old_cnt) + parseInt(cnt);
+
+		$("#id_now_cnt_"+sub_nm).val(now_cnt);
+		$("#id_search_cnt_"+sub_nm).html(now_cnt);
+
+		var rest_cnt = $("#id_total_cnt_"+sub_nm).val();
+		var now_cnt = $("#id_now_cnt_"+sub_nm).val();
+
+		var cnt = parseInt(rest_cnt) - parseInt(now_cnt);
+
+		if( cnt < 1 ) {
+			if( sub_nm == "faq" ) {
+				$("#id_div_more_faq").hide();
+			}else{
+				$(".btn-wrap").hide();
+			}
+
+		}
+	}
+
+	function go_ask(gbn) {
+		$("#id_ask_gbn").val(gbn);
+		$("#ask_form").submit();
+	}
+
+	function set_lan(lan) {
+		if(lan == "ko") {
+			$.ajax({
+				type: "POST",
+				url: baseUri+"/main/set_lan",
+				data: {"lan":lan },
+				success:function(r) {
+					console.log(r.message);
+					window.location.href= r.message;
+				},
+				error:function(r) {
+					//alert(r.status);
+				},
+				dataType: "json"
+			});
+		} else if(lan == "en" ) {
+            window.location.href = "https://www.mitsubishielectric.com/en/index.html";
+        }
+	}
+
+	function get_menu(val) {
+		$.ajax({
+			type: "POST",
+			url: baseUri+"/web/main/get_menu",
+			data: {"menu_no": val },
+			success:function(r) {
+				$("#id_menu_ul").html(r);
+			},
+			error:function(r) {
+				//alert(r.status);
+			},
+			dataType: "html"
+		});
+	}
+
+	function ask_ok(gbn, form) {
+		if(doubleSubmitCheck()) return;
+
+        if( gbn != "communicate" ) {
+            if( document.getElementById("privacy-check").checked == false ) {
+                alert("개인정보 수집동의를 체크해 주세요.");
+                doubleSubmitFlag = false;
+                return;
+            }
+        }
+
+		// 고객 문의
+		if( gbn == "customer" ) {
+			if( $("#data_gbn").val().trim() == "" ) {
+				alert("구분을 선택해 주세요.");
+				doubleSubmitFlag = false;
+				return;
+			}
+
+			if( $("#data_company").val().trim() == "" ) {
+				alert("회사명을 입력해 주세요.");
+				doubleSubmitFlag = false;
+				return;
+			}
+
+			if( $("#data_name").val().trim() == "" ) {
+				alert("담당자명을 입력해 주세요.");
+				doubleSubmitFlag = false;
+				return;
+			}
+
+			if( $("#data_email").val().trim() == "" ) {
+				alert("이메일을 입력해 주세요.");
+				doubleSubmitFlag = false;
+				return;
+			}
+
+			if( $("#data_phone").val().trim() == "" ) {
+				alert("연락처를 입력해 주세요.");
+				doubleSubmitFlag = false;
+				return;
+			}
+
+			if( $("#data_content").val().trim() == "" ) {
+				alert("내용을 입력해 주세요.");
+				doubleSubmitFlag = false;
+				return;
+			}
+
+			var chk_result_mail = val_match_chk("email", "data_email");
+			if(chk_result_mail == null) {
+				alert("이메일 형식이 올바르지 않습니다.");
+				doubleSubmitFlag = false;
+				return;
+			}
+
+			var chk_result_num = val_match_chk("num", "data_phone");
+			if(chk_result_num == null) {
+				alert("전화번호는 숫자만 입력 가능합니다.");
+				doubleSubmitFlag = false;
+				return;
+			}
+		}
+
+		// 신문고
+		if( gbn == "sinmungo" ) {
+			if( $("#data_gbn_1").val().trim() == "" ) {
+				alert("제보 분야를 선택해 주세요.");
+				doubleSubmitFlag = false;
+				return;
+			}
+
+			if( $("#data_gbn_2").val().trim() == "" ) {
+				alert("제보자 구분을 선택해 주세요.");
+				doubleSubmitFlag = false;
+				return;
+			}
+
+			// if( $("#data_gbn_3").val().trim() == "" ) {
+			// 	alert("발송 구분을 선택해 주세요.");
+			// 	doubleSubmitFlag = false;
+			// 	return;
+			// }
+
+			if( $("#data_name").val().trim() == "" ) {
+				alert("이름을 입력해 주세요.");
+				doubleSubmitFlag = false;
+				return;
+			}
+
+			if( $("#data_email").val().trim() == "" ) {
+				alert("이메일을 입력해 주세요.");
+				doubleSubmitFlag = false;
+				return;
+			}
+
+			if( $("#data_phone").val().trim() == "" ) {
+				alert("연락처를 입력해 주세요.");
+				doubleSubmitFlag = false;
+				return;
+			}
+
+			if( $("#data_title").val().trim() == "" ) {
+				alert("제목을 입력해 주세요.");
+				doubleSubmitFlag = false;
+				return;
+			}
+
+			if( $("#data_content").val().trim() == "" ) {
+				alert("내용을 입력해 주세요.");
+				doubleSubmitFlag = false;
+				return;
+			}
+
+			var chk_result_mail = val_match_chk("email", "data_email");
+			if(chk_result_mail == null) {
+				alert("이메일 형식이 올바르지 않습니다.");
+				doubleSubmitFlag = false;
+				return;
+			}
+
+			var chk_result_num = val_match_chk("num", "data_phone");
+			if(chk_result_num == null) {
+				alert("전화번호는 숫자만 입력 가능합니다.");
+				doubleSubmitFlag = false;
+				return;
+			}
+		}
+
+        // 사내소통함
+        if( gbn == "communicate" ) {
+            if( $("#data_gbn_1").val().trim() == "" ) {
+                alert("내용 구분을 선택해 주세요.");
+                doubleSubmitFlag = false;
+                return;
+            }
+
+            if( $("#data_title").val().trim() == "" ) {
+                alert("제목을 입력해 주세요.");
+                doubleSubmitFlag = false;
+                return;
+            }
+
+            if( $("#data_content").val().trim() == "" ) {
+                alert("내용을 입력해 주세요.");
+                doubleSubmitFlag = false;
+                return;
+            }
+            /*
+            if( $("#data_name").val().trim() == "" ) {
+                alert("이름을 입력해 주세요.");
+                doubleSubmitFlag = false;
+                return;
+            }
+
+            if( $("#data_email").val().trim() == "" ) {
+                alert("이메일을 입력해 주세요.");
+                doubleSubmitFlag = false;
+                return;
+            }
+
+            if( $("#data_phone").val().trim() == "" ) {
+                alert("연락처를 입력해 주세요.");
+                doubleSubmitFlag = false;
+                return;
+            }
+
+            var chk_result_mail = val_match_chk("email", "data_email");
+            if(chk_result_mail == null) {
+                alert("이메일 형식이 올바르지 않습니다.");
+                doubleSubmitFlag = false;
+                return;
+            }
+
+            var chk_result_num = val_match_chk("num", "data_phone");
+            if(chk_result_num == null) {
+                alert("전화번호는 숫자만 입력 가능합니다.");
+                doubleSubmitFlag = false;
+                return;
+            }
+             */
+        }
+
+		// 채용문의
+		if( gbn == "recruit" ) {
+			if( $("#data_gbn").val().trim() == "" ) {
+				alert("구분을 선택해 주세요.");
+				doubleSubmitFlag = false;
+				return;
+			}
+
+			if( $("#data_name").val().trim() == "" ) {
+				alert("이름을 입력해 주세요.");
+				doubleSubmitFlag = false;
+				return;
+			}
+
+			if( $("#data_email").val().trim() == "" ) {
+				alert("이메일을 입력해 주세요.");
+				doubleSubmitFlag = false;
+				return;
+			}
+
+			if( $("#data_phone").val().trim() == "" ) {
+				alert("연락처를 입력해 주세요.");
+				doubleSubmitFlag = false;
+				return;
+			}
+
+			if( $("#data_content").val().trim() == "" ) {
+				alert("내용을 입력해 주세요.");
+				doubleSubmitFlag = false;
+				return;
+			}
+
+			var chk_result_mail = val_match_chk("email", "data_email");
+			if(chk_result_mail == null) {
+				alert("이메일 형식이 올바르지 않습니다.");
+				doubleSubmitFlag = false;
+				return;
+			}
+
+			var chk_result_num = val_match_chk("num", "data_phone");
+			if(chk_result_num == null) {
+				alert("전화번호는 숫자만 입력 가능합니다.");
+				doubleSubmitFlag = false;
+				return;
+			}
+		}
+
+		if( gbn.trim() != "" ) {
+			var ask_url = "";
+			switch( gbn ) {
+				case "customer" :
+					ask_url = baseUri+"/web/ko/customer/ask/ask_ok";
+					break;
+				case "sinmungo" :
+					ask_url = baseUri+"/web/ko/customer/sinmungo/ask_ok";
+					break;
+				case "recruit" :
+					ask_url = baseUri+"/web/ko/careers/recruit/ask_ok";
+					break;
+                case "communicate" :
+                    ask_url = baseUri+"/web/ko/company/communicate/ask_ok";
+                    break;
+			}
+
+			if( ask_url.trim() != "" ) {
+				$.ajax({
+					type: "POST",
+					url: ask_url,
+					data: $("#"+ form).serialize(),
+					success:function(r) {
+						if( r.result != "OK" ) {
+							doubleSubmitFlag = false;
+							alert(r.message);
+							$(".blind").hide();
+							return;
+						}
+						alert(r.message);
+						window.location.href = window.location.href;
+					},
+					error:function(r) {
+						//alert(r.status);
+					},
+					dataType: "json"
+				});
+			}
+		}
+	}
+
+	// 접수 폼 validation 공통 체크 함수
+	function val_match_chk(gbn, id) {
+		var rtn_result = null;
+
+		switch(gbn) {
+			case "email" :
+				//var mail_regExp = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+				//var mail_regExp = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
+				//var mail_regExp = /^[A-Za-z0-9_\.\-]+@([a-zA-Z0-9]{1,10})\.([a-zA-Z]{1,10})+$/;
+                var mail_regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+				var email_val = $("#"+ id).val();
+				rtn_result = email_val.match(mail_regExp);
+				break;
+			case "id" :
+				var id_regExp = /^[a-zA-Z0-9]{4,12}$/;
+				var id_val = $("#"+ id).val();
+				rtn_result = id_val.match(id_regExp);
+				break;
+			case "num" :
+				var num_regExp = /[0-9]/g;
+				var num_val = $("#"+ id).val();
+				rtn_result = num_val.match(num_regExp);
+				break;
+		}
+
+		return rtn_result;
+	}
+
+	function chk_num(val, id) {
+		re = /[^0-9]/g;
+		val = val.replace(re,"");
+
+		if( val == "" || val == null ) {
+			//val = 0;
+		}
+
+		$("#"+id).val(val);
+	}
+</script>
+
+</head>
+<body>
+	<div class="wrap">﻿<div class="pop-detail" style="display:none">
+	<div class="dimd"></div>
+	<div class="detail clearfix" id="id_div_proj_detail">
+
+	</div>
+</div>
+<div class="pc_layout">
+	<div class="header_wrap">
+		<div class="header">
+			<h1>
+				<a href="/web/index.php/web/ko/main"><img src="/web/common/ko/img/layout/logo.svg" alt=""></a>
+				<span>MITSUBISHI ELEVATOR KOREA</span>
+			</h1>
+			<ul class="gnb">
+				<li>
+					<a href="#none">Products</a>
+					<div class="subMenu-wrap clearfix">
+						<h3>
+							<strong>Products</strong>
+							제품정보
+						</h3>
+						<ul class="subMenu">
+							<h4><a href="/web/index.php/web/ko/product/elevator/intro">엘리베이터</a></h4>
+							<li><a href="javascript: goMenuLink(110101);">NexWay</a></li>
+							<li><a href="javascript: goMenuLink(110102);">Double Deck</a></li>
+							<li><a href="javascript: goMenuLink(110104);">NexPia-21</a></li>
+							<li><a href="javascript: goMenuLink(110105);">NexPia-P1K</a></li>
+							<li><a href="javascript: goMenuLink(110110);">NexPia-P1KL</a></li>
+							<li><a href="javascript: goMenuLink(110106);">NEXIEZ-MRL</a></li>
+							<li><a href="javascript: goMenuLink(110107);">NexPia-P1Q</a></li>
+							<li><a href="javascript: goMenuLink(110108);">NexPia-P1QL</a></li>
+							<li><a href="javascript: goMenuLink(110109);">전망용</a></li>
+						</ul>
+						<ul class="subMenu">
+							<h4>에스컬레이터</h4>
+							<li><a href="javascript: goMenuLink(110201);">K-Series(표준)</a></li>
+							<li><a href="javascript: goMenuLink(110202);">A-Series(고행정)</a></li>
+							<li><a href="javascript: goMenuLink(110203);">Spiral(특수)</a></li>
+							<li><a href="javascript: goMenuLink(110204);">Wave(특수)</a></li>
+						</ul>
+						<ul class="subMenu">
+							<h4>교체 공사</h4>
+							<li><a href="javascript: goMenuLink(110301);">전면교체</a></li>
+						</ul>
+						<ul class="subMenu">
+							<h4>프로젝트</h4>
+							<li><a href="javascript: goMenuLink(110401);">국내</a></li>
+							<li><a href="https://www.mitsubishielectric.com/elevator/project/index.html" target="_blank">해외실적</a></li>
+						</ul>
+						<ul class="subMenu">
+							<h4><a href="javascript: goMenuLink(110500);">쇼룸</a></h4>
+						</ul>
+						<!-- 고객 문의 연락처 -->
+						<div class="gnb-bot clearfix">
+							<h4>고객문의</h4>
+							<div class="num-wrap clearfix">
+								<dl>
+									<dt>서비스정보센터(24시)</dt>
+									<dd>1899-9449</dd>
+								</dl>
+								<dl>
+									<dt>영업</dt>
+									<dd>02-6670-2000</dd>
+								</dl>
+								<dl>
+									<dt>설치</dt>
+									<dd>02-6670-2114</dd>
+								</dl>
+								<dl>
+									<dt>보수</dt>
+									<dd>02-6670-2163</dd>
+								</dl>
+							</div>
+						</div>
+						<!-- //고객 문의 연락처 -->
+					</div>
+				</li>
+				<li>
+					<a href="#none">Service</a>
+					<div class="subMenu-wrap clearfix ul-03">
+						<h3>
+							<strong>Service</strong>
+							유지관리서비스
+						</h3>
+						<ul class="subMenu">
+							<h4><a href="javascript: goMenuLink(120100);">유지관리 서비스</a></h4>
+						</ul>
+						<ul class="subMenu">
+							<h4><a href="javascript: goMenuLink(120200);">차별화된 서비스</a></h4>
+						</ul>
+						<ul class="subMenu">
+							<h4><a href="javascript: goMenuLink(120300);">서비스 정보센터(MIC)</a></h4>
+						</ul>
+						<ul class="subMenu">
+							<h4><a href="javascript: goMenuLink(120400);">원격감시점검시스템</a></h4>
+						</ul>
+						<ul class="subMenu">
+							<h4><a href="javascript: goMenuLink(120500);">관제시스템(GIS)</a></h4>
+						</ul>
+						<ul class="subMenu">
+							<h4><a href="javascript: goMenuLink(120600);">스마트폰 AS 관리시스템</a></h4>
+						</ul>
+						<!-- 고객 문의 연락처 -->
+						<div class="gnb-bot clearfix">
+							<h4>고객문의</h4>
+							<div class="num-wrap clearfix">
+								<dl>
+									<dt>서비스정보센터(24시)</dt>
+									<dd>1899-9449</dd>
+								</dl>
+								<dl>
+									<dt>영업</dt>
+									<dd>02-6670-2000</dd>
+								</dl>
+								<dl>
+									<dt>설치</dt>
+									<dd>02-6670-2114</dd>
+								</dl>
+								<dl>
+									<dt>보수</dt>
+									<dd>02-6670-2163</dd>
+								</dl>
+							</div>
+						</div>
+						<!-- //고객 문의 연락처 -->
+					</div>
+				</li>
+				<li>
+					<a href="#none">Innovation</a>
+					<div class="subMenu-wrap clearfix 03">
+						<h3>
+							<strong>Innovation</strong>
+							혁신기술
+						</h3>
+						<ul class="subMenu">
+							<h4>최첨단 기술</h4>
+							<li><a href="javascript: goMenuLink(130101);">초고속 엘리베이터</a></li>
+							<li><a href="javascript: goMenuLink(130102);">더블데크 엘리베이터</a></li>
+							<li><a href="javascript: goMenuLink(130103);">지그재그 엘리베이터</a></li>
+							<li><a href="javascript: goMenuLink(130104);">대용량셔틀 엘리베이터</a></li>
+							<li><a href="javascript: goMenuLink(130105);">특수전망용 엘리베이터</a></li>
+							<li><a href="javascript: goMenuLink(130106);">Spiral&amp;Wave-Shaped Escalator</a></li>
+						</ul>
+						<ul class="subMenu">
+							<h4>스마트 기술</h4>
+							<li><a href="javascript: goMenuLink(130201);">보안게이트연동 목적층 예약시스템</a></li>
+							<li><a href="javascript: goMenuLink(130202);">인공지능 군관리시스템</a></li>
+						</ul>
+						<ul class="subMenu">
+							<h4><a href="javascript: goMenuLink(130300);">친환경 기술</a></h4>
+						</ul>
+						<!-- 고객 문의 연락처 -->
+						<div class="gnb-bot clearfix">
+							<h4>고객문의</h4>
+							<div class="num-wrap clearfix">
+								<dl>
+									<dt>서비스정보센터(24시)</dt>
+									<dd>1899-9449</dd>
+								</dl>
+								<dl>
+									<dt>영업</dt>
+									<dd>02-6670-2000</dd>
+								</dl>
+								<dl>
+									<dt>설치</dt>
+									<dd>02-6670-2114</dd>
+								</dl>
+								<dl>
+									<dt>보수</dt>
+									<dd>02-6670-2163</dd>
+								</dl>
+							</div>
+						</div>
+						<!-- //고객 문의 연락처 -->
+					</div>
+				</li>
+				<li>
+					<a href="#none">Careers</a>
+					<div class="subMenu-wrap clearfix ul-03">
+						<h3>
+							<strong>Careers</strong>
+							인재채용
+						</h3>
+						<ul class="subMenu">
+							<h4><a href="javascript: goMenuLink(140100);">인재상</a></h4>
+						</ul>
+						<ul class="subMenu">
+							<h4><a href="javascript: goMenuLink(140200);">복리후생/인사제도</a></h4>
+						</ul>
+						<ul class="subMenu">
+							<h4><a href="javascript: goMenuLink(140300);">인재육성</a></h4>
+						</ul>
+						<ul class="subMenu">
+							<h4><a href="https://rcrt.mitsubishielevator.co.kr/recruitAnnounceList.do" target="_blank">채용정보</a></h4>
+						</ul>
+                        <ul class="subMenu">
+                            <h4><a href="https://rcrt.mitsubishielevator.co.kr/recruitAnnounceList.do?recruit=pool" target="_blank">상시채용(인재 POOL 등록)</a></h4>
+                        </ul>
+						<ul class="subMenu">
+							<h4><a href="javascript: goMenuLink(140500);">채용문의</a></h4>
+						</ul>
+						<ul class="subMenu">
+							<h4><a href="javascript: goMenuLink(140600);">채용서류 반환청구</a></h4>
+						</ul>
+						<!-- 고객 문의 연락처 -->
+						<div class="gnb-bot clearfix">
+							<h4>고객문의</h4>
+							<div class="num-wrap clearfix">
+								<dl>
+									<dt>서비스정보센터(24시)</dt>
+									<dd>1899-9449</dd>
+								</dl>
+								<dl>
+									<dt>영업</dt>
+									<dd>02-6670-2000</dd>
+								</dl>
+								<dl>
+									<dt>설치</dt>
+									<dd>02-6670-2114</dd>
+								</dl>
+								<dl>
+									<dt>보수</dt>
+									<dd>02-6670-2163</dd>
+								</dl>
+							</div>
+						</div>
+						<!-- //고객 문의 연락처 -->
+					</div>
+				</li>
+				<li>
+					<a href="#none">Company</a>
+					<div class="subMenu-wrap clearfix ul-03">
+						<h3>
+							<strong>Company</strong>
+							회사정보
+						</h3>
+						<ul class="subMenu">
+							<h4>회사소개</h4>
+							<li><a href="javascript: goMenuLink(150101);">기업이념</a></li>
+							<li><a href="javascript: goMenuLink(150102);">회사개요</a></li>
+							<li><a href="javascript: goMenuLink(150103);">회사연혁</a></li>
+							<li><a href="javascript: goMenuLink(150104);">CEO 메시지</a></li>
+						</ul>
+						<ul class="subMenu">
+							<h4>지속가능경영</h4>
+							<li><a href="javascript: goMenuLink(150201);">윤리경영</a></li>
+							<li><a href="javascript: goMenuLink(150202);">공정거래(CP)</a></li>
+							<li><a href="javascript: goMenuLink(150203);">사회적책임(CSR)</a></li>
+                            <li><a href="javascript: goMenuLink(150208);">인권방침</a></li>
+							<li><a href="javascript: goMenuLink(150204);">Quality in Motion</a></li>
+                            <li><a href="javascript: goMenuLink(150205);">사내소통함(임직원용)</a></li>
+						</ul>
+						<ul class="subMenu">
+							<h4>홍보센터</h4>
+							<li><a href="javascript: goMenuLink(150301);">뉴스룸</a></li>
+                            <li><a href="javascript: goMenuLink(150303);">영상자료</a></li>
+							<li><a href="javascript: goMenuLink(150302);">오시는 길</a></li>
+						</ul>
+						<!-- 고객 문의 연락처 -->
+						<div class="gnb-bot clearfix">
+							<h4>고객문의</h4>
+							<div class="num-wrap clearfix">
+								<dl>
+									<dt>서비스정보센터(24시)</dt>
+									<dd>1899-9449</dd>
+								</dl>
+								<dl>
+									<dt>영업</dt>
+									<dd>02-6670-2000</dd>
+								</dl>
+								<dl>
+									<dt>설치</dt>
+									<dd>02-6670-2114</dd>
+								</dl>
+								<dl>
+									<dt>보수</dt>
+									<dd>02-6670-2163</dd>
+								</dl>
+							</div>
+						</div>
+						<!-- //고객 문의 연락처 -->
+					</div>
+				</li>
+				<li>
+					<a href="#none">Customer Center</a>
+					<div class="subMenu-wrap clearfix ul-03">
+						<h3>
+							<strong>Customer<br>Center</strong>
+							고객센터
+						</h3>
+						<ul class="subMenu">
+							<h4><a href="javascript: goMenuLink(160100);">사이버 신문고</a></h4>
+						</ul>
+						<ul class="subMenu">
+							<h4><a href="javascript: goMenuLink(160200);">고객문의</a></h4>
+						</ul>
+						<ul class="subMenu">
+							<h4>고객 자료실</h4>
+							<li><a href="javascript: goMenuLink(160301);">Brochure &amp; Specifications</a></li>
+							<li><a href="javascript: goMenuLink(160302);">유지관리자료</a></li>
+							<!-- <li><a href="javascript: goMenuLink(160303);">교통량 계산 개요</a></li> -->
+						</ul>
+						<!-- 고객 문의 연락처 -->
+						<div class="gnb-bot clearfix">
+							<h4>고객문의</h4>
+							<div class="num-wrap clearfix">
+								<dl>
+									<dt>서비스정보센터(24시)</dt>
+									<dd>1899-9449</dd>
+								</dl>
+								<dl>
+									<dt>영업</dt>
+									<dd>02-6670-2000</dd>
+								</dl>
+								<dl>
+									<dt>설치</dt>
+									<dd>02-6670-2114</dd>
+								</dl>
+								<dl>
+									<dt>보수</dt>
+									<dd>02-6670-2163</dd>
+								</dl>
+							</div>
+						</div>
+						<!-- //고객 문의 연락처 -->
+					</div>
+				</li>
+			</ul>
+			<div class="odd">
+							<div class="rang-select-wrapper"><select class="rang-select sources" placeholder="KOR" style="display: none;">
+                    <option value="ko">KOR</option>
+                    <option value="en">Global</option>
+                </select><div class="rang-select sources"><span class="rang-select-trigger">KOR</span><div class="rang-options"><span class="rang-option undefined" data-value="ko" onclick="set_lan('ko')">KOR</span><span class="rang-option undefined" data-value="en" onclick="set_lan('en')">Global</span><span class="rang-option"><a href="https://www.mebs.com">MEBS</a></span></div></div></div>
+				<div class="all-btn">
+				    <img src="/web/common/ko/img/layout/gnb_menu.svg" alt="" width="32" height="18">
+				</div>
+			</div>
+		</div>
+		<script>
+		$(".rang-select").each(function() {
+			var classes = $(this).attr("class"),
+				id      = $(this).attr("id"),
+				name    = $(this).attr("name");
+			var template =  '<div class="' + classes + '">';
+				template += '<span class="rang-select-trigger">' + $(this).attr("placeholder") + '</span>';
+				template += '<div class="rang-options">';
+				$(this).find("option").each(function() {
+					template += '<span class="rang-option ' + $(this).attr("class") + '" data-value="' + $(this).attr("value") + '" onclick="set_lan(\'' + $(this).attr("value") + '\')">' + $(this).html() + '</span>';
+				});
+                template += '<span class="rang-option"><a href="https://www.mebs.com">MEBS</a></span>';
+				template += '</div></div>';
+
+				$(this).wrap('<div class="rang-select-wrapper"></div>');
+				$(this).hide();
+				$(this).after(template);
+			});
+			$(".rang-option:first-of-type").hover(function() {
+				$(this).parents(".rang-options").addClass("option-hover");
+				}, function() {
+				$(this).parents(".rang-options").removeClass("option-hover");
+			});
+			$(".rang-select-trigger").on("click", function() {
+				$('html').one('click',function() {
+				$(".rang-select").removeClass("opened");
+			});
+			$(this).parents(".rang-select").toggleClass("opened");
+				event.stopPropagation();
+			});
+			$(".rang-option").on("click", function() {
+				$(this).parents(".rang-select-wrapper").find("select").val($(this).data("value"));
+				$(this).parents(".rang-options").find(".rang-option").removeClass("selection");
+				$(this).addClass("selection");
+				$(this).parents(".rang-select").removeClass("opened");
+				$(this).parents(".rang-select").find(".rang-select-trigger").text($(this).text());
+			});
+
+			$(".rang-select-trigger").click(function(){
+			if ( !$(this).hasClass("opened") ){
+				$(this).parents().parents().siblings().children().find(".rang-select").removeClass("opened");
+
+			} else {
+				$(this).parents().parents().siblings().children().find(".rang-select").addClass("opened");
+			}
+		});
+		</script>
+	</div>
+	<div class="gnb-all">
+		<div class="w1260 clearfix">
+			<ul class="gnb-menu" style="height: 0px;">
+				<h3>Products</h3>
+				<li><a href="/web/index.php/web/ko/product/elevator/intro">엘리베이터</a></li>
+				<li><a href="javascript: goMenuLink(110201);">에스컬레이터</a></li>
+				<li><a href="javascript: goMenuLink(110301);">교체 공사</a></li>
+				<li><a href="javascript: goMenuLink(110401);">국내 프로젝트</a></li>
+				<li><a href="https://www.mitsubishielectric.com/elevator/project/index.html" target="_blank">해외 프로젝트</a></li>
+				<li><a href="javascript: goMenuLink(110500);">쇼룸</a></li>
+			</ul>
+			<ul class="gnb-menu" style="height: 0px;">
+				<h3>Service</h3>
+				<li><a href="javascript: goMenuLink(120100);">유지관리 서비스</a></li>
+				<li><a href="javascript: goMenuLink(120200);">차별화된 서비스</a></li>
+				<li><a href="javascript: goMenuLink(120300);">서비스 정보센터(MIC)</a></li>
+				<li><a href="javascript: goMenuLink(120400);">원격감시점검시스템</a></li>
+				<li><a href="javascript: goMenuLink(120500);">관제시스템(GIS)</a></li>
+				<li><a href="javascript: goMenuLink(120600);">스마트폰 AS 관리시스템</a></li>
+			</ul>
+			<ul class="gnb-menu" style="height: 0px;">
+				<h3>Innovation</h3>
+				<li><a href="javascript: goMenuLink(130101);">최첨단 기술</a></li>
+				<li><a href="javascript: goMenuLink(130201);">스마트 기술</a></li>
+				<li><a href="javascript: goMenuLink(130300);">친환경 기술</a></li>
+			</ul>
+			<ul class="gnb-menu" style="height: 0px;">
+				<h3>Careers</h3>
+				<li><a href="javascript: goMenuLink(140100);">인재상</a></li>
+				<li><a href="javascript: goMenuLink(140200);">복리후생/인사제도</a></li>
+				<li><a href="javascript: goMenuLink(140300);">인재육성</a></li>
+				<li><a href="https://rcrt.mitsubishielevator.co.kr/recruitAnnounceList.do" target="_blank">채용정보</a></li>
+				<li><a href="https://rcrt.mitsubishielevator.co.kr/recruitAnnounceList.do?recruit=pool" target="_blank">상시채용(인재 POOL 등록)</a></li>
+				<li><a href="javascript: goMenuLink(140500);">채용문의</a></li>
+				<li><a href="javascript: goMenuLink(140600);">채용서류 반환청구</a></li>
+			</ul>
+			<ul class="gnb-menu" style="height: 0px;">
+				<h3>Company</h3>
+				<li><a href="javascript: goMenuLink(150101);">회사소개</a></li>
+				<li><a href="javascript: goMenuLink(150201);">지속가능경영</a></li>
+				<li><a href="javascript: goMenuLink(150301);">홍보센터</a></li>
+			</ul>
+			<ul class="gnb-menu" style="height: 0px;">
+				<h3>Customer Center</h3>
+				<li><a href="javascript: goMenuLink(160100);">사이버 신문고</a></li>
+				<li><a href="javascript: goMenuLink(160200);">고객문의</a></li>
+				<li><a href="javascript: goMenuLink(160301);">고객 자료실</a></li>
+			</ul>
+		</div>
+		<div class="tel-wrap">
+			<div class="w1260 clearfix">
+				<h3>고객문의</h3>
+				<div class="customer clearfix">
+					<dl>
+						<dt>서비스정보센터(24시)</dt>
+						<dd>1899-9449</dd>
+					</dl>
+					<dl>
+						<dt>영업</dt>
+						<dd>02-6670-2000</dd>
+					</dl>
+					<dl>
+						<dt>설치</dt>
+						<dd>02-6670-2114</dd>
+					</dl>
+					<dl>
+						<dt>보수</dt>
+						<dd>02-6670-2163</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="black_bg"></div>
+</div>
+
+<div class="mo_layout">
+	<div class="header">
+		<div class="logo-box">
+			<a href="/web/index.php/web/ko/main">
+				<img src="/web/common/ko/img/layout/logo.svg" alt="">
+			</a>
+			<span>MITSUBISHI ELEVATOR KOREA</span>
+			<img class="menuBtn" src="/web/common/ko/img/layout/gnb_menu.svg" alt="">
+		</div>
+	</div>
+	<div class="moMenu">
+		<div class="black_bg"></div>
+		<div class="moMenuCon">
+			<span class="moMenu_top">
+				<ul class="rang">
+					<li><a href="javascript: set_lan('ko');" class="on">KOR</a></li>
+					<li><a href="javascript: set_lan('en');">Global</a></li>
+                    <li><a href="https://www.mebs.com">MEBS</a></li>
+				</ul>
+				<img class="moMenu_x" src="/web/common/ko/img/layout/top_menu_x.png" alt="">
+			</span>
+			<ul>
+				<li>
+					<p>Products</p>
+					<ul>
+						<li>
+							<h3 class="open-depth03">엘리베이터</h3>
+							<ul class="depth03">
+								<li><a href="/web/index.php/web/ko/product/elevator/intro">엘리베이터</a></li>
+                                <li><a href="javascript: goMenuLink(110101);">NexWay</a></li>
+                                <li><a href="javascript: goMenuLink(110102);">Double Deck</a></li>
+                                <li><a href="javascript: goMenuLink(110104);">NexPia-21</a></li>
+                                <li><a href="javascript: goMenuLink(110105);">NexPia-P1K</a></li>
+                                <li><a href="javascript: goMenuLink(110110);">NexPia-P1KL</a></li>
+                                <li><a href="javascript: goMenuLink(110106);">NEXIEZ-MRL</a></li>
+                                <li><a href="javascript: goMenuLink(110107);">NexPia-P1Q</a></li>
+                                <li><a href="javascript: goMenuLink(110108);">NexPia-P1QL</a></li>
+                                <li><a href="javascript: goMenuLink(110109);">전망용</a></li>
+							</ul>
+						</li>
+						<li>
+							<h3 class="open-depth03">에스컬레이터</h3>
+							<ul class="depth03">
+								<li><a href="javascript: goMenuLink(110201);">K-Series(표준)</a></li>
+								<li><a href="javascript: goMenuLink(110202);">A-Series(고행정)</a></li>
+								<li><a href="javascript: goMenuLink(110203);">Spiral(특수)</a></li>
+								<li><a href="javascript: goMenuLink(110204);">Wave(특수)</a></li>
+							</ul>
+						</li>
+						<li>
+                            <h3 class="open-depth03">교체 공사</h3>
+                            <ul class="depth03">
+                                <li><a href="javascript: goMenuLink(110301);">전면교체</a></li>
+                            </ul>
+                        </li>
+						<li>
+							<h3 class="open-depth03">프로젝트</h3>
+							<ul class="depth03">
+								<li><a href="javascript: goMenuLink(110401);">국내</a></li>
+								<li><a href="https://www.mitsubishielectric.com/elevator/project/index.html" target="_blank">해외실적</a></li>
+							</ul>
+						</li>
+						<li><h3><a href="javascript: goMenuLink(110500);">쇼룸</a></h3></li>
+					</ul>
+				</li>
+				<li>
+					<p>Service</p>
+					<ul>
+						<li><h3><a href="javascript: goMenuLink(120100);">유지관리 서비스</a></h3></li>
+						<li><h3><a href="javascript: goMenuLink(120200);">차별화된 서비스</a></h3></li>
+						<li><h3><a href="javascript: goMenuLink(120300);">서비스 정보센터(MIC)</a></h3></li>
+						<li><h3><a href="javascript: goMenuLink(120400);">원격감시점검시스템</a></h3></li>
+						<li><h3><a href="javascript: goMenuLink(120500);">관제시스템(GIS)</a></h3></li>
+						<li><h3><a href="javascript: goMenuLink(120600);">스마트폰 AS 관리시스템</a></h3></li>
+					</ul>
+				</li>
+				<li>
+					<p>Innovation</p>
+					<ul>
+						<li>
+							<h3 class="open-depth03">최첨단 기술</h3>
+							<ul class="depth03">
+								<li><a href="javascript: goMenuLink(130101);">초고속 엘리베이터</a></li>
+								<li><a href="javascript: goMenuLink(130102);">더블데크 엘리베이터</a></li>
+								<li><a href="javascript: goMenuLink(130103);">지그재그 엘리베이터</a></li>
+								<li><a href="javascript: goMenuLink(130104);">대용량셔틀 엘리베이터</a></li>
+								<li><a href="javascript: goMenuLink(130105);">특수전망용 엘리베이터</a></li>
+								<li><a href="javascript: goMenuLink(130106);">Spiral&amp;Wave-Shaped Escalator</a></li>
+							</ul>
+						</li>
+						<li>
+							<h3 class="open-depth03">스마트 기술</h3>
+							<ul class="depth03">
+								<li><a href="javascript: goMenuLink(130201);">보안게이트연동 목적층 예약시스템</a></li>
+								<li><a href="javascript: goMenuLink(130202);">인공지능 군관리시스템</a></li>
+							</ul>
+						</li>
+						<li><h3><a href="javascript: goMenuLink(130300);">친환경 기술</a></h3></li>
+					</ul>
+				</li>
+				<li>
+					<p>Careers</p>
+					<ul>
+						<li><h3><a href="javascript: goMenuLink(140100);">인재상</a></h3></li>
+						<li><h3><a href="javascript: goMenuLink(140200);">복리후생/인사제도</a></h3></li>
+						<li><h3><a href="javascript: goMenuLink(140300);">인재육성</a></h3></li>
+						<li><h3><a href="https://rcrt.mitsubishielevator.co.kr/recruitAnnounceList.do" target="_blank">채용정보</a></h3></li>
+						<li><h3><a href="https://rcrt.mitsubishielevator.co.kr/recruitAnnounceList.do?recruit=pool" target="_blank">상시채용(인재 POOL 등록)</a></h3></li>
+						<li><h3><a href="javascript: goMenuLink(140500);">채용문의</a></h3></li>
+						<li><h3><a href="javascript: goMenuLink(140600);">채용서류 반환청구</a></h3></li>
+					</ul>
+				</li>
+				<li>
+					<p>Company</p>
+					<ul>
+						<li>
+							<h3 class="open-depth03">회사소개</h3>
+							<ul class="depth03">
+								<li><a href="javascript: goMenuLink(150101);">기업이념</a></li>
+								<li><a href="javascript: goMenuLink(150102);">회사개요</a></li>
+								<li><a href="javascript: goMenuLink(150103);">회사연혁</a></li>
+								<li><a href="javascript: goMenuLink(150104);">CEO 메시지</a></li>
+							</ul>
+						</li>
+						<li>
+							<h3 class="open-depth03">지속가능경영</h3>
+							<ul class="depth03">
+								<li><a href="javascript: goMenuLink(150201);">윤리경영</a></li>
+								<li><a href="javascript: goMenuLink(150202);">공정거래(CP)</a></li>
+								<li><a href="javascript: goMenuLink(150203);">사회적책임(CSR)</a></li>
+                                <li><a href="javascript: goMenuLink(150208);">인권방침</a></li>
+								<li><a href="javascript: goMenuLink(150204);">Quality in Motion</a></li>
+                                <li><a href="javascript: goMenuLink(150205);">사내소통함(임직원용)</a></li>
+							</ul>
+						</li>
+						<li>
+							<h3 class="open-depth03">홍보센터</h3>
+							<ul class="depth03">
+								<li><a href="javascript: goMenuLink(150301);">뉴스룸</a></li>
+                                <li><a href="javascript: goMenuLink(150303);">영상자료</a></li>
+								<li><a href="javascript: goMenuLink(150302);">오시는 길</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<p>Customer Center</p>
+					<ul>
+						<li><h3><a href="javascript: goMenuLink(160100);">사이버 신문고</a></h3></li>
+						<li><h3><a href="javascript: goMenuLink(160200);">고객문의</a></h3></li>
+						<li>
+							<h3 class="open-depth03">고객 자료실</h3>
+							<ul class="depth03">
+								<li><a href="javascript: goMenuLink(160301);">Brochure &amp; Specifications</a></li>
+								<li><a href="javascript: goMenuLink(160302);">유지관리자료</a></li>
+								<!-- <li><a href="javascript: goMenuLink(160303);">교통량 계산 개요</a></li> -->
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<div class="moMenu_bottom">
+				<h4>고객문의</h4>
+				<dl>
+					<dt>서비스정보센터(24시)</dt>
+					<dd>1899-9449</dd>
+				</dl>
+				<dl>
+					<dt>영업</dt>
+					<dd>02-6670-2000</dd>
+				</dl>
+				<dl>
+					<dt>설치</dt>
+					<dd>02-6670-2114</dd>
+				</dl>
+				<dl>
+					<dt>보수</dt>
+					<dd>02-6670-2163</dd>
+				</dl>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="mainBig-bn swiper-container-initialized swiper-container-horizontal">
+	<div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-1080px, 0px, 0px);"><div class="swiper-slide swiper-slide-duplicate swiper-slide-prev" data-swiper-slide-index="4" style="width: 1080px;">
+			<img src="/web/cdn/banner/20200617143033.jpg" alt="" class="p_only">
+			<img src="/web/cdn/banner/20200617143049.jpg" alt="" class="tm_only">
+		</div>
+			<div class="swiper-slide swiper-slide-active" data-swiper-slide-index="0" style="width: 1080px;">
+			<img src="/web/cdn/banner/20230612164538.jpg" alt="" class="p_only">
+			<img src="/web/cdn/banner/20230612164540.jpg" alt="" class="tm_only">
+		</div>
+			<div class="swiper-slide swiper-slide-next" data-swiper-slide-index="1" style="width: 1080px;">
+			<img src="/web/cdn/banner/20230612171311.jpg" alt="" class="p_only">
+			<img src="/web/cdn/banner/20230612164830.jpg" alt="" class="tm_only">
+		</div>
+			<div class="swiper-slide" data-swiper-slide-index="2" style="width: 1080px;">
+			<img src="/web/cdn/banner/20220322174331.png" alt="" class="p_only">
+			<img src="/web/cdn/banner/20220322174352.png" alt="" class="tm_only">
+		</div>
+			<div class="swiper-slide" data-swiper-slide-index="3" style="width: 1080px;">
+			<img src="/web/cdn/banner/20200617142917.jpg" alt="" class="p_only">
+			<img src="/web/cdn/banner/20200617142949.jpg" alt="" class="tm_only">
+		</div>
+			<div class="swiper-slide swiper-slide-duplicate-prev" data-swiper-slide-index="4" style="width: 1080px;">
+			<img src="/web/cdn/banner/20200617143033.jpg" alt="" class="p_only">
+			<img src="/web/cdn/banner/20200617143049.jpg" alt="" class="tm_only">
+		</div>
+		<div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="0" style="width: 1080px;">
+			<img src="/web/cdn/banner/20230612164538.jpg" alt="" class="p_only">
+			<img src="/web/cdn/banner/20230612164540.jpg" alt="" class="tm_only">
+		</div></div>
+	<div class="indi">
+		<div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 4"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 5"></span></div>
+		<div class="btn-stop"></div>
+	</div>
+	<img src="/web/common/ko/img/main/ico_scroll.png" alt="" class="ico_scroll pt_only">
+	<div class="main-quick">
+		<a class="quick01" href="javascript: goMenuLink(110401);">프로젝트</a>
+		<a class="quick02" href="javascript: goMenuLink(110500);">쇼룸</a>
+		<a class="quick03" href="javascript: goMenuLink(160301);">고객자료실</a>
+		<a class="quick04" href="javascript: goMenuLink(160200);">고객문의</a>
+	</div>
+<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+<!-- main big banner -->
+<script>
+	var myswiper = new Swiper('.mainBig-bn', {
+		loop:true,
+		autoplay : { // 자동 재생
+			delay : 4000, // 딜레이 0
+		},
+		speed : 2000,
+		pagination: {
+		el: '.swiper-pagination',
+		clickable: true,
+		},
+	});
+
+	$(".btn-stop").click(function(){
+		if ( !$(this).hasClass("stop") ){
+			$(this).addClass("stop");
+			console.log('stop autoplay');
+			myswiper.autoplay.stop();
+		} else {
+			$(this).removeClass("stop");
+			console.log('start autoplay');
+			myswiper.autoplay.start();
+		}
+	});
+</script>
+<!-- main popup -->
+<!-- //main popup -->
+<div class="num-info">
+	<div class="w1260 clearfix">
+		<div class="info-tit">
+			숫자로 보는<br><span class="eng-text">MITSUBISHI</span>
+			<button class="btn2 mt20" onclick="javascript: goMenuLink(130101);">혁신기술 더보기</button>
+		</div>
+		<div class="info-cont clearfix">
+					<dl>
+				<dd>초고속</dd>
+				<dt class="ls-pit"><strong>1,230</strong>m/min</dt>
+				<dd>세계 최고 수준의 설계 및 제조능력</dd>
+			</dl>
+					<dl>
+				<dd>한국최초</dd>
+				<dt><strong>2</strong>(더블데크)</dt>
+				<dd>Double Deck 엘리베이터</dd>
+			</dl>
+					<dl>
+				<dd>최대수명</dd>
+				<dt><strong>43</strong>Years</dt>
+				<dd>평균수명 2배의 자부심</dd>
+			</dl>
+				</div>
+	</div>
+</div>
+<div class="section01">
+	<h2 class="sec-tit">
+		<span class="tng-txt">PRODUCTS</span>
+		<span class="sub-tit">미쓰비시의 기술력은 세계 최고를 자랑합니다.</span>
+	</h2>
+	<div class="scroll-wrap">
+		<ul class="w1260 clearfix">
+			<li>
+				<a href="/web/index.php/web/ko/product/elevator/intro">
+					<img src="/web/common/ko/img/main/sec01_bg01.png" alt="">
+					<span>
+						<img src="/web/common/ko/img/main/sec01_ico01.png" alt="">
+						<h3>엘리베이터</h3>
+						<p>
+							미쓰비시의 초고속 프리미엄 엘리베이터는<br>
+							빌딩의 수직 성장에 걸맞은 제품을 설계합니다.
+						</p>
+					</span>
+					<button class="btn2 black" onclick="/web/index.php/web/ko/product/elevator/intro">자세히보기</button>
+				</a>
+			</li>
+			<li>
+				<a href="javascript: goMenuLink(110201);">
+					<img src="/web/common/ko/img/main/sec01_bg02.png" alt="">
+					<span>
+						<img src="/web/common/ko/img/main/sec01_ico02.png" alt="">
+						<h3>에스컬레이터</h3>
+						<p>
+							미려한 디자인과 편안함으로 <br>
+							사용자들에게 편리한 생활을 제공합니다.
+						</p>
+					</span>
+					<button class="btn2 black" onclick="javascript: goMenuLink(110201);">자세히보기</button>
+				</a>
+			</li>
+			<li>
+				<a href="javascript: goMenuLink(110300);">
+					<img src="/web/common/ko/img/main/sec01_bg03.png" alt="">
+					<span>
+						<img src="/web/common/ko/img/main/sec01_ico03.png" alt="">
+						<h3>교체 공사</h3>
+						<p>
+							편안함을 보장하고 안전에 위해 <br>
+							엘리베이터 시스템의 현대화를 추구합니다.
+						</p>
+					</span>
+					<button class="btn2 black" onclick="javascript: goMenuLink(110301);">자세히보기</button>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="section02">
+	<h2 class="sec-tit white" style="text-transform: none;">
+        Project Gallery (건물용도별)
+		<span class="sub-tit"></span>
+	</h2>
+	<div id="sec02-tabs" class="w1260 clearfix ui-tabs ui-widget ui-widget-content ui-corner-all">
+		<div class="scroll-wrap">
+			<ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
+															<li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="0" aria-controls="tabs-0" aria-labelledby="ui-id-1" aria-selected="true" aria-expanded="true"><a href="#tabs-0" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-1">오피스</a></li>
+																				<li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-1" aria-labelledby="ui-id-2" aria-selected="false" aria-expanded="false"><a href="#tabs-1" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-2">호텔</a></li>
+																				<li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-2" aria-labelledby="ui-id-3" aria-selected="false" aria-expanded="false"><a href="#tabs-2" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-3">주상복합</a></li>
+																				<li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-3" aria-labelledby="ui-id-4" aria-selected="false" aria-expanded="false"><a href="#tabs-3" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-4">아파트</a></li>
+																				<li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-4" aria-labelledby="ui-id-5" aria-selected="false" aria-expanded="false"><a href="#tabs-4" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-5">공공, 병원</a></li>
+																				<li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-5" aria-labelledby="ui-id-6" aria-selected="false" aria-expanded="false"><a href="#tabs-5" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-6">MOD</a></li>
+												</ul>
+		</div>
+					<div id="tabs-0" class="tab-style ui-tabs-panel ui-widget-content ui-corner-bottom" aria-labelledby="ui-id-1" role="tabpanel" aria-hidden="false">
+				<div class="tab-slide00 tab-slide swiper-container-initialized swiper-container-horizontal">
+					<div class="swiper-wrapper">
+											<div class="swiper-slide swiper-slide-active" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('161')">
+								<img src="/web/cdn/faq/20241004104405.jpg" alt="">
+								<h3>삼성디지털시티 정보통신연구소(R3) /  디지털연구소(R4) / 모바일연구소(R5)</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('161')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide swiper-slide-next" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('143')">
+								<img src="/web/cdn/faq/20231004135129.jpg" alt="">
+								<h3>Anchor1 (브라이튼 여의도)</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('143')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('153')">
+								<img src="/web/cdn/faq/20240201085541.jpg" alt="">
+								<h3>한독 퓨쳐 콤플렉스(한독제넥신)</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('153')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('134')">
+								<img src="/web/cdn/faq/20230626132742.jpg" alt="">
+								<h3>KT송파빌딩</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('134')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('67')">
+								<img src="/web/cdn/faq/20220112102604.jpg" alt="">
+								<h3>분당두산타워</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('67')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('133')">
+								<img src="/web/cdn/faq/20230626131833.jpg" alt="">
+								<h3>KB국민은행 통합사옥</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('133')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('68')">
+								<img src="/web/cdn/faq/20220112103226.jpg" alt="">
+								<h3>그랜드센트럴</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('68')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('66')">
+								<img src="/web/cdn/faq/20220113132921.jpg" alt="">
+								<h3>SK서린빌딩</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('66')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('118')">
+								<img src="/web/cdn/faq/20230626134234.jpg" alt="">
+								<h3>LG사이언스파크</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('118')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('36')">
+								<img src="/web/cdn/faq/20200721151619.jpg" alt="">
+								<h3>롯데월드타워 / 프라임 오피스</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('36')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('65')">
+								<img src="/web/cdn/faq/20230626140917.jpg" alt="">
+								<h3>파르나스타워</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('65')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('39')">
+								<img src="/web/cdn/faq/20230626140616.jpg" alt="">
+								<h3>광화문D타워</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('39')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('40')">
+								<img src="/web/cdn/faq/20200721152103.jpg" alt="">
+								<h3>그랑서울</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('40')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('45')">
+								<img src="/web/cdn/faq/20200721152458.jpg" alt="">
+								<h3>삼성전자DSR타워</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('45')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('44')">
+								<img src="/web/cdn/faq/20200721152410.jpg" alt="">
+								<h3>엔씨소프트 R&amp;D 센터</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('44')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('46')">
+								<img src="/web/cdn/faq/20200721152552.jpg" alt="">
+								<h3>삼성엔지니어링 글로벌엔지니어링 센터</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('46')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('43')">
+								<img src="/web/cdn/faq/20200721152323.jpg" alt="">
+								<h3>GT 타워</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('43')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('119')">
+								<img src="/web/cdn/faq/20230208111855.jpg" alt="">
+								<h3>스테이트타워 남산 </h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('119')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('41')">
+								<img src="/web/cdn/faq/20200721152149.jpg" alt="">
+								<h3>페럼타워</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('41')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('38')">
+								<img src="/web/cdn/faq/20200721151750.jpg" alt="">
+								<h3>삼성서초 B &amp;C Town</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('38')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('42')">
+								<img src="/web/cdn/faq/20200721152245.jpg" alt="">
+								<h3>현대자동차 사옥</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('42')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('37')">
+								<img src="/web/cdn/faq/20200721151708.jpg" alt="">
+								<h3>63빌딩</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('37')">자세히보기</button>
+							</a>
+						</div>
+										</div>
+				<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+				<!-- Add Pagination -->
+				<div class="slide00-pagination slide-pagination-style swiper-pagination-fraction"><span class="swiper-pagination-current">1</span> / <span class="swiper-pagination-total">19</span></div>
+				<!-- Add Arrows -->
+				<div class="select-btn">
+					<div class="slide00-button-next button-next-style" tabindex="0" role="button" aria-label="Next slide" aria-disabled="false"></div>
+					<div class="slide00-button-prev button-prev-style swiper-button-disabled" tabindex="0" role="button" aria-label="Previous slide" aria-disabled="true"></div>
+				</div>
+			</div>
+			<script>
+				var swiper = new Swiper('.tab-slide00', {
+					breakpointsInverse: true,
+					breakpoints: {
+						1080: { slidesPerView: 4.5, spaceBetween: 10 },
+						720: { slidesPerView: 3, spaceBetween: 30 },
+						320: { slidesPerView: 2.25, spaceBetween: 20 },
+					},
+					loop: false,
+					pagination: {
+					el: '.slide00-pagination',
+					type: 'fraction',
+					},
+					navigation: {
+						nextEl: '.slide00-button-next',
+						prevEl: '.slide00-button-prev',
+					},
+				});
+			</script>
+					<div id="tabs-1" class="tab-style ui-tabs-panel ui-widget-content ui-corner-bottom" aria-labelledby="ui-id-2" role="tabpanel" aria-hidden="true" style="display: none;">
+				<div class="tab-slide01 tab-slide swiper-container-initialized swiper-container-horizontal">
+					<div class="swiper-wrapper">
+											<div class="swiper-slide swiper-slide-active" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('162')">
+								<img src="/web/cdn/faq/20241004104513.jpg" alt="">
+								<h3>하우스오브 신세계</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('162')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide swiper-slide-next" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('144')">
+								<img src="/web/cdn/faq/20231004140034.jpg" alt="">
+								<h3>더 시에나 리조트</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('144')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('145')">
+								<img src="/web/cdn/faq/20231004140124.jpg" alt="">
+								<h3>르메르디앙 서울 명동</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('145')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('120')">
+								<img src="/web/cdn/faq/20230626145728.jpg" alt="">
+								<h3>소피텔 앰배서더 서울 호텔</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('120')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('64')">
+								<img src="/web/cdn/faq/20220112100125.jpg" alt="">
+								<h3>LCT시그니엘 부산</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('64')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('121')">
+								<img src="/web/cdn/faq/20230208131757.jpg" alt="">
+								<h3>JW 메리어트호텔 서울</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('121')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('72')">
+								<img src="/web/cdn/faq/20220112104710.jpg" alt="">
+								<h3>롯데월드타워 / 시그니엘 서울</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('72')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('56')">
+								<img src="/web/cdn/faq/20220112101320.jpg" alt="">
+								<h3>포시즌스호텔 서울</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('56')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('154')">
+								<img src="/web/cdn/faq/20240201085829.jpg" alt="">
+								<h3>솔라리아니시테츠호텔(M플라자)</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('154')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('60')">
+								<img src="/web/cdn/faq/20230209141258.jpg" alt="">
+								<h3>그랜드 워커힐 서울</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('60')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('58')">
+								<img src="/web/cdn/faq/20230209141143.jpg" alt="">
+								<h3>서울신라호텔</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('58')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('61')">
+								<img src="/web/cdn/faq/20230209140725.jpg" alt="">
+								<h3>JW 메리어트 동대문 스퀘어 서울</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('61')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('63')">
+								<img src="/web/cdn/faq/20200721155121.jpg" alt="">
+								<h3>스위스 그랜드 호텔</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('63')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('62')">
+								<img src="/web/cdn/faq/20200721155031.jpg" alt="">
+								<h3>웨스틴 조선 서울</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('62')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('57')">
+								<img src="/web/cdn/faq/20200721154137.jpg" alt="">
+								<h3>롯데호텔 서울</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('57')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('59')">
+								<img src="/web/cdn/faq/20200721154534.jpg" alt="">
+								<h3>여의도 파크센터 서울, 메리어트 이그제큐티브 아파트먼트</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('59')">자세히보기</button>
+							</a>
+						</div>
+										</div>
+				<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+				<!-- Add Pagination -->
+				<div class="slide01-pagination slide-pagination-style swiper-pagination-fraction"><span class="swiper-pagination-current">1</span> / <span class="swiper-pagination-total">13</span></div>
+				<!-- Add Arrows -->
+				<div class="select-btn">
+					<div class="slide01-button-next button-next-style" tabindex="0" role="button" aria-label="Next slide" aria-disabled="false"></div>
+					<div class="slide01-button-prev button-prev-style swiper-button-disabled" tabindex="0" role="button" aria-label="Previous slide" aria-disabled="true"></div>
+				</div>
+			</div>
+			<script>
+				var swiper = new Swiper('.tab-slide01', {
+					breakpointsInverse: true,
+					breakpoints: {
+						1080: { slidesPerView: 4.5, spaceBetween: 10 },
+						720: { slidesPerView: 3, spaceBetween: 30 },
+						320: { slidesPerView: 2.25, spaceBetween: 20 },
+					},
+					loop: false,
+					pagination: {
+					el: '.slide01-pagination',
+					type: 'fraction',
+					},
+					navigation: {
+						nextEl: '.slide01-button-next',
+						prevEl: '.slide01-button-prev',
+					},
+				});
+			</script>
+					<div id="tabs-2" class="tab-style ui-tabs-panel ui-widget-content ui-corner-bottom" aria-labelledby="ui-id-3" role="tabpanel" aria-hidden="true" style="display: none;">
+				<div class="tab-slide02 tab-slide swiper-container-initialized swiper-container-horizontal">
+					<div class="swiper-wrapper">
+											<div class="swiper-slide swiper-slide-active" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('146')">
+								<img src="/web/cdn/faq/20231004140430.jpg" alt="">
+								<h3>브라이튼 여의도</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('146')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide swiper-slide-next" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('71')">
+								<img src="/web/cdn/faq/20220113132020.jpg" alt="">
+								<h3>아크로서울포레스트</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('71')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('69')">
+								<img src="/web/cdn/faq/20220112103503.jpg" alt="">
+								<h3>해운대LCT레지던스</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('69')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('70')">
+								<img src="/web/cdn/faq/20220112103619.jpg" alt="">
+								<h3>해운대LCT더샵</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('70')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('48')">
+								<img src="/web/cdn/faq/20200721153056.jpg" alt="">
+								<h3>롯데월드타워 / 시그니엘 레지던스</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('48')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('52')">
+								<img src="/web/cdn/faq/20230626150126.jpg" alt="">
+								<h3>래미안 첼리투스</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('52')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('54')">
+								<img src="/web/cdn/faq/20200721153721.jpg" alt="">
+								<h3>중동 리첸시아</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('54')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('49')">
+								<img src="/web/cdn/faq/20200721153206.jpg" alt="">
+								<h3>갤러리아포레</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('49')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('50')">
+								<img src="/web/cdn/faq/20200721153249.jpg" alt="">
+								<h3>해운대 위브더제니스</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('50')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('53')">
+								<img src="/web/cdn/faq/20200721153602.jpg" alt="">
+								<h3>파크타워</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('53')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('51')">
+								<img src="/web/cdn/faq/20200721153359.jpg" alt="">
+								<h3>타워팰리스 3차</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('51')">자세히보기</button>
+							</a>
+						</div>
+										</div>
+				<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+				<!-- Add Pagination -->
+				<div class="slide02-pagination slide-pagination-style swiper-pagination-fraction"><span class="swiper-pagination-current">1</span> / <span class="swiper-pagination-total">8</span></div>
+				<!-- Add Arrows -->
+				<div class="select-btn">
+					<div class="slide02-button-next button-next-style" tabindex="0" role="button" aria-label="Next slide" aria-disabled="false"></div>
+					<div class="slide02-button-prev button-prev-style swiper-button-disabled" tabindex="0" role="button" aria-label="Previous slide" aria-disabled="true"></div>
+				</div>
+			</div>
+			<script>
+				var swiper = new Swiper('.tab-slide02', {
+					breakpointsInverse: true,
+					breakpoints: {
+						1080: { slidesPerView: 4.5, spaceBetween: 10 },
+						720: { slidesPerView: 3, spaceBetween: 30 },
+						320: { slidesPerView: 2.25, spaceBetween: 20 },
+					},
+					loop: false,
+					pagination: {
+					el: '.slide02-pagination',
+					type: 'fraction',
+					},
+					navigation: {
+						nextEl: '.slide02-button-next',
+						prevEl: '.slide02-button-prev',
+					},
+				});
+			</script>
+					<div id="tabs-3" class="tab-style ui-tabs-panel ui-widget-content ui-corner-bottom" aria-labelledby="ui-id-4" role="tabpanel" aria-hidden="true" style="display: none;">
+				<div class="tab-slide03 tab-slide swiper-container-initialized swiper-container-horizontal">
+					<div class="swiper-wrapper">
+											<div class="swiper-slide swiper-slide-active" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('163')">
+								<img src="/web/cdn/faq/20241004105213.jpg" alt="">
+								<h3>래미안 원펜타스 </h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('163')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide swiper-slide-next" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('148')">
+								<img src="/web/cdn/faq/20231004140931.jpg" alt="">
+								<h3>래미안 원베일리</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('148')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('142')">
+								<img src="/web/cdn/faq/20231004140751.jpg" alt="">
+								<h3>개포자이 프레지던스</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('142')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('147')">
+								<img src="/web/cdn/faq/20231004140853.jpg" alt="">
+								<h3>브라이튼 N40</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('147')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('141')">
+								<img src="/web/cdn/faq/20230626152514.jpg" alt="">
+								<h3>반포 르엘 1,2차</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('141')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('140')">
+								<img src="/web/cdn/faq/20230626152217.jpg" alt="">
+								<h3>PH129</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('140')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('139')">
+								<img src="/web/cdn/faq/20230626152109.jpg" alt="">
+								<h3>고덕아르테온</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('139')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('35')">
+								<img src="/web/cdn/faq/20220112103747.jpg" alt="">
+								<h3>과천위버필드</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('35')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('122')">
+								<img src="/web/cdn/faq/20230209140514.jpg" alt="">
+								<h3>나인원한남</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('122')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('155')">
+								<img src="/web/cdn/faq/20240201090628.jpg" alt="">
+								<h3>반포써밋</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('155')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('73')">
+								<img src="/web/cdn/faq/20220112140443.jpg" alt="">
+								<h3>아크로리버파크 반포</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('73')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('123')">
+								<img src="/web/cdn/faq/20230209140615.jpg" alt="">
+								<h3>수원SK스카이뷰</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('123')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('32')">
+								<img src="/web/cdn/faq/20200721150941.jpg" alt="">
+								<h3>청담자이</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('32')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('31')">
+								<img src="/web/cdn/faq/20230209135100.jpg" alt="">
+								<h3>한남 더힐</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('31')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('34')">
+								<img src="/web/cdn/faq/20200721151255.jpg" alt="">
+								<h3>일산 위시티(자이, 블루밍)</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('34')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('33')">
+								<img src="/web/cdn/faq/20200721151203.jpg" alt="">
+								<h3>반포래미안 퍼스티지</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('33')">자세히보기</button>
+							</a>
+						</div>
+										</div>
+				<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+				<!-- Add Pagination -->
+				<div class="slide03-pagination slide-pagination-style swiper-pagination-fraction"><span class="swiper-pagination-current">1</span> / <span class="swiper-pagination-total">13</span></div>
+				<!-- Add Arrows -->
+				<div class="select-btn">
+					<div class="slide03-button-next button-next-style" tabindex="0" role="button" aria-label="Next slide" aria-disabled="false"></div>
+					<div class="slide03-button-prev button-prev-style swiper-button-disabled" tabindex="0" role="button" aria-label="Previous slide" aria-disabled="true"></div>
+				</div>
+			</div>
+			<script>
+				var swiper = new Swiper('.tab-slide03', {
+					breakpointsInverse: true,
+					breakpoints: {
+						1080: { slidesPerView: 4.5, spaceBetween: 10 },
+						720: { slidesPerView: 3, spaceBetween: 30 },
+						320: { slidesPerView: 2.25, spaceBetween: 20 },
+					},
+					loop: false,
+					pagination: {
+					el: '.slide03-pagination',
+					type: 'fraction',
+					},
+					navigation: {
+						nextEl: '.slide03-button-next',
+						prevEl: '.slide03-button-prev',
+					},
+				});
+			</script>
+					<div id="tabs-4" class="tab-style ui-tabs-panel ui-widget-content ui-corner-bottom" aria-labelledby="ui-id-5" role="tabpanel" aria-hidden="true" style="display: none;">
+				<div class="tab-slide04 tab-slide swiper-container-initialized swiper-container-horizontal">
+					<div class="swiper-wrapper">
+											<div class="swiper-slide swiper-slide-active" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('159')">
+								<img src="/web/cdn/faq/20240408145856.jpg" alt="">
+								<h3>신세계남산 (도심연수원)</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('159')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide swiper-slide-next" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('149')">
+								<img src="/web/cdn/faq/20231004141152.jpg" alt="">
+								<h3>LG아트센터 서울</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('149')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('135')">
+								<img src="/web/cdn/faq/20230626150712.jpg" alt="">
+								<h3>가톨릭대학교 은평성모병원</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('135')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('28')">
+								<img src="/web/cdn/faq/20200720164954.jpg" alt="">
+								<h3>세브란스병원 암센터</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('28')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('29')">
+								<img src="/web/cdn/faq/20230209134715.jpg" alt="">
+								<h3>사랑의 교회</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('29')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('124')">
+								<img src="/web/cdn/faq/20230208133247.jpg" alt="">
+								<h3>청량리역사</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('124')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('128')">
+								<img src="/web/cdn/faq/20230209134410.jpg" alt="">
+								<h3>양산 부산대학교병원</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('128')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('125')">
+								<img src="/web/cdn/faq/20230209135422.jpg" alt="">
+								<h3>연세 세브란스병원</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('125')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('126')">
+								<img src="/web/cdn/faq/20230209132736.jpg" alt="">
+								<h3>광명스피돔</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('126')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('127')">
+								<img src="/web/cdn/faq/20230209133046.jpg" alt="">
+								<h3>서울역사</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('127')">자세히보기</button>
+							</a>
+						</div>
+										</div>
+				<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+				<!-- Add Pagination -->
+				<div class="slide04-pagination slide-pagination-style swiper-pagination-fraction"><span class="swiper-pagination-current">1</span> / <span class="swiper-pagination-total">7</span></div>
+				<!-- Add Arrows -->
+				<div class="select-btn">
+					<div class="slide04-button-next button-next-style" tabindex="0" role="button" aria-label="Next slide" aria-disabled="false"></div>
+					<div class="slide04-button-prev button-prev-style swiper-button-disabled" tabindex="0" role="button" aria-label="Previous slide" aria-disabled="true"></div>
+				</div>
+			</div>
+			<script>
+				var swiper = new Swiper('.tab-slide04', {
+					breakpointsInverse: true,
+					breakpoints: {
+						1080: { slidesPerView: 4.5, spaceBetween: 10 },
+						720: { slidesPerView: 3, spaceBetween: 30 },
+						320: { slidesPerView: 2.25, spaceBetween: 20 },
+					},
+					loop: false,
+					pagination: {
+					el: '.slide04-pagination',
+					type: 'fraction',
+					},
+					navigation: {
+						nextEl: '.slide04-button-next',
+						prevEl: '.slide04-button-prev',
+					},
+				});
+			</script>
+					<div id="tabs-5" class="tab-style ui-tabs-panel ui-widget-content ui-corner-bottom" aria-labelledby="ui-id-6" role="tabpanel" aria-hidden="true" style="display: none;">
+				<div class="tab-slide05 tab-slide swiper-container-initialized swiper-container-horizontal">
+					<div class="swiper-wrapper">
+											<div class="swiper-slide swiper-slide-active" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('164')">
+								<img src="/web/cdn/faq/20241004105429.jpg" alt="">
+								<h3>교보타워</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('164')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide swiper-slide-next" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('160')">
+								<img src="/web/cdn/faq/20240408150113.jpg" alt="">
+								<h3>청담 삼환아파트</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('160')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('156')">
+								<img src="/web/cdn/faq/20240201090920.jpg" alt="">
+								<h3>무지개마을 삼성건영아파트</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('156')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('152')">
+								<img src="/web/cdn/faq/20231004142638.jpg" alt="">
+								<h3>분당 상록마을임광보성아파트</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('152')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('151')">
+								<img src="/web/cdn/faq/20231004142514.jpg" alt="">
+								<h3>안양 삼성아파트</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('151')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('150')">
+								<img src="/web/cdn/faq/20231004142332.jpg" alt="">
+								<h3>한화손해보험빌딩</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('150')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('138')">
+								<img src="/web/cdn/faq/20230626151545.jpg" alt="">
+								<h3>수원영통 벽산풍림</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('138')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('137')">
+								<img src="/web/cdn/faq/20230626151239.jpg" alt="">
+								<h3>리버힐삼성</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('137')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('136')">
+								<img src="/web/cdn/faq/20230626151046.jpg" alt="">
+								<h3>포스코센터 VIP</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('136')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('129')">
+								<img src="/web/cdn/faq/20230208135528.jpg" alt="">
+								<h3>대치삼성래미안아파트</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('129')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('130')">
+								<img src="/web/cdn/faq/20230208135719.jpg" alt="">
+								<h3>잠원롯데캐슬갤럭시</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('130')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('131')">
+								<img src="/web/cdn/faq/20230208135924.jpg" alt="">
+								<h3>신도림동아2차아파트</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('131')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('157')">
+								<img src="/web/cdn/faq/20240201091048.jpg" alt="">
+								<h3>두산타워(두타몰)</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('157')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('158')">
+								<img src="/web/cdn/faq/20240201091227.jpg" alt="">
+								<h3>CJ THE CENTER (남산CJ빌딩)</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('158')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('26')">
+								<img src="/web/cdn/faq/20200720164641.jpg" alt="">
+								<h3>포스코타워 역삼</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('26')">자세히보기</button>
+							</a>
+						</div>
+											<div class="swiper-slide" style="width: 232.222px; margin-right: 10px;">
+							<a href="javascript: show_project_detail('132')">
+								<img src="/web/cdn/faq/20230209140037.jpg" alt="">
+								<h3>아시아선수촌아파트</h3>
+								<button class="btn2 black" onclick="javascript: show_project_detail('132')">자세히보기</button>
+							</a>
+						</div>
+										</div>
+				<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+				<!-- Add Pagination -->
+				<div class="slide05-pagination slide-pagination-style swiper-pagination-fraction"><span class="swiper-pagination-current">1</span> / <span class="swiper-pagination-total">13</span></div>
+				<!-- Add Arrows -->
+				<div class="select-btn">
+					<div class="slide05-button-next button-next-style" tabindex="0" role="button" aria-label="Next slide" aria-disabled="false"></div>
+					<div class="slide05-button-prev button-prev-style swiper-button-disabled" tabindex="0" role="button" aria-label="Previous slide" aria-disabled="true"></div>
+				</div>
+			</div>
+			<script>
+				var swiper = new Swiper('.tab-slide05', {
+					breakpointsInverse: true,
+					breakpoints: {
+						1080: { slidesPerView: 4.5, spaceBetween: 10 },
+						720: { slidesPerView: 3, spaceBetween: 30 },
+						320: { slidesPerView: 2.25, spaceBetween: 20 },
+					},
+					loop: false,
+					pagination: {
+					el: '.slide05-pagination',
+					type: 'fraction',
+					},
+					navigation: {
+						nextEl: '.slide05-button-next',
+						prevEl: '.slide05-button-prev',
+					},
+				});
+			</script>
+			</div>
+</div>
+<div class="section03">
+	<div class="w1260 clearfix">
+		<h2 class="sec-tit black" style="padding-top:80px;">
+			<span class="eng-txt">영상자료</span>
+			<span class="sub-tit">미쓰비시의 다양한 <br class="pt_only">영상을 확인해보세요.</span>
+		</h2>
+		<div class="videos swiper-container-initialized swiper-container-horizontal">
+			<!-- Swiper -->
+			<ul class="swiper-wrapper clearfix">
+							<li class="swiper-slide swiper-slide-active" style="width: 206.667px; margin-right: 30px;">
+					<a href="/web/index.php/web/ko/newsVideos/view/6">
+						<span class="sum-area"><img src="/web/cdn/videos/thumb/20230116150823.JPG" alt=""></span>
+						<h4>“Changes for the Better”</h4>
+						<span class="date">2023.02.14</span>
+					</a>
+				</li>
+							<li class="swiper-slide swiper-slide-next" style="width: 206.667px; margin-right: 30px;">
+					<a href="/web/index.php/web/ko/newsVideos/view/11">
+						<span class="sum-area"><img src="/web/cdn/videos/thumb/20230213152115.JPG" alt=""></span>
+						<h4>미쓰비시와 함께 APT 엘리베이터가 새로워 집니다!</h4>
+						<span class="date">2023.02.13</span>
+					</a>
+				</li>
+							<li class="swiper-slide" style="width: 206.667px; margin-right: 30px;">
+					<a href="/web/index.php/web/ko/newsVideos/view/10">
+						<span class="sum-area"><img src="/web/cdn/videos/thumb/20230213101454.JPG" alt=""></span>
+						<h4>Elevators-Together, We Can Build Better</h4>
+						<span class="date">2023.01.12</span>
+					</a>
+				</li>
+							<li class="swiper-slide" style="width: 206.667px; margin-right: 30px;">
+					<a href="/web/index.php/web/ko/newsVideos/view/5">
+						<span class="sum-area"><img src="/web/cdn/videos/thumb/20230116150735.JPG" alt=""></span>
+						<h4>Green Building(친환경 건물)</h4>
+						<span class="date">2023.01.02</span>
+					</a>
+				</li>
+						</ul>
+		<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+		<!-- Add Pagination -->
+		<div class="videos-pagination swiper-pagination-fraction"><span class="swiper-pagination-current">1</span> / <span class="swiper-pagination-total">2</span></div>
+		<!-- Add Arrows -->
+		<div class="select-btn">
+			<div class="videos-button-next" tabindex="0" role="button" aria-label="Next slide" aria-disabled="false"></div>
+			<div class="videos-button-prev swiper-button-disabled" tabindex="0" role="button" aria-label="Previous slide" aria-disabled="true"></div>
+		</div>
+		<img src="/web/common/ko/img/main/img_point.png" alt="" class="point pt_only">
+		<img src="/web/common/ko/img/main/m_img_point.png" alt="" class="point m_only">
+	</div>
+    <div class="w1260 clearfix">
+        <h2 class="sec-tit black" style="padding-top:80px;">
+            <span class="eng-txt">NEWS</span>
+            <span class="sub-tit">미쓰비시의 다양한 <br class="pt_only">소식을 확인해보세요.</span>
+        </h2>
+        <div class="news swiper-container-initialized swiper-container-horizontal">
+            <!-- Swiper -->
+            <ul class="swiper-wrapper clearfix">
+                                    <li class="swiper-slide swiper-slide-active" style="width: 206.667px; margin-right: 30px;">
+                        <a href="/web/index.php/web/ko/newsroom/view/109">
+                            <span class="sum-area"><img src="/web/cdn/news/thumb/20230512175635.png" alt=""></span>
+                            <h4>강남 고급 재건축 APT 석권, 한국미쓰비시엘리베이터</h4>
+                            <span class="date">2023.05.12</span>
+                        </a>
+                    </li>
+                                    <li class="swiper-slide swiper-slide-next" style="width: 206.667px; margin-right: 30px;">
+                        <a href="/web/index.php/web/ko/newsroom/view/108">
+                            <span class="sum-area"><img src="/web/cdn/news/thumb/20230330110413.png" alt=""></span>
+                            <h4>수도권 주요 APT, 한국미쓰비시엘리베이터로 승강기 교체 새바람</h4>
+                            <span class="date">2023.03.30</span>
+                        </a>
+                    </li>
+                                    <li class="swiper-slide" style="width: 206.667px; margin-right: 30px;">
+                        <a href="/web/index.php/web/ko/newsroom/view/105">
+                            <span class="sum-area"><img src="/web/cdn/news/thumb/20220526173028.jpg" alt=""></span>
+                            <h4>대한민국 최초의 ‘소피텔’ 호텔에서 느낄 수 있는 한국미쓰비시엘리베이터의 품격 </h4>
+                            <span class="date">2022.05.27</span>
+                        </a>
+                    </li>
+                                    <li class="swiper-slide" style="width: 206.667px; margin-right: 30px;">
+                        <a href="/web/index.php/web/ko/newsroom/view/104">
+                            <span class="sum-area"><img src="/web/cdn/news/thumb/20220525104423.jpg" alt=""></span>
+                            <h4>한국미쓰비시엘리베이터, APT 승강기 교체시장 본격 진출</h4>
+                            <span class="date">2022.05.25</span>
+                        </a>
+                    </li>
+                                    <li class="swiper-slide" style="width: 206.667px; margin-right: 30px;">
+                        <a href="/web/index.php/web/ko/newsroom/view/103">
+                            <span class="sum-area"><img src="/web/cdn/news/thumb/20220512130414.jpg" alt=""></span>
+                            <h4>래미안의 귀환, ‘반포 래미안 원베일리’ 한국미쓰비시엘리베이터와 함께하다.</h4>
+                            <span class="date">2022.05.12</span>
+                        </a>
+                    </li>
+                                    <li class="swiper-slide" style="width: 206.667px; margin-right: 30px;">
+                        <a href="/web/index.php/web/ko/newsroom/view/102">
+                            <span class="sum-area"><img src="/web/cdn/news/thumb/20220512130445.jpg" alt=""></span>
+                            <h4>한국미쓰비시엘리베이터, ‘개포 프레지던스 자이’ 수주</h4>
+                            <span class="date">2022.05.12</span>
+                        </a>
+                    </li>
+                            </ul>
+        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+        <!-- Add Pagination -->
+        <div class="news-pagination swiper-pagination-fraction"><span class="swiper-pagination-current">1</span> / <span class="swiper-pagination-total">3</span></div>
+        <!-- Add Arrows -->
+        <div class="select-btn">
+            <div class="news-button-next" tabindex="0" role="button" aria-label="Next slide" aria-disabled="false"></div>
+            <div class="news-button-prev swiper-button-disabled" tabindex="0" role="button" aria-label="Previous slide" aria-disabled="true"></div>
+        </div>
+    </div>
+	<div class="btn-wrap align-center"><button class="news-more" onclick="javascript: goMenuLink(150301);">소식 더보기</button></div>
+</div>
+<div class="section04">
+	<div class="w1260 clearfix">
+		<h2 class="sec-tit white">
+			당신의 미래에<br>미쓰비시가 함께 합니다.
+			<span class="sub-tit">구매상담이나 견적문의 및 승강기 유지보수 문의 등 <br>궁금하신 부분을 빠르게 답변 드리겠습니다.</span>
+		</h2>
+		<ul class="clearfix custom">
+			<li>
+				<a href="javascript: goMenuLink(160200);">
+					<h4>고객 문의</h4>
+					<p>
+						제품 상담 등 궁금하신 <br>
+						부분을 빠르게 답변드리겠습니다.
+					</p>
+				</a>
+			</li>
+			<li>
+				<a href="javascript: goMenuLink(160301);">
+					<h4>고객 자료실</h4>
+					<p>
+						각 제품별 시공에 필요한 <br>
+						자료를 확인하실 수 있습니다.
+					</p>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+<script>
+	function show_project_detail(val) {
+		$.ajax({
+			type: "POST",
+			url: baseUri+"/web/ko/product/project/get_detail",
+			data: {"no" : val},
+			success:function(data) {
+				$("#id_div_proj_detail").html(data);
+				$('.pop-detail').show('fade');
+			},
+			error:function(r) {
+				//alert(r.status);
+			},
+			dataType: "html"
+		});
+	}
+</script>
+		</div>
+		<div class="topBtn"><img src="/web/common/ko/img/layout/topBtn.png" alt=""></div>
+		<div class="footer_wrap">
+			<div class="foot">
+			   <span class="add">서울특별시 영등포구 국회대로76길22 (여의도동) 기계회관 신관9층</span>
+			   <span class="tel">Tel. 02-6670-2000</span>
+			   <span class="fax">Fax. 02-6670-2049</span>
+
+			   <div class="copy">
+                   <ul class="clearfix">
+                        <li><a href="#none" class="privacy-open">개인정보처리방침</a></li>
+                        <li><a href="#none" class="sensitive-open">민감정보 수집이용동의서</a></li>
+                    </ul>
+                   <p>© 2021 Mitsubishi Elevator Korea. All Rights Reserved</p>
+			   </div>
+			</div>
+		</div>
+		<div class="privacy-pop" id="p-pop01">
+			<div class="pop-top">
+				개인정보처리방침
+				<button class="close-pop 01"><img src="/web/common/ko/img/layout/pop_close_white.png" alt=""></button>
+			</div>
+			<div class="pop-cont">
+				<div class="privacy-cont">
+					<h3>제 1조 총 칙</h3>
+					<p>
+						한국미쓰비시엘리베이터주식회사(이하”회사”)는 귀하께서 제공하시는 개인정보를 적극적으로 보호하며,『개인정보 보호법』 등 개인정보 보호에 관한 관계 법령들을 준수하기 위하여 본 개인정보 처리방침을 제정∙시행하고 있습니다.<br>
+						회사는 개인정보 보호정책을 통하여 귀하께서 제공하시는 개인정보가 어떠한 용도와 방식으로 이용되고 있으며, 개인정보를 위해 어떠한 조치가 취해지고 있는지 알려드립니다.
+					</p>
+					<h3>제2조 개인정보의 처리 목적</h3>
+					<p>
+						회사는 입사지원, 제품구매문의 및 사이버신문고 등을 통하여 개인정보를 수집∙이용하고 있으며, 그 목적은 다음과 같습니다. 처리하고 있는 개인정보는 다음의 목적 이외의 용도로는 처리되지 않으며, 처리목적이 변경되는 경우에는 사전 동의를 구할 예정입니다.
+					</p>
+					<table class="type01">
+						<colgroup>
+							<col style="width:30%">
+							<col style="width:70%">
+						</colgroup>
+						<tbody><tr>
+							<th>구분</th>
+							<th>처리 목적</th>
+						</tr>
+						<tr>
+							<td class="align-c">입사 지원</td>
+							<td>
+								채용 및 채용관리, 지원자 평가, 지원자 사후관리<br>
+								① 본인 확인 및 식별 절차<br>
+								② 지원자와의 의사소통 및 정보 전달<br>
+								③ 서류전형, 면접전형 등 지원자 평가<br>
+								④ 기타 개인맞춤 서비스 제공<br>
+								⑤ 단, 지원자의 기본적 인권침해의 우려가 있는 민감한 개인정보(인종 및 민족,
+								사상 및 신조, 정치적 성향 및 범죄기록 등)는 수집하지 않습니다.
+							</td>
+						</tr>
+						<tr>
+							<td class="align-c">제품구매문의</td>
+							<td>
+								제품 구매상담 및 견적 제공
+							</td>
+						</tr>
+						<tr>
+							<td class="align-c">사이버신문고</td>
+							<td>
+								분쟁∙민원처리 및 고충해결
+							</td>
+						</tr>
+					</tbody></table>
+					<h3>제3조 개인정보의 수집 범위</h3>
+					<p>
+						회사는 다음의 개인정보 항목을 수집하고 있습니다.
+					</p>
+					<table class="type01">
+						<colgroup>
+							<col style="width:30%">
+							<col style="width:70%">
+						</colgroup>
+						<tbody><tr>
+							<th>구분</th>
+							<th>수집∙이용 항목</th>
+						</tr>
+						<tr>
+							<td class="align-c">입사 지원</td>
+							<td>
+								[개인식별정보] 증명사진, 성명, 생년월일<br>
+								[개인신상정보]<br>
+								- 연락정보: 주소, 전화번호, 휴대전화번호, 전자우편주소<br>
+								- 학력사항: 재학기간, 학교, 전공, 졸업여부, 학점<br>
+								- 경력사항: 근무기간, 근무처, 직위, 담당업무<br>
+								- 병역사항: 군별, 병과, 계급, 제대여부, 복무기간, 미필사유<br>
+								[민감정보]<br>
+								장애대상<br>
+								[기타정보]<br>
+								보훈대상여부, 자격∙면허(취득일자, 종류), 외국어시험명∙점수, 특기, 취미,
+								과외활동, 연수/교육/출향내역 등
+							</td>
+						</tr>
+						<tr>
+							<td class="align-c">제품구매문의</td>
+							<td>
+								회사이름, 담당자명, 직위(선택), 회사주소, 회사전화번호, 회사팩스번호(선택),
+								전자우편주소
+							</td>
+						</tr>
+						<tr>
+							<td class="align-c">사이버신문고</td>
+							<td>
+								작성자명(선택), 연락처, 전자우편주소
+							</td>
+						</tr>
+					</tbody></table>
+					<h3>제4조 개인정보의 처리 및 보유기간</h3>
+					<p>
+						입사지원과 관련하여 회사가 수집한 개인정보는 채용여부가 확정된 날 이후 5일이내에 개인정보보호법에 따라 파기합니다.<br>
+						그 외 회사가 수집한 개인정보는 원칙적으로 개인정보의 수집∙이용 목적이 달성되면 지체 없이 파기합니다. 다만, 다른 법령에 따라 정보주체의 개인정보를 보존해야 하는 경우 회사는 해당 개인정보를 보존할 수 있습니다.
+					</p>
+					<h3>제5조 개인정보의 제3자 제공</h3>
+					<p>
+						회사는 정보주체의 개인정보를 제2조(개인정보의 처리 목적)에서 명시한 범위 내에서만 처리하며, 정보주체의 동의, 법률의 특별한 규정 등 개인정보보호법 제17조에 해당하는 경우에만 개인정보를 제3자에게 제공합니다.
+					</p>
+                    <h3>제6조 개인정보처리의 위탁</h3>
+                    <p>
+                        회사는 외부 전문 업체에 이용자의 개인정보에 대한 처리를 위탁할 수 있으며, 위탁 시에는 관계 법령에 따라 개인정보가 안전하게 관리될 수 있도록 필요한 사항을 규정하여 계약서를 체결합니다.<br>
+                        회사의 위탁 처리 기관 및 위탁 업무 내용은 아래와 같으며, 필요한 경우에는 수탁 업체가 추가되거나 변경될 수 있습니다.
+                    </p>
+                    <table class="type01">
+                        <colgroup>
+                            <col style="width:15%">
+                            <col style="width:15%">
+                            <col style="width:25%">
+                            <col style="width:30%">
+                            <col style="width:15%">
+                        </colgroup>
+                        <tbody><tr>
+                            <th>구분</th>
+                            <th>제공받는 자</th>
+                            <th>이용 목적</th>
+                            <th>항목</th>
+                            <th>보유∙이용기간</th>
+                        </tr>
+                        <tr>
+                            <td class="align-c">입사지원</td>
+                            <td class="align-c">-</td>
+                            <td class="align-c">-</td>
+                            <td class="align-c">-</td>
+                            <td class="align-c">-</td>
+                        </tr>
+                        <tr>
+                            <td class="align-c">제품구매문의</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="align-c">사이버신문고</td>
+                            <td>김앤장 법률사무소</td>
+                            <td>분쟁∙민원처리 및 고충해결</td>
+                            <td>작성자명(선택), 연락처, 전자우편주소</td>
+                            <td>제4조(개인정보의 처리 및 보유기간)와 동일</td>
+                        </tr>
+                    </tbody></table>
+					<h3>제7조 정보주체의 권리∙의무 및 행사방법</h3>
+					<p>
+						① 정보주체는 본인 및 본인이 법정대리인인 14세 미만 아동의 개인정보의 열람 및 처리정지를 요구할 수 있습니다. 다만 다음 각 호의 어느 하나에 해당하는 경우에는 회사는 해당사유를 정보주체에게 알리고, 처리정지 요구를 거절할 수 있습니다.
+						<span class="order">가. 법률에 특별한 규정이 있거나 법령상 의무를 준수하기 위하여 불가피한 경우</span>
+						<span class="order">나. 타인의 생명∙신체를 해할 우려가 있거나 타인의 재산과 그 밖의 이익을 부당하게 침해할 우려가 있는 경우</span>
+						<span class="order">다. 개인정보를 처리하지 아니하면 정보주체와 약정한 서비스를 제공하지 못하는 등 계약의 이행이 곤란
+							하고, 정보주체가 그 계약의 해지 의사를 명확하게 밝히지 아니한 경우
+					</span>
+					② 정보주체는 본인 및 본인이 법정대리인인 14세 미만 아동의 개인정보의 오류에 대한 정정 및 삭제를 요구할 수 있습니다. 다만, 다른 법령에서 그 개인정보가 수집 대상으로 명시되어 있는 경우에는 그 삭제를 요구할 수 없습니다.<br>
+					③ 정보주체가 개인정보의 오류에 대한 정정 및 삭제를 요청한 경우에는 정정 및 삭제를 완료할 때까지 당해 개인정보를 이용 또는 제공하지 않습니다. 또한, 잘못된 개인정보를 이용 또는 제공한 경우 발견 즉시 지체 없이 수정하겠습니다.<br>
+					④ 위 제1항에 따른 권리 행사는 정보주체의 법정대리인이나 위임을 받은 자 등 대리인을 통하여 할 수 있습니다. 이 경우 개인정보보호법 시행규칙 별지 제11호 서식에 따른 위임장을 제출하여야 합니다.<br>
+					⑤ 정보주체는 개인정보보호법 등 관계 법령을 위반하여 회사가 처리하고 있는 정보주체 본인이나 타인의 개인정보 및 사생활을 침해하여서는 안됩니다.<br>
+					⑥ 개인정보의 열람, 정정, 처리정지 및 삭제 등의 요청을 위한 담당자는 제10조를 참조해주시기 바랍니다.
+					</p>
+					<h3>제8조 개인정보의 파기</h3>
+					<p>
+						① 회사는 원칙적으로 개인정보의 처리목적이 달성된 경우 등 그 개인정보가 불필요하게 되었을 때에는 지체 없이 해당 개인정보를 파기합니다.<br>
+						② 회사가 관계법령의 규정에 따라 개인정보를 파기하지 않고 보존하여야 하는 경우에는 해당 개인정보 또는 개인정보파일을 다른 개인정보와 분리해서 저장합니다.<br>
+						③ 회사는 파기사유가 발생한 개인정보를 선정하여 개인정보 보호책임자의 승인을 받아 해당 개인정보를 파기합니다.<br>
+						④ 회사는 파기하여야 할 개인정보가 전자적 파일 형태인 경우 복원이 불가능한 방법으로 영구 삭제하며, 이외의 기록물, 인쇄물, 서면, 그 밖의 기록매체인 경우 파쇄 또는 소각합니다.
+					</p>
+					<h3>제9조 개인정보의 안정성 확보조치</h3>
+					<p>
+						회사는 개인정보가 분실∙도난∙유출∙변조 또는 훼손되지 아니하도록 다음과 같이 안정적 확보에 필요한 기술적∙관리적 및 물리적 조치를 취하고 있습니다.
+						<span class="order">가. 관리적 조치: 내부관리계획의 수립 및 시행, 구성원에 대한 정기적인 개인정보 보호교육 등</span>
+						<span class="order">나. 기술적 조치: 개인정보처리시스템 등의 접근권한 관리, 접근통제시스템 설치, 고유식별정보 등의 암호화, 보안프로그램의 설치 등</span>
+						<span class="order">다. 물리적 조치: 전산실, 자료보관실 등 개인정보 보관장소에 대한 접근통제</span>
+					</p>
+					<h3>제10조 개인정보보호책임자 및 의견수렴∙불만청취</h3>
+					<p>
+						회사는 귀하의 개인정보를 보호하고 개인정보와 관련한 불만을 처리하기 위하여 개인정보 보호책임자를 두어 개인정보를 관리하고 있으며, 개인정보보호와 관련하여 귀하가 의견과 불만을 제기할 수 있는 창구를 개설하고 있습니다.
+						</p><dl class="ico-dot">
+							<dt>개인정보 보호책임자</dt>
+							<dd>업무지원부문장 상무 노하라 히로코</dd>
+						</dl>
+						<dl class="ico-dot">
+							<dt>개인정보 보호담당자</dt>
+							<dd>업무실장 부장 정상헌 02-6670-2070 shjung@k-mec.co.kr</dd>
+							<dd>전산팀장 부장 이계정 02-6670-2075 kjlee@k-mec.co.kr</dd>
+						</dl>
+					<p></p>
+					<h3>제11조 권익침해 구제방법</h3>
+					<p>
+						정보주체는 개인정보침해로 인한 구제를 받기 위하여 개인정보분쟁조정위원회, 개인정보침해신고센터 등에 분쟁해결이나 상담 등을 신청할 수 있습니다. 이 밖에 기타 개인정보침해의 신고 및 상담에 대하여는 아래의 기관에 문의하시기 바랍니다.
+					</p>
+					<table class="type01">
+						<colgroup>
+							<col style="width:40%">
+							<col style="width:60%">
+						</colgroup>
+						<tbody><tr>
+							<th>개인정보보호 종합지원포탈<br>
+								(행정안전부 운영)
+							</th>
+							<td>
+								<dl class="ico-dot">
+									<dt>소관업무: 개인정보 침해사실 신고, 상담 신청, 자료제공</dt>
+									<dt>홈페이지: http://www.privacy.go.kr</dt>
+									<dt>문의전화: 02-2100-3394</dt>
+								</dl>
+							</td>
+						</tr>
+						<tr>
+							<th>
+								개인정보 침해신고센터<br>
+								(한국인터넷진흥원 운영)
+							</th>
+							<td>
+								<dl class="ico-dot">
+									<dt>소관업무: 개인정보 침해사실 신고, 상담 신청</dt>
+									<dt>홈페이지: http://www.118.or.kr</dt>
+									<dt>문의전화: (국번없이) 118</dt>
+									<dt>주    소: 138-950 서울 송파구 중대로 135 한국인터넷진흥원 개인정보침해신고센터</dt>
+								</dl>
+							</td>
+						</tr>
+						<tr>
+							<th>
+								개인정보 분쟁조정위원회<br>
+								(한국인터넷진흥원 운영)
+							</th>
+							<td>
+								<dl class="ico-dot">
+									<dt>소관업무: 개인정보 침해사실 신고, 상담 신청</dt>
+									<dt>홈페이지: http://privacy.kisa.or.kr</dt>
+									<dt>문의전화: (국번없이) 118</dt>
+									<dt>주    소: 138-950 서울 송파구 중대로 135 한국인터넷진흥원 개인정보침해신고센터</dt>
+								</dl>
+							</td>
+						</tr>
+						<tr>
+							<th>
+								사이버테러대응센터<br>
+								(경찰청 운영)
+							</th>
+							<td>
+								<dl class="ico-dot">
+									<dt>소관업무: 경찰청 사이버테러대응센터</dt>
+									<dt>홈페이지: http://www.ctrc.go.kr</dt>
+									<dt>문의전화: (국번없이) 182</dt>
+								</dl>
+							</td>
+						</tr>
+						<tr>
+							<th>
+								사이버범죄수사단<br>
+								(대검찰청 운영)
+							</th>
+							<td>
+								<dl class="ico-dot">
+									<dt>소관업무: 대검찰청 사이버범죄수사단</dt>
+									<dt>홈페이지: http://www.spo.go.kr</dt>
+									<dt>문의전화: 02-3480-3571</dt>
+								</dl>
+							</td>
+						</tr>
+					</tbody></table>
+                    <h3>제12조 쿠키에 의한 개인정보 수집</h3>
+                    <p>
+                        ① 회사 홈페이지에서 제공하는 인터넷 서비스를 통하여 고객의 정보를 저장하고 수시로 찾아내는 쿠키(cookie)를 설치·운용할 경우도 있습니다. 쿠키란 웹 서버가 웹 브라우저에 보내어 저장했다가 서버의 부가적인 요청이 있을 때 다시 서버로 보내주는 문자열 정보를 말합니다. 이용자께서 웹사이트에 접속을 하면 이용자의 브라우저에 있는 쿠키의 내용을 읽고, 추가정보를 찾아 접속에 따른 성명 등의 추가 입력 없이 서비스를 제공할 수 있습니다.<br>
+                        ② 회사가 쿠키를 통해 수집하는 정보는 성명, 이메일 주소, 연락처 등에 한하며, 그 외의 다른 정보는 수집하지 않습니다. 회사가 쿠키(cookie)를 통해 수집한 회원의 정보는 다음의 목적을 위해 사용될 수 있습니다.<br>
+                        <span class="order">1. 관심 있게 둘러본 내용들에 대한 자취를 추적하여 다음 번 접속 때 개인 맞춤 서비스를 제공</span>
+                        <span class="order">2. 이용자의 습관을 분석하여 서비스 개편 등의 척도로 활용</span>
+                        <span class="order">3. 기타 홈페이지 개편 관련 데이터 활용</span>
+                    </p>
+                    <h3>제13조 정책 변경에 따른 공지의무</h3>
+                    <p>
+                        본 개인정보 처리방침에 있어서 법령∙정책 또는 보안기술의 변경에 따라 내용의 추가∙삭제 및 수정이 있을 시에는 변경되는 개인정보 처리방침을 홈페이지를 통해 공지합니다.
+                    </p>
+				</div>
+			</div>
+		</div>
+		<div class="privacy-pop" id="p-pop02" style="height:auto;">
+			<div class="pop-top">
+				민감정보 수집이용 동의서
+				<button class="close-pop 02"><img src="/web/common/ko/img/layout/pop_close_white.png" alt=""></button>
+			</div>
+			<div class="pop-cont">
+				<div class="privacy-cont">
+					<h3>1. 민감정보의 수집ㆍ이용 목적: 채용 및 채용관리, 지원자 평가, 지원자 사후관리</h3>
+					<h3>2. 수집ㆍ이용할 민감정보의 범위: 건강, 종교, 장애대상</h3>
+					<h3>3. 민감정보의 보유 및 이용 기간: 지원서 제출 후 만 3년 또는 입사지원서 삭제 요청 시 까지</h3>
+					<h3 class="gray">※ 귀하는 이에 대한 동의를 거부할 수 있으며, 다만 동의가 없을 경우 채용 전형 진행이
+						불가능 할 수도 있음을 알려드립니다.</h3>
+				</div>
+			</div>
+		</div>
+	 
+	<script>	
+
+		$(".privacy-open").click(function(){
+			$("#p-pop01").fadeIn();
+		});
+		$(".close-pop.01").click(function(){
+			$("#p-pop01").fadeOut();
+		});
+		$(".sensitive-open").click(function(){
+			$("#p-pop02").fadeIn();
+		});
+		$(".close-pop.02").click(function(){
+			$("#p-pop02").fadeOut();
+		});
+
+		//main news slide
+		var swiper = new Swiper('.news', {
+			breakpointsInverse: true, 
+			breakpoints: { 
+				1080: { slidesPerView: 3, spaceBetween: 30 },
+				320: { slidesPerView: 2.5, spaceBetween: 10 },
+			},			
+			slidesPerGroup: 2,
+			loop: false,
+			loopFillGroupWithBlank: true,
+			pagination: {
+			el: '.news-pagination',
+			type: 'fraction',
+			clickable: true,
+			},
+			navigation: {
+			nextEl: '.news-button-next',
+			prevEl: '.news-button-prev',
+			},
+		});
+
+        var swiperVideos = new Swiper('.videos', {
+            breakpointsInverse: true,
+            breakpoints: {
+                1080: { slidesPerView: 3, spaceBetween: 30 },
+                320: { slidesPerView: 2.5, spaceBetween: 10 },
+            },
+            slidesPerGroup: 2,
+            loop: false,
+            loopFillGroupWithBlank: true,
+            pagination: {
+                el: '.videos-pagination',
+                type: 'fraction',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.videos-button-next',
+                prevEl: '.videos-button-prev',
+            },
+        });
+
+
+    </script>
+
+<div><div class="grecaptcha-badge" data-style="bottomright" style="width: 256px; height: 60px; display: block; transition: right 0.3s; position: fixed; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;"><div class="grecaptcha-logo"><iframe title="reCAPTCHA" width="256" height="60" role="presentation" name="a-4klvrhtveu8c" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LeywdYqAAAAAIYkX-4fs3oJHFUeVtxChq2d3lvu&amp;co=aHR0cHM6Ly93d3cubWl0c3ViaXNoaWVsZXZhdG9yLmNvLmtyOjQ0Mw..&amp;hl=en&amp;v=bUO1BXI8H9PgjAPSW9hwuSeI&amp;size=invisible&amp;cb=mbei9tdvrqr6"></iframe></div><div class="grecaptcha-error"></div><textarea id="g-recaptcha-response-100000" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div></div></body></html>

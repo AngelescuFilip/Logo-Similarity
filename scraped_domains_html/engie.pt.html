@@ -1,0 +1,728 @@
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/Content/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" href="/Content/font-awesome.css">
+    <script src="/scripts/jquery-3.7.1.js"></script>
+
+    <style>
+        #languageMenuContainer {
+            display: inline-block;
+            /*cursor: pointer;*/
+            position: absolute;
+            /*right: 70px;*/
+            right: 125px;
+            top: 13px;
+            z-index: 2;
+            margin: 6px;
+        }
+
+            #languageMenuContainer > div {
+                padding: 0 10px;
+            }
+
+            #languageMenuContainer > div:nth-child(n+2) {
+                border-left: 2px solid white;
+            }
+    </style>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-153500277-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-153500277-1');
+    </script>
+<script type="text/javascript">!function(T,l,y){var S=T.location,k="script",D="instrumentationKey",C="ingestionendpoint",I="disableExceptionTracking",E="ai.device.",b="toLowerCase",w="crossOrigin",N="POST",e="appInsightsSDK",t=y.name||"appInsights";(y.name||T[e])&&(T[e]=t);var n=T[t]||function(d){var g=!1,f=!1,m={initialize:!0,queue:[],sv:"5",version:2,config:d};function v(e,t){var n={},a="Browser";return n[E+"id"]=a[b](),n[E+"type"]=a,n["ai.operation.name"]=S&&S.pathname||"_unknown_",n["ai.internal.sdkVersion"]="javascript:snippet_"+(m.sv||m.version),{time:function(){var e=new Date;function t(e){var t=""+e;return 1===t.length&&(t="0"+t),t}return e.getUTCFullYear()+"-"+t(1+e.getUTCMonth())+"-"+t(e.getUTCDate())+"T"+t(e.getUTCHours())+":"+t(e.getUTCMinutes())+":"+t(e.getUTCSeconds())+"."+((e.getUTCMilliseconds()/1e3).toFixed(3)+"").slice(2,5)+"Z"}(),iKey:e,name:"Microsoft.ApplicationInsights."+e.replace(/-/g,"")+"."+t,sampleRate:100,tags:n,data:{baseData:{ver:2}}}}var h=d.url||y.src;if(h){function a(e){var t,n,a,i,r,o,s,c,u,p,l;g=!0,m.queue=[],f||(f=!0,t=h,s=function(){var e={},t=d.connectionString;if(t)for(var n=t.split(";"),a=0;a<n.length;a++){var i=n[a].split("=");2===i.length&&(e[i[0][b]()]=i[1])}if(!e[C]){var r=e.endpointsuffix,o=r?e.location:null;e[C]="https://"+(o?o+".":"")+"dc."+(r||"services.visualstudio.com")}return e}(),c=s[D]||d[D]||"",u=s[C],p=u?u+"/v2/track":d.endpointUrl,(l=[]).push((n="SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details)",a=t,i=p,(o=(r=v(c,"Exception")).data).baseType="ExceptionData",o.baseData.exceptions=[{typeName:"SDKLoadFailed",message:n.replace(/\./g,"-"),hasFullStack:!1,stack:n+"\nSnippet failed to load ["+a+"] -- Telemetry is disabled\nHelp Link: https://go.microsoft.com/fwlink/?linkid=2128109\nHost: "+(S&&S.pathname||"_unknown_")+"\nEndpoint: "+i,parsedStack:[]}],r)),l.push(function(e,t,n,a){var i=v(c,"Message"),r=i.data;r.baseType="MessageData";var o=r.baseData;return o.message='AI (Internal): 99 message:"'+("SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details) ("+n+")").replace(/\"/g,"")+'"',o.properties={endpoint:a},i}(0,0,t,p)),function(e,t){if(JSON){var n=T.fetch;if(n&&!y.useXhr)n(t,{method:N,body:JSON.stringify(e),mode:"cors"});else if(XMLHttpRequest){var a=new XMLHttpRequest;a.open(N,t),a.setRequestHeader("Content-type","application/json"),a.send(JSON.stringify(e))}}}(l,p))}function i(e,t){f||setTimeout(function(){!t&&m.core||a()},500)}var e=function(){var n=l.createElement(k);n.src=h;var e=y[w];return!e&&""!==e||"undefined"==n[w]||(n[w]=e),n.onload=i,n.onerror=a,n.onreadystatechange=function(e,t){"loaded"!==n.readyState&&"complete"!==n.readyState||i(0,t)},n}();y.ld<0?l.getElementsByTagName("head")[0].appendChild(e):setTimeout(function(){l.getElementsByTagName(k)[0].parentNode.appendChild(e)},y.ld||0)}try{m.cookie=l.cookie}catch(p){}function t(e){for(;e.length;)!function(t){m[t]=function(){var e=arguments;g||m.queue.push(function(){m[t].apply(m,e)})}}(e.pop())}var n="track",r="TrackPage",o="TrackEvent";t([n+"Event",n+"PageView",n+"Exception",n+"Trace",n+"DependencyData",n+"Metric",n+"PageViewPerformance","start"+r,"stop"+r,"start"+o,"stop"+o,"addTelemetryInitializer","setAuthenticatedUserContext","clearAuthenticatedUserContext","flush"]),m.SeverityLevel={Verbose:0,Information:1,Warning:2,Error:3,Critical:4};var s=(d.extensionConfig||{}).ApplicationInsightsAnalytics||{};if(!0!==d[I]&&!0!==s[I]){var c="onerror";t(["_"+c]);var u=T[c];T[c]=function(e,t,n,a,i){var r=u&&u(e,t,n,a,i);return!0!==r&&m["_"+c]({message:e,url:t,lineNumber:n,columnNumber:a,error:i}),r},d.autoExceptionInstrumented=!0}return m}(y.cfg);function a(){y.onInit&&y.onInit(n)}(T[t]=n).queue&&0===n.queue.length?(n.queue.push(a),n.trackPageView({})):a()}(window,document,{
+src: "https://js.monitor.azure.com/scripts/b/ai.2.min.js", // The SDK URL Source
+crossOrigin: "anonymous", 
+cfg: { // Application Insights Configuration
+    connectionString: 'InstrumentationKey=97d7c75c-7aac-4895-a6bb-a030529fa0dd;IngestionEndpoint=https://westeurope-5.in.applicationinsights.azure.com/;LiveEndpoint=https://westeurope.livediagnostics.monitor.azure.com/;ApplicationId=0c5a086b-4346-403f-b091-b1c1cd06e774'
+}});</script><script src="https://js.monitor.azure.com/scripts/b/ai.2.min.js" crossorigin="anonymous"></script></head>
+
+<body class="frontpage" style="background-color: #ededed;">
+    <header class="header">
+        <div class="nav-container containerEngie">
+            <a href="/">
+                <div id="nav-logo-container">
+                    <img id="Logo" src="/media/ao1l1ymf/logo-white-small_500x178.png" width="500" height="178">
+                </div>
+            </a>
+
+            <div id="languageMenuContainer">
+                    <div style="display: inline-block; text-transform: uppercase; color: white;">
+                        pt
+                    </div>
+                    <div style="display: inline-block; text-transform: uppercase; color: white;">
+<a href="/en/" style="">                        en
+</a>                    </div>
+            </div>
+
+            <span class="btn-hamburguer-menu">
+                MENU
+                <a id="hamburger-icon" href="#" title="Menu">
+                    <span class="line line-1"></span>
+                    <span class="line line-2"></span>
+                    <span class="line line-3"></span>
+                </a>
+            </span>
+        </div>
+
+        <div class="mobile-nav containerEngie">
+            <nav class="nav-bar nav-bar-extend">
+                    <div>
+            <a class="nav-link menu-engie" href="/engie-no-mundo/">ENGIE no Mundo</a>
+
+    </div>
+    <div>
+            <div class="has-child">
+                <a class="nav-link menu-engie">ENGIE em Portugal</a>
+            <ul class="sublevel level-3 1653">
+
+                        <li class=" sub-menu-engie">
+                            <a href="/engie-em-portugal/apresentacao-grupo-em-portugal/">Apresentação Grupo em Portugal</a>
+                        </li>
+                        <li class=" sub-menu-engie">
+                            <a href="/engie-em-portugal/top-management/">Top Management</a>
+                        </li>
+                        <li class=" sub-menu-engie">
+                            <a href="/engie-em-portugal/estrategia/">Estratégia</a>
+                        </li>
+                        <li class=" sub-menu-engie">
+                            <a href="/engie-em-portugal/responsabilidade-social/">Responsabilidade Social</a>
+                        </li>
+                        <li class=" sub-menu-engie">
+                            <a href="/engie-em-portugal/historia/">História</a>
+                        </li>
+            </ul>
+            </div>
+
+    </div>
+    <div>
+            <div class="has-child">
+                <a class="nav-link menu-engie">Empresas</a>
+            <ul class="sublevel level-3 1157">
+
+                        <li class=" sub-menu-engie">
+                            <a href="/empresas/engie-portugal/">ENGIE Portugal</a>
+                        </li>
+                        <li class=" sub-menu-engie">
+                            <a href="/empresas/climaespaco/">Climaespaço</a>
+                        </li>
+                        <li class=" sub-menu-engie">
+                            <a href="/empresas/arclasse/">Arclasse</a>
+                        </li>
+                        <li class=" sub-menu-engie">
+                            <a href="/empresas/engie-hemera/">ENGIE Hemera</a>
+                        </li>
+                        <li class=" sub-menu-engie">
+                            <a href="/empresas/vento-onshore-geracao-flexivel/">Vento Onshore Geração Flexível</a>
+                        </li>
+                        <li class=" sub-menu-engie">
+                            <a href="/empresas/movhera/">Movhera</a>
+                        </li>
+                        <li class=" sub-menu-engie">
+                            <a href="/empresas/engie-hidroeletricas-do-douro/">ENGIE Hidroelétricas do Douro</a>
+                        </li>
+                        <li class=" sub-menu-engie">
+                            <a href="/empresas/ocean-winds/">Ocean Winds</a>
+                        </li>
+            </ul>
+            </div>
+
+    </div>
+    <div>
+            <div class="has-child">
+                <a class="nav-link menu-engie">Soluções</a>
+            <ul class="sublevel level-3 1613">
+
+                        <li class=" sub-menu-engie">
+                            <a href="/solucoes/a-cidade-do-futuro/">A Cidade do Futuro</a>
+                        </li>
+                        <li class=" sub-menu-engie">
+                            <a href="/solucoes/a-industria-do-futuro/">A Indústria do Futuro</a>
+                        </li>
+            </ul>
+            </div>
+
+    </div>
+    <div>
+            <div class="has-child">
+                <a class="nav-link menu-engie">Referências</a>
+            <ul class="sublevel level-3 1478">
+
+                        <li class=" sub-menu-engie">
+                            <a href="/referencias/referencias/">Referências</a>
+                        </li>
+            </ul>
+            </div>
+
+    </div>
+    <div>
+            <a class="nav-link menu-engie" href="/venha-trabalhar-connosco/">Venha trabalhar Connosco</a>
+
+    </div>
+    <div>
+            <a class="nav-link menu-engie" href="/oportunidades/">Oportunidades</a>
+
+    </div>
+    <div>
+            <a class="nav-link menu-engie" href="/publicacoes/">Publicações</a>
+
+    </div>
+    <div>
+            <a class="nav-link menu-engie" href="/fornecedores/">Fornecedores</a>
+
+    </div>
+    <div>
+            <a class="nav-link menu-engie" href="/noticias/">Notícias</a>
+
+    </div>
+    <div>
+
+    </div>
+    <div>
+
+    </div>
+    <div>
+
+    </div>
+    <div>
+
+    </div>
+    <div>
+
+    </div>
+    <div>
+
+    </div>
+    <div>
+            <a class="nav-link menu-engie" href="/contactos/">Contactos</a>
+
+    </div>
+    <div>
+
+    </div>
+    <div>
+
+    </div>
+    <div>
+
+    </div>
+    <div>
+
+    </div>
+    <div>
+
+    </div>
+    <div>
+
+    </div>
+    <div>
+
+    </div>
+    <div>
+
+    </div>
+    <div>
+
+    </div>
+<div style="margin-bottom: 120px;">
+    <a class="nav-link menu-engie" href="/">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="svg replaced-svg"><path d="M3 14.828v9.172h18v-9.172l-9-8.375-9 8.375zm11 7.172h-4v-6h4v6zm10-9.852l-1.361 1.465-10.639-9.883-10.639 9.868-1.361-1.465 12-11.133 12 11.148z"></path></svg>
+    </a>
+</div>
+
+
+
+
+<style>
+    .sublevel {
+        display: none;
+    }
+
+    .menuClicked {
+        display: block;
+        text-align: left;
+        list-style-type: none;
+    }
+
+</style>
+
+
+
+<script>
+    $('.has-child').on('click', function () {
+        //        $('.menuClicked').parent().removeClass('selected');
+        //        $('.menuClicked').removeClass('menuClicked');
+        //        $(this).children('.sublevel').addClass('menuClicked');
+        //        $(this).addClass('selected');
+
+        $(this).children('.sublevel').toggleClass('menuClicked');
+    });
+
+
+    jQuery('img.svg').each(function () {
+        var $img = jQuery(this);
+        var imgID = $img.attr('id');
+        var imgClass = $img.attr('class');
+        var imgURL = $img.attr('src');
+
+        jQuery.get(imgURL, function (data) {
+            // Get the SVG tag, ignore the rest
+            var $svg = jQuery(data).find('svg');
+
+            // Add replaced image's ID to the new SVG
+            if (typeof imgID !== 'undefined') {
+                $svg = $svg.attr('id', imgID);
+            }
+            // Add replaced image's classes to the new SVG
+            if (typeof imgClass !== 'undefined') {
+                $svg = $svg.attr('class', imgClass + ' replaced-svg');
+            }
+
+            // Remove any invalid XML tags as per http://validator.w3.org
+            $svg = $svg.removeAttr('xmlns:a');
+
+            // Replace image with new SVG
+            $img.replaceWith($svg);
+        }, 'xml');
+    });
+</script>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+    <section class="splash" style="background-image:url('/media/1035/article-1.jpg')">
+        <div class="mask">
+            <div class="contentTitle">
+                <div id="Title" style="color:#ffffff">
+                    <h1 class="title-engie">Líder mundial na transição energética carbono zero</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        
+
+
+
+
+<style>
+    #homepageShortcuts > .col-xs-12:nth-child(n+5) {
+        margin-top: 30px;
+    }
+
+    @media(max-width: 1199px) {
+        #homepageShortcuts > .col-xs-12:nth-child(4) {
+            margin-top: 30px;
+        }
+    }
+
+    @media(max-width: 991px) {
+        #homepageShortcuts > .col-xs-12:nth-child(3) {
+            margin-top: 30px;
+        }
+    }
+
+    @media(max-width: 767px) {
+        #homepageShortcuts > .col-xs-12:nth-child(2) {
+            margin-top: 30px;
+        }
+    }
+
+     #Title:before, #Title:after {
+        background:#ffffff;
+    }
+</style>
+
+
+    <div class="container customContainer" style="background-color: white;">
+        <div style="">
+
+            <div id="homepageShortcuts" class="row">
+
+    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+            <a href="/engie-em-portugal/apresentacao-grupo-em-portugal/">
+                <div class="block-image" style="background-image:url('/media/c5sbep2o/foto_landingpage_1500x1000.jpg')">
+                    <div class="blockTitle" style="color:#ffffff">ENGIE em Portugal</div>
+                    <div class="blockSubTitle" style="color:#ffffff"></div>
+                    <div class="blockText" style="color:#ffffff">
+                        
+                    </div>
+                </div>
+            </a>
+    </div>
+
+
+
+
+
+    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+            <a href="/engie-no-mundo/">
+                <div class="block-image" style="background-image:url('/media/srmar2ih/306253_1500x1000.jpg')">
+                    <div class="blockTitle" style="color:#000000">ENGIE no Mundo</div>
+                    <div class="blockSubTitle" style="color:#000000"></div>
+                    <div class="blockText" style="color:#000000">
+                        
+                    </div>
+                </div>
+            </a>
+    </div>
+
+
+
+
+
+    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+            <a href="/oportunidades/">
+                <div class="block-image" style="background:#00aaff">
+                    <div class="blockTitle" style="color:#ffffff">Oportunidades</div>
+                    <div class="blockSubTitle" style="color:#ffffff"></div>
+                    <div class="blockText" style="color:#ffffff">
+                        
+                    </div>
+                </div>
+            </a>
+    </div>
+
+
+
+
+
+    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+            <a href="/publicacoes/">
+                <div class="block-image" style="background:#00aaff">
+                    <div class="blockTitle" style="color:#ffffff">Publicações</div>
+                    <div class="blockSubTitle" style="color:#ffffff">Publicações</div>
+                    <div class="blockText" style="color:#ffffff">
+                        
+                    </div>
+                </div>
+            </a>
+    </div>
+
+
+
+
+
+    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+            <a href="/noticias/">
+                <div class="block-image" style="background-image:url('/media/1035/article-1.jpg')">
+                    <div class="blockTitle" style="color:#ffffff">Notícias </div>
+                    <div class="blockSubTitle" style="color:#ffffff"></div>
+                    <div class="blockText" style="color:#ffffff">
+                        
+                    </div>
+                </div>
+            </a>
+    </div>
+
+
+
+
+
+    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+            <div class="youtube-player" style="position: relative;height: 220px;">
+                <iframe src="https://www.youtube.com/embed/xnmflR-Otjk?rel=0" frameborder="0" allowfullscreen="" style="height: 220px;"></iframe>
+            </div>
+    </div>
+
+
+
+
+
+    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+            <div class="youtube-player" style="position: relative;height: 220px;">
+                <iframe src="https://www.youtube.com/embed/qqR0gNUgJUk?rel=0" frameborder="0" allowfullscreen="" style="height: 220px;"></iframe>
+            </div>
+    </div>
+
+
+
+
+
+    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+            <div class="youtube-player" style="position: relative;height: 220px;">
+                <iframe src="https://www.youtube.com/embed/jA4w1q3kwbo?rel=0" frameborder="0" allowfullscreen="" style="height: 220px;"></iframe>
+            </div>
+    </div>
+
+
+
+
+
+    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+            <div class="youtube-player" style="position: relative;height: 220px;">
+                <iframe src="https://www.youtube.com/embed/R7MnWk4tmD4?rel=0" frameborder="0" allowfullscreen="" style="height: 220px;"></iframe>
+            </div>
+    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+    </main>
+    <!-- Footer -->
+    <footer class="footer containerEngie" style="max-width: 1440px;background-color: white;">
+
+        <!-- Footer Links -->
+        <div class="container-fluid text-center text-md-left">
+
+            <!-- Grid row -->
+            <div class="row text-center">
+                <img src="/images/brand-colours_v2.jpg" class="col-md-12" style="padding-top: 15px;padding-bottom: 15px;" width="1261" height="13">
+                <!-- Grid column -->
+                <div class="col-xs-12 col-md-4">
+                    <ul class="list-unstyled" style="text-align: left;">
+                        <a class="gray" style="cursor:pointer;" href="https://www.engie.com" target="_blank" aria-hidden="true">www.engie.com</a>
+                    </ul>
+                </div>
+                <!-- Grid column -->
+                <!-- Grid column -->
+                <div class="col-xs-12 col-md-4">
+                    <ul class="list-unstyled">
+                            <li><a class="gray" href="/politica-de-cookies/">Política de cookies</a></li>
+                    </ul>
+                </div>
+                <!-- Grid column -->
+                <!-- Grid column -->
+                <div class="col-xs-12 col-md-4">
+                    <ul class="list-unstyled" style="text-align: right;">
+                        <a class="fa fa-linkedin " style="cursor:pointer;border: 1px solid;border-radius: 25px;padding: 10px;color: gray" href="https://pt.linkedin.com/company/cofely-pt-gdf-suez-group" target="_blank" aria-hidden="true"></a>
+                    </ul>
+                </div>
+                <!-- Grid column -->
+                <!-- Grid column -->
+                <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+
+
+            <div class="row">
+                <div class="col-md-12 ">
+                    <div class="full-bar mr-bottom mr-top"></div>
+                </div>
+                <div class="col-md-12">
+                    <img src="/media/lhhfziog/logo-bottom_500x178.png" alt="engie-logo-greyscale" width="86">
+                    <p class="gray mr-bottom mr-top" style="font-size: 12px;">© 2019 ENGIE • All Rights Reserved</p>
+                </div>
+            </div>
+
+        </div>
+        <!-- Footer Links -->
+    </footer>
+    <!-- Footer -->
+
+
+    <style>
+        .cookie-bar {
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: darkorange;
+            display: none;
+        }
+
+        .cookie-close {
+            display: inline-block;
+            background: #fff;
+            padding: 3px 12px;
+            text-transform: uppercase;
+            color: #d1a11f;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: 11px;
+            -webkit-box-shadow: 2px 2px 0 0 #e6ba32;
+            box-shadow: 2px 2px 0 0 #e6ba32;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+    </style>
+
+
+            <div class="cookie-bar" style="background-color:#000000;">
+                <div class="customContainer">
+                    <div style="display:inline-flex;margin-bottom: 10px;">
+                        <div class="cookie-content" style="color:#ffffff;">
+                            <div class="tlid-input input">
+<div class="source-wrap">
+<div class="input-full-height-wrapper tlid-input-full-height-wrapper">
+<div class="source-input">
+<div class="source-footer-wrap source-or-target-footer">
+<div class="character-count tlid-character-count">
+<div class="cc-ctr normal"><span>Este site utiliza cookies.</span>&nbsp;<span>A proteção de seus dados pessoais é muito importante para nós.</span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+                        </div>
+                        <div>
+                            <div class="btn form-control" onclick="closeCookieAccept();" style="margin-left: 20px;color:#ffffff;background-color:#00aaff;">
+                                Aceito
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    <script>
+
+        function setCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            var expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+            //console.log("Set Cook " + expires);
+        }
+
+        function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        window.onload = function () {
+            if (getCookie("cookieAccept") == "") {
+                $(".cookie-bar").slideDown("slow");
+            }
+        }
+
+        function closeCookieAccept() {
+            $(".cookie-bar").slideUp("slow");
+            setCookie("cookieAccept", true, 1);
+
+        }
+    </script>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.21.0/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/4.0.0/jquery.validate.unobtrusive.min.js"></script>
+    <script src="/scripts/umbraco-starterkit-app.js"></script>
+    <script src="/scripts/bootstrap.min.js"></script>
+
+    <script>
+    
+    var hidden = 0;
+    $(document).ready(function () {
+        var width = $(window).width();
+        if (width < 400) {
+            $("#languageMenuContainer").attr("style", "display:none;");
+        }
+        var showHeader = true;
+        if (!showHeader) {
+            $('#languageMenuContainer > div:nth-child(n+1)').css('color', 'black');
+        }
+        else {
+            $('#languageMenuContainer > div:nth-child(n+1)').css('color', 'white');
+        }
+            var hamburger = $('#hamburger-icon, .btn-hamburguer-menu');
+            hamburger.click(function () {
+                hamburger.toggleClass('active');
+                $(".btn-hamburguer-menu").toggleClass('btn-menu-active-colors');
+                $('.mobile-nav').toggle();
+               
+                if (width < 400) {
+                    if (hidden == 0) {
+                        $("#languageMenuContainer").attr("style", "");
+                        console.log("Entrou no IF");
+                        hidden = 1;
+                        console.log("Hidden", hidden);
+                    }
+                    else {
+                        $("#languageMenuContainer").attr("style", "display:none;");
+                         console.log("Entrou no IF");
+                        hidden = 0;
+                        console.log("Hidden", hidden);
+                    }
+                }
+                return false;
+            });
+        });
+
+    </script>
+
+
+
+
+
+
+<script>
+    var showHeader = true;
+    if (!showHeader) {
+        $('.header').addClass('stickytop');
+        $('.nav-link').addClass('blue');
+        $('#languageMenuContainer > div:nth-child(n)').css('color', 'black');
+        $('#languageMenuContainer > div:nth-child(n+1)').css('color', 'black');
+        $('#languageMenuContainer > div:nth-child(n+2)').css('border-left-color', '#337ab7');
+        $('#Logo').attr('src', "/media/bfnizgp4/logo-scroll_500x178.png");
+        $('.btn-hamburguer-menu > a > span').addClass('bluebk');
+        $('.btn-hamburguer-menu').addClass('btn-menu-scroll-colors');
+    }
+
+    $(function () {
+
+        $(window).scroll(function () {
+            if (showHeader) {
+                if ($(this).scrollTop() > 0) { //290
+                    $('.header').addClass('stickytop');
+                    $('.nav-link').addClass('blue');
+                    $('#languageMenuContainer > div:nth-child(n+1)').css('color', 'black');
+                    $('#languageMenuContainer > div:nth-child(n+2)').css('border-left-color', '#337ab7');
+                    $('#Logo').attr('src',  "/media/bfnizgp4/logo-scroll_500x178.png");
+                    $('.btn-hamburguer-menu > a > span').addClass('bluebk');
+                    $('.btn-hamburguer-menu').addClass('btn-menu-scroll-colors');
+                }
+                else {
+                    $('.header').removeClass('stickytop');
+                    $('.nav-link').removeClass('blue');
+                    $('#languageMenuContainer > div:nth-child(n+1)').css('color', 'white');
+                    $('#languageMenuContainer > div:nth-child(n+2)').css('border-left-color', 'white');
+                    $('#Logo').attr('src', "/media/ao1l1ymf/logo-white-small_500x178.png");
+                    $('.btn-hamburguer-menu > a > span').removeClass('bluebk');
+                    $('.btn-hamburguer-menu').removeClass('btn-menu-scroll-colors');
+                }
+            }
+            else {
+                $('.header').addClass('stickytop');
+                $('.nav-link').addClass('blue');
+                $('#languageMenuContainer > div:nth-child(n+1)').css('color', 'black');
+                $('#languageMenuContainer > div:nth-child(n+2)').css('border-left-color', '#337ab7');
+                $('#Logo').attr('src', "/media/bfnizgp4/logo-scroll_500x178.png");
+                $('.btn-hamburguer-menu > a > span').addClass('bluebk');
+                $('.btn-hamburguer-menu').addClass('btn-menu-scroll-colors');
+            }
+        });
+    });
+</script>
+
+                        </body></html>

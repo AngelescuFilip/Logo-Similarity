@@ -1,0 +1,873 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html dir="ltr" xml:lang="sr-RS" lang="sr-RS" xmlns="http://www.w3.org/1999/xhtml" class=" "><head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- 
+	TYPO3 implemented by hotbytes - the opensource company - http://www.hotbytes.de
+
+	This website is powered by TYPO3 - inspiring people to share!
+	TYPO3 is a free open source Content Management Framework initially created by Kasper Skaarhoj and licensed under GNU/GPL.
+	TYPO3 is copyright 1998-2025 of Kasper Skaarhoj. Extensions are copyright of their respective owners.
+	Information and contribution at https://typo3.org/
+-->
+
+<base href="https://www.bauder.rs/">
+
+
+<meta name="generator" content="TYPO3 CMS">
+<meta name="description" content="Flat roofs, green roofs and pitched roofs from Bauder, Europe's leading manufacturer of roofing systems.">
+<meta name="author" content="Paul Bauder GmbH &amp; Co. KG">
+<meta name="keywords" content="Flat roof, green roof,pitched roof,flat roofs, green roofs, pitched roofs, thermal insulation,">
+<meta name="twitter:card" content="summary">
+<meta name="abstract" content="Bauder roofing systems: sealing, insulating and greening from a single source">
+
+
+<link rel="stylesheet" type="text/css" href="/typo3temp/assets/compressed/d42b6e1bdf-b14882351ed98fe7edd40fe1dd03ba44.css" media="all">
+<link rel="stylesheet" type="text/css" href="/typo3temp/assets/compressed/reset-67a9eee82693c325e3282d0b6b934bf4.css" media="screen" title="display">
+<link rel="stylesheet" type="text/css" href="/typo3temp/assets/compressed/stylesFacelift-533b5b266d7bb68d8e633449bfbc47b4.css" media="screen" title="display">
+<link rel="stylesheet" type="text/css" href="/typo3temp/assets/compressed/rte_new-617ab895b44075ec35bfdf2013d9db92.css" media="all">
+<link rel="stylesheet" type="text/css" href="/typo3temp/assets/compressed/jquery.bxslider-b8ce7f26cd94f060b76c41ac06ee6109.css" media="screen" title="display">
+<link rel="stylesheet" type="text/css" href="/typo3temp/assets/compressed/faceliftResponsive-82e01080db027c2c104622660ec0241b.css" media="screen" title="display">
+<link rel="stylesheet" type="text/css" href="/typo3temp/assets/compressed/fontawesome-913ccf86975f62fe5a0d84a33f689b02.css" media="all" title="display">
+<link rel="stylesheet" type="text/css" href="/typo3temp/assets/compressed/brands-140d6bd7447e4491ea72df9944fb2283.css" media="all" title="display">
+<link rel="stylesheet" type="text/css" href="/typo3temp/assets/compressed/fancybox-21224748a359750a214b9a1a08eaa7b5.css" media="screen" title="display">
+
+
+
+<script src="/fileadmin/templates/js/jQuery_patched_1.7.2.min.js" type="text/javascript"></script>
+<script src="/typo3conf/ext/ke_search_premium/Resources/Public/Javascript/jquery.ui.core.min.js" type="text/javascript"></script>
+<script src="/typo3conf/ext/ke_search_premium/Resources/Public/Javascript/jquery.ui.widget.min.js" type="text/javascript"></script>
+<script src="/typo3conf/ext/ke_search_premium/Resources/Public/Javascript/jquery.ui.position.min.js" type="text/javascript"></script>
+<script src="/typo3conf/ext/ke_search_premium/Resources/Public/Javascript/jquery.ui.menu.min.js" type="text/javascript"></script>
+<script src="/typo3conf/ext/ke_search_premium/Resources/Public/Javascript/jquery.ui.autocomplete.min.js" type="text/javascript"></script>
+<script src="/fileadmin/scripts/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></script>
+
+<script src="/typo3conf/ext/multislider/Resources/Public/js/jquery.bxslider.js" type="text/javascript"></script>
+<script src="/typo3conf/ext/multislider/Resources/Public/js/bxslider.js" type="text/javascript"></script>
+
+
+
+<script>
+// Production steps of ECMA-262, Edition 6, 22.1.2.1
+if (!Array.from) {
+  Array.from = (function () {
+    var toStr = Object.prototype.toString;
+    var isCallable = function (fn) {
+      return typeof fn === 'function' || toStr.call(fn) === '[object Function]';
+    };
+    var toInteger = function (value) {
+      var number = Number(value);
+      if (isNaN(number)) { return 0; }
+      if (number === 0 || !isFinite(number)) { return number; }
+      return (number > 0 ? 1 : -1) * Math.floor(Math.abs(number));
+    };
+    var maxSafeInteger = Math.pow(2, 53) - 1;
+    var toLength = function (value) {
+      var len = toInteger(value);
+      return Math.min(Math.max(len, 0), maxSafeInteger);
+    };
+
+    // The length property of the from method is 1.
+    return function from(arrayLike/*, mapFn, thisArg */) {
+      // 1. Let C be the this value.
+      var C = this;
+
+      // 2. Let items be ToObject(arrayLike).
+      var items = Object(arrayLike);
+
+      // 3. ReturnIfAbrupt(items).
+      if (arrayLike == null) {
+        throw new TypeError('Array.from requires an array-like object - not null or undefined');
+      }
+
+      // 4. If mapfn is undefined, then let mapping be false.
+      var mapFn = arguments.length > 1 ? arguments[1] : void undefined;
+      var T;
+      if (typeof mapFn !== 'undefined') {
+        // 5. else
+        // 5. a If IsCallable(mapfn) is false, throw a TypeError exception.
+        if (!isCallable(mapFn)) {
+          throw new TypeError('Array.from: when provided, the second argument must be a function');
+        }
+
+        // 5. b. If thisArg was supplied, let T be thisArg; else let T be undefined.
+        if (arguments.length > 2) {
+          T = arguments[2];
+        }
+      }
+
+      // 10. Let lenValue be Get(items, "length").
+      // 11. Let len be ToLength(lenValue).
+      var len = toLength(items.length);
+
+      // 13. If IsConstructor(C) is true, then
+      // 13. a. Let A be the result of calling the [[Construct]] internal method
+      // of C with an argument list containing the single item len.
+      // 14. a. Else, Let A be ArrayCreate(len).
+      var A = isCallable(C) ? Object(new C(len)) : new Array(len);
+
+      // 16. Let k be 0.
+      var k = 0;
+      // 17. Repeat, while k < len… (also steps a - h)
+      var kValue;
+      while (k < len) {
+        kValue = items[k];
+        if (mapFn) {
+          A[k] = typeof T === 'undefined' ? mapFn(kValue, k) : mapFn.call(T, kValue, k);
+        } else {
+          A[k] = kValue;
+        }
+        k += 1;
+      }
+      // 18. Let putStatus be Put(A, "length", len, true).
+      A.length = len;
+      // 20. Return A.
+      return A;
+    };
+  }());
+}
+</script>
+<script id="usercentrics-cmp" src="https://app.usercentrics.eu/browser-ui/latest/loader.js" data-settings-id="mqsufDFG" async="" data-avoid-prefetch-services=""></script><meta data-privacy-proxy-server="https://privacy-proxy-server.usercentrics.eu"><script async="" defer="" type="application/javascript" src="https://privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js"></script><script>var ucversion = 'v2'</script><script>var privacyLink = '/sr/zastita-podataka.html';</script><script>var imprintLink= '/sr/imprint.html';</script><link rel="apple-touch-icon" href="/fileadmin/bilder/allgemein/icons/bauder_ipad_icon.png"><script type="text/javascript" src="/fileadmin/scripts/main.js"></script><link rel="shortcut icon" href="/fileadmin/bilder/allgemein/icons/faviconnew_02.png"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Bauder krovni sistemi | Ravni krovovi, zeleni krovovi i kosi krovovi vodećeg evropskog proizvođača</title>
+<!-- Google tag (gtag.js) -->
+<script type="text/plain" data-usercentrics="Google Analytics 4" async="" src="https://www.googletagmanager.com/gtag/js?id=G-XE1424S2H8"></script>
+<script type="text/plain" data-usercentrics="Google Analytics 4">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-24V8H55VT4');
+</script>
+
+<!-- Google Tag Manager -->
+<script type="text/plain" data-usercentrics="Google Tag Manager">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TW276D8Q');</script>
+<!-- End Google Tag Manager -->
+<script type="text/javascript" src="/fileadmin/scripts/menu.js"></script>
+<link rel="canonical" href="https://www.bauder.rs/sr/bauder-srbija.html">
+
+
+<script type="module" src="https://app.usercentrics.eu/browser-ui/3.64.0/index.module.js"></script><style id="uc-block-styles">.uc-social-embedding{background:#ececec; border:1px solid #dadada; padding:6px 22px; border-radius:6px; color:#909090; margin:10px; font-weight:200; font-size:14px; cursor:pointer;}.not-existing-service{display:none;}.uc-social-embedding .description-text{margin:0; margin-bottom:12px; line-height:1.5; font-family:BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif,BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif; font-size:14px;}.consent-not-exists .description-text{display:none; color:#595959;}.consent-not-exists .not-existing-service{display:inline;}.consent-not-exists .uc-embedding-buttons{display:none;}.uc-embedding-buttons{display:-webkit-box; display:-ms-flexbox; display:flex; justify-content:center; flex-wrap:wrap;}.uc-embedding-container-rtl{direction:rtl;}.uc-embedding-container{min-height:320px; max-height:500px; max-width:100%; width:100%; height:100%; font-size:0; position:relative; overflow:hidden; background:transparent; white-space:normal;}.uc-embedding-wrapper{width:372px; max-width:calc(100% - 70px); max-height:calc(100% - 35px); background:#FFF; border-radius:8px; box-shadow:0 3px 6px rgba(0, 0, 0, 0.5); position:absolute; padding:12px 24px; top:50%; left:50%; text-align:center; font-size:14px; line-height:1.5; transform:translateX(-50%) translateY(-50%); display:-webkit-box; display:-ms-flexbox; display:flex; flex-direction:column; overflow:auto; font-family:BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif,BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif;}.uc-embedding-wrapper h3{line-height:1.33; font-size:18px; font-weight:bold; margin:12px auto; color:#303030;}.uc-embedding-more-info{cursor:pointer; border:none; box-shadow:none; font-size:14px; font-weight:bold; display:inline-block; height:40px; border-radius:4px; padding:0; background:#F5F5F5; width:174px; margin:6px 12px 6px 0;}.uc-embedding-more-info.uc-button-primary{background:#0045A5; color:#fff;}.uc-embedding-accept{cursor:pointer; border:none; box-shadow:none; font-size:14px; font-weight:bold; display:inline-block; height:40px; padding:0; border-radius:4px; background:#0045A5; color:#fff; width:174px; margin:6px 12px 6px 0;}.uc-text-embedding{font-family:BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif,BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif; font-size:14px;}.uc-text-embedding-inline-button{text-decoration:underline; cursor:pointer; display:inline-block; padding:0; margin:0; background:inherit; font-family:BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif,BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif; font-size:14px; color:#0045A5; border:0;}a.uc-embedding-powered-by{color:#333;}</style></head>
+<body id="index" class="index_eu">
+
+
+	<div id="header">
+		
+		<div class="centerWrap">
+			<div id="searchBox">
+				
+<div id="c405978" class="frame frame-default frame-type-list frame-layout-0"><div class="tx-kesearch-pi1">
+	
+
+	<form method="get" id="form_kesearch_pi1" name="form_kesearch_pi1" action="/sr/rezultati-pretrage.html">
+		
+		
+
+		<fieldset class="kesearch_searchbox">
+			
+			
+			
+
+			<div class="kesearchbox">
+				<input type="search" class="ke_search_sword ui-autocomplete-input" name="tx_kesearch_pi1[sword]" value="" placeholder="Your search" minlength="3" autocomplete="off"><span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+				<input type="submit" class="button kesearch_submit" value="Find">
+				<div class="clearer">&nbsp;</div>
+			</div>
+
+			
+				<input id="kesearchpagenumber" type="hidden" name="tx_kesearch_pi1[page]" value="1">
+			
+			<input id="resetFilters" type="hidden" name="tx_kesearch_pi1[resetFilters]" value="0">
+            
+			
+		</fieldset>
+	</form>
+
+</div>
+</div>
+
+
+			</div>
+			<a href="/sr/bauder-srbija.html" id="logo"><img src="/fileadmin/templates/facelift_2014/images/logo_hr.svg" alt="Bauder" width="300" height="99"></a>
+			<div id="menuMain"><button class="hamburger hamburger--slider" type="button"> <span class="hamburger-box"> <span class="hamburger-inner"></span> </span> </button><ul class="menu"><li class="first"><a href="/sr/flachdach-eu.html"><span>Sistemi ravnog krova</span></a><span class="submenuIndicator"></span><div><ul class="submenu"><li class="first"><a href="/sr/flachdach-eu/primeri-sistema-ravnog-krova.html">Primeri sistema ravnog krova</a><span class="submenuIndicator-lvl2"></span><div><ul class="submenu-lvl2"><li class="first"><a href="/sr/flachdach-eu/primeri-sistema-ravnog-krova/novogradnja.html">Novogradnja</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/sr/flachdach-eu/primeri-sistema-ravnog-krova/novogradnja/betonska-podloga.html">Betonska podloga</a></li><li><a href="/sr/flachdach-eu/primeri-sistema-ravnog-krova/novogradnja/trapezni-lim-kao-podloga.html">Trapezni lim kao podloga</a></li><li class="last"><a href="/sr/flachdach-eu/primeri-sistema-ravnog-krova/novogradnja/drvena-podloga.html">Drvena podloga</a></li></ul></div></li><li class="last"><a href="/sr/flachdach-eu/primeri-sistema-ravnog-krova/sanacija.html">Sanacija</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/sr/flachdach-eu/primeri-sistema-ravnog-krova/sanacija/nefunkcionalna-postojeca-izolacija.html">Nefunkcionalna postojeća izolacija</a></li><li class="last"><a href="/sr/flachdach-eu/primeri-sistema-ravnog-krova/sanacija/funkcionalna-postojeca-izolacija.html">Funkcionalna postojeća izolacija</a></li></ul></div></li></ul></div></li><li><a href="/sr/flachdach-eu/proizvodi-za-ravni-krov.html">Proizvodi za ravni krov</a><span class="submenuIndicator-lvl2"></span><div><ul class="submenu-lvl2"><li class="first"><a href="/sr/flachdach-eu/proizvodi-za-ravni-krov/bitumenske-krovne-membrane.html">Bitumenske krovne membrane</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/sr/flachdach-eu/proizvodi-za-ravni-krov/bitumenske-krovne-membrane/zavrsni-sloj.html">Završni sloj</a></li><li><a href="/sr/flachdach-eu/proizvodi-za-ravni-krov/bitumenske-krovne-membrane/prvi-sloj-hidroizolacije.html">Prvi sloj hidroizolacije</a></li><li><a href="/sr/flachdach-eu/proizvodi-za-ravni-krov/bitumenske-krovne-membrane/parna-brana.html">Parna brana</a></li><li><a href="/sr/flachdach-eu/proizvodi-za-ravni-krov/bitumenske-krovne-membrane/specijalne-membrane.html">Specijalne membrane</a></li><li class="last"><a href="/sr/flachdach-eu/proizvodi-za-ravni-krov/bitumenske-krovne-membrane/pribor.html">Pribor</a></li></ul></div></li><li><a href="/sr/flachdach-eu/proizvodi-za-ravni-krov/sinteticke-krovne-membrane.html">Sintetičke krovne membrane</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/sr/flachdach-eu/proizvodi-za-ravni-krov/sinteticke-krovne-membrane/bauderthermoplan.html">BauderTHERMOPLAN</a></li><li><a href="/sr/flachdach-eu/proizvodi-za-ravni-krov/sinteticke-krovne-membrane/bauderthermofin.html">BauderTHERMOFIN</a></li><li class="last"><a href="/sr/flachdach-eu/proizvodi-za-ravni-krov/sinteticke-krovne-membrane/bauderthermofol.html">BauderTHERMOFOL</a></li></ul></div></li><li class="last"><a href="/sr/flachdach-eu/proizvodi-za-ravni-krov/termoizolacija.html">Termoizolacija</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/sr/flachdach-eu/proizvodi-za-ravni-krov/termoizolacija/pir-izolacija-za-ravni-krov.html">PIR izolacija za ravni krov</a></li><li class="last"><a href="/sr/flachdach-eu/proizvodi-za-ravni-krov/termoizolacija/pir-izolacija-za-balkone-terase-i-podove.html">PIR izolacija za balkone, terase i podove</a></li></ul></div></li></ul></div></li><li><a href="/sr/flachdach-eu/reference.html">Reference</a></li><li><a href="/sr/flachdach-eu/preuzimanja/brosure.html">Preuzimanja</a><span class="submenuIndicator-lvl2"></span><div><ul class="submenu-lvl2"><li class="first"><a href="/sr/flachdach-eu/preuzimanja/brosure.html">Brošure</a></li><li><a href="/sr/flachdach-eu/preuzimanja/cenovnici.html">Cenovnici</a></li><li><a href="/sr/flachdach-eu/preuzimanja/uputstva-za-postavljanje.html">Uputstva za postavljanje</a></li><li><a href="/sr/flachdach-eu/preuzimanja/tehnicki-listovi/bitumenski-materijali.html">Tehnički listovi</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/sr/flachdach-eu/preuzimanja/tehnicki-listovi/bitumenski-materijali.html">Bitumenski materijali</a></li><li><a href="/sr/flachdach-eu/preuzimanja/tehnicki-listovi/sinteticki-materijali.html">Sintetički materijali</a></li><li class="last"><a href="/sr/flachdach-eu/preuzimanja/tehnicki-listovi/termoizolacija.html">Termoizolacija</a></li></ul></div></li><li><a href="/sr/flachdach-eu/preuzimanja/sigurnosni-listovi/bitumenski-materijali.html">Sigurnosni listovi</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/sr/flachdach-eu/preuzimanja/sigurnosni-listovi/bitumenski-materijali.html">Bitumenski materijali</a></li><li><a href="/sr/flachdach-eu/preuzimanja/sigurnosni-listovi/sinteticki-materijali.html">Sintetički materijali</a></li><li class="last"><a href="/sr/flachdach-eu/preuzimanja/sigurnosni-listovi/toplinska-izolacija.html">Toplinska izolacija</a></li></ul></div></li><li class="last"><a href="/sr/flachdach-eu/preuzimanja/izjave-o-svojstvima/bitumenski-materijali.html">Izjave o svojstvima</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/sr/flachdach-eu/preuzimanja/izjave-o-svojstvima/bitumenski-materijali.html">Bitumenski materijali</a></li><li><a href="/sr/flachdach-eu/preuzimanja/izjave-o-svojstvima/sinteticki-materijali.html">Sintetički materijali</a></li><li><a href="/sr/flachdach-eu/preuzimanja/izjave-o-svojstvima/toplinska-izolacija.html">Toplinska izolacija</a></li><li class="last"><a href="/sr/flachdach-eu/preuzimanja/izjave-o-svojstvima/arhiva-prethodne-verzije.html">Arhiva - prethodne verzije</a></li></ul></div></li></ul></div></li><li class="last"><a href="https://www.bauder-navigator.hr/hr/home.html" target="_blank">=&gt; Bauder Navigator</a></li></ul></div></li><li><a href="/sr/gruendach-eu.html"><span>Sistemi zelenog krova</span></a><span class="submenuIndicator"></span><div><ul class="submenu"><li class="first"><a href="/sr/gruendach-eu/primeri-sistema-zelenog-krova.html">Primeri sistema zelenog krova</a><span class="submenuIndicator-lvl2"></span><div><ul class="submenu-lvl2"><li class="first"><a href="/sr/gruendach-eu/primeri-sistema-zelenog-krova/ekstenzivno-ozelenjavanje-krova.html">Ekstenzivno ozelenjavanje krova</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/sr/gruendach-eu/primeri-sistema-zelenog-krova/ekstenzivno-ozelenjavanje-krova/ekstenzivni-sistempr1.html">Ekstenzivni sistem(Pr.1)</a></li><li><a href="/sr/gruendach-eu/primeri-sistema-zelenog-krova/ekstenzivno-ozelenjavanje-krova/ekstenzivni-sistem-pr2.html">Ekstenzivni sistem (Pr.2)</a></li><li class="last"><a href="/sr/gruendach-eu/primeri-sistema-zelenog-krova/ekstenzivno-ozelenjavanje-krova/ekstenzivni-sistem-pr3.html">Ekstenzivni sistem (Pr.3)</a></li></ul></div></li><li><a href="/sr/gruendach-eu/primeri-sistema-zelenog-krova/intenzivno-ozelenjavanje-krova.html">Intenzivno ozelenjavanje krova</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/sr/gruendach-eu/primeri-sistema-zelenog-krova/intenzivno-ozelenjavanje-krova/intenzivni-sistem-pr1.html">Intenzivni sistem (Pr.1)</a></li><li><a href="/sr/gruendach-eu/primeri-sistema-zelenog-krova/intenzivno-ozelenjavanje-krova/intenzivni-sistem-pr2.html">Intenzivni sistem (Pr.2)</a></li><li class="last"><a href="/sr/gruendach-eu/primeri-sistema-zelenog-krova/intenzivno-ozelenjavanje-krova/intenzivni-sistem-pr3.html">Intenzivni sistem (Pr.3)</a></li></ul></div></li><li><a href="/sr/gruendach-eu/primeri-sistema-zelenog-krova/ozelenjavanje-kosog-krova.html">Ozelenjavanje kosog krova</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/sr/gruendach-eu/primeri-sistema-zelenog-krova/ozelenjavanje-kosog-krova/kosi-krov-pr1.html">Kosi krov (Pr.1)</a></li><li class="last"><a href="/sr/gruendach-eu/primeri-sistema-zelenog-krova/ozelenjavanje-kosog-krova/kosi-krov-pr-2.html">Kosi krov (Pr. 2)</a></li></ul></div></li><li class="last"><a href="/sr/gruendach-eu/primeri-sistema-zelenog-krova/prohodne-i-provozne-povrsine.html">Prohodne i provozne površine</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/sr/gruendach-eu/primeri-sistema-zelenog-krova/prohodne-i-provozne-povrsine/prohodna-povrsina-dse-60-ispunjen-sljunkom.html">Prohodna površina; DSE 60 ispunjen šljunkom</a></li><li><a href="/sr/gruendach-eu/primeri-sistema-zelenog-krova/prohodne-i-provozne-povrsine/prohodna-povrsina-dse-60-ispunjen-smesom-usitnjenih-kame.html">Prohodna površina; DSE 60 ispunjen smesom usitnjenih kame</a></li><li><a href="/sr/gruendach-eu/primeri-sistema-zelenog-krova/prohodne-i-provozne-povrsine/provozne-povrsine-dse-60-izgubljena-oplata.html">Provozne površine; DSE 60, izgubljena oplata</a></li><li><a href="/sr/gruendach-eu/primeri-sistema-zelenog-krova/prohodne-i-provozne-povrsine/prohodna-povrsina-nf-10-kao-drenazni-element.html">Prohodna površina; NF 10 kao drenažni element</a></li><li class="last"><a href="/sr/gruendach-eu/primeri-sistema-zelenog-krova/prohodne-i-provozne-povrsine/prohodna-povrsina-dse-201-kao-drenazni-element.html">Prohodna površina; DSE 20/1 kao drenažni element</a></li></ul></div></li></ul></div></li><li><a href="/sr/gruendach-eu/proizvodi-za-zeleni-krov.html">Proizvodi za zeleni krov</a><span class="submenuIndicator-lvl2"></span><div><ul class="submenu-lvl2"><li class="first"><a href="/sr/gruendach-eu/proizvodi-za-zeleni-krov/vegetacioni-supstrati.html">Vegetacioni supstrati</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/sr/gruendach-eu/proizvodi-za-zeleni-krov/vegetacioni-supstrati/bauder-ekstenzivni-supstrat-cl-e.html">Bauder ekstenzivni supstrat CL-E</a></li><li class="last"><a href="/sr/gruendach-eu/proizvodi-za-zeleni-krov/vegetacioni-supstrati/bauder-intenzivni-supstrat-cl-i.html">Bauder intenzivni supstrat CL-I</a></li></ul></div></li><li><a href="/sr/gruendach-eu/proizvodi-za-zeleni-krov/filterski-sloj.html">Filterski sloj</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="last"><a href="/sr/gruendach-eu/proizvodi-za-zeleni-krov/filterski-sloj/bauder-filterska-tkanina-fv-125.html">Bauder filterska tkanina FV 125</a></li></ul></div></li><li><a href="/sr/gruendach-eu/proizvodi-za-zeleni-krov/drenazni-i-akumulacioni-sloj.html">Drenažni i akumulacioni sloj</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/sr/gruendach-eu/proizvodi-za-zeleni-krov/drenazni-i-akumulacioni-sloj/bauder-sdf-mat-zastitni-drenazni-i-filterski-sloj.html">Bauder SDF Mat (zaštitni, drenažni i filterski sloj)</a></li><li><a href="/sr/gruendach-eu/proizvodi-za-zeleni-krov/drenazni-i-akumulacioni-sloj/bauder-akumulacione-kadice-wsp-50-wsp-75.html">Bauder akumulacione kadice WSP 50 / WSP 75</a></li><li><a href="/sr/gruendach-eu/proizvodi-za-zeleni-krov/drenazni-i-akumulacioni-sloj/bauder-drenazne-kadice-dp-50.html">Bauder drenažne kadice DP 50</a></li><li><a href="/sr/gruendach-eu/proizvodi-za-zeleni-krov/drenazni-i-akumulacioni-sloj/bauder-drenazni-element-nf-10.html">Bauder drenažni element NF 10</a></li><li><a href="/sr/gruendach-eu/proizvodi-za-zeleni-krov/drenazni-i-akumulacioni-sloj/bauder-drenazno-akumulacione-kadice-dse-201.html">Bauder drenažno-akumulacione kadice DSE 20/1</a></li><li><a href="/sr/gruendach-eu/proizvodi-za-zeleni-krov/drenazni-i-akumulacioni-sloj/bauder-drenazno-akumulacione-kadice-dse-40.html">Bauder drenažno-akumulacione kadice DSE 40</a></li><li class="last"><a href="/sr/gruendach-eu/proizvodi-za-zeleni-krov/drenazni-i-akumulacioni-sloj/bauder-drenazno-akumulacione-kadice-dse-60.html">Bauder drenažno-akumulacione kadice DSE 60</a></li></ul></div></li><li><a href="/sr/gruendach-eu/proizvodi-za-zeleni-krov/zastitni-sloj.html">Zaštitni sloj</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/sr/gruendach-eu/proizvodi-za-zeleni-krov/zastitni-sloj/bauder-zastitni-sloj-fsm-600-fsm-1100.html">Bauder zaštitni sloj FSM 600 / FSM 1100</a></li><li><a href="/sr/gruendach-eu/proizvodi-za-zeleni-krov/zastitni-sloj/bauder-zastitni-mat-sm-6-sm-8-sm-10.html">Bauder zaštitni mat SM 6 / SM 8 / SM 10</a></li><li class="last"><a href="/sr/gruendach-eu/proizvodi-za-zeleni-krov/zastitni-sloj/bauder-zastitna-tkanina-sv-300-sv-600.html">Bauder zaštitna tkanina SV 300 / SV 600</a></li></ul></div></li><li><a href="/sr/gruendach-eu/proizvodi-za-zeleni-krov/razdelni-i-klizajuci-sloj.html">Razdelni i klizajući sloj</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="last"><a href="/sr/gruendach-eu/proizvodi-za-zeleni-krov/razdelni-i-klizajuci-sloj/bauder-razdelna-folija-pe-02.html">Bauder razdelna folija PE 02</a></li></ul></div></li><li class="last"><a href="/sr/gruendach-eu/proizvodi-za-zeleni-krov/pribor.html">Pribor</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/sr/gruendach-eu/proizvodi-za-zeleni-krov/pribor/bauder-zleb-za-odvodnju-ea-15060.html">Bauder žleb za odvodnju EA 150/60</a></li><li><a href="/sr/gruendach-eu/proizvodi-za-zeleni-krov/pribor/bauder-zleb-za-odvodnju-mr-15060.html">Bauder žleb za odvodnju MR 150/60</a></li><li><a href="/sr/gruendach-eu/proizvodi-za-zeleni-krov/pribor/spojni-lim-za-zlebove.html">Spojni lim za žlebove</a></li><li><a href="/sr/gruendach-eu/proizvodi-za-zeleni-krov/pribor/set-za-podesavanje-visine-zlebova.html">Set za podešavanje visine žlebova</a></li><li><a href="/sr/gruendach-eu/proizvodi-za-zeleni-krov/pribor/bocne-zavrsne-kape-za-zlebove.html">Bočne završne kape za žlebove</a></li><li><a href="/sr/gruendach-eu/proizvodi-za-zeleni-krov/pribor/bauder-kape-za-odvode-mr-250-mr-400.html">Bauder kape za odvode MR 250 / MR 400</a></li><li><a href="/sr/gruendach-eu/proizvodi-za-zeleni-krov/pribor/bauder-granicnik-al-80.html">Bauder graničnik AL 80</a></li><li><a href="/sr/gruendach-eu/proizvodi-za-zeleni-krov/pribor/bauder-granicnik-al-10080.html">Bauder graničnik AL 100/80</a></li><li><a href="/sr/gruendach-eu/proizvodi-za-zeleni-krov/pribor/bauder-kontrolno-okno-alu-250-alu-400.html">Bauder kontrolno okno ALU 250 / ALU 400</a></li><li class="last"><a href="/sr/gruendach-eu/proizvodi-za-zeleni-krov/pribor/bauder-nadgradni-element-alu-50100.html">Bauder nadgradni element ALU (50/100)</a></li></ul></div></li></ul></div></li><li class="last"><a href="/sr/gruendach-eu/reference.html">Reference</a></li></ul></div></li><li><a href="/sr/steildach-eu.html"><span>Sistemi kosog krova</span></a><span class="submenuIndicator"></span><div><ul class="submenu"><li class="first"><a href="/sr/steildach-eu/primeri-sistema-kosog-krova.html">Primeri sistema kosog krova</a><span class="submenuIndicator-lvl2"></span><div><ul class="submenu-lvl2"><li class="first"><a href="/sr/steildach-eu/primeri-sistema-kosog-krova/novogradnja.html">Novogradnja</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/sr/steildach-eu/primeri-sistema-kosog-krova/novogradnja/niskoenergetska-kuca.html">Niskoenergetska kuća</a></li><li><a href="/sr/steildach-eu/primeri-sistema-kosog-krova/novogradnja/pasivna-kuca.html">Pasivna kuća</a></li><li class="last"><a href="/sr/steildach-eu/primeri-sistema-kosog-krova/novogradnja/betonska-potkonstrukcija.html">Betonska potkonstrukcija</a></li></ul></div></li><li class="last"><a href="/sr/steildach-eu/primeri-sistema-kosog-krova/sanacija.html">Sanacija</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/sr/steildach-eu/primeri-sistema-kosog-krova/sanacija/izolacija-na-krovnim-gredama.html">Izolacija na krovnim gredama</a></li><li class="last"><a href="/sr/steildach-eu/primeri-sistema-kosog-krova/sanacija/kombinovana-izolacija.html">Kombinovana  izolacija</a></li></ul></div></li></ul></div></li><li><a href="/sr/steildach-eu/proizvodi-za-kosi-krov.html">Proizvodi za kosi krov</a><span class="submenuIndicator-lvl2"></span><div><ul class="submenu-lvl2"><li class="first"><a href="/sr/steildach-eu/proizvodi-za-kosi-krov/membrane.html">Membrane</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/sr/steildach-eu/proizvodi-za-kosi-krov/membrane/podlozne-membrane-veceg-stepena-vodonepropusnosti.html">Podložne membrane većeg stepena vodonepropusnosti</a></li><li><a href="/sr/steildach-eu/proizvodi-za-kosi-krov/membrane/podlozne-membrane.html">Podložne membrane</a></li><li><a href="/sr/steildach-eu/proizvodi-za-kosi-krov/membrane/razdelni-slojevi-za-metalni-pokrivac.html">Razdelni slojevi za metalni pokrivač</a></li><li class="last"><a href="/sr/steildach-eu/proizvodi-za-kosi-krov/membrane/parne-brane.html">Parne brane</a></li></ul></div></li><li><a href="/sr/steildach-eu/proizvodi-za-kosi-krov/termoizolacija.html">Termoizolacija</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/sr/steildach-eu/proizvodi-za-kosi-krov/termoizolacija/termoizolacija-na-krovnim-gredama.html">Termoizolacija na krovnim gredama</a></li><li><a href="/sr/steildach-eu/proizvodi-za-kosi-krov/termoizolacija/kombinovani-izolacioni-elementi.html">Kombinovani izolacioni elementi</a></li><li><a href="/sr/steildach-eu/proizvodi-za-kosi-krov/termoizolacija/termoizolacija-za-metalne-krovove.html">Termoizolacija za metalne krovove</a></li><li class="last"><a href="/sr/steildach-eu/proizvodi-za-kosi-krov/termoizolacija/unutrasnja-izolacija.html">Unutrašnja izolacija</a></li></ul></div></li><li class="last"><a href="/sr/steildach-eu/proizvodi-za-kosi-krov/pribor.html">Pribor</a></li></ul></div></li><li><a href="/sr/steildach-eu/reference.html">Reference</a></li><li class="last"><a href="/sr/steildach-eu/preuzimanja/brosure.html">Preuzimanja</a><span class="submenuIndicator-lvl2"></span><div><ul class="submenu-lvl2"><li class="first"><a href="/sr/steildach-eu/preuzimanja/brosure.html">Brošure</a></li><li><a href="/sr/steildach-eu/preuzimanja/cenovnici.html">Cenovnici</a></li><li><a href="/sr/steildach-eu/preuzimanja/uputstvo-za-postavljanje.html">Uputstvo za postavljanje</a></li><li><a href="/sr/steildach-eu/preuzimanja/tehnicki-listovi.html">Tehnički listovi</a></li><li class="last"><a href="/sr/steildach-eu/preuzimanja/izjave-o-svojstvima.html">Izjave o svojstvima</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="last"><a href="/sr/steildach-eu/preuzimanja/izjave-o-svojstvima/arhiva-prethodne-verzije.html">Arhiva - prethodne verzije</a></li></ul></div></li></ul></div></li></ul></div></li><li><a href="/sr/preuzimanja/brosure.html"><span>Preuzimanja</span></a><span class="submenuIndicator"></span><div><ul class="submenu"><li class="first"><a href="/sr/preuzimanja/brosure.html">Brošure</a></li><li><a href="/sr/preuzimanja/cenovnici.html">Cenovnici</a></li><li><a href="/sr/preuzimanja/uputstva-za-postavljanje.html">Uputstva za postavljanje</a></li><li class="last"><a href="/sr/preuzimanja/tehnicki-listovi.html">Tehnički listovi</a></li></ul></div></li><li><a href="/sr/kompanija/o-nama.html"><span>Kompanija</span></a><span class="submenuIndicator"></span><div><ul class="submenu"><li class="first"><a href="/sr/kompanija/novosti.html">Novosti</a></li><li class="last"><a href="/sr/kompanija/o-nama.html">O nama</a><span class="submenuIndicator-lvl2"></span><div><ul class="submenu-lvl2"><li class="first"><a href="/sr/kompanija/o-nama/nas-tim.html">Naš tim</a></li><li><a href="/sr/kompanija/o-nama/nasi-proizvodi-i-usluge.html">Naši proizvodi i usluge</a></li><li><a href="/sr/kompanija/o-nama/nasa-pozicija.html">Naša pozicija</a></li><li><a href="/sr/kompanija/o-nama/nasa-buducnost.html">Naša budućnost</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/sr/kompanija/o-nama/nasa-buducnost/upravljanje-kvalitetom-energijom-i-okolisem.html">Upravljanje kvalitetom, energijom i okolišem</a></li><li><a href="/sr/kompanija/o-nama/nasa-buducnost/ekoloske-deklaracije-proizvoda.html">Ekološke deklaracije proizvoda</a></li><li class="last"><a href="/sr/kompanija/o-nama/nasa-buducnost/sigurnost-postrojenja-i-ekoloska-odgovornost.html">Sigurnost postrojenja i ekološka odgovornost</a></li></ul></div></li><li class="last"><a href="/sr/kompanija/o-nama/nasa-istorija.html">Naša istorija</a></li></ul></div></li></ul></div></li><li class="last"><a href="/sr/kontakt/nasa-adresa.html"><span>Kontakt</span></a><span class="submenuIndicator"></span><div><ul class="submenu"><li class="first"><a href="/sr/kontakt/nasa-adresa.html">Naša adresa</a></li><li><a href="/sr/kontakt/direktor-prodaje.html">Direktor prodaje za Srbiju i Crnu Goru</a></li><li><a href="/sr/kontakt/tehnicko-prodajni-predstavnici-za-hrvatsku.html">Tehničko-prodajni predstavnici za Srbiju</a></li><li class="last"><a href="/sr/kontakt/poslovnice-i-partneri-u-evropi/nh-addresses.html">Poslovnice i partneri u Evropi</a></li></ul></div></li></ul></div>
+		</div>
+	</div>
+	
+	<div id="banner">
+		<div class="centerWrap"><!--TYPO3SEARCH_begin-->
+<div id="c407400" class="frame frame-default frame-type-list frame-layout-0"><div class="slider_box"><div class="bx-wrapper" style="max-width: 100%; margin: 0px auto;"><div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 300px;"><ul class="bxslider" style="width: auto; position: relative;"><li style="float: none; list-style: none; position: absolute; width: 945px; z-index: 50; display: block;"><a href="https://www.bauder.de/de/bauder-deutschland.html"><img src="uploads/multislider/EU-Start-Slide_FD_KST_03.jpg" class="loadimage" data-src="uploads/multislider/EU-Start-Slide_FD_KST_03.jpg" alt="Flachdach_1" height="300" width="943"></a><div class="slideText">
+        &nbsp;
+    </div></li><li style="float: none; list-style: none; position: absolute; width: 945px; z-index: 0; display: none;"><img src="" class="loadimage" data-src="uploads/multislider/EU-Start-Slide_allg_03.jpg" alt="Allgemein" height="300" width="943"><div class="slideText">
+        &nbsp;
+    </div></li><li style="float: none; list-style: none; position: absolute; width: 945px; z-index: 0; display: none;"><img src="" class="loadimage" data-src="uploads/multislider/Slider-Gruendach1_943x300px_06.jpg" alt="Gründach_1" height="300" width="943"><div class="slideText">
+        &nbsp;
+    </div></li><li style="float: none; list-style: none; position: absolute; width: 945px; z-index: 0; display: none;"><img src="" class="loadimage" data-src="uploads/multislider/Slider-Waterhouses_HH_943x300px_20.jpg" alt="Waterhouses Hamburg" height="300" width="943"><div class="slideText">
+        &nbsp;
+    </div></li><li style="float: none; list-style: none; position: absolute; width: 945px; z-index: 0; display: none;"><img src="" class="loadimage" data-src="uploads/multislider/EU-Start-Slide_FD1_03.jpg" alt="Bitumen-Dach" height="300" width="943"><div class="slideText">
+        &nbsp;
+    </div></li><li style="float: none; list-style: none; position: absolute; width: 945px; z-index: 0; display: none;"><img src="" class="loadimage" data-src="uploads/multislider/EU-Start-Slide_SD_03.jpg" alt="Steildach" height="300" width="943"><div class="slideText">
+        &nbsp;
+    </div></li><li style="float: none; list-style: none; position: absolute; width: 945px; z-index: 0; display: none;"><img src="" class="loadimage" data-src="uploads/multislider/EU-Start-Slide_GD1_03.jpg" alt="Gründach" height="300" width="943"><div class="slideText">
+        &nbsp;
+    </div></li><li style="float: none; list-style: none; position: absolute; width: 945px; z-index: 0; display: none;"><img src="" class="loadimage" data-src="uploads/multislider/EU-Start-Slide_FD2_03.jpg" alt="Flachdach_2" height="300" width="943"><div class="slideText">
+        &nbsp;
+    </div></li></ul></div><div class="bx-controls bx-has-controls-direction"><div class="bx-controls-direction"><a class="bx-prev" href="">Prev</a><a class="bx-next" href="">Next</a></div></div></div></div><script type="text/javascript">
+    var sliderImages = document.querySelectorAll('.bxslider img.loadimage');
+
+    function doTimeout(i){
+        setTimeout(function(){
+            sliderImages[i].setAttribute('src', sliderImages[i].getAttribute('data-src'));
+        },250 + i * 250);
+    };
+
+    if ( sliderImages.length > 0 ) {
+        for (var i = 0; i < sliderImages.length; i++) {
+            doTimeout(i);
+        }
+    }
+</script><script>jQuery('.bxslider:last').each(function () {
+    var options = {
+    autoStart: true, auto: true, pager: false
+        };
+    makeBXSlider(this, options);
+});</script></div>
+
+<!--TYPO3SEARCH_end--></div>
+	</div>
+	
+	<div id="content" class="index">
+		<div class="centerWrap"><!--TYPO3SEARCH_begin--><div id="c407404" class="frame frame-default frame-space-before- frame-space-after-">
+	<div class="quickLinks">
+		<span>
+			<h2 class="h2"> Brzo pronalaženje proizvoda</h2>
+		</span>
+		
+			<div class="quickLinksContainer">
+				<div onclick="window.location.href='/sr/flachdach-eu/proizvodi-za-ravni-krov/bitumenske-krovne-membrane.html'">
+					<img src="/uploads/tx_templavoila/QF_Flach_Bit_18.jpg" width="182" height="182" alt="" border="0">
+					<div class="transparentBG"></div>
+					<div class="colorBG"></div>
+					<p><b>Ravni krov</b><br>Bitumenske<br>krovne membrane</p>
+				</div>
+				<div onclick="window.location.href='/sr/flachdach-eu/proizvodi-za-ravni-krov/sinteticke-krovne-membrane.html'">
+					<img src="/uploads/tx_templavoila/QF_Flach_Kst_18.jpg" width="182" height="182" alt="" border="0">
+					<div class="transparentBG"></div>
+					<div class="colorBG"></div>
+					<p><b>Ravni krov</b><br>Sintetičke<br>krovne membrane</p>
+				</div>
+				<div onclick="window.location.href='/sr/flachdach-eu/proizvodi-za-ravni-krov/termoizolacija.html'">
+					<img src="/uploads/tx_templavoila/QF_Flach_Pir_18.jpg" width="182" height="182" alt="" border="0">
+					<div class="transparentBG"></div>
+					<div class="colorBG"></div>
+					<p><b>Ravni krov</b><br>Termoizolacija</p>
+				</div>
+				<div onclick="window.location.href='/sr/gruendach-eu/proizvodi-za-zeleni-krov.html'">
+					<img src="/uploads/tx_templavoila/QF_Gruendach_18.jpg" width="182" height="182" alt="" border="0">
+					<div class="transparentBG"></div>
+					<div class="colorBG"></div>
+					<p><b>Zeleni krov</b><br>Sistemi<br>i pribor</p>
+				</div>
+				<div onclick="window.location.href='/sr/steildach-eu/proizvodi-za-kosi-krov.html'">
+					<img src="/uploads/tx_templavoila/QF_Steildach_18.jpg" width="182" height="182" alt="" border="0">
+					<div class="transparentBG"></div>
+					<div class="colorBG"></div>
+					<p><b>Kosi krov</b><br>Membrane i<br>termoizolacija</p>
+				</div>
+				<br class="clear">
+			</div>
+		
+	</div>
+</div><div id="c407402" class="frame frame-custom-91 frame-space-before- frame-space-after-">
+	<div class="fce lrcol5050">
+		<div class="col left">
+			<div class="wrap">
+<div id="c474715" class="frame frame-default frame-type-text frame-layout-0"><header><h3 class=" blockorange">
+				Bauder Srbija - novosti
+			</h3></header></div>
+
+
+<div id="c474716" class="frame frame-default frame-type-image frame-layout-0"><div class="ce-image ce-center ce-above"><div class="ce-gallery" data-ce-columns="1" data-ce-images="1"><div class="ce-outer"><div class="ce-inner"><div class="ce-row"><div class="ce-column"><figure class="image"><a href="/fileadmin/_processed_/6/a/csm_Bauder_PVC_loyalty_Poster_A3_final_a96fdd276c.gif" class="fancybox" rel="fancybox48734"><img class="image-embed-item" src="/fileadmin/_processed_/6/a/csm_Bauder_PVC_loyalty_Poster_A3_final_9a4c8d889f.gif" width="600" height="848" alt=""><img src="/fileadmin/templates/facelift_2014/images/icons/lupe.gif" class="lupe"></a></figure></div></div></div></div></div></div></div>
+
+
+<div id="c474717" class="frame frame-default frame-type-textpic frame-layout-0"><div class="ce-textpic ce-center ce-above"><div class="ce-bodytext"><h1><strong>Bauder program lojalnosti za najvernije izvođače!</strong></h1><p>Jako nas raduje što Vas možemo obavestiti da je počeo prvi Bauder program lojalnosti u Srbiji!</p><p>Period trajanja programa lojalnosti: 15.05.-15.08.2023.godine</p><p><u>Bitna napomena</u>: svaki izvođač kupovinom minimalne kvadrature Bauder Thermofol PVC membrane, definisane po nivou, dobija na poklon Leister paket*</p><p>I nivo - 1.500m2</p><p>II nivo - 2.520m2</p><p>Premium nivo - 3.990m2</p><p>Više detalja i sama pravila učestovanja možete pronaći na lifletu (klikom na isti u nastavku ovog obaveštenja)</p><p><a href="/fileadmin/bauder.rs/daten/Downloads/Bauder_PVC_loyalty_flajer_final.pdf">Liflet</a></p><p>Radujemo se budućoj saradnji!</p><p>Bauder d.o.o. Srbija</p></div></div></div>
+
+</div>
+		</div>
+		<div class="col right">
+			<div class="wrap"><div id="c407395" class="frame frame-default frame-space-before- frame-space-after-">
+	
+<div id="c407396" class="frame frame-default frame-type-header frame-layout-0"><header><h3 class=" blockorange">
+				Bauder korporativni film
+			</h3></header></div>
+
+
+<div id="c504324" class="frame frame-default frame-type-textmedia frame-layout-0"><header><h3 class=" h0">
+				Bauder vam želi srećne novogodišnje i božićne praznike!
+			</h3></header><div class="ce-textpic ce-center ce-above"><div class="ce-gallery" data-ce-columns="1" data-ce-images="1"><div class="ce-outer"><div class="ce-inner"><div class="ce-row"><div class="ce-column"><figure class="video"><div class="video-embed"><video width="600" controls="" no-cookie="" class="video-embed-item" title="Bauder vam želi srećne novogodišnje i božićne praznike!"><source src="/fileadmin/bauder.rs/daten/Downloads/News/Bauder_Weihnachtsfeier_Video_Serbia__1_.mp4" type="video/mp4"></video></div></figure></div></div></div></div></div></div></div>
+
+<div id="c423178" class="frame frame-default frame-space-before- frame-space-after-"><div class="box youtube"><button style="-webkit-appearance: none;background: none;border: none;padding:0;cursor:pointer" href="https://www.youtube.com/embed/Zt2FcuouM78?autoplay=1&amp;enablejsapi=1" class="youtube-video iframe wide-video" title=""><img style="width: 465px; margin: -10% 0;" data-ucs="YouTube Video" uc-src="https://img.youtube.com/vi/Zt2FcuouM78/hqdefault.jpg" alt=""><span class="play-button"></span></button></div></div>
+<div id="c407398" class="frame frame-default frame-type-text frame-layout-0 frame-space-before-extra-small"><header><h1 class=" h0">
+				Svet bez krovova ...
+			</h1></header><p>... ni mi to nismo mogli zamisliti do sada. Samim tim nam je predstavljalo veliki izazov stvoriti takav svet u našem novom korporativnom filmu. Pridružite nam se na tom putovanju i otkrijte zašto smo se mi u Bauderu odlučili, naravno, za svet sa sigurnim krovovima.</p></div>
+
+
+</div></div>
+		</div>
+		<br class="clear">
+	</div>
+</div><div id="c407401" class="frame frame-custom-91 frame-space-before- frame-space-after-">
+	<div class="fce lrcol5050">
+		<div class="col left">
+			<div class="wrap"><div id="c438134" class="frame frame-default frame-space-before- frame-space-after-">
+	
+<div id="c438135" class="frame frame-default frame-type-text frame-layout-0"><header><h3 class=" blockorange">
+				Bauder Srbija - novosti
+			</h3></header></div>
+
+
+<div id="c438136" class="frame frame-default frame-type-image frame-layout-0"><div class="ce-image ce-center ce-above"><div class="ce-gallery" data-ce-columns="1" data-ce-images="1"><div class="ce-outer"><div class="ce-inner"><div class="ce-row"><div class="ce-column"><figure class="image"><img class="image-embed-item" title="Bauder SR" src="/fileadmin/_processed_/a/5/csm_Bauder_SR_b2dd0c5bcf.jpeg" width="600" height="548" alt=""></figure></div></div></div></div></div></div></div>
+
+
+<div id="c438137" class="frame frame-default frame-type-textpic frame-layout-0"><div class="ce-textpic ce-center ce-above"><div class="ce-bodytext"><h1><b>Nova ćerka firma u Srbiji</b></h1><p>Jako nas raduje što Vas možemo obavestiti da je osnovana Bauder ćerka firma u Srbiji:
+</p><p><b>BAUDER d.o.o. Beograd</b><br>Ul. Đorđa Stanojevića 12, 11070 Beograd-Novi Beograd<br><br>Ovim korakom ćemo biti u mogućnosti da se intenzivnije posvetimo tržištu Srbije i Vama kao našim partnerima pružimo još bolju uslugu i savetovanje o našim sistemima.
+</p><p>Od sada su Vam na raspolaganju naše kolege u Srbiji:</p><ul><li><b>Matija Ivoković</b>, direktor prodaje (<a href="mailto:matija.ivokovic@bauder.rs" class="mail">matija.ivokovic@bauder.rs</a>)</li><li><b>Nikola Mitrović</b>, regionalni menadzer prodaje i tehničke podrške(<a href="mailto:nikola.mitrovic@bauder.rs" class="mail">nikola.mitrovic@bauder.rs</a>)</li><li><b>Milica Ćulum</b>, saradnik u prodaji (<a href="mailto:milica.culum@bauder.rs" class="mail">milica.culum@bauder.rs</a>)</li></ul><p>Nalazimo se na ovim lokacijama:<br><br><u><b>Uprava</b></u><br>BAUDER d.o.o.<br>Ul. Đorđa Stanojevića 12, 11070 Beograd-Novi Beograd
+</p><p><u><b>Magacin Bauder Beograd</b></u><br>DHL Freight d.o.o. Beograd<br>Prva industrijska zona bb, 22314 Krnješevci
+</p><p><br>Veselimo se budućoj saradnji!<br>BAUDER d.o.o. Beograd
+</p><p><a href="/fileadmin/bauder.rs/daten/Downloads/News/Bauder_Srbija_obavestenje.pdf" target="_blank" class="download">Dopis</a></p></div></div></div>
+
+
+</div><div id="c407403" class="frame frame-default frame-space-before- frame-space-after-">
+	
+</div></div>
+		</div>
+		<div class="col right">
+			<div class="wrap">
+<div id="c407412" class="frame frame-default frame-type-header frame-layout-0"><header><h3 class=" h0">
+				Preuzimanja
+			</h3></header></div>
+
+<div id="c407413" class="frame frame-default frame-space-before- frame-space-after-">
+	<div class="fce lrcol5050">
+		<div class="col left">
+			<div class="wrap">
+<div id="c407414" class="frame frame-default frame-type-text frame-layout-0"><p><b>IZJAVE O SVOJSTVIMA (DoP)<br></b></p></div>
+
+
+<div id="c407416" class="frame frame-default frame-type-text frame-layout-0"><p><a href="https://www.bauder.hr/hr/flachdach-eu/preuzimanja/izjave-o-svojstvima/bitumenski-materijali.html" target="_blank" class="internal-link">DoP ravni krov - bitumenski materijali</a><br><a href="https://www.bauder.hr/hr/flachdach-eu/preuzimanja/izjave-o-svojstvima/sinteticki-materijali.html" target="_blank" class="internal-link">DoP ravni krov - sintetički materijali<br></a><a href="https://www.bauder.hr/hr/flachdach-eu/preuzimanja/izjave-o-svojstvima/toplinska-izolacija.html" target="_blank" class="internal-link">DoP ravni krov - termoizolacija</a><br><br><a href="https://www.bauder.hr/hr/steildach-eu/preuzimanja/izjave-o-svojstvima.html" target="_blank" class="internal-link">DoP kosi krov - membrane</a><br><a href="https://www.bauder.hr/hr/steildach-eu/preuzimanja/izjave-o-svojstvima.html" target="_blank" class="internal-link">DoP kosi krov - termoizolacija<br></a></p></div>
+
+
+<div id="c407419" class="frame frame-default frame-type-text frame-layout-0 frame-space-before-small"><p><b>PROSPEKTI I <br>UPUTSTVO ZA POSTAVLJANJE<br></b></p></div>
+
+
+<div id="c407418" class="frame frame-default frame-type-text frame-layout-0"><p><a href="https://www.bauder.hr/hr/flachdach-eu/preuzimanja.html" target="_blank" class="internal-link">Sistemi ravnog krova</a><br><a href="https://www.bauder.hr/hr/flachdach-eu/preuzimanja.html" target="_blank" class="internal-link">Sistemi</a><a href="https://www.bauder.hr/hr/gruendach-eu/preuzimanja.html" target="_blank" class="internal-link">&nbsp;zelenog krova</a></p></div>
+
+</div>
+		</div>
+		<div class="col right">
+			<div class="wrap">
+<div id="c407415" class="frame frame-default frame-type-text frame-layout-0"><p><b>TEHNIČKI LISTOVI<br></b></p></div>
+
+
+<div id="c407417" class="frame frame-default frame-type-text frame-layout-0"><p><a href="https://www.bauder.hr/hr/flachdach-eu/preuzimanja/tehnicki-listovi/bitumenski-materijali.html" target="_blank" class="internal-link">Ravni krov - bitumenski materijali</a><br><a href="https://www.bauder.hr/hr/flachdach-eu/preuzimanja/tehnicki-listovi/sinteticki-materijali.html" target="_blank" class="internal-link">Ravni krov - sintetički materijali</a><br><a href="https://www.bauder.hr/hr/flachdach-eu/preuzimanja/tehnicki-listovi/toplinska-izolacija.html" target="_blank" class="internal-link">Ravni krov - termoizolacija</a><br><br><a href="https://www.bauder.hr/hr/gruendach-eu/preuzimanja/tehnicki-listovi.html" target="_blank" class="internal-link">Zeleni krov - slojevi</a><br><br><a href="https://www.bauder.hr/hr/steildach-eu/preuzimanja/tehnicki-listovi.html" target="_blank" class="internal-link">Kosi krov - membrane<br>Kosi krov - termoizolacija<br><br></a></p></div>
+
+</div>
+		</div>
+		<br class="clear">
+	</div>
+</div></div>
+		</div>
+		<br class="clear">
+	</div>
+</div><!--TYPO3SEARCH_end--></div>
+		
+	</div>
+	
+	<div class="infoBoxes"><div class="centerWrap"><div class="infoBoxesContainer"><!--TYPO3SEARCH_begin--><!--TYPO3SEARCH_end--></div></div></div>
+	
+	<div id="footer">
+		<div class="centerWrap">
+			<ul id="menuFooter" class="menu"><li><ul class="menu"><li><a href="http://www.bauderfoam.de" target="_blank">BauderFOAM</a></li><li><a href="/sr/mapa-stranice.html">Mapa stranice</a></li><li><a href="/sr/opsti-uslovi-poslovanja.html">Opšti uslovi poslovanja</a></li><li><a href="/sr/imprint.html">Imprint</a></li><li class="last"><a href="/sr/zastita-podataka.html">Zaštita podataka</a></li></ul></li><li><ul class="menu"><li><a href="/sr/flachdach-eu.html">Bauder sistemi ravnog krova</a></li><li><a href="/sr/steildach-eu.html">Bauder sistemi kosog krova</a></li><li><a href="/sr/gruendach-eu.html">Bauder sistemi zelenog krova</a></li><li class="last"><a href="/sr/kontakt/nasa-adresa.html">Kontakt</a></li></ul></li><li><ul class="menu"></ul></li></ul>
+			<div id="socialButtons"><a href="https://www.linkedin.com/company/paul-bauder-gmbh-co-kg" title="LinkedIn" target="_blank"><span>Klikom na ovu vezu napuštate veb lokaciju Paul Bauder GmbH i odlazite na LinkedIn veb lokaciju.</span><i class="fab fa-linkedin-in"></i></a><a href="https://www.instagram.com/bauder_international/" title="Instagram" target="_blank"><span>Klikom na ovu vezu napuštate veb lokaciju Paul Bauder GmbH i odlazite na veb lokaciju Instagram.</span><i class="fab fa-instagram"></i></a><a href="https://www.youtube.com/user/BauderTube" title="Youtube" target="_blank"><span>Klikom na ovu vezu napuštate veb lokaciju Paul Bauder GmbH i odlazite na veb lokaciju IouTube.</span><i class="fab fa-youtube"></i></a><a href="https://www.facebook.com/bauderdachsysteme" title="Facebook" target="_blank"><span>Klikom na ovu vezu napuštate veb lokaciju Paul Bauder GmbH i odlazite na Facebook veb lokaciju.</span><i class="fab fa-facebook"></i></a></div>
+			<br class="clear">
+			<span id="imprint">BAUDER d.o.o. Beograd, Ul. Đorđa Stanojevića 12, 11070 Beograd-Novi Beograd, Serbia, e-mail: <a href="mailto:info@bauder.rs">info[at]bauder.rs</a></span>
+		</div>
+	</div>
+<script src="/typo3conf/ext/ke_search_premium/Resources/Public/Javascript/jquery.ui.core.min.js" type="text/javascript"></script>
+<script src="/typo3conf/ext/ke_search_premium/Resources/Public/Javascript/jquery.ui.widget.min.js" type="text/javascript"></script>
+<script src="/typo3conf/ext/ke_search_premium/Resources/Public/Javascript/jquery.ui.position.min.js" type="text/javascript"></script>
+<script src="/typo3conf/ext/ke_search_premium/Resources/Public/Javascript/jquery.ui.menu.min.js" type="text/javascript"></script>
+<script src="/typo3conf/ext/ke_search_premium/Resources/Public/Javascript/jquery.ui.autocomplete.min.js" type="text/javascript"></script>
+
+<script src="/typo3conf/ext/bauder/Resources/Public/Js/FormCrShield.js" type="text/javascript"></script>
+<script src="externalCheck/externalChecker.js" type="text/javascript"></script>
+<script src="/fileadmin/templates/facelift_2014/js/footer.js" type="text/javascript"></script>
+<script src="/fileadmin/templates/facelift_2014/js/jquery.clickIn.min.js" type="text/javascript"></script>
+<script src="/typo3temp/assets/js/60d3172d4e.js" type="text/javascript"></script>
+
+
+<script>
+if (ucversion == 'v1') {
+var tries = 0;
+function addLinksToUsercentrics (){
+	if ( document.getElementsByClassName('uc-banner-content').length > 0 ) {
+		var privacyUrls = document.getElementsByClassName('uc-banner-privacyurl');
+		var imprintUrls = document.getElementsByClassName('uc-banner-imprinturl');
+
+		if ( imprintUrls.length == 0 || privacyUrls.length == 0 ) {
+			timeoutCheck();
+		}
+		if ( privacyUrls.length > 0 && privacyUrls != null ) {
+			for (i=0;i<privacyUrls.length;i++){
+				if ( privacyUrls[i].classList.contains('done') ){
+					continue;
+				} else {
+					privacyUrls[i].href=privacyLink;
+					privacyUrls[i].classList.add('done');
+					timeoutCheck();
+				}
+			}
+		} else {
+			timeoutCheck();
+		}
+
+
+		if ( imprintUrls.length > 0 && privacyUrls != null ) {
+			for (i=0;i<imprintUrls.length;i++){
+				if( imprintUrls[i].classList.contains('done') ){
+					continue;
+				} else {
+					imprintUrls[i].href=imprintLink;
+					imprintUrls[i].classList.add('done');
+					timeoutCheck();
+				}
+			}
+		} else {
+			timeoutCheck();
+		}
+	} else {
+		tries++
+		if (tries < 100) {
+			timeoutCheck();
+		}
+	}
+}
+
+var clearDump = [];
+var timeouts = 0;
+var maxTimeouts = 100;
+var intervals = 0;
+var maxIntervals = 10;
+function timeoutCheck(){
+	var checkForLinks = setTimeout(function(){
+		if ( timeouts < maxTimeouts ) {
+			addLinksToUsercentrics();
+		}
+		timeouts++;
+		if (timeouts > maxTimeouts){
+			for (i=0;i<clearDump.length;i++){
+				clearTimeout(clearDump[i]);
+			}
+		clearDump = [];
+		}
+	},100);
+	clearDump.push(checkForLinks);
+}
+
+	window.addEventListener("ucEvents", function (e) {
+		timeoutCheck();
+		if ( !document.getElementsByTagName('body')[0].classList.contains('ucdone')) {
+			document.addEventListener('click',function(e) {
+				if ( e.target.classList.contains('language-item') ){
+					setTimeout(function(){
+						timeoutCheck();
+					},500);
+				}
+			});
+			document.getElementsByTagName('body')[0].classList.contains('ucdone');
+		}
+	});
+
+	window["usercentrics"] = window["usercentrics"] || {};
+	if (window["usercentrics"].isInitialized) {
+		timeoutCheck();
+	} else {
+		window["usercentrics"].onViewInit = function () {
+			timeoutCheck();
+		}
+	}
+	var recheckIntervall = setInterval(function(){
+		if (intervals < maxIntervals ) {
+			timeoutCheck();
+			intervals++;
+		} else {
+			clearInterval(recheckIntervall);
+		}
+	}, 100);
+}
+</script>
+<script>
+window.customUcs = {
+
+    addYoutubeApiScript: function() {
+        var youtubeIframeApiScript = document.createElement('script');
+        youtubeIframeApiScript.setAttribute('src','https://www.youtube.com/iframe_api');
+        document.head.appendChild(youtubeIframeApiScript);
+    },
+
+    checkConsent: function() {
+        var ucsAll = document.querySelectorAll('*');
+
+        for (var i = 0; i < ucsAll.length; i++) {
+
+            /* gets uc elements*/
+            if (ucsAll[i].getAttribute('data-ucs') != null) {
+                ucsService = ucsAll[i].getAttribute('data-ucs');
+
+                /* gets the serviceobject */
+                serviceObject = usercentrics.getConsents().filter(function(obj) {
+                    return obj.dataProcessingService == ucsService
+                })[0];
+
+                if(serviceObject.dataProcessor == 'YouTube Video' && serviceObject.consentStatus===true){
+                    this.addYoutubeApiScript();
+                }
+
+                if (serviceObject.consentStatus) {
+                    /*if consent then show it */
+					if (ucsAll[i].getAttribute('ucs-src') != null){
+						ucsAll[i].setAttribute('src', ucsAll[i].getAttribute('ucs-src'));
+					} else {
+						ucsAll[i].setAttribute('src', ucsAll[i].getAttribute('uc-src'));
+					}
+					ucsAll[i].classList.remove('placeholder');
+                    this.removePlaceholder();
+                } else {
+                    /*if not consent then show placeholder*/
+                     if (!ucsAll[i].classList.contains('placeholder')){
+						if(ucsAll[i].tagName == 'IFRAME'){
+							/*
+							https://stackoverflow.com/questions/5946607/is-an-empty-iframe-src-valid
+							*/
+							ucsAll[i].setAttribute('src', 'about:blank');
+						} else {
+							ucsAll[i].removeAttribute('src');
+						}
+						ucsAll[i].classList.add('placeholder');
+						this.addUcsPlaceholder(ucsAll[i], serviceObject);
+					 }
+
+                }
+            }
+        }
+    },
+
+	checkConsentNew: function () {
+            var ucsAll = document.querySelectorAll('*');
+
+            for (var i = 0; i < ucsAll.length; i++) {
+
+                /* gets uc elements*/
+                if (ucsAll[i].getAttribute('data-ucs') != null) {
+                    ucsService = ucsAll[i].getAttribute('data-ucs');
+
+                    /* gets the serviceobject */
+                    serviceObject = UC_UI.getServicesBaseInfo().filter(function (obj) {
+                        return obj.name == ucsService
+                    })[0];
+
+                    if (serviceObject.name == 'YouTube Video' && serviceObject.consent.status === true) {
+                        this.addYoutubeApiScript();
+                    }
+
+                    if (serviceObject.consent.status) {
+                        /*if consent then show it */
+                        if (ucsAll[i].getAttribute('ucs-src') != null) {
+                            ucsAll[i].setAttribute('src', ucsAll[i].getAttribute('ucs-src'));
+                        } else {
+                            ucsAll[i].setAttribute('src', ucsAll[i].getAttribute('uc-src'));
+                        }
+                        ucsAll[i].classList.remove('placeholder');
+                        this.removePlaceholderNew();
+                    } else {
+                        /*if not consent then show placeholder*/
+                        if (!ucsAll[i].classList.contains('placeholder')) {
+                            if (ucsAll[i].tagName == 'IFRAME') {
+                                /*
+							https://stackoverflow.com/questions/5946607/is-an-empty-iframe-src-valid
+							*/
+                                ucsAll[i].setAttribute('src', 'about:blank');
+                            } else {
+                                ucsAll[i].removeAttribute('src');
+                            }
+                            ucsAll[i].classList.add('placeholder');
+                            this.addUcsPlaceholderNew(ucsAll[i], serviceObject);
+                        }
+
+                    }
+                }
+            }
+        },
+
+    /*generates the placeholder*/
+    addUcsPlaceholder: function(node, serviceObject) {
+        var ucsPlaceholderContainer = document.createElement('div');
+        ucsPlaceholderContainer.className = 'uc-embedding-container ' + serviceObject.dataProcessingService.replace(/ /g, '');
+        ucsPlaceholderContainer.style.width = node.style.width;
+        ucsPlaceholderContainer.style.overflow = 'unset';
+        ucsPlaceholderContainer.style.visibility = 'hidden';
+        var ucsPlaceholderWrapper = document.createElement('div');
+        ucsPlaceholderWrapper.className = 'uc-embedding-wrapper';
+        var ucsText = '<h3>___header___</h3>';
+        ucsText = ucsText + '<p>___description___</p>';
+        ucsText = ucsText + '<div class="uc-embedding-buttons"> \
+            <button onclick="usercentrics.toggleConsentInfoModalIsVisible(\'___templateId___\'); return false;" class="uc-embedding-more-info">___moreinformation___</button> \
+            <button onclick="usercentrics.updateConsents([{\'templateId\':\'___templateId___\', \'status\':true}])" class="uc-embedding-accept">___accept___</button> \
+        </div>';
+        var language = serviceObject.language;
+        var templateId = serviceObject.templateId;
+        var serviceName = serviceObject.dataProcessingService;
+        var languageMapping;
+		var serviceLanguage;
+
+        if (typeof languagesUcs !== 'undefined') {
+            window.customUcs.languages = languagesUcs;
+        }
+
+		serviceLanguage = serviceName;
+		if ( typeof customUcs.languages[serviceName] == 'undefined' ){
+			serviceLanguage='default';
+			if ( typeof customUcs.languages['default'][language] == 'undefined' ){
+				language='default';
+			}
+		} else {
+			if ( typeof customUcs.languages[serviceName][language] == 'undefined'){
+				language='default';
+			}
+		}
+
+		languageMapping = customUcs.languages[serviceLanguage][language];
+
+		ucsText = ucsText.replace('___header___', languageMapping.___header___);
+		ucsText = ucsText.replace('___description___', languageMapping.___description___);
+		ucsText = ucsText.replace(/___templateId___/g, templateId);
+		ucsText = ucsText.replace('___moreinformation___', languageMapping.___moreinformation___);
+		ucsText = ucsText.replace('___accept___', languageMapping.___accept___),
+		ucsText = ucsText.replace(/___serviceName___/g, serviceName);
+
+        /* Add Elements */
+        ucsPlaceholderWrapper.innerHTML = ucsText;
+        ucsPlaceholderContainer.appendChild(ucsPlaceholderWrapper);
+        node.parentNode.appendChild(ucsPlaceholderContainer);
+
+        ucsPlaceholderWrapper.style.position = 'unset';
+
+        var ucsPlaceholderContainerChildren = ucsPlaceholderContainer.children[0].children;
+        var childrenHeight = 0;
+        var ucsPlaceholderContainerHeight = 0;
+
+        for (var i = 0; i < ucsPlaceholderContainerChildren.length; i++) {
+            childrenHeight = parseInt(childrenHeight + ucsPlaceholderContainerChildren[i].offsetHeight);
+        }
+
+        if (childrenHeight < ucsPlaceholderContainer.offsetHeight) {
+            ucsPlaceholderContainerHeight = ucsPlaceholderContainer.offsetHeight;
+        } else {
+            ucsPlaceholderContainerHeight = childrenHeight;
+        }
+
+        ucsPlaceholderContainerHeight = parseInt(ucsPlaceholderContainerHeight * 1.33);
+        ucsPlaceholderContainer.style.visibility = 'visible';
+        ucsPlaceholderContainer.style.height = ucsPlaceholderContainerHeight + 'px';
+        ucsPlaceholderWrapper.style.position = 'absolute';
+
+    },
+
+	/*generates the placeholder*/
+        addUcsPlaceholderNew: function (node, serviceObject) {
+            var ucsPlaceholderContainer = document.createElement('div');
+            ucsPlaceholderContainer.className = 'uc-embedding-container ' + serviceObject.name.replace(/ /g, '');
+            ucsPlaceholderContainer.style.width = node.style.width;
+            ucsPlaceholderContainer.style.overflow = 'unset';
+            ucsPlaceholderContainer.style.visibility = 'hidden';
+            var ucsPlaceholderWrapper = document.createElement('div');
+            ucsPlaceholderWrapper.className = 'uc-embedding-wrapper';
+            var ucsText = '<h3>___header___</h3>';
+            ucsText = ucsText + '<p>___description___</p>';
+            ucsText = ucsText + '<div class="uc-embedding-buttons"> \
+            <button onclick="UC_UI.showSecondLayer(\'___templateId___\');" class="uc-embedding-more-info">___moreinformation___</button> \
+            <button onclick="UC_UI.acceptService(\'___templateId___\')" class="uc-embedding-accept">___accept___</button> \
+        </div>';
+
+            var language = UC_UI.getActiveLanguage();
+            console.log(language);
+            var templateId = serviceObject.id;
+            var serviceName = serviceObject.name;
+            var languageMapping;
+            var serviceLanguage;
+
+            if (typeof languagesUcs !== 'undefined') {
+                window.customUcs.languages = languagesUcs;
+            }
+
+            serviceLanguage = serviceName;
+            if (typeof customUcs.languages[serviceName] == 'undefined') {
+                serviceLanguage = 'default';
+                if (typeof customUcs.languages['default'][language] == 'undefined') {
+                    language = 'default';
+                }
+            } else {
+                if (typeof customUcs.languages[serviceName][language] == 'undefined') {
+                    language = 'default';
+                }
+            }
+
+            languageMapping = customUcs.languages[serviceLanguage][language];
+
+            ucsText = ucsText.replace('___header___', languageMapping.___header___);
+            ucsText = ucsText.replace('___description___', languageMapping.___description___);
+            ucsText = ucsText.replace(/___templateId___/g, templateId);
+            ucsText = ucsText.replace('___moreinformation___', languageMapping.___moreinformation___);
+            ucsText = ucsText.replace('___accept___', languageMapping.___accept___),
+                ucsText = ucsText.replace(/___serviceName___/g, serviceName);
+
+            /* Add Elements */
+            ucsPlaceholderWrapper.innerHTML = ucsText;
+            ucsPlaceholderContainer.appendChild(ucsPlaceholderWrapper);
+            node.parentNode.appendChild(ucsPlaceholderContainer);
+
+            ucsPlaceholderWrapper.style.position = 'unset';
+
+            var ucsPlaceholderContainerChildren = ucsPlaceholderContainer.children[0].children;
+            var childrenHeight = 0;
+            var ucsPlaceholderContainerHeight = 0;
+
+            for (var i = 0; i < ucsPlaceholderContainerChildren.length; i++) {
+                childrenHeight = parseInt(childrenHeight + ucsPlaceholderContainerChildren[i].offsetHeight);
+            }
+
+            if (childrenHeight < ucsPlaceholderContainer.offsetHeight) {
+                ucsPlaceholderContainerHeight = ucsPlaceholderContainer.offsetHeight;
+            } else {
+                ucsPlaceholderContainerHeight = childrenHeight;
+            }
+
+            ucsPlaceholderContainerHeight = parseInt(ucsPlaceholderContainerHeight * 1.33);
+            ucsPlaceholderContainer.style.visibility = 'visible';
+            ucsPlaceholderContainer.style.height = ucsPlaceholderContainerHeight + 'px';
+            ucsPlaceholderWrapper.style.position = 'absolute';
+
+        },
+
+    removePlaceholder: function() {
+        var removePlaceholderServiceObject = document.getElementsByClassName(serviceObject.dataProcessingService.replace(/ /g, ''));
+        if (removePlaceholderServiceObject.length > 0) {
+            for (var i = 0; i < removePlaceholderServiceObject.length; i++) {
+                removePlaceholderServiceObject[i].parentNode.removeChild(removePlaceholderServiceObject[i]);
+            }
+        }
+        this.addYoutubeApiScript();
+    },
+
+	removePlaceholderNew: function () {
+            var removePlaceholderServiceObject = document.getElementsByClassName(serviceObject.name.replace(/ /g, ''));
+            if (removePlaceholderServiceObject.length > 0) {
+                for (var i = 0; i < removePlaceholderServiceObject.length; i++) {
+                    removePlaceholderServiceObject[i].parentNode.removeChild(removePlaceholderServiceObject[i]);
+                }
+            }
+            this.addYoutubeApiScript();
+        },
+
+    statusChange: function() {
+        window.addEventListener("onConsentStatusChange", function(e) {
+            if (e.data.event == "consents_changed_finished") {
+                window.customUcs.checkConsent();
+            }
+        });
+    },
+
+	statusChangeNew: function () {
+            window.addEventListener("onConsentStatusChange", function (e) {
+                if (e.detail.event == "consent_status") {
+                    window.customUcs.checkConsentNew();
+                }
+            });
+        },
+
+    initialize: function() {
+		if (window.UC_UI && window.UC_UI.isInitialized()) {
+                window.customUcs.checkConsentNew();
+                window.customUcs.statusChangeNew();
+            } else {
+                window.addEventListener('UC_UI_INITIALIZED', function (e) {
+                    window.customUcs.checkConsentNew();
+                    window.customUcs.statusChangeNew();
+                });
+            }
+        window["usercentrics"] = window["usercentrics"] || {};
+        if (window["usercentrics"].isInitialized) {
+            window.customUcs.checkConsent();
+            window.customUcs.statusChange();
+        } else {
+            window["usercentrics"].onViewInit = function() {
+                window.customUcs.checkConsent();
+                window.customUcs.statusChange();
+            }
+        }
+
+    }
+}
+customUcs.initialize();
+
+/*************************/
+/* language ucercentrics */
+/*************************/
+
+var languagesUcs = {
+    default: {
+        default: {
+            ___header___: 'We need your consent!',
+            ___description___: 'We use third party providers to integrate content. They may collect personal information about your activities. Please note the details and give your consent for ___serviceName___.',
+            ___moreinformation___: 'learn more',
+            ___accept___: 'Accept'
+        },
+        de: {
+            ___header___: 'Wir brauchen Ihr Einverständnis!',
+            ___description___: 'Wir benutzen Drittanbieter um Inhalte einzubinden. Diese können persönliche Daten über Ihre Aktivitäten sammeln. Bitte beachten Sie die Details und geben Sie Ihre Einwilligung für ___serviceName___.',
+            ___moreinformation___: 'mehr erfahren',
+            ___accept___: 'Akzeptieren'
+        },
+        en: {
+            ___header___: 'We need your consent!',
+            ___description___: 'We use third party providers to integrate content. They may collect personal information about your activities. Please note the details and give your consent for ___serviceName___.',
+            ___moreinformation___: 'learn more',
+            ___accept___: 'Accept'
+        }
+    },
+    'YouTube Video': {
+        default: {
+            ___header___: 'We need your consent!',
+            ___description___: 'We use third party providers to integrate content. They may collect personal information about your activities. Please note the details and give your consent for ___serviceName___.',
+            ___moreinformation___: 'learn more',
+            ___accept___: 'Accept'
+        },
+        de: {
+            ___header___: 'Wir brauchen Ihr Einverständnis"',
+            ___description___: 'Wir benutzen Drittanbieter um Inhalte einzubinden. Diese können persönliche Daten über Ihre Aktivitäten sammeln. Bitte beachten Sie die Details und geben Sie Ihre Einwilligung für ___serviceName___.',
+            ___moreinformation___: 'mehr erfahren',
+            ___accept___: 'Akzeptieren'
+        },
+        en: {
+            ___header___: 'We need your consent!',
+            ___description___: 'We use third party providers to integrate content. They may collect personal information about your activities. Please note the details and give your consent for ___serviceName___.',
+            ___moreinformation___: 'learn more',
+            ___accept___: 'Accept'
+        }
+    }
+}
+</script>
+	<script type="text/plain" data-usercentrics="Google Analytics" src="/fileadmin/scripts/trackExternal.js"></script>
+
+
+<div id="usercentrics-root" data-created-at="1743028637426" style="display: none;"></div><div id="fancybox-tmp"></div><div id="fancybox-loading"><div></div></div><div id="fancybox-overlay"></div><div id="fancybox-wrap"><div id="fancybox-outer"><div class="fancybox-bg" id="fancybox-bg-n"></div><div class="fancybox-bg" id="fancybox-bg-ne"></div><div class="fancybox-bg" id="fancybox-bg-e"></div><div class="fancybox-bg" id="fancybox-bg-se"></div><div class="fancybox-bg" id="fancybox-bg-s"></div><div class="fancybox-bg" id="fancybox-bg-sw"></div><div class="fancybox-bg" id="fancybox-bg-w"></div><div class="fancybox-bg" id="fancybox-bg-nw"></div><div id="fancybox-content"></div><a id="fancybox-close"></a><div id="fancybox-title"></div><a href="javascript:;" id="fancybox-left"><span class="fancy-ico" id="fancybox-left-ico"></span></a><a href="javascript:;" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a></div></div><a class="jumper"></a><ul class="ui-autocomplete ui-menu ui-widget ui-widget-content ui-corner-all" id="ui-id-1" tabindex="0" style="z-index: 26; display: none;"></ul></body></html>

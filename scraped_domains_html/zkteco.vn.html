@@ -1,0 +1,2097 @@
+<!DOCTYPE html><html><head>
+
+    <meta charset="UTF-8">
+
+<!--    <meta http-equiv="pragma" content="no-cache" />-->
+<!--    <meta http-equiv="cache-control" content="no-cache">-->
+<!--    <meta http-equiv="expires" content="1">-->
+
+<!--    <meta name="pragma" content="no-cache" />-->
+<!--    <meta name="cache-control" content="no-cache">-->
+<!--    <meta name="expires" content="1">-->
+
+    <meta name="renderer" content="webkit">
+
+    <meta name="force-rendering" content="webkit">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <meta name="format-detection" content="telephone=no">
+
+    <title>ZKTeco&nbsp;|&nbsp;Biometrics and Computer Vision</title>
+
+    <meta name="keywords" content="ZKTeco,&nbsp;Chấm công,&nbsp;Kiểm soát cửa,&nbsp;Cổng cửa phân làn,&nbsp;Camera giám sát,&nbsp;Khóa thông minh,&nbsp;POS,&nbsp;X-ray, Bãi xe thông minh, Barrier,">
+
+    <meta name="description" content="ZKTeco&nbsp;tập trung&nbsp;vào&nbsp;phát triển&nbsp;Nhận dạng&nbsp;sinh trắc học,&nbsp;bao gồm&nbsp;xác minh&nbsp;bằng&nbsp;dấu vân tay,&nbsp;khuôn mặt,&nbsp;mẫu&nbsp;tĩnh mạch&nbsp;ngón tay,&nbsp;và&nbsp;mống mắt,&nbsp;ở&nbsp;các&nbsp;khía cạnh&nbsp;khác nhau như&nbsp;chấm công &amp; quản lý chấm công,&nbsp;kiểm soát&nbsp;truy cập,&nbsp;giám sát&nbsp;video,&nbsp;kiểm soát&nbsp;lối vào ra,&nbsp;khóa&nbsp;thông minh&nbsp;và&nbsp;hơn thế nữa">
+
+    <link rel="icon" href="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20211210/180197e5dfdfeee4e74ac04365df3b65.png" type="image/x-icon">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-118575309-1"></script>-->
+    <!--<script>-->
+    <!--    window.dataLayer = window.dataLayer || [];-->
+    <!--    function gtag(){dataLayer.push(arguments);}-->
+    <!--    gtag('js', new Date());-->
+    <!--    gtag('config', 'UA-118575309-1');-->
+    <!--</script>-->
+    <!-- Google Tag Manager -->
+    <!--<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TR9D42B');</script> -->
+    <!-- End Google Tag Manager -->
+
+
+<script id="facebook-jssdk" src="https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-M5CHPYD9R7&amp;cx=c&amp;gtm=457e53o2za200&amp;tag_exp=102482433~102788824~102803279~102813109~102887800~102926327"></script><script async="" src="//za.zdn.vn/v3/za.js?20173"></script><script src="https://sp.zalo.me/plugins/sdk.js"></script>
+
+
+    <link href="/public/static/modules/cms/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <link href="/public/static/modules/cms/css/swiper.min.css" rel="stylesheet" type="text/css">
+
+    <link href="/public/static/modules/cms/css/animate.css" rel="stylesheet" type="text/css">
+    <link href="/public/static/modules/cms/layui-v2.6.8/layui/css/layui.css" rel="stylesheet" type="text/css">
+    <link href="/public/static/modules/cms/css/jquery.mCustomScrollbar.min.css" rel="stylesheet" type="text/css">
+
+    <link href="/public/static/modules/cms/css/style.css" rel="stylesheet" type="text/css">
+
+    <link href="/public/static/modules/cms/css/media.css" rel="stylesheet" type="text/css">
+
+
+
+    <link href="/public/static/modules/cms/css/x-main.css" rel="stylesheet" type="text/css">
+
+    
+
+    <!-- IE浏览器提示升级 -->
+
+    <script>
+
+        function hiUpgrade() {
+
+            window.AESKey = '';
+
+            // 判断浏览器是否支持placeholder属性
+
+            function isSupportPlaceholder() {
+
+                var input = document.createElement('input');
+
+                return 'placeholder' in input;
+
+            };
+
+            //判断是否是IE浏览器，包括Edge浏览器
+
+            function IEVersion() {
+
+                //取得浏览器的userAgent字符串
+
+                var userAgent = navigator.userAgent;
+
+                //判断是否IE浏览器
+
+                var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1;
+
+                if (isIE) {
+
+                    // ie10及以下
+
+                    var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
+
+                    reIE.test(userAgent);
+
+                    var fIEVersion = parseFloat(RegExp["$1"]);
+
+                    if (fIEVersion <= 10 || !isSupportPlaceholder()) {
+
+                        return true;
+
+                    }
+
+                } else if (!!window.ActiveXObject || "ActiveXObject" in window) {
+
+                    // ie11
+
+                    return true;
+
+                } else {
+
+                    return false;
+
+                }
+
+            }
+
+            var tpl = '<div id="hi-upgrade"><div class="hi-wrap"><p class="hi-title">Unable to access this website normally!</p><div class="hi-text1"><p>1、Your browser version is too low, please upgrade your browser.</p><p>2、If your browser is the latest version, please <span> switch to speed mode </span> to access.</p><p>3、You are using IE browser, please use mainstream browser to visit.</p></div><p class="hi-text2"><span>Mainstream browser download</span></p><ul class="hi-list"><li><a href="https://www.google.cn/intl/zh-CN/chrome/" target="_blank"><div class="hi-ico1"></div><p>Google browser</p></a></li><li><a href="http://www.firefox.com.cn/download/" target="_blank"><div class="hi-ico2"></div><p>Firefox browser</p></a></li></ul></div></div>';
+
+            if (IEVersion()) {
+
+                document.write(tpl);
+
+            }
+
+        }
+
+        hiUpgrade();
+
+    </script>
+                <!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-209130675-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-209130675-1');
+</script>
+<link id="layuicss-laydate" rel="stylesheet" href="https://www.zkteco.vn/public/static/modules/cms/layui-v2.6.8/layui/css/modules/laydate/default/laydate.css?v=5.3.1" media="all"><link id="layuicss-layer" rel="stylesheet" href="https://www.zkteco.vn/public/static/modules/cms/layui-v2.6.8/layui/css/modules/layer/default/layer.css?v=3.5.1" media="all"><link id="layuicss-skincodecss" rel="stylesheet" href="https://www.zkteco.vn/public/static/modules/cms/layui-v2.6.8/layui/css/modules/code.css?v=2" media="all"></head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<!--<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TR9D42B" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>-->
+<!-- End Google Tag Manager (noscript) -->
+<!-- Messenger Chat Plugin Code -->
+<div id="fb-root"></div>
+
+<!-- Your Chat Plugin code -->
+<div id="fb-customer-chat" class="fb-customerchat" page_id="1141713879219773" attribution="biz_inbox">
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- 顶部 -->
+<div id="c-header">
+    <div class="c-top">
+        <div class="c-container">
+            <ul class="c-list">
+                                <li><a href="/Ve-Chung-Toi" title="Về Chúng Tôi">Về Chúng Tôi</a></li>
+                                <li><a href="/trung_tam_tin_tuc" title="Trung Tâm Tin Tức">Trung Tâm Tin Tức</a></li>
+                                <li><a href="/Lien-He4Qg" title="Liên Hệ">Liên Hệ</a></li>
+                                <li><a href="/Don-Vi-Phan-Phoi" title="Đơn Vị Phân Phối">Đơn Vị Phân Phối</a></li>
+                                
+<!--                <li><a href="">About</a></li>-->
+<!--                <li><a href="">News</a></li>-->
+<!--                <li><a href="">Contact</a></li>-->
+<!--                <li><a href="">Online Exhibition</a></li>-->
+            </ul>
+            <div class="c-language">
+                <p class="c-text">Ngôn Ngữ/<span>Khu Vực</span></p>
+                <div class="c-language-list-box">
+                    <div class="mCustomScrollbar _mCS_1 mCS_no_scrollbar"><div id="mCSB_1" class="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside" style="max-height: none;" tabindex="0"><div id="mCSB_1_container" class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position:relative; top:0; left:0;" dir="ltr">
+                        <div class="c-language-list">
+                                                        <a target="_blank" href="http://www.zkteco.com/cn/">中文</a>
+                                                        <a target="_blank" href="http://www.zkteco.com/en/">International</a>
+                                                        <a target="_blank" href="http://www.zkteco.com.ar/">Argentina</a>
+                                                        <a target="_blank" href="https://www.zkteco.com.bd/">Bangladesh</a>
+                                                        <a target="_blank" href="https://www.zkteco.com.br/">Brazil</a>
+                                                        <a target="_blank" href="http://zkteco.com.co/">Colombia</a>
+                                                        <a target="_blank" href="https://www.zkteco.cl/">Chile</a>
+                                                        <a target="_blank" href="http://www.zkteco.eu">Europe</a>
+                                                        <a target="_blank" href="http://www.zkteco.com.hk/">Hong Kong</a>
+                                                        <a target="_blank" href="http://www.zkteco.in/">India</a>
+                                                        <a target="_blank" href="http://www.zkteco.co.id">Indonesia</a>
+                                                        <a target="_blank" href="http://www.zkteco.eu">Ireland-Europe</a>
+                                                        <a target="_blank" href="http://www.zkteco.jp/">Japan</a>
+                                                        <a target="_blank" href="http://www.zkteco.kr/">Korea</a>
+                                                        <a target="_blank" href="http://www.zktecolatinoamerica.com/">Latin America</a>
+                                                        <a target="_blank" href="http://www.zkteco.com.my/">Malaysia</a>
+                                                        <a target="_blank" href="https://www.zkteco.mx">Mexico</a>
+                                                        <a target="_blank" href="https://www.zkteco.me">Middle East</a>
+                                                        <a target="_blank" href="https://www.zkteco-wa.com/">Nigeria</a>
+                                                        <a target="_blank" href="http://zkteco.ph/">Philippines</a>
+                                                        <a target="_blank" href="https://www.zkteco.com.pe/">Peru</a>
+                                                        <a target="_blank" href="http://www.zkteco.co.za">South Africa</a>
+                                                        <a target="_blank" href="http://www.zkteco.co.th">Thailand</a>
+                                                        <a target="_blank" href="http://www.zkteknoloji.com.tr">Turkey</a>
+                                                        <a target="_blank" href="https://www.zktecousa.com">USA Security</a>
+                                                        <a target="_blank" href="http://www.zktechnology.com">USA T/A</a>
+                                                        <a target="_blank" href="http://zkteco.vn">Vietnam</a>
+                                                    </div>
+                    </div><div id="mCSB_1_scrollbar_vertical" class="mCSB_scrollTools mCSB_1_scrollbar mCS-light mCSB_scrollTools_vertical" style="display: none;"><div class="mCSB_draggerContainer"><div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 30px; top: 0px;"><div class="mCSB_dragger_bar" style="line-height: 30px;"></div></div><div class="mCSB_draggerRail"></div></div></div></div></div>
+                </div>
+
+            </div>
+                        <div class="c-user">
+                <div>
+                    <a href=""></a>
+                </div>
+                <div><a href="/member/index/login" rel="nofollow">Đăng Nhập</a></div>
+                <div><a href="/member/index/register" rel="nofollow">Đăng Ký</a></div>
+            </div>
+                    </div>
+    </div>
+    <div class="c-bottom">
+        <div class="c-container">
+
+            <!-- 顶部logo -->
+            <a class="c-logo" href="/" title="熵基">
+                <div class="c-img-box">
+                    <img src="/public/static/modules/cms/images/logo.png" alt="熵基">
+                </div>
+            </a>
+
+            <!-- 右侧 -->
+            <div class="c-right-box">
+                <!-- 顶部pc导航 -->
+                <ul class="c-nav">
+                                        <li class="">
+                        <a href="/Nhan-Dang-Thong-Minh" title="Nhận Dạng Thông Minh">Nhận Dạng Thông Minh</a>
+                                                <!--产品下拉-->
+                        <div class="c-product c-dhxl1">
+                            <div class="c-p-close"></div>
+                            <div class="c-container">
+                                <ul class="c-list1">
+                                                                        <li class="on">
+                                        <a href="">
+                                                                                             <img src="/public/static/modules/cms/images/c-cp-ico1.png" alt="">
+                                                                                        <img src="/public/static/modules/cms/images/c-cp-ico1-h.png" alt="">
+                                            <span>Tích Hợp</span>
+                                        </a>
+                                    </li>
+                                                                        
+                                </ul>
+                                <ul class="c-list2">
+                                                                        <li class="on">
+                                        <ul class="c-list3">
+                                                                                        <li>
+                                                <a href="/ZKBioTime_API" class="c-title">ZKBio Time API</a>
+                                                <ul class="c-list4">
+                                                                                                        
+<!--                                                    <li><a href="">TD Series</a></li>-->
+<!--                                                    <li><a href="">TI Series</a></li>-->
+                                                    <li><a href="/ZKBioTime_API">Xem thêm &gt;</a></li>
+                                                </ul>
+                                            </li>
+                                                                                        <li>
+                                                <a href="/Biometrics_Module_SDK" class="c-title">Biometrics Module SDK</a>
+                                                <ul class="c-list4">
+                                                                                                        
+<!--                                                    <li><a href="">TD Series</a></li>-->
+<!--                                                    <li><a href="">TI Series</a></li>-->
+                                                    <li><a href="/Biometrics_Module_SDK">Xem thêm &gt;</a></li>
+                                                </ul>
+                                            </li>
+                                                                                        <li>
+                                                <a href="/ZKBio-CVSecurity-API" class="c-title">ZKBio CVSecurity API</a>
+                                                <ul class="c-list4">
+                                                                                                        
+<!--                                                    <li><a href="">TD Series</a></li>-->
+<!--                                                    <li><a href="">TI Series</a></li>-->
+                                                    <li><a href="/ZKBio-CVSecurity-API">Xem thêm &gt;</a></li>
+                                                </ul>
+                                            </li>
+                                                                                        <li>
+                                                <a href="/Module-Da-Sinh-Trac" class="c-title">Module Đa Sinh Trắc</a>
+                                                <ul class="c-list4">
+                                                                                                        
+<!--                                                    <li><a href="">TD Series</a></li>-->
+<!--                                                    <li><a href="">TI Series</a></li>-->
+                                                    <li><a href="/Module-Da-Sinh-Trac">Xem thêm &gt;</a></li>
+                                                </ul>
+                                            </li>
+                                                                                        <li>
+                                                <a href="/Dau-Doc-Sinh-Trac-Hoc" class="c-title">Đầu Đọc Sinh Trắc Học</a>
+                                                <ul class="c-list4">
+                                                                                                        
+<!--                                                    <li><a href="">TD Series</a></li>-->
+<!--                                                    <li><a href="">TI Series</a></li>-->
+                                                    <li><a href="/Dau-Doc-Sinh-Trac-Hoc">Xem thêm &gt;</a></li>
+                                                </ul>
+                                            </li>
+                                                                                        <li>
+                                                <a href="/Thiet-Bi-Dau-Cuoi-Da-Sinh-Trac" class="c-title">Thiết Bị Đầu Cuối Đa Sinh Trắc</a>
+                                                <ul class="c-list4">
+                                                                                                        
+<!--                                                    <li><a href="">TD Series</a></li>-->
+<!--                                                    <li><a href="">TI Series</a></li>-->
+                                                    <li><a href="/Thiet-Bi-Dau-Cuoi-Da-Sinh-Trac">Xem thêm &gt;</a></li>
+                                                </ul>
+                                            </li>
+                                                                                        <li>
+                                                <a href="/Da-Muc-Dich" class="c-title">Tích Hợp Đa Mục Đích</a>
+                                                <ul class="c-list4">
+                                                                                                        
+<!--                                                    <li><a href="">TD Series</a></li>-->
+<!--                                                    <li><a href="">TI Series</a></li>-->
+                                                    <li><a href="/Da-Muc-Dich">Xem thêm &gt;</a></li>
+                                                </ul>
+                                            </li>
+                                                                                        
+
+                                        </ul>
+                                    </li>
+                                                                        
+                                </ul>
+                            </div>
+                        </div>
+                                            </li>
+                                        <li class="">
+                        <a href="/Kiem-Soat-Loi-Vao-Thong-Minh" title="Kiểm Soát Lối Vào Thông Minh">Kiểm Soát Lối Vào Thông Minh</a>
+                                                <!--产品下拉-->
+                        <div class="c-product c-dhxl1">
+                            <div class="c-p-close"></div>
+                            <div class="c-container">
+                                <ul class="c-list1">
+                                                                        <li class="on">
+                                        <a href="">
+                                                                                             <img src="/public/static/modules/cms/images/c-cp-ico1.png" alt="">
+                                                                                        <img src="/public/static/modules/cms/images/c-cp-ico1-h.png" alt="">
+                                            <span>Thiết Bị Đầu Cuối</span>
+                                        </a>
+                                    </li>
+                                                                        <li>
+                                        <a href="">
+                                                                                             <img src="/public/static/modules/cms/images/c-cp-ico2.png" alt="">
+                                                                                        <img src="/public/static/modules/cms/images/c-cp-ico2-h.png" alt="">
+                                            <span>Phần Mềm</span>
+                                        </a>
+                                    </li>
+                                                                        
+                                </ul>
+                                <ul class="c-list2">
+                                                                        <li class="on">
+                                        <ul class="c-list3">
+                                                                                        <li>
+                                                <a href="/Phat-Hien-Than-Nhiet" class="c-title">Phát Hiện Thân Nhiệt</a>
+                                                <ul class="c-list4">
+                                                                                                        <li><a href="/Kiem-Soat-Loi-Vao">Kiểm Soát Lối Vào</a></li>
+                                                                                                        <li><a href="/Kiem-Soat-Cua-Truy-Cap">Kiểm Soát Cửa</a></li>
+                                                                                                        <li><a href="/Camera-Nhiet">Camera Nhiệt</a></li>
+                                                                                                        
+<!--                                                    <li><a href="">TD Series</a></li>-->
+<!--                                                    <li><a href="">TI Series</a></li>-->
+                                                    <li><a href="/Phat-Hien-Than-Nhiet">Xem thêm &gt;</a></li>
+                                                </ul>
+                                            </li>
+                                                                                        <li>
+                                                <a href="/Kiem-Soat-Cua" class="c-title">Kiểm Soát Cửa</a>
+                                                <ul class="c-list4">
+                                                                                                        <li><a href="/Thiet-Bi-Dau-CuoitRa">Thiết Bị Đầu Cuối</a></li>
+                                                                                                        <li><a href="/Bang-Dieu-Khien">Bảng Điều Khiển</a></li>
+                                                                                                        <li><a href="/Dau-DocI4a">Đầu Đọc</a></li>
+                                                                                                        <li><a href="/Phu-KieniuK">Phụ Kiện</a></li>
+                                                                                                        <li><a href="/Phan-MemulJ">Phần Mềm</a></li>
+                                                                                                        
+<!--                                                    <li><a href="">TD Series</a></li>-->
+<!--                                                    <li><a href="">TI Series</a></li>-->
+                                                    <li><a href="/Kiem-Soat-Cua">Xem thêm &gt;</a></li>
+                                                </ul>
+                                            </li>
+                                                                                        <li>
+                                                <a href="/Giam-Sat-Video" class="c-title">Giám Sát Video</a>
+                                                <ul class="c-list4">
+                                                                                                        <li><a href="/IPPTZLmn">IP PTZ</a></li>
+                                                                                                        <li><a href="/IOT-Va-USB">Dòng Sản Phẩm IOT Và USB</a></li>
+                                                                                                        <li><a href="/Bo-POE-NVR">Bộ POE NVR</a></li>
+                                                                                                        <li><a href="/Camera-Mang">Camera Mạng</a></li>
+                                                                                                        <li><a href="/HDAnalogCamera">HD Analog Camera
+</a></li>
+                                                                                                        
+<!--                                                    <li><a href="">TD Series</a></li>-->
+<!--                                                    <li><a href="">TI Series</a></li>-->
+                                                    <li><a href="/Giam-Sat-Video">Xem thêm &gt;</a></li>
+                                                </ul>
+                                            </li>
+                                                                                        <li>
+                                                <a href="/SmartSecurityGatePedestrianProduct" class="c-title">Cổng An Ninh Phân Làn</a>
+                                                <ul class="c-list4">
+                                                                                                        <li><a href="/Tripod-Turnstile">Cổng Tripod Turnstile</a></li>
+                                                                                                        <li><a href="/Flap-Barrier">Cổng Flap Barrier</a></li>
+                                                                                                        <li><a href="/Swing-Barrier">Cổng Swing Barrier</a></li>
+                                                                                                        <li><a href="/Full-Height-Turnstile">Cổng Full Height Turnstile</a></li>
+                                                                                                        <li><a href="/Optical-Turnsitile">Cổng Optical Turnsitile</a></li>
+                                                                                                        
+<!--                                                    <li><a href="">TD Series</a></li>-->
+<!--                                                    <li><a href="">TI Series</a></li>-->
+                                                    <li><a href="/SmartSecurityGatePedestrianProduct">Xem thêm &gt;</a></li>
+                                                </ul>
+                                            </li>
+                                                                                        <li>
+                                                <a href="/Kiem-Tra-An-Ninh-Kiem-Tra-Phuong-Tien" class="c-title">Phương Tiện &amp; Kiểm Tra An Ninh</a>
+                                                <ul class="c-list4">
+                                                                                                        <li><a href="/Cong-Chan-Bai-Xe">Cổng Chắn Bãi Xe</a></li>
+                                                                                                        <li><a href="/LPR">LPR
+</a></li>
+                                                                                                        <li><a href="/Dau-Doc-Tam-Xa">Đầu Đọc Tầm Xa</a></li>
+                                                                                                        <li><a href="/Khoa-Vi-Tri-Dau-Xe">Khóa Vị Trí Đậu Xe Cá Nhân</a></li>
+                                                                                                        <li><a href="/Huong-Dan-Dau-Xe">Hệ Thống Hướng Dẫn Đậu Xe</a></li>
+                                                                                                        
+<!--                                                    <li><a href="">TD Series</a></li>-->
+<!--                                                    <li><a href="">TI Series</a></li>-->
+                                                    <li><a href="/Kiem-Tra-An-Ninh-Kiem-Tra-Phuong-Tien">Xem thêm &gt;</a></li>
+                                                </ul>
+                                            </li>
+                                                                                        <li>
+                                                <a href="/Kiem-Tra-An-Ninh" class="c-title">Kiểm Tra An Ninh</a>
+                                                <ul class="c-list4">
+                                                                                                        <li><a href="/An-Ninh-Phuong-Tien">Kiểm Tra An Ninh Phương Tiện</a></li>
+                                                                                                        <li><a href="/Cong-Do-Kim-Loai">Cổng Dò Kim Loại</a></li>
+                                                                                                        <li><a href="/Do-Kim-Loai-Cam-Tay">Máy Dò Kim Loại Cầm Tay</a></li>
+                                                                                                        <li><a href="/Phat-Hien-Dien-Thoai">Phát Hiện Điện Thoại &amp; Kim Loại Màu</a></li>
+                                                                                                        <li><a href="/Do-Chat-No">Máy Dò Chất Nổ</a></li>
+                                                                                                        
+<!--                                                    <li><a href="">TD Series</a></li>-->
+<!--                                                    <li><a href="">TI Series</a></li>-->
+                                                    <li><a href="/Kiem-Tra-An-Ninh">Xem thêm &gt;</a></li>
+                                                </ul>
+                                            </li>
+                                                                                        <li>
+                                                <a href="/Nha-Thong-Minh" class="c-title">Nhà Thông Minh</a>
+                                                <ul class="c-list4">
+                                                                                                        <li><a href="/Khoa-Can-Ho">Khóa Căn Hộ</a></li>
+                                                                                                        <li><a href="/Khoa-Khach-San">Khóa Khách Sạn</a></li>
+                                                                                                        <li><a href="/Khoa-Khac">Khóa Khác</a></li>
+                                                                                                        <li><a href="/Nha-Thong-Minh-IoT">Nhà Thông Minh IoT</a></li>
+                                                                                                        <li><a href="/Nang-Luong-Mat-Troi">Module Năng Lượng Mặt Trời</a></li>
+                                                                                                        
+<!--                                                    <li><a href="">TD Series</a></li>-->
+<!--                                                    <li><a href="">TI Series</a></li>-->
+                                                    <li><a href="/Nha-Thong-Minh">Xem thêm &gt;</a></li>
+                                                </ul>
+                                            </li>
+                                                                                        <li>
+                                                <a href="/Chuong-Cua-Man-Hinh" class="c-title">Chuông Cửa Màn Hình</a>
+                                                <ul class="c-list4">
+                                                                                                        <li><a href="/Man-Hinh-Chuong-Cua">Màn Hình Chuông Cửa</a></li>
+                                                                                                        <li><a href="/Camera-Chuong-Cua">Camera Chuông Cửa</a></li>
+                                                                                                        <li><a href="/Bo-Kit-Chuong-Chua-Man-Hinh">Bộ Kit Chuông Cửa Màn Hình</a></li>
+                                                                                                        
+<!--                                                    <li><a href="">TD Series</a></li>-->
+<!--                                                    <li><a href="">TI Series</a></li>-->
+                                                    <li><a href="/Chuong-Cua-Man-Hinh">Xem thêm &gt;</a></li>
+                                                </ul>
+                                            </li>
+                                                                                        
+
+                                        </ul>
+                                    </li>
+                                                                        <li>
+                                        <ul class="c-list3">
+                                                                                        <li>
+                                                <a href="/ZKBioAccess_IVS" class="c-title">ZKBio Access IVS</a>
+                                                <ul class="c-list4">
+                                                                                                        
+<!--                                                    <li><a href="">TD Series</a></li>-->
+<!--                                                    <li><a href="">TI Series</a></li>-->
+                                                    <li><a href="/ZKBioAccess_IVS">Xem thêm &gt;</a></li>
+                                                </ul>
+                                            </li>
+                                                                                        
+
+                                        </ul>
+                                    </li>
+                                                                        
+                                </ul>
+                            </div>
+                        </div>
+                                            </li>
+                                        <li class="">
+                        <a href="/Van-Phong-Thong-Minh" title="Văn Phòng Thông Minh">Văn Phòng Thông Minh</a>
+                                                <!--产品下拉-->
+                        <div class="c-product c-dhxl1">
+                            <div class="c-p-close"></div>
+                            <div class="c-container">
+                                <ul class="c-list1">
+                                                                        <li class="on">
+                                        <a href="">
+                                                                                             <img src="/public/static/modules/cms/images/c-cp-ico1.png" alt="">
+                                                                                        <img src="/public/static/modules/cms/images/c-cp-ico1-h.png" alt="">
+                                            <span>Thiết Bị Đầu Cuối</span>
+                                        </a>
+                                    </li>
+                                                                        <li>
+                                        <a href="">
+                                                                                             <img src="/public/static/modules/cms/images/c-cp-ico2.png" alt="">
+                                                                                        <img src="/public/static/modules/cms/images/c-cp-ico2-h.png" alt="">
+                                            <span>Phần Mềm</span>
+                                        </a>
+                                    </li>
+                                                                        <li>
+                                        <a href="">
+                                                                                             <img src="/public/static/modules/cms/images/c-cp-ico3.png" alt="">
+                                                                                        <img src="/public/static/modules/cms/images/c-cp-ico3-h.png" alt="">
+                                            <span>ZKBio Cloud</span>
+                                        </a>
+                                    </li>
+                                                                        
+                                </ul>
+                                <ul class="c-list2">
+                                                                        <li class="on">
+                                        <ul class="c-list3">
+                                                                                        <li>
+                                                <a href="/Cham-Cong" class="c-title">Chấm Công</a>
+                                                <ul class="c-list4">
+                                                                                                        <li><a href="/Khuon-Mat">Khuôn Mặt</a></li>
+                                                                                                        <li><a href="/Van-Tay">Vân Tay</a></li>
+                                                                                                        <li><a href="/Da-Sinh-Trac">Đa Sinh Trắc</a></li>
+                                                                                                        <li><a href="/RFID">RFID
+</a></li>
+                                                                                                        <li><a href="/Thiet-Bi-Cam-Tay2cn">Thiết Bị Cầm Tay</a></li>
+                                                                                                        
+<!--                                                    <li><a href="">TD Series</a></li>-->
+<!--                                                    <li><a href="">TI Series</a></li>-->
+                                                    <li><a href="/Cham-Cong">Xem thêm &gt;</a></li>
+                                                </ul>
+                                            </li>
+                                                                                        <li>
+                                                <a href="/Thuong-Mai-Thong-Minh" class="c-title">Thương Mại Thông Minh</a>
+                                                <ul class="c-list4">
+                                                                                                        <li><a href="/He-Thong-EAS">Hệ Thống EAS</a></li>
+                                                                                                        <li><a href="/He-Thong-POS">Hệ Thống POS</a></li>
+                                                                                                        <li><a href="/Man-Hinh-Chuyen-Dung">Màn Hình Chuyên Dụng</a></li>
+                                                                                                        <li><a href="/ZKBio-Media">ZKBio Media</a></li>
+                                                                                                        <li><a href="/Robot-Giao-Hang-Thong-Minh">Robot Giao Hàng Thông Minh</a></li>
+                                                                                                        
+<!--                                                    <li><a href="">TD Series</a></li>-->
+<!--                                                    <li><a href="">TI Series</a></li>-->
+                                                    <li><a href="/Thuong-Mai-Thong-Minh">Xem thêm &gt;</a></li>
+                                                </ul>
+                                            </li>
+                                                                                        
+
+                                        </ul>
+                                    </li>
+                                                                        <li>
+                                        <ul class="c-list3">
+                                                                                        <li>
+                                                <a href="/ZKBioTime" class="c-title">ZKBio Time</a>
+                                                <ul class="c-list4">
+                                                                                                        
+<!--                                                    <li><a href="">TD Series</a></li>-->
+<!--                                                    <li><a href="">TI Series</a></li>-->
+                                                    <li><a href="/ZKBioTime">Xem thêm &gt;</a></li>
+                                                </ul>
+                                            </li>
+                                                                                        <li>
+                                                <a href="/Zlink-Assistant" class="c-title">Zlink Assistant</a>
+                                                <ul class="c-list4">
+                                                                                                        
+<!--                                                    <li><a href="">TD Series</a></li>-->
+<!--                                                    <li><a href="">TI Series</a></li>-->
+                                                    <li><a href="/Zlink-Assistant">Xem thêm &gt;</a></li>
+                                                </ul>
+                                            </li>
+                                                                                        <li>
+                                                <a href="/WDMSZyJ" class="c-title">ZKBio WDMS</a>
+                                                <ul class="c-list4">
+                                                                                                        
+<!--                                                    <li><a href="">TD Series</a></li>-->
+<!--                                                    <li><a href="">TI Series</a></li>-->
+                                                    <li><a href="/WDMSZyJ">Xem thêm &gt;</a></li>
+                                                </ul>
+                                            </li>
+                                                                                        <li>
+                                                <a href="/ZKTime_Net" class="c-title">ZKBio Time.Net</a>
+                                                <ul class="c-list4">
+                                                                                                        
+<!--                                                    <li><a href="">TD Series</a></li>-->
+<!--                                                    <li><a href="">TI Series</a></li>-->
+                                                    <li><a href="/ZKTime_Net">Xem thêm &gt;</a></li>
+                                                </ul>
+                                            </li>
+                                                                                        <li>
+                                                <a href="/ZKBioMedia" class="c-title">ZKBio Media</a>
+                                                <ul class="c-list4">
+                                                                                                        
+<!--                                                    <li><a href="">TD Series</a></li>-->
+<!--                                                    <li><a href="">TI Series</a></li>-->
+                                                    <li><a href="/ZKBioMedia">Xem thêm &gt;</a></li>
+                                                </ul>
+                                            </li>
+                                                                                        <li>
+                                                <a href="/ZKBio-Zlink" class="c-title">ZKBio Zlink</a>
+                                                <ul class="c-list4">
+                                                                                                        
+<!--                                                    <li><a href="">TD Series</a></li>-->
+<!--                                                    <li><a href="">TI Series</a></li>-->
+                                                    <li><a href="/ZKBio-Zlink">Xem thêm &gt;</a></li>
+                                                </ul>
+                                            </li>
+                                                                                        
+
+                                        </ul>
+                                    </li>
+                                                                        <li>
+                                        <ul class="c-list3">
+                                                                                        <li>
+                                                <a href="/SoftwareAwA" class="c-title">Phần Mềm</a>
+                                                <ul class="c-list4">
+                                                                                                        <li><a href="/ZKBioCloudrMZ">ZKBio Cloud</a></li>
+                                                                                                        
+<!--                                                    <li><a href="">TD Series</a></li>-->
+<!--                                                    <li><a href="">TI Series</a></li>-->
+                                                    <li><a href="/SoftwareAwA">Xem thêm &gt;</a></li>
+                                                </ul>
+                                            </li>
+                                                                                        <li>
+                                                <a href="/SmartTerminalzN6" class="c-title">Thiết Bị Đầu Cuối</a>
+                                                <ul class="c-list4">
+                                                                                                        <li><a href="/ZKBioCloudTimeAttendance">Chấm Công ZKBio Cloud</a></li>
+                                                                                                        
+<!--                                                    <li><a href="">TD Series</a></li>-->
+<!--                                                    <li><a href="">TI Series</a></li>-->
+                                                    <li><a href="/SmartTerminalzN6">Xem thêm &gt;</a></li>
+                                                </ul>
+                                            </li>
+                                                                                        
+
+                                        </ul>
+                                    </li>
+                                                                        
+                                </ul>
+                            </div>
+                        </div>
+                                            </li>
+                                        <li class="">
+                        <a href="/GreenLabel" title="Green Label">Green Label</a>
+                                                <!--产品下拉-->
+                        <div class="c-product c-dhxl1">
+                            <div class="c-p-close"></div>
+                            <div class="c-container">
+                                <ul class="c-list1">
+                                                                        <li class="on">
+                                        <a href="">
+                                                                                             <img src="/public/static/modules/cms/images/c-cp-ico1.png" alt="">
+                                                                                        <img src="/public/static/modules/cms/images/c-cp-ico1-h.png" alt="">
+                                            <span>Thiết Bị Đầu Cuối</span>
+                                        </a>
+                                    </li>
+                                                                        <li>
+                                        <a href="">
+                                                                                             <img src="/public/static/modules/cms/images/c-cp-ico2.png" alt="">
+                                                                                        <img src="/public/static/modules/cms/images/c-cp-ico2-h.png" alt="">
+                                            <span>Phần Mềm</span>
+                                        </a>
+                                    </li>
+                                                                        
+                                </ul>
+                                <ul class="c-list2">
+                                                                        <li class="on">
+                                        <ul class="c-list3">
+                                                                                        <li>
+                                                <a href="/Cham-Cong-GreenLable" class="c-title">Chấm Công</a>
+                                                <ul class="c-list4">
+                                                                                                        <li><a href="/Thiet-Bi-Doc-LapDxu">Thiết Bị Độc Lập</a></li>
+                                                                                                        
+<!--                                                    <li><a href="">TD Series</a></li>-->
+<!--                                                    <li><a href="">TI Series</a></li>-->
+                                                    <li><a href="/Cham-Cong-GreenLable">Xem thêm &gt;</a></li>
+                                                </ul>
+                                            </li>
+                                                                                        <li>
+                                                <a href="/Kiem-Soat-Cuaf68" class="c-title">Kiểm Soát Cửa</a>
+                                                <ul class="c-list4">
+                                                                                                        <li><a href="/Thiet-Bi-Doc-Lap">Thiết Bị Độc Lập</a></li>
+                                                                                                        <li><a href="/Bang-Dieu-KhienIU8">Bảng Điều Khiển</a></li>
+                                                                                                        <li><a href="/Dau-DocSfk">Đầu Đọc</a></li>
+                                                                                                        <li><a href="/Phu-kien30t">Phụ Kiện</a></li>
+                                                                                                        
+<!--                                                    <li><a href="">TD Series</a></li>-->
+<!--                                                    <li><a href="">TI Series</a></li>-->
+                                                    <li><a href="/Kiem-Soat-Cuaf68">Xem thêm &gt;</a></li>
+                                                </ul>
+                                            </li>
+                                                                                        
+
+                                        </ul>
+                                    </li>
+                                                                        <li>
+                                        <ul class="c-list3">
+                                                                                        <li>
+                                                <a href="/ZKBiosecurity" class="c-title">ZKBioSecurity</a>
+                                                <ul class="c-list4">
+                                                                                                        
+<!--                                                    <li><a href="">TD Series</a></li>-->
+<!--                                                    <li><a href="">TI Series</a></li>-->
+                                                    <li><a href="/ZKBiosecurity">Xem thêm &gt;</a></li>
+                                                </ul>
+                                            </li>
+                                                                                        <li>
+                                                <a href="/ZKBio_CVSecurity" class="c-title">ZKBio CVSecurity</a>
+                                                <ul class="c-list4">
+                                                                                                        
+<!--                                                    <li><a href="">TD Series</a></li>-->
+<!--                                                    <li><a href="">TI Series</a></li>-->
+                                                    <li><a href="/ZKBio_CVSecurity">Xem thêm &gt;</a></li>
+                                                </ul>
+                                            </li>
+                                                                                        
+
+                                        </ul>
+                                    </li>
+                                                                        
+                                </ul>
+                            </div>
+                        </div>
+                                            </li>
+                                        <li class=" Armatura">
+                        <a href="/Armatura6Pv" title="Armatura">Armatura</a>
+                                                <!--产品下拉-->
+                        <div class="c-product c-dhxl1">
+                            <div class="c-p-close"></div>
+                            <div class="c-container">
+                                <ul class="c-list1">
+                                                                        <li class="on">
+                                        <a href="">
+                                                                                             <img src="/public/static/modules/cms/images/c-cp-ico11.png" alt="">
+                                                                                        <img src="/public/static/modules/cms/images/c-cp-ico1-h.png" alt="">
+                                            <span>Phần Mềm</span>
+                                        </a>
+                                    </li>
+                                                                        <li>
+                                        <a href="">
+                                                                                             <img src="/public/static/modules/cms/images/c-cp-ico22.png" alt="">
+                                                                                        <img src="/public/static/modules/cms/images/c-cp-ico2-h.png" alt="">
+                                            <span>Thiết Bị Đầu Cuối Thông Minh</span>
+                                        </a>
+                                    </li>
+                                                                        <li>
+                                        <a href="">
+                                                                                             <img src="/public/static/modules/cms/images/c-cp-ico33.png" alt="">
+                                                                                        <img src="/public/static/modules/cms/images/c-cp-ico3-h.png" alt="">
+                                            <span>Module Sinh Trắc Học &amp; SDK</span>
+                                        </a>
+                                    </li>
+                                                                        
+                                </ul>
+                                <ul class="c-list2">
+                                                                        <li class="on">
+                                        <ul class="c-list3">
+                                                                                        <li>
+                                                <a href="/ArmaturaOne" class="c-title">Armatura One</a>
+                                                <ul class="c-list4">
+                                                                                                        
+<!--                                                    <li><a href="">TD Series</a></li>-->
+<!--                                                    <li><a href="">TI Series</a></li>-->
+                                                    <li><a href="/ArmaturaOne">Xem thêm &gt;</a></li>
+                                                </ul>
+                                            </li>
+                                                                                        <li>
+                                                <a href="/IOC-Platform" class="c-title">Nền Tảng Armatura IOC</a>
+                                                <ul class="c-list4">
+                                                                                                        
+<!--                                                    <li><a href="">TD Series</a></li>-->
+<!--                                                    <li><a href="">TI Series</a></li>-->
+                                                    <li><a href="/IOC-Platform">Xem thêm &gt;</a></li>
+                                                </ul>
+                                            </li>
+                                                                                        
+
+                                        </ul>
+                                    </li>
+                                                                        <li>
+                                        <ul class="c-list3">
+                                                                                        <li>
+                                                <a href="/Dau-Doc-Armatura" class="c-title">Đầu Đọc</a>
+                                                <ul class="c-list4">
+                                                                                                        <li><a href="/Dong-Explorer">Dòng Explorer</a></li>
+                                                                                                        
+<!--                                                    <li><a href="">TD Series</a></li>-->
+<!--                                                    <li><a href="">TI Series</a></li>-->
+                                                    <li><a href="/Dau-Doc-Armatura">Xem thêm &gt;</a></li>
+                                                </ul>
+                                            </li>
+                                                                                        <li>
+                                                <a href="/Do-Dieu-Khien-Armatura" class="c-title">Bộ Điều Khiển Trung Tâm</a>
+                                                <ul class="c-list4">
+                                                                                                        <li><a href="/Dong-AHEB">Dòng AHEB</a></li>
+                                                                                                        <li><a href="/Dong-AHDU">Dòng AHDU</a></li>
+                                                                                                        <li><a href="/Dong-AHSC">Dòng AHSC</a></li>
+                                                                                                        
+<!--                                                    <li><a href="">TD Series</a></li>-->
+<!--                                                    <li><a href="">TI Series</a></li>-->
+                                                    <li><a href="/Do-Dieu-Khien-Armatura">Xem thêm &gt;</a></li>
+                                                </ul>
+                                            </li>
+                                                                                        <li>
+                                                <a href="/Thiet-Bi-Dau-Cuoi-Armatura" class="c-title">Thiết Bị Đầu Cuối</a>
+                                                <ul class="c-list4">
+                                                                                                        <li><a href="/Dong-OmniAC">Dòng OmniAC</a></li>
+                                                                                                        
+<!--                                                    <li><a href="">TD Series</a></li>-->
+<!--                                                    <li><a href="">TI Series</a></li>-->
+                                                    <li><a href="/Thiet-Bi-Dau-Cuoi-Armatura">Xem thêm &gt;</a></li>
+                                                </ul>
+                                            </li>
+                                                                                        
+
+                                        </ul>
+                                    </li>
+                                                                        <li>
+                                        <ul class="c-list3">
+                                                                                        <li>
+                                                <a href="/Mobile-SDK-Armatura" class="c-title">Mobile SDK</a>
+                                                <ul class="c-list4">
+                                                                                                        
+<!--                                                    <li><a href="">TD Series</a></li>-->
+<!--                                                    <li><a href="">TI Series</a></li>-->
+                                                    <li><a href="/Mobile-SDK-Armatura">Xem thêm &gt;</a></li>
+                                                </ul>
+                                            </li>
+                                                                                        <li>
+                                                <a href="/Module-Phan-Cung-Armatura" class="c-title">Module Phần Cứng</a>
+                                                <ul class="c-list4">
+                                                                                                        
+<!--                                                    <li><a href="">TD Series</a></li>-->
+<!--                                                    <li><a href="">TI Series</a></li>-->
+                                                    <li><a href="/Module-Phan-Cung-Armatura">Xem thêm &gt;</a></li>
+                                                </ul>
+                                            </li>
+                                                                                        
+
+                                        </ul>
+                                    </li>
+                                                                        
+                                </ul>
+                            </div>
+                        </div>
+                                            </li>
+                                        <li class="">
+                        <a href="/Giai-Phap" title="Giải Pháp">Giải Pháp</a>
+                                                <!-- 方案 -->
+                        <div class="c-common-list c-dt c-dhxl2">
+                            <div class="c-container">
+                                <ul class="c-list">
+                                                                        <li>
+                                        <a href="/solution?cid=12">
+                                            <div class="c-img">
+                                                <img src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20211221/4cb95c658c439b4e35e9e86048faa4fb.png" alt="Nhận Dạng Thông Minh">
+                                            </div>
+                                            <p class="c-title">Nhận Dạng Thông Minh</p>
+                                            <p class="c-text"></p>
+                                        </a>
+                                    </li>
+                                                                        <li>
+                                        <a href="/solution?cid=13">
+                                            <div class="c-img">
+                                                <img src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20211221/272ff41e88c83ac7fbd8fff7c5dc2f84.png" alt="Kiểm Soát Lối Vào Thông Minh">
+                                            </div>
+                                            <p class="c-title">Kiểm Soát Lối Vào Thông Minh</p>
+                                            <p class="c-text"></p>
+                                        </a>
+                                    </li>
+                                                                        <li>
+                                        <a href="/solution?cid=14">
+                                            <div class="c-img">
+                                                <img src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20211221/eb8a4712b8cbc0e5d0b618bdaf227c6d.png" alt="Văn Phòng Thông Minh">
+                                            </div>
+                                            <p class="c-title">Văn Phòng Thông Minh</p>
+                                            <p class="c-text"></p>
+                                        </a>
+                                    </li>
+                                                                        
+                                </ul>
+                            </div>
+                        </div>
+                                            </li>
+                                        <li class="">
+                        <a href="/Du-An" title="Dự Án">Dự Án</a>
+                                                <!-- 案例 -->
+                        <div class="c-common-list c-dt c-dhxl3">
+                            <div class="c-container">
+                                <ul class="c-list">
+                                                                        <li>
+                                        <a href="/case?cid=12">
+                                            <div class="c-img">
+                                                <img src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20211222/ff00ba81b10d7e6956d507cabec631b1.jpg" alt="Nhận Dạng Thông Minh">
+                                            </div>
+                                            <p class="c-title">Nhận Dạng Thông Minh</p>
+                                        </a>
+                                    </li>
+                                                                        <li>
+                                        <a href="/case?cid=13">
+                                            <div class="c-img">
+                                                <img src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20211223/55bba4bc29460d30c73376c5aa2291c0.jpg" alt="Kiểm Soát Lối Vào Thông Minh">
+                                            </div>
+                                            <p class="c-title">Kiểm Soát Lối Vào Thông Minh</p>
+                                        </a>
+                                    </li>
+                                                                        <li>
+                                        <a href="/case?cid=14">
+                                            <div class="c-img">
+                                                <img src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20211223/a312b9880dcbf843be4c54bd28833e8e.jpg" alt="Văn Phòng Thông Minh">
+                                            </div>
+                                            <p class="c-title">Văn Phòng Thông Minh</p>
+                                        </a>
+                                    </li>
+                                                                        
+                                </ul>
+                            </div>
+                        </div>
+                                            </li>
+                                        <li class="">
+                        <a href="/Cong-NgheHN0" title="Công Nghệ">Công Nghệ</a>
+                                                <!-- 技术 -->
+<!--                        <div class="c-common-list c-dt c-dhxl4">-->
+<!--                            <div class="c-container">-->
+<!--                                <ul class="c-list">-->
+<!--                                    -->
+<!--                                    -->
+<!--                                    <li>-->
+<!--                                        <a href="/">-->
+<!--                                            <div class="c-img">-->
+<!--                                                <img src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20211222/5e237cf3e4a1bbf941a8bf4c890f2f70.jpg" alt="Non contact biometric technology">-->
+<!--                                            </div>-->
+<!--                                            <p class="c-title">Non contact biometric technology</p>-->
+<!--                                        </a>-->
+<!--                                    </li>-->
+<!--                                    -->
+<!--                                    <li>-->
+<!--                                        <a href="/">-->
+<!--                                            <div class="c-img">-->
+<!--                                                <img src="/public/static/modules/cms/images/c-js-img2.jpg" alt="RfiF and NFC Technology">-->
+<!--                                            </div>-->
+<!--                                            <p class="c-title">RfiF and NFC Technology</p>-->
+<!--                                        </a>-->
+<!--                                    </li>-->
+<!--                                    -->
+<!--                                    <li>-->
+<!--                                        <a href="/">-->
+<!--                                            <div class="c-img">-->
+<!--                                                <img src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20211223/e5e2c85a70fb0b98e8bb865b95b96359.jpg" alt="AFIS trusted authentication technology">-->
+<!--                                            </div>-->
+<!--                                            <p class="c-title">AFIS trusted authentication technology</p>-->
+<!--                                        </a>-->
+<!--                                    </li>-->
+<!--                                    -->
+<!--                                    -->
+<!--                                </ul>-->
+<!--                            </div>-->
+<!--                        </div>-->
+                                            </li>
+                                        <li class="">
+                        <a href="/Ho-Tro" title="Hỗ Trợ">Hỗ Trợ</a>
+                                                <!-- 支持 -->
+                        <div class="c-common-list c-dhxl5">
+                            <div class="c-container">
+                                <ul class="c-list">
+                                                                        <li>
+                                        <a href="/training">
+                                            <div class="c-img">
+                                                <img src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20211222/53380bb414ada34866a80808823b38df.png" alt="Trung Tâm Đào Tạo">
+                                            </div>
+                                            <p class="c-title">Trung Tâm Đào Tạo</p>
+                                        </a>
+                                    </li>
+                                                                        <li>
+                                        <a href="/Trung-Tam-Tai-Lieu">
+                                            <div class="c-img">
+                                                <img src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20211222/5b5cce766a84457a04b91102b609c9cb.png" alt="Trung Tâm Tài Liệu">
+                                            </div>
+                                            <p class="c-title">Trung Tâm Tài Liệu</p>
+                                        </a>
+                                    </li>
+                                                                        
+                                </ul>
+                            </div>
+                        </div>
+                                            </li>
+                                        
+                </ul>
+                <!-- 顶部移动端导航 -->
+                <ul class="c-nav2">
+                                        <li>
+                        <a href="/Nhan-Dang-Thong-Minh" title="Nhận Dạng Thông Minh">Nhận Dạng Thông Minh</a>
+                    </li>
+                                        <li>
+                        <a href="/Kiem-Soat-Loi-Vao-Thong-Minh" title="Kiểm Soát Lối Vào Thông Minh">Kiểm Soát Lối Vào Thông Minh</a>
+                    </li>
+                                        <li>
+                        <a href="/Van-Phong-Thong-Minh" title="Văn Phòng Thông Minh">Văn Phòng Thông Minh</a>
+                    </li>
+                                        <li>
+                        <a href="/GreenLabel" title="Green Label">Green Label</a>
+                    </li>
+                                        <li>
+                        <a href="/Armatura6Pv" title="Armatura">Armatura</a>
+                    </li>
+                                        <li>
+                        <a href="/Giai-Phap" title="Giải Pháp">Giải Pháp</a>
+                    </li>
+                                        <li>
+                        <a href="/Du-An" title="Dự Án">Dự Án</a>
+                    </li>
+                                        <li>
+                        <a href="/Cong-NgheHN0" title="Công Nghệ">Công Nghệ</a>
+                    </li>
+                                        <li>
+                        <a href="/Ho-Tro" title="Hỗ Trợ">Hỗ Trợ</a>
+                    </li>
+                                        
+                </ul>
+                <!-- 顶部功能区 -->
+                <div class="c-gn">
+                    <form action="/search">
+                        <i></i>
+                        <div class="c-box c-clear">
+                            <input type="text" name="keyword">
+                            <button type="submit"></button>
+                        </div>
+                    </form>
+                </div>
+                <!-- 顶部移动端导航开关 -->
+                <div class="c-switch">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 视频弹窗 -->
+<div id="hi-video-pop">
+    <div href="javascript:;" class="hi-close"></div>
+    <video src="" loop="" controls="" preload="none"></video>
+</div>
+
+<!-- 视频弹窗 -->
+<div id="hi-iframe-video">
+    <div href="javascript:;" class="hi-close"></div>
+</div>
+
+<div id="c-ishome" style="display: none;"></div>
+
+<div id="c-home-mask" style="position: fixed; top: 0px; left: 0px; z-index: 99999; width: 100%; height: 100%; display: none;"></div>
+<!-- 全屏 -->
+<div class="swiper-container c-home-banner swiper-container-initialized swiper-container-vertical">
+    <ul class="c-home-pagination">
+        <li class="on">
+            <p>Trang Chủ</p>
+            <div></div>
+        </li>
+        <li>
+            <p>Công Nghệ</p>
+            <div></div>
+        </li>
+        <li>
+            <p>Giải Pháp</p>
+            <div></div>
+        </li>
+        <li>
+            <p>Thế Mạnh</p>
+            <div></div>
+        </li>
+        <li>
+            <p>Tin Tức</p>
+            <div></div>
+        </li>
+    </ul>
+    <div class="swiper-wrapper c-home-wrapper">
+        <div class="swiper-slide c-home-slide swiper-slide-active">
+            <!-- banner -->
+            <div class="swiper-container c-banner1 c-100vh swiper-container-initialized swiper-container-horizontal">
+                <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-1080px, 0px, 0px);"><a href="https://www.zkteco.vn/Khoa-Tu/SL06-CL20H" class="swiper-slide swiper-slide-duplicate swiper-slide-prev" data-swiper-slide-index="6" style="width: 1080px;">
+                        <img class="c-pc" src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20240611/SL06-CL20H_1920x1000px_Vietnamese.jpg" alt="SL06-CL20H">
+                        <img class="c-mb" src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20240611/SL06-CL20H_750-%C3%97-1334px_Vietnamese.jpg" alt="SL06-CL20H">
+                        <!-- <div class="c-text-box">
+                            <div class="c-container">
+                                <div>
+                                                                        <p class="c-title c-font-bold"> <span></span></p>
+                                    <p class="c-text2"></p>
+                                </div>
+                            </div>
+                        </div> -->
+                                            </a>
+                                        <a href="javascript:;" class="swiper-slide swiper-slide-active" data-swiper-slide-index="0" style="width: 1080px;">
+                        <img class="c-pc" src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20241119/A%26S-award-2024-website-banner_1920x1080.jpg" alt="amag 2024">
+                        <img class="c-mb" src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20241119/asmag-top50-2024-750x.jpg" alt="amag 2024">
+                        <!-- <div class="c-text-box">
+                            <div class="c-container">
+                                <div>
+                                                                        <p class="c-title c-font-bold"> <span></span></p>
+                                    <p class="c-text2"></p>
+                                </div>
+                            </div>
+                        </div> -->
+                                            </a>
+                                        <a href="https://www.zkteco.vn/Bang-Dieu-Khien-Sinh-Trac-Hoc/InBio-Pro-Plus" class="swiper-slide swiper-slide-next" data-swiper-slide-index="1" style="width: 1080px;">
+                        <img class="c-pc" src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20240909/InBio-Pro-Plus-920-556_PC-1920x1000.jpg" alt="InBio Pro Plus Series">
+                        <img class="c-mb" src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20240909/InBio-Pro-Plus-920-556_MB-750x1334.jpg" alt="InBio Pro Plus Series">
+                        <!-- <div class="c-text-box">
+                            <div class="c-container">
+                                <div>
+                                                                        <p class="c-title c-font-bold"> <span></span></p>
+                                    <p class="c-text2"></p>
+                                </div>
+                            </div>
+                        </div> -->
+                                            </a>
+                                        <a href="https://www.zkteco.vn/Da-Sinh-TracfSK" class="swiper-slide" data-swiper-slide-index="2" style="width: 1080px;">
+                        <img class="c-pc" src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20240909/2024.09.09-VietNam-Website-SenseFace_PC.jpg" alt="SenseFace">
+                        <img class="c-mb" src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20240909/2024.09.09-VietNam-Website-SenseFace_MB.jpg" alt="SenseFace">
+                        <!-- <div class="c-text-box">
+                            <div class="c-container">
+                                <div>
+                                                                        <p class="c-title c-font-bold"> <span></span></p>
+                                    <p class="c-text2"></p>
+                                </div>
+                            </div>
+                        </div> -->
+                                            </a>
+                                        <a href="https://www.zkteco.vn/Swing-Barrier/Swing-Barrier-Comet" class="swiper-slide" data-swiper-slide-index="3" style="width: 1080px;">
+                        <img class="c-pc" src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20240611/Comet-Series-1920x1000px_Vietnamese.jpg" alt="Swing Barrier Comet Series">
+                        <img class="c-mb" src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20240611/Comet-Series-750-%C3%97-1334px_Vietnamese.jpg" alt="Swing Barrier Comet Series">
+                        <!-- <div class="c-text-box">
+                            <div class="c-container">
+                                <div>
+                                                                        <p class="c-title c-font-bold"> <span></span></p>
+                                    <p class="c-text2"></p>
+                                </div>
+                            </div>
+                        </div> -->
+                                            </a>
+                                        <a href="https://www.zkteco.vn/Visiblie_LightO0R/FaceDepot-4A" class="swiper-slide" data-swiper-slide-index="4" style="width: 1080px;">
+                        <img class="c-pc" src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20240122/FaceDepot-4A_1920x1080px.jpg" alt="FaceDepot-4A">
+                        <img class="c-mb" src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20240122/FaceDepot-4A_750x1334px.jpg" alt="FaceDepot-4A">
+                        <!-- <div class="c-text-box">
+                            <div class="c-container">
+                                <div>
+                                                                        <p class="c-title c-font-bold"> <span></span></p>
+                                    <p class="c-text2"></p>
+                                </div>
+                            </div>
+                        </div> -->
+                                            </a>
+                                        <a href="https://www.zkteco.vn/Van-Taya7q/F35" class="swiper-slide" data-swiper-slide-index="5" style="width: 1080px;">
+                        <img class="c-pc" src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20240611/F35-1920x1000px_Vietnamese.jpg" alt="F35">
+                        <img class="c-mb" src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20240611/F35_750-%C3%97-1334px_Vietnamese.jpg" alt="F35">
+                        <!-- <div class="c-text-box">
+                            <div class="c-container">
+                                <div>
+                                                                        <p class="c-title c-font-bold"> <span></span></p>
+                                    <p class="c-text2"></p>
+                                </div>
+                            </div>
+                        </div> -->
+                                            </a>
+                                        <a href="https://www.zkteco.vn/Khoa-Tu/SL06-CL20H" class="swiper-slide swiper-slide-duplicate-prev" data-swiper-slide-index="6" style="width: 1080px;">
+                        <img class="c-pc" src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20240611/SL06-CL20H_1920x1000px_Vietnamese.jpg" alt="SL06-CL20H">
+                        <img class="c-mb" src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20240611/SL06-CL20H_750-%C3%97-1334px_Vietnamese.jpg" alt="SL06-CL20H">
+                        <!-- <div class="c-text-box">
+                            <div class="c-container">
+                                <div>
+                                                                        <p class="c-title c-font-bold"> <span></span></p>
+                                    <p class="c-text2"></p>
+                                </div>
+                            </div>
+                        </div> -->
+                                            </a>
+                                        
+                <a href="javascript:;" class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="0" style="width: 1080px;">
+                        <img class="c-pc" src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20241119/A%26S-award-2024-website-banner_1920x1080.jpg" alt="amag 2024">
+                        <img class="c-mb" src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20241119/asmag-top50-2024-750x.jpg" alt="amag 2024">
+                        <!-- <div class="c-text-box">
+                            <div class="c-container">
+                                <div>
+                                                                        <p class="c-title c-font-bold"> <span></span></p>
+                                    <p class="c-text2"></p>
+                                </div>
+                            </div>
+                        </div> -->
+                                            </a></div>
+                <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 1">01</span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2">02</span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3">03</span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 4">04</span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 5">05</span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 6">06</span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 7">07</span></div>
+            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+        </div>
+        <div class="swiper-slide c-home-slide swiper-slide-next">
+            <!-- 核心 -->
+            <!-- <div id="c-core" class="c-100vh">
+                <ul class="c-list2">
+                            
+                    <li>
+                        <img class="c-pc" src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20220228/47beb9201a40a4f652206b2295f12608.gif" alt="Công Nghệ Nhận Dạng Khuôn Mặt Ánh Sáng Cấu Trúc 3D - 3D Structure Light">
+                        <img class="c-mb" src="" alt="Công Nghệ Nhận Dạng Khuôn Mặt Ánh Sáng Cấu Trúc 3D - 3D Structure Light">
+                    </li>
+        
+                            
+                    <li>
+                        <img class="c-pc" src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20220303/a2b9ce146efcc32762454dd0f3bc28b6.gif" alt="Nhận Dạng Dấu Vân Tay">
+                        <img class="c-mb" src="" alt="Nhận Dạng Dấu Vân Tay">
+                    </li>
+        
+                            
+                    <li>
+                        <img class="c-pc" src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20220303/c34baeda75ff533ebccc235496136d6c.gif" alt="Nhận Dạng Tĩnh Mạch Ngón Tay">
+                        <img class="c-mb" src="" alt="Nhận Dạng Tĩnh Mạch Ngón Tay">
+                    </li>
+        
+                            
+                    <li>
+                        <img class="c-pc" src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20220303/2154c32d16595295e5397bb10e167f3f.gif" alt="Nhận Dạng Lòng Bàn Tay 3 Trong 1">
+                        <img class="c-mb" src="" alt="Nhận Dạng Lòng Bàn Tay 3 Trong 1">
+                    </li>
+        
+                            
+                    <li>
+                        <img class="c-pc" src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20220303/1f718d10d803351bee57b9a20e36f7fd.gif" alt="Nhận Dạng Khuôn Mặt Bằng Ánh Sáng Có Thể Nhìn Thấy Được - Visible Light">
+                        <img class="c-mb" src="" alt="Nhận Dạng Khuôn Mặt Bằng Ánh Sáng Có Thể Nhìn Thấy Được - Visible Light">
+                    </li>
+        
+                            
+                    
+                </ul>
+                <div class="c-container">
+                    <ul class="c-list">
+                                                <li>
+                            <a class="c-wrap">
+                                <div class="c-title">
+                                    <p>Công<br >Nghệ<br >Nhận<br >Dạng<br >Khuôn<br >Mặt<br >Ánh<br >Sáng<br >Cấu<br >Trúc<br >3D<br >-<br >3D<br >Structure<br >Light</p>
+                                </div>
+                                <div class="c-text-box">
+                                    <h2 class="c-title2 c-font-bold c-font40">Công<br >Nghệ<br >Nhận<br >Dạng<br >Khuôn<br >Mặt<br >Ánh<br >Sáng<br >Cấu<br >Trúc<br >3D<br >-<br >3D<br >Structure<br >Light</h2>
+                                    <div class="c-text">ZKTeco &aacute;p dụng c&ocirc;ng nghệ h&igrave;nh ảnh bề mặt 3D ti&ecirc;n phong v&agrave; ph&aacute;t triển t&iacute;nh năng Nhận Dạng Khu&ocirc;n Mặt C&oacute; Cấu Tr&uacute;c 3D, c&ocirc;ng nghệ n&agrave;y chủ động chiếu &aacute;nh s&aacute;ng tới một đối tượng v&agrave; quan s&aacute;t m&atilde; h&oacute;a &aacute;nh s&aacute;ng của bề mặt đối tượng, qua đ&oacute; c&oacute; thể t&iacute;nh to&aacute;n sự ch&ecirc;nh lệch giữa c&aacute;c mẫu được chiếu ban đầu v&agrave; c&aacute;c mẫu được quan s&aacute;t bị biến dạng bởi bề mặt.</div>
+                                </div>
+                            </a>
+                        </li>
+                                                <li>
+                            <a class="c-wrap">
+                                <div class="c-title">
+                                    <p>Nhận<br >Dạng<br >Dấu<br >Vân<br >Tay</p>
+                                </div>
+                                <div class="c-text-box">
+                                    <h2 class="c-title2 c-font-bold c-font40">Nhận<br >Dạng<br >Dấu<br >Vân<br >Tay</h2>
+                                    <div class="c-text">ZKTeco cung cấp c&aacute;c thuật to&aacute;n dựa tr&ecirc;n c&ocirc;ng nghệ v&agrave; quyền sở hữu tr&iacute; tuệ th&ocirc;ng minh độc lập thuộc sở hữu của ch&uacute;ng t&ocirc;i. ZKTeco kh&ocirc;ng bao giờ ph&aacute;t h&agrave;nh c&aacute;c thuật to&aacute;n v&agrave; định dạng mẫu cho bất kỳ b&ecirc;n thứ ba n&agrave;o, độ tin cậy của c&aacute;c thuật to&aacute;n ZKTeco dựa tr&ecirc;n kinh nghiệm ph&aacute;t triển thuật to&aacute;n 20 năm của ch&uacute;ng t&ocirc;i.</div>
+                                </div>
+                            </a>
+                        </li>
+                                                <li>
+                            <a class="c-wrap">
+                                <div class="c-title">
+                                    <p>Nhận<br >Dạng<br >Tĩnh<br >Mạch<br >Ngón<br >Tay</p>
+                                </div>
+                                <div class="c-text-box">
+                                    <h2 class="c-title2 c-font-bold c-font40">Nhận<br >Dạng<br >Tĩnh<br >Mạch<br >Ngón<br >Tay</h2>
+                                    <div class="c-text">V&igrave; c&aacute;c tĩnh mạch ng&oacute;n tay được bao phủ bởi da v&agrave; kh&ocirc;ng nh&igrave;n thấy được bằng mắt người, n&ecirc;n nguy cơ giả mạo hoặc tr&ugrave;ng lặp c&aacute;c đặc điểm tĩnh mạch thấp hơn v&agrave; sự kết hợp của c&aacute;c đặc điểm v&acirc;n tay v&agrave; tĩnh mạch v&acirc;n tay thậm ch&iacute; c&ograve;n thấp hơn, mang lại khả năng chống giả mạo cao hơn.</div>
+                                </div>
+                            </a>
+                        </li>
+                                                <li>
+                            <a class="c-wrap">
+                                <div class="c-title">
+                                    <p>Nhận<br >Dạng<br >Lòng<br >Bàn<br >Tay<br >3<br >Trong<br >1</p>
+                                </div>
+                                <div class="c-text-box">
+                                    <h2 class="c-title2 c-font-bold c-font40">Nhận<br >Dạng<br >Lòng<br >Bàn<br >Tay<br >3<br >Trong<br >1</h2>
+                                    <div class="c-text">C&ocirc;ng nghệ nhận dạng l&ograve;ng b&agrave;n tay thế hệ mới nhất được n&acirc;ng cấp ho&agrave;n to&agrave;n về mọi mặt như phương thức nhận dạng, kết hợp nhận dạng giữa l&ograve;ng b&agrave;n tay, bản in l&ograve;ng b&agrave;n tay v&agrave; tĩnh mạch l&ograve;ng b&agrave;n tay l&agrave;m một. 
+l C&ocirc;ng nghệ chống giả mạo 
+l Dung sai g&oacute;c rộng 
+l Khoảng c&aacute;ch nhận dạng si&ecirc;u lớn</div>
+                                </div>
+                            </a>
+                        </li>
+                                                <li>
+                            <a class="c-wrap">
+                                <div class="c-title">
+                                    <p>Nhận<br >Dạng<br >Khuôn<br >Mặt<br >Bằng<br >Ánh<br >Sáng<br >Có<br >Thể<br >Nhìn<br >Thấy<br >Được<br >-<br >Visible<br >Light</p>
+                                </div>
+                                <div class="c-text-box">
+                                    <h2 class="c-title2 c-font-bold c-font40">Nhận<br >Dạng<br >Khuôn<br >Mặt<br >Bằng<br >Ánh<br >Sáng<br >Có<br >Thể<br >Nhìn<br >Thấy<br >Được<br >-<br >Visible<br >Light</h2>
+                                    <div class="c-text">Nhận dạng khu&ocirc;n mặt Visible Light n&acirc;ng cao l&agrave; c&ocirc;ng nghệ mới nhất của ZKTeco, nhằm khắc phục những thiếu s&oacute;t của c&aacute;c c&ocirc;ng nghệ nhận dạng khu&ocirc;n mặt trước đ&acirc;y v&agrave; đạt được n&acirc;ng cấp to&agrave;n diện cả về hiệu xuất cũng như khả năng chống giả mạo ti&ecirc;n tiến bằng c&aacute;ch kết hợp với c&aacute;c thuật to&aacute;n học s&acirc;u - Deep Learning.</div>
+                                </div>
+                            </a>
+                        </li>
+                                                
+                    </ul>
+                </div>
+            </div> -->
+            <!-- 核心技术1 -->
+
+            <div id="c-technologies1-1" class="c-dt">
+                <div class="c-list-wrap">
+
+                    <ul class="c-list1">
+
+                        
+                        <li class="on">
+                            <img class="c-pc" src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20220228/47beb9201a40a4f652206b2295f12608.gif" alt="Công Nghệ Nhận Dạng Khuôn Mặt Ánh Sáng Cấu Trúc 3D - 3D Structure Light">
+                            <img class="c-mb" src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20220317/5c92da6e78932dd55fa9c23e8717ac56.gif" alt="Công Nghệ Nhận Dạng Khuôn Mặt Ánh Sáng Cấu Trúc 3D - 3D Structure Light">
+                        </li>
+
+                        
+                        <li>
+                            <img class="c-pc" src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20220303/a2b9ce146efcc32762454dd0f3bc28b6.gif" alt="Nhận Dạng Dấu Vân Tay">
+                            <img class="c-mb" src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20220317/e4815c03cef51391e7b54bd5d960d7f6.gif" alt="Nhận Dạng Dấu Vân Tay">
+                        </li>
+
+                        
+                        <li>
+                            <img class="c-pc" src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20220303/c34baeda75ff533ebccc235496136d6c.gif" alt="Nhận Dạng Tĩnh Mạch Ngón Tay">
+                            <img class="c-mb" src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20220317/639c160b38a2eb8de2bbaf55595858ba.gif" alt="Nhận Dạng Tĩnh Mạch Ngón Tay">
+                        </li>
+
+                        
+                        <li>
+                            <img class="c-pc" src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20220303/2154c32d16595295e5397bb10e167f3f.gif" alt="Nhận Dạng Lòng Bàn Tay 3 Trong 1">
+                            <img class="c-mb" src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20220317/404fb61cb6c59a70a569749057441c6b.gif" alt="Nhận Dạng Lòng Bàn Tay 3 Trong 1">
+                        </li>
+
+                        
+                        <li>
+                            <img class="c-pc" src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20220303/1f718d10d803351bee57b9a20e36f7fd.gif" alt="Nhận Dạng Khuôn Mặt Bằng Ánh Sáng Có Thể Nhìn Thấy Được - Visible Light">
+                            <img class="c-mb" src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20220317/8f8f4a09a571ef1096308561c87508d0.gif" alt="Nhận Dạng Khuôn Mặt Bằng Ánh Sáng Có Thể Nhìn Thấy Được - Visible Light">
+                        </li>
+
+                        
+                        
+
+                    </ul>
+
+                    <ul class="c-list2">
+
+                        
+                        <li class="on">
+                            <a class="c-wrap">
+                                <div class="c-box1">
+
+                                    <p class="c-title">Công Nghệ Nhận Dạng Khuôn Mặt Ánh Sáng Cấu Trúc 3D - 3D Structure Light</p>
+                
+                                    <p class="c-num">1</p>
+                
+                                </div>
+                
+                                <div class="c-box2">
+                
+                                    <p class="c-title c-font40 c-font-bold">Công Nghệ Nhận Dạng Khuôn Mặt Ánh Sáng Cấu Trúc 3D - 3D Structure Light</p>
+                
+                                    <p class="c-text">ZKTeco áp dụng công nghệ hình ảnh bề mặt 3D tiên phong và phát triển tính năng Nhận Dạng Khuôn Mặt Có Cấu Trúc 3D, công nghệ này chủ động chiếu ánh sáng tới một đối tượng và quan sát mã hóa ánh sáng của bề mặt đối tượng, qua đó có thể tính toán sự chênh lệch giữa các mẫu được chiếu ban đầu và các mẫu được quan sát bị biến dạng bởi bề mặt.</p>
+                
+                                </div>
+
+                            </a>
+
+                        </li>
+
+                        
+                        <li>
+                            <a class="c-wrap">
+                                <div class="c-box1">
+
+                                    <p class="c-title">Nhận Dạng Dấu Vân Tay</p>
+                
+                                    <p class="c-num">2</p>
+                
+                                </div>
+                
+                                <div class="c-box2">
+                
+                                    <p class="c-title c-font40 c-font-bold">Nhận Dạng Dấu Vân Tay</p>
+                
+                                    <p class="c-text">ZKTeco cung cấp các thuật toán dựa trên công nghệ và quyền sở hữu trí tuệ thông minh độc lập thuộc sở hữu của chúng tôi. ZKTeco không bao giờ phát hành các thuật toán và định dạng mẫu cho bất kỳ bên thứ ba nào, độ tin cậy của các thuật toán ZKTeco dựa trên kinh nghiệm phát triển thuật toán 20 năm của chúng tôi.</p>
+                
+                                </div>
+
+                            </a>
+
+                        </li>
+
+                        
+                        <li>
+                            <a class="c-wrap">
+                                <div class="c-box1">
+
+                                    <p class="c-title">Nhận Dạng Tĩnh Mạch Ngón Tay</p>
+                
+                                    <p class="c-num">3</p>
+                
+                                </div>
+                
+                                <div class="c-box2">
+                
+                                    <p class="c-title c-font40 c-font-bold">Nhận Dạng Tĩnh Mạch Ngón Tay</p>
+                
+                                    <p class="c-text">Vì các tĩnh mạch ngón tay được bao phủ bởi da và không nhìn thấy được bằng mắt người, nên nguy cơ giả mạo hoặc trùng lặp các đặc điểm tĩnh mạch thấp hơn và sự kết hợp của các đặc điểm vân tay và tĩnh mạch vân tay thậm chí còn thấp hơn, mang lại khả năng chống giả mạo cao hơn.</p>
+                
+                                </div>
+
+                            </a>
+
+                        </li>
+
+                        
+                        <li>
+                            <a class="c-wrap">
+                                <div class="c-box1">
+
+                                    <p class="c-title">Nhận Dạng Lòng Bàn Tay 3 Trong 1</p>
+                
+                                    <p class="c-num">4</p>
+                
+                                </div>
+                
+                                <div class="c-box2">
+                
+                                    <p class="c-title c-font40 c-font-bold">Nhận Dạng Lòng Bàn Tay 3 Trong 1</p>
+                
+                                    <p class="c-text">Công nghệ nhận dạng lòng bàn tay thế hệ mới nhất được nâng cấp hoàn toàn về mọi mặt như phương thức nhận dạng, kết hợp nhận dạng giữa lòng bàn tay, bản in lòng bàn tay và tĩnh mạch lòng bàn tay làm một. 
+l Công nghệ chống giả mạo 
+l Dung sai góc rộng 
+l Khoảng cách nhận dạng siêu lớn</p>
+                
+                                </div>
+
+                            </a>
+
+                        </li>
+
+                        
+                        <li>
+                            <a class="c-wrap">
+                                <div class="c-box1">
+
+                                    <p class="c-title">Nhận Dạng Khuôn Mặt Bằng Ánh Sáng Có Thể Nhìn Thấy Được - Visible Light</p>
+                
+                                    <p class="c-num">5</p>
+                
+                                </div>
+                
+                                <div class="c-box2">
+                
+                                    <p class="c-title c-font40 c-font-bold">Nhận Dạng Khuôn Mặt Bằng Ánh Sáng Có Thể Nhìn Thấy Được - Visible Light</p>
+                
+                                    <p class="c-text">Nhận dạng khuôn mặt Visible Light nâng cao là công nghệ mới nhất của ZKTeco, nhằm khắc phục những thiếu sót của các công nghệ nhận dạng khuôn mặt trước đây và đạt được nâng cấp toàn diện cả về hiệu xuất cũng như khả năng chống giả mạo tiên tiến bằng cách kết hợp với các thuật toán học sâu - Deep Learning.</p>
+                
+                                </div>
+
+                            </a>
+
+                        </li>
+
+                        
+                        
+
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="swiper-slide c-home-slide">
+            <!-- 方案 -->
+            <div id="c-solutions">
+                <div class="swiper-container c-banner2-top swiper-container-initialized swiper-container-horizontal">
+                    <div class="swiper-wrapper">
+                                                <div class="swiper-slide swiper-slide-active" style="width: 908px; margin-right: 30px;">
+                            <img src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20220506/05089a2456be0483f5d55247bbde201a.png" alt="Self-service Visitor Registration and Access Control Management Solution">
+                            <div class="c-text-box">
+                                <h3 class="c-title c-font40">Giải Pháp Quản Lý Kiểm Soát Ra Vào Và Đăng Ký Tự Phục Vụ Dành Cho Khách Truy Cập</h3>
+                                <p class="c-text"></p>
+                                <div class="c-btn-box">
+                                    <a class="c-common-btn2" href="/Giai-Phap/giai-phap-quan-ly-khach-truy-cap-tu-phuc-vu"><span>Tìm Hiểu Thêm</span></a>
+                                    <a class="c-common-btn2" href="/Giai-Phap"><span>Tất Cả Giải Pháp</span></a>
+                                </div>
+                            </div>
+                        </div>
+                                                <div class="swiper-slide swiper-slide-next" style="width: 908px; margin-right: 30px;">
+                            <img src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20220330/8f5d5c9a98ac3bcecefc76630d169bc6.jpg" alt="Kiểm Soát Truy Cập Sử Dụng Mã Vạch &amp; Mã QR Động">
+                            <div class="c-text-box">
+                                <h3 class="c-title c-font40">Kiểm Soát Truy Cập Sử Dụng Mã Vạch &amp; Mã QR Động</h3>
+                                <p class="c-text"></p>
+                                <div class="c-btn-box">
+                                    <a class="c-common-btn2" href="/Giai-Phap/giai-phap-kiem-soat-truy-cap-su-dung-ma-qr-dong"><span>Tìm Hiểu Thêm</span></a>
+                                    <a class="c-common-btn2" href="/Giai-Phap"><span>Tất Cả Giải Pháp</span></a>
+                                </div>
+                            </div>
+                        </div>
+                                                <div class="swiper-slide" style="width: 908px; margin-right: 30px;">
+                            <img src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20220329/dd9b36b51973a0f0b0d0214a531dc982.jpg" alt=" Giải Pháp Quản Lý Trường Đại Học Thông Minh">
+                            <div class="c-text-box">
+                                <h3 class="c-title c-font40"> Giải Pháp Quản Lý Trường Đại Học Thông Minh</h3>
+                                <p class="c-text"> </p>
+                                <div class="c-btn-box">
+                                    <a class="c-common-btn2" href="/Giai-Phap/Quan-Ly-An-Ninh-Truong-Dai-Hoc-Thong-Minh"><span>Tìm Hiểu Thêm</span></a>
+                                    <a class="c-common-btn2" href="/Giai-Phap"><span>Tất Cả Giải Pháp</span></a>
+                                </div>
+                            </div>
+                        </div>
+                                                <div class="swiper-slide" style="width: 908px; margin-right: 30px;">
+                            <img src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20211218/b313f373bc079e1f92ef67a461bb84be.png" alt="Giải Pháp Công Trường Xây Dựng Thông Minh - ZKBio CVSecurity">
+                            <div class="c-text-box">
+                                <h3 class="c-title c-font40">Giải Pháp Công Trường Xây Dựng Thông Minh - ZKBio CVSecurity</h3>
+                                <p class="c-text"></p>
+                                <div class="c-btn-box">
+                                    <a class="c-common-btn2" href="/Giai-Phap/quan-ly-cong-truong-xay-dung-thong-minh-zkbiocvsecurity"><span>Tìm Hiểu Thêm</span></a>
+                                    <a class="c-common-btn2" href="/Giai-Phap"><span>Tất Cả Giải Pháp</span></a>
+                                </div>
+                            </div>
+                        </div>
+                                                
+                    </div>
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next swiper-button-white" tabindex="0" role="button" aria-label="Next slide" aria-disabled="false">
+                        <div></div>
+                    </div>
+                    <div class="swiper-button-prev swiper-button-white swiper-button-disabled" tabindex="0" role="button" aria-label="Previous slide" aria-disabled="true">
+                        <div></div>
+                    </div>
+                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+                <div class="swiper-container c-banner2-bottom swiper-container-initialized swiper-container-horizontal swiper-container-free-mode swiper-container-thumbs">
+                    <div class="swiper-wrapper">
+                                                <div class="swiper-slide swiper-slide-visible swiper-slide-active swiper-slide-thumb-active" style="width: 226.75px;">
+                            <div class="c-wrap c-dg" style="height: 92px;">
+                                <div class="c-ico">
+                                    <img src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20220525/3f9498c6502a728f3bd814315bc646e7.png" alt="Giải Pháp Quản Lý Kiểm Soát Ra Vào Và Đăng Ký Tự Phục Vụ Dành Cho Khách Truy Cập">
+                                    <img src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20220525/587d099c7099134c4de945cb92896894.png" alt="Giải Pháp Quản Lý Kiểm Soát Ra Vào Và Đăng Ký Tự Phục Vụ Dành Cho Khách Truy Cập">
+                                </div>
+                                <p class="c-text">Khách Tự Phục Vụ</p>
+                            </div>
+                        </div>
+                                                <div class="swiper-slide swiper-slide-visible swiper-slide-next" style="width: 226.75px;">
+                            <div class="c-wrap c-dg" style="height: 92px;">
+                                <div class="c-ico">
+                                    <img src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20220525/05c9531e0ff5cbcc4c59f7870563a314.png" alt="Kiểm Soát Truy Cập Sử Dụng Mã Vạch &amp; Mã QR Động">
+                                    <img src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20220525/4f9bd09e23749296f75278a0a76bbb67.png" alt="Kiểm Soát Truy Cập Sử Dụng Mã Vạch &amp; Mã QR Động">
+                                </div>
+                                <p class="c-text">Mã QR Động</p>
+                            </div>
+                        </div>
+                                                <div class="swiper-slide swiper-slide-visible" style="width: 226.75px;">
+                            <div class="c-wrap c-dg" style="height: 92px;">
+                                <div class="c-ico">
+                                    <img src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20240308/icon-02.png" alt=" Giải Pháp Quản Lý Trường Đại Học Thông Minh">
+                                    <img src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20240308/icon-04.png" alt=" Giải Pháp Quản Lý Trường Đại Học Thông Minh">
+                                </div>
+                                <p class="c-text">Trường Đại Học Thông Minh</p>
+                            </div>
+                        </div>
+                                                <div class="swiper-slide swiper-slide-visible" style="width: 226.75px;">
+                            <div class="c-wrap c-dg" style="height: 92px;">
+                                <div class="c-ico">
+                                    <img src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20240617/ZKBio%20CVSecurity%20Construction%20Site%20Solution-B.png" alt="Giải Pháp Công Trường Xây Dựng Thông Minh - ZKBio CVSecurity">
+                                    <img src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20240617/ZKBio%20CVSecurity%20Construction%20Site%20Solution-A.png" alt="Giải Pháp Công Trường Xây Dựng Thông Minh - ZKBio CVSecurity">
+                                </div>
+                                <p class="c-text">Công Trường Thông Minh</p>
+                            </div>
+                        </div>
+                                                
+                    </div>
+                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+            </div>
+        </div>
+        <div class="swiper-slide c-home-slide">
+            <div id="c-branch" class="c-100vh">
+                <img src="/public/static/modules/cms/images/wd-bj.jpg" alt="Hoạt Động Trên Toàn Thế Giới">
+                <video src="https://files.growthman.cn/video/hy.mp4" autoplay="" muted="" loop=""></video>
+                <div class="c-text-box">
+                    <div class="c-container">
+                        <h2 class="c-title c-font-bold">Hoạt Động Trên Toàn Thế Giới<br>Hơn 100 Quốc Gia &amp; Khu Vực</h2>
+                        <ul class="c-list">
+                                                        <li>
+                                <p class="c-num c-num-move2">89</p>
+                                <p class="c-text">Chi Nhánh &amp; Công Ty Con</p>
+                            </li>
+                                                        <li>
+                                <p class="c-num c-num-move2">4</p>
+                                <p class="c-text">Cơ Sở Sản Xuất</p>
+                            </li>
+                                                        <li>
+                                <p class="c-num c-num-move2">4</p>
+                                <p class="c-text">Trung Tâm R&amp;D</p>
+                            </li>
+                                                        <li>
+                                <p class="c-num c-num-move2">4100</p>
+                                <p class="c-text">Nhân Viên Toàn Cầu</p>
+                            </li>
+                                                        
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide c-home-slide">
+            <!-- 新闻 -->
+            <div id="c-news" class="c-100vh">
+                <img src="/public/static/modules/cms/images/xw-bj.jpg" alt="Trung Tâm Tin Tức">
+                <div class="c-main-wrap">
+                    <div>
+                        <h2 class="c-main-title c-font-bold">Tin Tức</h2>
+                        <div class="swiper-container c-banner3-top swiper-container-initialized swiper-container-horizontal">
+                            <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-648px, 0px, 0px);"><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="7" style="width: 216px;">
+                                    <a class="c-wrap" href="/Su-Kien/zkteco-training-series-2024-he-thong-cong-cua-phan-lan-quan-ly-bai-do-xe-thong-minh" title="[ZKTeco Training Series 2024 – Chủ Đề 2] HỆ THỐNG CỔNG CỬA PHÂN LÀN &amp; QUẢN LÝ BÃI ĐỖ XE THÔNG MINH">
+                                        <img src="" alt="[ZKTeco Training Series 2024 – Chủ Đề 2] HỆ THỐNG CỔNG CỬA PHÂN LÀN &amp; QUẢN LÝ BÃI ĐỖ XE THÔNG MINH">
+                                    </a>
+                                </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="8" style="width: 216px;">
+                                    <a class="c-wrap" href="/Tin-Tuc/thuat-toan-armatura-dat-vi-tri-thu-11-toan-cau-theo-xep-hang-vien-tieu-chuan-nist" title="Thuật Toán Armatura Đạt Vị Trí Thứ 11 Toàn Cầu Theo Xếp Hạng của Viện Tiêu chuẩn và Công nghệ Quốc gia Hoa Kỳ">
+                                        <img src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20231116/Amartura%20Algorithm%20ranks%2011th%20Globally%20by%20the%20NIST%20in%20USA-01.png" alt="Thuật Toán Armatura Đạt Vị Trí Thứ 11 Toàn Cầu Theo Xếp Hạng của Viện Tiêu chuẩn và Công nghệ Quốc gia Hoa Kỳ">
+                                    </a>
+                                </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-prev3" data-swiper-slide-index="9" style="width: 216px;">
+                                    <a class="c-wrap" href="/Su-Kien/zkteco-danh-dau-vi-the-tai-cpse-2023-doi-moi-thanh-tuu-dang-ke" title="ZKTeco Đánh Dấu Vị Thế Đỉnh Cao Tại CPSE 2023 với Các Đổi Mới Toàn Cầu và Những Thành Tựu Đáng Kể">
+                                        <img src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20231108/trien-lam-an-ninh-trung-quoc-cpse-2023.png" alt="zkteco-tham-du-trien-lam-cpse-2023">
+                                    </a>
+                                </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-prev2" data-swiper-slide-index="10" style="width: 216px;">
+                                    <a class="c-wrap" href="/Su-Kien/zkteco-to-chuc-thanh-cong-hoi-nghi-toan-cau-exploring-the-singularities-2023" title="ZKTeco tổ chức thành công Hội nghị toàn cầu &quot;Exploring the Singularities” 2023 (22-24/10/2023)">
+                                        <img src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20231107/395139816_355333010176250_6111360633714980749_n.jpg" alt="ZKTeco tổ chức thành công Hội nghị toàn cầu " exploring="" the="" singularities”="" 2023="" (22-24="" 10="" 2023)"="">
+                                    </a>
+                                </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-prev" data-swiper-slide-index="11" style="width: 216px;">
+                                    <a class="c-wrap" href="/Su-Kien/workshop-series-2023-zkteco-hands-on-with-the-latest-security-tech-series-4-vung-tau" title="[Workshop Series 2023] ZKTeco - Hands-On with the Latest Security Tech | Series 4 - Vung Tau City">
+                                        <img src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20230717/2023.07.17-Vietnam-Website-%20Image%20Workshop%20Series%202023-Vung%20Tau_Bia.png" alt="[Workshop Series 2023] ZKTeco - Hands-On with the Latest Security Tech | Series 4 - Vung Tau City">
+                                    </a>
+                                </div>
+                                                                <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="0" style="width: 216px;">
+                                    <a class="c-wrap" href="/Tin-Tuc/zkteco-lan-thu-5-lien-tiep-duoc-vinh-danh-top-50-thuong-hieu-an-ninh-hang-dau-the-gioi-tap-chi-a-s" title="ZKTeco Lần Thứ 5 Liên Tiếp Được Vinh Danh trong Top 50 Thương Hiệu An Ninh Hàng Đầu Thế Giới bởi Tạp Chí a&amp;s">
+                                        <img src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20241121/Asmag-top50-2024_Thumbnail-Web.jpg" alt="a-s-top-50">
+                                    </a>
+                                </div>
+                                                                <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="1" style="width: 216px;">
+                                    <a class="c-wrap" href="/Su-Kien/zkteco-gop-mat-tai-trien-lam-vimf-bac-ninh-2024" title="ZKTeco Góp Mặt Tại Triển Lãm VIMF Bắc Ninh 2024 - Bước Đột Phá Với Giải Pháp An Ninh Thông Minh">
+                                        <img src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20241112/VIMF-Bac-Ninh-2024_Photo14.jpg" alt="vimf-bac-ninh-2024">
+                                    </a>
+                                </div>
+                                                                <div class="swiper-slide swiper-slide-next2" data-swiper-slide-index="2" style="width: 216px;">
+                                    <a class="c-wrap" href="/Su-Kien/hoi-nghi-toan-cau-zkteco-2024-ve-nen-tiem-nang-vo-han-cho-tuong-lai" title="Hội Nghị Toàn Cầu ZKTeco 2024 Đã Diễn Ra Thành Công Tốt Đẹp Với Chủ Đề: &quot;Vẽ Nên Tiềm Năng Vô Hạn Cho Tương Lai&quot;">
+                                        <img src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20241108/hoi-nghi-toan-cau-zkteco-2024.jpg" alt="Hội Nghị Toàn Cầu ZKTeco 2024 Đã Diễn Ra Thành Công Tốt Đẹp Với Chủ Đề: " vẽ="" nên="" tiềm="" năng="" vô="" hạn="" cho="" tương="" lai""="">
+                                    </a>
+                                </div>
+                                                                <div class="swiper-slide swiper-slide-next3" data-swiper-slide-index="3" style="width: 216px;">
+                                    <a class="c-wrap" href="/Tin-Tuc/zkteco-dap-ung-nhu-cau-bao-mat-ngay-cang-tang-thi-truong-trung-dong" title="ZKTeco Đáp Ứng Nhu Cầu Bảo Mật Ngày Càng Tăng Tại Thị Trường Trung Đông Với Phương Châm Lấy Khách Hàng Làm Trung Tâm">
+                                        <img src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20240821/zkteco-phat-trien-thi-truong-trung-dong-4.jpg" alt="zkteco-phat-trien-thi-truong-trung-dong">
+                                    </a>
+                                </div>
+                                                                <div class="swiper-slide" data-swiper-slide-index="4" style="width: 216px;">
+                                    <a class="c-wrap" href="/Tin-Tuc/zkdigimax-event-trusted-led-solution-provider-nha-cung-cap-giai-phap-led-uy-tin" title="ZKDigimax Event - Trusted LED Solution Provider">
+                                        <img src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20240723/zkdigimax-event-2.jpg" alt="ZKDigimax Event - Trusted LED Solution Provider">
+                                    </a>
+                                </div>
+                                                                <div class="swiper-slide" data-swiper-slide-index="5" style="width: 216px;">
+                                    <a class="c-wrap" href="/Su-Kien/zkteco-armatura-zkdigimax-khang-dinh-vi-the-tai-trien-lam-vietnam-ictcomm-2024" title="ZKTeco, Armatura &amp; ZKDigimax Khẳng Định Vị Thế Tại VIETNAM ICTCOMM 2024">
+                                        <img src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20240611/Bia%20%282%29.jpg" alt="trien-lam-vietnam-ictcomm-2024">
+                                    </a>
+                                </div>
+                                                                <div class="swiper-slide" data-swiper-slide-index="6" style="width: 216px;">
+                                    <a class="c-wrap" href="/Tin-Tuc/top-1-bang-xep-hang-nha-san-xuat-he-thong-kiem-soat-truy-cap-2023-tren-securitic" title="ZKTeco Đứng Đầu Bảng “Xếp Hạng Nhà Sản Xuất Hệ Thống Kiểm Soát Truy Cập 2023”  trên SecuriTIC ">
+                                        <img src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20240424/2024.04.jpg" alt="ZKTeco Đứng Đầu Bảng “Xếp Hạng Nhà Sản Xuất Hệ Thống Kiểm Soát Truy Cập 2023”  trên SecuriTIC ">
+                                    </a>
+                                </div>
+                                                                <div class="swiper-slide" data-swiper-slide-index="7" style="width: 216px;">
+                                    <a class="c-wrap" href="/Su-Kien/zkteco-training-series-2024-he-thong-cong-cua-phan-lan-quan-ly-bai-do-xe-thong-minh" title="[ZKTeco Training Series 2024 – Chủ Đề 2] HỆ THỐNG CỔNG CỬA PHÂN LÀN &amp; QUẢN LÝ BÃI ĐỖ XE THÔNG MINH">
+                                        <img src="" alt="[ZKTeco Training Series 2024 – Chủ Đề 2] HỆ THỐNG CỔNG CỬA PHÂN LÀN &amp; QUẢN LÝ BÃI ĐỖ XE THÔNG MINH">
+                                    </a>
+                                </div>
+                                                                <div class="swiper-slide" data-swiper-slide-index="8" style="width: 216px;">
+                                    <a class="c-wrap" href="/Tin-Tuc/thuat-toan-armatura-dat-vi-tri-thu-11-toan-cau-theo-xep-hang-vien-tieu-chuan-nist" title="Thuật Toán Armatura Đạt Vị Trí Thứ 11 Toàn Cầu Theo Xếp Hạng của Viện Tiêu chuẩn và Công nghệ Quốc gia Hoa Kỳ">
+                                        <img src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20231116/Amartura%20Algorithm%20ranks%2011th%20Globally%20by%20the%20NIST%20in%20USA-01.png" alt="Thuật Toán Armatura Đạt Vị Trí Thứ 11 Toàn Cầu Theo Xếp Hạng của Viện Tiêu chuẩn và Công nghệ Quốc gia Hoa Kỳ">
+                                    </a>
+                                </div>
+                                                                <div class="swiper-slide" data-swiper-slide-index="9" style="width: 216px;">
+                                    <a class="c-wrap" href="/Su-Kien/zkteco-danh-dau-vi-the-tai-cpse-2023-doi-moi-thanh-tuu-dang-ke" title="ZKTeco Đánh Dấu Vị Thế Đỉnh Cao Tại CPSE 2023 với Các Đổi Mới Toàn Cầu và Những Thành Tựu Đáng Kể">
+                                        <img src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20231108/trien-lam-an-ninh-trung-quoc-cpse-2023.png" alt="zkteco-tham-du-trien-lam-cpse-2023">
+                                    </a>
+                                </div>
+                                                                <div class="swiper-slide" data-swiper-slide-index="10" style="width: 216px;">
+                                    <a class="c-wrap" href="/Su-Kien/zkteco-to-chuc-thanh-cong-hoi-nghi-toan-cau-exploring-the-singularities-2023" title="ZKTeco tổ chức thành công Hội nghị toàn cầu &quot;Exploring the Singularities” 2023 (22-24/10/2023)">
+                                        <img src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20231107/395139816_355333010176250_6111360633714980749_n.jpg" alt="ZKTeco tổ chức thành công Hội nghị toàn cầu " exploring="" the="" singularities”="" 2023="" (22-24="" 10="" 2023)"="">
+                                    </a>
+                                </div>
+                                                                <div class="swiper-slide swiper-slide-duplicate-prev" data-swiper-slide-index="11" style="width: 216px;">
+                                    <a class="c-wrap" href="/Su-Kien/workshop-series-2023-zkteco-hands-on-with-the-latest-security-tech-series-4-vung-tau" title="[Workshop Series 2023] ZKTeco - Hands-On with the Latest Security Tech | Series 4 - Vung Tau City">
+                                        <img src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20230717/2023.07.17-Vietnam-Website-%20Image%20Workshop%20Series%202023-Vung%20Tau_Bia.png" alt="[Workshop Series 2023] ZKTeco - Hands-On with the Latest Security Tech | Series 4 - Vung Tau City">
+                                    </a>
+                                </div>
+                                                                
+                            <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="0" style="width: 216px;">
+                                    <a class="c-wrap" href="/Tin-Tuc/zkteco-lan-thu-5-lien-tiep-duoc-vinh-danh-top-50-thuong-hieu-an-ninh-hang-dau-the-gioi-tap-chi-a-s" title="ZKTeco Lần Thứ 5 Liên Tiếp Được Vinh Danh trong Top 50 Thương Hiệu An Ninh Hàng Đầu Thế Giới bởi Tạp Chí a&amp;s">
+                                        <img src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20241121/Asmag-top50-2024_Thumbnail-Web.jpg" alt="a-s-top-50">
+                                    </a>
+                                </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="1" style="width: 216px;">
+                                    <a class="c-wrap" href="/Su-Kien/zkteco-gop-mat-tai-trien-lam-vimf-bac-ninh-2024" title="ZKTeco Góp Mặt Tại Triển Lãm VIMF Bắc Ninh 2024 - Bước Đột Phá Với Giải Pháp An Ninh Thông Minh">
+                                        <img src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20241112/VIMF-Bac-Ninh-2024_Photo14.jpg" alt="vimf-bac-ninh-2024">
+                                    </a>
+                                </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="2" style="width: 216px;">
+                                    <a class="c-wrap" href="/Su-Kien/hoi-nghi-toan-cau-zkteco-2024-ve-nen-tiem-nang-vo-han-cho-tuong-lai" title="Hội Nghị Toàn Cầu ZKTeco 2024 Đã Diễn Ra Thành Công Tốt Đẹp Với Chủ Đề: &quot;Vẽ Nên Tiềm Năng Vô Hạn Cho Tương Lai&quot;">
+                                        <img src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20241108/hoi-nghi-toan-cau-zkteco-2024.jpg" alt="Hội Nghị Toàn Cầu ZKTeco 2024 Đã Diễn Ra Thành Công Tốt Đẹp Với Chủ Đề: " vẽ="" nên="" tiềm="" năng="" vô="" hạn="" cho="" tương="" lai""="">
+                                    </a>
+                                </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="3" style="width: 216px;">
+                                    <a class="c-wrap" href="/Tin-Tuc/zkteco-dap-ung-nhu-cau-bao-mat-ngay-cang-tang-thi-truong-trung-dong" title="ZKTeco Đáp Ứng Nhu Cầu Bảo Mật Ngày Càng Tăng Tại Thị Trường Trung Đông Với Phương Châm Lấy Khách Hàng Làm Trung Tâm">
+                                        <img src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20240821/zkteco-phat-trien-thi-truong-trung-dong-4.jpg" alt="zkteco-phat-trien-thi-truong-trung-dong">
+                                    </a>
+                                </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="4" style="width: 216px;">
+                                    <a class="c-wrap" href="/Tin-Tuc/zkdigimax-event-trusted-led-solution-provider-nha-cung-cap-giai-phap-led-uy-tin" title="ZKDigimax Event - Trusted LED Solution Provider">
+                                        <img src="https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20240723/zkdigimax-event-2.jpg" alt="ZKDigimax Event - Trusted LED Solution Provider">
+                                    </a>
+                                </div></div>
+                        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+                        <div class="c-banner3-bottom-wrap">
+                            <div class="c-btn-box">
+                                <div class="c-prev" tabindex="0" role="button" aria-label="Previous slide">
+                                    <div></div>
+                                </div>
+                                <div class="c-next" tabindex="0" role="button" aria-label="Next slide">
+                                    <div></div>
+                                </div>
+                            </div>
+                            <div class="swiper-container c-banner3-bottom swiper-container-fade swiper-container-initialized swiper-container-horizontal">
+                                <div class="swiper-wrapper">
+                                                                        <div class="swiper-slide swiper-slide-active" style="width: 339px; opacity: 1; transform: translate3d(0px, 0px, 0px);">
+                                        <a class="c-wrap" href="/Tin-Tuc/zkteco-lan-thu-5-lien-tiep-duoc-vinh-danh-top-50-thuong-hieu-an-ninh-hang-dau-the-gioi-tap-chi-a-s" title="ZKTeco Lần Thứ 5 Liên Tiếp Được Vinh Danh trong Top 50 Thương Hiệu An Ninh Hàng Đầu Thế Giới bởi Tạp Chí a&amp;s">
+                                            <p class="c-text">Tin Tức</p>
+                                            <h3 class="c-title">ZKTeco Lần Thứ 5 Liên Tiếp Được Vinh Danh trong Top 50 Thương Hiệu An Ninh Hàng Đầu Thế Giới bởi Tạp Chí a&amp;s</h3>
+                                            <p class="c-more">Đọc thêm +</p>
+                                        </a>
+                                    </div>
+                                                                        <div class="swiper-slide swiper-slide-next" style="width: 339px; opacity: 0; transform: translate3d(-339px, 0px, 0px);">
+                                        <a class="c-wrap" href="/Su-Kien/zkteco-gop-mat-tai-trien-lam-vimf-bac-ninh-2024" title="ZKTeco Góp Mặt Tại Triển Lãm VIMF Bắc Ninh 2024 - Bước Đột Phá Với Giải Pháp An Ninh Thông Minh">
+                                            <p class="c-text">Sự Kiện</p>
+                                            <h3 class="c-title">ZKTeco Góp Mặt Tại Triển Lãm VIMF Bắc Ninh 2024 - Bước Đột Phá Với Giải Pháp An Ninh Thông Minh</h3>
+                                            <p class="c-more">Đọc thêm +</p>
+                                        </a>
+                                    </div>
+                                                                        <div class="swiper-slide" style="width: 339px; opacity: 0; transform: translate3d(-678px, 0px, 0px);">
+                                        <a class="c-wrap" href="/Su-Kien/hoi-nghi-toan-cau-zkteco-2024-ve-nen-tiem-nang-vo-han-cho-tuong-lai" title="Hội Nghị Toàn Cầu ZKTeco 2024 Đã Diễn Ra Thành Công Tốt Đẹp Với Chủ Đề: &quot;Vẽ Nên Tiềm Năng Vô Hạn Cho Tương Lai&quot;">
+                                            <p class="c-text">Sự Kiện</p>
+                                            <h3 class="c-title">Hội Nghị Toàn Cầu ZKTeco 2024 Đã Diễn Ra Thành Công Tốt Đẹp Với Chủ Đề: "Vẽ Nên Tiềm Năng Vô Hạn Cho Tương Lai"</h3>
+                                            <p class="c-more">Đọc thêm +</p>
+                                        </a>
+                                    </div>
+                                                                        <div class="swiper-slide" style="width: 339px; opacity: 0; transform: translate3d(-1017px, 0px, 0px);">
+                                        <a class="c-wrap" href="/Tin-Tuc/zkteco-dap-ung-nhu-cau-bao-mat-ngay-cang-tang-thi-truong-trung-dong" title="ZKTeco Đáp Ứng Nhu Cầu Bảo Mật Ngày Càng Tăng Tại Thị Trường Trung Đông Với Phương Châm Lấy Khách Hàng Làm Trung Tâm">
+                                            <p class="c-text">Tin Tức</p>
+                                            <h3 class="c-title">ZKTeco Đáp Ứng Nhu Cầu Bảo Mật Ngày Càng Tăng Tại Thị Trường Trung Đông Với Phương Châm Lấy Khách Hàng Làm Trung Tâm</h3>
+                                            <p class="c-more">Đọc thêm +</p>
+                                        </a>
+                                    </div>
+                                                                        <div class="swiper-slide" style="width: 339px; opacity: 0; transform: translate3d(-1356px, 0px, 0px);">
+                                        <a class="c-wrap" href="/Tin-Tuc/zkdigimax-event-trusted-led-solution-provider-nha-cung-cap-giai-phap-led-uy-tin" title="ZKDigimax Event - Trusted LED Solution Provider">
+                                            <p class="c-text">Tin Tức</p>
+                                            <h3 class="c-title">ZKDigimax Event - Trusted LED Solution Provider</h3>
+                                            <p class="c-more">Đọc thêm +</p>
+                                        </a>
+                                    </div>
+                                                                        <div class="swiper-slide" style="width: 339px; opacity: 0; transform: translate3d(-1695px, 0px, 0px);">
+                                        <a class="c-wrap" href="/Su-Kien/zkteco-armatura-zkdigimax-khang-dinh-vi-the-tai-trien-lam-vietnam-ictcomm-2024" title="ZKTeco, Armatura &amp; ZKDigimax Khẳng Định Vị Thế Tại VIETNAM ICTCOMM 2024">
+                                            <p class="c-text">Sự Kiện</p>
+                                            <h3 class="c-title">ZKTeco, Armatura &amp; ZKDigimax Khẳng Định Vị Thế Tại VIETNAM ICTCOMM 2024</h3>
+                                            <p class="c-more">Đọc thêm +</p>
+                                        </a>
+                                    </div>
+                                                                        <div class="swiper-slide" style="width: 339px; opacity: 0; transform: translate3d(-2034px, 0px, 0px);">
+                                        <a class="c-wrap" href="/Tin-Tuc/top-1-bang-xep-hang-nha-san-xuat-he-thong-kiem-soat-truy-cap-2023-tren-securitic" title="ZKTeco Đứng Đầu Bảng “Xếp Hạng Nhà Sản Xuất Hệ Thống Kiểm Soát Truy Cập 2023”  trên SecuriTIC ">
+                                            <p class="c-text">Tin Tức</p>
+                                            <h3 class="c-title">ZKTeco Đứng Đầu Bảng “Xếp Hạng Nhà Sản Xuất Hệ Thống Kiểm Soát Truy Cập 2023”  trên SecuriTIC </h3>
+                                            <p class="c-more">Đọc thêm +</p>
+                                        </a>
+                                    </div>
+                                                                        <div class="swiper-slide" style="width: 339px; opacity: 0; transform: translate3d(-2373px, 0px, 0px);">
+                                        <a class="c-wrap" href="/Su-Kien/zkteco-training-series-2024-he-thong-cong-cua-phan-lan-quan-ly-bai-do-xe-thong-minh" title="[ZKTeco Training Series 2024 – Chủ Đề 2] HỆ THỐNG CỔNG CỬA PHÂN LÀN &amp; QUẢN LÝ BÃI ĐỖ XE THÔNG MINH">
+                                            <p class="c-text">Sự Kiện</p>
+                                            <h3 class="c-title">[ZKTeco Training Series 2024 – Chủ Đề 2] HỆ THỐNG CỔNG CỬA PHÂN LÀN &amp; QUẢN LÝ BÃI ĐỖ XE THÔNG MINH</h3>
+                                            <p class="c-more">Đọc thêm +</p>
+                                        </a>
+                                    </div>
+                                                                        <div class="swiper-slide" style="width: 339px; opacity: 0; transform: translate3d(-2712px, 0px, 0px);">
+                                        <a class="c-wrap" href="/Tin-Tuc/thuat-toan-armatura-dat-vi-tri-thu-11-toan-cau-theo-xep-hang-vien-tieu-chuan-nist" title="Thuật Toán Armatura Đạt Vị Trí Thứ 11 Toàn Cầu Theo Xếp Hạng của Viện Tiêu chuẩn và Công nghệ Quốc gia Hoa Kỳ">
+                                            <p class="c-text">Tin Tức</p>
+                                            <h3 class="c-title">Thuật Toán Armatura Đạt Vị Trí Thứ 11 Toàn Cầu Theo Xếp Hạng của Viện Tiêu chuẩn và Công nghệ Quốc gia Hoa Kỳ</h3>
+                                            <p class="c-more">Đọc thêm +</p>
+                                        </a>
+                                    </div>
+                                                                        <div class="swiper-slide" style="width: 339px; opacity: 0; transform: translate3d(-3051px, 0px, 0px);">
+                                        <a class="c-wrap" href="/Su-Kien/zkteco-danh-dau-vi-the-tai-cpse-2023-doi-moi-thanh-tuu-dang-ke" title="ZKTeco Đánh Dấu Vị Thế Đỉnh Cao Tại CPSE 2023 với Các Đổi Mới Toàn Cầu và Những Thành Tựu Đáng Kể">
+                                            <p class="c-text">Sự Kiện</p>
+                                            <h3 class="c-title">ZKTeco Đánh Dấu Vị Thế Đỉnh Cao Tại CPSE 2023 với Các Đổi Mới Toàn Cầu và Những Thành Tựu Đáng Kể</h3>
+                                            <p class="c-more">Đọc thêm +</p>
+                                        </a>
+                                    </div>
+                                                                        <div class="swiper-slide" style="width: 339px; opacity: 0; transform: translate3d(-3390px, 0px, 0px);">
+                                        <a class="c-wrap" href="/Su-Kien/zkteco-to-chuc-thanh-cong-hoi-nghi-toan-cau-exploring-the-singularities-2023" title="ZKTeco tổ chức thành công Hội nghị toàn cầu &quot;Exploring the Singularities” 2023 (22-24/10/2023)">
+                                            <p class="c-text">Sự Kiện</p>
+                                            <h3 class="c-title">ZKTeco tổ chức thành công Hội nghị toàn cầu "Exploring the Singularities” 2023 (22-24/10/2023)</h3>
+                                            <p class="c-more">Đọc thêm +</p>
+                                        </a>
+                                    </div>
+                                                                        <div class="swiper-slide" style="width: 339px; opacity: 0; transform: translate3d(-3729px, 0px, 0px);">
+                                        <a class="c-wrap" href="/Su-Kien/workshop-series-2023-zkteco-hands-on-with-the-latest-security-tech-series-4-vung-tau" title="[Workshop Series 2023] ZKTeco - Hands-On with the Latest Security Tech | Series 4 - Vung Tau City">
+                                            <p class="c-text">Sự Kiện</p>
+                                            <h3 class="c-title">[Workshop Series 2023] ZKTeco - Hands-On with the Latest Security Tech | Series 4 - Vung Tau City</h3>
+                                            <p class="c-more">Đọc thêm +</p>
+                                        </a>
+                                    </div>
+                                                                        
+                                </div>
+                            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+                            <a class="c-common-btn2" href="/trung_tam_tin_tuc"><span>Thêm tin tức +</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide c-home-slide">
+            <!-- 底部 -->
+<div id="c-footer">
+    <!-- 底部上 -->
+    <div class="c-top-box">
+        <div class="c-container">
+                        <div class="c-list-box">
+                <div class="c-title-box">
+                    <a class="c-title" href="/Ve-Chung-Toi" title="Về Chúng Tôi">Về Chúng Tôi</a><i class="fa fa-angle-down" aria-hidden="true"></i>
+                </div>
+                <ul class="c-list">
+                                        <li>
+                        <a href="/investor_relations" title="Thông Tin Đầu Tư">Thông Tin Đầu Tư</a>
+                    </li>
+                                        <li>
+                        <a href="/CorporateValues" title="Corporate Values">Corporate Values</a>
+                    </li>
+                                        <li>
+                        <a href="https://www.zkteco.vn/Ho-So-Cong-Ty" title="Hồ Sơ Công Ty">Hồ Sơ Công Ty</a>
+                    </li>
+                                        <li>
+                        <a href="/Van-Hoa-ZKTeco" title="Văn Hóa ZKTeco">Văn Hóa ZKTeco</a>
+                    </li>
+                                        
+                </ul>
+            </div>
+                        <div class="c-list-box">
+                <div class="c-title-box">
+                    <a class="c-title" href="/trung_tam_tin_tuc" title="Trung Tâm Tin Tức">Trung Tâm Tin Tức</a><i class="fa fa-angle-down" aria-hidden="true"></i>
+                </div>
+                <ul class="c-list">
+                                        <li>
+                        <a href="/Tin-Tuc" title="Tin Tức">Tin Tức</a>
+                    </li>
+                                        <li>
+                        <a href="/Thong-Bao" title="Thông Báo">Thông Báo</a>
+                    </li>
+                                        <li>
+                        <a href="/Su-Kien" title="Sự Kiện">Sự Kiện</a>
+                    </li>
+                                        <li>
+                        <a href="/Ban-Tin" title="Bản Tin">Bản Tin</a>
+                    </li>
+                                        <li>
+                        <a href="/San-Pham-Moi" title="Sản Phẩm Mới">Sản Phẩm Mới</a>
+                    </li>
+                                        
+                </ul>
+            </div>
+                        <div class="c-list-box">
+                <div class="c-title-box">
+                    <a class="c-title" href="/Lien-He4Qg" title="Liên Hệ">Liên Hệ</a><i class="fa fa-angle-down" aria-hidden="true"></i>
+                </div>
+                <ul class="c-list">
+                                        <li>
+                        <a href="/member/centre/project_inquiry" title="Hỗ Trợ Dự Án">Hỗ Trợ Dự Án</a>
+                    </li>
+                                        <li>
+                        <a href="/support" title="Hỗ Trợ Mua Hàng">Hỗ Trợ Mua Hàng</a>
+                    </li>
+                                        
+                </ul>
+            </div>
+                        <div class="c-list-box">
+                <div class="c-title-box">
+                    <a class="c-title" href="/Ho-Tro" title="Hỗ Trợ">Hỗ Trợ</a><i class="fa fa-angle-down" aria-hidden="true"></i>
+                </div>
+                <ul class="c-list">
+                                        <li>
+                        <a href="/training" title="Trung Tâm Đào Tạo">Trung Tâm Đào Tạo</a>
+                    </li>
+                                        <li>
+                        <a href="/Trung-Tam-Tai-Lieu" title="Trung Tâm Tài Liệu">Trung Tâm Tài Liệu</a>
+                    </li>
+                                        
+                </ul>
+            </div>
+                        
+            <div class="c-list-box">
+                <div class="c-title-box">
+                    <a class="c-title" href="javascript:;">Website Liên Quan</a><i class="fa fa-angle-down" aria-hidden="true"></i>
+                </div>
+                <ul class="c-list">
+                                        <li><a href="https://zktecopos.com/" title="ZKTeco POS Website" target="_blank">ZKTeco POS Website</a></li>
+                                        
+                </ul>
+            </div>
+            <div class="c-wrap">
+                <div class="c-title-box">
+                    <p class="c-title">Theo Dõi Chúng Tôi</p>
+                </div>
+                <div class="c-ico">
+                                        <a href="https://www.linkedin.com/company/zktecoltd" target="_blank" rel="nofollow"><img src="/public/static/modules/cms/images/db-ico1.png" alt=""></a>
+                                        <a href="https://www.facebook.com/zktecoelectronic " target="_blank" rel="nofollow"><img src="/public/static/modules/cms/images/db-ico2.png" alt=""></a>
+                                        <a href="https://twitter.com/ZKTeco" target="_blank" rel="nofollow"><img src="/public/static/modules/cms/images/db-ico3.png" alt=""></a>
+                                        <a href="https://www.youtube.com/ZKTeco " target="_blank" rel="nofollow"><img src="/public/static/modules/cms/images/db-ico5.png" alt=""></a>
+                                    </div>
+                <a class="c-common-btn1 zhiCustomBtn" href="javascript:void(0)"><span>Tư Vấn</span></a>
+            </div>
+        </div>
+    </div>
+    <!-- 底部下 -->
+    <div class="c-bottom-box">
+        <div class="c-container">
+            <div class="c-line"></div>
+            <div class="c-wrap">
+                <div class="c-copyright">
+                    <p>Copyright © 2024 ZKTECO CO., LTD. All rights reserved.</p>
+                </div>
+                <div class="c-abox">
+                                        <a href="/Thong-Bao-Phap-Ly" title="Thông Báo Pháp Lý">Thông Báo Pháp Lý</a>
+                                        <a href="/Chinh-Sach-Bao-Mat" title="Chính Sách Bảo Mật">Chính Sách Bảo Mật</a>
+                                        <a href="/terms_of_use" title="Điều Khoản Sử Dụng">Điều Khoản Sử Dụng</a>
+                                        <a href="/sitemap" title="Sơ Đồ Trang Web">Sơ Đồ Trang Web</a>
+                                        <a href="/cookie_policy" title="Cookie Policy">Cookie Policy</a>
+                                        
+<!--                    <a href="">Legal Statement</a>-->
+<!--                    <a href="">Privacy Policy</a>-->
+<!--                    <a href="">Terms of Use</a>-->
+<!--                    <a href="">Sitemap</a>-->
+<!--                    <a href="">Cookie Policy</a>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        </div>
+    </div>
+<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+
+
+
+
+
+    <div id="c-right-fixed">
+        <div class="c-item">
+            <img src="/public/static/modules/cms/images/right-ico1.png" alt="">
+            <ul class="c-list">
+                                <li>
+                    <div class="c-lt">
+                        <p class="c-text1">Sale support</p>
+                        <p class="c-text2">E-mail : sales@zkteco.com</p>
+                    </div>
+                    <div class="c-gt">
+                        <a href="javascript:void(0);" class="zhiCustomBtn"></a>
+<!--                        <a href="/salesmap" target="_blank"></a>-->
+                    </div>
+                </li>
+                                <li>
+                    <div class="c-lt">
+                        <p class="c-text1">Technical support</p>
+                        <p class="c-text2">E-mail : service@zkteco.com</p>
+                    </div>
+                    <div class="c-gt">
+                        <a href="javascript:void(0);" class="zhiCustomBtn"></a>
+<!--                        <a href="/salesmap" target="_blank"></a>-->
+                    </div>
+                </li>
+                            </ul>
+        </div>
+        <div class="c-item">
+            <img src="/public/static/modules/cms/images/right-ico2.png" alt="">
+        </div>
+    </div>
+    <div id="c-home-tips" style="display: block;">
+
+        <div class="c-container">
+    
+            <div class="c-wrap">
+    
+                <p>Trang web này sử dụng cookie để lưu trữ thông tin trên thiết bị của bạn, Cookie có thể nâng cao trải nghiệm người dùng của bạn và giúp trang web của chúng tôi hoạt động bình thường. Để biết thêm thông tin, vui lòng đọc
+                <a target="_blank" href="/cookie_policy">Cookie Policy</a> và <a target="_blank" href="/Chinh-Sach-Bao-Mat">Chính Sách Bảo Mật</a>.</p>
+
+                <div class="c-common-btn1"><span>Chấp nhận</span></div>
+
+                <div class="c-close"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+<script src="/public/static/modules/cms/js/jquery-2.1.1.min.js" type="text/javascript"></script>
+
+<script src="/public/static/modules/cms/layui-v2.6.8/layui/layui.js" type="text/javascript"></script>
+
+<script src="/public/static/modules/cms/js/jquery.matchHeight.js" type="text/javascript"></script>
+
+<script src="/public/static/modules/cms/js/swiper.animate.min.js" type="text/javascript"></script>
+
+<script src="/public/static/modules/cms/js/swiper.min.js" type="text/javascript"></script>
+
+<script src="/public/static/modules/cms/js/wow.min.js" type="text/javascript"></script>
+<script src="/public/static/modules/cms/js/jquery.mCustomScrollbar.concat.min.js" type="text/javascript"></script>
+
+<script src="/public/static/modules/cms/js/clipboard.min.js" type="text/javascript"></script>
+
+<script src="/public/static/modules/cms/js/common.js" type="text/javascript"></script>
+
+<script src="/public/static/modules/cms/js/x-main.js" type="text/javascript"></script>
+
+<script src="/public/static/common/js/vietrue.js" type="text/javascript"></script>
+<script>
+        setTimeout(function(){
+        $(".a2a_menu a.a2a_more").attr({"title":"Show all / expand"});
+        $(".a2a_menu a.a2a_more .a2a_localize").text("More...");
+    },100);
+</script>
+<!--<script src="https://www.sobot.com/chat/frame/js/entrance.js?sysNum=98cbe953426c414aa5f8fab0a42e5f1d" class="zhiCustomBtn" id="zhichiScript"></script>-->
+<script>
+  var chatbox = document.getElementById('fb-customer-chat');
+  chatbox.setAttribute("page_id", "1141713879219773");
+  chatbox.setAttribute("attribution", "biz_inbox");
+
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml            : true,
+      version          : 'v12.0'
+    });
+  };
+
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<script>
+    $('.logout').click(function () {
+        AjaxPost("/member/index/logout", {}, function (result) {
+            if (result.code === 1) {
+                window.location.href = result.url;
+            }
+        });
+        return false;
+    });
+
+</script>
+
+
+
+
+</body></html>

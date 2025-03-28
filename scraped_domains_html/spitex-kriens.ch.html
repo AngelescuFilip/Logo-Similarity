@@ -1,0 +1,946 @@
+<!DOCTYPE html><html lang="de"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" sizes="196x196" href="assets/img/build/favicon-196.png">
+    <link rel="apple-touch-icon" href="assets/img/build/apple-icon-180.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-startup-image" href="assets/img/build/apple-splash-2048-2732.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="assets/img/build/apple-splash-2732-2048.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="assets/img/build/apple-splash-1668-2388.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="assets/img/build/apple-splash-2388-1668.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="assets/img/build/apple-splash-1536-2048.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="assets/img/build/apple-splash-2048-1536.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="assets/img/build/apple-splash-1668-2224.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="assets/img/build/apple-splash-2224-1668.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="assets/img/build/apple-splash-1620-2160.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="assets/img/build/apple-splash-2160-1620.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="assets/img/build/apple-splash-1290-2796.jpg" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="assets/img/build/apple-splash-2796-1290.jpg" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="assets/img/build/apple-splash-1179-2556.jpg" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="assets/img/build/apple-splash-2556-1179.jpg" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="assets/img/build/apple-splash-1284-2778.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="assets/img/build/apple-splash-2778-1284.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="assets/img/build/apple-splash-1170-2532.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="assets/img/build/apple-splash-2532-1170.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="assets/img/build/apple-splash-1125-2436.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="assets/img/build/apple-splash-2436-1125.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="assets/img/build/apple-splash-1242-2688.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="assets/img/build/apple-splash-2688-1242.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="assets/img/build/apple-splash-828-1792.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="assets/img/build/apple-splash-1792-828.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="assets/img/build/apple-splash-1242-2208.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="assets/img/build/apple-splash-2208-1242.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="assets/img/build/apple-splash-750-1334.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="assets/img/build/apple-splash-1334-750.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="assets/img/build/apple-splash-640-1136.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="/assets/img/build/apple-splash-1136-640.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <title>
+    Spitex Kriens</title>
+<meta name="description" content="Wir sind die Spitex Kriens">
+<link rel="shortcut icon" href="/assets/img/favicon.png" type="image/png">
+<meta property="og:site_name" content="Webseite Spitext Kriens">
+<meta property="og:url" content="https://www.spitex-kriens.ch">
+<meta property="og:type=" content="website">
+<meta property="og:title" content="Spitex Kriens">
+<meta property="og:description" content="Wir sind die Spitex Kriens">
+<meta property="og:image:type" content="image/png">
+
+    <meta property="og:image" content="https://www.spitex-kriens.ch/assets/img/opengraph.png">
+    <link href="https://www.spitex-kriens.ch/assets/css/website.css" rel="stylesheet">    <link href="https://www.spitex-kriens.ch/mainpage/assets/css/mainpage.css" rel="stylesheet">    <link href="https://www.spitex-kriens.ch/mainpage/assets/css/templates/home.css" rel="stylesheet">
+    </head>
+
+<body class="home">
+    <div class="site-main-menu" data-main-menu="" role="menu" aria-expanded="false">
+    <div class="inner-main-menu" data-size="90rem">
+
+        <div class="site-menu-header">
+            <a href="https://spitex-kriens-hqualisuite.new-win.cloud" target="_blank" rel="nofollow noreferrer" class="btn login">
+                <svg class="lock-icon">
+                    <use href="#lock" xlink:href="#lock"></use>
+                </svg>
+                <span class="text underlined">Login</span>
+            </a>
+
+            <button class="btn" data-close-menu="">
+                <svg class="close">
+                    <use href="#close" xlink:href="#close"></use>
+                </svg>
+            </button>
+
+            <a class="email" href="mailto:info@spitex-kriens.ch">
+                <div class="icon-bubble" role="img" title="icon envelope">
+    <svg>
+        <use href="#envelope" xlink:href="#envelope"></use>
+    </svg>
+</div>            </a>
+
+            <form action="https://www.spitex-kriens.ch/suche" class="search-bar" role="searchbox">
+                <input data-search-input="" type="search" aria-label="Search" class="search-bar_input" name="q" id="search" role="search">
+                <button class="search-bar_trigger" type="submit">
+                    <svg class="search-icon">
+                        <use href="#searchglas" xlink:href="#searchglas"></use>
+                    </svg>
+                </button>
+            </form>
+        </div>
+
+        <nav class="site-menu" role="navigation">
+                                                <div class="accordion" data-position="0" data-accordion="">
+    <button class="main-menu-item" data-accordion-toggle="" role="button" aria-expanded="false">
+                            Angebot                    <img src="/assets/icons/listarrow.svg" alt="Link Arrow">
+                        </button>
+    <div class="accordion-content" aria-hidden="true" role="region">
+        <div class="accordion-inner">
+                                                        <ul class="site-menu_submenu" role="menu">
+                                                                                                <li>
+                                        <a href="https://www.spitex-kriens.ch/angebot/dienstleistungen-ubersicht" role="menuitem">
+                                            Angebot Übersicht                                        </a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="https://www.spitex-kriens.ch/angebot/pflege" role="menuitem">
+                                            Pflege                                        </a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="https://www.spitex-kriens.ch/angebot/psychiatrische-pflege" role="menuitem">
+                                            Psychiatrische Pflege                                        </a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="https://www.spitex-kriens.ch/angebot/betreuung-und-hauswirtschaftliche-unterstuetzung" role="menuitem">
+                                            Betreuung und hauswirtschaftliche Unterstützung                                        </a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="https://www.spitex-kriens.ch/angebot/wohnen-mit-dienstleistungen" role="menuitem">
+                                            Wohnen mit Dienstleistungen                                        </a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="https://www.spitex-kriens.ch/angebot/palliative-care" role="menuitem">
+                                            Palliative Care                                        </a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="https://www.spitex-kriens.ch/angebot/wundambulatorium" role="menuitem">
+                                            Wundambulatorium                                        </a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="https://www.spitex-kriens.ch/angebot/fusspflege" role="menuitem">
+                                            Fusspflege                                        </a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="https://www.spitex-kriens.ch/angebot/securo" role="menuitem">
+                                            SECURO                                        </a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="https://www.muettervaeterberatung-kriens.ch/" target="_blank" role="menuitem">
+                                            Mütter- und Väterberatung                                        </a>
+                                    </li>
+                                                                                    </ul>
+                                                </div>
+    </div>
+</div>                                                                <div class="accordion" data-position="1" data-accordion="">
+    <button class="main-menu-item" data-accordion-toggle="" role="button" aria-expanded="false">
+                            Über uns                    <img src="/assets/icons/listarrow.svg" alt="Link Arrow">
+                        </button>
+    <div class="accordion-content" aria-hidden="true" role="region">
+        <div class="accordion-inner">
+                                                        <ul class="site-menu_submenu" role="menu">
+                                                                                                <li>
+                                        <a href="https://www.spitex-kriens.ch/ueber-uns/uber-uns" role="menuitem">
+                                            Über uns                                        </a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="https://www.spitex-kriens.ch/ueber-uns/organisation-verein" role="menuitem">
+                                            Organisation/Verein                                        </a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="https://www.spitex-kriens.ch/ueber-uns/entwicklung" role="menuitem">
+                                            Entwicklung                                        </a>
+                                    </li>
+                                                                                    </ul>
+                                                </div>
+    </div>
+</div>                                                                <div class="accordion" data-position="2" data-accordion="">
+    <button class="main-menu-item" data-accordion-toggle="" role="button" aria-expanded="false">
+                            Team                    <img src="/assets/icons/listarrow.svg" alt="Link Arrow">
+                        </button>
+    <div class="accordion-content" aria-hidden="true" role="region">
+        <div class="accordion-inner">
+                                                                                    <a href="https://www.spitex-kriens.ch/team" role="link" class="team-page_link">
+                                <img alt="" class="team-page_img" src="https://www.spitex-kriens.ch/mainpage/media/site/e7a6700f9a-1698913701/2023spitex_kriens414.jpg" width="2048" height="1365">                            </a>
+                                                                        </div>
+    </div>
+</div>                                                                <div class="accordion" data-position="3" data-accordion="">
+    <button class="main-menu-item custom-title" data-accordion-toggle="" role="button" aria-expanded="false">
+                            Arbeiten bei der Spitex                    <img src="/assets/icons/listarrow.svg" alt="Link Arrow">
+                        </button>
+    <div class="accordion-content" aria-hidden="true" role="region">
+        <div class="accordion-inner">
+                                                        <ul class="site-menu_submenu" role="menu">
+                                                                                                <li>
+                                        <a href="https://www.spitex-kriens.ch/arbeiten-bei-der-spitex/arbeiten-bei-der-spitex" role="menuitem">
+                                            Arbeiten                                        </a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="https://www.spitex-kriens.ch/arbeiten-bei-der-spitex/jobs" role="menuitem">
+                                            Jobs                                        </a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="https://www.spitex-kriens.ch/arbeiten-bei-der-spitex/benefits" role="menuitem">
+                                            Benefits                                        </a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="https://www.spitex-kriens.ch/arbeiten-bei-der-spitex/ausbildung" role="menuitem">
+                                            Ausbildung                                        </a>
+                                    </li>
+                                                                                                                                <li>
+                                        <a href="https://www.spitex-kriens.ch/arbeiten-bei-der-spitex/wiedereinstieg" role="menuitem">
+                                            Wiedereinstieg                                        </a>
+                                    </li>
+                                                                                    </ul>
+                                                </div>
+    </div>
+</div>                                        <div class="side-navigation" role="navigation" data-position="4">
+                                    <a href="https://www.spitex-kriens.ch/journal" class="side-navigation_item" role="link">
+                        Story’s &amp; Berichte                    </a>
+                                    <a href="https://www.spitex-kriens.ch/anmeldung" class="side-navigation_item" role="link">
+                        Anmeldung                    </a>
+                                    <a href="https://www.spitex-kriens.ch/kontakt" class="side-navigation_item" role="link">
+                        Kontakt                    </a>
+                                    <a href="https://www.spitex-kriens.ch/tarife" class="side-navigation_item" role="link">
+                        Tarife                    </a>
+                                    <a href="https://www.spitex-kriens.ch/downloads" class="side-navigation_item" role="link">
+                        Downloads                    </a>
+                                    <a href="https://www.spitex-kriens.ch/feedback" class="side-navigation_item" role="link">
+                        Ihr Feedback                    </a>
+                                <div class="location-wrapper" data-size="59rem">
+            <address>
+            <strong>Hauptstandort</strong><br>
+            Schachenstrasse 9<br>
+            6010 Kriens        </address>
+            <address>
+            <strong>Zweigniederlassung</strong><br>
+            Schweighofplatz 1<br>
+            6010 Kriens        </address>
+    </div>            </div>
+        </nav>
+    </div>
+</div>
+    <header class="site-header">
+    <div class="logo-wrapper">
+        <a href="https://www.spitex-kriens.ch" hreflang="de" role="link">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="330.319" height="94.562" viewBox="0 0 330.319 94.562">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rechteck_3" data-name="Rechteck 3" width="330.319" height="94.562" fill="none"></rect>
+    </clipPath>
+  </defs>
+  <g id="Gruppe_2" data-name="Gruppe 2" transform="translate(0 0)">
+    <g id="Gruppe_1" data-name="Gruppe 1" transform="translate(0 0)" clip-path="url(#clip-path)">
+      <path id="Pfad_1" data-name="Pfad 1" d="M63.185,45.093c3.339,18.249-8.111,38.123-22.67,49.4,10.823-4.054,22.523-10.9,33.593-20.188,28.07-23.553,41.448-53.82,29.882-67.6a17.645,17.645,0,0,0-7.577-5.165C79.991,7.856,59.928,27.3,63.185,45.093" transform="translate(1.819 0.069)" fill="#009a62"></path>
+      <path id="Pfad_2" data-name="Pfad 2" d="M48.654,46.7C48.825,30.9,67.268,9.849,91.469.137c-15.22-1.36-37.36,7.481-57.427,24.32C5.972,48.01-7.406,78.278,4.16,92.062c.083.1.177.184.261.28C19.314,93.524,48.368,73.375,48.654,46.7" transform="translate(0 0)" fill="#1e5faa"></path>
+      <path id="Pfad_3" data-name="Pfad 3" d="M135.84,61.218c-4.513,0-7.94-.96-10.865-3.928l3.761-3.761c1.881,1.88,4.429,2.507,7.188,2.507,3.426,0,5.265-1.295,5.265-3.678a3.314,3.314,0,0,0-.919-2.507,4.436,4.436,0,0,0-2.632-1.045l-3.594-.5a10.107,10.107,0,0,1-5.767-2.466,7.862,7.862,0,0,1-2.13-5.85c0-5.308,3.928-9.027,10.363-9.027,4.095,0,7.062,1,9.611,3.469l-3.677,3.635a8.279,8.279,0,0,0-6.1-2.047c-3.092,0-4.6,1.713-4.6,3.761a2.867,2.867,0,0,0,.877,2.131,5.118,5.118,0,0,0,2.759,1.171l3.51.5a9.834,9.834,0,0,1,5.683,2.3,8.332,8.332,0,0,1,2.3,6.31c0,5.767-4.805,9.026-11.032,9.026" transform="translate(5.61 1.39)"></path>
+      <path id="Pfad_4" data-name="Pfad 4" d="M174.708,49.758h-5.726v11.2h-5.809V31.2h11.535c6.142,0,9.819,4.22,9.819,9.278s-3.677,9.277-9.819,9.277m-.293-13.373h-5.433v8.149h5.433c2.632,0,4.3-1.63,4.3-4.053a3.962,3.962,0,0,0-4.3-4.1" transform="translate(7.325 1.401)"></path>
+      <rect id="Rechteck_1" data-name="Rechteck 1" width="5.809" height="29.754" transform="translate(209.284 32.605)"></rect>
+      <path id="Pfad_5" data-name="Pfad 5" d="M235.953,36.385V60.958h-5.81V36.385h-7.772V31.2h21.353v5.182Z" transform="translate(9.983 1.401)"></path>
+      <path id="Pfad_6" data-name="Pfad 6" d="M259.332,60.957V31.2h19.6v5.182H265.14v6.979h11.742v5.183H265.14v7.23H278.93v5.182Z" transform="translate(11.642 1.401)"></path>
+      <path id="Pfad_7" data-name="Pfad 7" d="M310.548,60.957l-5.768-10.364-5.724,10.364h-6.644L301.646,45.7,293,31.2h6.6l5.182,9.612L310,31.2h6.561l-8.65,14.5,9.277,15.253Z" transform="translate(13.127 1.401)"></path>
+      <rect id="Rechteck_2" data-name="Rechteck 2" width="198.447" height="0.836" transform="translate(131.817 24.261)"></rect>
+      <path id="Pfad_8" data-name="Pfad 8" d="M129.908,16.882a3.539,3.539,0,0,1-3.733-3.628V6.074h1.144v7.089a2.6,2.6,0,1,0,5.193,0V6.074h1.143v7.179a3.55,3.55,0,0,1-3.747,3.628M127.772,3.576h1.084v1.34h-1.084Zm3.19,0h1.084v1.34h-1.084Z" transform="translate(5.664 0.161)"></path>
+      <path id="Pfad_9" data-name="Pfad 9" d="M141.309,16.126a2.573,2.573,0,0,1-1.806.648,2.372,2.372,0,0,1-2.092-.978v.887h-1.084V5.968h1.084v4.169a2.38,2.38,0,0,1,2.092-.949,2.573,2.573,0,0,1,1.806.648,4.416,4.416,0,0,1,.9,3.145,4.416,4.416,0,0,1-.9,3.145m-2.031-5.975c-1.61,0-1.866,1.384-1.866,2.83s.256,2.83,1.866,2.83,1.85-1.384,1.85-2.83-.24-2.83-1.85-2.83" transform="translate(6.12 0.268)"></path>
+      <path id="Pfad_10" data-name="Pfad 10" d="M145.231,13.129c0,1.626.767,2.558,2.182,2.558a2.43,2.43,0,0,0,1.941-.842l.738.647a3.394,3.394,0,0,1-2.709,1.144c-1.957,0-3.235-1.174-3.235-3.793,0-2.393,1.158-3.794,3.04-3.794,1.911,0,3.041,1.386,3.041,3.583v.5Zm3.686-2.048a1.9,1.9,0,0,0-3.462,0,3.115,3.115,0,0,0-.225,1.235h3.913a3.132,3.132,0,0,0-.227-1.235" transform="translate(6.471 0.406)"></path>
+      <path id="Pfad_11" data-name="Pfad 11" d="M156.667,10.555a1.552,1.552,0,0,0-1.28-.542A1.809,1.809,0,0,0,153.611,12v4.545h-1.084V9.14h1.084v.9a2.488,2.488,0,0,1,2.077-.993,2.282,2.282,0,0,1,1.776.692Z" transform="translate(6.847 0.406)"></path>
+      <path id="Pfad_12" data-name="Pfad 12" d="M163.031,16.546v-.707a2.6,2.6,0,0,1-2.138.8,2.634,2.634,0,0,1-2.092-.678,2.128,2.128,0,0,1-.557-1.5c0-1.3.9-2.139,2.559-2.139h2.228v-.706c0-1.084-.542-1.626-1.9-1.626a1.945,1.945,0,0,0-1.867.843l-.738-.678a2.874,2.874,0,0,1,2.62-1.1c1.987,0,2.965.859,2.965,2.468v5.029Zm0-3.418h-2.077c-1.114,0-1.655.452-1.655,1.31s.527,1.264,1.7,1.264a2.163,2.163,0,0,0,1.656-.5,1.709,1.709,0,0,0,.376-1.28Z" transform="translate(7.104 0.406)"></path>
+      <path id="Pfad_13" data-name="Pfad 13" d="M168.592,16.683a1.765,1.765,0,0,1-1.882-1.972V5.967h1.084v8.7c0,.722.241,1.084.994,1.084h.587v.933Z" transform="translate(7.484 0.268)"></path>
+      <path id="Pfad_14" data-name="Pfad 14" d="M173.229,16.683a1.765,1.765,0,0,1-1.882-1.972V5.967h1.084v8.7c0,.722.241,1.084.994,1.084h.587v.933Z" transform="translate(7.692 0.268)"></path>
+      <path id="Pfad_15" data-name="Pfad 15" d="M181.313,10.153v6.532H180.23V10.153h-.948V9.325h.948v-1.4a1.8,1.8,0,0,1,1.882-1.986h.783v.933h-.587c-.693,0-.994.406-.994,1.084v1.37h1.581v.828Z" transform="translate(8.048 0.267)"></path>
+      <path id="Pfad_16" data-name="Pfad 16" d="M189.524,16.67v-.828a2.715,2.715,0,0,1-2.092.918,2.629,2.629,0,0,1-1.911-.693,2.76,2.76,0,0,1-.753-2.077V9.265h1.084v4.56c0,1.31.693,1.973,1.807,1.973a1.752,1.752,0,0,0,1.85-1.973V9.265h1.084V16.67Zm-4-10.4H186.6V7.61h-1.084Zm3.19,0h1.084V7.61h-1.084Z" transform="translate(8.295 0.282)"></path>
+      <path id="Pfad_17" data-name="Pfad 17" d="M197.432,10.555a1.549,1.549,0,0,0-1.28-.542A1.808,1.808,0,0,0,194.377,12v4.545h-1.084V9.14h1.084v.9a2.486,2.486,0,0,1,2.076-.993,2.282,2.282,0,0,1,1.777.692Z" transform="translate(8.677 0.406)"></path>
+      <path id="Pfad_18" data-name="Pfad 18" d="M207.886,16.546v-.707a2.6,2.6,0,0,1-2.138.8,2.634,2.634,0,0,1-2.092-.678,2.128,2.128,0,0,1-.557-1.5c0-1.3.9-2.139,2.559-2.139h2.228v-.706c0-1.084-.542-1.626-1.9-1.626a1.945,1.945,0,0,0-1.867.843l-.738-.678a2.874,2.874,0,0,1,2.62-1.1c1.987,0,2.965.859,2.965,2.468v5.029Zm0-3.418h-2.077c-1.114,0-1.655.452-1.655,1.31s.527,1.264,1.7,1.264a2.163,2.163,0,0,0,1.656-.5,1.709,1.709,0,0,0,.376-1.28Z" transform="translate(9.117 0.406)"></path>
+      <path id="Pfad_19" data-name="Pfad 19" d="M213.448,16.683a1.765,1.765,0,0,1-1.882-1.972V5.967h1.084v8.7c0,.722.241,1.084.994,1.084h.587v.933Z" transform="translate(9.497 0.268)"></path>
+      <path id="Pfad_20" data-name="Pfad 20" d="M218.084,16.683a1.765,1.765,0,0,1-1.882-1.972V5.967h1.084v8.7c0,.722.241,1.084.994,1.084h.587v.933Z" transform="translate(9.706 0.268)"></path>
+      <path id="Pfad_21" data-name="Pfad 21" d="M221.2,13.129c0,1.626.767,2.558,2.183,2.558a2.432,2.432,0,0,0,1.941-.842l.737.647a3.393,3.393,0,0,1-2.709,1.144c-1.956,0-3.235-1.174-3.235-3.793,0-2.393,1.159-3.794,3.041-3.794,1.911,0,3.04,1.386,3.04,3.583v.5Zm3.687-2.048a1.9,1.9,0,0,0-3.462,0,3.117,3.117,0,0,0-.226,1.235h3.913a3.133,3.133,0,0,0-.226-1.235" transform="translate(9.881 0.406)"></path>
+      <path id="Pfad_22" data-name="Pfad 22" d="M251.586,88.655l-3.825-6.772-1.923,2.3v4.473h-2.906V73.773h2.906v6.479l5.246-6.479h3.532l-4.932,5.915,5.287,8.967Z" transform="translate(10.906 3.312)" fill="#009a62"></path>
+      <path id="Pfad_23" data-name="Pfad 23" d="M264.947,80.567a1.817,1.817,0,0,0-3.2,1.358v6.564h-2.717V77.6h2.655v1.046a3.687,3.687,0,0,1,2.738-1.171A3.284,3.284,0,0,1,267,78.5Z" transform="translate(11.628 3.478)" fill="#009a62"></path>
+      <path id="Pfad_24" data-name="Pfad 24" d="M271.091,73.693h2.78v2.216h-2.78Zm.042,4.075h2.718v10.89h-2.718Z" transform="translate(12.17 3.308)" fill="#009a62"></path>
+      <path id="Pfad_25" data-name="Pfad 25" d="M281.787,83.891a2.249,2.249,0,0,0,2.383,2.424,3.013,3.013,0,0,0,2.466-1.024l1.651,1.609a5.182,5.182,0,0,1-4.138,1.715c-2.572,0-5.037-1.17-5.037-5.581,0-3.554,1.923-5.561,4.745-5.561,3.03,0,4.745,2.216,4.745,5.206v1.212Zm3.888-3.031a2.029,2.029,0,0,0-3.636,0,2.985,2.985,0,0,0-.252,1.171h4.139a3,3,0,0,0-.251-1.171" transform="translate(12.53 3.478)" fill="#009a62"></path>
+      <path id="Pfad_26" data-name="Pfad 26" d="M299.925,88.489V81.905a1.816,1.816,0,1,0-3.616,0v6.584h-2.718V77.6h2.655v1a3.728,3.728,0,0,1,2.718-1.129,3.536,3.536,0,0,1,2.57.961,4.032,4.032,0,0,1,1.109,3.093v6.961Z" transform="translate(13.18 3.478)" fill="#009a62"></path>
+      <path id="Pfad_27" data-name="Pfad 27" d="M311.671,88.615a5.916,5.916,0,0,1-4.639-1.567l1.776-1.777a3.954,3.954,0,0,0,2.9,1.024c.94,0,1.924-.313,1.924-1.128,0-.543-.293-.92-1.15-1L310.773,84c-1.964-.188-3.176-1.045-3.176-3.052,0-2.257,1.985-3.47,4.2-3.47a5.784,5.784,0,0,1,4.16,1.276l-1.672,1.693a3.788,3.788,0,0,0-2.53-.731c-1.087,0-1.546.5-1.546,1.046,0,.4.167.856,1.128.939l1.714.168c2.154.209,3.24,1.358,3.24,3.2,0,2.4-2.048,3.554-4.619,3.554" transform="translate(13.783 3.478)" fill="#009a62"></path>
+    </g>
+  </g>
+</svg>
+        </a>
+    </div>
+    <div class="site-text-header">
+        <img src="/assets/img/spitexkriens-claim-beige.svg" alt="Claim">
+    </div>
+    <div class="site-cta-header">
+        <button id="searchOpen" data-open-search="">
+            <div class="icon-bubble" role="img" title="icon searchglas">
+    <svg>
+        <use href="#searchglas" xlink:href="#searchglas"></use>
+    </svg>
+</div>        </button>
+        <a href="mailto:info@spitex-kriens.ch">
+            <div class="icon-bubble" role="img" title="icon envelope">
+    <svg>
+        <use href="#envelope" xlink:href="#envelope"></use>
+    </svg>
+</div>        </a>
+        <button class="menu-btn" data-open-menu="">
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</header>    <div class="hero-wrapper animate">
+    <picture>
+        <img src="https://www.spitex-kriens.ch/mainpage/media/pages/home/de23b8fd34-1689949874/2023spitex-kriens1014-2000x.jpg" srcset="https://www.spitex-kriens.ch/mainpage/media/pages/home/de23b8fd34-1689949874/2023spitex-kriens1014-2000x.jpg 1x, https://www.spitex-kriens.ch/mainpage/media/pages/home/de23b8fd34-1689949874/2023spitex-kriens1014-4000x.jpg 2x" alt="2023spitex_kriens1014" role="img">
+    </picture>
+
+    <div class="hero-content-wrapper">
+        <div>
+            <div class="welcome beige">
+                <h1>
+                    Willkommen bei der Spitex Kriens.                </h1>
+                <p>Wir sind für Sie da.</p>
+            </div>
+
+            <div class="hero-cta">
+                <a class="green" href="https://www.spitex-kriens.ch/anmeldung" target="_self">
+                    <svg class="pencil">
+                        <use xlink:href="#pencil"></use>
+                    </svg>
+                    <p>
+                        Hier gehts <br>
+zur Anmeldung                    </p>
+                </a>
+                <a href="https://spitex-kriens.new-win.cloud/$n8jpp1" class="green" target="_blank">
+                    <p>
+                        Online Mitglied werden!                    </p>
+                </a>
+                <a class="green" href="https://www.spitex-kriens.ch/feedback" target="_self">
+                    <p>
+                        Ihr Feedback                    </p>
+                </a>
+            </div>
+
+            <div class="yellow article">
+                <button class="close">
+                    <svg class="pencil">
+                        <use xlink:href="#close"></use>
+                    </svg>
+                </button>
+                <h3>
+                    Schnupperpraktikum                </h3>
+                <a class="underlined" href="https://www.spitex-kriens.ch/arbeiten-bei-der-spitex/ausbildung" target="_self">mehr</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="claim">
+        <!--?xml version="1.0" encoding="UTF-8"?--><svg id="Ebene_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 383.6 125.24"><defs><style>.cls-1{isolation:isolate;}.cls-2{fill:#fff;stroke-width:0px;}</style></defs><g id="verlässlich_und_nah"><g class="cls-1"><path class="cls-2" d="m14.84,18.27v4.41h-4.34l8.33,23.17c.35,1.05.49,1.68.77,3.08h.14c.35-1.54.56-2.45,1.12-3.92l8.19-22.33h-4.69v-4.41h14.42v4.41h-3.99l-12.46,31.71h-5.74L4.06,22.68H0v-4.41h14.84Z"></path><path class="cls-2" d="m76.37,36.68v.14h-26.32c.35,9.31,5.11,13.65,13.72,13.65,3.92,0,7.77-1.12,10.85-2.73l-.21,4.97c-2.03,1.12-8.12,2.52-11.9,2.52-11.76,0-18.48-6.58-18.48-18.83,0-11.41,6.51-18.97,16.73-18.97s15.61,6.58,15.61,19.25Zm-6.02-4.27c-.07-6.23-3.99-10.57-9.66-10.57s-10.22,4.2-10.64,10.57h20.3Z"></path><path class="cls-2" d="m111.51,18.2l-.56,5.18c-1.12-.35-2.59-.56-3.92-.56-6.58,0-10.71,6.3-10.85,13.44l-.28,13.72h6.09v4.41h-16.94v-4.41h5.11l.28-27.3h-6.16v-4.41h11.9v.7c0,3.71-.49,7.77-.77,10.57h.21c2.1-9.24,6.3-11.9,12.18-11.9.42,0,3.43.35,3.71.56Z"></path><path class="cls-2" d="m128.1.56l-.28,49.43h5.74v4.41h-16.66v-4.41h5.18l.28-45.01h-7V.56h12.74Z"></path><path class="cls-2" d="m170.52,30.52c0,.28-.42,16.24-.42,19.46h5.18v4.41h-10.36v-.63c0-2.94.35-5.32.7-7.21h-.14c-2.17,5.88-5.81,8.68-12.04,8.68-7.07,0-11.27-3.71-11.27-10.36,0-7.56,5.67-11.06,21.49-11.06h1.4v-2.45c0-6.86-2.45-9.52-8.26-9.52-2.8,0-5.81.56-8.05,1.47v5.6h-5.18v-8.68c3.99-1.61,8.26-2.8,12.74-2.8,10.01,0,14.21,4.13,14.21,13.09Zm-16.87-24.99c0,2.31-1.89,4.13-4.13,4.13s-4.13-1.82-4.13-4.13,1.89-4.13,4.13-4.13,4.13,1.82,4.13,4.13Zm1.05,45.29c6.09,0,10.36-4.41,10.36-13.02h-3.01c-12.95,0-14.14,3.71-14.14,7,0,3.57,2.8,6.02,6.79,6.02Zm14.21-45.29c0,2.31-1.89,4.13-4.13,4.13s-4.13-1.82-4.13-4.13,1.82-4.13,4.13-4.13,4.13,1.82,4.13,4.13Z"></path><path class="cls-2" d="m209.37,19.6l.28,8.68h-5.18l-.28-5.11c-1.33-.98-3.92-1.33-6.37-1.33-4.83,0-8.33,1.89-8.33,5.53,0,3.36,2.31,4.9,8.68,6.02,9.73,1.68,13.16,4.41,13.16,10.29,0,7.35-5.46,11.55-14.77,11.55-4.76,0-10.78-1.26-12.39-2.17l-.28-9.24h5.18l.28,5.39c2.03,1.05,5.46,1.61,8.19,1.61,4.76,0,8.33-2.31,8.33-6.02,0-2.8-2.1-4.55-7.7-5.67-11.83-2.38-14.42-5.11-14.42-10.85,0-6.79,5.11-10.85,14.14-10.85,2.94,0,8.75,1.05,11.48,2.17Z"></path><path class="cls-2" d="m246.47,19.6l.28,8.68h-5.18l-.28-5.11c-1.33-.98-3.92-1.33-6.37-1.33-4.83,0-8.33,1.89-8.33,5.53,0,3.36,2.31,4.9,8.68,6.02,9.73,1.68,13.16,4.41,13.16,10.29,0,7.35-5.46,11.55-14.77,11.55-4.76,0-10.78-1.26-12.39-2.17l-.28-9.24h5.18l.28,5.39c2.03,1.05,5.46,1.61,8.19,1.61,4.76,0,8.33-2.31,8.33-6.02,0-2.8-2.1-4.55-7.7-5.67-11.83-2.38-14.42-5.11-14.42-10.85,0-6.79,5.11-10.85,14.14-10.85,2.94,0,8.75,1.05,11.48,2.17Z"></path><path class="cls-2" d="m268.66.56l-.28,49.43h5.74v4.41h-16.66v-4.41h5.18l.28-45.01h-7V.56h12.74Z"></path><path class="cls-2" d="m292.74,18.27l-.28,31.71h5.74v4.41h-17.22v-4.41h5.74l.28-27.3h-6.58v-4.41h12.32Zm.77-13.93c0,2.45-2.03,4.34-4.34,4.34-2.45,0-4.34-1.89-4.34-4.34,0-2.31,1.89-4.34,4.34-4.34,2.31,0,4.34,2.03,4.34,4.34Z"></path><path class="cls-2" d="m335.44,19.25v9.45h-5.18v-5.67c-1.4-.56-4.13-.84-6.02-.84-8.19,0-12.53,5.46-12.53,14.07s4.55,14.21,13.72,14.21c3.57,0,6.44-.98,9.8-2.03l-.28,5.04c-2.73.84-6.44,1.75-10.43,1.75-12.25,0-18.83-7.21-18.83-18.9s8.12-18.9,18.13-18.9c3.85,0,7.91.49,11.62,1.82Z"></path><path class="cls-2" d="m353.99.56c-.07,11.48-.07,17.92-.07,19.32s-.21,3.5-.7,6.37h.14c1.54-5.25,7-8.82,12.81-8.82,8.05,0,12.39,4.34,12.39,13.86,0,7.21-.28,16.38-.28,18.69h5.32v4.41h-15.68v-4.41h4.62c0-2.87.28-14.42.28-17.5,0-7-2.45-10.29-8.19-10.29-6.65,0-10.64,4.83-10.71,12.25l-.21,15.54h5.32v4.41h-16.24v-4.41h5.18l.28-45.01h-7V.56h12.74Z"></path></g><g class="cls-1"><path class="cls-2" d="m13.02,88.27c0,3.99-.28,15.61-.28,20.79,0,7.49,1.89,11.41,7.98,11.41,6.93,0,10.64-4.62,10.64-16.1v-11.69h-5.67v-4.41h11.55l-.28,31.71h5.04v4.41h-10.71c0-2.1.14-4.13.28-4.9l.49-3.08h-.14c-2.03,5.25-6.93,8.82-12.18,8.82-8.26,0-12.74-3.71-12.74-15.26,0-2.45.07-8.19.28-17.29H1.47v-4.41h11.55Z"></path><path class="cls-2" d="m85.75,101.29c0,8.05-.28,16.38-.28,18.69h5.32v4.41h-15.68v-4.41h4.62c.21-10.08.28-14.35.28-16.94,0-7.56-2.31-10.85-8.19-10.85-6.65,0-10.57,4.76-10.64,12.25l-.21,15.54h5.25v4.41h-15.68v-4.41h4.62l.28-27.3h-5.81v-4.41h11.55c0,3.92,0,3.5-.77,7.98h.14c1.54-5.25,7-8.82,12.81-8.82,8.05,0,12.39,4.34,12.39,13.86Z"></path><path class="cls-2" d="m131.88,70.56l-.28,49.43h5.39v4.41h-11.13c0-2.87.21-4.97.7-7.28l-.14-.14c-1.96,5.25-6.3,8.26-12.11,8.26-8.89,0-14.98-6.65-14.98-17.43,0-12.46,7.21-20.37,19.18-20.37,2.73,0,6.02.56,7.49,1.61l.14-14.07h-7.21v-4.41h12.95Zm-16.38,49.92c6.93,0,10.5-5.25,10.5-14.84v-11.83c-2.45-1.12-4.13-1.61-7.14-1.61-8.47,0-13.51,5.67-13.51,15.68,0,7.63,3.92,12.6,10.15,12.6Z"></path><path class="cls-2" d="m202.3,101.29c0,8.05-.28,16.38-.28,18.69h5.32v4.41h-15.68v-4.41h4.62c.21-10.08.28-14.35.28-16.94,0-7.56-2.31-10.85-8.19-10.85-6.65,0-10.57,4.76-10.64,12.25l-.21,15.54h5.25v4.41h-15.68v-4.41h4.62l.28-27.3h-5.81v-4.41h11.55c0,3.92,0,3.5-.77,7.98h.14c1.54-5.25,7-8.82,12.81-8.82,8.05,0,12.39,4.34,12.39,13.86Z"></path><path class="cls-2" d="m244.86,100.52c0,.28-.42,16.24-.42,19.46h5.18v4.41h-10.36v-.63c0-2.94.35-5.32.7-7.21h-.14c-2.17,5.88-5.81,8.68-12.04,8.68-7.07,0-11.27-3.71-11.27-10.36,0-7.56,5.67-11.06,21.49-11.06h1.4v-2.45c0-6.86-2.45-9.52-8.26-9.52-2.8,0-5.81.56-8.05,1.47v5.6h-5.18v-8.68c3.99-1.61,8.26-2.8,12.74-2.8,10.01,0,14.21,4.13,14.21,13.09Zm-15.82,20.3c6.09,0,10.36-4.41,10.36-13.02h-3.01c-12.95,0-14.14,3.71-14.14,7,0,3.57,2.8,6.02,6.79,6.02Z"></path><path class="cls-2" d="m268.8,70.56c-.07,11.48-.07,17.92-.07,19.32s-.21,3.5-.7,6.37h.14c1.54-5.25,7-8.82,12.81-8.82,8.05,0,12.39,4.34,12.39,13.86,0,7.21-.28,16.38-.28,18.69h5.32v4.41h-15.68v-4.41h4.62c0-2.87.28-14.42.28-17.5,0-7-2.45-10.29-8.19-10.29-6.65,0-10.64,4.83-10.71,12.25l-.21,15.54h5.32v4.41h-16.24v-4.41h5.18l.28-45.01h-7v-4.41h12.74Z"></path></g></g></svg>    </div>
+</div>
+<main class="site-main">
+
+            <section class="animate">
+            <div class="grid" data-size="59rem">
+                                    <div class="column" style="--col:12">
+                                                    <div class="cta-links" data-size="59rem" style="--iconHeight: clamp(2.125rem,5vw,3.25rem);">
+            <a href="https://www.spitex-kriens.ch/anmeldung" class="cta-icon" role="link" hreflang="de" title="iconlink" data-color="primary">
+    <svg xmlns="http://www.w3.org/2000/svg" width="64.072" height="64.072" viewBox="0 0 64.072 64.072">
+  <path id="Pfad_120" data-name="Pfad 120" d="M4.91,52.711V39.335L23.588,58.864H10.675ZM35.138,0,0,35.135V64.072H28.937L64.072,28.937Z" fill="#a1c854"></path>
+</svg>
+    <span>
+        Anmeldung    </span>
+</a>            <a href="https://www.spitex-kriens.ch/tarife" class="cta-icon" role="link" hreflang="de" title="iconlink" data-color="secondary">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="79.127" height="77.168" viewBox="0 0 79.127 77.168">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rechteck_23" data-name="Rechteck 23" width="79.127" height="77.168" fill="#fdc500"></rect>
+    </clipPath>
+  </defs>
+  <g id="Gruppe_22" data-name="Gruppe 22" clip-path="url(#clip-path)">
+    <path id="Pfad_34" data-name="Pfad 34" d="M44.047,0A35.051,35.051,0,0,0,15.292,15.044a33.826,33.826,0,1,0,42.262,52.4A35.075,35.075,0,0,0,44.047,0M13.333,43.757c.01.412.026.76.052,1.038s.055.506.09.686a3.662,3.662,0,0,0,.132.509,2.809,2.809,0,0,0,.947,1.427,2.658,2.658,0,0,0,1.7.519,2.632,2.632,0,0,0,1.779-.57,3.818,3.818,0,0,0,1.025-1.427c.087-.174.209-.216.364-.132l2.829,1.273c.174.055.219.158.132.313a6.037,6.037,0,0,1-2.326,2.894,6.835,6.835,0,0,1-3.831,1.028,7.029,7.029,0,0,1-3.96-1.076,5.924,5.924,0,0,1-2.323-3.261,6.022,6.022,0,0,1-.248-.844,8.861,8.861,0,0,1-.142-.96c-.035-.358-.061-.77-.077-1.247s-.026-1.054-.026-1.727.006-1.25.026-1.727.042-.893.077-1.247a8.26,8.26,0,0,1,.142-.947,7.615,7.615,0,0,1,.248-.857,5.912,5.912,0,0,1,2.323-3.261,7,7,0,0,1,3.96-1.076,6.86,6.86,0,0,1,3.831,1.025A6.075,6.075,0,0,1,22.385,37c.087.155.042.258-.132.313l-2.829,1.273c-.155.084-.277.042-.364-.132a3.818,3.818,0,0,0-1.025-1.427,2.632,2.632,0,0,0-1.779-.57,2.658,2.658,0,0,0-1.7.519,2.822,2.822,0,0,0-.947,1.427,3.736,3.736,0,0,0-.132.506c-.035.184-.064.412-.09.69s-.042.622-.052,1.041-.013.934-.013,1.556,0,1.144.013,1.56m27.05,7.011a.23.23,0,0,1-.261.258h-3.3a.229.229,0,0,1-.258-.258V43.963a.137.137,0,0,0-.155-.155H30.643a.137.137,0,0,0-.155.155v6.805a.23.23,0,0,1-.261.258h-3.3a.229.229,0,0,1-.258-.258V33.627a.227.227,0,0,1,.258-.258h3.3a.228.228,0,0,1,.261.258v6.647a.138.138,0,0,0,.155.158h5.768a.138.138,0,0,0,.155-.158V33.627a.227.227,0,0,1,.258-.258h3.3a.228.228,0,0,1,.261.258ZM57.419,36.407a.229.229,0,0,1-.258.258H49.551a.139.139,0,0,0-.158.155v3.715a.138.138,0,0,0,.158.155h6.335a.231.231,0,0,1,.261.261V43.7a.231.231,0,0,1-.261.261H49.551a.14.14,0,0,0-.158.158v6.647a.229.229,0,0,1-.258.258h-3.3a.229.229,0,0,1-.258-.258V33.627a.227.227,0,0,1,.258-.258H57.162a.227.227,0,0,1,.258.258Zm8.787,16.781a33.834,33.834,0,0,0-32.367-43.7c-.97,0-1.927.064-2.874.145A28.606,28.606,0,0,1,66.206,53.189" transform="translate(0 0.001)" fill="#fdc500"></path>
+  </g>
+</svg>
+    <span>
+        Tarife    </span>
+</a>            <a href="https://www.spitex-kriens.ch/downloads" class="cta-icon" role="link" hreflang="de" title="iconlink" data-color="">
+    <!--?xml version="1.0" encoding="utf-8"?-->
+<!-- Generator: Adobe Illustrator 28.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 155.5 155.5" style="enable-background:new 0 0 155.5 155.5;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#A09173;}
+</style>
+<g>
+	<path class="st0" d="M100.7,45V26.7L42.6,42.5v73.9h58.1v-0.3h12.2V45H100.7z M94.2,35.1V45h-36L94.2,35.1z M78.6,100L62.3,83.7
+		l3.8-3.8l9.8,9.8V64.4h5.4v25.3l9.8-9.8l3.8,3.8L78.6,100z"></path>
+</g>
+</svg>
+    <span>
+        Downloads    </span>
+</a>            <a href="https://www.spitex-kriens.ch/kontakt" class="cta-icon" role="link" hreflang="de" title="iconlink" data-color="primary">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="67.003" height="48.093" viewBox="0 0 67.003 48.093">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rechteck_92" data-name="Rechteck 92" width="67.003" height="48.093" fill="#a1c854"></rect>
+    </clipPath>
+  </defs>
+  <g id="Gruppe_53528" data-name="Gruppe 53528" transform="translate(0 0)">
+    <g id="Gruppe_53450" data-name="Gruppe 53450" transform="translate(0 -0.001)" clip-path="url(#clip-path)">
+      <path id="Pfad_69" data-name="Pfad 69" d="M61.269,0H1.252C11.674,7.912,25.626,18.474,30.691,22.309Z" transform="translate(2.845 0.002)" fill="#a1c854"></path>
+      <path id="Pfad_70" data-name="Pfad 70" d="M33.467,26.916l-1.94-1.466C30.411,24.605,12.611,11.134,0,1.56V44.546H67V2.447Z" transform="translate(0 3.546)" fill="#a1c854"></path>
+    </g>
+  </g>
+</svg>
+    <span>
+        Kontakt    </span>
+</a>    </div>                                            </div>
+                            </div>
+        </section>
+            <section class="animate">
+            <div class="grid" data-size="59rem">
+                                    <div class="column" style="--col:12">
+                                                    <div class="heading-block">
+    <h2 style="--textAlign:center;">Für Sie da. Da, wo Sie zuhause sind.</h2>
+</div>                                            </div>
+                            </div>
+        </section>
+            <section class="animate">
+            <div class="grid" data-size="90rem">
+                                    <div class="column" style="--col:6">
+                                                    <a href="https://www.spitex-kriens.ch/angebot/dienstleistungen-ubersicht" class="standard-teaser" target="_self" role="link">
+    <h3>
+        <span>
+            Angebot im Überblick        </span>
+    </h3>
+    <p>
+            </p>
+    <small class="underlined">mehr</small>
+</a>                                                    <a href="https://www.spitex-kriens.ch/arbeiten-bei-der-spitex/arbeiten-bei-der-spitex" class="yellow-teaser" target="_self" role="link">
+    <h3>
+        Arbeiten bei der Spitex    </h3>
+    <p>
+        Begleite unsere Lernenden im Berufsalltag.    </p>
+    <small class="underlined">mehr</small>
+</a>                                                    
+<a href="https://www.spitex-kriens.ch/mainpage/media/pages/journal/tatigkeitsbericht-2023/11c60097f5-1740120972/rz_20240410_taetigkeitsbericht-2023_low.pdf" class="picture-teaser" target="_blank" role="link">
+    <picture>
+        <source srcset="" type="image/avif">
+        <source srcset="" type="image/webp">
+        <img src="https://www.spitex-kriens.ch/mainpage/media/pages/home/8cbd9bcd85-1714720104/2023spitex-kriens1040-944x.jpg" alt="2023spitex_kriens1040" width="944" height="629">
+    </picture>
+    <div class="teaser-title-wrap">
+                <h3>
+            <span>Tätigkeitsbericht 2023</span>
+        </h3>
+                    </div>
+    <svg class="arrow-icon">
+        <use xlink:href="#arrow"></use>
+    </svg>
+</a>                                                    
+<a href="https://www.muettervaeterberatung-kriens.ch/" class="picture-teaser" target="_blank" role="link">
+    <picture>
+        <source srcset="" type="image/avif">
+        <source srcset="" type="image/webp">
+        <img src="https://www.spitex-kriens.ch/mainpage/media/pages/home/35583610ea-1689950644/2023spitex-kriens1477-944x.jpg" alt="2023spitex_kriens1477" width="944" height="629">
+    </picture>
+    <div class="teaser-title-wrap">
+                <h3>
+            <span>Mütter- und Väterberatung</span>
+        </h3>
+                    </div>
+    <svg class="arrow-icon">
+        <use xlink:href="#arrow"></use>
+    </svg>
+</a>                                            </div>
+                                    <div class="column" style="--col:6">
+                                                    
+<a href="https://www.spitex-kriens.ch/team" class="picture-teaser" target="_self" role="link">
+    <picture>
+        <source srcset="" type="image/avif">
+        <source srcset="" type="image/webp">
+        <img src="https://www.spitex-kriens.ch/mainpage/media/pages/home/4026c17c7a-1695286980/2023spitex-kriens396-944x.jpg" alt="2023spitex_kriens396" width="944" height="629">
+    </picture>
+    <div class="teaser-title-wrap">
+                <h3>
+            <span>Team</span>
+        </h3>
+                    </div>
+    <svg class="arrow-icon">
+        <use xlink:href="#arrow"></use>
+    </svg>
+</a>                                                    
+<a href="https://www.spitex-kriens.ch/arbeiten-bei-der-spitex/ausbildung" class="picture-teaser" target="_self" role="link">
+    <picture>
+        <source srcset="" type="image/avif">
+        <source srcset="" type="image/webp">
+        <img src="https://www.spitex-kriens.ch/mainpage/media/pages/home/b9eb123c9e-1732627780/2023spitex-kriens957-944x.jpg" alt="2023spitex_kriens957">
+    </picture>
+    <div class="teaser-title-wrap">
+                <h3>
+            <span>Ausbildung bei der Spitex Kriens!</span>
+        </h3>
+                            <p class="txt-bg">
+                <span>Fachperson Gesundheit EFZ &amp; Pflegefachperson HF</span>
+            </p>
+            </div>
+    <svg class="arrow-icon">
+        <use xlink:href="#arrow"></use>
+    </svg>
+</a>                                                    <a href="https://www.spitex-kriens.ch/arbeiten-bei-der-spitex/jobs" class="yellow-teaser" target="_blank" role="link">
+    <h3>
+        Job Shadowing - Spitex Kriens    </h3>
+    <p>
+        Interessiert? Kontaktiere uns und plane deinen Job Shadowing-Tag!    </p>
+    <small class="underlined">mehr</small>
+</a>                                            </div>
+                            </div>
+        </section>
+            <section class="animate">
+            <div class="grid" data-size="59rem">
+                                    <div class="column" style="--col:12">
+                                                    <a href="https://www.ausbildung-spitex-kanton-luzern.ch/" class="yellow-teaser" target="_blank" role="link">
+    <h3>
+        Schnupperpraktikum    </h3>
+    <p>
+        Melde dich ganz unkompliziert mit nur wenigen Klicks für eine Schnupperlehre an!    </p>
+    <small class="underlined">mehr</small>
+</a>                                            </div>
+                            </div>
+        </section>
+    </main>
+
+            <section class="animate floating-teasers">
+            <h4>mehr über die Spitex Kriens</h4>
+            <div class="grid" data-size="90rem">
+                                    <div class="column" style="--col:3">
+                                            </div>
+                                    <div class="column" style="--col:5">
+                                                    
+<a href="https://www.spitex-kriens.ch/team" class="picture-teaser" target="_self" role="link">
+    <picture>
+        <source srcset="" type="image/avif">
+        <source srcset="" type="image/webp">
+        <img src="https://www.spitex-kriens.ch/mainpage/media/pages/home/8224879764-1706188203/monika-bild-944x.jpg" alt="monika-bild">
+    </picture>
+    <div class="teaser-title-wrap">
+                <h3>
+            <span>Team</span>
+        </h3>
+                            <p class="txt-bg">
+                <span>Das sind wir!</span>
+            </p>
+            </div>
+    <svg class="arrow-icon">
+        <use xlink:href="#arrow"></use>
+    </svg>
+</a>                                            </div>
+                                    <div class="column" style="--col:1">
+                                            </div>
+                                    <div class="column" style="--col:3">
+                                                    <a href="https://www.spitex-kriens.ch/ueber-uns/entwicklung" class="roundimage-teaser" target="_self" role="link">
+    <picture class="round-image">
+        <source srcset="" type="image/avif">
+        <source srcset="" type="image/webp">
+        <img src="https://www.spitex-kriens.ch/mainpage/media/pages/home/3bc522f6e2-1695309131/2023spitex-kriens421-944x.jpg" alt="2023spitex_kriens421">
+    </picture>
+    <p>
+        Entwicklung    </p>
+    <small class="underlined">Entwicklung</small>
+</a>                                            </div>
+                                    <div class="column" style="--col:3">
+                                                    <a href="https://www.spitex-kriens.ch/spitex-geschichten" class="roundimage-teaser" target="_self" role="link">
+    <picture class="round-image">
+        <source srcset="" type="image/avif">
+        <source srcset="" type="image/webp">
+        <img src="https://www.spitex-kriens.ch/mainpage/media/pages/home/427361db6b-1695309238/spitex-kriens-dario-quereinsteiger-voll-motiviert-illustration-944x.png" alt="spitex-kriens-dario_quereinsteiger_voll-motiviert_illustration">
+    </picture>
+    <p>
+        Spitex Geschichten    </p>
+    <small class="underlined">Geschichten</small>
+</a>                                            </div>
+                                    <div class="column" style="--col:1">
+                                            </div>
+                                    <div class="column" style="--col:5">
+                                                    <a href="https://www.spitex-kriens.ch/arbeiten-bei-der-spitex/jobs" class="yellow-teaser" target="_self" role="link">
+    <h3>
+        Bewirb Dich!    </h3>
+    <p>
+        Stellenangebote für dich – arbeiten bei der Spitex Kriens    </p>
+    <small class="underlined">Offene Stellen</small>
+</a>                                            </div>
+                                    <div class="column" style="--col:3">
+                                            </div>
+                            </div>
+        </section>
+    
+
+    
+<footer class="site-footer animate">
+    <div class="contacts-info grid" data-size="90rem">
+        <div class="contact">
+            <a href="tel:0413193939">T  041 319 39 39</a><br>
+            <a href="mailto:info@spitex-kriens.ch">info@spitex-kriens.ch</a>        </div>
+        <div>
+            <p><strong>Telefonzeiten<br></strong>08.00–12.00 Uhr<br>13.30–17.15 Uhr</p>        </div>
+    </div>
+
+    <div class="downloads" data-downloads="">
+        <div class="download-icon">
+            <div class="icon-bubble" role="img" title="icon download">
+    <svg>
+        <use href="#download" xlink:href="#download"></use>
+    </svg>
+</div>        </div>
+        <h3>Formulare und Downloads</h3>
+        <div class="accordion" data-accordion="">
+    <button data-accordion-toggle="" role="button" aria-expanded="false">
+                <span>mehr</span>
+        <span>close</span>
+            </button>
+    <div class="accordion-content" aria-hidden="true" role="region">
+        <div class="accordion-inner">
+                    <div class="download-content" data-size="74.25rem">
+            <div>
+                <h4>Anmeldung</h4>
+                <ul>
+                                            <li>
+                            <a href="https://www.opanspitex.ch/de/organisation/164/spitex-kriens" role="link" class="footer-link" target="_blank">
+                                Anmeldeformular                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://www.spitex-kriens.ch/kontakt" role="link" class="footer-link" target="_self">
+                                Kontakt                            </a>
+                        </li>
+                                    </ul>
+            </div>
+            <div>
+                <h4>Downloads</h4>
+                <ul>
+                                            <li>
+                            <a href="https://www.spitex-kriens.ch/downloads" role="link" class="footer-link" target="_self">
+                                Downloads                            </a>
+                        </li>
+                                    </ul>
+            </div>
+            <div>
+                <h4>Story’s &amp; Berichte</h4>
+                <ul>
+                                            <li>
+                            <a href="https://www.spitex-kriens.ch/journal" role="link" class="footer-link" target="_self">
+                                Stories                            </a>
+                        </li>
+                                    </ul>
+            </div>
+        </div>
+
+        <div class="feedback-cta" style="--iconColor: var(--clr-white);--iconHeight: clamp(4rem,10vw,8rem);">
+
+        </div>
+                </div>
+    </div>
+</div>    </div>
+
+    <div class="location-wrapper" data-size="59rem">
+            <address>
+            <strong>Hauptstandort</strong><br>
+            Schachenstrasse 9<br>
+            6010 Kriens        </address>
+            <address>
+            <strong>Zweigniederlassung</strong><br>
+            Schweighofplatz 1<br>
+            6010 Kriens        </address>
+    </div>    <aside class="footer-actions" data-size="59rem" style="--iconHeight: clamp(2.125rem,5vw,3.25rem)">
+                    <a href="https://www.spitex-kriens.ch/arbeiten-bei-der-spitex/jobs" class="cta-icon" role="link" hreflang="de" title="iconlink" data-color="">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28.308" height="34.72" viewBox="0 0 28.308 34.72">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rechteck_133" data-name="Rechteck 133" width="28.308" height="34.72" fill="#a09173"></rect>
+    </clipPath>
+  </defs>
+  <g id="Gruppe_53852" data-name="Gruppe 53852" transform="translate(-14.248 -3261.082)">
+    <path id="Pfad_122" data-name="Pfad 122" d="M14.111,18.671l8.8,8.8V12.251Z" transform="translate(19.644 3265.767)" fill="#a09173"></path>
+    <g id="Gruppe_53531" data-name="Gruppe 53531" transform="translate(14.248 3261.082)" clip-path="url(#clip-path)">
+      <path id="Pfad_123" data-name="Pfad 123" d="M.868,27.831H26.631l-9.716-9.716-3.108,2.267-.82-.619-2.306-1.746Z" transform="translate(0.332 6.89)" fill="#a09173"></path>
+      <path id="Pfad_124" data-name="Pfad 124" d="M8.789,18.642C6.131,16.629,2.772,14.084,0,11.98V27.431Z" transform="translate(0 4.581)" fill="#a09173"></path>
+      <path id="Pfad_125" data-name="Pfad 125" d="M1.859,0V15.3l11.663,8.39,10.79-7.679V0Zm3.4,3.9h9.331V6.667H5.261ZM20.715,12.11H5.26V9.345H20.715Z" transform="translate(0.711 0)" fill="#a09173"></path>
+    </g>
+  </g>
+</svg>
+    <span>
+        Bewerbung    </span>
+</a>                    <a href="https://www.spitex-kriens.ch/ueber-uns/organisation-verein/spenden" class="cta-icon" role="link" hreflang="de" title="iconlink" data-color="">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="41" height="35.44" viewBox="0 0 41 35.44">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rechteck_316" data-name="Rechteck 316" width="41" height="35.44" fill="#a09173"></rect>
+    </clipPath>
+  </defs>
+  <g id="Gruppe_53850" data-name="Gruppe 53850" clip-path="url(#clip-path)">
+    <path id="Pfad_290" data-name="Pfad 290" d="M34.761.992A10.852,10.852,0,0,0,20.515,6.108,10.854,10.854,0,0,0,6.228.992C.485,3.593-2.261,10.256,2.259,18.1c3.235,5.584,8.285,9.794,18.256,17.344C30.441,27.891,35.51,23.682,38.732,18.1c4.531-7.848,1.785-14.5-3.971-17.106M9.644,16.9c0,.224.014.412.028.56s.03.275.049.372a1.891,1.891,0,0,0,.071.273,1.517,1.517,0,0,0,.512.771,1.436,1.436,0,0,0,.919.282,1.422,1.422,0,0,0,.961-.308,2.054,2.054,0,0,0,.553-.773c.047-.092.113-.117.2-.071l1.528.689c.094.028.118.084.071.167a3.273,3.273,0,0,1-1.256,1.564,3.705,3.705,0,0,1-2.069.555A3.783,3.783,0,0,1,9.068,20.4a3.2,3.2,0,0,1-1.255-1.759,3.322,3.322,0,0,1-.134-.456,4.821,4.821,0,0,1-.077-.52q-.029-.287-.042-.673c-.01-.258-.014-.567-.014-.933s0-.675.014-.933.023-.482.042-.673a4.52,4.52,0,0,1,.077-.512,4.112,4.112,0,0,1,.134-.463,3.189,3.189,0,0,1,1.255-1.759,3.783,3.783,0,0,1,2.139-.583,3.719,3.719,0,0,1,2.069.553,3.277,3.277,0,0,1,1.256,1.566c.047.084.023.139-.071.167l-1.528.687c-.084.047-.15.023-.2-.071a2.062,2.062,0,0,0-.553-.771,1.422,1.422,0,0,0-.961-.308,1.446,1.446,0,0,0-.919.28,1.522,1.522,0,0,0-.512.773,1.891,1.891,0,0,0-.071.273c-.019.1-.035.221-.049.371s-.024.338-.028.562-.007.5-.007.84,0,.618.007.842m14.609,3.788a.124.124,0,0,1-.141.139H22.33a.124.124,0,0,1-.139-.139V17.01a.074.074,0,0,0-.084-.085H18.992a.074.074,0,0,0-.084.085v3.675a.124.124,0,0,1-.141.139H16.986a.124.124,0,0,1-.139-.139V11.428a.123.123,0,0,1,.139-.141h1.782a.124.124,0,0,1,.141.141v3.59a.074.074,0,0,0,.084.084h3.115a.074.074,0,0,0,.084-.084v-3.59a.123.123,0,0,1,.139-.141h1.782a.124.124,0,0,1,.141.141Zm9.2-7.758a.124.124,0,0,1-.139.139H29.2a.076.076,0,0,0-.085.085v2a.076.076,0,0,0,.085.085h3.421a.125.125,0,0,1,.141.141v1.486a.125.125,0,0,1-.141.141H29.2a.074.074,0,0,0-.085.084v3.592a.124.124,0,0,1-.139.139H27.2a.124.124,0,0,1-.139-.139V11.428a.123.123,0,0,1,.139-.141h6.117a.123.123,0,0,1,.139.141Z" transform="translate(0 0)" fill="#a09173"></path>
+  </g>
+</svg>
+    <span>
+        Spenden    </span>
+</a>                    <a href="https://www.spitex-kriens.ch/ueber-uns/organisation-verein" class="cta-icon" role="link" hreflang="de" title="iconlink" data-color="">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="27.803" height="33.559" viewBox="0 0 27.803 33.559">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rechteck_317" data-name="Rechteck 317" width="27.803" height="33.559" fill="#a09173"></rect>
+    </clipPath>
+  </defs>
+  <g id="Gruppe_53851" data-name="Gruppe 53851" clip-path="url(#clip-path)">
+    <path id="Pfad_291" data-name="Pfad 291" d="M20.579,8.265A8.264,8.264,0,1,1,12.314,0a8.265,8.265,0,0,1,8.265,8.265" transform="translate(1.586 0)" fill="#a09173"></path>
+    <path id="Pfad_292" data-name="Pfad 292" d="M21.989,12.417a12.07,12.07,0,0,1-16.175,0A13.9,13.9,0,0,0,0,23.689v1.486c0,.178.019.352.026.527A29.217,29.217,0,0,0,13.188,28.7,28.52,28.52,0,0,0,27.8,24.9V23.689a13.9,13.9,0,0,0-5.814-11.272" transform="translate(0 4.863)" fill="#a09173"></path>
+  </g>
+</svg>
+    <span>
+        Sei Mitglied, sei dabei!    </span>
+</a>            </aside>
+
+    <nav class="footer-navigation" role="navigation">
+                    <a href="https://www.spitex-kriens.ch/impressum">Impressum</a>
+                    <a href="https://www.spitex-kriens.ch/datenschutz">Datenschutz</a>
+                    <a href="https://www.spitex-kriens.ch/journal">Story’s &amp; Berichte</a>
+            </nav>
+</footer>
+<menu class="socialmedia-link">
+            <li>
+            <a href="https://www.tiktok.com/@spitexkriens" target="_blank">
+                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16.656 1.029c1.637-0.025 3.262-0.012 4.886-0.025 0.054 2.031 0.878 3.859 2.189 5.213l-0.002-0.002c1.411 1.271 3.247 2.095 5.271 2.235l0.028 0.002v5.036c-1.912-0.048-3.71-0.489-5.331-1.247l0.082 0.034c-0.784-0.377-1.447-0.764-2.077-1.196l0.052 0.034c-0.012 3.649 0.012 7.298-0.025 10.934-0.103 1.853-0.719 3.543-1.707 4.954l0.020-0.031c-1.652 2.366-4.328 3.919-7.371 4.011l-0.014 0c-0.123 0.006-0.268 0.009-0.414 0.009-1.73 0-3.347-0.482-4.725-1.319l0.040 0.023c-2.508-1.509-4.238-4.091-4.558-7.094l-0.004-0.041c-0.025-0.625-0.037-1.25-0.012-1.862 0.49-4.779 4.494-8.476 9.361-8.476 0.547 0 1.083 0.047 1.604 0.136l-0.056-0.008c0.025 1.849-0.050 3.699-0.050 5.548-0.423-0.153-0.911-0.242-1.42-0.242-1.868 0-3.457 1.194-4.045 2.861l-0.009 0.030c-0.133 0.427-0.21 0.918-0.21 1.426 0 0.206 0.013 0.41 0.037 0.61l-0.002-0.024c0.332 2.046 2.086 3.59 4.201 3.59 0.061 0 0.121-0.001 0.181-0.004l-0.009 0c1.463-0.044 2.733-0.831 3.451-1.994l0.010-0.018c0.267-0.372 0.45-0.822 0.511-1.311l0.001-0.014c0.125-2.237 0.075-4.461 0.087-6.698 0.012-5.036-0.012-10.060 0.025-15.083z"></path>
+</svg>            </a>
+        </li>
+            <li>
+            <a href="https://www.instagram.com/spitexkriens/" target="_blank">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M2 6C2 3.79086 3.79086 2 6 2H18C20.2091 2 22 3.79086 22 6V18C22 20.2091 20.2091 22 18 22H6C3.79086 22 2 20.2091 2 18V6ZM6 4C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20H18C19.1046 20 20 19.1046 20 18V6C20 4.89543 19.1046 4 18 4H6ZM12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9ZM7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12ZM17.5 8C18.3284 8 19 7.32843 19 6.5C19 5.67157 18.3284 5 17.5 5C16.6716 5 16 5.67157 16 6.5C16 7.32843 16.6716 8 17.5 8Z"></path>
+</svg>            </a>
+        </li>
+            <li>
+            <a href="https://ch.linkedin.com/company/spitexkriens" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-271 283.9 256 235.1">
+    <rect x="-264.4" y="359.3" width="49.9" height="159.7"></rect>
+    <path d="M-240.5,283.9c-18.4,0-30.5,11.9-30.5,27.7c0,15.5,11.7,27.7,29.8,27.7h0.4c18.8,0,30.5-12.3,30.4-27.7 C-210.8,295.8-222.1,283.9-240.5,283.9z"></path>
+    <path d="M-78.2,357.8c-28.6,0-46.5,15.6-49.8,26.6v-25.1h-56.1c0.7,13.3,0,159.7,0,159.7h56.1v-86.3c0-4.9-0.2-9.7,1.2-13.1 c3.8-9.6,12.1-19.6,27-19.6c19.5,0,28.3,14.8,28.3,36.4V519h56.6v-88.8C-14.9,380.8-42.7,357.8-78.2,357.8z"></path>
+</svg>            </a>
+        </li>
+            <li>
+            <a href="https://www.facebook.com/spitexvereinkriens/?locale=de_DE" target="_blank">
+                <svg viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg">
+    <path d="M1168.737 487.897c44.672-41.401 113.824-36.889 118.9-36.663l289.354-.113 6.317-417.504L1539.65 22.9C1511.675 16.02 1426.053 0 1237.324 0 901.268 0 675.425 235.206 675.425 585.137v93.97H337v451.234h338.425V1920h451.234v-789.66h356.7l62.045-451.233H1126.66v-69.152c0-54.937 14.214-96.112 42.078-122.058"></path>
+</svg>            </a>
+        </li>
+    </menu>    <button class="to-download" data-to-downloads="" role="button" title="Scroll to Download">
+        <div class="icon-bubble" role="img" title="icon download">
+    <svg>
+        <use href="#download" xlink:href="#download"></use>
+    </svg>
+</div>    </button>
+    <script async="" src="https://www.spitex-kriens.ch/assets/js/observer.js"></script>    <script async="" src="https://www.spitex-kriens.ch/assets/js/website.js"></script>        <svg width="0" height="0" class="hidden">
+    <symbol id="close" viewBox="0 0 32 32">
+        <line x1="29" y2="29" stroke="inherit" stroke-linecap="round" stroke-width="3"></line>
+        <line x2="29" y2="29" stroke="inherit" stroke-linecap="round" stroke-width="3"></line>
+    </symbol>
+    <symbol viewBox="0 0 27.803 33.559" id="user">
+        <defs>
+            <clipPath id="clip-path">
+                <rect width="27.803" height="33.559" fill="#a09173"></rect>
+            </clipPath>
+        </defs>
+        <g clip-path="url(#clip-path)">
+            <path id="Pfad_291" d="M20.579,8.265A8.264,8.264,0,1,1,12.314,0a8.265,8.265,0,0,1,8.265,8.265" transform="translate(1.586 0)" fill="#a09173"></path>
+            <path id="Pfad_292" d="M21.989,12.417a12.07,12.07,0,0,1-16.175,0A13.9,13.9,0,0,0,0,23.689v1.486c0,.178.019.352.026.527A29.217,29.217,0,0,0,13.188,29.7,29.52,29.52,0,0,0,27.8,24.9V23.689a13.9,13.9,0,0,0-5.814-11.272" transform="translate(0 4.863)" fill="#a09173"></path>
+        </g>
+    </symbol>
+    <symbol id="arrow" viewBox="0 0 40 40">
+        <circle data-name="Ellipse 53" cx="20" cy="20" r="20" fill="inherit" stroke="none"></circle>
+        <path d="M0,0,6.155,6.155,0,12.31" transform="translate(20 13.519)" fill="none" stroke="inherit" stroke-linecap="round" stroke-width="3"></path>
+        <line x2="14.545" transform="translate(11.273 19.674)" fill="none" stroke="inherit" stroke-linecap="round" stroke-width="3"></line>
+    </symbol>
+    <symbol viewBox="0 0 52.182 66.65" id="download">
+        <defs>
+            <clipPath id="clip-path">
+                <rect id="Rechteck_89" width="25.189" height="27.419" fill="none" stroke="inherit" stroke-width="4">
+                </rect>
+            </clipPath>
+        </defs>
+        <path d="M38.305,6.306v7.292H11.574ZM43.123,0,0,11.748v54.9H43.123v-.224h9.06V13.588h-9.06Z" fill="inherit">
+        </path>
+        <g transform="translate(14.162 29.007)" clip-path="url(#clip-path)">
+            <line id="Linie_102" y2="21.568" transform="translate(12.595 0)" fill="none" stroke="inherit" stroke-miterlimit="10" stroke-width="4"></line>
+            <path id="Pfad_65" d="M24.6,21.831,13.891,32.539,3.182,21.831" transform="translate(-1.296 -8.892)" fill="none" stroke="inherit" stroke-miterlimit="10" stroke-width="4"></path>
+        </g>
+    </symbol>
+    <symbol id="envelope" viewBox="0 0 67.003 48.093">
+        <path id="Pfad_69" d="M61.269,0H1.252C11.674,7.912,25.626,18.474,30.691,22.309Z" transform="translate(2.845 0.002)" fill="inherit"></path>
+        <path id="Pfad_70" d="M33.467,26.916l-1.94-1.466C30.411,24.605,12.611,11.134,0,1.56V44.546H67V2.447Z" transform="translate(0 3.546)" fill="inherit"></path>
+    </symbol>
+    <symbol id="eye" viewBox="0 0 129.529 80.945">
+        <defs>
+            <clipPath id="clip-path">
+                <rect id="Rechteck_298" width="129.529" height="80.945" fill="#fff"></rect>
+            </clipPath>
+        </defs>
+        <g id="Gruppe_53805" clip-path="url(#clip-path)">
+            <path id="Pfad_271" d="M61.743,16.99c-30.559,0-55.332,29.333-55.332,29.333S31.184,73.654,61.743,73.654s55.332-29.331,55.332-29.331S92.3,16.99,61.743,16.99M79.008,64.569c-.043-2.075-.116-4.419-.23-4.988a12.4,12.4,0,0,0-11.593-9.987c-1.805-.084-8.529-.074-10.121-.041a12.347,12.347,0,0,0-11.173,6.7,12.08,12.08,0,0,0-1.443,6.191c.007.7,0,1.393,0,2.089a25.884,25.884,0,1,1,34.565.031" transform="translate(2.751 7.291)" fill="#fff"></path>
+            <path id="Pfad_272" d="M47.765,25.766a8.816,8.816,0,1,0,8.815,8.485,8.814,8.814,0,0,0-8.815-8.485" transform="translate(16.717 11.057)" fill="#fff"></path>
+            <rect id="Rechteck_292" width="2.614" height="17.276" transform="translate(48.813 0.389) rotate(-8.544)" fill="#fff"></rect>
+            <rect id="Rechteck_293" width="2.613" height="17.276" transform="translate(21.86 10.202) rotate(-27.298)" fill="#fff"></rect>
+            <rect id="Rechteck_294" width="2.613" height="17.275" transform="matrix(0.797, -0.603, 0.603, 0.797, 0.001, 24.161)" fill="#fff"></rect>
+            <rect id="Rechteck_295" width="17.276" height="2.614" transform="matrix(0.149, -0.989, 0.989, 0.149, 74.562, 17.434)" fill="#fff"></rect>
+            <rect id="Rechteck_296" width="17.276" height="2.613" transform="matrix(0.459, -0.889, 0.889, 0.459, 96.419, 24.705)" fill="#fff"></rect>
+            <rect id="Rechteck_297" width="17.275" height="2.613" transform="translate(116.021 36.713) rotate(-52.892)" fill="#fff"></rect>
+        </g>
+    </symbol>
+    <symbol viewBox="0 0 130 124.729" id="feedback">
+        <path d="M46.292,0A35.066,35.066,0,0,0,22.329,60.7L16.414,77.365,31.6,66.949A35.086,35.086,0,1,0,46.292,0M48.94,45.8H29.8V40.45H48.94ZM62.767,29.317H29.8V23.97H62.767Z" transform="translate(48.62 0.003)" fill="#fff"></path>
+        <path d="M21.995,47.86A19.508,19.508,0,1,0,2.489,29.349,19.512,19.512,0,0,0,21.995,47.86" transform="translate(10.82 38.443)" fill="#fff"></path>
+        <path d="M51.9,16.14a29.484,29.484,0,0,1-19.094,7.341A29.48,29.48,0,0,1,13.72,16.14,32.8,32.8,0,0,0,0,42.746v3.508c0,.422.043.834.059,1.24A68.973,68.973,0,0,0,31.13,54.563a67.39,67.39,0,0,0,34.5-8.956V42.746A32.807,32.807,0,0,0,51.9,16.14" transform="translate(0 70.162)" fill="#fff"></path>
+    </symbol>
+    <symbol id="hands" viewBox="0 0 116.178 99.715">
+        <defs>
+            <clipPath id="clip-path">
+                <rect id="Rechteck_277" width="116.178" height="99.715" fill="#fff"></rect>
+            </clipPath>
+        </defs>
+        <g clip-path="url(#clip-path)">
+            <path d="M64.86,32.872c-1.942,0-3.187,1.618-3.187,3.643s-.314,12-.314,13.387-1.706,1.468-1.706-.379.29-16.7.29-18.84-1.119-3.433-3.468-3.433c-3.021,0-3.357,2.161-3.357,3.293,0,1.824-.113,15.945-.113,17.064a.839.839,0,0,1-1.678,0c0-1.062.111-18.716.111-20.66s-.336-4.489-3.693-4.489A3.766,3.766,0,0,0,43.916,26c0,1.119.014,4.323.014,4.323s-.056,15.555-.056,17.298a.868.868,0,1,1-1.721-.223v-16.9a3.067,3.067,0,0,0-3.091-3.246c-3.357,0-3.524,3.8-3.524,3.8V54.822l-5.819-4.695s-3.077-2.91-5.875-.113,0,6.267,0,6.267l17.232,23.9v9.9H62.785V77.21S68.4,72.734,68.4,66.691s-.016-27.784-.016-29.756-1.09-4.063-3.52-4.063" transform="translate(9.699 9.637)" fill="#fff"></path>
+            <path d="M47.27,20.621l5.839-.242-9.752,9.752,1.515,1.515L58.51,18.009l-11.254.47c-.327-.01-3.191-.171-3.191-3,0-2.88,3.121-3.324,3.466-3.364L74.971,9.382l7.867-7.867L81.322,0,74,7.326,47.309,9.978c-1.862.2-5.388,1.6-5.388,5.5,0,3.954,3.45,5.095,5.349,5.146" transform="translate(17.99 -0.001)" fill="#fff"></path>
+            <path d="M91.464,12.257l-1.516-1.516-9.462,9.465.056.51c.007.067.683,6.683-3.163,10.53-2.907,2.9-15.232,15.22-19.786,19.768l1.515,1.518c4.556-4.549,16.881-16.867,19.786-19.771,3.936-3.936,3.924-9.937,3.82-11.753Z" transform="translate(24.715 4.609)" fill="#fff"></path>
+            <rect width="5.776" height="2.143" transform="translate(69.891 33.216) rotate(-45)" fill="#fff"></rect>
+            <rect width="5.775" height="2.143" transform="translate(75.634 39.367) rotate(-45.01)" fill="#fff"></rect>
+            <rect width="8.734" height="2.144" transform="translate(80.417 46.012) rotate(-45)" fill="#fff"></rect>
+            <path d="M46.036,12.111c.356.041,3.479.484,3.479,3.366,0,2.8-2.87,2.991-3.117,3l-11.33-.47L47.705,30.649l1.516-1.516L40.468,20.38l5.915.243c1.825-.051,5.275-1.192,5.275-5.146,0-3.892-3.526-5.3-5.4-5.5L19.582,7.326,12.257,0,10.741,1.516,18.61,9.384Z" transform="translate(4.609 -0.001)" fill="#fff"></path>
+            <path d="M14.086,31.245C10.24,27.4,10.914,20.782,10.921,20.716l.057-.513L1.515,10.741,0,12.256l8.751,8.751c-.106,1.816-.116,7.817,3.819,11.755L32.064,52.239l1.516-1.516Z" transform="translate(0 4.609)" fill="#fff"></path>
+            <rect width="2.144" height="6.456" transform="translate(40.687 30.648) rotate(-45)" fill="#fff"></rect>
+            <rect width="2.144" height="8.422" transform="translate(34.945 36.798) rotate(-45)" fill="#fff"></rect>
+            <rect width="2.144" height="12.089" transform="matrix(0.707, -0.707, 0.707, 0.707, 29.07, 41.352)" fill="#fff">
+            </rect>
+        </g>
+    </symbol>
+    <symbol viewBox="0 0 41 35.44" id="heart">
+        <defs>
+            <clipPath id="clip-path">
+                <rect id="Rechteck_316" width="41" height="35.44" fill="#a09173"></rect>
+            </clipPath>
+        </defs>
+        <g id="Gruppe_53850" clip-path="url(#clip-path)">
+            <path id="Pfad_290" d="M34.761.992A10.852,10.852,0,0,0,20.515,6.108,10.854,10.854,0,0,0,6.229.992C.485,3.593-2.261,10.256,2.259,18.1c3.235,5.584,8.295,9.794,18.256,17.344C30.441,27.891,35.51,23.682,38.732,18.1c4.531-7.848,1.785-14.5-3.971-17.106M9.644,16.9c0,.224.014.412.029.56s.03.275.049.372a1.891,1.891,0,0,0,.071.273,1.517,1.517,0,0,0,.512.771,1.436,1.436,0,0,0,.919.292,1.422,1.422,0,0,0,.961-.308,2.054,2.054,0,0,0,.553-.773c.047-.092.113-.117.2-.071l1.529.689c.094.029.118.084.071.167a3.273,3.273,0,0,1-1.256,1.564,3.705,3.705,0,0,1-2.069.555A3.783,3.783,0,0,1,9.068,20.4a3.2,3.2,0,0,1-1.255-1.759,3.322,3.322,0,0,1-.134-.456,4.821,4.821,0,0,1-.077-.52q-.029-.297-.042-.673c-.01-.258-.014-.567-.014-.933s0-.675.014-.933.023-.482.042-.673a4.52,4.52,0,0,1,.077-.512,4.112,4.112,0,0,1,.134-.463,3.189,3.189,0,0,1,1.255-1.759,3.783,3.783,0,0,1,2.139-.583,3.719,3.719,0,0,1,2.069.553,3.277,3.277,0,0,1,1.256,1.566c.047.084.023.139-.071.167l-1.529.687c-.084.047-.15.023-.2-.071a2.062,2.062,0,0,0-.553-.771,1.422,1.422,0,0,0-.961-.308,1.446,1.446,0,0,0-.919.29,1.522,1.522,0,0,0-.512.773,1.891,1.891,0,0,0-.071.273c-.019.1-.035.221-.049.371s-.024.338-.029.562-.007.5-.007.84,0,.618.007.842m14.609,3.788a.124.124,0,0,1-.141.139H22.33a.124.124,0,0,1-.139-.139V17.01a.074.074,0,0,0-.084-.085H18.992a.074.074,0,0,0-.084.085v3.675a.124.124,0,0,1-.141.139H16.986a.124.124,0,0,1-.139-.139V11.429a.123.123,0,0,1,.139-.141h1.782a.124.124,0,0,1,.141.141v3.59a.074.074,0,0,0,.084.084h3.115a.074.074,0,0,0,.084-.084v-3.59a.123.123,0,0,1,.139-.141h1.782a.124.124,0,0,1,.141.141Zm9.2-7.758a.124.124,0,0,1-.139.139H29.2a.076.076,0,0,0-.085.085v2a.076.076,0,0,0,.085.085h3.421a.125.125,0,0,1,.141.141v1.486a.125.125,0,0,1-.141.141H29.2a.074.074,0,0,0-.085.084v3.592a.124.124,0,0,1-.139.139H27.2a.124.124,0,0,1-.139-.139V11.429a.123.123,0,0,1,.139-.141h6.117a.123.123,0,0,1,.139.141Z" transform="translate(0 0)" fill="#a09173"></path>
+        </g>
+    </symbol>
+    <symbol id="lock" viewBox="0 0 17.629 35.518">
+        <defs>
+            <clipPath id="clip-path">
+                <rect id="Rechteck_48" width="17.629" height="35.518" fill="#a09173"></rect>
+            </clipPath>
+        </defs>
+        <g id="Gruppe_53409" transform="translate(0 0)" clip-path="url(#clip-path)">
+            <path id="Pfad_43" d="M17.629,8.814A8.814,8.814,0,1,0,5,16.75C3.818,20.814.916,35.518.916,35.518H17.085L12.662,16.734a8.8,8.8,0,0,0,4.966-7.92" transform="translate(0 0)" fill="#a09173"></path>
+        </g>
+    </symbol>
+    <symbol viewBox="0 0 79.127 77.168" id="money">
+        <defs>
+            <clipPath id="clip-path">
+                <rect id="Rechteck_23" width="79.127" height="77.168" fill="#fdc500"></rect>
+            </clipPath>
+        </defs>
+        <g id="Gruppe_22" clip-path="url(#clip-path)">
+            <path id="Pfad_34" d="M44.047,0A35.051,35.051,0,0,0,15.292,15.044a33.826,33.826,0,1,0,42.262,52.4A35.075,35.075,0,0,0,44.047,0M13.333,43.757c.01.412.026.76.052,1.038s.055.506.09.686a3.662,3.662,0,0,0,.132.509,2.809,2.809,0,0,0,.947,1.427,2.658,2.658,0,0,0,1.7.519,2.632,2.632,0,0,0,1.779-.57,3.818,3.818,0,0,0,1.025-1.427c.087-.174.209-.216.364-.132l2.829,1.273c.174.055.219.158.132.313a6.037,6.037,0,0,1-2.326,2.894,6.835,6.835,0,0,1-3.831,1.029,7.029,7.029,0,0,1-3.96-1.076,5.924,5.924,0,0,1-2.323-3.261,6.022,6.022,0,0,1-.248-.844,8.861,8.861,0,0,1-.142-.96c-.035-.358-.061-.77-.077-1.247s-.026-1.054-.026-1.727.006-1.25.026-1.727.042-.893.077-1.247a8.26,8.26,0,0,1,.142-.947,7.615,7.615,0,0,1,.248-.857,5.912,5.912,0,0,1,2.323-3.261,7,7,0,0,1,3.96-1.076,6.86,6.86,0,0,1,3.831,1.025A6.075,6.075,0,0,1,22.385,37c.087.155.042.258-.132.313l-2.829,1.273c-.155.084-.277.042-.364-.132a3.818,3.818,0,0,0-1.025-1.427,2.632,2.632,0,0,0-1.779-.57,2.658,2.658,0,0,0-1.7.519,2.822,2.822,0,0,0-.947,1.427,3.736,3.736,0,0,0-.132.506c-.035.184-.064.412-.09.69s-.042.622-.052,1.041-.013.934-.013,1.556,0,1.144.013,1.56m27.05,7.011a.23.23,0,0,1-.261.258h-3.3a.229.229,0,0,1-.258-.258V43.963a.137.137,0,0,0-.155-.155H30.643a.137.137,0,0,0-.155.155v6.805a.23.23,0,0,1-.261.258h-3.3a.229.229,0,0,1-.258-.258V33.627a.227.227,0,0,1,.258-.258h3.3a.229.229,0,0,1,.261.258v6.647a.138.138,0,0,0,.155.158h5.768a.138.138,0,0,0,.155-.158V33.627a.227.227,0,0,1,.258-.258h3.3a.229.229,0,0,1,.261.258ZM57.419,36.407a.229.229,0,0,1-.258.258H49.551a.139.139,0,0,0-.158.155v3.715a.138.138,0,0,0,.158.155h6.335a.231.231,0,0,1,.261.261V43.7a.231.231,0,0,1-.261.261H49.551a.14.14,0,0,0-.158.158v6.647a.229.229,0,0,1-.258.258h-3.3a.229.229,0,0,1-.258-.258V33.627a.227.227,0,0,1,.258-.258H57.162a.227.227,0,0,1,.258.258Zm8.787,16.781a33.834,33.834,0,0,0-32.367-43.7c-.97,0-1.927.064-2.874.145A29.606,29.606,0,0,1,66.206,53.189" transform="translate(0 0.001)" fill="#fdc500"></path>
+        </g>
+    </symbol>
+    <symbol viewBox="0 0 64.072 64.072" id="pencil">
+        <path id="Pfad_120" d="M4.91,52.711V39.335L23.588,58.864H10.675ZM35.138,0,0,35.135V64.072H29.937L64.072,29.937Z" fill="inherit"></path>
+    </symbol>
+    <symbol id="rocket" viewBox="0 0 75.534 125.739">
+        <defs>
+            <clipPath id="clip-path">
+                <rect id="Rechteck_293" width="75.534" height="125.739" fill="inherit"></rect>
+            </clipPath>
+        </defs>
+        <path id="Pfad_273" d="M41.346,66.2H57.791V51.084L41.346,33.061Z" transform="translate(17.743 14.188)" fill="#fff">
+        </path>
+        <path id="Pfad_274" d="M0,51.085V66.2H16.445V33.06Z" transform="translate(0 14.188)" fill="#fff"></path>
+        <g id="Gruppe_53808">
+            <g id="Gruppe_53807" clip-path="url(#clip-path)">
+                <path id="Pfad_275" d="M31.97,0S13.316,14.59,13.316,27.721V85.457H50.625V27.721C50.625,14.8,31.97,0,31.97,0m8.962,29.389a8.963,8.963,0,1,1-8.962-8.962,8.962,8.962,0,0,1,8.962,8.962" transform="translate(5.714 0)" fill="#fff"></path>
+                <rect id="Rechteck_299" width="25.178" height="8.393" transform="translate(25.096 87.398)" fill="#fff">
+                </rect>
+                <rect id="Rechteck_290" width="2.84" height="27.469" transform="translate(36.113 98.269)" fill="#fff">
+                </rect>
+                <rect id="Rechteck_291" width="2.84" height="16.991" transform="translate(29.714 98.272)" fill="#fff">
+                </rect>
+                <rect id="Rechteck_292" width="2.84" height="16.991" transform="translate(43.511 98.272)" fill="#fff">
+                </rect>
+            </g>
+        </g>
+    </symbol>
+    <symbol viewBox="0 0 29.308 34.72" id="sendemail">
+        <defs>
+            <clipPath id="clip-path">
+                <rect id="Rechteck_133" width="29.308" height="34.72" fill="#a09173"></rect>
+            </clipPath>
+        </defs>
+        <g id="Gruppe_53852" transform="translate(-14.248 -3261.082)">
+            <path id="Pfad_122" d="M14.111,18.671l8.8,8.8V12.251Z" transform="translate(19.644 3265.767)" fill="#a09173">
+            </path>
+            <g id="Gruppe_53531" transform="translate(14.248 3261.082)" clip-path="url(#clip-path)">
+                <path id="Pfad_123" d="M.868,27.831H26.631l-9.716-9.716-3.108,2.267-.82-.619-2.306-1.746Z" transform="translate(0.332 6.89)" fill="#a09173"></path>
+                <path id="Pfad_124" d="M8.789,18.642C6.131,16.629,2.772,14.084,0,11.98V27.431Z" transform="translate(0 4.581)" fill="#a09173"></path>
+                <path id="Pfad_125" d="M1.859,0V15.3l11.663,8.39,10.79-7.679V0Zm3.4,3.9h9.331V6.667H5.261ZM20.715,12.11H5.26V9.345H20.715Z" transform="translate(0.711 0)" fill="#a09173"></path>
+            </g>
+        </g>
+    </symbol>
+    <symbol id="speak" viewBox="0 0 92.976 89.609">
+        <defs>
+            <clipPath id="clip-path">
+                <rect id="Rechteck_291" width="92.976" height="89.608" fill="#fff"></rect>
+            </clipPath>
+        </defs>
+        <g id="Gruppe_53803" clip-path="url(#clip-path)">
+            <path id="Pfad_268" d="M24.173,38.184A12.256,12.256,0,1,0,11.94,25.854,12.249,12.249,0,0,0,24.173,38.184" transform="translate(5.124 5.868)" fill="#fff"></path>
+            <path id="Pfad_269" d="M79.629,27.049c-2.084.743-4.507.232-6.821-1.443a16.6,16.6,0,0,1-5.619-7.9c-2.4-6.741-.736-13.518,3.72-15.107a6.634,6.634,0,0,1,5.078.412l.9-1.945a8.739,8.739,0,0,0-6.67-.494L70.17.434,69.5.88a7.917,7.917,0,0,0-1.916,1.272L46.525,16.125c-2.765,1.246-3.753,5.412-2.212,9.734,1.358,3.809,4.167,6.308,6.821,6.308a4.052,4.052,0,0,0,1.17-.184l.853-.084a13.434,13.434,0,0,1-2.088,8.3c-3.687,5.278-12.076,6.814-18.917,7.123-3.753-.054-10.044-.037-11.807,0a17.158,17.158,0,0,0-15.53,9.319A15.015,15.015,0,0,0,3.76,59.054H3.749s-.019.074-.046.189a16.529,16.529,0,0,0-.672,2.877c-.709,3.1-1.716,8.106-2.614,12.757C-1.8,86.345,5.452,88.262,6.82,88.718l43.787.837c-7.782-16.681-7.833-26.016-7.834-30.639,8.535-1.856,14.857-5.648,18.843-11.352a26.268,26.268,0,0,0,4.333-16.941l11.334-1.129c.129.006.259.034.386.034a8,8,0,0,0,1.939-.266l.813-.081-.023-.064c-.091.009-.184,0-.276.01.074-.023.151-.031.226-.059a8.729,8.729,0,0,0,4.88-4.615L83.3,23.519a6.632,6.632,0,0,1-3.671,3.53" transform="translate(0 0.052)" fill="#fff"></path>
+            <path id="Pfad_270" d="M55.969,15.015l-4.43,1.579.72,2.021,4.43-1.581a5.447,5.447,0,0,0-3.66-10.261L48.6,8.352l.72,2.019,4.429-1.579a3.3,3.3,0,1,1,2.219,6.222" transform="translate(20.856 2.771)" fill="#fff"></path>
+            <rect id="Rechteck_278" width="8.156" height="2.144" transform="matrix(0.942, -0.336, 0.336, 0.942, 83.874, 11.169)" fill="#fff"></rect>
+            <rect id="Rechteck_279" width="7.985" height="2.144" transform="matrix(0.745, -0.667, 0.667, 0.745, 79.498, 5.324)" fill="#fff"></rect>
+            <rect id="Rechteck_290" width="2.143" height="7.985" transform="translate(84.905 20.484) rotate(-87.477)" fill="#fff"></rect>
+        </g>
+    </symbol>
+    <symbol viewBox="0 0 101.433 111.789" id="bubble">
+        <defs>
+            <clipPath id="clip-path">
+                <rect id="Rechteck_20" width="101.433" height="111.789" fill="#fff"></rect>
+            </clipPath>
+        </defs>
+        <g id="Gruppe_53538" transform="translate(0 0)">
+            <g id="Gruppe_14" transform="translate(0 0)" clip-path="url(#clip-path)">
+                <path id="Pfad_30" d="M50.719,0A50.665,50.665,0,0,0,16.1,87.71L7.552,111.789,29.505,96.737A50.7,50.7,0,1,0,50.719,0" transform="translate(0 -0.002)" fill="#fff"></path>
+            </g>
+        </g>
+    </symbol>
+    <symbol id="searchglas" viewBox="0 0 30.4 35.8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g id="searchglas" transform="translate(-10, -10)" stroke="#FFFFFF" stroke-width="6">
+                <g id="Group" transform="translate(12.4, 13)">
+                    <line x1="0" y1="31" x2="9" y2="19" id="Linie"></line>
+                    <circle id="Oval" cx="14" cy="11" r="11"></circle>
+                </g>
+            </g>
+        </g>
+    </symbol>
+    <symbol id="accoridionArrow" width="42.117" height="48.141" viewBox="0 0 42.117 48.141">
+        <g transform="translate(1.061)">
+            <path d="M14246.98-7521.682H14293" transform="translate(-7501.686 -14246.98) rotate(90)" fill="none" stroke="var(--strokeColor, #000)" stroke-width="3"></path>
+            <path d="M14273-7539.326l20,20-20,20" transform="translate(-7499.33 -14246.98) rotate(90)" fill="none" stroke="var(--strokeColor, #000)" stroke-width="3"></path>
+        </g>
+    </symbol>
+    <symbol id="shedule" viewBox="0 0 68 68">
+        <path d="M20.574,20.954 L20.574,23.681 C20.574,25.389769 21.959231,26.775 23.668,26.775 C25.376769,26.775 26.762,25.389769 26.762,23.681 L26.762,20.954 L40.276,20.954 L40.276,23.681 C40.276,25.389769 41.661231,26.775 43.37,26.775 C45.078769,26.775 46.464,25.389769 46.464,23.681 L46.464,20.954 L53.713,20.954 L53.713,49.497 L14,49.497 L14,20.954 L20.574,20.954 Z M21.184,39.298 C19.8154384,39.298 18.706,40.4074384 18.706,41.776 C18.706,43.1445616 19.8154384,44.254 21.184,44.254 C22.552333,44.2534481 23.6614481,43.144333 23.662,41.776 C23.662,40.4074384 22.5525616,39.298 21.184,39.298 Z M29.677,39.298 C28.3084384,39.298 27.199,40.4074384 27.199,41.776 C27.199,43.1445616 28.3084384,44.254 29.677,44.254 C31.045333,44.2534481 32.1544481,43.144333 32.155,41.776 C32.155,40.4074384 31.0455616,39.298 29.677,39.298 Z M36.4197894,40.0237894 C35.7110864,40.7324924 35.4990792,41.7983244 35.8826265,42.7242895 C36.2661738,43.6502547 37.1697426,44.254 38.172,44.254 C38.8292065,44.254 39.4594955,43.9929257 39.9242106,43.5282106 C40.3889257,43.0634955 40.65,42.4332065 40.65,41.776 C40.65,40.7737426 40.0462547,39.8701738 39.1202895,39.4866265 C38.1943244,39.1030792 37.1284924,39.3150864 36.4197894,40.0237894 Z M46.665,39.298 C45.2964384,39.298 44.187,40.4074384 44.187,41.776 C44.187,43.1445616 45.2964384,44.254 46.665,44.254 C48.0335616,44.254 49.143,43.1445616 49.143,41.776 C49.143,40.4074384 48.0335616,39.298 46.665,39.298 Z M39.6,29.379 L38.08,30.906 L36.559,29.383 L35.416,30.526 L36.937,32.045 L35.416,33.568 L36.559,34.711 L38.08,33.188 L39.6,34.711 L40.745,33.567 L39.222,32.049 L40.745,30.526 L39.6,29.379 Z M21.184,29.554 C19.8154384,29.554 18.706,30.6634384 18.706,32.032 C18.706,33.4005616 19.8154384,34.51 21.184,34.51 C22.5525616,34.51 23.662,33.4005616 23.662,32.032 C23.662,30.6634384 22.5525616,29.554 21.184,29.554 Z M29.677,29.554 C28.3084384,29.554 27.199,30.6634384 27.199,32.032 C27.199,33.4005616 28.3084384,34.51 29.677,34.51 C31.0455616,34.51 32.155,33.4005616 32.155,32.032 C32.155,30.6634384 31.0455616,29.554 29.677,29.554 Z M46.665,29.554 C45.2964384,29.554 44.187,30.6634384 44.187,32.032 C44.187,33.4005616 45.2964384,34.5100002 46.665,34.5100002 C47.3222878,34.5102654 47.952731,34.2492764 48.4175037,33.7845037 C48.8822764,33.319731 49.1432654,32.6892878 49.1430002,32.032 C49.1430002,30.6634384 48.0335616,29.554 46.665,29.554 Z M23.6685,17.9985 C24.4845007,17.9985 25.146,18.6599993 25.146,19.476 L25.146,23.683 C25.146,24.0748981 24.9902508,24.4507304 24.7130432,24.7277504 C24.4704866,24.9701429 24.1523398,25.1194928 23.8140519,25.1528653 L23.668,25.1600003 C22.8522754,25.1600003 22.191,24.4987246 22.191,23.683 L22.191,19.476 C22.191,18.6599993 22.8524993,17.9985 23.6685,17.9985 Z M43.3705,17.9985 C44.1865007,17.9985 44.848,18.6599993 44.848,19.476 L44.848,23.683 C44.848,24.4987246 44.1867246,25.16 43.371,25.16 C42.9782752,25.16 42.6025945,25.0043879 42.3256033,24.7273967 C42.0486121,24.4504055 41.893,24.0747248 41.893,23.683 L41.893,19.476 C41.893,18.6599993 42.5544993,17.9985 43.3705,17.9985 Z" id="sheduler" fill="#FFFFFF"></path>
+    </symbol>
+
+
+
+</svg>
+
+
+</body></html>

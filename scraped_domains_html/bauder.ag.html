@@ -1,0 +1,1254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html dir="ltr" xml:lang="de-CH" lang="de-CH" xmlns="http://www.w3.org/1999/xhtml" class=" "><head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- 
+	TYPO3 implemented by hotbytes - the opensource company - http://www.hotbytes.de
+
+	This website is powered by TYPO3 - inspiring people to share!
+	TYPO3 is a free open source Content Management Framework initially created by Kasper Skaarhoj and licensed under GNU/GPL.
+	TYPO3 is copyright 1998-2025 of Kasper Skaarhoj. Extensions are copyright of their respective owners.
+	Information and contribution at https://typo3.org/
+-->
+
+<base href="https://www.bauder.ag/">
+
+
+<meta name="generator" content="TYPO3 CMS">
+<meta name="description" content="Flachdächer, Gründächer und Steildächer von Bauder Europas führendem Hersteller von Dachsystemen.">
+<meta name="author" content="Paul Bauder GmbH &amp; Co. KG">
+<meta name="keywords" content="Flachdach, Gründach,Steildach,Flachdächer, Gründächer, Steildächer, Wärmedämmung,">
+<meta name="twitter:card" content="summary">
+<meta name="abstract" content="Bauder Dachsysteme: Dichten, dämmen und begrünen aus einer Hand">
+
+
+<link rel="stylesheet" type="text/css" href="/typo3temp/assets/compressed/d42b6e1bdf-b14882351ed98fe7edd40fe1dd03ba44.css" media="all">
+<link rel="stylesheet" type="text/css" href="/typo3temp/assets/compressed/reset-67a9eee82693c325e3282d0b6b934bf4.css" media="screen" title="display">
+<link rel="stylesheet" type="text/css" href="/typo3temp/assets/compressed/stylesFacelift-533b5b266d7bb68d8e633449bfbc47b4.css" media="screen" title="display">
+<link rel="stylesheet" type="text/css" href="/typo3temp/assets/compressed/topbar-b0a46a6354d93d5ac2ad593c21e0120f.css" media="all">
+<link rel="stylesheet" type="text/css" href="/typo3temp/assets/compressed/rte_new-617ab895b44075ec35bfdf2013d9db92.css" media="all">
+<link rel="stylesheet" type="text/css" href="/typo3temp/assets/compressed/jquery.bxslider-b8ce7f26cd94f060b76c41ac06ee6109.css" media="screen" title="display">
+<link rel="stylesheet" type="text/css" href="/typo3temp/assets/compressed/faceliftResponsive-82e01080db027c2c104622660ec0241b.css" media="screen" title="display">
+<link rel="stylesheet" type="text/css" href="/typo3temp/assets/compressed/fancybox-21224748a359750a214b9a1a08eaa7b5.css" media="screen" title="display">
+<link rel="stylesheet" type="text/css" href="/typo3temp/assets/compressed/fontawesome-913ccf86975f62fe5a0d84a33f689b02.css" media="all" title="display">
+<link rel="stylesheet" type="text/css" href="/typo3temp/assets/compressed/brands-140d6bd7447e4491ea72df9944fb2283.css" media="all" title="display">
+
+
+
+<script src="/fileadmin/templates/js/jQuery_patched_1.7.2.min.js" type="text/javascript"></script>
+<script src="/typo3conf/ext/ke_search_premium/Resources/Public/Javascript/jquery.ui.core.min.js" type="text/javascript"></script>
+<script src="/typo3conf/ext/ke_search_premium/Resources/Public/Javascript/jquery.ui.widget.min.js" type="text/javascript"></script>
+<script src="/typo3conf/ext/ke_search_premium/Resources/Public/Javascript/jquery.ui.position.min.js" type="text/javascript"></script>
+<script src="/typo3conf/ext/ke_search_premium/Resources/Public/Javascript/jquery.ui.menu.min.js" type="text/javascript"></script>
+<script src="/typo3conf/ext/ke_search_premium/Resources/Public/Javascript/jquery.ui.autocomplete.min.js" type="text/javascript"></script>
+<script src="/fileadmin/scripts/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></script>
+
+<script src="/typo3conf/ext/multislider/Resources/Public/js/jquery.bxslider.js" type="text/javascript"></script>
+<script src="/typo3conf/ext/multislider/Resources/Public/js/bxslider.js" type="text/javascript"></script>
+<script src="/fileadmin/templates/facelift_2014/js/languageMenu.js" type="text/javascript"></script>
+
+
+
+<script>
+// Production steps of ECMA-262, Edition 6, 22.1.2.1
+if (!Array.from) {
+  Array.from = (function () {
+    var toStr = Object.prototype.toString;
+    var isCallable = function (fn) {
+      return typeof fn === 'function' || toStr.call(fn) === '[object Function]';
+    };
+    var toInteger = function (value) {
+      var number = Number(value);
+      if (isNaN(number)) { return 0; }
+      if (number === 0 || !isFinite(number)) { return number; }
+      return (number > 0 ? 1 : -1) * Math.floor(Math.abs(number));
+    };
+    var maxSafeInteger = Math.pow(2, 53) - 1;
+    var toLength = function (value) {
+      var len = toInteger(value);
+      return Math.min(Math.max(len, 0), maxSafeInteger);
+    };
+
+    // The length property of the from method is 1.
+    return function from(arrayLike/*, mapFn, thisArg */) {
+      // 1. Let C be the this value.
+      var C = this;
+
+      // 2. Let items be ToObject(arrayLike).
+      var items = Object(arrayLike);
+
+      // 3. ReturnIfAbrupt(items).
+      if (arrayLike == null) {
+        throw new TypeError('Array.from requires an array-like object - not null or undefined');
+      }
+
+      // 4. If mapfn is undefined, then let mapping be false.
+      var mapFn = arguments.length > 1 ? arguments[1] : void undefined;
+      var T;
+      if (typeof mapFn !== 'undefined') {
+        // 5. else
+        // 5. a If IsCallable(mapfn) is false, throw a TypeError exception.
+        if (!isCallable(mapFn)) {
+          throw new TypeError('Array.from: when provided, the second argument must be a function');
+        }
+
+        // 5. b. If thisArg was supplied, let T be thisArg; else let T be undefined.
+        if (arguments.length > 2) {
+          T = arguments[2];
+        }
+      }
+
+      // 10. Let lenValue be Get(items, "length").
+      // 11. Let len be ToLength(lenValue).
+      var len = toLength(items.length);
+
+      // 13. If IsConstructor(C) is true, then
+      // 13. a. Let A be the result of calling the [[Construct]] internal method
+      // of C with an argument list containing the single item len.
+      // 14. a. Else, Let A be ArrayCreate(len).
+      var A = isCallable(C) ? Object(new C(len)) : new Array(len);
+
+      // 16. Let k be 0.
+      var k = 0;
+      // 17. Repeat, while k < len… (also steps a - h)
+      var kValue;
+      while (k < len) {
+        kValue = items[k];
+        if (mapFn) {
+          A[k] = typeof T === 'undefined' ? mapFn(kValue, k) : mapFn.call(T, kValue, k);
+        } else {
+          A[k] = kValue;
+        }
+        k += 1;
+      }
+      // 18. Let putStatus be Put(A, "length", len, true).
+      A.length = len;
+      // 20. Return A.
+      return A;
+    };
+  }());
+}
+</script>
+<script id="usercentrics-cmp" src="https://app.usercentrics.eu/browser-ui/latest/loader.js" data-settings-id="mqsufDFG" async="" data-avoid-prefetch-services=""></script><meta data-privacy-proxy-server="https://privacy-proxy-server.usercentrics.eu"><script async="" defer="" type="application/javascript" src="https://privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js"></script><script>var ucversion = 'v2'</script><script>var privacyLink = 'http://{$config.usercentrics.privacyLink}';</script><script>var imprintLink= 'http://{$config.usercentrics.imprintLink}';</script><link rel="apple-touch-icon" href="/fileadmin/bilder/allgemein/icons/bauder_ipad_icon.png"><script type="text/javascript" src="/fileadmin/scripts/main.js"></script><link rel="shortcut icon" href="/fileadmin/bilder/allgemein/icons/faviconnew_02.png"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Dachsysteme von Bauder | Flachdächer, Gründächer und Steildächer von Europas führendem Hersteller</title>
+<link rel="alternate" hreflang="de" href="https://www.bauder.de/de/bauder-deutschland.html">
+<link rel="alternate" hreflang="cs" href="https://www.bauder.cz/cz/bauder-cz.html">
+<link rel="alternate" hreflang="fr" href="https://www.bauder.fr/fr/bauder-france.html">
+<link rel="alternate" hreflang="en" href="https://www.bauder.co.uk/">
+<link rel="alternate" hreflang="hu" href="https://www.bauder.hu/hu/bauder-magyarorszag.html">
+<link rel="alternate" hreflang="no" href="https://www.bauder.no/no/bauder-norge.html">
+<link rel="alternate" hreflang="ru" href="https://www.bauder.ru/">
+<link rel="alternate" hreflang="ro" href="https://www.bauder.ro/ro/bauder-romania.html">
+<link rel="alternate" hreflang="de-CH" href="https://www.bauder.ag/ch/bauder-schweiz.html">
+<link rel="alternate" hreflang="fr-CH" href="https://www.bauder.ag/fr/bauder-suisse.html">
+<link rel="alternate" hreflang="hr" href="https://www.bauder.hr/hr/bauder-hrvatska.html">
+<link rel="alternate" hreflang="it" href="https://www.bauder.it/it/bauder-italia.html">
+<link rel="alternate" hreflang="nl" href="https://www.bauder.nl/nl/bauder-nederland.html">
+<link rel="alternate" hreflang="de-AT" href="https://www.bauder.at/at/bauder-oesterreich.html">
+<link rel="alternate" hreflang="pl" href="https://www.bauder.pl/pl/bauder-polen.html">
+<link rel="alternate" hreflang="sl" href="https://www.bauder.si/si/bauder-slovenija.html">
+<!-- Google Tag Manager -->
+<script type="text/plain" data-usercentrics="Google Tag Manager">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K8RR95D');</script>
+<!-- End Google Tag Manager --><script type="text/javascript">
+var COOKIE_WARNING_TEXT = 'Um das Angebot auf unserer Webseite optimal zu gestalten und die Benutzerfreundlichkeit stetig zu verbessern, verwenden wir Cookies. Durch die weitere Nutzung der Webseite stimmen Sie der Verwendung von Cookies zu. Weitere Informationen hierzu finden Sie in unserer <a href="/ch/impressum-und-datenschutz.html" class="privacy" target="_blank">Datenschutzerklärung</a>.';
+	COOKIE_WARNING_BUTTON_LABEL = 'OK',
+	SHOW_COOKIE_WARNING = true;
+</script>
+<script type="text/javascript" src="/fileadmin/scripts/menu.js"></script>
+<link rel="canonical" href="https://www.bauder.ag/ch/bauder-schweiz.html">
+
+<link rel="alternate" hreflang="de-CH" href="https://www.bauder.ag/ch/bauder-schweiz.html">
+<link rel="alternate" hreflang="fr-CH" href="https://www.bauder.ag/fr/bauder-suisse.html">
+<link rel="alternate" hreflang="x-default" href="https://www.bauder.ag/ch/bauder-schweiz.html">
+
+
+<script type="module" src="https://app.usercentrics.eu/browser-ui/3.64.0/index.module.js"></script><style id="uc-block-styles">.uc-social-embedding{background:#ececec; border:1px solid #dadada; padding:6px 22px; border-radius:6px; color:#909090; margin:10px; font-weight:200; font-size:14px; cursor:pointer;}.not-existing-service{display:none;}.uc-social-embedding .description-text{margin:0; margin-bottom:12px; line-height:1.5; font-family:BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif,BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif; font-size:14px;}.consent-not-exists .description-text{display:none; color:#595959;}.consent-not-exists .not-existing-service{display:inline;}.consent-not-exists .uc-embedding-buttons{display:none;}.uc-embedding-buttons{display:-webkit-box; display:-ms-flexbox; display:flex; justify-content:center; flex-wrap:wrap;}.uc-embedding-container-rtl{direction:rtl;}.uc-embedding-container{min-height:320px; max-height:500px; max-width:100%; width:100%; height:100%; font-size:0; position:relative; overflow:hidden; background:transparent; white-space:normal;}.uc-embedding-wrapper{width:372px; max-width:calc(100% - 70px); max-height:calc(100% - 35px); background:#FFF; border-radius:8px; box-shadow:0 3px 6px rgba(0, 0, 0, 0.5); position:absolute; padding:12px 24px; top:50%; left:50%; text-align:center; font-size:14px; line-height:1.5; transform:translateX(-50%) translateY(-50%); display:-webkit-box; display:-ms-flexbox; display:flex; flex-direction:column; overflow:auto; font-family:BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif,BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif;}.uc-embedding-wrapper h3{line-height:1.33; font-size:18px; font-weight:bold; margin:12px auto; color:#303030;}.uc-embedding-more-info{cursor:pointer; border:none; box-shadow:none; font-size:14px; font-weight:bold; display:inline-block; height:40px; border-radius:4px; padding:0; background:#F5F5F5; width:174px; margin:6px 12px 6px 0;}.uc-embedding-more-info.uc-button-primary{background:#0045A5; color:#fff;}.uc-embedding-accept{cursor:pointer; border:none; box-shadow:none; font-size:14px; font-weight:bold; display:inline-block; height:40px; padding:0; border-radius:4px; background:#0045A5; color:#fff; width:174px; margin:6px 12px 6px 0;}.uc-text-embedding{font-family:BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif,BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif; font-size:14px;}.uc-text-embedding-inline-button{text-decoration:underline; cursor:pointer; display:inline-block; padding:0; margin:0; background:inherit; font-family:BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif,BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif; font-size:14px; color:#0045A5; border:0;}a.uc-embedding-powered-by{color:#333;}</style></head>
+<body id="index" class="overflowHidden">
+
+
+	<div id="header">
+		<div id="headerMenuContainer"><div id="headerMenu"><div id="logoContainer"><a href="/ch/index.html"><img src="/fileadmin/templates/facelift_2014/images/logo_de.svg" alt="Bauder" width="172"></a></div><ul class="tabPages"><li class="newsletter">
+<div id="c401447" class="frame frame-default frame-type-html frame-layout-0"><script>
+  function loadjQuery(e, t)
+  {
+    var n = document.createElement("script");
+    n.setAttribute("src", e);
+    n.onload = t;
+    n.onreadystatechange = function ()
+    {
+      if (this.readyState == "complete" || this.readyState == "loaded") t()
+    };
+    document.getElementsByTagName("head")[0].appendChild(n)
+  }
+
+  function main()
+  {
+    var $cr = jQuery.noConflict();
+    var old_src;
+    $cr(document).ready(function ()
+    {
+      $cr(".cr_form").submit(function ()
+      {
+        $cr(this).find('.clever_form_error').removeClass('clever_form_error');
+        $cr(this).find('.clever_form_note').remove();
+        $cr(this).find(".musthave").find('input, textarea').each(function ()
+        {
+          if (jQuery.trim($cr(this).val()) == "" || ($cr(this).is(':checkbox')) || ($cr(this).is(':radio')))
+          {
+            if ($cr(this).is(':checkbox') || ($cr(this).is(':radio')))
+            {
+              if (!$cr(this).parent().find(":checked").is(":checked"))
+              {
+                $cr(this).parent().addClass('clever_form_error')
+              }
+            }
+            else
+            {
+              $cr(this).addClass('clever_form_error')
+            }
+          }
+        });
+        if ($cr(this).attr("action").search(document.domain) > 0 && $cr(".cr_form").attr("action").search("wcs") > 0)
+        {
+          var cr_email = $cr(this).find('input[name=email]');
+          var unsub = false;
+          if ($cr("input['name=cr_subunsubscribe'][value='false']").length)
+          {
+            if ($cr("input['name=cr_subunsubscribe'][value='false']").is(":checked"))
+            {
+              unsub = true
+            }
+          }
+          if (cr_email.val() && !unsub)
+          {
+            $cr.ajax({
+              type: "GET",
+              url: $cr(".cr_form").attr("action").replace("wcs", "check_email") + $cr(this).find('input[name=email]').val(),
+              success: function (data)
+              {
+                if (data)
+                {
+                  cr_email.addClass('clever_form_error').before("<div class='clever_form_note cr_font'>" + data + "</div>");
+                  return false
+                }
+              },
+              async: false
+            })
+          }
+          var cr_captcha = $cr(this).find('input[name=captcha]');
+          if (cr_captcha.val())
+          {
+            $cr.ajax({
+              type: "GET",
+              url: $cr(".cr_form").attr("action").replace("wcs", "check_captcha") + $cr(this).find('input[name=captcha]').val(),
+              success: function (data)
+              {
+                if (data)
+                {
+                  cr_captcha.addClass('clever_form_error').after("<div style='display:block' class='clever_form_note cr_font'>" + data + "</div>");
+                  return false
+                }
+              },
+              async: false
+            })
+          }
+        }
+        if ($cr(this).find('.clever_form_error').length)
+        {
+          return false
+        }
+        return true
+      });
+      $cr('input[class*="cr_number"]').change(function ()
+      {
+        if (isNaN($cr(this).val()))
+        {
+          $cr(this).val(1)
+        }
+        if ($cr(this).attr("min"))
+        {
+          if (($cr(this).val() * 1) < ($cr(this).attr("min") * 1))
+          {
+            $cr(this).val($cr(this).attr("min"))
+          }
+        }
+        if ($cr(this).attr("max"))
+        {
+          if (($cr(this).val() * 1) > ($cr(this).attr("max") * 1))
+          {
+            $cr(this).val($cr(this).attr("max"))
+          }
+        }
+      });
+      old_src = $cr("div[rel='captcha'] img:not(.captcha2_reload)").attr("src");
+      if ($cr("div[rel='captcha'] img:not(.captcha2_reload)").length != 0)
+      {
+        captcha_reload()
+      }
+    });
+
+    function captcha_reload()
+    {
+      var timestamp = new Date().getTime();
+      $cr("div[rel='captcha'] img:not(.captcha2_reload)").attr("src", "");
+      $cr("div[rel='captcha'] img:not(.captcha2_reload)").attr("src", old_src + "?t=" + timestamp);
+      return false
+    }
+
+  }
+
+
+</script><style>
+    .cr_site {
+        margin:           0;
+        padding:          75px 0 0 0;
+        text-align:       center;
+        background-color: #eeeeee;
+    }
+
+    .cr_font {
+        font-size:   14px;
+        font-family: Arial;
+    }
+
+    .cr_body h2, .cr_header h2 {
+        font-size:   22px;
+        line-height: 28px;
+        margin:      0 0 10px 0;
+    }
+
+    .cr_body h1, .cr_header h2 {
+        font-size:     28px;
+        margin-bottom: 15px;
+        padding:       0;
+        margin-top:    0;
+    }
+
+    .wrapper, .cr_page {
+        margin:        0 auto 10px auto;
+        text-align:    left;
+        border-radius: 4px;
+    }
+
+    .cr_header {
+        text-align: center;
+        background: transparent !Important;
+    }
+
+    .cr_body label {
+        float:       none;
+        clear:       both;
+        display:     block;
+        width:       auto;
+        margin-top:  8px;
+        text-align:  left;
+        font-weight: bold;
+        position:    relative;
+    }
+
+    .cr_button {
+        display:               inline-block;
+        font-family:           'Helvetica', Arial, sans-serif;
+        width:                 auto;
+        white-space:           nowrap;
+        height:                32px;
+        margin:                5px 5px 0 0;
+        padding:               0 22px;
+        text-decoration:       none;
+        text-align:            center;
+        font-weight:           bold;
+        font-style:            normal;
+        font-size:             15px;
+        line-height:           32px;
+        cursor:                pointer;
+        border:                0;
+        vertical-align:        top;
+    }
+
+    .cr_button {
+        background-color: #333;
+        color:            #ffffff;
+    }
+
+    .cr_button:hover, .cr_button-small:hover {
+        opacity: 0.7;
+        filter:  alpha(opacity=70);
+    }
+
+    .powered {
+        padding: 20px 0;
+        width:   560px;
+        margin:  0 auto;
+    }
+
+    .formbox {
+        line-height:      150%;
+        font-family:      Helvetica;
+        font-size:        12px;
+        color:            #333333;
+        background-color: #ffffff;
+    }
+
+    .cr_ipe_item label {
+        line-height: 150%;
+        font-size:   14px;
+    }
+
+    .cr_ipe_item textarea {
+        background:  none repeat scroll 0 0 #eeeeee;
+        border:      1px solid #aaa;
+        font-family: Helvetica;
+        font-size:   16px;
+    }
+
+    .cr_ipe_item input {
+        background:  none repeat scroll 0 0 #eeeeee;
+        border:      1px solid #aaa;
+        padding:     5px;
+        font-family: Helvetica;
+        font-size:   16px;
+    }
+
+    .cr_ipe_item select {
+        background:  none repeat scroll 0 0 #eeeeee;
+        border:      1px solid #aaa;
+        display:     block;
+        margin:      0;
+        padding:     5px;
+        width:       100%;
+        font-family: Helvetica;
+        font-size:   16px;
+    }
+
+    .cr_ipe_item input.cr_ipe_radio, input.cr_ipe_checkbox {
+        -moz-binding:     none;
+        -moz-box-sizing:  border-box;
+        background-color: -moz-field !important;
+        border:           2px inset threedface !important;
+        color:            -moz-fieldtext !important;
+        cursor:           default;
+        height:           13px;
+        padding:          0 !important;
+        width:            13px;
+    }
+
+    .cr_ipe_item input.cr_ipe_radio {
+        -moz-appearance: radio;
+        border-radius:   100% 100% 100% 100% !important;
+        margin:          3px 3px 0 5px;
+    }
+
+    .submit_container {
+        text-align: center
+    }
+
+    .cr_ipe_item {
+    }
+
+    .cr_ipe_item.inactive {
+        display: none;
+    }
+
+    .imprint {
+        font-size: 0.8em;
+    }
+
+    .cr_captcha {
+        padding-left: 130px;
+    }
+
+    .cr_error {
+        font-size: 1.1em;
+        padding:   10px;
+    }
+
+    .clever_form_error {
+        background-color: #f99;
+        color:            #000;
+        border:           1px solid #f22 !important
+    }
+
+    .clever_form_note {
+        margin:           26px 0 0 3px;
+        position:         absolute;
+        display:          inline;
+        padding:          2px 4px;
+        font-weight:      bold;
+        background-color: #f2ecb5;
+        color:            #000;
+        font-size:        12px !important;
+    }
+
+    .cr_site {
+        background-color: #eee;
+    }
+
+    .cr_header {
+        color: #000000;
+    }
+
+    .cr_body {
+        background-color: #ffffff;
+        font-size:        12px;
+        color:            #000000;
+    }
+
+    .cr_hr {
+        background-color: #ccc;
+    }
+
+    .cr_site a {
+        color: #0084ff;
+    }
+
+    .imprint {
+        color: #000;
+    }
+
+</style><form class="layout_form cr_form cr_font" action="https://eu2.cleverreach.com/f/249733-247665/wcs/" method="post" target="_blank"><div class="cr_body cr_page cr_font formbox"><div class="non_sortable" style="text-align:left;"></div><div class="editable_content" style="text-align:left;"><div id="5343932" rel="mce_text" class="cr_ipe_item ui-sortable newsletter_left"><div class="mce_text newsletterHeader"><h5>Anmeldung Newsletter</h5><p>Melden Sie sich an und nutzen Sie weitere nützliche Funktionen dieser Seite und vieles mehr.</p></div></div><div class="newsletter_right"><div class="gender title"><div id="5343954" rel="radio" class="cr_ipe_item ui-sortable" style=" margin-bottom:0px;"><label class="itemname">Anrede</label><div style="overflow:auto;"><label for="Frau5343954"><input id="Frau5343954" class="cr_ipe_radio" name="1143576" type="radio" value="Frau"><span>Frau</span>&nbsp;
+              </label><label for="Herr5343954"><input id="Herr5343954" class="cr_ipe_radio" name="1143576" type="radio" value="Herr"><span>Herr</span>&nbsp;
+              </label></div></div><div id="5343955" rel="textarea" class="cr_ipe_item ui-sortable" style=" margin-bottom:0px;"><label for="textarea_5343955" class="itemname"></label><textarea id="textarea_5343955" name="1142937" style="width:50%;" placeholder="Titel"></textarea></div></div><div class="name"><div id="5343956" rel="textarea" class="cr_ipe_item ui-sortable" style=" margin-bottom:0px;"><label for="textarea_5343956" class="itemname"></label><textarea id="textarea_5343956" name="1142938" style="width:100%;" placeholder="Vorname"></textarea></div></div><div class="surname"><div id="5343957" rel="textarea" class="cr_ipe_item ui-sortable" style=" margin-bottom:0px;"><label for="textarea_5343957" class="itemname"></label><textarea id="textarea_5343957" name="1142939" style="width:100%;" placeholder="Nachname"></textarea></div></div><div class="email"><div id="5343909" rel="email" class="cr_ipe_item ui-sortable musthave" style="margin-bottom:0px;"><label for="text5343909" class="itemname"></label><input id="text5343909" name="email" value="" type="text" style="width:100%;" placeholder="E-Mail*"></div></div><div id="5346925" rel="checkbox" class="cr_ipe_item ui-sortable" style=" margin-bottom:0px;"><label class="itemname">Mich interessieren Themen für:</label><div style="overflow:auto;"><label for="Architekten und Planer5346925" class="check_left"><input id="Architekten und Planer5346925" class="cr_ipe_checkbox" name="1143575[]" value="Architekten und Planer" type="checkbox"><span>Architekten und Planer</span><br></label><label for="Händler5346925" class="check_left"><input id="Händler5346925" class="cr_ipe_checkbox" name="1143575[]" value="Händler" type="checkbox"><span>Händler</span><br></label><label for="Verarbeiter5346925" class="check_left"><input id="Verarbeiter5346925" class="cr_ipe_checkbox" name="1143575[]" value="Verarbeiter" type="checkbox"><span>Verarbeiter</span><br></label><label for="Gewerbliche und industrielle Bauherren5346925" class="check_right"><input id="Gewerbliche und industrielle Bauherren5346925" class="cr_ipe_checkbox" name="1143575[]" value="Gewerbliche und industrielle Bauherren" type="checkbox"><span>Gewerbliche
+                  und industrielle Bauherren</span><br></label><label for="Private Bauherren5346925" class="check_right"><input id="Private Bauherren5346925" class="cr_ipe_checkbox" name="1143575[]" value="Private Bauherren" type="checkbox"><span>Private Bauherren<span><br></span></span></label></div></div><div id="5343996" rel="checkbox" class="cr_ipe_item ui-sortable musthave" style=" margin-bottom:0px;"><label class="itemname">Datenschutz*</label><div style="overflow:auto;"><label for="Ich akzeptiere die Datenschutzbestimmungen5343996"><input id="Ich akzeptiere die Datenschutzbestimmungen5343996" class="cr_ipe_checkbox" name="1143577[]" value="Ich akzeptiere die Datenschutzbestimmungen" type="checkbox"><span>Ich
+                    akzeptiere die <a href="/de/datenschutz.html" target="_blank">Datenschutzbestimmungen</a>.</span></label></div><br style="clear:left;"></div><br style="clear:left;"><div id="5343911" rel="button" class="cr_ipe_item ui-sortable submit_container" style="text-align:center; margin-bottom:px;"><button type="submit" class="cr_button">Anmelden</button></div></div></div></div></form></div>
+
+</li><li class="language"><div class="languageRTE">
+<div id="c381702" class="frame frame-default frame-type-text frame-layout-6"><header><h5 class=" h0">
+				Welcome to Bauder.
+			</h5></header><p>To provide you with the information that best satisfies your needs,please select your country or language below.&nbsp;You will be automatically redirected to the Bauder website of the&nbsp;selected country. Choose <b>"Other countries"</b> to access the&nbsp;international Bauder website in English.</p></div>
+
+</div><div class="languageSelection">
+<div id="c381700" class="frame frame-default frame-type-text frame-layout-7"><table class="firstRowCentered"><tbody><tr><td><a href="http://www.bauder.cz/" target="_blank"><b>Cesko</b> (Český)</a><br><a href="http://www.bauder.fr/" target="_blank"><b>France </b>(Français)</a><br><a href="http://www.bauder.co.uk/" target="_blank"><b>Ireland</b> (English)</a><br><a href="http://www.bauder.hu/" target="_blank"><b>Magyarország</b> (Magyar)</a><br><a href="http://www.bauder.no/" target="_blank"><b>Norge</b> (Norsk)</a><br><a href="http://www.bauder.ru/" target="_blank"><b>Россия</b> (Pу́сский)</a><br><a href="http://www.bauder.ro/" target="_blank"><b>România</b> (Român)</a><br><a href="http://www.bauder.ag/" target="_blank"><b>Schweiz/Suisse</b></a> (<a href="http://www.bauder.ag/ch/" target="_blank">Deutsch</a>/<a href="http://www.bauder.ag/fr/" target="_blank">Français</a>/Italiano)<br>------------------------------------------------------------<br><a href="http://www.bauder.eu/de/bauder-europe.html" target="_blank"><b>Other countries/International</b> (English)</a></td><td><a href="http://www.bauder.de/" target="_blank" class="external-link-new-window"><b>Deutschland</b> (Deutsch)</a><br><a href="http://www.bauder.hr/" target="_blank" class="external-link"><b>Hrvatska</b> (Hrvatski)</a><br><a href="http://www.bauder.it/" target="_blank"><b>Italia</b> (Italiano)</a><br><a href="http://www.bauder.nl/" target="_blank"><b>Nederland </b>(Nederlands)</a><br><a href="http://www.bauder.at/" target="_blank"><b>Österreich</b> (Deutsch)</a><br><a href="http://www.bauder.pl/" target="_blank"><b>Polska</b> (Polski)</a><br><a href="http://www.bauder.si/" target="_blank"><b>Slovenija</b> (Slovenski)</a><br><a href="http://www.bauder.co.uk/" target="_blank"><b>United Kingdom</b> (English)</a></td></tr></tbody></table></div>
+
+</div></li><li class="lachChange"></li><li class="search"><div class="searchRTE">
+<div id="c381699" class="frame frame-default frame-type-text frame-layout-8"><header><h5 class=" h0">
+				Ihre Suche
+			</h5></header><p>Mit der Suche haben Sie die Möglichkeit, schnell und</p><p>unkompliziert auf Inhalte der Bauder Website zuzugreifen.</p><p>&nbsp;</p><p><strong>INFO-HOTLINE: +41 (0) 41 854 13 00</strong></p><p><strong>E-MAIL:</strong><a href="mailto:info@bauder.ag">info@bauder.ag</a></p><p>&nbsp;</p><p>Paul Bauder AG</p><p>Alte Zugerstrasse 16, 6403 Küssnacht a/Rigi</p></div>
+
+</div>
+<div id="c278999" class="frame frame-default frame-type-list frame-layout-0"><div class="tx-kesearch-pi1">
+	
+
+	<form method="get" id="form_kesearch_pi1" name="form_kesearch_pi1" action="/ch/suchergebnisse.html">
+		
+
+		<fieldset class="kesearch_searchbox">
+			
+			
+			
+
+			<div class="kesearchbox">
+				<input type="search" class="ke_search_sword ui-autocomplete-input" id="search_input_flyout" name="tx_kesearch_pi1[sword]" value="" placeholder="Suchbegriff" minlength="3" autocomplete="off"><span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+				<input type="submit" class="button kesearch_submit" value="Finden">
+				<br>
+				<input type="submit" class="button kesearch_submit flyout_search" value="Finden">
+				<div class="clearer">&nbsp;</div>
+			</div>
+
+			
+				<input id="kesearchpagenumber" type="hidden" name="tx_kesearch_pi1[page]" value="1">
+			
+			<input id="resetFilters" type="hidden" name="tx_kesearch_pi1[resetFilters]" value="0">
+            
+			
+
+		</fieldset>
+	</form>
+
+</div>
+</div>
+
+</li></ul><div class="tabs left"><div class="right"><ul><li class="newsletter dynamic"><a>Newsletter</a></li><li class="language dynamic"><a>international</a></li><li class="langChange"><a href="/ch/bauder-schweiz.html"><b>DE</b></a><a href="/fr/bauder-suisse.html">FR</a></li><li class="search dynamic"><a>Suche</a></li></ul></div></div><a class="close">[X]</a></div></div>
+		<div class="centerWrap">
+			<div id="searchBox">
+				
+			</div>
+			<a href="/ch/index.html" id="logo"><img src="/fileadmin/templates/facelift_2014/images/logo_de.svg" alt="Bauder" width="300" height="96"></a>
+			<div id="menuMain"><button class="hamburger hamburger--slider" type="button"> <span class="hamburger-box"> <span class="hamburger-inner"></span> </span> </button><ul class="menu"><li class="first"><a href="/ch/flachdach.html"><span>Flachdach</span></a><span class="submenuIndicator"></span><div><ul class="submenu"><li class="first"><a href="/ch/flachdach/flachdach-systemloesungen.html">Systeme</a><span class="submenuIndicator-lvl2"></span><div><ul class="submenu-lvl2"><li class="first"><a href="/ch/flachdach/flachdach-systemloesungen/flachdach-begruent.html">Flachdach begrünt</a></li><li><a href="/ch/flachdach/flachdach-systemloesungen/flachdach-bekiest.html">Flachdach bekiest</a></li><li><a href="/ch/flachdach/flachdach-systemloesungen/nacktdach.html">Nacktdach</a></li><li><a href="/ch/flachdach/flachdach-systemloesungen/sicherheitsdach.html">Sicherheitsdach</a></li><li><a href="/ch/bauder-gruendach/systeme/baudergreen-begehbar.html">Terrassen &amp; Balkone</a></li><li class="last"><a href="/ch/bauder-gruendach/systeme/baudergreen-befahrbar.html">Verkehrsflächen</a></li></ul></div></li><li><a href="/ch/flachdach/flachdach-produkte.html">Produkte</a><span class="submenuIndicator-lvl2"></span><div><ul class="submenu-lvl2"><li class="first"><a href="/ch/flachdach/flachdach-produkte/bitumen-dachbahnen.html">Bitumen Dachbahnen</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/ch/flachdach/flachdach-produkte/bitumen-dachbahnen/oberlagen.html">Oberlagen</a></li><li><a href="/ch/flachdach/flachdach-produkte/bitumen-dachbahnen/oberlagen-durchwurzelungsfest.html">Oberlagen, durchwurzelungsfest</a></li><li><a href="/ch/flachdach/flachdach-produkte/bitumen-dachbahnen/erste-abdichtungslagen.html">Erste Abdichtungslagen</a></li><li><a href="/ch/flachdach/flachdach-produkte/bitumen-dachbahnen/dampfbremsen.html">Dampfbremsen</a></li><li class="last"><a href="/ch/flachdach/flachdach-produkte/bitumen-dachbahnen/zubehoer.html">Zubehör</a></li></ul></div></li><li><a href="/ch/flachdach/flachdach-produkte/kunststoff-dachbahnen.html">Kunststoff Dachbahnen</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/ch/flachdach/flachdach-produkte/kunststoff-dachbahnen/bauderthermofin.html">BauderTHERMOFIN</a></li><li><a href="/ch/flachdach/flachdach-produkte/kunststoff-dachbahnen/bauderthermoplan.html">BauderTHERMOPLAN</a></li><li class="last"><a href="/ch/flachdach/flachdach-produkte/kunststoff-dachbahnen/bauderthermofol.html">BauderTHERMOFOL</a></li></ul></div></li><li><a href="/ch/flachdach/waermedaemmung-1.html">Wärmedämmung</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/ch/flachdach/flachdach-produkte/waermedaemmung/bauderpir.html">BauderPIR</a></li><li><a href="/ch/flachdach/flachdach-produkte/waermedaemmung/baudereco/baudereco.html">BauderECO</a></li><li><a href="/ch/flachdach/flachdach-produkte/waermedaemmung/baudervip.html">BauderVIP</a></li><li class="last"><a href="/ch/flachdach/waermedaemmung/kompaktdach.html">Kompaktdach</a></li></ul></div></li><li><a href="/ch/flachdach/flachdach-produkte/linienentwaesserung.html">Linienentwässerung</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/ch/flachdach/flachdach-produkte/linienentwaesserung/die-set-funktion.html">Die Set-Lösung</a></li><li><a href="/ch/flachdach/flachdach-produkte/linienentwaesserung/les-sets.html">LES Sets</a></li><li class="last"><a href="/ch/flachdach/flachdach-produkte/linienentwaesserung/verpackung.html">Verpackung</a></li></ul></div></li><li><a href="/ch/flachdach/flachdach-produkte/fluessigkunststoff-1.html">Flüssigkunststoff</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/ch/flachdach/flachdach-produkte/fluessigkunststoff/bauderliquitec-pu.html">BauderLIQUITEC PU</a></li><li><a href="/ch/flachdach/flachdach-produkte/fluessigkunststoff/bauderliquitec-pmma.html">BauderLIQUITEC PMMA</a></li><li><a href="/ch/flachdach/flachdach-produkte/fluessigkunststoff/bauderliquitec-vlies.html">BauderLIQUITEC Vlies</a></li><li><a href="/ch/flachdach/flachdach-produkte/fluessigkunststoff/bauderliquitec-zubehoer.html">BauderLIQUITEC Zubehör</a></li><li class="last"><a href="/ch/flachdach/fluessigkunststoff/faq-1.html">FAQ Flüssigkunststoff</a></li></ul></div></li><li class="last"><a href="/ch/flachdach/absturzsicherung.html">Absturzsicherung</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/ch/flachdach/flachdach-produkte/absturzsicherung/gelaendersysteme.html">Geländersysteme</a></li><li><a href="/ch/flachdach/flachdach-produkte/absturzsicherung/seilsysteme.html">Seilsysteme</a></li><li><a href="/ch/flachdach/flachdach-produkte/absturzsicherung/anschlagpunkte.html">Anschlagpunkte</a></li><li><a href="/ch/flachdach/absturzsicherung/steigleiter.html">Steigleiter</a></li><li><a href="/ch/flachdach/flachdach-produkte/absturzsicherung/zubehoer.html">Zubehör</a></li><li><a href="/ch/flachdach/flachdach-produkte/absturzsicherung/planungshinweise/grundlagen.html">Planungshinweise</a></li><li class="last"><a href="/ch/flachdach/absturzsicherung/downloads.html">Downloads</a></li></ul></div></li></ul></div></li><li><a href="/ch/flachdach/sicherheitsdach.html">Sicherheitsdach</a><span class="submenuIndicator-lvl2"></span><div><ul class="submenu-lvl2"><li class="first"><a href="/ch/flachdach/sicherheitsdach/das-perfekte-konzept.html">Das perfekte Konzept</a></li><li><a href="/ch/flachdach/sicherheitsdach/sichere-systeme.html">Sichere Systeme</a></li><li><a href="/ch/flachdach/sicherheitsdach/umfassende-sicherheit.html">Umfassende Sicherheit</a></li><li class="last"><a href="/ch/flachdach/sicherheitsdach/eine-nachhaltige-loesung.html">Eine nachhaltige Lösung</a></li></ul></div></li><li><a href="/ch/flachdach/sanierungsloesungen.html">Sanierungslösungen</a><span class="submenuIndicator-lvl2"></span><div><ul class="submenu-lvl2"><li class="first"><a href="/ch/flachdach/flachdach-sanierung/belastungen-fuer-das-dach.html">Belastungen für das Dach</a></li><li><a href="/ch/flachdach/flachdach-sanierung/typische-schadensbilder.html">Typische Schadensbilder</a></li><li class="last"><a href="/ch/flachdach/flachdach-sanierung/das-sanierungskonzept.html">Das Sanierungskonzept</a></li></ul></div></li><li><a href="/ch/flachdach/flachdach-grundlagen/brandschutz.html">Industriebau</a><span class="submenuIndicator-lvl2"></span><div><ul class="submenu-lvl2"><li class="first"><a href="/ch/flachdach/flachdach-grundlagen/brandschutz/versicherungen-mit-fm-global.html">Versicherungen mit FM Global</a></li><li><a href="/ch/flachdach/flachdach-grundlagen/brandschutz/flachdach-ohne-nutz-und-schutzschicht.html">Flachdach ohne Nutz- und Schutzschicht</a></li><li class="last"><a href="/ch/flachdach/flachdach-grundlagen/brandschutz/sichere-waermedaemmung-mit-bauderpir.html">Sichere Wärmedämmung mit BauderPIR</a></li></ul></div></li><li><a href="/ch/flachdach/referenzen.html">Referenzen</a></li><li class="last"><a href="/ch/flachdach/downloads/prospekte-und-preisliste.html">Downloads</a><span class="submenuIndicator-lvl2"></span><div><ul class="submenu-lvl2"><li class="first"><a href="/ch/flachdach/downloads/prospekte-und-preisliste.html">Prospekte und Preisliste</a></li><li><a href="/ch/flachdach/downloads/verlegeanleitungen.html">Verlegeanleitungen</a></li><li><a href="/ch/flachdach/downloads/produktdatenblaetter.html">Produktdatenblätter</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/ch/flachdach/downloads/produktdatenblaetter/bitumen.html">Bitumen</a></li><li><a href="/ch/flachdach/downloads/produktdatenblaetter/kunststoff.html">Kunststoff</a></li><li><a href="/ch/flachdach/downloads/produktdatenblaetter/fluessigkunststoff.html">Flüssigkunststoff</a></li><li class="last"><a href="/ch/flachdach/downloads/produktdatenblaetter/daemmstoffe.html">Dämmstoffe</a></li></ul></div></li><li><a href="/ch/flachdach/downloads/leistungserklaerungen.html">Leistungserklärungen</a></li><li><a href="/ch/flachdach/downloads/sicherheitsdatenblaetter.html">Sicherheitsdatenblätter</a></li><li><a href="/ch/flachdach/downloads/umwelt-produktdeklarationen-epd.html">Umwelt-Produktdeklarationen (EPD)</a></li><li><a href="/ch/flachdach/downloads/nachhaltigkeits-datenblaetter-ndb.html">Nachhaltigkeits-Datenblätter (NDB)</a></li><li><a href="/ch/flachdach/downloads/zertifikate-eco.html">Zertifikate (eco)</a></li><li class="last"><a href="/ch/flachdach/downloads/formulare.html">Formulare</a></li></ul></div></li></ul></div></li><li><a href="/ch/steildach.html"><span>Steildach</span></a><span class="submenuIndicator"></span><div><ul class="submenu"><li class="first"><a href="/ch/steildach/steildach-systemloesungen.html">Systeme</a><span class="submenuIndicator-lvl2"></span><div><ul class="submenu-lvl2"><li class="first"><a href="/ch/steildach/steildach-systemloesungen/neubau.html">Neubau</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/ch/steildach/steildach-systemloesungen/neubau/besonders-nachhaltig.html">Besonders nachhaltig</a></li><li><a href="/ch/steildach/steildach-systemloesungen/neubau/der-universelle.html">Der Universelle</a></li><li><a href="/ch/steildach/steildach-systemloesungen/neubau/schalldaemmend.html">Schalldämmend</a></li><li><a href="/ch/steildach/steildach-systemloesungen/neubau/diffusionsoffen.html">Diffusionsoffen</a></li><li><a href="/ch/steildach/steildach-systemloesungen/neubau/diffusionsgeschlossen.html">Diffusionsgeschlossen</a></li><li class="last"><a href="/ch/steildach/steildach-systemloesungen/neubau/metalldach.html">Metalldach</a></li></ul></div></li><li><a href="/ch/steildach/steildach-systemloesungen/sanierung.html">Sanierung</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/ch/steildach/steildach-systemloesungen/sanierung/sanierungsformel-11.html">Sanierungsformel 1:1</a></li><li><a href="/ch/steildach/steildach-systemloesungen/sanierung/sanierungsloesung.html">Sanierung plus</a></li><li class="last"><a href="/ch/steildach/steildach-systemloesungen/sanierung/sanierung-komplett-sa-3.html">Sanierung komplett</a></li></ul></div></li><li class="last"><a href="/ch/steildach/steildach-systemloesungen/innendaemmung.html">Innendämmung</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/ch/steildach/steildach-systemloesungen/innendaemmung/unter-sparren.html">Unter Sparren</a></li><li><a href="/ch/steildach/steildach-systemloesungen/innendaemmung/estrich-kellerboden.html">Estrich-/Kellerboden</a></li><li class="last"><a href="/ch/steildach/steildach-systemloesungen/innendaemmung/decke.html">Decke</a></li></ul></div></li></ul></div></li><li><a href="/ch/steildach/steildach-produkte.html">Produkte</a><span class="submenuIndicator-lvl2"></span><div><ul class="submenu-lvl2"><li class="first"><a href="/ch/steildach/steildach-produkte/steildachbahnen.html">Steildachbahnen</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/ch/steildach/steildach-produkte/steildachbahnen/unterdachbahnen.html">Unterdachbahnen</a></li><li><a href="/ch/steildach/steildach-produkte/steildachbahnen/metalldachtrennlagen.html">Metalldachtrennlagen</a></li><li class="last"><a href="/ch/steildach/steildach-produkte/steildachbahnen/dampfbremsen.html">Dampfbremsen</a></li></ul></div></li><li><a href="/ch/steildach/steildach-produkte/waermedaemmung.html">Wärmedämmung</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/ch/steildach/steildach-produkte/waermedaemmung/aufsparrendaemmung.html">Aufsparrendämmung</a></li><li><a href="/ch/steildach/steildach-produkte/waermedaemmung/kombidaemmung.html">Kombidämmung</a></li><li><a href="/ch/steildach/steildach-produkte/waermedaemmung/metalldaecher.html">Metalldächer</a></li><li class="last"><a href="/ch/steildach/steildach-produkte/waermedaemmung/innendaemmung.html">Innendämmung</a></li></ul></div></li><li><a href="/ch/steildach/steildach-produkte/absturzsicherung.html">Absturzsicherung</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/ch/steildach/steildach-produkte/absturzsicherung/sicherheitsdachhaken.html">Sicherheitsdachhaken</a></li><li class="last"><a href="/ch/steildach/steildach-produkte/absturzsicherung/downloads.html">Downloads</a></li></ul></div></li><li class="last"><a href="/ch/steildach/steildach-produkte/zubehoer.html">Zubehör</a></li></ul></div></li><li><a href="/ch/steildach/referenzen.html">Referenzen</a></li><li class="last"><a href="/ch/steildach/downloads/prospekte-und-preisliste.html">Downloads</a><span class="submenuIndicator-lvl2"></span><div><ul class="submenu-lvl2"><li class="first"><a href="/ch/steildach/downloads/prospekte-und-preisliste.html">Prospekte und Preisliste</a></li><li><a href="/ch/steildach/downloads/verlegeanleitungen.html">Verlegeanleitungen</a></li><li><a href="/ch/steildach/downloads/produktdatenblaetter.html">Produktdatenblätter</a></li><li><a href="/ch/steildach/downloads/leistungserklaerungen.html">Leistungserklärungen</a></li><li><a href="/ch/steildach/downloads/nachhaltigkeits-datenblaetter-ndb.html">Nachhaltigkeits-Datenblätter (NDB)</a></li><li class="last"><a href="/ch/steildach/downloads/formulare.html">Formulare</a></li></ul></div></li></ul></div></li><li><a href="/ch/dachbegruenung.html"><span>Dachbegrünung</span></a><span class="submenuIndicator"></span><div><ul class="submenu"><li class="first"><a href="/ch/dachbegruenung/systeme.html">Systeme</a><span class="submenuIndicator-lvl2"></span><div><ul class="submenu-lvl2"><li class="first"><a href="/ch/bauder-gruendach/systeme/baudergreen-extensiv.html">Extensive Begrünung</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/ch/bauder-gruendach/systeme/baudergreen-extensiv/baudergreen-extensiv-sedum-moos.html">BauderGREEN Extensiv Sedum-Moos</a></li><li><a href="/ch/bauder-gruendach/systeme/baudergreen-extensiv/baudergreen-extensiv-sedum-kraut-moos.html">BauderGREEN Extensiv Sedum-Kraut-Moos</a></li><li class="last"><a href="/ch/bauder-gruendach/systeme/baudergreen-extensiv/baudergreen-extensiv-gras-kraut.html">BauderGREEN Extensiv Gras-Kraut</a></li></ul></div></li><li><a href="/ch/bauder-gruendach/systeme/baudergreen-biotop.html">Biotop Begrünung</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="last"><a href="/ch/bauder-gruendach/systeme/baudergreen-biotop/baudergreen-extensiv-biotopdach.html">BauderGREEN Extensiv Biotopdach</a></li></ul></div></li><li><a href="/ch/dachbegruenung/baudergreen-schwammdach-1.html">Retentionsdach</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/ch/dachbegruenung/baudergreen-schwammdach/baudergreen-schwammdach-druckstabil-1.html">BauderGREEN Schwammdach druckstabil</a></li><li><a href="/ch/dachbegruenung/baudergreen-schwammdach/baudergreen-schwammdach-verdunstungsstark-1.html">BauderGREEN Schwammdach verdunstungsstark</a></li><li><a href="/ch/dachbegruenung/baudergreen-schwammdach-1/baudergreen-retentionsdach-schlank.html">BauderGREEN Retentionsdach schlank</a></li><li class="last"><a href="/ch/dachbegruenung/baudergreen-schwammdach/baudergreen-retentionsdach-einschichtig-1.html">BauderGREEN Retentionsdach einschichtig</a></li></ul></div></li><li><a href="/ch/bauder-gruendach/systeme/baudergreen-intensiv.html">Intensive Begrünung</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/ch/bauder-gruendach/systeme/baudergreen-intensiv/baudergreen-intensiv-dachgarten-stauden.html">BauderGREEN Intensiv Dachgarten Stauden</a></li><li><a href="/ch/bauder-gruendach/systeme/baudergreen-intensiv/baudergreen-intensiv-dachgarten-straeucher.html">BauderGREEN Intensiv Dachgarten Sträucher</a></li><li class="last"><a href="/ch/bauder-gruendach/systeme/baudergreen-intensiv/baudergreen-intensiv-dachgarten-rasen.html">BauderGREEN Intensiv Dachgarten Rasen</a></li></ul></div></li><li><a href="/ch/bauder-gruendach/systeme/baudergreen-begehbar.html">Begehbare Flächen</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/ch/bauder-gruendach/systeme/baudergreen-begehbar/baudergreen-begehbar-terrasse-offen.html">BauderGREEN begehbar Terrassendach offen</a></li><li><a href="/ch/bauder-gruendach/systeme/baudergreen-begehbar/baudergreen-begehbar-terrassendach-geschlossen.html">BauderGREEN begehbar Terrassendach geschlossen</a></li><li><a href="/ch/bauder-gruendach/systeme/baudergreen-begehbar/baudergreen-begehbar-terrassendach-schallgedaempft.html">BauderGREEN begehbar Terrassendach schallgedämpft</a></li><li class="last"><a href="/ch/bauder-gruendach/systeme/baudergreen-begehbar/baudergreen-begehbar-terrassendach-schwamm.html">BauderGREEN begehbar Terrassendach Schwamm</a></li></ul></div></li><li><a href="/ch/bauder-gruendach/systeme/baudergreen-befahrbar.html">Befahrbare Flächen</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/ch/bauder-gruendach/systeme/baudergreen-befahrbar/baudergreen-befahrbar-fahrflaechendach-variable-nutzlast.html">BauderGREEN befahrbar Fahrflächendach variable Nutzlast</a></li><li><a href="/ch/bauder-gruendach/systeme/baudergreen-befahrbar/baudergreen-befahrbar-fahrflaechendach-n2-v-10-kn.html">BauderGREEN befahrbar Fahrflächendach N2-V 10 kN</a></li><li><a href="/ch/bauder-gruendach/systeme/baudergreen-befahrbar/baudergreen-befahrbar-fahrflaechendach-n2-v-10-kn-gedaemmt.html">BauderGREEN befahrbar Fahrflächendach N2-V 10 kN gedämmt</a></li><li><a href="/ch/bauder-gruendach/systeme/baudergreen-befahrbar/baudergreen-befahrbar-fahrflaechendach-n3-v-40-kn.html">BauderGREEN befahrbar Fahrflächendach N3-V 40 kN</a></li><li><a href="/ch/bauder-gruendach/systeme/baudergreen-befahrbar/baudergreen-befahrbar-fahrflaechendach-n3-v-40-kn-gedaemmt.html">BauderGREEN befahrbar Fahrflächendach N3-V 40 kN gedämmt</a></li><li><a href="/ch/bauder-gruendach/systeme/baudergreen-befahrbar/baudergreen-befahrbar-fahrflaechendach-n3-v-50-kn.html">BauderGREEN befahrbar Fahrflächendach N3-V 50 kN</a></li><li><a href="/ch/bauder-gruendach/systeme/baudergreen-befahrbar/baudergreen-befahrbar-fahrflaechendach-n3-v-50-kn-gedaemmt.html">BauderGREEN befahrbar Fahrflächendach N3-V 50 kN gedämmt</a></li><li class="last"><a href="/ch/bauder-gruendach/systeme/baudergreen-befahrbar/baudergreen-befahrbar-fahrflaechendach-gussasphalt.html">BauderGREEN befahrbar Fahrflächendach Gussasphalt</a></li></ul></div></li><li><a href="/ch/bauder-gruendach/systeme/baudergreen-schraegdachbegruenung.html">Schrägdachbegrünung</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/ch/bauder-gruendach/systeme/baudergreen-schraegdachbegruenung/baudergreen-schraegdach-15.html">BauderGREEN Schrägdach 15°</a></li><li class="last"><a href="/ch/bauder-gruendach/systeme/baudergreen-schraegdachbegruenung/baudergreen-schraegdach-25.html">BauderGREEN Schrägdach 25°</a></li></ul></div></li><li class="last"><a href="/ch/bauder-gruendach/systeme/baudersolar-dachbegruenungssysteme.html">Photovoltaik</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/ch/bauder-gruendach/systeme/baudersolar-dachbegruenungssysteme/baudersolar-photovoltaikgruendach-extensiv.html">BauderSOLAR Photovoltaikgründach extensiv</a></li><li><a href="/ch/bauder-gruendach/systeme/baudersolar-dachbegruenungssysteme/baudersolar-photovoltaikgruendach-retention.html">BauderSOLAR Photovoltaikgründach Retention</a></li><li class="last"><a href="/ch/bauder-gruendach/systeme/baudersolar-dachbegruenungssysteme/baudersolar-photovoltaikgruendach-schwamm.html">BauderSOLAR Photovoltaikgründach Schwamm</a></li></ul></div></li></ul></div></li><li><a href="/ch/dachbegruenung/gruendach-produkte.html">Produkte</a><span class="submenuIndicator-lvl2"></span><div><ul class="submenu-lvl2"><li class="first"><a href="/ch/dachbegruenung/gruendach-produkte/vegetation.html">Vegetation</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/ch/dachbegruenung/gruendach-produkte/vegetation/samenmischungen.html">Samenmischungen</a></li><li><a href="/ch/dachbegruenung/gruendach-produkte/vegetation/flach-kleinballenstauden.html">Flach-/Kleinballenstauden</a></li><li><a href="/ch/dachbegruenung/gruendach-produkte/vegetation/sedumsprossen.html">Sedumsprossen</a></li><li class="last"><a href="/ch/dachbegruenung/gruendach-produkte/vegetation/vegetationsmatten.html">Vegetationsmatten</a></li></ul></div></li><li><a href="/ch/dachbegruenung/gruendach-produkte/substrate.html">Substrate</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/ch/dachbegruenung/gruendach-produkte/substrate/extensivsubstrate.html">Extensivsubstrate</a></li><li><a href="/ch/dachbegruenung/gruendach-produkte/substrate/retentionssubstrate.html">Retentionssubstrate</a></li><li><a href="/ch/dachbegruenung/gruendach-produkte/substrate/solarsubstrate.html">Solarsubstrate</a></li><li><a href="/ch/dachbegruenung/gruendach-produkte/substrate/intensivsubstrate.html">Intensivsubstrate</a></li><li class="last"><a href="/ch/dachbegruenung/gruendach-produkte/substrate/untersubstrate.html">Untersubstrate</a></li></ul></div></li><li><a href="/ch/dachbegruenung/gruendach-produkte/filtervliese.html">Filtervliese</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/ch/dachbegruenung/gruendach-produkte/filtervliese/baudergreen-fv-125.html">BauderGREEN FV 125</a></li><li><a href="/ch/dachbegruenung/gruendach-produkte/filtervliese/baudergreen-fv-300.html">BauderGREEN FV 300</a></li><li><a href="/ch/dachbegruenung/gruendach-produkte/filtervliese/baudergreen-fg-160.html">BauderGREEN FG 160</a></li><li class="last"><a href="/ch/dachbegruenung/gruendach-produkte/filtervliese/baudergreen-geo-150.html">BauderGREEN GEO 150</a></li></ul></div></li><li><a href="/ch/dachbegruenung/gruendach-produkte/draen-und-wasserspeicherschicht.html">Drän- und Wasserspeicherschicht</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/ch/dachbegruenung/gruendach-produkte/draen-und-wasserspeicherschicht/baudergreen-sdf.html">BauderGREEN SDF</a></li><li><a href="/ch/dachbegruenung/gruendach-produkte/draen-und-wasserspeicherschicht/baudergreen-wsp-50.html">BauderGREEN WSP 50</a></li><li><a href="/ch/dachbegruenung/gruendach-produkte/systemkomponenten/draen-und-wasserspeicherschicht/baudergreen-wsp-75.html">BauderGREEN WSP 75</a></li><li><a href="/ch/dachbegruenung/gruendach-produkte/draen-und-wasserspeicherschicht/baudergreen-dse-20/1.html">BauderGREEN DSE 20/1</a></li><li><a href="/ch/dachbegruenung/gruendach-produkte/draen-und-wasserspeicherschicht/baudergreen-dse-20-v.html">BauderGREEN DSE 20 V</a></li><li><a href="/ch/dachbegruenung/gruendach-produkte/draen-und-wasserspeicherschicht/baudergreen-dse-40.html">BauderGREEN DSE 40</a></li><li><a href="/ch/dachbegruenung/gruendach-produkte/draen-und-wasserspeicherschicht/baudergreen-dse-60.html">BauderGREEN DSE 60</a></li><li><a href="/ch/dachbegruenung/gruendach-produkte/draen-und-wasserspeicherschicht/baudergreen-nf-5.html">BauderGREEN NF 5</a></li><li><a href="/ch/dachbegruenung/gruendach-produkte/draen-und-wasserspeicherschicht/baudergreen-de-10.html">BauderGREEN DE 10</a></li><li><a href="/ch/dachbegruenung/gruendach-produkte/draen-und-wasserspeicherschicht/baudergreen-de-nf-10.html">BauderGREEN DE NF 10</a></li><li><a href="/ch/dachbegruenung/gruendach-produkte/draen-und-wasserspeicherschicht/baudergreen-de-nf-15-hd.html">BauderGREEN DE NF 15 HD</a></li><li><a href="/ch/dachbegruenung/gruendach-produkte/draen-und-wasserspeicherschicht/baudergreen-ts.html">BauderGREEN TS</a></li><li><a href="/ch/dachbegruenung/gruendach-produkte/draen-und-wasserspeicherschicht/baudergreen-re-30.html">BauderGREEN RE 30</a></li><li><a href="/ch/dachbegruenung/gruendach-produkte/draen-und-wasserspeicherschicht/baudergreen-re-40.html">BauderGREEN RE 40</a></li><li><a href="/ch/dachbegruenung/gruendach-produkte/draen-und-wasserspeicherschicht/baudergreen-he-60.html">BauderGREEN HE 60</a></li><li><a href="/ch/dachbegruenung/gruendach-produkte/draen-und-wasserspeicherschicht/baudergreen-rwr-65.html">BauderGREEN RWR 65</a></li><li class="last"><a href="/ch/dachbegruenung/gruendach-produkte/draen-und-wasserspeicherschicht/baudergreen-rwr-100-1.html">BauderGREEN RWR 100</a></li></ul></div></li><li><a href="/ch/dachbegruenung/gruendach-produkte/retention.html">Retention</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/ch/dachbegruenung/gruendach-produkte/draen-und-wasserspeicherschicht/baudergreen-de-10.html">BauderGREEN DE 10</a></li><li><a href="/ch/dachbegruenung/gruendach-produkte/draen-und-wasserspeicherschicht/baudergreen-re-30.html">BauderGREEN RE 30</a></li><li><a href="/ch/dachbegruenung/gruendach-produkte/draen-und-wasserspeicherschicht/baudergreen-re-40.html">BauderGREEN RE 40</a></li><li><a href="/ch/dachbegruenung/gruendach-produkte/draen-und-wasserspeicherschicht/baudergreen-he-60.html">BauderGREEN HE 60</a></li><li class="last"><a href="/ch/dachbegruenung/gruendach-produkte/abflussverzoegerung/baudergreen-ra.html">BauderGREEN RA</a></li></ul></div></li><li><a href="/ch/dachbegruenung/gruendach-produkte/schutzlagen-trennlagen.html">Schutzlagen, Trennlagen</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/ch/dachbegruenung/gruendach-produkte/schutzlage-trennlage/baudergreen-bsl.html">BauderGREEN BSL</a></li><li><a href="/ch/dachbegruenung/gruendach-produkte/schutzlagen-trennlagen/baudergreen-fsm-600.html">BauderGREEN FSM 600</a></li><li><a href="/ch/dachbegruenung/gruendach-produkte/schutzlage-trennlage/baudergreen-fsm-800.html">BauderGREEN FSM 800</a></li><li><a href="/ch/dachbegruenung/gruendach-produkte/schutzlage-trennlage/baudergreen-fsm-1100.html">BauderGREEN FSM 1100</a></li><li><a href="/ch/dachbegruenung/gruendach-produkte/schutzlagen-trennlagen/baudergreen-fsm-1200-272.html">BauderGREEN FSM 1200-272</a></li><li><a href="/ch/dachbegruenung/gruendach-produkte/schutzlage-trennlage/baudergreen-ggm-6.html">BauderGREEN GGM 6</a></li><li><a href="/ch/dachbegruenung/gruendach-produkte/schutzlage-trennlage/baudergreen-ggm-8.html">BauderGREEN GGM 8</a></li><li><a href="/ch/dachbegruenung/gruendach-produkte/schutzlage-trennlage/baudergreen-ggm-10.html">BauderGREEN GGM 10</a></li><li><a href="/ch/dachbegruenung/gruendach-produkte/schutzlage-trennlage/baudergreen-sv-200.html">BauderGREEN SV 200</a></li><li><a href="/ch/dachbegruenung/gruendach-produkte/schutzlage-trennlage/baudergreen-sv-300.html">BauderGREEN SV 300</a></li><li><a href="/ch/dachbegruenung/gruendach-produkte/schutzlage-trennlage/baudergreen-sv-400.html">BauderGREEN SV 400</a></li><li><a href="/ch/dachbegruenung/gruendach-produkte/schutzlage-trennlage/baudergreen-sv-600.html">BauderGREEN SV 600</a></li><li><a href="/ch/dachbegruenung/gruendach-produkte/schutzlage-trennlage/baudergreen-sv-800.html">BauderGREEN SV 800</a></li><li class="last"><a href="/ch/dachbegruenung/gruendach-produkte/schutzlage-trennlage/bauderfpo-sb-12.html">BauderFPO SB 12</a></li></ul></div></li><li class="last"><a href="/ch/dachbegruenung/gruendach-produkte/systemkomponenten/zubehoer.html">Zubehör</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/ch/dachbegruenung/gruendach-produkte/systemkomponenten/zubehoer/baudergreen-ks-alu-250.html">BauderGREEN KS ALU 250</a></li><li><a href="/ch/dachbegruenung/gruendach-produkte/systemkomponenten/zubehoer/baudergreen-ks-ae-50250.html">BauderGREEN KS AE 50/250</a></li><li><a href="/ch/dachbegruenung/gruendach-produkte/systemkomponenten/zubehoer/baudergreen-ks-ae-100250.html">BauderGREEN KS AE 100/250</a></li><li><a href="/ch/dachbegruenung/gruendach-produkte/systemkomponenten/zubehoer/baudergreen-kfl-al-10080.html">BauderGREEN KFL AL 100/80</a></li><li><a href="/ch/dachbegruenung/gruendach-produkte/systemkomponenten/zubehoer/baudergreen-tel.html">BauderGREEN TEL</a></li><li class="last"><a href="/ch/dachbegruenung/gruendach-produkte/systemkomponenten/zubehoer/baudergreen-sh-g.html">BauderGREEN SH-G</a></li></ul></div></li></ul></div></li><li><a href="/ch/dachbegruenung/planungshinweise-1.html">Planung und Service</a><span class="submenuIndicator-lvl2"></span><div><ul class="submenu-lvl2"><li class="first"><a href="/ch/dachbegruenung/planungshinweise-1.html">Planungshinweise</a></li><li><a href="/ch/dachbegruenung/planungshinweise/durchwurzelungsschutz.html">Durchwurzelungsschutz</a></li><li><a href="/ch/dachbegruenung/planungshinweise/durchwurzelungsschutz-1.html">Retention</a></li><li><a href="/ch/dachbegruenung/planung-und-service/regenwassermanagement.html">Regenwassermanagement</a></li><li><a href="/ch/dachbegruenung/planung-und-service/begruenungsverfahren.html">Begrünungsverfahren</a></li><li><a href="/ch/dachbegruenung/planung-und-service/vegetationstragschicht.html">Vegetationstragschicht</a></li><li><a href="/ch/dachbegruenung/planungshinweise/ansaat.html">Ansaat</a></li><li><a href="/ch/dachbegruenung/planung-und-service/pflegemassnahmen.html">Pflegemassnahmen</a></li><li class="last"><a href="/ch/dachbegruenung/extensive-dachbegruenung/vegetationsbild-und-pflanzen.html">Vegetationsbild und Pflanzen</a><span class="submenuIndicator-lvl3"></span><div><ul class="submenu-lvl3"><li class="first"><a href="/ch/dachbegruenung/extensive-dachbegruenung/vegetationsbild-und-pflanzen/sedum-begruenung.html">Sedum Begrünung</a></li><li class="last"><a href="/ch/dachbegruenung/extensive-dachbegruenung/vegetationsbild-und-pflanzen/kraut-sedum-begruenung.html">Kraut-Sedum Begrünung</a></li></ul></div></li></ul></div></li><li><a href="https://www.lebensraumdach.ch" target="_blank">&gt;&gt; Lebensraum Dach</a></li><li><a href="/ch/dachbegruenung/referenzen.html">Referenzen</a></li><li class="last"><a href="/ch/dachbegruenung/downloads/prospekte-und-preisliste.html">Downloads</a><span class="submenuIndicator-lvl2"></span><div><ul class="submenu-lvl2"><li class="first"><a href="/ch/dachbegruenung/downloads/prospekte-und-preisliste.html">Prospekte und Preisliste</a></li><li><a href="/ch/dachbegruenung/downloads/verlegeanleitungen.html">Verlegeanleitungen</a></li><li><a href="/ch/dachbegruenung/downloads/produktdatenblaetter.html">Produktdatenblätter</a></li><li><a href="/ch/dachbegruenung/downloads/zertifikate-eco.html">Zertifikate (eco)</a></li><li class="last"><a href="/ch/dachbegruenung/downloads/formulare.html">Formulare</a></li></ul></div></li></ul></div></li><li><a href="/ch/bauder-photovoltaik.html"><span>Photovoltaik</span></a><span class="submenuIndicator"></span><div><ul class="submenu"><li class="first"><a href="/ch/bauder-photovoltaik/systeme.html">Systeme</a></li><li><a href="/ch/bauder-photovoltaik/produkte.html">Produkte</a><span class="submenuIndicator-lvl2"></span><div><ul class="submenu-lvl2"><li class="first"><a href="/ch/bauder-photovoltaik/produkte/baudersolar-f-xl.html">BauderSOLAR F / F XL</a></li><li><a href="/ch/bauder-photovoltaik/produkte/baudersolar-g-light.html">BauderSOLAR G LIGHT</a></li><li><a href="/ch/bauder-photovoltaik/produkte/baudersolar-g.html">BauderSOLAR G</a></li><li class="last"><a href="/ch/bauder-photovoltaik/produkte/baudersolar-g-vertical.html">BauderSOLAR G VERTICAL</a></li></ul></div></li><li><a href="/ch/photovoltaik/solar-lexikon.html">Lexikon</a></li><li><a href="/ch/photovoltaik/referenzen.html">Referenzen</a></li><li class="last"><a href="/ch/photovoltaik/downloads/prospekte.html">Downloads</a><span class="submenuIndicator-lvl2"></span><div><ul class="submenu-lvl2"><li class="first"><a href="/ch/photovoltaik/downloads/prospekte.html">Prospekte und Preisliste</a></li><li><a href="/ch/bauder-photovoltaik-systeme/downloads/planung-und-montage.html">Planung und Montage</a></li><li><a href="/ch/bauder-photovoltaik-systeme/downloads/produktdatenblaetter.html">Produktdatenblätter</a></li><li class="last"><a href="/ch/bauder-photovoltaik-systeme/downloads/formulare.html">Formulare</a></li></ul></div></li></ul></div></li><li><a href="/ch/service.html"><span>Service</span></a><span class="submenuIndicator"></span><div><ul class="submenu"><li class="first"><a href="/ch/service/downloads.html">Downloads</a></li><li><a href="/ch/service/kurse.html">Kurse</a><span class="submenuIndicator-lvl2"></span><div><ul class="submenu-lvl2"><li class="first"><a href="/ch/service/kurse-und-webinare/kursorte.html">Kursorte</a></li><li><a href="/ch/service/kurse-und-webinare/kurshinweise.html">Kurshinweise</a></li><li class="last"><a href="/ch/service/kurse-und-webinare/kursleiter.html">Kursleiter</a></li></ul></div></li><li><a href="/ch/service/videothek/videos-flachdach.html">Videothek</a><span class="submenuIndicator-lvl2"></span><div><ul class="submenu-lvl2"><li class="first"><a href="/ch/service/videothek/videos-flachdach.html">Videos Flachdach</a></li><li><a href="/ch/service/videothek/videos-steildach.html">Videos Steildach</a></li><li class="last"><a href="/ch/service/videothek/videos-photovoltaik.html">Videos Photovoltaik</a></li></ul></div></li><li><a href="/ch/service/ihr-fachberater/fachberatersuche.html">Fachberatersuche</a></li><li><a href="/ch/service/garantien.html">Garantien</a></li><li><a href="/ch/service/lieferung-und-entladung.html">Lieferung und Entladung</a></li><li><a href="/ch/service/reuse.html">ReUse</a></li><li class="last"><a href="/ch/service/servizio-italiano.html">Servizio in italiano</a><span class="submenuIndicator-lvl2"></span><div><ul class="submenu-lvl2"><li class="first"><a href="/ch/service/servizio-italiano/istruzioni-di-montaggio.html">Istruzioni di montaggio</a></li><li><a href="/ch/service/servizio-italiano/istruzioni-di-montaggio-1.html">Schede tecniche</a></li><li class="last"><a href="/ch/service/servizio-italiano/formulari.html">Formulari</a></li></ul></div></li></ul></div></li><li><a href="/ch/unternehmen/aktuelles.html"><span>Unternehmen</span></a><span class="submenuIndicator"></span><div><ul class="submenu"><li class="first"><a href="/ch/unternehmen/aktuelles.html">Aktuelles</a><span class="submenuIndicator-lvl2"></span><div><ul class="submenu-lvl2"><li class="last"><a href="/ch/unternehmen/aktuelles/presse.html">Presse</a></li></ul></div></li><li><a href="/ch/unternehmen/wir-stellen-uns-vor.html">Wir stellen uns vor</a><span class="submenuIndicator-lvl2"></span><div><ul class="submenu-lvl2"><li class="first"><a href="/ch/unternehmen/wir-stellen-uns-vor/unsere-mannschaft.html">Unsere Mannschaft</a></li><li><a href="/ch/unternehmen/wir-stellen-uns-vor/unsere-geschaeftsfelder.html">Unsere Geschäftsfelder</a></li><li><a href="/ch/unternehmen/wir-stellen-uns-vor/unsere-position.html">Unsere Position</a></li><li><a href="/ch/unternehmen/wir-stellen-uns-vor/unsere-verantwortung.html">Unsere Verantwortung</a></li><li class="last"><a href="/ch/unternehmen/wir-stellen-uns-vor/unsere-geschichte.html">Unsere Geschichte</a></li></ul></div></li><li class="last"><a href="/ch/unternehmen/jobs-karriere.html">Jobs &amp; Karriere</a></li></ul></div></li><li class="last"><a href="/ch/kontakt.html"><span>Kontakt</span></a><span class="submenuIndicator"></span><div><ul class="submenu"><li class="first"><a href="/ch/kontakt/ihre-ansprechpartner/beratung-und-verkauf.html">Unsere Mannschaft</a><span class="submenuIndicator-lvl2"></span><div><ul class="submenu-lvl2"><li class="first"><a href="/ch/kontakt/ihre-ansprechpartner/vertriebsleitung.html">Vertriebsleitung</a></li><li><a href="/ch/kontakt/ihre-ansprechpartner/beratung-und-verkauf.html">Beratung und Verkauf</a></li><li><a href="/ch/kontakt/ihre-ansprechpartner/verkaufsinnendienst.html">Verkaufsinnendienst</a></li><li><a href="/ch/kontakt/ihre-ansprechpartner/anwendungstechnik.html">Anwendungstechnik</a></li><li><a href="/ch/kontakt/ihre-ansprechpartner/systemberatung.html">Systemberatung</a></li><li><a href="/ch/kontakt/ihre-ansprechpartner/disposition-und-logistik.html">Disposition und Logistik</a></li><li><a href="/ch/kontakt/ihre-ansprechpartner/buchhaltung.html">Buchhaltung</a></li><li class="last"><a href="/ch/kontakt/ihre-ansprechpartner/marketing.html">Marketing</a></li></ul></div></li><li class="last"><a href="/ch/kontakt/adresse.html">Adresse</a></li></ul></div></li></ul></div>
+		</div>
+	</div>
+	
+	<div id="banner">
+		<div class="centerWrap"><!--TYPO3SEARCH_begin-->
+<div id="c278153" class="frame frame-default frame-type-list frame-layout-0"><div class="slider_box"><div class="bx-wrapper" style="max-width: 100%; margin: 0px auto;"><div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 300px;"><ul class="bxslider" style="width: auto; position: relative;"><li style="float: none; list-style: none; position: absolute; width: 945px; z-index: 50; display: block;"><a href="https://www.bauder.ag/ch/service/kurse.html"><img src="uploads/multislider/Slides-Kurse_CH-2025.jpg" class="loadimage" data-src="uploads/multislider/Slides-Kurse_CH-2025.jpg" alt="Kursprogramm 2025" height="300" width="943"></a><div class="slideText"><h3>Neues Kursprogramm</h3><h3>für Verarbeiter</h3><p><a href="/ch/service/kurse.html">» mehr Information</a></p></div></li><li style="float: none; list-style: none; position: absolute; width: 945px; z-index: 0; display: none;"><a href="/ch/baudereco-waermedaemmung.html"><img src="uploads/multislider/Slider-ECO_943x300px_07.jpg" class="loadimage" data-src="uploads/multislider/Slider-ECO_943x300px_07.jpg" alt="BauderECO" height="300" width="943"></a><div class="slideText"><h3>BauderECO</h3><h3>Wenn aus Biomasse</h3><h3>Dämmstoff wird.</h3><p><a href="https://www.bauder.ag/ch/baudereco-waermedaemmung.html" target="_blank">Mehr über BauderECO ...</a></p></div></li><li style="float: none; list-style: none; position: absolute; width: 945px; z-index: 0; display: none;"><a href="https://www.bauder.ag/ch/dachbegruenung/planung-und-service/regenwassermanagement.html"><img src="uploads/multislider/Slide_Regenwassermanagement_943x300.jpg" class="loadimage" data-src="uploads/multislider/Slide_Regenwassermanagement_943x300.jpg" alt="Regenwassermanagement mit KOSIM" height="300" width="943"></a><div class="slideText"><h3>Regenwassermanagement&nbsp;</h3><h3>auf dem Dach und Grundstück</h3><p><a href="/ch/dachbegruenung/planung-und-service/regenwassermanagement.html">mehr Infos...</a></p></div></li></ul></div><div class="bx-controls bx-has-controls-direction"><div class="bx-controls-direction"><a class="bx-prev" href="">Prev</a><a class="bx-next" href="">Next</a></div></div></div></div><script type="text/javascript">
+    var sliderImages = document.querySelectorAll('.bxslider img.loadimage');
+
+    function doTimeout(i){
+        setTimeout(function(){
+            sliderImages[i].setAttribute('src', sliderImages[i].getAttribute('data-src'));
+        },250 + i * 250);
+    };
+
+    if ( sliderImages.length > 0 ) {
+        for (var i = 0; i < sliderImages.length; i++) {
+            doTimeout(i);
+        }
+    }
+</script><script>jQuery('.bxslider:last').each(function () {
+    var options = {
+    autoStart: true, auto: true, pager: false
+        };
+    makeBXSlider(this, options);
+});</script></div>
+
+<!--TYPO3SEARCH_end--></div>
+	</div>
+	
+	<div id="content" class="index">
+		<div class="centerWrap"><!--TYPO3SEARCH_begin--><div id="c278156" class="frame frame-default frame-space-before- frame-space-after-">
+	<div class="quickLinks">
+		<span>
+			<h2 class="h2">Bauder Schweiz - der Partner an Ihrer Seite</h2>
+		</span>
+		
+			<div class="quickLinksContainer">
+				<div onclick="window.location.href='/ch/bauder-fuer-architekten-planer.html'">
+					<img src="/uploads/tx_templavoila/zgport_Architekt_06.jpg" width="182" height="182" alt="" border="0">
+					<div class="transparentBG"></div>
+					<div class="colorBG"></div>
+					<p>Für Architekten<br>und Planer</p>
+				</div>
+				<div onclick="window.location.href='/ch/bauder-fuer-verarbeiter.html'">
+					<img src="/uploads/tx_templavoila/zgport_CHVerarbeiter.jpg" width="182" height="182" alt="" border="0">
+					<div class="transparentBG"></div>
+					<div class="colorBG"></div>
+					<p>Für<br>Verarbeiter</p>
+				</div>
+				<div onclick="window.location.href='/ch/bauder-fuer-fachhaendler.html'">
+					<img src="/uploads/tx_templavoila/zgport_Fachhandel_4_06.jpg" width="182" height="182" alt="" border="0">
+					<div class="transparentBG"></div>
+					<div class="colorBG"></div>
+					<p>Für<br>Fachhändler</p>
+				</div>
+				<div onclick="window.location.href='/ch/bauder-fuer-industrielle-bauherren.html'">
+					<img src="/uploads/tx_templavoila/zgport_indBH_3_06.jpg" width="182" height="182" alt="" border="0">
+					<div class="transparentBG"></div>
+					<div class="colorBG"></div>
+					<p>Für industrielle <br>Bauherren</p>
+				</div>
+				<div onclick="window.location.href='/ch/bauder-fuer-private-bauherren.html'">
+					<img src="/uploads/tx_templavoila/zgport_privBH_3_06.jpg" width="182" height="182" alt="" border="0">
+					<div class="transparentBG"></div>
+					<div class="colorBG"></div>
+					<p>Für private<br>Bauherren</p>
+				</div>
+				<br class="clear">
+			</div>
+		
+	</div>
+</div><div id="c485327" class="frame frame-custom-91 frame-space-before- frame-space-after-">
+	<div class="fce lrcol5050">
+		<div class="col left">
+			<div class="wrap"><div id="c485328" class="frame frame-default frame-space-before- frame-space-after-">
+	
+<div id="c485330" class="frame frame-default frame-type-text frame-layout-0"><header><h4 class=" h0">
+				BauderPRIMO: Absturzsicherungen 
+			</h4></header></div>
+
+
+<div id="c485332" class="frame frame-default frame-type-image frame-layout-0"><div class="ce-image ce-center ce-above"><div class="ce-gallery" data-ce-columns="1" data-ce-images="1"><div class="ce-outer"><div class="ce-inner"><div class="ce-row"><div class="ce-column"><figure class="image"><a href="https://www.bauder.ag/ch/flachdach/absturzsicherung.html" target="_blank"><img class="image-embed-item" src="/fileadmin/bauder.ch/bilder/Start-Seite/BauderPRIMO-GL.jpg" width="457" height="285" alt=""></a></figure></div></div></div></div></div></div></div>
+
+
+<div id="c485334" class="frame frame-default frame-type-textpic frame-layout-0"><div class="ce-textpic ce-center ce-above"><div class="ce-bodytext"><p>Sicherheit auf dem Dach trägt einen neuen Namen: BauderPRIMO. Einen Sturz vom Dach können Geländersysteme, Seilsysteme oder Einzelanschlagpunkte sicher und zuverlässig verhindern. In unserem umfangreichen Absturzsicherungssortiment finden Sie für jede Unterkonstruktion, Dachgrösse und für jeden Nutzungstyp das passende System. Wir unterstützen Sie bei der Planung mit weiteren umfangreichen Serviceleistungen.</p><p><a href="/ch/flachdach/absturzsicherung.html" class="button">mehr zu BauderPRIMO&nbsp;</a><br class="clear"></p></div></div></div>
+
+
+</div></div>
+		</div>
+		<div class="col right">
+			<div class="wrap"><div id="c485336" class="frame frame-default frame-space-before- frame-space-after-">
+	
+<div id="c485337" class="frame frame-default frame-type-header frame-layout-0"><header><h4 class=" h0">
+				BauderLIQUITEC: Abdichtung mit Flüssigkunststoff
+			</h4></header></div>
+
+
+<div id="c485343" class="frame frame-default frame-type-image frame-layout-0"><div class="ce-image ce-center ce-above"><div class="ce-gallery" data-ce-columns="1" data-ce-images="1"><div class="ce-outer"><div class="ce-inner"><div class="ce-row"><div class="ce-column"><figure class="image"><a href="/ch/flachdach/flachdach-produkte/fluessigkunststoff-1.html"><img class="image-embed-item" src="/fileadmin/bauder.ch/bilder/Start-Seite/Fluessigkunststoff_Topthema.jpg" width="457" height="285" alt=""></a></figure></div></div></div></div></div></div></div>
+
+
+<div id="c485340" class="frame frame-default frame-type-text frame-layout-0 frame-space-before-extra-small"><p>Immer komplexer werdende Durchdringungen und Details auf dem Flachdach werden heute mit Flüssigkunststoffen abgedichtet. Entscheidend für die nachhaltig sichere Abdichtung ist dabei das Zusammenspiel der flüssigen Abdichtung mit dem kompletten System. Unser Flüssigkunststoff-System BauderLIQUITEC ist auf unsere Dachsysteme abgestimmt. Die komplette Dachabdichtung aus einer Hand - mehr Sicherheit geht nicht.</p><p><a href="/ch/flachdach/flachdach-produkte/fluessigkunststoff-1.html" class="button">mehr zu BauderLIQUITEC</a><br class="clear"></p></div>
+
+
+</div></div>
+		</div>
+		<br class="clear">
+	</div>
+</div><div id="c424115" class="frame frame-custom-91 frame-space-before- frame-space-after-">
+	<div class="fce lrcol5050">
+		<div class="col left">
+			<div class="wrap"><div id="c424116" class="frame frame-default frame-space-before- frame-space-after-">
+	
+<div id="c424117" class="frame frame-default frame-type-text frame-layout-0"><header><h4 class=" h0">
+				Montage von PV-Anlagen auf dem Flachdach
+			</h4></header></div>
+
+<div id="c424118" class="frame frame-default frame-space-before- frame-space-after-"><div class="box youtube"><button style="-webkit-appearance: none;background: none;border: none;padding:0;cursor:pointer" href="https://www.youtube.com/embed/BkCEy1_AywY?autoplay=1&amp;enablejsapi=1" class="youtube-video iframe wide-video" title=""><img style="width: 465px; margin: -10% 0;" src="https://img.youtube.com/vi/BkCEy1_AywY/hqdefault.jpg" alt="" width="480" height="360"><span class="play-button"></span></button></div></div>
+<div id="c424119" class="frame frame-default frame-type-text frame-layout-0 frame-space-before-extra-small"><header><h1 class=" h0">
+				Photovoltaikanlage auf dem Flachdach ...
+			</h1></header><p>... nichts leichter als das. Mit BauderSOLAR F ist das spielend leicht, komplett dachdurchdringungsfrei und ganz ohne Werkzeug! Die Unterkonstruktion ist in zwei Grössen erhältlich, als BauderSOLAR F und BauderSOLAR F XL, geeignet für Standard- sowie Grossformat-PV-Module. Beide Varianten sind extrem belastbar und trotzen langfristig den Witterungseinflüssen. Besonders für grosse Dachflächen oder Dächer mit begrenzten Lastreserven ist die BauderSOLAR F die ideale Wahl.&nbsp;</p></div>
+
+
+</div></div>
+		</div>
+		<div class="col right">
+			<div class="wrap"><div id="c424120" class="frame frame-default frame-space-before- frame-space-after-">
+	
+<div id="c424121" class="frame frame-default frame-type-header frame-layout-0"><header><h4 class=" h0">
+				BauderPIR FA Gefälle
+			</h4></header></div>
+
+<div id="c424122" class="frame frame-default frame-space-before- frame-space-after-"><div class="box youtube"><button style="-webkit-appearance: none;background: none;border: none;padding:0;cursor:pointer" href="https://www.youtube.com/embed/R-1_Gd4b8bw?autoplay=1&amp;enablejsapi=1" class="youtube-video iframe wide-video" title=""><img style="width: 465px; margin: -10% 0;" src="https://img.youtube.com/vi/R-1_Gd4b8bw/hqdefault.jpg" alt="" width="480" height="360"><span class="play-button"></span></button></div></div>
+<div id="c424123" class="frame frame-default frame-type-text frame-layout-0 frame-space-before-extra-small"><header><h1 class=" h0">
+				Gefälledämmung leicht gemacht ...
+			</h1></header><p>BauderPIR FA Gefälle ist ein hochwertiges Standardgefälle, bestehend aus alukaschierten Gefälleplatten mit der Wärmeleitfähigkeit von λ<sub>D</sub> 0,022. Die dazu gehörigen BauderPIR KFS Kehlfüllstücke bzw. BauderPIR GFS Gratfüllstücke vereinfachen einerseits die Verlegung im Kehl- und Gratbereich und reduzieren andererseits massgeblich den Materialverschnitt.</p></div>
+
+
+</div></div>
+		</div>
+		<br class="clear">
+	</div>
+</div><div id="c278154" class="frame frame-custom-91 frame-space-before- frame-space-after-">
+	<div class="fce lrcol5050">
+		<div class="col left">
+			<div class="wrap">
+<div id="c278157" class="frame frame-default frame-type-list frame-layout-0"><header><h4 class=" h0">
+				Aktuelles
+			</h4></header><div class="news-latest-container element2"><!--<span class="latestTitle">Aktuelles</span>--><div class="news-latest-item"><a href="/ch/unternehmen/aktuelles/details/backto/bauder-schweiz/article/schwammstadt-das-grosse-potenzial-der-dachbegruenung.html" title="Schwammstadt - Das grosse Potenzial der Dachbegrünung"><img src="/fileadmin/_processed_/b/a/csm_Aktuelles_Coffee-_-Concepts_800x500_3b2ab86801.jpg" width="208" height="130" alt="" border="0"></a><span><!--<span class="date">März 2025</span>--><h6><a href="/ch/unternehmen/aktuelles/details/backto/bauder-schweiz/article/schwammstadt-das-grosse-potenzial-der-dachbegruenung.html" title="Schwammstadt - Das grosse Potenzial der Dachbegrünung">Schwammstadt - Das grosse Potenzial der Dachbegrünung</a></h6><p><span>Bei Coffee &amp; Concepts erfahren Architekten und Planer, wie Dachsysteme zur Schwammstadt beitragen –...<a href="/ch/unternehmen/aktuelles/details/backto/bauder-schweiz/article/schwammstadt-das-grosse-potenzial-der-dachbegruenung.html" title="Schwammstadt - Das grosse Potenzial der Dachbegrünung" class="more">mehr</a></span></p></span><br class="clear"></div><div class="news-latest-item"><a href="/ch/unternehmen/aktuelles/details/backto/bauder-schweiz/article/weihnachtsspenden.html" title="Aller guten Dinge sind drei: Bauder unterstützt drei Organisationen"><img src="/fileadmin/_processed_/6/1/csm_Aktuelles_Spende-Kinderspitex_800x500_e8576090fd.jpg" width="208" height="130" alt="" border="0"></a><span><!--<span class="date">Dezember 2024</span>--><h6><a href="/ch/unternehmen/aktuelles/details/backto/bauder-schweiz/article/weihnachtsspenden.html" title="Aller guten Dinge sind drei: Bauder unterstützt drei Organisationen">Aller guten Dinge sind drei: Bauder unterstützt drei Organisationen</a></h6><p><span>Die Weihnachtszeit lädt uns ein, innezuhalten und unsere Gedanken den Mitmenschen zu widmen. ...<a href="/ch/unternehmen/aktuelles/details/backto/bauder-schweiz/article/weihnachtsspenden.html" title="Aller guten Dinge sind drei: Bauder unterstützt drei Organisationen" class="more">mehr</a></span></p></span><br class="clear"></div><div class="news-latest-item"><a href="/ch/unternehmen/aktuelles/details/backto/bauder-schweiz/article/die-tempobooster-auf-dem-dach.html" title="Die Tempobooster auf dem Dach"><img src="/fileadmin/_processed_/e/c/csm_Aktuelles_Tec-Therm-800x500_6aa5dbf464.gif" width="208" height="130" alt="" border="0"></a><span><!--<span class="date">Oktober 2024</span>--><h6><a href="/ch/unternehmen/aktuelles/details/backto/bauder-schweiz/article/die-tempobooster-auf-dem-dach.html" title="Die Tempobooster auf dem Dach">Die Tempobooster auf dem Dach</a></h6><p><span>Die Abdichtungssysteme BauderTEC und BauderTHERM sind nicht nur ein Synonym für Qualität, ... <a href="/ch/unternehmen/aktuelles/details/backto/bauder-schweiz/article/die-tempobooster-auf-dem-dach.html" title="Die Tempobooster auf dem Dach" class="more">mehr</a></span></p></span><br class="clear"></div></div></div>
+
+</div>
+		</div>
+		<div class="col right">
+			<div class="wrap">
+<div id="c457143" class="frame frame-default frame-type-textpic frame-layout-0"><header><h4 class=" h0">
+				Bauder heute - führend in Europa
+			</h4></header><div class="ce-textpic ce-right ce-intext"><div class="ce-gallery" data-ce-columns="1" data-ce-images="1"><div class="ce-row"><div class="ce-column"><figure class="image"><a href="/fileadmin/bilder/allgemein/unternehmensvorstellung/JMT_Bauder_weiss_2021.jpg" class="fancybox" rel="fancybox28119"><img class="image-embed-item" src="/fileadmin/_processed_/8/5/csm_JMT_Bauder_weiss_2021_c79cf139ba.jpg" width="200" height="254" alt=""><img src="/fileadmin/templates/facelift_2014/images/icons/lupe.gif" class="lupe"></a><figcaption class="image-caption">
+			Geschäftsführung: Jan, Tim und Mark Bauder
+		</figcaption></figure></div></div></div><div class="ce-bodytext"><p>Vor mehr als 160 Jahren entstanden bei Bauder die ersten Dachprodukte. Die glückliche Verbindung von Tradition und Innovation hat das Unternehmen zu dem gemacht, was es heute ist: führender Hersteller von Dachsystemen in Europa. Bauder macht Dächer sicher, mit umfassender Beratung sowie allen Materialien zum Dichten, Dämmen, Begrünen und Energie gewinnen.&nbsp;<br><br><strong>„Wir sind noch lange nicht am Ziel, aber die ersten Schritte sind getan!“</strong><br><br> Bei Bauder verfolgen wir seit Jahren eine nachhaltige Unternehmensstrategie. Wir wirtschaften so, dass die darauf folgenden Generationen die eigenen Bedürfnisse auch befriedigen können. Auch auf Produktebene machen wir uns auf den Weg. Denn eine nachhaltige Produktion bedeutet, dass die wirtschaftlichen Prozesse dahinter sinnvoll sind und negative Auswirkungen auf die Umwelt minimiert werden. Gleichzeitig sollen Energie und natürliche Ressourcen geschont werden. Dies fordert von uns, der 4. Generation bei Bauder, neue Denkweisen und innovative Ansätze. Das ist unsere Mission für die nächsten Jahre.&nbsp;Begleiten Sie uns dabei!</p></div></div></div>
+
+</div>
+		</div>
+		<br class="clear">
+	</div>
+</div><!--TYPO3SEARCH_end--></div>
+		
+	</div>
+	
+	<div class="infoBoxes"><div class="centerWrap"><div class="infoBoxesContainer"><!--TYPO3SEARCH_begin-->
+<div id="c278152" class="frame frame-default frame-type-list frame-layout-0"><div class="slider_box"><div class="bx-wrapper" style="max-width: 100%; margin: 0px auto;"><div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 281px;"><ul class="bxslider" style="width: auto; position: relative;"><li style="float: none; list-style: none; position: absolute; width: 945px; z-index: 50; display: block;"><div id="c278168" class="frame frame-none frame-space-before- frame-space-after-"><div id="c278167" class="frame frame-none frame-space-before- frame-space-after-"><div class="fce infoBox"><img src="/uploads/tx_templavoila/naechster-termin_06.png" width="232" height="100" alt="" border="0"><div class="inner"><a id="c278166"></a><header><h4 class=" h0">
+				Nächster Termin
+			</h4></header><div class="news-latest-container element2"><!--<span class="latestTitle">Aktuelles</span>--><p><span></span></p><p>Die Kurse für Verarbeiter<br></p><p>sind gestartet.&nbsp; &nbsp;<br></p><p>Sichern Sie sich Ihren<br></p><p>Platz.&nbsp;<br></p><p><br></p><p><a href="/ch/service/kurse.html">» Zum Kursprogramm</a></p><p></p></div></div></div></div><div id="c278165" class="frame frame-none frame-space-before- frame-space-after-"><div class="fce infoBox"><img src="/uploads/tx_templavoila/bauder-newsletter_11.png" width="232" height="100" alt="" border="0"><div class="inner"><a id="c381703"></a><header><h4 class=" h0">
+				Newsletter
+			</h4></header><p>Informativ, aktuell, übersichtlich. Punktuell informieren wir Sie über aktuelle Dachthemen.<br><br><a href="/ch/index.html" class="internal-link">»&nbsp;Anmeldung im Toplink</a></p></div></div></div><div id="c278163" class="frame frame-none frame-space-before- frame-space-after-"><div class="fce infoBox"><img src="/uploads/tx_templavoila/bauder-gptw2023CH-2020DE_01.jpg" width="232" height="100" alt="" border="0"><div class="inner"><a id="c278162"></a><header><h4 class=" h0">
+				Bauder Jobs
+			</h4></header><p>Werde Teil der besten<br> Mannschaft. Melde dich<br> bei uns!<br><br><br><a href="/ch/unternehmen/jobs-karriere.html" class="internal-link">» Stellenangebote Schweiz</a></p></div></div></div><div id="c278160" class="frame frame-none frame-space-before- frame-space-after-"><div class="fce infoBox"><img src="/uploads/tx_templavoila/bauder-international_06.png" width="232" height="100" alt="" border="0"><div class="inner"><a id="c278159"></a><header><h4 class=" h0">
+				Bauder International
+			</h4></header><p>Bauder ist mit über 1′100 Mitarbeitern europaweit aktiv und in 16 Ländern vertreten.<br><br><a href="http://www.bauder.eu" target="_blank">»&nbsp;www.bauder.eu</a></p></div></div></div></div></li></ul></div><div class="bx-controls bx-has-controls-direction"><div class="bx-controls-direction"><a class="bx-prev disabled" href="">Prev</a><a class="bx-next disabled" href="">Next</a></div></div></div></div><script type="text/javascript">
+    var sliderImages = document.querySelectorAll('.bxslider img.loadimage');
+
+    function doTimeout(i){
+        setTimeout(function(){
+            sliderImages[i].setAttribute('src', sliderImages[i].getAttribute('data-src'));
+        },250 + i * 250);
+    };
+
+    if ( sliderImages.length > 0 ) {
+        for (var i = 0; i < sliderImages.length; i++) {
+            doTimeout(i);
+        }
+    }
+</script><script>jQuery('.bxslider:last').each(function () {
+    var options = {
+    autoStart:false, auto: false,
+        };
+    makeBXSlider(this, options);
+});</script></div>
+
+<!--TYPO3SEARCH_end--></div></div></div>
+	
+	<div id="footer">
+		<div class="centerWrap">
+			<nav><ul id="menuFooter" class="menu"><li><ul class="menu"><li class="footerHeader">Bauder</li><li><a href="http://www.bauder.eu" target="_blank">Bauder International</a></li><li><a href="https://www.bauderfoam.com/de/startseite.html" target="_blank">BauderFOAM</a></li><li><a href="/ch/service.html">Service</a></li><li><a href="/ch/unternehmen/jobs-karriere.html">Karriere bei Bauder</a></li><li><a href="/ch/kontakt/ihre-ansprechpartner/beratung-und-verkauf.html">Kontakt</a></li><li><a href="/ch/agb.html">AGB</a></li><li><a href="/ch/bauder/impressum.html">Impressum</a></li><li><a href="/ch/datenschutz.html">Datenschutz</a></li><li class="last"><a href="/ch/sitemap-1.html">Sitemap</a></li></ul></li><li><ul class="menu"><li class="footerHeader">Themen</li><li><a href="/ch/flachdach.html">Flachdach</a></li><li><a href="/ch/steildach.html">Steildach</a></li><li><a href="/ch/dachbegruenung.html">Dachbegrünung</a></li><li><a href="/ch/dachbegruenung/lebensraum-dach.html">Lebensraum Dach</a></li><li><a href="/ch/bauder-photovoltaik.html">Photovoltaik</a></li><li><a href="/ch/flachdach/sicherheitsdach.html">Bauder Sicherheitsdach</a></li><li><a href="/ch/baudereco-waermedaemmung.html">BauderECO</a></li><li class="last"><a href="/ch/service/downloads.html">Downloadcenter</a></li></ul></li><li><ul class="menu"><li class="footerHeader">Social Media</li><li><a href="https://www.youtube.com/channel/UCZht8Z0ENV1W3-pSZVouIwg" target="_blank">YouTube</a></li><li><a href="https://www.facebook.com/bauderdachsysteme" target="_blank">Facebook</a></li><li><a href="https://www.linkedin.com/company/paul-bauder-ag" target="_blank">Linked in</a></li><li class="last"><a href="https://www.instagram.com/bauder_international/" target="_blank">Instagram</a></li></ul></li></ul></nav>
+			<div id="socialButtons"><a href="https://www.xing.com/pages/paulbaudergmbh-co-kg" title="Xing" target="_blank"><span>Durch einen Klick auf diesen Link verlassen Sie die Webseite von Paul Bauder GmbH und gelangen auf die Xing Webseite.</span><i class="fab fa-xing"></i></a><a href="https://www.linkedin.com/company/bauder-schweiz/" title="Linked in" target="_blank"><span>Durch einen Klick auf diesen Link verlassen Sie die Webseite von Paul Bauder GmbH und gelangen auf die Linked in Webseite.</span><i class="fab fa-linkedin-in"></i></a><a href="https://www.instagram.com/bauder_international/" title="Instagram" target="_blank"><span>Durch einen Klick auf diesen Link verlassen Sie die Webseite von Paul Bauder GmbH und gelangen auf die Instagram Webseite.</span><i class="fab fa-instagram"></i></a><a href="https://www.youtube.com/channel/UCZht8Z0ENV1W3-pSZVouIwg/featured" title="Youtube" target="_blank"><span>Durch einen Klick auf diesen Link verlassen Sie die Webseite von Paul Bauder GmbH und gelangen auf die Videoplattform YouTube.</span><i class="fab fa-youtube"></i></a><a href="https://www.facebook.com/bauderdachsysteme" title="Facebook" target="_blank"><span>Durch einen Klick auf diesen Link verlassen Sie die Webseite von Paul Bauder GmbH und gelangen auf die Facebook Webseite.</span><i class="fab fa-facebook"></i></a></div>
+			<br class="clear">
+			<span id="imprint">Paul Bauder AG, Alte Zugerstrasse 16, 6403 Küssnacht a/Rigi, Telefon: +41 (0) 41 854 13 00, E-Mail:<a href="mailto:info@bauder.ag">info@bauder.ag</a></span>
+		</div>
+	</div>
+<script src="/typo3conf/ext/ke_search_premium/Resources/Public/Javascript/jquery.ui.core.min.js" type="text/javascript"></script>
+<script src="/typo3conf/ext/ke_search_premium/Resources/Public/Javascript/jquery.ui.widget.min.js" type="text/javascript"></script>
+<script src="/typo3conf/ext/ke_search_premium/Resources/Public/Javascript/jquery.ui.position.min.js" type="text/javascript"></script>
+<script src="/typo3conf/ext/ke_search_premium/Resources/Public/Javascript/jquery.ui.menu.min.js" type="text/javascript"></script>
+<script src="/typo3conf/ext/ke_search_premium/Resources/Public/Javascript/jquery.ui.autocomplete.min.js" type="text/javascript"></script>
+
+<script src="/typo3conf/ext/bauder/Resources/Public/Js/FormCrShield.js" type="text/javascript"></script>
+<script src="externalCheck/externalChecker.js" type="text/javascript"></script>
+<script src="/fileadmin/scripts/trackExternal.js" type="text/javascript"></script><iframe id="uc-cross-domain-bridge" src="https://app.usercentrics.eu/browser-sdk/4.41.0/cross-domain-bridge.html" style="display: none;"></iframe>
+<script src="/fileadmin/templates/facelift_2014/js/footer.js" type="text/javascript"></script>
+<script src="/fileadmin/templates/facelift_2014/js/jquery.clickIn.min.js" type="text/javascript"></script>
+<script src="/typo3temp/assets/js/2f957c69aa.js" type="text/javascript"></script>
+
+
+<script>
+if (ucversion == 'v1') {
+var tries = 0;
+function addLinksToUsercentrics (){
+	if ( document.getElementsByClassName('uc-banner-content').length > 0 ) {
+		var privacyUrls = document.getElementsByClassName('uc-banner-privacyurl');
+		var imprintUrls = document.getElementsByClassName('uc-banner-imprinturl');
+
+		if ( imprintUrls.length == 0 || privacyUrls.length == 0 ) {
+			timeoutCheck();
+		}
+		if ( privacyUrls.length > 0 && privacyUrls != null ) {
+			for (i=0;i<privacyUrls.length;i++){
+				if ( privacyUrls[i].classList.contains('done') ){
+					continue;
+				} else {
+					privacyUrls[i].href=privacyLink;
+					privacyUrls[i].classList.add('done');
+					timeoutCheck();
+				}
+			}
+		} else {
+			timeoutCheck();
+		}
+
+
+		if ( imprintUrls.length > 0 && privacyUrls != null ) {
+			for (i=0;i<imprintUrls.length;i++){
+				if( imprintUrls[i].classList.contains('done') ){
+					continue;
+				} else {
+					imprintUrls[i].href=imprintLink;
+					imprintUrls[i].classList.add('done');
+					timeoutCheck();
+				}
+			}
+		} else {
+			timeoutCheck();
+		}
+	} else {
+		tries++
+		if (tries < 100) {
+			timeoutCheck();
+		}
+	}
+}
+
+var clearDump = [];
+var timeouts = 0;
+var maxTimeouts = 100;
+var intervals = 0;
+var maxIntervals = 10;
+function timeoutCheck(){
+	var checkForLinks = setTimeout(function(){
+		if ( timeouts < maxTimeouts ) {
+			addLinksToUsercentrics();
+		}
+		timeouts++;
+		if (timeouts > maxTimeouts){
+			for (i=0;i<clearDump.length;i++){
+				clearTimeout(clearDump[i]);
+			}
+		clearDump = [];
+		}
+	},100);
+	clearDump.push(checkForLinks);
+}
+
+	window.addEventListener("ucEvents", function (e) {
+		timeoutCheck();
+		if ( !document.getElementsByTagName('body')[0].classList.contains('ucdone')) {
+			document.addEventListener('click',function(e) {
+				if ( e.target.classList.contains('language-item') ){
+					setTimeout(function(){
+						timeoutCheck();
+					},500);
+				}
+			});
+			document.getElementsByTagName('body')[0].classList.contains('ucdone');
+		}
+	});
+
+	window["usercentrics"] = window["usercentrics"] || {};
+	if (window["usercentrics"].isInitialized) {
+		timeoutCheck();
+	} else {
+		window["usercentrics"].onViewInit = function () {
+			timeoutCheck();
+		}
+	}
+	var recheckIntervall = setInterval(function(){
+		if (intervals < maxIntervals ) {
+			timeoutCheck();
+			intervals++;
+		} else {
+			clearInterval(recheckIntervall);
+		}
+	}, 100);
+}
+</script>
+<script>
+window.customUcs = {
+
+    addYoutubeApiScript: function() {
+        var youtubeIframeApiScript = document.createElement('script');
+        youtubeIframeApiScript.setAttribute('src','https://www.youtube.com/iframe_api');
+        document.head.appendChild(youtubeIframeApiScript);
+    },
+
+    checkConsent: function() {
+        var ucsAll = document.querySelectorAll('*');
+
+        for (var i = 0; i < ucsAll.length; i++) {
+
+            /* gets uc elements*/
+            if (ucsAll[i].getAttribute('data-ucs') != null) {
+                ucsService = ucsAll[i].getAttribute('data-ucs');
+
+                /* gets the serviceobject */
+                serviceObject = usercentrics.getConsents().filter(function(obj) {
+                    return obj.dataProcessingService == ucsService
+                })[0];
+
+                if(serviceObject.dataProcessor == 'YouTube Video' && serviceObject.consentStatus===true){
+                    this.addYoutubeApiScript();
+                }
+
+                if (serviceObject.consentStatus) {
+                    /*if consent then show it */
+					if (ucsAll[i].getAttribute('ucs-src') != null){
+						ucsAll[i].setAttribute('src', ucsAll[i].getAttribute('ucs-src'));
+					} else {
+						ucsAll[i].setAttribute('src', ucsAll[i].getAttribute('uc-src'));
+					}
+					ucsAll[i].classList.remove('placeholder');
+                    this.removePlaceholder();
+                } else {
+                    /*if not consent then show placeholder*/
+                     if (!ucsAll[i].classList.contains('placeholder')){
+						if(ucsAll[i].tagName == 'IFRAME'){
+							/*
+							https://stackoverflow.com/questions/5946607/is-an-empty-iframe-src-valid
+							*/
+							ucsAll[i].setAttribute('src', 'about:blank');
+						} else {
+							ucsAll[i].removeAttribute('src');
+						}
+						ucsAll[i].classList.add('placeholder');
+						this.addUcsPlaceholder(ucsAll[i], serviceObject);
+					 }
+
+                }
+            }
+        }
+    },
+
+	checkConsentNew: function () {
+            var ucsAll = document.querySelectorAll('*');
+
+            for (var i = 0; i < ucsAll.length; i++) {
+
+                /* gets uc elements*/
+                if (ucsAll[i].getAttribute('data-ucs') != null) {
+                    ucsService = ucsAll[i].getAttribute('data-ucs');
+
+                    /* gets the serviceobject */
+                    serviceObject = UC_UI.getServicesBaseInfo().filter(function (obj) {
+                        return obj.name == ucsService
+                    })[0];
+
+                    if (serviceObject.name == 'YouTube Video' && serviceObject.consent.status === true) {
+                        this.addYoutubeApiScript();
+                    }
+
+                    if (serviceObject.consent.status) {
+                        /*if consent then show it */
+                        if (ucsAll[i].getAttribute('ucs-src') != null) {
+                            ucsAll[i].setAttribute('src', ucsAll[i].getAttribute('ucs-src'));
+                        } else {
+                            ucsAll[i].setAttribute('src', ucsAll[i].getAttribute('uc-src'));
+                        }
+                        ucsAll[i].classList.remove('placeholder');
+                        this.removePlaceholderNew();
+                    } else {
+                        /*if not consent then show placeholder*/
+                        if (!ucsAll[i].classList.contains('placeholder')) {
+                            if (ucsAll[i].tagName == 'IFRAME') {
+                                /*
+							https://stackoverflow.com/questions/5946607/is-an-empty-iframe-src-valid
+							*/
+                                ucsAll[i].setAttribute('src', 'about:blank');
+                            } else {
+                                ucsAll[i].removeAttribute('src');
+                            }
+                            ucsAll[i].classList.add('placeholder');
+                            this.addUcsPlaceholderNew(ucsAll[i], serviceObject);
+                        }
+
+                    }
+                }
+            }
+        },
+
+    /*generates the placeholder*/
+    addUcsPlaceholder: function(node, serviceObject) {
+        var ucsPlaceholderContainer = document.createElement('div');
+        ucsPlaceholderContainer.className = 'uc-embedding-container ' + serviceObject.dataProcessingService.replace(/ /g, '');
+        ucsPlaceholderContainer.style.width = node.style.width;
+        ucsPlaceholderContainer.style.overflow = 'unset';
+        ucsPlaceholderContainer.style.visibility = 'hidden';
+        var ucsPlaceholderWrapper = document.createElement('div');
+        ucsPlaceholderWrapper.className = 'uc-embedding-wrapper';
+        var ucsText = '<h3>___header___</h3>';
+        ucsText = ucsText + '<p>___description___</p>';
+        ucsText = ucsText + '<div class="uc-embedding-buttons"> \
+            <button onclick="usercentrics.toggleConsentInfoModalIsVisible(\'___templateId___\'); return false;" class="uc-embedding-more-info">___moreinformation___</button> \
+            <button onclick="usercentrics.updateConsents([{\'templateId\':\'___templateId___\', \'status\':true}])" class="uc-embedding-accept">___accept___</button> \
+        </div>';
+        var language = serviceObject.language;
+        var templateId = serviceObject.templateId;
+        var serviceName = serviceObject.dataProcessingService;
+        var languageMapping;
+		var serviceLanguage;
+
+        if (typeof languagesUcs !== 'undefined') {
+            window.customUcs.languages = languagesUcs;
+        }
+
+		serviceLanguage = serviceName;
+		if ( typeof customUcs.languages[serviceName] == 'undefined' ){
+			serviceLanguage='default';
+			if ( typeof customUcs.languages['default'][language] == 'undefined' ){
+				language='default';
+			}
+		} else {
+			if ( typeof customUcs.languages[serviceName][language] == 'undefined'){
+				language='default';
+			}
+		}
+
+		languageMapping = customUcs.languages[serviceLanguage][language];
+
+		ucsText = ucsText.replace('___header___', languageMapping.___header___);
+		ucsText = ucsText.replace('___description___', languageMapping.___description___);
+		ucsText = ucsText.replace(/___templateId___/g, templateId);
+		ucsText = ucsText.replace('___moreinformation___', languageMapping.___moreinformation___);
+		ucsText = ucsText.replace('___accept___', languageMapping.___accept___),
+		ucsText = ucsText.replace(/___serviceName___/g, serviceName);
+
+        /* Add Elements */
+        ucsPlaceholderWrapper.innerHTML = ucsText;
+        ucsPlaceholderContainer.appendChild(ucsPlaceholderWrapper);
+        node.parentNode.appendChild(ucsPlaceholderContainer);
+
+        ucsPlaceholderWrapper.style.position = 'unset';
+
+        var ucsPlaceholderContainerChildren = ucsPlaceholderContainer.children[0].children;
+        var childrenHeight = 0;
+        var ucsPlaceholderContainerHeight = 0;
+
+        for (var i = 0; i < ucsPlaceholderContainerChildren.length; i++) {
+            childrenHeight = parseInt(childrenHeight + ucsPlaceholderContainerChildren[i].offsetHeight);
+        }
+
+        if (childrenHeight < ucsPlaceholderContainer.offsetHeight) {
+            ucsPlaceholderContainerHeight = ucsPlaceholderContainer.offsetHeight;
+        } else {
+            ucsPlaceholderContainerHeight = childrenHeight;
+        }
+
+        ucsPlaceholderContainerHeight = parseInt(ucsPlaceholderContainerHeight * 1.33);
+        ucsPlaceholderContainer.style.visibility = 'visible';
+        ucsPlaceholderContainer.style.height = ucsPlaceholderContainerHeight + 'px';
+        ucsPlaceholderWrapper.style.position = 'absolute';
+
+    },
+
+	/*generates the placeholder*/
+        addUcsPlaceholderNew: function (node, serviceObject) {
+            var ucsPlaceholderContainer = document.createElement('div');
+            ucsPlaceholderContainer.className = 'uc-embedding-container ' + serviceObject.name.replace(/ /g, '');
+            ucsPlaceholderContainer.style.width = node.style.width;
+            ucsPlaceholderContainer.style.overflow = 'unset';
+            ucsPlaceholderContainer.style.visibility = 'hidden';
+            var ucsPlaceholderWrapper = document.createElement('div');
+            ucsPlaceholderWrapper.className = 'uc-embedding-wrapper';
+            var ucsText = '<h3>___header___</h3>';
+            ucsText = ucsText + '<p>___description___</p>';
+            ucsText = ucsText + '<div class="uc-embedding-buttons"> \
+            <button onclick="UC_UI.showSecondLayer(\'___templateId___\');" class="uc-embedding-more-info">___moreinformation___</button> \
+            <button onclick="UC_UI.acceptService(\'___templateId___\')" class="uc-embedding-accept">___accept___</button> \
+        </div>';
+
+            var language = UC_UI.getActiveLanguage();
+            console.log(language);
+            var templateId = serviceObject.id;
+            var serviceName = serviceObject.name;
+            var languageMapping;
+            var serviceLanguage;
+
+            if (typeof languagesUcs !== 'undefined') {
+                window.customUcs.languages = languagesUcs;
+            }
+
+            serviceLanguage = serviceName;
+            if (typeof customUcs.languages[serviceName] == 'undefined') {
+                serviceLanguage = 'default';
+                if (typeof customUcs.languages['default'][language] == 'undefined') {
+                    language = 'default';
+                }
+            } else {
+                if (typeof customUcs.languages[serviceName][language] == 'undefined') {
+                    language = 'default';
+                }
+            }
+
+            languageMapping = customUcs.languages[serviceLanguage][language];
+
+            ucsText = ucsText.replace('___header___', languageMapping.___header___);
+            ucsText = ucsText.replace('___description___', languageMapping.___description___);
+            ucsText = ucsText.replace(/___templateId___/g, templateId);
+            ucsText = ucsText.replace('___moreinformation___', languageMapping.___moreinformation___);
+            ucsText = ucsText.replace('___accept___', languageMapping.___accept___),
+                ucsText = ucsText.replace(/___serviceName___/g, serviceName);
+
+            /* Add Elements */
+            ucsPlaceholderWrapper.innerHTML = ucsText;
+            ucsPlaceholderContainer.appendChild(ucsPlaceholderWrapper);
+            node.parentNode.appendChild(ucsPlaceholderContainer);
+
+            ucsPlaceholderWrapper.style.position = 'unset';
+
+            var ucsPlaceholderContainerChildren = ucsPlaceholderContainer.children[0].children;
+            var childrenHeight = 0;
+            var ucsPlaceholderContainerHeight = 0;
+
+            for (var i = 0; i < ucsPlaceholderContainerChildren.length; i++) {
+                childrenHeight = parseInt(childrenHeight + ucsPlaceholderContainerChildren[i].offsetHeight);
+            }
+
+            if (childrenHeight < ucsPlaceholderContainer.offsetHeight) {
+                ucsPlaceholderContainerHeight = ucsPlaceholderContainer.offsetHeight;
+            } else {
+                ucsPlaceholderContainerHeight = childrenHeight;
+            }
+
+            ucsPlaceholderContainerHeight = parseInt(ucsPlaceholderContainerHeight * 1.33);
+            ucsPlaceholderContainer.style.visibility = 'visible';
+            ucsPlaceholderContainer.style.height = ucsPlaceholderContainerHeight + 'px';
+            ucsPlaceholderWrapper.style.position = 'absolute';
+
+        },
+
+    removePlaceholder: function() {
+        var removePlaceholderServiceObject = document.getElementsByClassName(serviceObject.dataProcessingService.replace(/ /g, ''));
+        if (removePlaceholderServiceObject.length > 0) {
+            for (var i = 0; i < removePlaceholderServiceObject.length; i++) {
+                removePlaceholderServiceObject[i].parentNode.removeChild(removePlaceholderServiceObject[i]);
+            }
+        }
+        this.addYoutubeApiScript();
+    },
+
+	removePlaceholderNew: function () {
+            var removePlaceholderServiceObject = document.getElementsByClassName(serviceObject.name.replace(/ /g, ''));
+            if (removePlaceholderServiceObject.length > 0) {
+                for (var i = 0; i < removePlaceholderServiceObject.length; i++) {
+                    removePlaceholderServiceObject[i].parentNode.removeChild(removePlaceholderServiceObject[i]);
+                }
+            }
+            this.addYoutubeApiScript();
+        },
+
+    statusChange: function() {
+        window.addEventListener("onConsentStatusChange", function(e) {
+            if (e.data.event == "consents_changed_finished") {
+                window.customUcs.checkConsent();
+            }
+        });
+    },
+
+	statusChangeNew: function () {
+            window.addEventListener("onConsentStatusChange", function (e) {
+                if (e.detail.event == "consent_status") {
+                    window.customUcs.checkConsentNew();
+                }
+            });
+        },
+
+    initialize: function() {
+		if (window.UC_UI && window.UC_UI.isInitialized()) {
+                window.customUcs.checkConsentNew();
+                window.customUcs.statusChangeNew();
+            } else {
+                window.addEventListener('UC_UI_INITIALIZED', function (e) {
+                    window.customUcs.checkConsentNew();
+                    window.customUcs.statusChangeNew();
+                });
+            }
+        window["usercentrics"] = window["usercentrics"] || {};
+        if (window["usercentrics"].isInitialized) {
+            window.customUcs.checkConsent();
+            window.customUcs.statusChange();
+        } else {
+            window["usercentrics"].onViewInit = function() {
+                window.customUcs.checkConsent();
+                window.customUcs.statusChange();
+            }
+        }
+
+    }
+}
+customUcs.initialize();
+
+/*************************/
+/* language ucercentrics */
+/*************************/
+
+var languagesUcs = {
+    default: {
+        default: {
+            ___header___: 'We need your consent!',
+            ___description___: 'We use third party providers to integrate content. They may collect personal information about your activities. Please note the details and give your consent for ___serviceName___.',
+            ___moreinformation___: 'learn more',
+            ___accept___: 'Accept'
+        },
+        de: {
+            ___header___: 'Wir brauchen Ihr Einverständnis!',
+            ___description___: 'Wir benutzen Drittanbieter um Inhalte einzubinden. Diese können persönliche Daten über Ihre Aktivitäten sammeln. Bitte beachten Sie die Details und geben Sie Ihre Einwilligung für ___serviceName___.',
+            ___moreinformation___: 'mehr erfahren',
+            ___accept___: 'Akzeptieren'
+        },
+        en: {
+            ___header___: 'We need your consent!',
+            ___description___: 'We use third party providers to integrate content. They may collect personal information about your activities. Please note the details and give your consent for ___serviceName___.',
+            ___moreinformation___: 'learn more',
+            ___accept___: 'Accept'
+        }
+    },
+    'YouTube Video': {
+        default: {
+            ___header___: 'We need your consent!',
+            ___description___: 'We use third party providers to integrate content. They may collect personal information about your activities. Please note the details and give your consent for ___serviceName___.',
+            ___moreinformation___: 'learn more',
+            ___accept___: 'Accept'
+        },
+        de: {
+            ___header___: 'Wir brauchen Ihr Einverständnis"',
+            ___description___: 'Wir benutzen Drittanbieter um Inhalte einzubinden. Diese können persönliche Daten über Ihre Aktivitäten sammeln. Bitte beachten Sie die Details und geben Sie Ihre Einwilligung für ___serviceName___.',
+            ___moreinformation___: 'mehr erfahren',
+            ___accept___: 'Akzeptieren'
+        },
+        en: {
+            ___header___: 'We need your consent!',
+            ___description___: 'We use third party providers to integrate content. They may collect personal information about your activities. Please note the details and give your consent for ___serviceName___.',
+            ___moreinformation___: 'learn more',
+            ___accept___: 'Accept'
+        }
+    }
+}
+</script>
+	<script type="text/plain" data-usercentrics="Google Analytics" src="/fileadmin/scripts/trackExternal.js"></script>
+
+
+<div id="usercentrics-root" data-created-at="1743026786308" style="display: none;"></div><div id="fancybox-tmp"></div><div id="fancybox-loading"><div></div></div><div id="fancybox-overlay"></div><div id="fancybox-wrap"><div id="fancybox-outer"><div class="fancybox-bg" id="fancybox-bg-n"></div><div class="fancybox-bg" id="fancybox-bg-ne"></div><div class="fancybox-bg" id="fancybox-bg-e"></div><div class="fancybox-bg" id="fancybox-bg-se"></div><div class="fancybox-bg" id="fancybox-bg-s"></div><div class="fancybox-bg" id="fancybox-bg-sw"></div><div class="fancybox-bg" id="fancybox-bg-w"></div><div class="fancybox-bg" id="fancybox-bg-nw"></div><div id="fancybox-content"></div><a id="fancybox-close"></a><div id="fancybox-title"></div><a href="javascript:;" id="fancybox-left"><span class="fancy-ico" id="fancybox-left-ico"></span></a><a href="javascript:;" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a></div></div><a class="jumper"></a><ul class="ui-autocomplete ui-menu ui-widget ui-widget-content ui-corner-all" id="ui-id-1" tabindex="0" style="z-index: 12; display: none;"></ul><style id="uc-overflow-style">.overflowHidden {overflow: hidden !important;}</style></body></html>

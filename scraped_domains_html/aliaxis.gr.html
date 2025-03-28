@@ -1,0 +1,1573 @@
+<!DOCTYPE html><html lang="el"><head>
+            
+
+    
+    
+    
+<script type="text/javascript" async="" src="https://static.hotjar.com/c/hotjar-5230555.js?sv=7"></script><script async="" src="https://analytics.aliaxis.gr/gtm.js?id=GTM-W3VFQZ2H"></script><script async="" src="https://analytics.aliaxis.gr/gtm.js?id=GTM-WVPC7S3T"></script><script src="/aliaxis-group/js/gtmUtils.js"></script>
+<script>
+    window.udata = window.udata || [];
+
+                        window.udata = window.udata || [];
+                    udata.push( {"event_name":"page navigation","env_country":"gr","page_language":"el","page_template":"other","consent":[{"category":"necessary","choice":"no choice - accepted","type":"tracking"},{"category":"functional","choice":"rejected","type":"tracking"},{"category":"analytics","choice":"rejected","type":"tracking"},{"category":"advertising","choice":"rejected","type":"tracking"}]});
+            
+    
+    <!-- Google Tag Manager Function -->
+    function addGoogleTagManager(w, d, s, l, i, host, devMode) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        });
+        const f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l !== 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+            'https://' + host + '/gtm.js?id=' + i + dl + (typeof devMode !== 'undefined' && devMode !== '' ? devMode : '');
+        f.parentNode.insertBefore(j, f);
+    }
+    <!-- End Function Google Tag Manager -->
+
+    <!-- Google Tag Manager -->
+    // Add global tag manager
+    addGoogleTagManager(window, document, 'script', 'dataLayer', 'GTM-WVPC7S3T', 'analytics.aliaxis.gr', );
+
+        // Add website tag manager
+    addGoogleTagManager(window, document, 'script', 'dataLayer', 'GTM-W3VFQZ2H', 'analytics.aliaxis.gr', );
+        <!-- End Google Tag Manager -->
+
+    window.onload = function(){
+        addGtmReadingAttributes();
+        addGtmVideoAttributes();
+    }
+</script>
+
+
+
+    
+            
+<link rel="stylesheet" href="/aliaxis-group/css/klaro.min.css">
+
+    
+
+<script defer="" type="application/javascript">
+
+    /*
+    To indicate if we need to send the choice of the user cookies the first time.
+    Indeed, klaro raised the event before the user give his consent.
+    */
+    let sendFirstChoice = false;
+
+    /*
+    To indicate if a modification in the cookies has been set by the user
+    to allow you to send the GTM event only when a modification is made
+    */
+    let hasModificationInGtmCookies = false;
+
+    function sendGtmConsentSubmit() {
+        hasModificationInGtmCookies = false;
+        pushGtmData(
+            {
+                'event_name': "consent submit",
+                'consent': klaroConfig.gtmCookies
+            }
+        );
+    }
+
+    function observeKlaroPopup() {
+        const klaroContainer = document.querySelector('#klaro > .klaro.ds-customize-klaro');
+
+        // We check if the klaroContainer is found, otherwise we set a timeout before calling again this method
+        if (klaroContainer) {
+
+            const observer = new MutationObserver((mutations) => {
+                mutations.forEach((mutation) => {
+                    // When the childList of the klaro container removed some nodes
+                    if (mutation.type === 'childList' && mutation.removedNodes.length > 0) {
+                        const klaroDivContainer = klaroContainer.querySelector("div");
+                        // We check if the content of the div container is empty and if we need to send the event to GTM (only on the first choice)
+                        if (klaroDivContainer && klaroDivContainer.innerHTML.trim() === '' && sendFirstChoice) {
+                            sendFirstChoice = false;
+                            sendGtmConsentSubmit();
+                        }
+                    }
+                });
+            });
+
+            observer.observe(klaroContainer, {
+                childList: true,
+                subtree: true
+            });
+
+            return;
+        }
+
+        setTimeout(function () {
+            observeKlaroPopup();
+        }, 250);
+    }
+
+    function modifiedGtmCookieConsent(consent, service) {
+        if (klaroConfig.gtmCookies.length < klaroConfig.services.length) {
+            return;
+        }
+
+        hasModificationInGtmCookies = true;
+        klaroConfig.gtmCookies.find((gtmCookie, index) => {
+            if (gtmCookie.category === service.name) {
+                gtmCookie.choice = getGtmCookieChoice(service, consent);
+                klaroConfig.gtmCookies[index] = gtmCookie;
+                return true;
+            }
+            return false;
+        });
+    }
+
+    function getGtmCookieChoice(app, consent) {
+        if (app.required) {
+            return "no choice - accepted"
+        }
+
+        if (consent) {
+            return "accepted"
+        }
+        return "rejected";
+    }
+
+    let timeoutSendGtm = undefined;
+
+    var klaroConfig = {
+        version: 1,
+        /*
+        You can customize the ID of the DIV element that Klaro will create when starting
+        up. By default, Klaro will use 'klaro'.
+        */
+        elementID: 'klaro',
+
+        /*
+        You can customize how Klaro persists consent information in the browser. Specify
+        either cookie' (the default) or 'localStorage'.
+        */
+        storageMethod: 'cookie',
+
+        /*
+        You can customize the name of the cookie or localStorage entry that Klaro will
+        use for storing the consent information. By default, Klaro will use 'klaro'.
+        */
+        cookieName: 'klaro',
+
+        /*
+        If set to `true`, Klaro will render the texts given in the
+        `consentModal.description` and `consentNotice.description` translations as HTML.
+        This enables you to e.g. add custom links or interactive content.
+        */
+        htmlTexts: true,
+
+        // Setting 'embedded' to true will render the Klaro modal and notice without
+        // the modal background, allowing you to e.g. embed them into a specific element
+        // of your website, such as your privacy notice.
+        embedded: false,
+
+        // You can group services by their purpose in the modal. This is advisable
+        // if you have a large number of services. Users can then enable or disable
+        // entire groups of services instead of having to enable or disable every service.
+        groupByPurpose: false,
+
+        /*
+        You can change the cookie domain for the consent manager itself. Use this if you
+        want to get consent once for multiple matching domains. By default, Klaro will
+        use the current domain. Only relevant if 'storageMethod' is set to 'cookie'.
+        */
+        cookieDomain: 'www.aliaxis.gr',
+
+        /*
+        You can also set a custom expiration time for the Klaro cookie. By default, it
+        will expire after 30 days. Only relevant if 'storageMethod' is set to 'cookie'.
+        */
+        cookieExpiresAfterDays: 30,
+
+        /*
+        You can specify a link to your privacy policy here (relative or absolute), which
+        will then be shown in the notice and modal. You can also specify an object with
+        language-specific links and an optional fallback using the 'default' key:
+        privacyPolicy : {de: "/#datenschutz", en: "/#privacy", default: "/#privacy" },
+        privacyPolicy: 'https://www.fipnet.com/cookie-policy/'
+        */
+        privacyPolicy: '/privacy-policy',
+
+        /*
+        Defines the default state for applications in the consent modal (true=enabled by
+        default). You can override this setting in each app.
+        */
+        default: false,
+
+        /*
+        If 'mustConsent' is set to 'true', Klaro will directly display the consent
+        manager modal and not allow the user to close it before having actively
+        consented or declined the use of third-party applications.
+        */
+        mustConsent: false,
+
+        /*
+        Setting 'acceptAll' to 'true' will show an "accept all" button in the notice and
+        modal, which will enable all third-party apps if the user clicks on it. If set
+        to 'false', there will be an "accept" button that will only enable the apps that
+        are enabled in the consent modal.
+        */
+        acceptAll: true,
+
+        /*
+        Setting 'hideDeclineAll' to 'true' will hide the "decline" button in the consent
+        modal and force the user to open the modal in order to change his/her consent or
+        disable all third-party apps. We strongly advise you to not use this feature, as
+        it opposes the "privacy by default" and "privacy by design" principles of the
+        GDPR (but might be acceptable in other legislations such as under the CCPA)
+        */
+        hideDeclineAll: false,
+
+        /*
+        Setting 'hideLearnMore' to 'true' will hide the "learn more / customize" link in
+        the consent notice. We strongly advise against using this under most
+        circumstances, as it keeps the user from customizing his/her consent choices.
+        */
+        hideLearnMore: false,
+
+        // show cookie notice as modal
+        noticeAsModal: false,
+
+        // You can also remove the 'Realized with Klaro!' text in the consent modal.
+        // Please don't do this! We provide Klaro as a free open source tool.
+        // Placing a link to our website helps us spread the word about it,
+        // which ultimately enables us to make Klaro! better for everyone.
+        // So please be fair and keep the link enabled. Thanks :)
+        disablePoweredBy: true,
+
+        // you can specify an additional class (or classes) that will be added to the Klaro `div`
+        additionalClass: 'ds-customize-klaro',
+
+        // You can define the UI language directly here. If undefined, Klaro will
+        // use the value given in the global "lang" variable. If that does
+        // not exist, it will use the value given in the "lang" attribute of your
+        // HTML tag. If that also doesn't exist, it will use 'en'.
+        lang: 'el',
+
+        // You can overwrite existing translations and add translations for your
+        // service descriptions and purposes. See `src/translations/` for a full
+        // list of translations that can be overwritten:
+        // https://github.com/KIProtect/klaro/tree/master/src/translations
+        translations: {
+            'el': {
+                consentNotice: {
+                    description: '\u0398\u03B1\u0020\u03BC\u03C0\u03BF\u03C1\u03BF\u03CD\u03C3\u03B1\u03BC\u03B5\u0020\u03BD\u03B1\u0020\u03B5\u03BD\u03B5\u03C1\u03B3\u03BF\u03C0\u03BF\u03B9\u03AE\u03C3\u03BF\u03C5\u03BC\u03B5\u0020\u03BA\u03AC\u03C0\u03BF\u03B9\u03B5\u03C2\u0020\u03B5\u03C0\u03B9\u03C0\u03BB\u03AD\u03BF\u03BD\u0020\u03C5\u03C0\u03B7\u03C1\u03B5\u03C3\u03AF\u03B5\u03C2\u003B',
+                    learnMore: '\u03A0\u03B5\u03C1\u03B9\u03C3\u03C3\u03CC\u03C4\u03B5\u03C1\u03B1',
+                    changeDescription: '\u03A0\u03C1\u03B1\u03B3\u03BC\u03B1\u03C4\u03BF\u03C0\u03BF\u03B9\u03AE\u03B8\u03B7\u03BA\u03B1\u03BD\u0020\u03B1\u03BB\u03BB\u03B1\u03B3\u03AD\u03C2\u0020\u03BC\u03B5\u03C4\u03AC\u0020\u03C4\u03B7\u03BD\u0020\u03C4\u03B5\u03BB\u03B5\u03C5\u03C4\u03B1\u03AF\u03B1\u0020\u03C3\u03B1\u03C2\u0020\u03B5\u03C0\u03AF\u03C3\u03BA\u03B5\u03C8\u03B7\u0020\u03C0\u03B1\u03C1\u03B1\u03BA\u03B1\u03BB\u03BF\u03CD\u03BC\u03B5\u0020\u03B1\u03BD\u03B1\u03BD\u03B5\u03CE\u03C3\u03C4\u03B5\u0020\u03C4\u03B7\u03BD\u0020\u03C3\u03C5\u03B3\u03BA\u03B1\u03C4\u03AC\u03B8\u03B5\u03C3\u03B7\u0020\u03C3\u03B1\u03C2.',
+                },
+                consentModal: {
+                    title: '\u03A5\u03C0\u03B7\u03C1\u03B5\u03C3\u03AF\u03B5\u03C2\u0020\u03C0\u03BF\u03C5\u0020\u03B8\u03B1\u0020\u03B8\u03AD\u03BB\u03B1\u03BC\u03B5\u0020\u03BD\u03B1\u0020\u03C7\u03C1\u03B7\u03C3\u03B9\u03BC\u03BF\u03C0\u03BF\u03B9\u03AE\u03C3\u03BF\u03C5\u03BC\u03B5',
+                    description: '\u0391\u03C5\u03C4\u03CC\u03C2\u0020\u03BF\u0020\u03B9\u03C3\u03C4\u03CC\u03C4\u03BF\u03C0\u03BF\u03C2\u0020\u03C7\u03C1\u03B7\u03C3\u03B9\u03BC\u03BF\u03C0\u03BF\u03B9\u03B5\u03AF\u0020cookies',
+                    privacyPolicy: {
+                        name: '\u0394\u03AE\u03BB\u03C9\u03C3\u03B7\u0020Cookie',
+                        text: '\u0393\u03B9\u03B1\u0020\u03C0\u03B5\u03C1\u03B9\u03C3\u03C3\u03CC\u03C4\u03B5\u03C1\u03B5\u03C2\u0020\u03C0\u03BB\u03B7\u03C1\u03BF\u03C6\u03BF\u03C1\u03AF\u03B5\u03C2\u0020\u03C3\u03C7\u03B5\u03C4\u03B9\u03BA\u03AC\u0020\u03BC\u03B5\u0020\u03C4\u03B1\u0020cookie\u0020\u03BA\u03B1\u03B8\u03CE\u03C2\u0020\u03BA\u03B1\u03B9\u0020\u03C0\u03CE\u03C2\u0020\u03BC\u03C0\u03BF\u03C1\u03B5\u03AF\u03C4\u03B5\u0020\u03BD\u03B1\u0020\u03B1\u03BB\u03BB\u03AC\u03BE\u03B5\u03C4\u03B5\u0020\u03C4\u03B9\u03C2\u0020\u03C1\u03C5\u03B8\u03BC\u03AF\u03C3\u03B5\u03B9\u03C2\u0020cookies,\u0020\u03B1\u03BD\u03B1\u03C4\u03C1\u03AD\u03BE\u03C4\u03B5\u0020\u03C3\u03C4\u03BF\u0020\u0025linkText\u0020\u0025.\u0020\u039C\u03C0\u03BF\u03C1\u03B5\u03AF\u03C4\u03B5\u0020\u03BD\u03B1\u0020\u03B1\u03C0\u03BF\u03B4\u03B5\u03C7\u03C4\u03B5\u03AF\u03C4\u03B5\u0020\u03AE\u0020\u03BD\u03B1\u0020\u03B1\u03C0\u03BF\u03C1\u03C1\u03AF\u03C8\u03B5\u03C4\u03B5\u0020\u03C4\u03B1\u0020\u03BC\u03B7\u0020\u03B1\u03C0\u03B1\u03C1\u03B1\u03AF\u03C4\u03B7\u03C4\u03B1\u0020cookies\u0020\u03C3\u03C4\u03BF\u03BD\u0020\u0399\u03C3\u03C4\u03CC\u03C4\u03BF\u03C0\u03CC\u0020\u03BC\u03B1\u03C2\u0020\u03B5\u03C0\u03B9\u03BB\u03AD\u03B3\u03BF\u03BD\u03C4\u03B1\u03C2\u0020\u03AD\u03BD\u03B1\u03BD\u0020\u03B1\u03C0\u03CC\u0020\u03C4\u03BF\u03C5\u03C2\u0020\u03B1\u03BA\u03CC\u03BB\u03BF\u03C5\u03B8\u03BF\u03C5\u03C2\u0020\u03C3\u03C5\u03BD\u03B4\u03AD\u03C3\u03BC\u03BF\u03C5\u03C2\u003A',
+                    }
+                },
+                necessary: {
+                    title: '\u0391\u03C0\u03B1\u03C1\u03B1\u03AF\u03C4\u03B7\u03C4\u03B1\u0020',
+                    description: '\u0391\u03C5\u03C4\u03AC\u0020\u03C4\u03B1\u0020cookies\u0020\u03B5\u03AF\u03BD\u03B1\u03B9\u0020\u03B1\u03C0\u03BF\u03BB\u03CD\u03C4\u03C9\u03C2\u0020\u03B1\u03C0\u03B1\u03C1\u03B1\u03AF\u03C4\u03B7\u03C4\u03B1\u0020\u03B3\u03B9\u03B1\u0020\u03BD\u03B1\u0020\u03B5\u03C0\u03B9\u03C4\u03C1\u03AD\u03C8\u03BF\u03C5\u03BD\u0020\u03C4\u03B9\u03C2\u0020\u03B2\u03B1\u03C3\u03B9\u03BA\u03AD\u03C2\u0020\u03BB\u03B5\u03B9\u03C4\u03BF\u03C5\u03C1\u03B3\u03AF\u03B5\u03C2,\u0020\u03CC\u03C0\u03C9\u03C2\u0020\u03B7\u0020\u03C0\u03BB\u03BF\u03AE\u03B3\u03B7\u03C3\u03B7\u0020\u03C3\u03C4\u03B9\u03C2\u0020\u03C3\u03B5\u03BB\u03AF\u03B4\u03B5\u03C2,\u0020\u03B7\u0020\u03C3\u03C5\u03BC\u03C0\u03BB\u03AE\u03C1\u03C9\u03C3\u03B7\u0020\u03C6\u03BF\u03C1\u03BC\u03CE\u03BD\u0020\u03BA\u03B1\u03B9\u0020\u03B7\u0020\u03C0\u03C1\u03CC\u03C3\u03B2\u03B1\u03C3\u03B7\u0020\u03C3\u03B5\u0020\u03B1\u03C3\u03C6\u03B1\u03BB\u03B5\u03AF\u03C2\u0020\u03C0\u03B5\u03C1\u03B9\u03BF\u03C7\u03AD\u03C2\u0020\u03C4\u03B7\u03C2\u0020\u03B9\u03C3\u03C4\u03BF\u03C3\u03B5\u03BB\u03AF\u03B4\u03B1\u03C2.\u0020\u0397\u0020\u03B9\u03C3\u03C4\u03BF\u03C3\u03B5\u03BB\u03AF\u03B4\u03B1\u0020\u03B4\u03B5\u03BD\u0020\u03BC\u03C0\u03BF\u03C1\u03B5\u03AF\u0020\u03BD\u03B1\u0020\u03BB\u03B5\u03B9\u03C4\u03BF\u03C5\u03C1\u03B3\u03AE\u03C3\u03B5\u03B9\u0020\u03C3\u03C9\u03C3\u03C4\u03AC\u0020\u03C7\u03C9\u03C1\u03AF\u03C2\u0020\u03B1\u03C5\u03C4\u03AC.\u0020\u0391\u03C5\u03C4\u03AC\u0020\u03C4\u03B1\u0020cookies\u0020\u03B4\u03B5\u03BD\u0020\u03B1\u03C0\u03BF\u03B8\u03B7\u03BA\u03B5\u03CD\u03BF\u03C5\u03BD\u0020\u03BA\u03B1\u03BC\u03AF\u03B1\u0020\u03C0\u03C1\u03BF\u03C3\u03C9\u03C0\u03B9\u03BA\u03AC\u0020\u03B1\u03BD\u03B1\u03B3\u03BD\u03C9\u03C1\u03AF\u03C3\u03B9\u03BC\u03B7\u0020\u03C0\u03BB\u03B7\u03C1\u03BF\u03C6\u03BF\u03C1\u03AF\u03B1.',
+                },
+                functional: {
+                    title: '\u039B\u03B5\u03B9\u03C4\u03BF\u03C5\u03C1\u03B3\u03B9\u03BA\u03AC\u0020',
+                    description: '\u0391\u03C5\u03C4\u03AC\u0020\u03C4\u03B1\u0020cookies\u0020\u03B5\u03C0\u03B9\u03C4\u03C1\u03AD\u03C0\u03BF\u03C5\u03BD\u0020\u03C3\u03C4\u03B7\u03BD\u0020\u03B9\u03C3\u03C4\u03BF\u03C3\u03B5\u03BB\u03AF\u03B4\u03B1\u0020\u03BD\u03B1\u0020\u03C0\u03B1\u03C1\u03AD\u03C7\u03B5\u03B9\u0020\u03B2\u03B5\u03BB\u03C4\u03B9\u03C9\u03BC\u03AD\u03BD\u03B7\u0020\u03BB\u03B5\u03B9\u03C4\u03BF\u03C5\u03C1\u03B3\u03B9\u03BA\u03CC\u03C4\u03B7\u03C4\u03B1\u0020\u03BA\u03B1\u03B9\u0020\u03B5\u03BE\u03B1\u03C4\u03BF\u03BC\u03AF\u03BA\u03B5\u03C5\u03C3\u03B7.\u0020\u039C\u03C0\u03BF\u03C1\u03B5\u03AF\u0020\u03BD\u03B1\u0020\u03AD\u03C7\u03BF\u03C5\u03BD\u0020\u03C1\u03C5\u03B8\u03BC\u03B9\u03C3\u03C4\u03B5\u03AF\u0020\u03B1\u03C0\u03CC\u0020\u03B5\u03BC\u03AC\u03C2\u0020\u03AE\u0020\u03B1\u03C0\u03CC\u0020\u03C0\u03B1\u03C1\u03CC\u03C7\u03BF\u03C5\u03C2\u0020\u03C4\u03C1\u03AF\u03C4\u03C9\u03BD\u0020\u03C4\u03C9\u03BD\u0020\u03BF\u03C0\u03BF\u03AF\u03C9\u03BD\u0020\u03C4\u03B9\u03C2\u0020\u03C5\u03C0\u03B7\u03C1\u03B5\u03C3\u03AF\u03B5\u03C2\u0020\u03AD\u03C7\u03BF\u03C5\u03BC\u03B5\u0020\u03C0\u03C1\u03BF\u03C3\u03B8\u03AD\u03C3\u03B5\u03B9\u0020\u03C3\u03C4\u03B9\u03C2\u0020\u03C3\u03B5\u03BB\u03AF\u03B4\u03B5\u03C2\u0020\u03BC\u03B1\u03C2.\u0020\u0395\u03AC\u03BD\u0020\u03B4\u03B5\u03BD\u0020\u03B5\u03C0\u03B9\u03C4\u03C1\u03AD\u03C8\u03B5\u03C4\u03B5\u0020\u03B1\u03C5\u03C4\u03AC\u0020\u03C4\u03B1\u0020cookies,\u0020\u03BF\u03C1\u03B9\u03C3\u03BC\u03AD\u03BD\u03B5\u03C2\u0020\u03AE\u0020\u03CC\u03BB\u03B5\u03C2\u0020\u03B1\u03C5\u03C4\u03AD\u03C2\u0020\u03BF\u03B9\u0020\u03C5\u03C0\u03B7\u03C1\u03B5\u03C3\u03AF\u03B5\u03C2\u0020\u03B5\u03BD\u03B4\u03AD\u03C7\u03B5\u03C4\u03B1\u03B9\u0020\u03BD\u03B1\u0020\u03BC\u03B7\u03BD\u0020\u03BB\u03B5\u03B9\u03C4\u03BF\u03C5\u03C1\u03B3\u03BF\u03CD\u03BD\u0020\u03C3\u03C9\u03C3\u03C4\u03AC.',
+                },
+                analytics: {
+                    title: '\u0391\u03BD\u03AC\u03BB\u03C5\u03C3\u03B7\u0020',
+                    description: '\u0391\u03C5\u03C4\u03AC\u0020\u03C4\u03B1\u0020cookies\u0020\u03BC\u03B1\u03C2\u0020\u03B5\u03C0\u03B9\u03C4\u03C1\u03AD\u03C0\u03BF\u03C5\u03BD\u0020\u03BD\u03B1\u0020\u03BC\u03B5\u03C4\u03C1\u03AC\u03BC\u03B5\u0020\u03C4\u03B9\u03C2\u0020\u03B5\u03C0\u03B9\u03C3\u03BA\u03AD\u03C8\u03B5\u03B9\u03C2\u0020\u03BA\u03B1\u03B9\u0020\u03C4\u03B9\u03C2\u0020\u03C0\u03B7\u03B3\u03AD\u03C2\u0020\u03BA\u03C5\u03BA\u03BB\u03BF\u03C6\u03BF\u03C1\u03AF\u03B1\u03C2,\u0020\u03CE\u03C3\u03C4\u03B5\u0020\u03BD\u03B1\u0020\u03BC\u03C0\u03BF\u03C1\u03AD\u03C3\u03BF\u03C5\u03BC\u03B5\u0020\u03BD\u03B1\u0020\u03BC\u03B5\u03C4\u03C1\u03AE\u03C3\u03BF\u03C5\u03BC\u03B5\u0020\u03BA\u03B1\u03B9\u0020\u03BD\u03B1\u0020\u03B2\u03B5\u03BB\u03C4\u03B9\u03CE\u03C3\u03BF\u03C5\u03BC\u03B5\u0020\u03C4\u03B7\u03BD\u0020\u03B1\u03C0\u03CC\u03B4\u03BF\u03C3\u03B7\u0020\u03C4\u03B7\u03C2\u0020\u03B9\u03C3\u03C4\u03BF\u03C3\u03B5\u03BB\u03AF\u03B4\u03B1\u03C2\u0020\u03BC\u03B1\u03C2.\u0020\u039C\u03B1\u03C2\u0020\u03B2\u03BF\u03B7\u03B8\u03BF\u03CD\u03BD\u0020\u03BD\u03B1\u0020\u03BA\u03B1\u03C4\u03B1\u03BD\u03BF\u03AE\u03C3\u03BF\u03C5\u03BC\u03B5\u0020\u03C0\u03BF\u03B9\u03B5\u03C2\u0020\u03C3\u03B5\u03BB\u03AF\u03B4\u03B5\u03C2\u0020\u03B5\u03AF\u03BD\u03B1\u03B9\u0020\u03BF\u03B9\u0020\u03C0\u03B9\u03BF\u0020\u03BA\u03B1\u03B9\u0020\u03BF\u03B9\u0020\u03BB\u03B9\u03B3\u03CC\u03C4\u03B5\u03C1\u03BF\u0020\u03B4\u03B7\u03BC\u03BF\u03C6\u03B9\u03BB\u03B5\u03AF\u03C2\u0020\u03BA\u03B1\u03B9\u0020\u03BD\u03B1\u0020\u03B4\u03BF\u03CD\u03BC\u03B5\u0020\u03C0\u03CE\u03C2\u0020\u03BA\u03B9\u03BD\u03BF\u03CD\u03BD\u03C4\u03B1\u03B9\u0020\u03BF\u03B9\u0020\u03B5\u03C0\u03B9\u03C3\u03BA\u03AD\u03C0\u03C4\u03B5\u03C2\u0020\u03C3\u03C4\u03BF\u03BD\u0020\u03B9\u03C3\u03C4\u03CC\u03C4\u03BF\u03C0\u03BF.\u0020\u038C\u03BB\u03B5\u03C2\u0020\u03BF\u03B9\u0020\u03C0\u03BB\u03B7\u03C1\u03BF\u03C6\u03BF\u03C1\u03AF\u03B5\u03C2\u0020\u03C0\u03BF\u03C5\u0020\u03C3\u03C5\u03BB\u03BB\u03AD\u03B3\u03BF\u03C5\u03BD\u0020\u03B1\u03C5\u03C4\u03AC\u0020\u03C4\u03B1\u0020cookies\u0020\u03B5\u03AF\u03BD\u03B1\u03B9\u0020\u03C3\u03C5\u03B3\u03BA\u03B5\u03BD\u03C4\u03C1\u03C9\u03C4\u03B9\u03BA\u03AD\u03C2\u0020\u03BA\u03B1\u03B9\u0020\u03B5\u03C0\u03BF\u03BC\u03AD\u03BD\u03C9\u03C2\u0020\u03B1\u03BD\u03CE\u03BD\u03C5\u03BC\u03B5\u03C2.',
+                },
+                advertising: {
+                    title: '\u0394\u03B9\u03B1\u03C6\u03AE\u03BC\u03B9\u03C3\u03B7\u0020',
+                    description: '\u0391\u03C5\u03C4\u03AC\u0020\u03C4\u03B1\u0020cookies\u0020\u03B5\u03BD\u03B4\u03AD\u03C7\u03B5\u03C4\u03B1\u03B9\u0020\u03BD\u03B1\u0020\u03AD\u03C7\u03BF\u03C5\u03BD\u0020\u03C1\u03C5\u03B8\u03BC\u03B9\u03C3\u03C4\u03B5\u03AF\u0020\u03BC\u03AD\u03C3\u03C9\u0020\u03C4\u03B7\u03C2\u0020\u03B9\u03C3\u03C4\u03BF\u03C3\u03B5\u03BB\u03AF\u03B4\u03B1\u03C2\u0020\u03BC\u03B1\u03C2\u0020\u03B1\u03C0\u03CC\u0020\u03C4\u03BF\u03C5\u03C2\u0020\u03B4\u03B9\u03B1\u03C6\u03B7\u03BC\u03B9\u03C3\u03C4\u03B9\u03BA\u03BF\u03CD\u03C2\u0020\u03BC\u03B1\u03C2\u0020\u03C3\u03C5\u03BD\u03B5\u03C1\u03B3\u03AC\u03C4\u03B5\u03C2\u0020\u03B3\u03B9\u03B1\u0020\u03C4\u03B7\u03BD\u0020\u03C0\u03C1\u03BF\u03B2\u03BF\u03BB\u03AE\u0020\u03B4\u03B9\u03B1\u03C6\u03B7\u03BC\u03AF\u03C3\u03B5\u03C9\u03BD\u0020\u03C0\u03BF\u03C5\u0020\u03B5\u03AF\u03BD\u03B1\u03B9\u0020\u03C3\u03C7\u03B5\u03C4\u03B9\u03BA\u03AD\u03C2\u0020\u03BC\u03B5\u0020\u03C4\u03B1\u0020\u03B5\u03BD\u03B4\u03B9\u03B1\u03C6\u03AD\u03C1\u03BF\u03BD\u03C4\u03AC\u0020\u03C3\u03B1\u03C2.\u0020\u0394\u03B5\u03BD\u0020\u03B1\u03C0\u03BF\u03B8\u03B7\u03BA\u03B5\u03CD\u03BF\u03C5\u03BD\u0020\u03AC\u03BC\u03B5\u03C3\u03B1\u0020\u03C0\u03C1\u03BF\u03C3\u03C9\u03C0\u03B9\u03BA\u03AD\u03C2\u0020\u03C0\u03BB\u03B7\u03C1\u03BF\u03C6\u03BF\u03C1\u03AF\u03B5\u03C2,\u0020\u03B1\u03BB\u03BB\u03AC\u0020\u03B2\u03B1\u03C3\u03AF\u03B6\u03BF\u03BD\u03C4\u03B1\u03B9\u0020\u03C3\u03C4\u03B7\u03BD\u0020\u03BC\u03BF\u03BD\u03B1\u03B4\u03B9\u03BA\u03AE\u0020\u03B1\u03BD\u03B1\u03B3\u03BD\u03CE\u03C1\u03B9\u03C3\u03B7\u0020\u03C4\u03BF\u03C5\u0020\u03C0\u03B5\u03C1\u03B9\u03B7\u03B3\u03B7\u03C4\u03AE\u0020\u03BA\u03B1\u03B9\u0020\u03C4\u03B7\u03C2\u0020\u03C3\u03C5\u03C3\u03BA\u03B5\u03C5\u03AE\u03C2\u0020\u03C3\u03B1\u03C2\u0020\u03C3\u03C4\u03BF\u0020\u03B4\u03B9\u03B1\u03B4\u03AF\u03BA\u03C4\u03C5\u03BF.\u0020\u0395\u03AC\u03BD\u0020\u03B4\u03B5\u03BD\u0020\u03B5\u03C0\u03B9\u03C4\u03C1\u03AD\u03C8\u03B5\u03C4\u03B5\u0020\u03B1\u03C5\u03C4\u03AC\u0020\u03C4\u03B1\u0020cookies,\u0020\u03B8\u03B1\u0020\u03B4\u03B5\u03AF\u03C4\u03B5\u0020\u03BB\u03B9\u03B3\u03CC\u03C4\u03B5\u03C1\u03BF\u0020\u03C3\u03C4\u03BF\u03C7\u03B5\u03C5\u03BC\u03AD\u03BD\u03B5\u03C2\u0020\u03B4\u03B9\u03B1\u03C6\u03B7\u03BC\u03AF\u03C3\u03B5\u03B9\u03C2.',
+                },
+                acceptAll: '\u0391\u03C0\u03BF\u03B4\u03BF\u03C7\u03AE\u0020\u03CC\u03BB\u03C9\u03BD',
+                acceptSelected: '\u0391\u03C0\u03BF\u03B4\u03BF\u03C7\u03AE\u0020\u03B5\u03C0\u03B9\u03BB\u03BF\u03B3\u03CE\u03BD',
+                close: '\u039A\u03BB\u03B5\u03AF\u03C3\u03B9\u03BC\u03BF',
+                decline: '\u0391\u03C0\u03CC\u03C1\u03C1\u03B9\u03C8\u03B7',
+                save: '\u0391\u03C0\u03BF\u03B8\u03AE\u03BA\u03B5\u03C5\u03C3\u03B7',
+                ok: '\u0391\u03C0\u03BF\u03B4\u03AD\u03C7\u03BF\u03BC\u03B1\u03B9\u0020\u03C4\u03B1\u0020cookies',
+                service: {
+                    disableAll: {
+                        title: '\u03B1\u03C0\u03CC\u03C1\u03C1\u03B9\u03C8\u03B7\u0020\u03CC\u03BB\u03C9\u03BD',
+                        description: '\u0391\u03C0\u03BF\u03B4\u03BF\u03C7\u03AE\/\u03B1\u03C0\u03CC\u03C1\u03C1\u03B9\u03C8\u03B7\u0020\u03CC\u03BB\u03C9\u03BD',
+                    },
+                    purpose: '\u03A3\u03BA\u03BF\u03C0\u03BF\u03CD',
+                    required: {
+                        title: '\u0028\u03B1\u03C0\u03B1\u03B9\u03C4\u03B5\u03AF\u03C4\u03B1\u03B9\u0029',
+                    }
+                },
+                purposes: {
+                    necessary: {
+                        title:                         '[cookieConsent.purposeTitles.necessary]' ,
+                    },
+                    functional: {
+                        title:                         '[\u039B\u03B5\u03B9\u03C4\u03BF\u03C5\u03C1\u03B3\u03B9\u03BA\u03CC\u03C4\u03B7\u03C4\u03B1\u03C2]' ,
+                    },
+                    analytics: {
+                        title:                         '[cookieConsent.purposeTitles.analytics]' ,
+                    },
+                    advertising: {
+                        title:                         '[\u03A0\u03C1\u03BF\u03CE\u03B8\u03B7\u03C3\u03B7\u03C2]' ,
+                    },
+                },
+            }
+        },
+
+        /*
+        Here you specify the third-party apps that Klaro will manage for you.
+        */
+        services: [
+            {
+                /*
+                Each app must have a unique name. Klaro will look for HTML elements with a
+                matching 'data-name' attribute to identify elements that belong to this app.
+                */
+                name: 'necessary',
+
+                /*
+                If 'default' is set to 'true', the app will be enabled by default. This
+                overrides the global 'default' setting.
+                */
+                default: true,
+
+                /*
+                The title of you app as listed in the consent modal. You can also specify
+                translated app titles in the 'translations' section. In that case, you need to
+                leave the title attribute here unspecified.
+                */
+                title: null,
+
+                /*
+                The purpose(s) of this app that will be listed on the consent notice. Do not
+                forget to add translations for all purposes you list here.
+                */
+                purposes: [
+                                    ],
+
+                /*
+                The category of the consent. Within the “tracking” consent type, consider using the following values:
+                - necessary
+                - functional
+                - analytics
+                - advertising
+                */
+                gtmCategory: 'necessary',
+
+                /*
+                The type of consent. Consider using the following values:
+                - tracking
+                - other
+                */
+                gtmType: 'tracking',
+
+                /*
+                You can define an optional callback function that will be called each time the
+                consent state for the given app changes. The consent value will be passed as the
+                first parameter to the function (true=consented). The `app` config will be
+                passed as the second parameter.
+                */
+                callback: function (consent, service) {
+                },
+
+                /*
+                If 'required' is set to 'true', Klaro will not allow this app to be disabled by
+                the user. Use this for apps that are always required for your website to
+                function (e.g. shopping cart cookies).
+                */
+                required: true,
+
+                /*
+                If 'optOut' is set to 'true', Klaro will load this app even before the user has
+                given explicit consent. We strongly advise against this.
+                */
+                optOut: false,
+
+                /*
+                If 'onlyOnce' is set to 'true', the app will only be executed once regardless
+                how often the user toggles it on and off. This is relevant e.g. for tracking
+                scripts that would generate new page view events every time Klaro disables and
+                re-enables them due to a consent change by the user.
+                */
+                onlyOnce: true,
+            },
+            {
+                name: 'functional',
+                default: false,
+                purposes: [
+                                        'functional'
+                                    ],
+                gtmCategory: 'functional',
+                gtmType: 'tracking',
+                callback: function (consent, service) {
+                    modifiedGtmCookieConsent(consent, service);
+                },
+                required: false,
+                optOut: false,
+                onlyOnce: false,
+            },
+            {
+                name: 'analytics',
+                default: false,
+                purposes: [
+                                    ],
+                gtmCategory: 'analytics',
+                gtmType: 'tracking',
+                callback: function (consent, service) {
+                    modifiedGtmCookieConsent(consent, service);
+                },
+                required: false,
+                optOut: false,
+                onlyOnce: false,
+            },
+            {
+                name: 'advertising',
+                default: false,
+                purposes: [
+                                        'advertising'
+                                    ],
+                gtmCategory: 'advertising',
+                gtmType: 'tracking',
+                callback: function (consent, service) {
+                    modifiedGtmCookieConsent(consent, service);
+                },
+                required: false,
+                optOut: false,
+                onlyOnce: false,
+            }
+        ],
+
+        /*
+        Store the gtm cookie consents
+         */
+        gtmCookies: [],
+
+        /*
+        You can define an optional callback function that will be called each time the
+        consent state for any given app changes. The consent value will be passed as the
+        first parameter to the function (true=consented). The `app` config will be
+        passed as the second parameter.
+        */
+        callback: function (consent, app) {
+            const choice = getGtmCookieChoice(app, consent);
+
+            if (this.gtmCookies.length < this.services.length) {
+                this.gtmCookies.push(
+                    {
+                        'category': app.gtmCategory,
+                        'choice': choice,
+                        'type': app.gtmType
+                    }
+                );
+            }
+
+            let documentCookies = document.cookie.split(';').reduce((ac, str) => Object.assign(ac, {[str.split('=')[0].trim()]: str.split('=')[1]}), {});
+            // We need to check the cookies has not already sent by checking the key klaro in document cookies
+            // and there is no modification in the cookies consent from the user
+            if (!hasModificationInGtmCookies && this.cookieName in documentCookies) {
+                return;
+            }
+
+            console.log(
+                'User consent for app ' + app.name + ': consent=' + consent + ' => ' + choice
+            );
+
+            if (this.gtmCookies.length === this.services.length) {
+                // We need to check this condition to be sure to send the event when the user indicates his choice,
+                // so we delayed the event in the mutation observer
+                sendFirstChoice = false;
+                if (!(this.cookieName in documentCookies)) {
+                    sendFirstChoice = true;
+                    return;
+                }
+
+                // We need to have a timeout in order to avoid to send multiple time the consent submit event
+                // if the user accept multiple cookie at same time
+                if (timeoutSendGtm !== undefined) {
+                    clearTimeout(timeoutSendGtm);
+                    timeoutSendGtm = undefined;
+                }
+
+                timeoutSendGtm = setTimeout(function () {
+                    timeoutSendGtm = undefined;
+                    sendGtmConsentSubmit();
+                }, 250);
+            }
+        },
+    };
+
+    observeKlaroPopup();
+</script>
+
+<script defer="" type="application/javascript" src="/aliaxis-group/js/klaro-no-translations-no-css.js"></script>
+
+<script>
+    {
+        function initialize() {
+            function listener(event) {
+                event.preventDefault();
+                klaro.show();
+            }
+
+            document.querySelectorAll(".show-klaro").forEach(
+                (element) => {
+                    element.addEventListener("click", listener, true);
+                }
+            );
+        }
+
+        if (document.readyState === "complete") {
+            initialize();
+        } else {
+            window.addEventListener("load", () => {
+                initialize();
+            }, true);
+        }
+    }
+</script>
+    
+    <script src="/bundles/fosjsrouting/js/router.js"></script>
+    <script src="/js/routing?callback=fos.Router.setData"></script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    		
+	
+<link rel="canonical" href="https://www.aliaxis.gr/">
+    
+
+                
+
+        
+    
+    
+        
+    
+    <title>Aliaxis Greece</title>
+    
+
+
+            <link rel="alternate" href="https://www.aliaxis.gr/" hreflang="el-gr">
+            <link rel="alternate" href="https://www.aliaxis.gr/en" hreflang="en-gr">
+    
+    <link rel="apple-touch-icon" sizes="57x57" href="/aliaxis-group/images/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/aliaxis-group/images/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/aliaxis-group/images/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/aliaxis-group/images/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/aliaxis-group/images/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/aliaxis-group/images/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/aliaxis-group/images/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/aliaxis-group/images/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/aliaxis-group/images/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/aliaxis-group/images/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/aliaxis-group/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/aliaxis-group/images/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/aliaxis-group/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/aliaxis-group/images/favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/aliaxis-group/images/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    
+    <link rel="preload" href="/aliaxis-group/fonts/Gilroy/Gilroy-Medium.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="/aliaxis-group/fonts/icomoon_2e6f7ea2ac13be08650f8fbd2628aa20.ttf" as="font" type="font/ttf" crossorigin="">
+<link rel="preload" href="/aliaxis-group/fonts/Gilroy/Gilroy-SemiBold.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="/aliaxis-group/fonts/Gilroy/Gilroy-Bold.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="/aliaxis-group/fonts/Gilroy/Gilroy-Bold.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="/aliaxis-group/_/node_modules/material-icons/iconfont/MaterialIcons-Regular_0509ab09c1b0d2200a4135803c91d6ce.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="/aliaxis-group/css/style.min.css" as="style">
+<link rel="preload" href="/aliaxis-group/css/swiper.min.css" as="style">
+<link rel="preload" href="/aliaxis-group/css/qw.css" as="style">
+<link rel="preload" href="/aliaxis-group/css/style.datasolution.css" as="style">        <link rel="stylesheet" href="/aliaxis-group/css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/aliaxis-group/css/style.min.css">
+    <link rel="stylesheet" href="/aliaxis-group/css/swiper.min.css">
+    <link rel="stylesheet" href="/aliaxis-group/css/qw.css">
+    <link rel="stylesheet" href="/aliaxis-group/css/msform.css">
+    <link rel="stylesheet" href="/aliaxis-group/css/style.datasolution.css">
+    
+
+<!-- Google Tag Manager --> <script type="text/plain" data-type="text/javascript" data-name="gtm">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-MP8T56J');</script> <!-- End Google Tag Manager -->
+
+<script async="" src="https://script.hotjar.com/modules.47bdc3ea03ae568fad7d.js" charset="utf-8"></script></head>
+<body class="page page--landing page--corporate" data-tms-scrolltracking="25,50,75,100" data-tms-scrolltracking-type="scrolling" data-tms-navigation-section="other">
+
+<!-- Google Tag Manager (noscript) --> <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MP8T56J" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> <!-- End Google Tag Manager (noscript) -->
+
+
+
+
+<!-- main-content -->
+            
+
+    
+        
+                    
+        
+        
+                    <header class="site-header  site-header--has-top-banner-header site-header--big site-header--blue site-header--landing bg--image bg--image-overlay" style="background-image: url(/website/aliaxis-gr/images/image-thumb__417181__slider_background_image/aliaxis-greece-homepage.webp);" data-tms-navigation-section="header">
+        
+                    <div class="top-banner-header-container">
+        
+
+
+
+<div class="alert alert--top-header-banner bg--redlight">
+    <div class="container">
+        <div class="alert__inner">
+            <div class="alert__text">
+                                                            <p>Ο ιστότοπός μας θα υποβληθεί σε προγραμματισμένη συντήρηση στις 31 Μαρτίου από τις 6 π.μ. έως τις 6 μ.μ. Κατά τη διάρκεια αυτής της περιόδου, ενδέχεται να αντιμετωπίσετε προσωρινές διακοπές. Ζητούμε συγγνώμη για τυχόν ταλαιπωρία και εκτιμούμε την κατανόησή σας.</p>
+
+                                                </div>
+                    </div>
+    </div>
+</div>
+
+
+        <link href="/aliaxis-group/css/top-banner-header.css" rel="stylesheet">
+    </div>
+
+    <script src="/aliaxis-group/js/jquery-3.5.0.min.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+            const topHeaderBannerContainer = $(".top-banner-header-container");
+
+            // A property is stored in the local storage until the cookies will be removed in case we closed the top banner
+            let hideBanner = localStorage.getItem('topBannerHeaderHide') !== null && localStorage.getItem('topBannerHeaderHide') === 'true';
+            if(hideBanner){
+                topHeaderBannerContainer.addClass("d-none").hide();
+                return;
+            }
+
+            topHeaderBannerContainer.removeClass("d-none").show();
+
+            function convertRemToPixels(rem) {
+                return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
+            }
+
+            function calculateHeaderTop(animate = true){
+                let headerTopHeight = topHeaderBannerContainer.height();
+
+                const secondaryMenu = $(".site-header__secondary-menu");
+                const headerTop = $(".site-header__top");
+
+                let hasSecondaryMenu = false;
+
+                secondaryMenu.css("top", headerTopHeight);
+                if(secondaryMenu.length){
+                    if(secondaryMenu.not(":visible").length === 0){
+                        hasSecondaryMenu = true;
+                        headerTopHeight += secondaryMenu.height();
+                    }
+                }
+
+                const paddingTop = headerTopHeight + convertRemToPixels(7.5);
+
+                if(animate && hasSecondaryMenu){
+                    headerTop.animate({"top": parseInt(headerTopHeight)}, 100);
+                    $(".site-header__body").animate({"padding-top":parseInt(paddingTop)}, 100);
+                } else {
+                    headerTop.css("top", parseInt(headerTopHeight));
+                    $(".site-header__body").css("padding-top", parseInt(paddingTop));
+                }
+
+                let mql = window.matchMedia("(max-width: 991px)");
+                if (mql.matches) {
+                    headerTopHeight += headerTop.height();
+                    $(".form__search--mini").css("top", parseInt(headerTopHeight));
+                    $(".navbar--main").css("margin-top", parseInt(headerTopHeight) - 1);
+                    $(".nav-dropdown").attr("style", "margin-top:" + (parseInt(headerTopHeight) - 1) + "px !important;");
+                } else {
+                    $(".form__search--mini").css("top", '');
+                    $(".navbar--main").css("margin-top", '');
+                    $(".nav-dropdown").css("margin-top", '');
+                }
+
+                if ($(window).scrollTop() >= 10) {
+                    $('.alert--top-header-banner').addClass('banner-header__top--shrink');
+                } else {
+                    $('.alert--top-header-banner').removeClass('banner-header__top--shrink');
+                }
+            }
+
+            function resetHeaderCalculation(){
+                const secondaryMenu = $(".site-header__secondary-menu");
+                const headerTop = $(".site-header__top");
+
+                secondaryMenu.css("top", '');
+                headerTop.css("top", '');
+                $(".site-header__body").css("padding-top",  '');
+                $(".form__search--mini").css("top", '');
+                $(".navbar--main").css("margin-top", '');
+                $(".nav-dropdown").css("margin-top", '');
+                $('.alert--top-header-banner').removeClass('banner-header__top--shrink');
+            }
+
+            let doItOnResize;
+            // When resizing the windows, the header need to be recalculated due to some CSS rules
+            window.addEventListener('resize', function() {
+                if(hideBanner){
+                    return;
+                }
+                // We need to calculate the header top without animation to avoid bad UI effect
+                calculateHeaderTop(false);
+                // We create a timeout to recalculate the correct position of the header at the end of the resize event
+                clearTimeout(doItOnResize);
+                doItOnResize = setTimeout(function () {
+                    calculateHeaderTop();
+                }, 250);
+            }, true);
+
+            // When scroll is done, the header will be shrunk, so we need to calculate again the top position header
+            // but only one time because when the scroll is bigger than 10px.
+            let alreadyScroll = false;
+            let resetScroll = false;
+            window.addEventListener("scroll", function() {
+                if(hideBanner){
+                    return;
+                }
+
+                // To avoid to calculate and modify the css properties we check if it's necessary to calculate again the header
+                let needToCalculate = false;
+                if($(window).scrollTop() >= 10){
+                    if(!alreadyScroll){
+                        resetScroll = false;
+                        alreadyScroll = true;
+                        needToCalculate = true;
+                    }
+                } else {
+                    alreadyScroll = false;
+                    if(!resetScroll){
+                        resetScroll = true;
+                        needToCalculate = true;
+                    }
+                }
+
+                if(needToCalculate){
+                    // Due to animation on the second navigation top bar,
+                    // we need to delay the calculation of the header in order to have the correct values
+                    setTimeout(function () {
+                        calculateHeaderTop();
+                    }, 250);
+                }
+            }, true);
+
+            // We start calculating the position of the header
+            calculateHeaderTop();
+
+            // We need to delay to recalculate the position of the header in order to avoid some empty space
+            setTimeout(function () {
+                calculateHeaderTop();
+            }, 500);
+
+            // Close the banner and reset the position of the header
+            $(".js-alert--top-header-banner__close").on("click", function(){
+                hideBanner = true;
+                localStorage.setItem('topBannerHeaderHide', hideBanner);
+                topHeaderBannerContainer.addClass("d-none").hide();
+                resetHeaderCalculation();
+            });
+        });
+    </script>
+
+
+            
+                        <div class="site-header__top d-flex align-items-center w-100" style="top: 60px;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center align-items-center w-100">
+                            <!-- Logo -->
+<div class="site-header__logo ml-auto text-left">
+    <a id="logo" href="/" title="" class="d-inline-block">
+        <img src="/aliaxis-group/images/logo-white.svg" alt="Aliaxis" class="site-header__logo__image">
+    </a>
+</div>
+<!-- End Logo -->                                
+        
+    
+    
+    <nav class="navbar navbar--main navbar--single-lang d-flex align-items-lg-center flex-wrap flex-column " role="navigation" aria-label="Main Navigation">
+        <ul class="navbar-nav navbar-nav--main flex-column flex-lg-row align-items-center" id="main-nav" aria-label="Main Navigation">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+                    
+
+                        
+                                                                        
+                        
+                                                                                                                        
+                                                
+                        <li class="nav-item nav-item--main  closed">
+                            <a href="#dropdown-menu-1" class="nav-link nav-link--main collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="dropdown-menu-1">
+                                Τομείς
+                            </a>
+
+                            <div class="nav-dropdown collapse" id="dropdown-menu-1">
+                                <div class="inner">
+                                    <div class="list-groups ">
+
+                                                                                    <ul class="list-group">
+                                                                                            <li class="nav-item d-block d-lg-none">
+                                                    <button class="nav-link dropdown-link btn--empty js-close-dropdown-menu">
+                                                        <i class="material-icons mr-2">arrow_back</i> Back
+                                                    </button>
+                                                </li>
+                                            
+                                                                                                                                                                                
+                                            
+                                                                                                                                        
+                                                                                            
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/tomeis/ktirio" target="" class="nav-link dropdown-link">Κτίριο</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/tomeis/viomichania" target="" class="nav-link dropdown-link">Βιομηχανία</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/tomeis/erga-ypodomis" target="" class="nav-link dropdown-link">Έργα Υποδομής</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/tomeis/agrotikes-efarmoges" target="" class="nav-link dropdown-link">Αγροτικές Εφαρμογές</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                    
+                                            </ul>
+                                        
+                                        
+                                    </div>
+
+                                    
+                                                                                                                <div class="dropdown-divider"></div>
+
+                                                                                                                                                                        
+                                                                                                                                
+                                                                                                                                
+                                                                                                                                
+                                                                                                                                                                                                                            
+                                        
+                                        <ul class="list-group list-group--footer">
+                                            <li class="nav-item dropdown-item">
+                                                <div class="btn-group d-block d-lg-flex  one-button  ">
+
+                                                    
+                                                                                                                                                                    
+                                                                                                                                                                    
+                                                                                                                                                                    
+                                                                                                                                                                    
+                                                                                                                                                                                                                                <a href="/el/segments" target="" class="btn btn--blue d-block d-lg-inline-flex">Όλοι οι Τομείς</a>
+                                                        
+                                                                                                    </div>
+                                            </li>
+                                        </ul>
+                                                                    </div>
+                            </div>
+                        </li>
+                                                                                                        
+                                            <li class="nav-item nav-item--main">
+                            <a href="/el/proionta" target="" class="nav-link nav-link--main">Προϊόντα</a>
+                        </li>
+                                                                                                        
+                                            <li class="nav-item nav-item--main">
+                            <a href="/downloads" target="" class="nav-link nav-link--main">Downloads</a>
+                        </li>
+                                                                                                                                                                                                                                                                                                                                                                                                        
+                    
+
+                        
+                                                                        
+                        
+                                                                                                                        
+                                                
+                        <li class="nav-item nav-item--main  closed">
+                            <a href="#dropdown-menu-4" class="nav-link nav-link--main collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="dropdown-menu-4">
+                                Χρήσιμα Εργαλεία
+                            </a>
+
+                            <div class="nav-dropdown collapse" id="dropdown-menu-4">
+                                <div class="inner">
+                                    <div class="list-groups ">
+
+                                                                                    <ul class="list-group">
+                                                                                            <li class="nav-item d-block d-lg-none">
+                                                    <button class="nav-link dropdown-link btn--empty js-close-dropdown-menu">
+                                                        <i class="material-icons mr-2">arrow_back</i> Back
+                                                    </button>
+                                                </li>
+                                            
+                                                                                                                                                                                
+                                            
+                                                                                                                                        
+                                                                                            
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/el/hrisima-ergaleia/chemical-resistance-guide" target="" class="nav-link dropdown-link">Οδηγός Χημικών Στοιχείων</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/el/hrisima-ergaleia/valve-configurator" target="" class="nav-link dropdown-link">Διαμορφωτής βαλβίδας</a>
+                                                            </li>
+                                                                                                                                                                                                                                                        
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="nav-item dropdown-item">
+                                                                <a href="/el/hrisima-ergaleia/ergaleia-ypologismou" target="" class="nav-link dropdown-link">Εργαλεία υπολογισμού</a>
+                                                            </li>
+                                                                                                                                                                                                        
+                                            </ul>
+                                        
+                                        
+                                    </div>
+
+                                    
+                                                                                                        </div>
+                            </div>
+                        </li>
+                                                                                                        
+                                            <li class="nav-item nav-item--main">
+                            <a href="/profil" target="" class="nav-link nav-link--main">Προφίλ</a>
+                        </li>
+                                                                                                        
+                                            <li class="nav-item nav-item--main">
+                            <a href="https://aliaxis.wd3.myworkdayjobs.com/Aliaxis_EMEA" target="_blank" class="nav-link nav-link--main">Καριέρα</a>
+                        </li>
+                                                                                                        
+                                            <li class="nav-item nav-item--main">
+                            <a href="/epikoinonia" target="" class="nav-link nav-link--main">Επικοινωνία</a>
+                        </li>
+                                                                                                                            </ul>
+    </nav>
+                            <nav class="navbar navbar--sub text-right d-flex align-items-center flex-wrap flex-row" role="navigation" aria-label="Sub Navigation">
+    <ul class="navbar-nav navbar-nav--sub flex-row ml-auto" id="sub-nav" aria-label="Sub Navigation">
+        
+
+
+	<li class="nav-item nav-item--sub nav-item--language d-lg-flex closed">
+	<a href="#language-header" class="nav-link nav-link--sub nav-link--sub--language language__toggle" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="language-header">
+		<i class="icon icon-Language mr-2"></i> EL
+	</a>
+	<div class="nav-dropdown nav-dropdown--language collapse" id="language-header">
+		<ul class="list-group">
+			<li class="nav-item d-block d-lg-none">
+				<button class="nav-link dropdown-link btn--empty js-close-dropdown-menu">
+					<i class="material-icons mr-2">arrow_back</i> Πίσω
+				</button>
+			</li>
+
+							<li class="nav-item dropdown-item">
+											<a href="https://www.aliaxis.gr/" class="nav-link dropdown-link active">
+							Greek
+						</a>
+									</li>
+							<li class="nav-item dropdown-item">
+											<a href="https://www.aliaxis.gr/en" hreflang="en" class="nav-link dropdown-link">
+							English
+						</a>
+									</li>
+					</ul>
+	</div>
+</li>
+        
+                    <li class="nav-item nav-item--sub nav-item--search">
+                <button class="form__search__toggle js-form__search__toggle">
+                    <i class="material-icons">close</i>
+                    <i class="material-icons">search</i>
+                </button>
+                <form action="/el/globalsearch" class="form form__search form__search--mini">
+                    <div class="form__search-input-wrapper">
+                        <input type="search" name="q" placeholder="αναζήτηση" class="form-control" value="">
+                        <button class="form__search__button mr-auto">
+                            <i class="material-icons">search</i>
+                        </button>
+                    </div>
+                </form>
+            </li>
+        
+                                                        <li class="nav-item nav-item--menu-toggle d-block d-lg-none">
+                    <button class="site-header__menu-toggle js-site-header__menu-toggle">
+                        <i class="material-icons">close</i>
+                        <i class="material-icons">menu</i>
+                    </button>
+                </li>
+                    
+                                                
+            </ul>
+</nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                            <div class="site-header__body text-center" style="padding-top: 171px;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="site-header__content">
+                                                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="pimcore_area_group_header_headline pimcore_area_content">            <h1 class="site-header__title alt">
+            Aliaxis Greece
+        </h1>
+    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                                        <div class="shape shape--primary">
+                    <svg viewBox="0 0 100 6.1" style="">
+                                                                            <path d="M 0 10, 0 0 q 50 12.2 100 0, 100 10, 0 10" stroke="none" stroke-width="1" fill="#32aaff"></path>
+                                                                        Sorry, your browser does not support inline SVG.
+                    </svg>
+                </div>
+                    </header>
+    
+        <main data-tms-navigation-section="body">
+                    <div class="pimcore_area_group_intro pimcore_area_content">
+    <section class="section  intro intro--light  ">
+        <header class="section__header section__header--global intro__header">
+            <div class="shape shape--media shape--global mb-0">
+                                                                                        <img src="/website/aliaxis-templates/global/Training/Intro/circle-white.svg" class="intro__image" alt="" width="570" height="570">
+                                            
+                                            </div>
+                                            <div class="container">
+                    <div class="row">
+                                                <div class="col-12 col-lg-8 offset-lg-2">
+                                                            <h2 class="section__title intro__title h1 alt ">
+                                    κάνουμε τη ζωή να ρέει
+                                </h2>
+                            
+                                                            <div class="section__intro intro__introduction">
+                                    <div class="entry">
+                                        <p>Κάνουμε τη ζωή να ρέει, διαμορφώνοντας<br>
+ένα καλύτερο αύριο, συνδέοντας τους ανθρώπους<br>
+με το νερό και την ενέργεια</p>
+
+                                    </div>
+                                </div>
+                                                    </div>
+                    </div>
+                </div>
+                                    </header>
+
+                <div class="section__body intro__body text-center">
+            <div class="container">
+                <div class="row">
+                    
+                                        <div class="col-lg-8 offset-lg-2">
+                        <div class="intro__video">
+                            <div class="d-block yt-js-play-video">
+                            <div class="media">
+                                <div class="media__ratio media__ratio--video">
+                                    <!-- Video -->
+                                                                                                                        <img class="media__source media__source--image" alt="" title="" src="/website/aliaxis-gr/images/Aliaxis-for-background-video.jpg" width="1536" height="1024">
+                                                                                    <div id="pimcore_video_content:1.content_video" class="pimcore_tag_video ">
+            <iframe width="100%" height="300" src="https://www.youtube-nocookie.com/embed/84mYO7dr5oY?wmode=transparent&amp;modestbranding=1&amp;rel=0" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" class="media__source media__source--video" allow="autoplay; encrypted-media"></iframe>
+        </div>
+                                                                                    <div class="media__overlay media__overlay--video">
+                                                <div class="media__overlay-button text--lg text--bold color--white">
+                                                    <i class="material-icons">play_arrow</i> Play video
+                                                </div>
+                                            </div>
+                                                                                                            </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+
+
+
+                    <div class="col-12 col-lg-6 offset-lg-3">
+
+                                                    <div class="intro__text">
+                                <div class="entry">
+                                    <p>Είμαστε παθιασμένοι με τη δημιουργία βιώσιμων, καινοτόμων λύσεων για το νερό και την ενέργεια. Παρέχουμε στους ανθρώπους σε όλο τον κόσμο προηγμένα συστήματα πλαστικών σωληνώσεων, οδηγώντας τη βιομηχανία μας με τρόπο που προβλέπει τις ραγδαία εξελισσόμενες ανάγκες των πελατών μας.</p>
+
+                                </div>
+                            </div>
+                        
+                                                    <div class="intro__actions">
+                                <a href="/profil" class="btn btn--gradient-blue btn--blur">
+                                    Ποιοι είμαστε <i class="icon icon-Long-arrow"></i>
+                                </a>
+                            </div>
+                                            </div>
+                </div>
+            </div>
+        </div>
+            </section>
+
+    
+</div><div class="pimcore_area_group_offer_block pimcore_area_content">
+        <section class="section content-blocks content-blocks--offer offer mb-0" style="background-image: url(/website/aliaxis-templates/global/Training/Dummy-Images/image-thumb__26940__offer-block-background/home-bubbels.webp)">
+        <div class="offer__images offer__images--alt">
+            <div class="content ">
+                                                            <div class="offer__image-wrapper offer__image-wrapper-1">
+                            <div class="stretch-image bg--image-overlay">
+                                <img src="/website/aliaxis-gr/images/image-thumb__417202__offer-block-image/aliaxis-greece-nicoll-sq.webp" class="offer__image offer__image--1" loading="lazy">
+                            </div>
+                        </div>
+                                                                                <div class="offer__image-wrapper offer__image-wrapper-2">
+                            <div class="stretch-image ">
+                                <img src="/website/aliaxis-gr/images/image-thumb__417200__offer-block-image/aliaxis-greece-friatec.webp" class="offer__image offer__image--2" loading="lazy">
+                            </div>
+                        </div>
+                                                                                <div class="offer__image-wrapper offer__image-wrapper-3">
+                            <div class="stretch-image ">
+                                <img src="/website/aliaxis-gr/images/image-thumb__254620__offer-block-image/aliaxis-greece-home-header.webp" class="offer__image offer__image--3" loading="lazy">
+                            </div>
+                        </div>
+                                                                                <div class="offer__image-wrapper offer__image-wrapper-4">
+                            <div class="stretch-image ">
+                                <img src="/website/aliaxis-gr/images/subsegments/image-thumb__232565__offer-block-image/water-treatment.webp" class="offer__image offer__image--4" loading="lazy">
+                            </div>
+                        </div>
+                                                                                <div class="offer__image-wrapper offer__image-wrapper-5">
+                            <div class="stretch-image bg--image-overlay">
+                                <img src="/website/aliaxis-gr/images/image-thumb__417199__offer-block-image/aliaxis-greece-industry.webp" class="offer__image offer__image--5" loading="lazy">
+                            </div>
+                        </div>
+                                                </div>
+        </div>
+        <div class="content-block content-block--offer offer__content-block">
+            <div class="container">
+                <div class="row">
+                                            <div class="col-12">
+                            <div class="content-block__wrapper">
+                                <div class="row">
+                                    <div class="col-lg-6 offset-lg-6">
+                                        <div class="content-block__body content-block__body--spacier offer__body">
+                                            <div class="editmode-index">
+                                                <div class="pimcore_area_group_headline pimcore_area_content">
+            <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="color--redlight">
+                    Το όραμά μας
+                </h1>
+            </div>
+        </div>
+    </div><div class="pimcore_area_group_wysiwyg pimcore_area_content">    <p>Στον Aliaxis, κάνουμε τη ζωή να ρέει, διαμορφώνοντας ένα καλύτερο αύριο, συνδέοντας τους ανθρώπους με το νερό και την ενέργεια.</p>
+
+</div><div class="pimcore_area_group_headline pimcore_area_content">
+            <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="color--redlight">
+                    Ο σκοπός μας
+                </h1>
+            </div>
+        </div>
+    </div><div class="pimcore_area_group_wysiwyg pimcore_area_content">    <p>Είμαστε παθιασμένοι με τη δημιουργία βιώσιμων καινοτόμων λύσεων για το νερό και την ενέργεια. Παρέχουμε στους ανθρώπους σε όλο τον κόσμο προηγμένα πλαστικά συστήματα σωληνώσεων, οδηγώντας τη βιομηχανία μας με τρόπο που προβλέπει τις ραγδαία εξελισσόμενες ανάγκες των πελατών μας.</p>
+
+</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                                        </div>
+            </div>
+        </div>
+    </section>
+</div><div class="pimcore_area_group_content_block pimcore_area_content">                                                        <section class="section content-blocks content-blocks--type-6 mb-0">
+                                    <div class="content-block content-block--type-6 color--white bg--gradient-green-horizontal d-flex align-items-center">
+                                                    <div class="content bg--image d-none d-md-block" style="background-image: url(/website/aliaxis-gr/images/image-thumb__63681__content-block-bg-image/Forest-left.webp);"></div>
+                                                                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="content-block__wrapper content-block__wrapper--type-6">
+                                            <div class="row">
+                                                <div class="col-md-6 col-lg-5">
+                                                    <div class="content-block__body content-block__body--spacier">
+                                                        <div class="pimcore_area_group_headline pimcore_area_content">
+            <div class="row">
+            <div class="col-12 text-left">
+                <h2 class="">
+                    Οι αξίες μας
+                </h2>
+            </div>
+        </div>
+    </div><div class="pimcore_area_group_wysiwyg pimcore_area_content">    <p>Οι αξίες μας, μας κάνουν αυτό που είμαστε. Θέλουμε να πετύχουμε περισσότερα μαζί, δουλεύοντας με και για τους ανθρώπους. Θέλουμε να είμαστε σε φόρμα, γρήγοροι και ευέλικτοι, ώστε να μπορούμε να ανταποκριθούμε στις ανάγκες των πελατών μας. Αλλά πάνω απ 'όλα, θέλουμε να βελτιώσουμε τη ζωή των ανθρώπων ζώντας τις αξίες μας και κάνοντας τη διαφορά, διαμορφώνοντας ένα καλύτερο, βιώσιμο αύριο.</p>
+
+<p> </p>
+
+</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                            </div>
+                            </section>
+                                                
+                            </div><div class="pimcore_area_group_spacer pimcore_area_content">
+
+            <div class="large-spacer"></div>
+    </div><div class="pimcore_area_group_content_block pimcore_area_content">                        <section class="section content-blocks">
+                                                        
+                                                                                                <div class="content-block content-block--type-1">
+                                <div class="container">
+                                    <div class="row d-flex justify-content-between">
+                                                                                                                                <div class="col-md-6 order-md-2">
+                                                <div class="content-block__media media ">
+                                                    <div class="media__ratio">
+                                                        <img src="/website/aliaxis-gr/images/image-thumb__63684__content-block-image/Passion-to-Build.webp" class="media__source mb-auto" loading="lazy">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                                                                                            <div class="col-md-5 order-md-1">
+                                                <div class="content-block__body image-text-block">
+                                                    <div class="pimcore_area_group_wysiwyg pimcore_area_content">    <p><strong>Είμαστε προσαρμόσιμοι, γρήγοροι και ευκίνητοι.</strong></p>
+
+<h2>Πάθος για δημιουργία</h2>
+
+</div><div class="pimcore_area_group_wysiwyg pimcore_area_content">    <p>Σε ένα συνεχώς μεταβαλλόμενο περιβάλλον, διατηρούμε το πάθος μας για δημιουργία. Είμαστε προσαρμόσιμοι, γρήγοροι και ευέλικτοι, οπότε είμαστε έτοιμοι να ανταποκριθούμε στις ανάγκες των πελατών.</p>
+
+<ul>
+	<li>Φέρνουμε εις πέρας την αποστολή μας: Είμαστε εξουσιοδοτημένοι και υπεύθυνοι σε κάθε επίπεδο, ώστε να παρέχουμε την καλύτερη απόδοση. Είμαστε γρήγοροι στην επίτευξη λύσεων που αντιμετωπίζουν το θεμελιώδες ζήτημα.</li>
+	<li>Αναζητούμε έξυπνες και απλές λύσεις: Επιδιώκουμε να κάνουμε το σύνθετο ξεκάθαρο και κατανοητό. Είμαστε ανοιχτοί, συνεπείς, προορατικοί και πραγματιστές.</li>
+	<li>Καινοτομούμε για να δημιουργήσουμε αξία: Είμαστε δημιουργικοί και παρέχουμε εύκολες λύσεις. Η συνεχής βελτίωση, μάθηση και ανάπτυξη είναι στο DNA μας</li>
+</ul>
+
+</div>
+                                                </div>
+                                            </div>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                                                                                    </section>
+                                                                                
+                            </div><div class="pimcore_area_group_content_block pimcore_area_content">                        <section class="section content-blocks">
+                                                        
+                                                                                                <div class="content-block content-block--type-1">
+                                <div class="container">
+                                    <div class="row d-flex justify-content-between">
+                                                                                                                                <div class="col-md-6 order-md-1">
+                                                <div class="content-block__media media ">
+                                                    <div class="media__ratio">
+                                                        <img src="/website/aliaxis-gr/images/image-thumb__63682__content-block-image/Connect-to-Win.webp" class="media__source mb-auto" loading="lazy">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                                                                                            <div class="col-md-5 order-md-2">
+                                                <div class="content-block__body image-text-block">
+                                                    <div class="pimcore_area_group_wysiwyg pimcore_area_content">    <p><strong>Μαζί πετυχαίνουμε περισσότερα.</strong></p>
+
+<h2>Συνδεθείτε για να κερδίσετε</h2>
+
+</div><div class="pimcore_area_group_wysiwyg pimcore_area_content">    <p>Δουλεύουμε μαζί και για τους ανθρώπους. Μαζί μπορούμε να κάνουμε περισσότερα στον τομέα μας, για τους πελάτες μας και για την παγκόσμια ανάπτυξη. Όταν συνδεθούμε, κερδίζουμε.</p>
+
+<ul>
+	<li>Εκτιμούμε τους πελάτες μας: Κατανοούμε τους πελάτες μας και προβλέπουμε τις ανάγκες τους. Λύνουμε προβλήματα, φέρνουμε λύσεις και δημιουργούμε αξίες.</li>
+	<li>Μοιραζόμαστε μια νοοτροπία συνεργασίας: Συνεργαζόμαστε στενά με όλα τα ενδιαφερόμενα μέρη για να επιτύχουμε τα καλύτερα αποτελέσματα. Είμαστε μια μοναδική παγκόσμια ομάδα και αντλούμε δύναμη από τη διαφορετικότητά μας.</li>
+	<li>Λειτουργούμε τοπικά με την καρδιά, παγκόσμια με το πνεύμα: Φέρνουμε σε τοπικό επίπεδο την προοπτική της ομάδας μας ώστε να υποστηρίξει εφαρμογές. Αναβαθμίζουμε την τοπική γνώση προς όφελος όλων των πελατών μας παγκοσμίως.</li>
+</ul>
+
+</div>
+                                                </div>
+                                            </div>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                                                                                    </section>
+                                                                                
+                            </div><div class="pimcore_area_group_content_block pimcore_area_content">                        <section class="section content-blocks">
+                                                        
+                                                                                                <div class="content-block content-block--type-1">
+                                <div class="container">
+                                    <div class="row d-flex justify-content-between">
+                                                                                                                                <div class="col-md-6 order-md-2">
+                                                <div class="content-block__media media ">
+                                                    <div class="media__ratio">
+                                                        <img src="/website/aliaxis-gr/images/image-thumb__63683__content-block-image/Commitment-to-Care.webp" class="media__source mb-auto" loading="lazy">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                                                                                            <div class="col-md-5 order-md-1">
+                                                <div class="content-block__body image-text-block">
+                                                    <div class="pimcore_area_group_wysiwyg pimcore_area_content">    <p><strong>Ζούμε τις αξίες μας.</strong></p>
+
+<h2>Δέσμευση για φροντίδα</h2>
+
+</div><div class="pimcore_area_group_wysiwyg pimcore_area_content">    <p>Θέλουμε να βελτιώσουμε τη ζωή των ανθρώπων. Η δέσμευσή μας για φροντίδα, μας κάνει να ξεχωρίζουμε. Ζούμε τις αξίες μας και στόχος μας είναι να κάνουμε τη διαφορά, διαμορφώνοντας ένα καλύτερο, βιώσιμο αύριο.</p>
+
+<ul>
+	<li>Κάνουμε τον κόσμο καλύτερο: Δουλεύουμε καθημερινά για να παρέχουμε βιώσιμες λύσεις που βελτιώνουν τη ζωή των ανθρώπων. Μοιραζόμαστε μια μακροπρόθεσμη άποψη και δημιουργούμε ευκαιρίες για όλους να αναπτυχθούν.</li>
+	<li>Είμαστε ενθουσιώδεις και ενεργητικοί: Απολαμβάνουμε να κάνουμε τη διαφορά. Γιορτάζουμε τις επιτυχίες και τα επιτεύγματά μας.</li>
+</ul>
+
+</div>
+                                                </div>
+                                            </div>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                                                                                    </section>
+                                                                                
+                            </div>
+            </main>
+<!-- /main-content -->
+
+	
+					
+<footer class="site-footer" data-tms-navigation-section="footer">
+
+	<!-- Footer Shape Variation 1 -->
+	<div class="shape site-footer__shape">
+		<svg viewBox="0 0 100 6.1">
+			<path d="M 0 6.1 Q 50 -6.1 100 6.1 M 100 6.1, 100 0" stroke="none" stroke-width="1" fill="#32aaff"></path>
+			Sorry, your browser does not support inline SVG.
+		</svg>
+	</div>
+	<!-- End Footer Shape Variation 1 -->
+
+	<div class="site-footer__body">
+		<div class="container">
+									
+			<div class="row">
+	<div class="col-12">
+		<div class="site-footer__bottom text-center text-sm-left">
+			<div class="d-inline-block d-sm-flex align-items-center justify-content-between">
+				
+
+	
+	<div class="site-footer__language dropdown d-inline-block">
+		<p><strong>Επιλέξτε Γλώσσα</strong></p>
+		<button class="language__toggle dropdown-toggle" id="language-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+			<i class="icon icon-Language mr-2"></i> EL
+		</button>
+		<div class="dropdown-menu" aria-labelledby="language-toggle">
+			<ul class="list-group">
+									<li class="nav-item dropdown-item">
+													<a href="https://www.aliaxis.gr/" class="nav-link dropdown-link active">
+								Greek
+							</a>
+											</li>
+									<li class="nav-item dropdown-item">
+													<a href="https://www.aliaxis.gr/en" hreflang="en" class="nav-link dropdown-link">
+								English
+							</a>
+											</li>
+							</ul>
+		</div>
+	</div>
+									<link rel="stylesheet" href="/aliaxis-group/css/qw.css">
+
+<div class="container footer-images">
+	<div class="row">
+					<div class="col-12 d-flex flex-row flex-wrap justify-content-center justify-content-md-end">
+							</div>
+			</div>
+</div>
+
+    <nav class="site-footer__nav site-footer__nav--social-media ml-auto">
+        <ul class="navbar-nav flex-row" aria-label="Social Media">
+                            <li class="site-footer__nav-item site-footer__nav-item--social-media nav-item">
+                    <a href="https://www.linkedin.com/company/nicoll-greece---building-materials" target="_blank" class="site-footer__nav-link site-footer__nav-link--social-media nav-link" title="">
+                        <span class="icon-LinkedIn"></span>
+                    </a>
+                </li>
+                                        <li class="site-footer__nav-item site-footer__nav-item--social-media nav-item">
+                    <a href="https://www.facebook.com/AliaxisGreece/" target="_blank" class="site-footer__nav-link site-footer__nav-link--social-media nav-link" title="">
+                        <span class="icon-Facebook"></span>
+                    </a>
+                </li>
+                                                                            <li class="site-footer__nav-item site-footer__nav-item--social-media nav-item">
+                    <a href="https://www.youtube.com/channel/UCeAVXTdzZRXEwQoAuJ4tkqA" target="_blank" class="site-footer__nav-link site-footer__nav-link--social-media nav-link" title="">
+                        <span class="icon-Youtube"></span>
+                    </a>
+                </li>
+                    </ul>
+    </nav>
+
+							</div>
+			<hr>
+			<div class="d-block d-sm-flex align-items-center justify-content-between">
+				<div class="site-footer__copyright order-2 order-sm-1">
+					© 2025 Aliaxis
+				</div>
+				
+								
+				
+								<nav class="site-footer__nav site-footer__nav--sub d-inline-block order-1 order-sm-2" role="navigation" aria-label="Footer Navigation">
+					<ul class="navbar-nav flex-row" aria-label="Footer Navigation">
+																					<li class="site-footer__nav-item site-footer__nav-item--sub nav-item">
+									<a href="/el/metanavigation/legal-notices" class="site-footer__nav-link site-footer__nav-link--sub nav-link" title="Legal Notices">
+										Legal Notices
+									</a>
+								</li>
+																																																																						</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+</div>
+		</div>
+	</div>
+</footer>
+
+
+<button class="btn btn--square btn--blue-outline" onclick="scrollToTop(400)" id="scrool-to-top-btn">
+    <span class="material-icons-downloads">arrow_upward</span>
+</button>
+
+<script>
+
+    mybutton = document.getElementById("scrool-to-top-btn");
+
+    window.onscroll = function() {scrollFunction()};
+
+    var scrollOffset = 0;
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+
+        if(parseInt(document.getElementsByTagName('body')[0].style.width)>991) {
+            document.getElementById('main-nav').find('.nav-item.nav-item--main.open').removeClass('open').addClass('closed');
+            document.getElementById('main-nav').find('.nav-dropdown.collapse.show').removeClass('show');//.addClass('closed');
+        }
+
+    }
+
+    function topFunction() {
+
+
+
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+
+    function scrollToTop (duration) {
+        // cancel if already on top
+        if (document.scrollingElement.scrollTop === 0) return;
+
+        const totalScrollDistance = document.scrollingElement.scrollTop;
+        let scrollY = totalScrollDistance, oldTimestamp = null;
+
+        function step (newTimestamp) {
+            if (oldTimestamp !== null) {
+                // if duration is 0 scrollY will be -Infinity
+                scrollY -= totalScrollDistance * (newTimestamp - oldTimestamp) / duration;
+                if (scrollY <= 0) return document.scrollingElement.scrollTop = 0;
+                document.scrollingElement.scrollTop = scrollY;
+            }
+            oldTimestamp = newTimestamp;
+            window.requestAnimationFrame(step);
+        }
+        window.requestAnimationFrame(step);
+    }
+
+</script>
+
+
+            <script src="/aliaxis-group/js/bundle-main.js" defer=""></script>
+    
+    <script src="/aliaxis-group/js/jquery-3.5.0.min.js" defer=""></script>
+
+<script src="/aliaxis-group/js/jquery.fancybox.min.js" defer=""></script>
+<script src="/aliaxis-group/js/qw.min.js" defer=""></script>
+<script src="/aliaxis-group/js/bundle-msform.js" defer=""></script>
+
+
+    <button class="button is-success cookie-button" onclick="return klaro.show();"><img src="/aliaxis-group/images/cookie-bite-solid.svg" alt="Cookie"></button>
+
+
+<link rel="stylesheet" href="/css/global.css">
+
+
+<div id="klaro"><div lang="el" class="klaro ds-customize-klaro"><div class="cookie-notice   "><div class="cn-body"><p><span>Θα μπορούσαμε να ενεργοποιήσουμε κάποιες επιπλέον υπηρεσίες;</span></p><div class="cn-ok"><a class="cm-link cn-learn-more" href="#">Περισσότερα...</a><div class="cn-buttons"><button class="cm-btn cm-btn-danger cn-decline" type="button">Απόρριψη</button><button class="cm-btn cm-btn-success" type="button">Αποδέχομαι τα cookies</button></div></div></div></div></div></div><script type="text/javascript" id="" charset="">window.udata=window.udata||[];window.udata.config=window.udata.config||{};window.udata.config.helpers=window.udata.config.helpers||{};</script>
+<script type="text/javascript" id="" charset="">(function(){document.body.setAttribute("data-tms-scrolltracking","25,50,75,100");document.body.setAttribute("data-tms-scrolltracking-type","scrolling")})();</script><script type="text/javascript" id="" charset="">(function(){function ra(a){return(a=document.cookie.match("(^|;)\\s*"+a+"\\s*\x3d\\s*([^;]+)"))?decodeURIComponent(a.pop()):""}function sa(a,b){a+="\x3d; Path\x3d/; Expires\x3dThu, 01 Jan 1970 00:00:01 GMT;";b&&(a+="domain\x3d"+b);document.cookie=a}function ta(a,b,d,c){if(d){var e=new Date;d=(d||3600)*1E3;e.setTime(e.getTime()+d);e=e.toGMTString()}a=encodeURIComponent(a)+"\x3d"+encodeURIComponent(b)+(e?";expires\x3d"+e:"")+";path\x3d/";c&&(a+=";domain\x3d"+c);document.cookie=a}function ua(){try{var a,
+b,d;if((d=globalThis)!==null&&d!==void 0&&(b=d.udata)!==null&&b!==void 0&&(a=b.config)!==null&&a!==void 0&&a.storageHostname)var c=globalThis.udata.config.storageHostname;else{G||(G=localStorage.getItem("tms_topdomain_cache"));if(!G){a:{var e=location.hostname.split(".");for(a=1;a<=e.length;a++){var f="."+e.slice(-a).join("."),g;b=f;d="_mytms_test_cookie_top_level_";C.set(d,"1",10,b);var k=C.get(d)==="1";if(g=(k&&C.remove(d,b),k)){var q=f;break a}}q=null}G=q;localStorage.setItem("tms_topdomain_cache",
+G)}c=G}return c}catch(l){return location.hostname}}function W(a,b,d){this.timeSeconds=a;this.cookieName=b;this.hostname=d;this.get=function(c){var e=this.getAll();return e[c]||""};this.set=function(c,e){if(c){var f=this.getAll();f[c]=e;this._updateCookie(f)}};this.remove=function(c){var e=this.getAll();delete e[c];this._updateCookie(e)};this._updateCookie=function(c){c=this._cookieFrom(c);c=this._encode(c);this._saveCookie(c)};this.getAll=function(){var c=C.get(this.cookieName);return c=this._decode(c),
+this._valuesFrom(c)};this.refresh=function(){var c=C.get(this.cookieName);this._saveCookie(c)};this._saveCookie=function(c){if(JSON.stringify(c)==="{}")return C.remove(this.cookieName);C.set(this.cookieName,c,this.timeSeconds,this.hostname)};this.clear=function(){C.remove(this.cookieName,this.hostname)};this._encode=function(c){return this._encodeBase64(this._semiEscape(c))};this._decode=function(c){return decodeURIComponent(this._decodeBase64(c))};this._semiEscape=function(c){return encodeURIComponent(c).replace(/%7B/g,
+"{").replace(/%7D/g,"}").replace(/%3A/g,":").replace(/%2C/g,",").replace(/%5B/g,"[").replace(/%5D/g,"]").replace(/%22/g,'"')};this._encodeBase64=function(c){try{return btoa(c)}catch(e){return console.error(e),c}};this._decodeBase64=function(c){try{return atob(c)}catch(e){return console.error(e),c}};this._valuesFrom=function(c){return c?JSON.parse(c):{}};this._cookieFrom=function(c){return JSON.stringify(c)}}function A(a){var b=arguments.length>1&&arguments[1]!==void 0?arguments[1]:{},d=b.jsonCompliant;
+if(a==null||typeof a!="object")return a;if(a instanceof Date){var c=new Date;return c.setTime(a.getTime()),d?c.toISOString():c}if(a instanceof Array){c=[];d=0;for(var e=a.length;d<e;d++)c[d]=A(a[d],b);return c}if(a instanceof Element||a===document)return d?"DOM Element not supported":a;if(a instanceof Object){c={};for(e in a)a.hasOwnProperty(e)&&(c[e]=A(a[e],b));return c}throw Error("Unable to copy obj! Its type isn't supported.");}function D(a,b,d){var c={},e="data-tms-";return d=d||d===""?d:b,a?
+([].slice.apply(a.attributes).filter(function(f){return f.name.indexOf(e+b)>-1}).map(function(f){var g=f.name.replace(e,"").replace(b,d).replace(/-/g,"_").replace(/^_/,"");f.name===e+b&&(g="default");c[g]=f.value}),c):{}}function X(a){return function(){function b(f){var g=Object.keys(f).filter(function(k){return/^discount_/.test(k)}).reduce(function(k,q){var l=f[q].split("|")||[];delete f[q];for(var r=0;r<l.length;r++)k[r]=k[r]||{id:void 0,name:void 0,type:void 0},k[r][q.replace("discount_","")]=
+l[r];return k},[]);g.length&&(f.discounts=g)}function d(f,g){var k=f.closest("[data-tms-product-list]");k&&(g.list=k.getAttribute("data-tms-product-list"));(k=f.closest("[data-tms-product-list-detail]"))&&(g.list_detail=k.getAttribute("data-tms-product-list-detail"))}function c(f){typeof f.price=="string"&&(f.price=f.price.replace(",","."),f.price=parseFloat(f.price)||0,f.price_weight&&(f.price_weight=parseFloat(f.price_weight.replace(",","."))||0))}var e=D(a,"product","");if(e.id||e.name)return c(e),
+d(a,e),b(e),e}()}function P(a){a=a.map(function(b){return b=b.replace(/\./g,"\\."),/^\\./.test(b)?b.replace(/^\\\./,"([a-z\\-0-9]+\\.)*"):b})||"";return new RegExp("^("+a.join("|")+")$","i")}function Q(a,b){a=a.target.closest("[data-tms-stopeventpropagation]");b=[].slice.apply(b.querySelectorAll("[data-tms-stopeventpropagation]"));return!a||b.indexOf(a)<0}function va(a,b){function d(){try{var h=b.mayStartFunction()}catch(m){h="error while executing udata.config.delayStart.mayStartFunction ("+m.message+
+")"}if(h===!0)a.start();else if(n>b.timeoutMs){a.error(null,"delay start",typeof h=="string"?h:"udata.config.delayStart.mayStartFunction returned "+h);if(b.onTimeout)try{b.onTimeout(h)}catch(m){a.error(null,"udata.config.delayStart.onTimeout","function call resulted in an exception ("+m.message+")")}a.start()}else n+=200,setTimeout(d,200)}var c,e,f,g,k;if(!a)throw Error("delayStart needs queue object");b!=null||(b=(a==null||(e=a.config)===null||e===void 0||(c=e.helpers)===null||c===void 0?void 0:
+c.delayStart)||{});var q;(q=(f=b).timeoutMs)!==null&&q!==void 0||(f.timeoutMs=4E3);var l;(l=(g=b).onTimeout)!==null&&l!==void 0||(g.onTimeout=null);var r;(r=(k=b).mayStartFunction)!==null&&r!==void 0||(k.mayStartFunction=function(){return!0});var n=0;d()}function J(a,b,d){function c(){e();q||(k||f(),q=setTimeout(function(){q=null;f()},1E3));k&&clearTimeout(k);k=setTimeout(function(){k=null;g()},1500)}function e(){l&&clearTimeout(l);l=setTimeout(function(){l=null;e();f();g()},2E3)}function f(){[].slice.apply(document.querySelectorAll(a)).filter(function(n){var h;
+if(h=!n.getAttribute("data-tms-tracked-impression")){h=d||80;var m=n.getBoundingClientRect();if(m.bottom<0||m.top>window.innerHeight)var y=!1;else{var E=Math.round(m.top/m.height*100),F=100-Math.round((m.bottom-window.innerHeight)/m.height*100);y=Math.round(m.left/m.width*100);m=100-Math.round((m.right-window.innerWidth)/m.width*100);E=E<0?E:0;F=F<0?0:F>100?100:F;y=y<0?y:0;m=m<0?0:m>100?100:m;y={top:Math.abs(E),bot:Math.abs(F),left:Math.abs(y),right:Math.abs(m)}}h=!(!y||n.offsetHeight===0||n.style.visibility===
+"hidden"||n.style.opacity===0||(y.bot-y.top)*(y.right-y.left)/100<h||n.closest('[aria-hidden\x3d"true"]'))}return h}).forEach(function(n){n.setAttribute("data-tms-tracked-impression","1");r.push(n)})}function g(){if(r.length>0){try{b(r)}catch(n){}r=[]}}var k,q,l,r=[];e();f();g();document.addEventListener("scroll",c,!0)}function R(a,b){(b==null||b>a.length)&&(b=a.length);for(var d=0,c=Array(b);d<b;d++)c[d]=a[d];return c}function wa(){function a(){Y=!0;var t=h.push;h.push=function(){for(var p=arguments.length,
+u=Array(p),v=0;v<p;v++)u[v]=arguments[v];var z;p=(z=t).call;v=p.apply;var B=[h],K=B.concat;var w=u;w=Array.isArray(w)?R(w):void 0;w||(w=typeof Symbol!="undefined"&&u[Symbol.iterator]!=null||u["@@iterator"]!=null?Array.from(u):void 0);if(!w)a:{if(u){if(typeof u=="string"){w=R(u,void 0);break a}w=Object.prototype.toString.call(u).slice(8,-1);if(w==="Object"&&u.constructor&&(w=u.constructor.name),w==="Map"||w==="Set"){w=Array.from(w);break a}if(w==="Arguments"||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(w)){w=
+R(u,void 0);break a}}w=void 0}if(!(u=w))throw new TypeError("Invalid attempt to spread non-iterable instance.\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");v.call(p,z,K.call(B,u));setTimeout(b)};b()}function b(){if(Y)if(y)E=!0;else{y=!0;for(var t=F+1;t<h.length;t++){var p=h[t],u=h.modifiedEvents,v=t;a:{var z=void 0,B=t;p=A(p);p.event_index=B;B=!0;var K=!1,w=void 0;try{for(var S=h.modifications[Symbol.iterator]();!(B=(z=S.next()).done);B=!0){var Z=z.value;try{var xa=
+Z.func.call(h,p);if(xa===!1){var aa={_event_cancelled:!0};break a}}catch(T){n(p,Z.name,T)}}}catch(T){K=!0,w=T}finally{try{!B&&S["return"]!=null&&S["return"]()}finally{if(K)throw w;}}aa=p}u[v]=aa;F=t}L.forEach(d);y=!1;E&&(E=!1,b())}}function d(t){clearTimeout(t.timeout);var p=t.index;p=p===void 0?-1:p;var u=t.waitForEvent;if(u&&u!==v.event_name)return!1;t.waitForEvent=!1;p+=1;var v=h.modifiedEvents[p];if(t&&v)if(Date.now()<t.lastTimeFired+100)t.timeout=setTimeout(d,100,t);else{t.lastTimeFired=Date.now();
+try{if(!v._event_cancelled){var z=t.noCopy?v:A(v);t.func.call(h,z)}t.firedEvents.push(p);t.index=p;h.modifiedEvents.length>p+1&&(t.timeout=setTimeout(d,100,t))}catch(B){console.error("Error occurred in listener",B)}}}function c(t){var p=arguments.length>1&&arguments[1]!==void 0?arguments[1]:{};if(typeof t=="function"){var u=p.name;u=u===void 0?"[Anonymous modification]":u;p=p.priority;var v=p===void 0?0:p;p={func:t,name:u,priority:v};u=h.modifications.findIndex(function(z){return z.priority>v});u!==
+-1?h.modifications.splice(u,0,p):h.modifications.push(p)}}function e(t){var p=arguments.length>1&&arguments[1]!==void 0?arguments[1]:{};if(typeof t=="function"){var u=p.noCopy;u=u===void 0?!1:u;var v=p.waitForEvent,z=p.waitForConsentChoice;p=p.requiredConsentCategories;p={func:t,noCopy:u,waitForEvent:v,waitForConsentChoice:z,requiredConsentCategories:p,index:void 0,lastTimeFired:void 0,firedEvents:[]};L.push(p);b()}}function f(t){L=L.filter(function(p){return p.func!==t})}function g(t){udata.modifications=
+udata.modifications.filter(function(p){return p.func!==t})}function k(){e(function u(p){p.event_name==="page navigation"&&(U=!0,l(),f(u))});document.addEventListener("DOMContentLoaded",l)}function q(t){r()&&U?t():M.push(t)}function l(){r()&&U&&M!==null&&(M.forEach(function(t){return t()}),M=null)}function r(){return document.readyState==="interactive"||document.readyState==="complete"}function n(t,p,u){try{var v={name:p,message:typeof u=="string"?u:u&&u.message||""};t?(t.errors=t.errors||[],t.errors.push(v)):
+udata.config.track_errors&&!m[p]&&(m[p]=!0,udata.push({event_name:"error",errors:[v]}))}catch(z){}}var h=arguments.length>0&&arguments[0]!==void 0?arguments[0]:[],m={},y=!1,E=!1,F=-1,U=!1,M=[],Y=!1,L=[];return typeof h.start=="function"?h:(h.start=a,h.modifications=[],h.modifiedEvents=[],h.addModification=c,h.removeModification=g,h.addListener=e,h.removeListener=f,h.afterDomReady=q,h.error=n,k(),h)}function ya(a){a.event_name==="page navigation"&&(a.page_name=a.page_name||document.title,a.page_hostname=
+a.page_hostname||location.hostname,a.page_hash=a.page_hash||location.hash,a.page_path=a.page_path||location.pathname,a.page_query_string=a.page_query_string||location.search,a.page_url=a.page_url||location.href,a.page_referrer=a.page_referrer||document.referrer,a.page_navigation_type=za());var b=globalThis.innerWidth;var d=globalThis.innerHeight;b=b>d?"landscape":b<d?"portrait":"landscape";a.view_orientation=b}function za(){var a,b,d,c=(d=globalThis)===null||d===void 0||(b=d.performance)===null||
+b===void 0||(a=b.navigation)===null||a===void 0?void 0:a.type;switch(c){case 0:return"navigate";case 1:return"reload";case 2:return"back/forward";default:return"other"}}function Aa(a){if(a.event_name==="page navigation"){var b=H.get("page_navigation_section");H.remove("page_navigation_section");b&&(a.page_navigation_section=b.name,a.page_navigation_section_detail=b.detail,a.page_navigation_link_text=b.linkText)}}function Ba(a){var b=a.target.closest("a, [data-tms-navigation-link]");if(b!=null&&b.matches("[data-tms-navigation-link]")||
+Ca(b)){var d=b.closest("[data-tms-navigation-section]"),c=b.closest("[data-tms-navigation-detail]");if(d){a=H;var e=a.set;d=d==null?void 0:d.getAttribute("data-tms-navigation-section");c=c==null?void 0:c.getAttribute("data-tms-navigation-detail");b=b&&b.innerText||"";var f=b.replace(/\s+/g," ").trim();b=(f.length>50&&(f=f.substring(0,48)+"..."),f);e.call(a,"page_navigation_section",{name:d,detail:c,linkText:b})}}}function ba(){N("body","other");N("header","header");N("footer","footer");N("main","body")}
+function N(a,b){(a=document.querySelector(a))&&!a.getAttribute("data-tms-navigation-section")&&a.setAttribute("data-tms-navigation-section",b)}function Da(){var a,b,d=((b=globalThis.udata)===null||b===void 0||(a=b.config)===null||a===void 0?void 0:a.page_navigation_section_internal_domains)||[],c=P(d);return function(e){e=e&&(e.href instanceof SVGAnimatedString?e.href.baseVal:e.href||"").replace(/^https?:\/\/(?:www\.)?.*?([^\/]+).*$/i,"$1");var f=location.hostname.replace("www.","");return c?e===
+f||c.test(e):e===f}}function Ea(a){ca(a)}function ca(a,b){var d,c,e,f=((e=globalThis)===null||e===void 0||(c=e.udata)===null||c===void 0||(d=c.config)===null||d===void 0?void 0:d.normaliseStrings)||{};d=V(f.ignoreLowercasing);c=V(f.ignoreCleaning);f=V(f.alwaysUppercasing);b=b||"";for(var g in a)a.hasOwnProperty(g)&&(e=b?b+"."+g:g,Array.isArray(a)&&(e=b),Array.isArray(a[g])||!(typeof a[g]!="object"||a[g]instanceof HTMLElement||O(e,d))?ca(a[g],e):typeof a[g]=="string"&&(O(e,d)||(a[g]=a[g].toLowerCase()),
+O(e,c)||(a[g]=a[g].trim().replace(/\s+/g," ")),O(e,f)&&(a[g]=a[g].toUpperCase())))}function V(a){return{stringObject:Fa(a||[]),regexArray:(a||[]).filter(function(b){return b instanceof RegExp})}}function O(a,b){if(b.stringObject[a])return!0;for(var d=0;d<b.regexArray.length;d++)if(b.regexArray[d].test(a))return!0;return!1}function Fa(a){return a.filter(function(b){return typeof b=="string"}).reduce(function(b,d){return b[d]=!0,b},{})}function Ga(a){a.event_name==="page navigation"&&(H.set("page_depth",
++H.get("page_depth")+1),a.page_depth=H.get("page_depth"))}function Ha(a){function b(c){var e,f,g=((f=this)===null||f===void 0||(e=f.config)===null||e===void 0?void 0:e.persistVars)||[];for(e=0;e<g.length;e++)if(f=g[e],f instanceof RegExp&&f.test(c)||typeof f=="string"&&f===c)return!0;return/^(env_|page_|user_)/.test(c)}var d=this.currentPage||{};a.event_name!=="page navigation"&&(Object.keys(d).forEach(function(c){!a[c]&&b(c)&&(a[c]=d[c])}),a.page_template==="product detail"&&d.products?a.products=
+a.products||A(d.products):/^content detail/i.test(a.page_template)&&d.content&&(a.content=a.content||A(d.content)))}function Ia(a){a.event_name==="page navigation"&&(this.currentPage=A(a));if(a.event_name==="product view"&&a.page_template==="product detail"){var b=a,d="products";b[d]&&(this.currentPage[d]=A(b[d]))}a.event_name==="content view"&&/^content detail/i.test(a.page_template)&&(b="content",a[b]&&(this.currentPage[b]=A(a[b])))}function Ja(a){function b(l,r,n,h){r=d(r);l={event_name:l,banners:r};
+n&&(l.element=h,l.link_href=h&&h.getAttribute("data-tms-banner-href")||f(h)||void 0,n=(n=n.closest("[data-tms-banner-action-name]"))?n.getAttribute("data-tms-banner-action-name"):void 0,l.banner_action_name=n||void 0);a.push(l)}function d(l){return l.map(function(r){var n=D(r,"banner",""),h=c(r);return n.element=r,n.hrefs=h,n.href=h.length>1?"multiple":h.length===1?h[0]:"none",n.href_type=e(h),n})}function c(l){var r=Array.prototype.slice.apply(l.querySelectorAll("a, [data-tms-banner-href]"));l.matches("a, [data-tms-banner-href]")&&
+r.push(l);l=r.map(function(n){return n.getAttribute("data-tms-banner-href")||f(n)||""});return g(l)}function e(l){if(l.length===0)return"none";var r=!1,n=!1;return l.forEach(function(h){h=h&&(h.match(/^https?:\/\/([^\/:]+)/i)||[""]).pop();var m;if(m=h)m=location.hostname.replace("www.","").toLowerCase(),h=h.replace("www.","").toLowerCase(),m=q?m===h||q(h):m===h;(h=m)?r=!0:n=!0}),r&&n?"mixed":r?"internal":"external"}function f(l){return l.href instanceof SVGAnimatedString?l.href.baseVal:l.href||""}
+function g(l){var r={};return l.filter(function(n){return r[n]?!1:(r[n]=!0,!0)})}var k=arguments.length>1&&arguments[1]!==void 0?arguments[1]:{};if(!da){da=!0;var q=(k=k.internalDomains)&&P(k);document.addEventListener("click",function(l){var r=l.target.closest("[data-tms-banner-name]:not([data-tms-noclick])");if(r){var n=l.target.closest("a,button,[data-tms-banner-click]");n&&b("banner click",[r],l.target,n)}},!0);J("[data-tms-banner-name]:not([data-tms-noimpression])",function(l){b("banner impression",
+l)})}}function Ka(a){function b(e,f){var g={event_name:e,content:d(e,f)};e==="content click"&&(g.element=f[0]);a.push(g)}function d(e,f){return f.map(function(g){var k=Object.assign(D(g,"content",""),D(g.closest("[data-tms-content-list]"),"content",""));return e==="content impression"&&(k.element=g),k})}var c=arguments.length>1&&arguments[1]!==void 0?arguments[1]:{};ea||(ea=!0,c.clickSelector=c.clickSelector||"",c.preventClickSelector=c.preventClickSelector||"",J("[data-tms-content-name]:not([data-tms-noimpression])",
+function(e){b("content impression",e)}),document.addEventListener("click",function(e){var f=e.target.closest("[data-tms-content-name]"),g;if(g=f)if(g=e.target,g.closest("[data-tms-noclick]"))g=void 0;else if(c.preventClickSelector&&g.closest(c.preventClickSelector))g=!1;else{var k=g.closest("a");g=k?!!/https?/i.test(k.href):!!(g.closest("[data-tms-contentclick]")||c.clickSelector&&g.closest(c.clickSelector))}g&&Q(e,f)&&b("content click",[f])},!0))}function La(a){fa||(fa=!0,document.addEventListener("click",
+function(b){b=b.target;if(b=b.closest("a")){var d=b.href.match(/([^\/]+\.(pdf|doc\w?|ppt\w?|xbrl|zip|rar))(?:$|\?|#)/i);if(d){var c=d.pop();d=d.pop();a.push({event_name:"download link click",element:b,link_extension:c,link_name:d,link_href:b.href,link_hostname:b.href.replace(/^https?:\/\/(?:www\.)?([^\/]+).*/i,"$1")})}}},!0))}function Ma(a){function b(d){return function(c){a.push(Object.assign({event_name:d,element:c},D(c,"form")))}}ha||(ha=!0,document.addEventListener("focusin",function(d){var c=
+d.target.closest('[data-tms-form-name][data-tms-form-step\x3d"1"]:not([data-tms-form-start-tracked])');c||(c=d.target.closest('[data-tms-form-name][data-tms-form-step-number\x3d"1"]:not([data-tms-form-start-tracked])'));c&&Q(d,c)&&(c.setAttribute("data-tms-form-start-tracked",""),b("form start")(c))},!0),J("[data-tms-form-name]:not([data-tms-noimpression])",function(d){d.forEach(b("form step"))},5))}function Na(a){function b(d){if(d=d.target.closest("[data-tms-listchange]")){var c=d.closest("[data-tms-product-id], [data-tms-content-name]"),
+e={},f=e,g=d.closest("[data-tms-list-name]");g&&(f.list_name=g.getAttribute("data-tms-list-name"));f=e;(g=X(c))&&(f.products=[g]);f=e;var k=c;c=D(k,"content","");c.id||c.name?(g=c,(k=k.closest("[data-tms-content-list]"))&&(g.list=k.getAttribute("data-tms-content-list"))):c=void 0;c&&(f.content=[c]);a.push(Object.assign(e,{event_name:"list "+d.getAttribute("data-tms-listchange"),element:d,list_method:d.getAttribute("data-tms-listchange-method")}))}}ia||(ia=!0,document.addEventListener("click",b,!0))}
+function Oa(a){ja||(ja=!0,document.addEventListener("click",function(b){b=b.target;if((b=b.closest("a"))&&b.getAttribute("data-tms-mail-prevented")===null){var d=b.href||"";/^mailto:[^\?]+@/.test(d)&&(d=d.replace(/^mailto:([^\?]*).*/i,"$1")||"blank email address",a.push({event_name:"mail link click",element:b,link_email:d}))}},!0))}function Pa(a){function b(k){(k=k.target.closest("a"))&&g(k)&&a.push({event_name:"outbound link click",element:k,link_href:c(k).toLowerCase(),link_hostname:e(k).toLowerCase()})}
+function d(k){var q=k&&P(k);return function(l){var r=a.config.outboundLinks||{},n=e(l),h=c(l);if(r.isCustomTrigger&&r.isCustomTrigger(h,n,l))return!0;if(!/^http/.test(h)||l.matches("[data-tms-outbound-prevented]"))return!1;l=location.hostname.replace("www.","");return q?n!==l&&!q.test(n):n!==l}}function c(k){k=k.href||"";var q=a.config.outboundLinks||{};return q.hrefModifier&&(k=q.hrefModifier(k)||""),k}function e(k){var q=a.config.outboundLinks||{};return(q=q.getCustomHostname&&q.getCustomHostname(k.href,
+k))||k.href.replace(/^https?:\/\/(?:www\.)?([^\/]+).*/i,"$1")}var f=arguments.length>1&&arguments[1]!==void 0?arguments[1]:{};if(!ka){ka=!0;f=a.config.outboundLinks||{};var g=d(f.excludeHostnames);document.addEventListener("click",b,!0)}}function Qa(a){function b(c,e){var f=e.map(function(g){var k=X(g);return k.element=g,k});f={event_name:c,products:f};c==="product click"&&(f.element=e[0]);a.push(f)}var d=arguments.length>1&&arguments[1]!==void 0?arguments[1]:{};la||(la=!0,d.clickSelector=d.clickSelector||
+"",d.preventClickSelector=d.preventClickSelector||"",J("[data-tms-product-id]:not([data-tms-noimpression])",function(c){b("product impression",c)}),document.addEventListener("click",function(c){var e=c.target.closest("[data-tms-product-id]"),f;if(f=e)if(f=c.target,f.closest("[data-tms-noclick]"))f=void 0;else if(d.preventClickSelector&&f.closest(d.preventClickSelector))f=!1;else{var g=f.closest("a");f=g?!(g.matches("[data-tms-cartchange]")||!/https?/i.test(g.href)):!!(f.closest("data-tms-productclick")||
+d.clickSelector&&f.closest(d.clickSelector))}f&&Q(c,e)&&b("product click",[e])},!0))}function Ra(a){function b(){[].slice.apply(document.querySelectorAll("[data-tms-scrolltracking], [data-tms-scrolltracking-percent]")).forEach(function(q){var l=d(q),r=q.getAttribute("data-tms-scrolltracking-tracked")||"",n=q.getBoundingClientRect();(q.getAttribute("data-tms-scrolltracking-percent")||q.getAttribute("data-tms-scrolltracking")||"").split(",").filter(function(h){var m=parseInt((window.innerHeight-n.top)/
+q.scrollHeight*100),y=!0;return l&&(y=Date.now()>=1E3*(h/100*l+k/1E3)),r.indexOf(h)===-1&&m>=h&&y}).forEach(function(h){var m=q.getAttribute("data-tms-scrolltracking-tracked")||"";q.setAttribute("data-tms-scrolltracking-tracked",(m+","+h).replace(/^,/,""));m=D(q,"scrolltracking","scroll");m.scroll_type==="reading"?(m=D(q,"scrolltracking","read"),delete m["default"],delete m.read_tracked,delete m.read_timing,delete m.read_type,m.event_name="reading",m.read_percent=parseInt(h)):(delete m["default"],
+delete m.scroll_tracked,delete m.scroll_timing,delete m.scroll_type,m.event_name="scrolling",m.scroll_percent=parseInt(h));m.element=q;a.push(m)})})}function d(q){var l=q.getAttribute("data-tms-scrolltracking-timing")||"";if(!l)return 0;if(!/^calc/i.test(l))return parseInt(l.replace(/[^\d]*(\d+)[^\d]*/,"$1"));l=parseInt((l.split(":")[1]||"").replace("%","")||100);var r=q.innerHTML.match("\x3cimg"),n=0;r&&(n=r.map(function(h,m){return f-(m<=g?m:g)}).reduce(function(h,m){return h+m}));q=(q.innerText.match(/\w+/g)||
+[]).length/e*60;return l/100*Math.round(q+n)}var c=arguments.length>1&&arguments[1]!==void 0?arguments[1]:{};if(!ma){ma=!0;document.addEventListener("scroll",b,!0);c.scrollAndReadTracking=c.scrollAndReadTracking||{};var e=c.scrollAndReadTracking.wordsPerMinute||275,f=c.scrollAndReadTracking.maximumImageTime||12;c=c.scrollAndReadTracking.minimumImageTime||3;var g=f-c,k=Date.now();a.addListener&&a.addListener(function(q){q.event_name==="page navigation"&&(k=Date.now())})}}function Sa(a){na||(na=!0,
+document.addEventListener("click",function(b){if(b=b.target.closest("a")||b.target.closest("[data-tms-share-name]")){var d=b,c=d.getAttribute("data-tms-share-name")||"other";b=d.href instanceof SVGAnimatedString?d.href.baseVal:d.href||"";var e;(e=d.getAttribute("data-tms-share-platform"))||(e=b,e=/^whatsapp:\/\/send/i.test(e)?"whatsapp":/^mailto:/i.test(e)&&!/^mailto:[^\?]+@/i.test(e)?"email":(e.match(/.*(facebook|twitter|linkedin|pinterest)(?:\.com\/(?:sharer?|pin\/create|intent\/tweet)).*/i)||[]).pop());
+e&&(d={event_name:"share click",element:d,share_name:c,share_platform:e||""},b&&(d.link_href=b),a.push(d))}},!0))}var C={get:ra,set:ta,remove:sa},I=ua();I={visit:new W(1800,"tms_storevisit",I),perma:new W(63072E3,"tms_storeperma",I)};var H=I.visit,G,Ca=Da();document.addEventListener("click",Ba,!0);document.readyState==="complete"||document.readyState==="interactive"?ba():document.addEventListener("DOMContentLoaded",ba);var da=!1,ea=!1,fa=!1,ha=!1,ia=!1,ja=!1,ka=!1,la=!1,ma=!1,na=!1;try{var x=wa(globalThis.udata||
+[]);var oa=[/(^|_|\.)id$/i,"user_company","page_hash","page_query_string"];(pa=(qa=x).config)!==null&&pa!==void 0||(qa.config={});x.config.normaliseStrings={ignoreLowercasing:oa,ignoreCleaning:oa,alwaysUppercasing:[]};x.helpers={getAttributes:D,cookie:C,storage:I,deepCopy:A,delayStart:va};x.addModification(Ea,{priority:-300,name:"normaliseStrings"});x.addModification(Ha,{priority:-200,name:"persistCurrentPage"});x.addModification(ya,{priority:-100,name:"getDefaultPageDimensions"});x.addModification(Ga,
+{priority:-100,name:"getPageDepth"});x.addModification(Aa,{priority:-100,name:"getNavigationSection"});x.addModification(Ia,{priority:200,name:"storeCurrentPage"});Ja(x);Ka(x);La(x);Ma(x);Na(x);Oa(x);Pa(x);Qa(x);Ra(x);Sa(x);globalThis.udata=x}catch(a){console.error("udata basic init issue",a)}var qa,pa})();window.udata=window.udata||[];window.udata.config=window.udata.config||{};window.udata.config.listener=window.udata.config.listener||{};
+window.udata.config.listener["google-tag-manager"]={splitEvents:[{eventName:"list filter",newEventName:"list filter --single",splitOnArrayField:"list_filters"},{eventName:"support impression",newEventName:"support impression --single",splitOnArrayField:"support impression"}]};</script><script type="text/javascript" id="" charset="">dataLayer.push({event:"udata ready"});</script><script type="text/javascript" id="" charset="">window.udata=window.udata||[];udata.config=udata.config||{};udata.addModification(function(a){a.event_name!=="page navigation"&&a.event_name!=="consent submit"||window.dataLayer.push({event:"consent update",consent:a.consent})});</script><script type="text/javascript" id="" charset="">(function(){function Q(c){return(c=document.cookie.match("(^|;)\\s*"+c+"\\s*\x3d\\s*([^;]+)"))?decodeURIComponent(c.pop()):""}function R(c,h){c+="\x3d; Path\x3d/; Expires\x3dThu, 01 Jan 1970 00:00:01 GMT;";h&&(c+="domain\x3d"+h);document.cookie=c}function S(c,h,g,b){if(g){var f=new Date;g=(g||3600)*1E3;f.setTime(f.getTime()+g);f=f.toGMTString()}c=encodeURIComponent(c)+"\x3d"+encodeURIComponent(h)+(f?";expires\x3d"+f:"")+";path\x3d/";b&&(c+=";domain\x3d"+b);document.cookie=c}function T(){try{var c,
+h,g;if((g=globalThis)!==null&&g!==void 0&&(h=g.udata)!==null&&h!==void 0&&(c=h.config)!==null&&c!==void 0&&c.storageHostname)var b=globalThis.udata.config.storageHostname;else{q||(q=localStorage.getItem("tms_topdomain_cache"));if(!q){a:{var f=location.hostname.split(".");for(c=1;c<=f.length;c++){var p="."+f.slice(-c).join("."),v;h=p;g="_mytms_test_cookie_top_level_";n.set(g,"1",10,h);var t=n.get(g)==="1";if(v=(t&&n.remove(g,h),t)){var k=p;break a}}k=null}q=k;localStorage.setItem("tms_topdomain_cache",
+q)}b=q}return b}catch(w){return location.hostname}}function A(c,h,g){this.timeSeconds=c;this.cookieName=h;this.hostname=g;this.get=function(b){var f=this.getAll();return f[b]||""};this.set=function(b,f){if(b){var p=this.getAll();p[b]=f;this._updateCookie(p)}};this.remove=function(b){var f=this.getAll();delete f[b];this._updateCookie(f)};this._updateCookie=function(b){b=this._cookieFrom(b);b=this._encode(b);this._saveCookie(b)};this.getAll=function(){var b=n.get(this.cookieName);return b=this._decode(b),
+this._valuesFrom(b)};this.refresh=function(){var b=n.get(this.cookieName);this._saveCookie(b)};this._saveCookie=function(b){if(JSON.stringify(b)==="{}")return n.remove(this.cookieName);n.set(this.cookieName,b,this.timeSeconds,this.hostname)};this.clear=function(){n.remove(this.cookieName,this.hostname)};this._encode=function(b){return this._encodeBase64(this._semiEscape(b))};this._decode=function(b){return decodeURIComponent(this._decodeBase64(b))};this._semiEscape=function(b){return encodeURIComponent(b).replace(/%7B/g,
+"{").replace(/%7D/g,"}").replace(/%3A/g,":").replace(/%2C/g,",").replace(/%5B/g,"[").replace(/%5D/g,"]").replace(/%22/g,'"')};this._encodeBase64=function(b){try{return btoa(b)}catch(f){return console.error(f),b}};this._decodeBase64=function(b){try{return atob(b)}catch(f){return console.error(f),b}};this._valuesFrom=function(b){return b?JSON.parse(b):{}};this._cookieFrom=function(b){return JSON.stringify(b)}}function r(c){var h=arguments.length>1&&arguments[1]!==void 0?arguments[1]:{},g=h.jsonCompliant;
+if(c==null||typeof c!="object")return c;if(c instanceof Date){var b=new Date;return b.setTime(c.getTime()),g?b.toISOString():b}if(c instanceof Array){b=[];g=0;for(var f=c.length;g<f;g++)b[g]=r(c[g],h);return b}if(c instanceof Element||c===document)return g?"DOM Element not supported":c;if(c instanceof Object){b={};for(f in c)c.hasOwnProperty(f)&&(b[f]=r(c[f],h));return b}throw Error("Unable to copy obj! Its type isn't supported.");}function U(){function c(d){if(!d.consent_state)return!0;for(var a=
+0;a<d.consent_state.length;a++)if(d.consent_state[a].type==="cookie"&&d.consent_state[a].choice!=="accepted")return!1;return!0}function h(d){for(var a in d)d.hasOwnProperty(a)&&k.isUserDataVariable(a)&&delete d[a]}function g(d){return!!/^user_/i.test(d)}function b(d){var a={};x.forEach(function(m){typeof d[m]!="undefined"&&(a.event="flush dataLayer",a[m]=void 0)});a.event&&dataLayer.push(a);x.length=0;for(var e in B)typeof d[e]=="undefined"&&(d[e]=void 0);for(var l in d)B[l]=!0,typeof d[l]=="object"&&
+x.push(l)}function f(d){return d.event=d.event_name,d.products?d.items=p(d.products):d.banners&&(d.items=v(d.banners)),d}function p(d){return d.map(function(a){var e={};return a.id&&(e.item_id=a.id),a.name&&(e.item_name=a.name),a.owner&&(e.affiliation=a.owner),a.brand&&(e.item_brand=a.brand),a!=null&&a.category[0]&&(e.item_category=a.category[0]),a!=null&&a.category[1]&&(e.item_category2=a.category[1]),a!=null&&a.category[2]&&(e.item_category3=a.category[2]),a!=null&&a.category[3]&&(e.item_category4=
+a.category[3]),a!=null&&a.category[4]&&(e.item_category5=a.category[4]),a.list&&(e.item_list_id=a.list.replace(/[^a-z0-9]+/gi,"_").replace(/^_|_$/g,"")),a.list&&(e.item_list_name=a.list),typeof a.position=="number"&&(e.index=a.position),typeof a.price=="number"&&(e.price=a.price),typeof a.quantity=="number"&&(e.quantity=a.quantity),k.customProductMapping&&k.customProductMapping(a,e),e})}function v(d){return d.map(function(a){var e={};return a.id&&(e.promotion_id=a.id),a.name&&(e.promotion_name=a.name),
+a.creative&&(e.creative_name=a.creative),a.position&&(e.creative_slot=a.position),e})}function t(d,a){var e=[];return d.forEach(function(l){a.event_name===l.eventName&&(!Array.isArray(a[l.splitOnArrayField])||a[l.splitOnArrayField].length<1||a[l.splitOnArrayField].map(function(m){var u=r(a);u.event_name=l.newEventName;u.event=l.newEventName;u[l.splitOnArrayField]=[m];e.push(u)}))}),e}var k=arguments.length>0&&arguments[0]!==void 0?arguments[0]:{},w,C,D,E,F,G,H,I;(I=(w=globalThis).dataLayer)!==null&&
+I!==void 0||(w.dataLayer=[]);var J;(J=(C=k).omitUserDataWithoutConsent)!==null&&J!==void 0||(C.omitUserDataWithoutConsent=!1);var K;(K=(D=k).isUserDataAllowed)!==null&&K!==void 0||(D.isUserDataAllowed=c);var L;(L=(E=k).isUserDataVariable)!==null&&L!==void 0||(E.isUserDataVariable=g);var M;(M=(F=k).customProductMapping)!==null&&M!==void 0||(F.customProductMapping=null);var N;(N=(G=k).splitEvents)!==null&&N!==void 0||(G.splitEvents=null);var O;(O=(H=k).sendRawEvent)!==null&&O!==void 0||(H.sendRawEvent=
+!1);var B={},x=[];return function(d){try{if(!d.event_name)throw Error("Event pushed to udata GTM listener without an event_name.");k.omitUserDataWithoutConsent&&!k.isUserDataAllowed(d)&&h(d);var a=r(d);k!=null&&k.sendRawEvent&&(a.raw_event=r(d));f(a);b(a);var e=[];if(e.push(a),k.splitEvents){var l=t(k.splitEvents,a);l.forEach(function(m){e.push(m)})}e.forEach(function(m){dataLayer.push(m)})}catch(m){console.error("Error in udata listener: ",m)}}}var n={get:Q,set:S,remove:R},P=T();new A(1800,"tms_storevisit",
+P);new A(63072E3,"tms_storeperma",P);var q,y,z;window.udata.addListener(U((z=window.udata.config)===null||z===void 0||(y=z.listener)===null||y===void 0?void 0:y["google-tag-manager"]))})();</script><script type="text/javascript" id="" charset="">(function(){function k(n){function p(f){var h=f.target;if(h.tagName==="VIDEO"&&(f=h.getAttribute("data-tms-video-percent"))&&(f=f.split(",").map(function(a){return parseFloat(a)}).sort(),f.length)){var m=parseInt(h.currentTime/h.duration*100),b=h.getAttribute("data-tms-video-name")||h.currentSrc,d=(h.getAttribute("data-tms-video-tracked")||"").split(",").map(function(a){return a&&parseFloat(a)});f.filter(function(a){return d.indexOf(a)===-1&&m>=a}).forEach(function(a){d.push(a);h.setAttribute("data-tms-video-tracked",
+d.join(","));n.push({event_name:"video percent",element:h,video_name:b,video_percent:a})})}}document.addEventListener("timeupdate",p,!0)}k(window.udata)})();
+function injectScript(k,n){var p=document.getElementsByTagName("head")[0];if(p.querySelector('script[src\x3d"'+k+'"]')instanceof HTMLElement!==!0){var f=document.createElement("script");f.type="text/javascript";f.src=k;f.onload=f.onreadystatechange=function(){this.readyState&&this.readyState!=="loaded"&&this.readyState!=="complete"||(typeof n==="function"&&n(),f.onload=f.onreadystatechange=null)};p.appendChild(f)}}
+(function(){function k(){function b(a){return a.matches('[src*\x3d"youtube.com"],[src*\x3d"youtube-nocookie.com"]')}function d(a){a.src.indexOf("enablejsapi\x3d1")<0&&(a.src+=(a.src.indexOf("?")>-1?"\x26":"?")+"enablejsapi\x3d1");if(a.src.indexOf("origin\x3d")<0){var l=location.protocol+decodeURIComponent("%2F%2F")+location.hostname;a.src+=(a.src.indexOf("?")>-1?"\x26":"?")+"origin\x3d"+encodeURIComponent(l)}/^https?:\/\/www\./i.test(a.src)||(a.src=a.src.replace(/^https?:\/\/()/i,location.protocol+
+decodeURIComponent("%2F%2F")+"www."));return a}[].slice.apply(document.querySelectorAll("[data-tms-video-percent]:not([data-tms-video-listening])")).filter(b).map(d).forEach(function(a){if(!window.YT||!YT.Player)return injectScript(decodeURIComponent("%2F%2F")+"www.youtube.com/iframe_api",k)||setTimeout(k,500);var l=(a.getAttribute("data-tms-video-percent")||"").split(",").filter(function(c){return c==="0"||!!c}).map(function(c){return parseFloat(c)}).sort();if(a&&l.length){var e=new YT.Player(a);
+h(e);e.myTMS_src_on_init=a.src;e.myTMS_loadListener=function(c){c.target.src!==e.myTMS_src_on_init&&(a.removeAttribute("data-tms-video-listening"),a.removeAttribute("data-tms-video-name"),a.removeAttribute("data-tms-video-tracked"),a.removeEventListener("load",e.myTMS_loadListener),c=m.indexOf(e),c!==-1&&m.splice(c,1),setTimeout(k,100))};a.addEventListener("load",e.myTMS_loadListener);a.setAttribute("data-tms-video-listening","");m.push(e)}})}function n(b){var d=b.getIframe();if(b&&b.getCurrentTime&&
+b.playerInfo&&b.playerInfo.currentTime){var a=b.getDuration?b.getDuration():b.playerInfo.duration;var l=b.getCurrentTime?b.getCurrentTime():b.playerInfo.currentTime;var e=l/a*100,c="";(a=b.getVideoData())&&a.title?(c=a.title,d.setAttribute("data-tms-video-name",c)):b.playerInfo.videoData&&b.playerInfo.videoData.title&&(c=b.playerInfo.videoData.title,d.setAttribute("data-tms-video-name",c));alreadyTracked=(d.getAttribute("data-tms-video-tracked")||"").split(",").filter(function(g){return g==="0"||
+!!g}).map(function(g){return parseFloat(g)});(d.getAttribute("data-tms-video-percent")||"").split(",").map(function(g){return parseFloat(g)}).filter(function(g){return alreadyTracked.indexOf(g)===-1&&e>=g}).forEach(function(g){alreadyTracked.push(g);d.setAttribute("data-tms-video-tracked",alreadyTracked.join(","));udata.push({event_name:"video percent",element:d,video_name:c.toLowerCase(),video_percent:g})})}}function p(){for(var b=0;b<m.length;b++)n(m[b])}function f(){function b(){var a=document.fullscreenElement||
+document.webkitFullscreenElement||document.mozFullscreenElement||document.msFullscreenElement;a?(d=a.getAttribute("data-tms-video-name"))&&udata.push({event_name:"video fullscreen open",video_name:d.toLowerCase()}):d&&udata.push({event_name:"video fullscreen close",video_name:d.toLowerCase()})}var d="";document.addEventListener("fullscreenchange",b,!0);document.addEventListener("webkitfullscreenchange",b,!0);document.addEventListener("mozfullscreenchange",b,!0);document.addEventListener("msfullscreenchange",
+b,!0)}function h(b){var d=null,a=null,l={},e=null;b.addEventListener("onStateChange",function(c){var g=c.target.getCurrentTime?c.target.getCurrentTime():c.target.playerInfo.currentTime;var q=c.target.getDuration?c.target.getDuration():c.target.playerInfo.duration;var t=Math.trunc(g*100/q),r=b.getIframe().getAttribute("data-tms-video-name")||"";c.data===YT.PlayerState.PAUSED?(l={event_name:"video paused",video_paused_percent:t,video_current_time:g,video_duration:q,video_name:r},d=YT.PlayerState.PAUSED,
+a=Date.now(),e=setTimeout(function(){d===YT.PlayerState.PAUSED&&udata.push(l);e=null},1E3)):c.data===YT.PlayerState.BUFFERING?(d=YT.PlayerState.BUFFERING,clearTimeout(e),l=e=null):c.data===YT.PlayerState.PLAYING&&a&&(d=YT.PlayerState.PLAYING,c=Date.now()-a||"",a=null,e||c<1E3?(clearTimeout(e),e=null):udata.push({event_name:"video resumed",video_pause_duration:c,video_current_time:g,video_duration:q,video_name:r}))})}var m=[];setInterval(p,1E3);setInterval(k,1E3);k();f()})();</script><script type="text/javascript" id="" charset="">(function(){document.addEventListener("click",function(a){if(a=a.target.closest('a[href*\x3d"save-configuration?single\x3d"]'))window.udata=window.udata||[],window.udata.push({event_name:"interaction",interaction_name:"click: save configuration"})})})();</script>
+<script type="text/javascript" id="" charset="">(function(){function f(a,c){a[c]&&(udata.currentPage[c]=JSON.parse(JSON.stringify(a[c])))}window.udata=window.udata||[];udata.config=udata.config||{};udata.currentPage=udata.currentPage||{};udata.config.persistVars=udata.config.persistVars||[];udata.addModification(function(a){a.event_name==="page navigation"?udata.currentPage=JSON.parse(JSON.stringify(a)):a.event_name==="product view"&&a.page_template==="product detail"?f(a,"products"):a.event_name==="content view"&&f(a,"content")},{name:"Persist values to udata.currentPage on page navigation event (udata)",
+priority:900});udata.addModification(function(a){a.event_name!=="page navigation"&&(Object.keys(udata.currentPage).forEach(function(c){var b;if(b=!a[c])a:{b=c;for(var e=0;e<udata.config.persistVars.length;e++){var d=udata.config.persistVars[e];if(d instanceof RegExp&&d.test(b)){b=!0;break a}if(typeof d==="string"&&d===b){b=!0;break a}}b=/^(env_|page_|user_|app_)/.test(b)}b&&(a[c]=udata.currentPage[c])}),a.page_template==="product detail"&&udata.currentPage.products?a.products=a.products||JSON.parse(JSON.stringify(udata.currentPage.products)):
+udata.currentPage.content&&(a.content=a.content||JSON.parse(JSON.stringify(udata.currentPage.content))))},{name:"Load persisted data from currentPage (udata)",priority:-900})})();</script><script type="text/javascript" id="" charset="">dataLayer.push({event:"global handshake"});</script><script type="text/javascript" id="" charset="">(function(){udata=udata||{};udata.config=udata.config||{};udata.config.ga=udata.config.ga||{};udata.config.ga.measurement_id=google_tag_manager["rm"]["188760823"](8)==="DEV"||google_tag_manager["rm"]["188760823"](9)===!0?"G-L22Y5L7HFH":"G-0VKEKBVN44";udata.config.ga.server_side_url="analytics.aliaxis.gr";udata.start()})();</script><iframe id="_hjSafeContext_56938165" title="_hjSafeContext" tabindex="-1" aria-hidden="true" src="about:blank" style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe></body></html>

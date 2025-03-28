@@ -1,0 +1,1055 @@
+<!DOCTYPE html><html lang="en-US" class="no-js no-svg"><head> <script type="text/javascript">
+/* <![CDATA[ */
+ var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),document.addEventListener("gform/theme/scripts_loaded",function(){gform.themeScriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,themeScriptsLoaded:!1,isFormEditor:()=>"function"==typeof InitializeEditor,callIfLoaded:function(o){return!(!gform.domLoaded||!gform.scriptsLoaded||!gform.themeScriptsLoaded&&!gform.isFormEditor()||(gform.isFormEditor()&&console.warn("The use of gform.initializeOnLoaded() is deprecated in the form editor context and will be removed in Gravity Forms 3.1."),o(),0))},initializeOnLoaded:function(o){gform.callIfLoaded(o)||(document.addEventListener("gform_main_scripts_loaded",()=>{gform.scriptsLoaded=!0,gform.callIfLoaded(o)}),document.addEventListener("gform/theme/scripts_loaded",()=>{gform.themeScriptsLoaded=!0,gform.callIfLoaded(o)}),window.addEventListener("DOMContentLoaded",()=>{gform.domLoaded=!0,gform.callIfLoaded(o)}))},hooks:{action:{},filter:{}},addAction:function(o,r,e,t){gform.addHook("action",o,r,e,t)},addFilter:function(o,r,e,t){gform.addHook("filter",o,r,e,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,r){gform.removeHook("action",o,r)},removeFilter:function(o,r,e){gform.removeHook("filter",o,r,e)},addHook:function(o,r,e,t,n){null==gform.hooks[o][r]&&(gform.hooks[o][r]=[]);var d=gform.hooks[o][r];null==n&&(n=r+"_"+d.length),gform.hooks[o][r].push({tag:n,callable:e,priority:t=null==t?10:t})},doHook:function(r,o,e){var t;if(e=Array.prototype.slice.call(e,1),null!=gform.hooks[r][o]&&((o=gform.hooks[r][o]).sort(function(o,r){return o.priority-r.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==r?t.apply(null,e):e[0]=t.apply(null,e)})),"filter"==r)return e[0]},removeHook:function(o,r,t,n){var e;null!=gform.hooks[o][r]&&(e=(e=gform.hooks[o][r]).filter(function(o,r,e){return!!(null!=n&&n!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][r]=e)}}); 
+/* ]]> */
+</script>
+<meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(e){this.triggerEvents=e,this.eventOptions={passive:!0},this.userEventListener=this.triggerListener.bind(this),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventListener,e.eventOptions)))}_removeUserInteractionListener(e){this.triggerEvents.forEach((t=>window.removeEventListener(t,e.userEventListener,e.eventOptions)))}triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}async _loadEverythingNow(){this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async),await this._triggerDOMContentLoaded(),await this._triggerWindowLoad(),window.dispatchEvent(new Event("rocket-allScriptsLoaded"))}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._requestAnimFrame(),new Promise((t=>{const n=document.createElement("script");let r;[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type",r=e.nodeValue),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t()),e.parentNode.replaceChild(n,e)}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){var e=document.createDocumentFragment();[...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async].forEach((t=>{const n=t.getAttribute("src");if(n){const t=document.createElement("link");t.href=n,t.rel="preload",t.as="script",e.appendChild(t)}})),document.head.appendChild(e)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(r){e["rocket"+t]=n=r}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._requestAnimFrame(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-load")),await this._requestAnimFrame(),window.rocketonload&&window.rocketonload(),await this._requestAnimFrame(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),window.dispatchEvent(new Event("rocket-pageshow")),await this._requestAnimFrame(),window.rocketonpageshow&&window.rocketonpageshow()}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,r=document.createRange(),i=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const a=document.createDocumentFragment();r.setStart(a,0),a.appendChild(r.createContextualFragment(t)),i.insertBefore(a,o)}}async _requestAnimFrame(){return new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts(["keydown","mousemove","touchmove","touchstart","touchend","wheel"]);e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+    
+
+<link rel="dns-prefetch" href="http://maps.googleapis.com">
+<link rel="dns-prefetch" href="https://connect.facebook.net">
+<link rel="dns-prefetch" href="https://ssl.google-analytics.com">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">  
+<link rel="dns-prefetch" href="http://maps.gstatic.com">
+<link rel="dns-prefetch" href="http://maps.googleapis.com">
+<link rel="dns-prefetch" href="https://www.clarity.ms">
+<link rel="dns-prefetch" href="https://www.google-analytics.com">
+<link rel="dns-prefetch" href="//www.googleadservices.com">
+<link rel="dns-prefetch" href="https://googleads.g.doubleclick.net">
+<link rel="dns-prefetch" href="https://wchat.freshchat.com">
+<link rel="dns-prefetch" href="https://assetscdn-wchat.freshchat.com">
+<link rel="dns-prefetch" href="https://rts-static-prod.freshworksapi.com">
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0">
+<meta name="format-detection" content="telephone=no">
+<link rel="shortcut icon" type="image/ico" href="https://www.pcllawyersfrankston.com.au/wp-content/uploads/2022/08/favicon.ico">
+<link rel="stylesheet" type="text/css" href="https://www.pcllawyersfrankston.com.au/wp-content/themes/lawyer-theme/assets/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://www.pcllawyersfrankston.com.au/wp-content/themes/lawyer-theme/assets/css/font-awesome.css">
+<link rel="stylesheet" type="text/css" href="https://www.pcllawyersfrankston.com.au/wp-content/themes/lawyer-theme/assets/css/fontawesome-all.min.css">
+<link rel="stylesheet" type="text/css" href="https://www.pcllawyersfrankston.com.au/wp-content/themes/lawyer-theme/assets/css/jquery.fancybox.min.css">
+<link rel="stylesheet" type="text/css" href="https://www.pcllawyersfrankston.com.au/wp-content/themes/lawyer-theme/assets/css/swiper.min.css">
+<link rel="stylesheet" type="text/css" href="https://www.pcllawyersfrankston.com.au/wp-content/themes/lawyer-theme/assets/css/fonts.css">
+<link rel="stylesheet" type="text/css" href="https://www.pcllawyersfrankston.com.au/wp-content/themes/lawyer-theme/assets/css/style.css">
+<link rel="stylesheet" type="text/css" href="https://www.pcllawyersfrankston.com.au/wp-content/themes/lawyer-theme/assets/css/responsive.css">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	
+	<!-- This site is optimized with the Yoast SEO plugin v24.4 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>PCL Lawyers Frankston</title>
+	<meta name="description" content="We can help SMEs and Individuals with their legal Needs. Our Lawyers at PCL Lawyers' Frankston Office Can Provide You With Concise and Commercially Sound Advice.">
+	<link rel="canonical" href="https://www.pcllawyersfrankston.com.au/">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="PCL Lawyers Frankston">
+	<meta property="og:description" content="We can help SMEs and Individuals with their legal Needs. Our Lawyers at PCL Lawyers' Frankston Office Can Provide You With Concise and Commercially Sound Advice.">
+	<meta property="og:url" content="https://www.pcllawyersfrankston.com.au/">
+	<meta property="og:site_name" content="PCL Lawyers Frankston">
+	<meta property="article:modified_time" content="2023-10-27T10:20:28+00:00">
+	<meta name="twitter:card" content="summary_large_image">
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.pcllawyersfrankston.com.au/","url":"https://www.pcllawyersfrankston.com.au/","name":"PCL Lawyers Frankston","isPartOf":{"@id":"https://www.pcllawyersfrankston.com.au/#website"},"datePublished":"2014-12-29T07:30:08+00:00","dateModified":"2023-10-27T10:20:28+00:00","description":"We can help SMEs and Individuals with their legal Needs. Our Lawyers at PCL Lawyers' Frankston Office Can Provide You With Concise and Commercially Sound Advice.","breadcrumb":{"@id":"https://www.pcllawyersfrankston.com.au/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.pcllawyersfrankston.com.au/"]}]},{"@type":"BreadcrumbList","@id":"https://www.pcllawyersfrankston.com.au/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]},{"@type":"WebSite","@id":"https://www.pcllawyersfrankston.com.au/#website","url":"https://www.pcllawyersfrankston.com.au/","name":"PCL Lawyers Frankston","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.pcllawyersfrankston.com.au/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel="dns-prefetch" href="//www.pcllawyersfrankston.com.au">
+
+<link rel="alternate" type="application/rss+xml" title="PCL Lawyers Frankston » Home Comments Feed" href="https://www.pcllawyersfrankston.com.au/home/feed/">
+<link rel="stylesheet" id="wp-block-library-css" href="https://www.pcllawyersfrankston.com.au/wp-includes/css/dist/block-library/style.min.css?ver=6.7.2" type="text/css" media="all">
+<style id="classic-theme-styles-inline-css" type="text/css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id="global-styles-inline-css" type="text/css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel="https://api.w.org/" href="https://www.pcllawyersfrankston.com.au/wp-json/"><link rel="alternate" title="JSON" type="application/json" href="https://www.pcllawyersfrankston.com.au/wp-json/wp/v2/pages/19"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.pcllawyersfrankston.com.au/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.7.2">
+<link rel="shortlink" href="https://www.pcllawyersfrankston.com.au/">
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://www.pcllawyersfrankston.com.au/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.pcllawyersfrankston.com.au%2F">
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://www.pcllawyersfrankston.com.au/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.pcllawyersfrankston.com.au%2F&amp;format=xml">
+<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style><noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script type="rocketlazyloadscript" async="" src="https://www.googletagmanager.com/gtag/js?id=UA-69189148-1"></script>
+<script type="rocketlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-69189148-1');
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script type="rocketlazyloadscript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-72FHEHCS7M"></script>
+<script type="rocketlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-72FHEHCS7M');
+</script>
+
+<!-- Google Tag Manager -->
+<script type="rocketlazyloadscript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KXCQHD3');</script>
+<!-- End Google Tag Manager -->
+
+
+</head>
+<body class="home page-template-default page page-id-19">
+<div class="site-main">
+<noscript>
+<p class="noscript"><svg viewBox="0 0 512 512" width="20px" height="20px" class="warning-icon"><path d="M507.494,426.066L282.864,53.537c-5.677-9.415-15.87-15.172-26.865-15.172c-10.995,0-21.188,5.756-26.865,15.172  L4.506,426.066c-5.842,9.689-6.015,21.774-0.451,31.625c5.564,9.852,16.001,15.944,27.315,15.944h449.259  c11.314,0,21.751-6.093,27.315-15.944C513.508,447.839,513.336,435.755,507.494,426.066z M256.167,167.227 c12.901,0,23.817,7.278,23.817,20.178c0,39.363-4.631,95.929-4.631,135.292c0,10.255-11.247,14.554-19.186,14.554  c-10.584,0-19.516-4.3-19.516-14.554c0-39.363-4.63-95.929-4.63-135.292C232.021,174.505,242.605,167.227,256.167,167.227z M256.498,411.018c-14.554,0-25.471-11.908-25.471-25.47c0-13.893,10.916-25.47,25.471-25.47c13.562,0,25.14,11.577,25.14,25.47 C281.638,399.11,270.06,411.018,256.498,411.018z" fill="#FFAA00"/></svg>Please enable JavaScript in your browser.</p>
+</noscript>
+<header class="header">
+	<div class="container">
+		<div class="flex">
+							<div class="main_logo">
+				<a href="https://www.pcllawyersfrankston.com.au" title="PCL Lawyers Frankston"><img src="https://www.pcllawyersfrankston.com.au/wp-content/uploads/2022/08/pcl-laywer-logo.png" alt="PCL Lawyers Frankston" title="PCL Lawyers Frankston" data-lazy-src="https://www.pcllawyersfrankston.com.au/wp-content/uploads/2022/08/pcl-laywer-logo.png" class="lazyloading" data-ll-status="loading"><noscript><img src="https://www.pcllawyersfrankston.com.au/wp-content/uploads/2022/08/pcl-laywer-logo.png" alt="PCL Lawyers Frankston" title="PCL Lawyers Frankston"></noscript></a>
+				</div>
+						<div>
+									<div class="mobile_cta">
+						<ul>
+															<li><a href="tel:1300907335" title="1300 907 335"><i class="fas fa-phone"></i> <span> 1300 907 335 </span> </a></li>						</ul>
+					</div>
+							<button class="navigation-open" title="Menu"><span></span></button>
+				<div class="navigation">
+					<button class="navigation-close" title="Close"><span></span></button>
+					<ul id="menu-header-menu" class="menu"><li id="menu-item-702" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-19 current_page_item menu-item-702 selected  selected "><a href="https://www.pcllawyersfrankston.com.au/" aria-current="page">Home</a></li>
+<li id="menu-item-807" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-807 parent has-sub"><a href="https://www.pcllawyersfrankston.com.au/commercial-law/">Business</a>
+<ul class="sub sub-menu"><li><button class="menu-back">Back</button></li>
+	<li id="menu-item-820" class="menu-item menu-item-type-post_type menu-item-object-practice-area menu-item-820"><a href="https://www.pcllawyersfrankston.com.au/buying-a-business/">Buying A Business</a></li>
+	<li id="menu-item-826" class="menu-item menu-item-type-post_type menu-item-object-practice-area menu-item-826"><a href="https://www.pcllawyersfrankston.com.au/selling-a-business/">Selling A Business</a></li>
+	<li id="menu-item-819" class="menu-item menu-item-type-post_type menu-item-object-practice-area menu-item-819"><a href="https://www.pcllawyersfrankston.com.au/franchise/">Franchising Lawyers</a></li>
+	<li id="menu-item-823" class="menu-item menu-item-type-post_type menu-item-object-practice-area menu-item-823"><a href="https://www.pcllawyersfrankston.com.au/debt-recovery/">Debt Recovery</a></li>
+	<li id="menu-item-822" class="menu-item menu-item-type-post_type menu-item-object-practice-area menu-item-822"><a href="https://www.pcllawyersfrankston.com.au/contracts/">Contracts Lawyers</a></li>
+	<li id="menu-item-947" class="menu-item menu-item-type-post_type menu-item-object-practice-area menu-item-947"><a href="https://www.pcllawyersfrankston.com.au/commercial-litigation/">Commercial Litigation</a></li>
+</ul>
+<span class="toggle-submenu"></span></li>
+<li id="menu-item-809" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-809 parent has-sub"><a href="https://www.pcllawyersfrankston.com.au/property/">Property</a>
+<ul class="sub sub-menu"><li><button class="menu-back">Back</button></li>
+	<li id="menu-item-816" class="menu-item menu-item-type-post_type menu-item-object-practice-area menu-item-816"><a href="https://www.pcllawyersfrankston.com.au/conveyancing/">Conveyancing Lawyers</a></li>
+	<li id="menu-item-817" class="menu-item menu-item-type-post_type menu-item-object-practice-area menu-item-817"><a href="https://www.pcllawyersfrankston.com.au/commercial-leasing/">Commercial Leasing</a></li>
+</ul>
+<span class="toggle-submenu"></span></li>
+<li id="menu-item-808" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-808 parent has-sub"><a href="https://www.pcllawyersfrankston.com.au/disputes-litigation/">Disputes &amp; Litigation</a>
+<ul class="sub sub-menu"><li><button class="menu-back">Back</button></li>
+	<li id="menu-item-907" class="menu-item menu-item-type-post_type menu-item-object-litigation menu-item-907"><a href="https://www.pcllawyersfrankston.com.au/breach-of-contract/">Breach of Contract</a></li>
+	<li id="menu-item-908" class="menu-item menu-item-type-post_type menu-item-object-litigation menu-item-908"><a href="https://www.pcllawyersfrankston.com.au/breach-of-trade-mark/">Breach of Trade Mark</a></li>
+	<li id="menu-item-909" class="menu-item menu-item-type-post_type menu-item-object-litigation menu-item-has-children menu-item-909 parent has-sub"><a href="https://www.pcllawyersfrankston.com.au/debt-recovery-services/">Debt Recovery Services</a>
+	<ul class="sub sub-menu"><li><button class="menu-back">Back</button></li>
+		<li id="menu-item-910" class="menu-item menu-item-type-post_type menu-item-object-litigation menu-item-910"><a href="https://www.pcllawyersfrankston.com.au/debt-recovery-process/">Fast Debt Recovery in Victoria</a></li>
+		<li id="menu-item-911" class="menu-item menu-item-type-post_type menu-item-object-litigation menu-item-911"><a href="https://www.pcllawyersfrankston.com.au/if-you-owe-money/">If You Owe Money</a></li>
+		<li id="menu-item-912" class="menu-item menu-item-type-post_type menu-item-object-litigation menu-item-912"><a href="https://www.pcllawyersfrankston.com.au/if-you-are-owed-money/">If You Are Owed Money</a></li>
+	</ul>
+<span class="toggle-submenu"></span></li>
+	<li id="menu-item-913" class="menu-item menu-item-type-post_type menu-item-object-litigation menu-item-913"><a href="https://www.pcllawyersfrankston.com.au/insolvency-and-liquidation/">Insolvency And Liquidation</a></li>
+	<li id="menu-item-914" class="menu-item menu-item-type-post_type menu-item-object-litigation menu-item-914"><a href="https://www.pcllawyersfrankston.com.au/tax-office-ato-litigation/">Tax Office (ATO) Litigation</a></li>
+	<li id="menu-item-915" class="menu-item menu-item-type-post_type menu-item-object-litigation menu-item-915"><a href="https://www.pcllawyersfrankston.com.au/shareholder-disputes/">Shareholder Disputes</a></li>
+	<li id="menu-item-916" class="menu-item menu-item-type-post_type menu-item-object-litigation menu-item-916"><a href="https://www.pcllawyersfrankston.com.au/general-litigation/">General Litigation</a></li>
+	<li id="menu-item-917" class="menu-item menu-item-type-post_type menu-item-object-litigation menu-item-917"><a href="https://www.pcllawyersfrankston.com.au/how-we-work/">Why Are We Better Than a Debt Collection Agency?</a></li>
+</ul>
+<span class="toggle-submenu"></span></li>
+<li id="menu-item-812" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-812 parent has-sub"><a href="https://www.pcllawyersfrankston.com.au/personal-law/">Personal</a>
+<ul class="sub sub-menu"><li><button class="menu-back">Back</button></li>
+	<li id="menu-item-950" class="menu-item menu-item-type-post_type menu-item-object-practice-area menu-item-950"><a href="https://www.pcllawyersfrankston.com.au/probate/">Probate</a></li>
+	<li id="menu-item-813" class="menu-item menu-item-type-post_type menu-item-object-practice-area menu-item-813"><a href="https://www.pcllawyersfrankston.com.au/challenging-an-estate-tfm-claim/">Challenging an Estate (TFM Claim)</a></li>
+</ul>
+<span class="toggle-submenu"></span></li>
+<li id="menu-item-706" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-706"><a href="https://www.pcllawyersfrankston.com.au/contact/">Contact us</a></li>
+</ul>				</div>
+			</div>
+		</div>
+	</div>
+</header><section class="banner">
+		<div class="col-xl-12">
+		<div class="row">
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+				<div class="left_banner_img">
+					<img src="https://www.pcllawyersfrankston.com.au/wp-content/uploads/2020/10/960-x-600-Frankston-Banner.jpg" alt="Frankston Lawyers" title="Frankston Banner" width="960" height="600">
+				</div>
+			</div>
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+				<div class="right_banner_img">
+					<img src="https://www.pcllawyersfrankston.com.au/wp-content/uploads/2020/10/960-x-600-Frankston-Banner-1.jpg" alt="Frankston Lawyer with Clients" title="PCL Law Frankston" width="960" height="600">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+			<figcaption>
+							<span class="h1">Welcome to <span>PCL Lawyers</span> Frankston</span>
+							<p>We Service the Local Frankston Area and South Eastern Corridor.</p>
+							<a href="tel:1300907335" class="btn btn-default">CALL 1300 907 335</a>
+							<a href="https://www.pcllawyersfrankston.com.au/contact/" class="btn btn-primary">Enquire Now</a>
+						</figcaption>
+		</div>
+	</div>
+	</section>
+   
+     
+<section class="services">
+		<div class="container">               
+		<div class="title_1">
+					<h2>Legal Services</h2>
+					<p>We Have Expertise Across a Wide Range of Areas and an Experienced Legal Team to Help You Achieve Your Objectives.</p>
+				</div>
+	</div>
+		<div class="full-width">
+		<div class="large_container">
+			<div class="row">
+							<div class="col-12 col-xl-3 col-lg-6 col-md-6 col-sm-6">
+					<div class="service_box">
+						<div class="service_icon">
+							<a href="https://www.pcllawyersfrankston.com.au/commercial-law/" title="Business"><img src="https://www.pcllawyersfrankston.com.au/wp-content/uploads/2023/10/s-icon1.png" title="Business" alt="Business Icon" width="86" height="60" data-lazy-src="https://www.pcllawyersfrankston.com.au/wp-content/uploads/2023/10/s-icon1.png" class="lazyloading" data-ll-status="loading"><noscript><img src="https://www.pcllawyersfrankston.com.au/wp-content/uploads/2023/10/s-icon1.png" title="Business" alt="Business Icon" width="86" height="60"></noscript></a>
+						</div>
+						<div class="service_content">
+													<h2><a href="https://www.pcllawyersfrankston.com.au/commercial-law/">Business </a></h2>
+													<p>Our Firm is Dedicated to Delivering Real Value to Our Clients. We Are Committed to Providing Commercially Sound Solutions to Our Clients’ Legal Needs.</p>
+													</div>
+					</div>
+				</div>
+							<div class="col-12 col-xl-3 col-lg-6 col-md-6 col-sm-6">
+					<div class="service_box">
+						<div class="service_icon">
+							<a href="https://www.pcllawyersfrankston.com.au/property/" title="Property"><img src="https://www.pcllawyersfrankston.com.au/wp-content/uploads/2023/10/s-icon2.png" title="Property" alt="Property Icon" width="86" height="60" data-lazy-src="https://www.pcllawyersfrankston.com.au/wp-content/uploads/2023/10/s-icon2.png" class="lazyloading" data-ll-status="loading"><noscript><img src="https://www.pcllawyersfrankston.com.au/wp-content/uploads/2023/10/s-icon2.png" title="Property" alt="Property Icon" width="86" height="60"></noscript></a>
+						</div>
+						<div class="service_content">
+													<h2><a href="https://www.pcllawyersfrankston.com.au/property/">Property </a></h2>
+													<p>Our Firm is Dedicated to Delivering Real Value to Our Clients. We Are Committed to Providing Commercially Sound Solutions to Our Clients’ Legal Needs.</p>
+													</div>
+					</div>
+				</div>
+							<div class="col-12 col-xl-3 col-lg-6 col-md-6 col-sm-6">
+					<div class="service_box">
+						<div class="service_icon">
+							<a href="https://www.pcllawyersfrankston.com.au/disputes-litigation/" title="Disputes &amp; Litigation"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2086%2060'%3E%3C/svg%3E" title="Disputes - Litigation" alt="Disputes - Litigation Icon" width="86" height="60" data-lazy-src="https://www.pcllawyersfrankston.com.au/wp-content/uploads/2023/10/s-icon3.png"><noscript><img src="https://www.pcllawyersfrankston.com.au/wp-content/uploads/2023/10/s-icon3.png" title="Disputes - Litigation" alt="Disputes - Litigation Icon" width="86" height="60"></noscript></a>
+						</div>
+						<div class="service_content">
+													<h2><a href="https://www.pcllawyersfrankston.com.au/disputes-litigation/">Disputes &amp; Litigation </a></h2>
+													<p>Our Firm is Dedicated to Delivering Real Value to Our Clients. We Are Committed to Providing Commercially Sound Solutions to Our Clients’ Legal Needs.</p>
+													</div>
+					</div>
+				</div>
+							<div class="col-12 col-xl-3 col-lg-6 col-md-6 col-sm-6">
+					<div class="service_box">
+						<div class="service_icon">
+							<a href="https://www.pcllawyersfrankston.com.au/personal-law/" title="Personal"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2086%2060'%3E%3C/svg%3E" title="Personal" alt="Personal Icon" width="86" height="60" data-lazy-src="https://www.pcllawyersfrankston.com.au/wp-content/uploads/2023/10/s-icon4.png"><noscript><img src="https://www.pcllawyersfrankston.com.au/wp-content/uploads/2023/10/s-icon4.png" title="Personal" alt="Personal Icon" width="86" height="60"></noscript></a>
+						</div>
+						<div class="service_content">
+													<h2><a href="https://www.pcllawyersfrankston.com.au/personal-law/">Personal </a></h2>
+													<p>Our Firm is Dedicated to Delivering Real Value to Our Clients. We Are Committed to Providing Commercially Sound Solutions to Our Clients’ Legal Needs.</p>
+													</div>
+					</div>
+				</div>
+						</div>
+		</div>
+	</div>
+</section>
+<section class="about_section">
+	<div class="container">
+		<div class="row">
+					<div class="col-12 col-xl-6 col-lg-5 col-md-5 col-sm-5">
+				<div class="about_img"> 
+					<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Frankston Law Firm" title="Welcome to PCL Lawyers Frankston, your local lawyers." data-lazy-src="https://www.pcllawyersfrankston.com.au/wp-content/uploads/2021/10/388-x-415-Frankston-Home-page-image.jpg" width="300" height="150"><noscript><img src="https://www.pcllawyersfrankston.com.au/wp-content/uploads/2021/10/388-x-415-Frankston-Home-page-image.jpg" alt="Frankston Law Firm" title="Welcome to PCL Lawyers Frankston, your local lawyers."></noscript>
+				</div>
+			</div>
+					<div class="col-12 col-xl-6 col-lg-7 col-md-7 col-sm-7">
+				<div class="about_content"> 
+									<div class="title_1 text-left">
+						<h1>Welcome to PCL Lawyers Frankston, your local lawyers.</h1> 
+					</div>
+									<p>We service the local Frankston area and south eastern corridor.</p>
+<p>Our firm is dedicated to delivering real value to our clients. We are committed to providing commercially sound solutions to our clients’ legal needs.</p>
+<p>We have expertise across a wide range of areas and an experienced legal team to help you achieve your objectives.</p>
+<p>If you are looking for a lawyer who will seek to understand your needs, contact us today.</p>
+									<a href="https://www.pcllawyersfrankston.com.au/" class="btn btn-default">Read More</a>
+								</div>
+			</div>
+				</div>
+	</div>
+</section>
+<section class="testimonials">
+	<div class="container">
+			<div class="title_1">
+			<h2>Client Testimonials</h2>
+		</div>
+			<div class="swiper_main_slide">
+			<div class="testimonials_slider">
+				<div class="swiper-wrapper">
+										<div class="swiper-slide">
+						<div class="testi_box">
+							<p>Excellent Service. PCL did a great job advising me about my rights and protecting my name and business goodwill. I can absolutely recommend this very professional service.</p>
+							<h2>Branden L, Ravenhall</h2>
+						</div>
+					</div>
+										<div class="swiper-slide">
+						<div class="testi_box">
+							<p>If I had of gone to another law firm that was cheaper I may have saved many thousands of dollars but as it turns out I may have lost a lot more than that upon settlement. Using a firm such as PCL lawyers I had the peace of mind that each issue as it arose was dealt with in a very matter of fact way and to the letter of the law.</p>
+							<h2>Brett Wilson/Glen Waverley</h2>
+						</div>
+					</div>
+										<div class="swiper-slide">
+						<div class="testi_box">
+							<p>I appreciate your time and effort and thank you for your prompt response and professionalism. I would not hesitate to use your services again and refer PCL Lawyers to others.</p>
+							<h2>Lisa G/Bentleigh</h2>
+						</div>
+					</div>
+										<div class="swiper-slide">
+						<div class="testi_box">
+							<p>Thank you so much for your assistance. Should I ever have the chance to recommend you I will do so.</p>
+							<h2>Morgan S/ Australia</h2>
+						</div>
+					</div>
+										<div class="swiper-slide">
+						<div class="testi_box">
+							<p>Out of speaking to two other lawyers you were the only one to give me any genuine advice.</p>
+							<h2>Tiffany J/ Australia</h2>
+						</div>
+					</div>
+									</div>
+			</div>
+		<!-- Add Arrows -->
+			<div class="arrow_main">
+				<div class="testimonials-swiper-button-prev swiper-button-prev"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 41" width="23" height="41"><path d="M2.25 22.62L0.1 20.5L20.85 0L23 2.12L2.25 22.62ZM20.85 41L0.1 20.5L2.25 18.38L23 38.88L20.85 41Z"></path></svg></div>
+				<div class="testimonials-swiper-button-next swiper-button-next"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 43" width="24" height="43"><path d="M20.88 19.38L23.01 21.5L2.5 42.01L0.38 39.88L20.88 19.38ZM2.5 0.99L23.01 21.5L20.88 23.62L0.38 3.11L2.5 0.99Z"></path></svg></div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="contact_section">
+	<div class="container">
+		<div class="full-width">
+			<div class="row">
+						<div class="col-xl-5 col-lg-6 col-md-6 col-sm-12">
+				<div class="contact_form">
+									<div class="title_1 text-left">
+						<h2>Contact a Lawyer</h2>
+					</div>
+				<script type="rocketlazyloadscript" data-rocket-type="text/javascript"></script>
+                <div class="gf_browser_unknown gform_wrapper gravity-theme gform-theme--no-framework" data-form-theme="gravity-theme" data-form-index="0" id="gform_wrapper_2">
+                        <div class="gform_heading">
+                            <h2 class="gform_title">Enquiry Form</h2>
+                            <p class="gform_description"></p>
+							<p class="gform_required_legend">"<span class="gfield_required gfield_required_asterisk">*</span>" indicates required fields</p>
+                        </div><form method="post" enctype="multipart/form-data" id="gform_2" action="/" data-formid="2" novalidate="">
+                        <div class="gform-body gform_body"><div id="gform_fields_2" class="gform_fields top_label form_sublabel_below description_below validation_below"><fieldset id="field_2_1" class="gfield gfield--type-name gfield_contains_required field_sublabel_hidden_label gfield--no-description field_description_below hidden_label field_validation_below gfield_visibility_visible" data-js-reload="field_2_1"><legend class="gfield_label gform-field-label gfield_label_before_complex">Name<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></legend><div class="ginput_complex ginput_container ginput_container--name no_prefix has_first_name no_middle_name has_last_name no_suffix gf_name_has_2 ginput_container_name gform-grid-row" id="input_2_1">
+                            
+                            <span id="input_2_1_3_container" class="name_first gform-grid-col gform-grid-col--size-auto">
+                                                    <input type="text" name="input_1.3" id="input_2_1_3" value="" aria-required="true" placeholder="First Name*">
+                                                    <label for="input_2_1_3" class="gform-field-label gform-field-label--type-sub hidden_sub_label screen-reader-text">First</label>
+                                                </span>
+                            
+                            <span id="input_2_1_6_container" class="name_last gform-grid-col gform-grid-col--size-auto">
+                                                    <input type="text" name="input_1.6" id="input_2_1_6" value="" aria-required="true" placeholder="Last Name*">
+                                                    <label for="input_2_1_6" class="gform-field-label gform-field-label--type-sub hidden_sub_label screen-reader-text">Last</label>
+                                                </span>
+                            
+                        </div></fieldset><div id="field_2_3" class="gfield gfield--type-email gfield--width-full gfield_contains_required field_sublabel_below gfield--no-description field_description_below hidden_label field_validation_below gfield_visibility_visible" data-js-reload="field_2_3"><label class="gfield_label gform-field-label" for="input_2_3">Email<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_email">
+                            <input name="input_3" id="input_2_3" type="email" value="" class="large" placeholder="Email*" aria-required="true" aria-invalid="false">
+                        </div></div><div id="field_2_2" class="gfield gfield--type-phone gfield--width-full gfield_contains_required field_sublabel_below gfield--no-description field_description_below hidden_label field_validation_below gfield_visibility_visible" data-js-reload="field_2_2"><label class="gfield_label gform-field-label" for="input_2_2">Phone<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_phone"><input name="input_2" id="input_2_2" type="tel" value="" class="large" placeholder="Phone*" aria-required="true" aria-invalid="false"></div></div><div id="field_2_5" class="gfield gfield--type-textarea gfield--width-full field_sublabel_below gfield--no-description field_description_below hidden_label field_validation_below gfield_visibility_visible" data-js-reload="field_2_5"><label class="gfield_label gform-field-label" for="input_2_5">Message</label><div class="ginput_container ginput_container_textarea"><textarea name="input_5" id="input_2_5" class="textarea large" placeholder="Message" aria-invalid="false" rows="10" cols="50"></textarea></div></div><div id="field_2_6" class="gfield gfield--type-honeypot gform_validation_container field_sublabel_below gfield--has-description field_description_below field_validation_below gfield_visibility_visible" data-js-reload="field_2_6"><label class="gfield_label gform-field-label" for="input_2_6">Email</label><div class="ginput_container"><input name="input_6" id="input_2_6" type="text" value="" autocomplete="new-password"></div><div class="gfield_description" id="gfield_description_2_6">This field is for validation purposes and should be left unchanged.</div></div></div></div>
+        <div class="gform-footer gform_footer top_label"> <input type="submit" id="gform_submit_button_2" class="gform_button button" onclick="gform.submission.handleButtonClick(this);" value="Submit"> 
+            <input type="hidden" class="gform_hidden" name="gform_submission_method" data-js="gform_submission_method_2" value="postback">
+            <input type="hidden" class="gform_hidden" name="gform_theme" data-js="gform_theme_2" id="gform_theme_2" value="gravity-theme">
+            <input type="hidden" class="gform_hidden" name="gform_style_settings" data-js="gform_style_settings_2" id="gform_style_settings_2" value="[]">
+            <input type="hidden" class="gform_hidden" name="is_submit_2" value="1">
+            <input type="hidden" class="gform_hidden" name="gform_submit" value="2">
+            
+            <input type="hidden" class="gform_hidden" name="gform_unique_id" value="">
+            <input type="hidden" class="gform_hidden" name="state_2" value="WyJbXSIsIjU3ZWViYzEzMGVmOWMzN2Q2YzcwMTM3OTc3NGNhZGNlIl0=">
+            <input type="hidden" autocomplete="off" class="gform_hidden" name="gform_target_page_number_2" id="gform_target_page_number_2" value="0">
+            <input type="hidden" autocomplete="off" class="gform_hidden" name="gform_source_page_number_2" id="gform_source_page_number_2" value="1">
+            <input type="hidden" name="gform_field_values" value="">
+            
+        </div>
+                        </form>
+                        </div><script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+/* <![CDATA[ */
+ gform.initializeOnLoaded( function() {gformInitSpinner( 2, 'https://www.pcllawyersfrankston.com.au/wp-content/plugins/gravityforms/images/spinner.svg', true );jQuery('#gform_ajax_frame_2').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_2');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_2').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_2').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_2').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_2').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */  }, 50 );if(window['gformInitDatepicker']) {gformInitDatepicker();}if(window['gformInitPriceFields']) {gformInitPriceFields();}var current_page = jQuery('#gform_source_page_number_2').val();gformInitSpinner( 2, 'https://www.pcllawyersfrankston.com.au/wp-content/plugins/gravityforms/images/spinner.svg', true );jQuery(document).trigger('gform_page_loaded', [2, current_page]);window['gf_submitting_2'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}jQuery('#gform_wrapper_2').replaceWith(confirmation_content);jQuery(document).trigger('gform_confirmation_loaded', [2]);window['gf_submitting_2'] = false;wp.a11y.speak(jQuery('#gform_confirmation_message_2').text());}else{jQuery('#gform_2').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger("gform_pre_post_render", [{ formId: "2", currentPage: "current_page", abort: function() { this.preventDefault(); } }]);                if (event && event.defaultPrevented) {                return;         }        const gformWrapperDiv = document.getElementById( "gform_wrapper_2" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_2";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_2" );        let postRenderFired = false;                function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            jQuery( document ).trigger( 'gform_post_render', [2, current_page] );            gform.utils.trigger( { event: 'gform/postRender', native: false, data: { formId: 2, currentPage: current_page } } );            gform.utils.trigger( { event: 'gform/post_render', native: false, data: { formId: 2, currentPage: current_page } } );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } );} ); 
+/* ]]> */
+</script>
+				</div>
+			</div>
+							<div class="col-xl-7 col-lg-6 col-md-6 col-sm-12">
+					<!-- <div class="contact_img">
+						<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://www.pcllawyersfrankston.com.au/wp-content/uploads/2020/10/contact_img.png"><noscript><img src="https://www.pcllawyersfrankston.com.au/wp-content/uploads/2020/10/contact_img.png"></noscript>
+					</div> -->
+
+<div class="enq-right-side">
+
+<p><b class="wy"> Concise </b> Legal Advice.</p>
+
+<p><b class="wy"> Commercial </b> Understanding.</p>
+<p class="last-data">Our law firm has been helping SMEs and Individuals with their legal needs for many years and we can help you too.</p>
+
+</div>
+
+
+
+				</div>
+						</div>
+		</div>
+	</div>
+</section>
+<!-- <section class="location">
+<div class="container">
+<div class="title_1">
+<h2>Our Locations</h2>
+</div>
+<div class="full-width">
+<div class="row justify-content-center">
+<div class="col-6 col-xl-3 col-lg-3 col-md-3 col-sm-4">
+<div class="location_box">
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"width="413.099px" height="413.099px" viewBox="0 0 413.099 413.099" style="enable-background:new 0 0 413.099 413.099;"xml:space="preserve"> <g> <g> <path d="M206.549,0L206.549,0c-82.6,0-149.3,66.7-149.3,149.3c0,28.8,9.2,56.3,22,78.899l97.3,168.399c6.1,11,18.4,16.5,30,16.5 c11.601,0,23.3-5.5,30-16.5l97.3-168.299c12.9-22.601,22-49.601,22-78.901C355.849,66.8,289.149,0,206.549,0z M206.549,193.4 c-30,0-54.5-24.5-54.5-54.5s24.5-54.5,54.5-54.5s54.5,24.5,54.5,54.5C261.049,169,236.549,193.4,206.549,193.4z"/> </g> </g> </svg>
+
+<h2>Melbourne CBD</h2>
+<p>Level 14, 90 Collins Street Melbourne VIC 3000</p>
+</div>
+</div>
+<div class="col-6 col-xl-3 col-lg-3 col-md-3 col-sm-4">
+<div class="location_box">
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"width="413.099px" height="413.099px" viewBox="0 0 413.099 413.099" style="enable-background:new 0 0 413.099 413.099;"xml:space="preserve"> <g> <g> <path d="M206.549,0L206.549,0c-82.6,0-149.3,66.7-149.3,149.3c0,28.8,9.2,56.3,22,78.899l97.3,168.399c6.1,11,18.4,16.5,30,16.5 c11.601,0,23.3-5.5,30-16.5l97.3-168.299c12.9-22.601,22-49.601,22-78.901C355.849,66.8,289.149,0,206.549,0z M206.549,193.4 c-30,0-54.5-24.5-54.5-54.5s24.5-54.5,54.5-54.5s54.5,24.5,54.5,54.5C261.049,169,236.549,193.4,206.549,193.4z"/> </g> </g> </svg>
+
+<h2>Chadstone</h2>
+<p>Level 2 (UL40), 1341 Dandenong Road, <br />
+Chadstone VIC 3148</p>
+</div>
+</div>
+<div class="col-6 col-xl-3 col-lg-3 col-md-3 col-sm-4">
+<div class="location_box">
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"width="413.099px" height="413.099px" viewBox="0 0 413.099 413.099" style="enable-background:new 0 0 413.099 413.099;"xml:space="preserve"> <g> <g> <path d="M206.549,0L206.549,0c-82.6,0-149.3,66.7-149.3,149.3c0,28.8,9.2,56.3,22,78.899l97.3,168.399c6.1,11,18.4,16.5,30,16.5 c11.601,0,23.3-5.5,30-16.5l97.3-168.299c12.9-22.601,22-49.601,22-78.901C355.849,66.8,289.149,0,206.549,0z M206.549,193.4 c-30,0-54.5-24.5-54.5-54.5s24.5-54.5,54.5-54.5s54.5,24.5,54.5,54.5C261.049,169,236.549,193.4,206.549,193.4z"/> </g> </g> </svg>
+
+<h2>Dandenong</h2>
+<p>Level 10, 14 Mason Street,<br />
+Dandenong VIC 3175</p>
+</div>
+</div>
+<div class="col-6 col-xl-3 col-lg-3 col-md-3 col-sm-4">
+<div class="location_box">
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"width="413.099px" height="413.099px" viewBox="0 0 413.099 413.099" style="enable-background:new 0 0 413.099 413.099;"xml:space="preserve"> <g> <g> <path d="M206.549,0L206.549,0c-82.6,0-149.3,66.7-149.3,149.3c0,28.8,9.2,56.3,22,78.899l97.3,168.399c6.1,11,18.4,16.5,30,16.5 c11.601,0,23.3-5.5,30-16.5l97.3-168.299c12.9-22.601,22-49.601,22-78.901C355.849,66.8,289.149,0,206.549,0z M206.549,193.4 c-30,0-54.5-24.5-54.5-54.5s24.5-54.5,54.5-54.5s54.5,24.5,54.5,54.5C261.049,169,236.549,193.4,206.549,193.4z"/> </g> </g> </svg>
+
+<h2>Frankston</h2>
+<p>Ground Flr, 435 Nepean Hwy,<br />
+Frankston Vic 3199</p>
+</div>
+</div>
+<div class="col-6 col-xl-3 col-lg-3 col-md-3 col-sm-4">
+<div class="location_box">
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"width="413.099px" height="413.099px" viewBox="0 0 413.099 413.099" style="enable-background:new 0 0 413.099 413.099;"xml:space="preserve"> <g> <g> <path d="M206.549,0L206.549,0c-82.6,0-149.3,66.7-149.3,149.3c0,28.8,9.2,56.3,22,78.899l97.3,168.399c6.1,11,18.4,16.5,30,16.5 c11.601,0,23.3-5.5,30-16.5l97.3-168.299c12.9-22.601,22-49.601,22-78.901C355.849,66.8,289.149,0,206.549,0z M206.549,193.4 c-30,0-54.5-24.5-54.5-54.5s24.5-54.5,54.5-54.5s54.5,24.5,54.5,54.5C261.049,169,236.549,193.4,206.549,193.4z"/> </g> </g> </svg>
+
+<h2>Moorabbin</h2>
+<p>Level 1, 441 South Road<br />
+Moorabbin Vic 3189</p>
+</div>
+</div>
+<div class="col-6 col-xl-3 col-lg-3 col-md-3 col-sm-4">
+<div class="location_box">
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"width="413.099px" height="413.099px" viewBox="0 0 413.099 413.099" style="enable-background:new 0 0 413.099 413.099;"xml:space="preserve"> <g> <g> <path d="M206.549,0L206.549,0c-82.6,0-149.3,66.7-149.3,149.3c0,28.8,9.2,56.3,22,78.899l97.3,168.399c6.1,11,18.4,16.5,30,16.5 c11.601,0,23.3-5.5,30-16.5l97.3-168.299c12.9-22.601,22-49.601,22-78.901C355.849,66.8,289.149,0,206.549,0z M206.549,193.4 c-30,0-54.5-24.5-54.5-54.5s24.5-54.5,54.5-54.5s54.5,24.5,54.5,54.5C261.049,169,236.549,193.4,206.549,193.4z"/> </g> </g> </svg>
+
+<h2>Preston</h2>
+<p>Ground Flr, 84 Hotham St,<br />
+Preston Vic 3072</p>
+</div>
+</div>
+<div class="col-6 col-xl-3 col-lg-3 col-md-3 col-sm-4">
+<div class="location_box">
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"width="413.099px" height="413.099px" viewBox="0 0 413.099 413.099" style="enable-background:new 0 0 413.099 413.099;"xml:space="preserve"> <g> <g> <path d="M206.549,0L206.549,0c-82.6,0-149.3,66.7-149.3,149.3c0,28.8,9.2,56.3,22,78.899l97.3,168.399c6.1,11,18.4,16.5,30,16.5 c11.601,0,23.3-5.5,30-16.5l97.3-168.299c12.9-22.601,22-49.601,22-78.901C355.849,66.8,289.149,0,206.549,0z M206.549,193.4 c-30,0-54.5-24.5-54.5-54.5s24.5-54.5,54.5-54.5s54.5,24.5,54.5,54.5C261.049,169,236.549,193.4,206.549,193.4z"/> </g> </g> </svg>
+
+<h2>Sunshine</h2>
+<p>Level 5, 12 Clarke Street<br />
+Sunshine Vic 3020</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section> -->
+
+
+
+<section class="inner_page">
+    <div class="container">
+            <div class="row">
+
+<div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+<div class="ofc-locate-bx">
+<h2>Office Locations</h2>
+
+<div class="first-locate-bx">
+<h3> <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="413.099px" height="413.099px" viewBox="0 0 413.099 413.099" style="enable-background:new 0 0 413.099 413.099;" xml:space="preserve"> <g> <g> <path d="M206.549,0L206.549,0c-82.6,0-149.3,66.7-149.3,149.3c0,28.8,9.2,56.3,22,78.899l97.3,168.399c6.1,11,18.4,16.5,30,16.5 c11.601,0,23.3-5.5,30-16.5l97.3-168.299c12.9-22.601,22-49.601,22-78.901C355.849,66.8,289.149,0,206.549,0z M206.549,193.4 c-30,0-54.5-24.5-54.5-54.5s24.5-54.5,54.5-54.5s54.5,24.5,54.5,54.5C261.049,169,236.549,193.4,206.549,193.4z"></path> </g> </g> </svg> Frankston</h3>
+<p>Ground Flr, 435 Nepean Hwy,
+Frankston Vic 3199</p>
+</div>
+
+<ul>
+    <li> <h4>Melbourne CBD</h4>
+        <p>Level 14, 90 Collins Street, Melbourne VIC 3000</p>
+    </li>
+<li>
+    <h4>Chadstone</h4>
+    <p>Level 2 (UL40), 1341 Dandenong Road, Chadstone VIC 3148</p>
+
+</li>
+
+<li>
+    <h4>Dandenong</h4>
+    <p>Level 10, 14 Mason Street, Dandenong VIC 3175</p>
+</li>
+
+<li>
+    <h4>Moorabbin</h4>
+    <p>Level 1, 441 South Road, Moorabbin Vic 3189</p>
+</li>
+
+<li>
+    <h4>Preston</h4>
+    <p>Ground Flr, 84 Hotham St, Preston Vic 3072</p>
+</li>
+
+<li>
+    <h4>Sunshine</h4>
+    <p>Level 5, 12 Clarke Street, Sunshine Vic 3020</p>
+</li>
+
+</ul>
+
+
+
+</div>
+</div>
+
+    <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12 inner-page-map">
+        <iframe loading="lazy" src="about:blank" title="PCL Lawyers Frankston Office Map" width="100%" height="480" data-rocket-lazyload="fitvidscompatible" data-lazy-src="https://www.google.com/maps/d/embed?mid=1mUpMK0sRajxr-zDT0wT7FuFxvg0f6Q77"></iframe><noscript><iframe src="https://www.google.com/maps/d/embed?mid=1mUpMK0sRajxr-zDT0wT7FuFxvg0f6Q77" title="PCL Lawyers Frankston Office Map" width="100%" height="480"></iframe></noscript>
+    </div>
+
+</div>
+</div>
+</section>
+
+
+
+
+
+<footer class="footer">
+<div class="container">
+<div class="footer_links">
+<div class="row">
+<div class="col">
+<div class="footer_links_box mobile-accordion">
+<h5 class="title"><span></span>Links</h5>
+<ul id="menu-footer-menu" class="list-style-none mobile-accordion-toggle"><li id="menu-item-756" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-19 current_page_item menu-item-756 selected  selected "><a href="https://www.pcllawyersfrankston.com.au/" aria-current="page">Home</a></li>
+<li id="menu-item-758" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-758"><a href="https://www.pcllawyersfrankston.com.au/commercial-law/">Business</a></li>
+<li id="menu-item-828" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-828"><a href="https://www.pcllawyersfrankston.com.au/property/">Property</a></li>
+<li id="menu-item-830" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-830"><a href="https://www.pcllawyersfrankston.com.au/disputes-litigation/">Disputes &amp; Litigation</a></li>
+<li id="menu-item-827" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-827"><a href="https://www.pcllawyersfrankston.com.au/personal-law/">Personal</a></li>
+<li id="menu-item-759" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-759"><a href="https://www.pcllawyersfrankston.com.au/contact/">Contact us</a></li>
+<li id="menu-item-990" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-990"><a href="https://www.pcllawyersfrankston.com.au/careers/">Careers</a></li>
+</ul></div>
+</div>
+<div class="col">
+<div class="footer_links_box mobile-accordion">
+<h5 class="title"><span></span>Business</h5>
+<ul id="menu-business-menu" class="list-style-none mobile-accordion-toggle"><li id="menu-item-835" class="menu-item menu-item-type-post_type menu-item-object-practice-area menu-item-835"><a href="https://www.pcllawyersfrankston.com.au/buying-a-business/">Buying A Business</a></li>
+<li id="menu-item-836" class="menu-item menu-item-type-post_type menu-item-object-practice-area menu-item-836"><a href="https://www.pcllawyersfrankston.com.au/selling-a-business/">Selling A Business</a></li>
+<li id="menu-item-834" class="menu-item menu-item-type-post_type menu-item-object-practice-area menu-item-834"><a href="https://www.pcllawyersfrankston.com.au/franchise/">Franchising Lawyers</a></li>
+<li id="menu-item-833" class="menu-item menu-item-type-post_type menu-item-object-practice-area menu-item-833"><a href="https://www.pcllawyersfrankston.com.au/debt-recovery/">Debt Recovery</a></li>
+<li id="menu-item-832" class="menu-item menu-item-type-post_type menu-item-object-practice-area menu-item-832"><a href="https://www.pcllawyersfrankston.com.au/contracts/">Contracts Lawyers</a></li>
+<li id="menu-item-997" class="menu-item menu-item-type-post_type menu-item-object-practice-area menu-item-997"><a href="https://www.pcllawyersfrankston.com.au/commercial-litigation/">Commercial Litigation</a></li>
+</ul></div>
+</div>
+<div class="col">
+<div class="footer_links_box mobile-accordion follow_us">
+<h5 class="title"><span></span>Property</h5>
+<ul id="menu-property-menu" class="list-style-none mobile-accordion-toggle"><li id="menu-item-748" class="menu-item menu-item-type-post_type menu-item-object-practice-area menu-item-748"><a href="https://www.pcllawyersfrankston.com.au/conveyancing/">Conveyancing Lawyers</a></li>
+<li id="menu-item-749" class="menu-item menu-item-type-post_type menu-item-object-practice-area menu-item-749"><a href="https://www.pcllawyersfrankston.com.au/commercial-leasing/">Commercial Leasing</a></li>
+</ul></div>
+</div>
+<div class="col">
+<div class="footer_links_box mobile-accordion our_client">
+<h5 class="title"><span></span>Personal</h5>
+<ul id="menu-personal-menu" class="list-style-none mobile-accordion-toggle"><li id="menu-item-751" class="menu-item menu-item-type-post_type menu-item-object-practice-area menu-item-751"><a href="https://www.pcllawyersfrankston.com.au/probate/">Probate</a></li>
+<li id="menu-item-753" class="menu-item menu-item-type-post_type menu-item-object-practice-area menu-item-753"><a href="https://www.pcllawyersfrankston.com.au/challenging-an-estate-tfm-claim/">Challenging an Estate (TFM Claim)</a></li>
+</ul></div>
+</div>
+<div class="col">
+<div class="footer_links_box mobile-accordion our_client">
+<h5 class="title"><span></span>Contact</h5>
+<ul class="list-style-none mobile-accordion-toggle">
+<li><p>Ground Floor,<br> 435 Nepean Highway<br> Frankston Vic 3199</p></li>
+<li><span>Phone</span> - <a href="tel:1300907335">1300 907 335</a></li>
+<li><span>Fax</span> - 03 8648 5710</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="f-nav">
+    
+    
+    <ul id="menu-footer-horizontal-menu" class="list-style-none mobile-accordion-toggle"><li id="menu-item-1006" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1006"><a href="https://www.pcllawyersfrankston.com.au/copyright/">Copyright</a></li>
+<li id="menu-item-1008" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1008"><a href="https://www.pcllawyersfrankston.com.au/disclaimer/">Disclaimer</a></li>
+<li id="menu-item-1011" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-1011"><a rel="privacy-policy" href="https://www.pcllawyersfrankston.com.au/privacy-policy/">Privacy Policy</a></li>
+</ul>
+			
+			</div>
+
+
+
+
+
+
+
+<div class="copyright">
+<div class="container">
+<p>© 2025 PCL Lawyers Frankston, All Rights Reserved.</p>
+</div>
+</div>
+</footer>
+<button class="scroll-top" title="Move to top">Top</button>
+<link rel="stylesheet" id="gform_basic-css" href="https://www.pcllawyersfrankston.com.au/wp-content/plugins/gravityforms/assets/css/dist/basic.min.css?ver=2.9.4" type="text/css" media="all">
+<link rel="stylesheet" id="gform_theme_components-css" href="https://www.pcllawyersfrankston.com.au/wp-content/plugins/gravityforms/assets/css/dist/theme-components.min.css?ver=2.9.4" type="text/css" media="all">
+<link rel="stylesheet" id="gform_theme-css" href="https://www.pcllawyersfrankston.com.au/wp-content/plugins/gravityforms/assets/css/dist/theme.min.css?ver=2.9.4" type="text/css" media="all">
+<script type="text/javascript" id="analyticswp-js-extra">
+/* <![CDATA[ */
+var analyticswp_vars = {"ajaxurl":"https:\/\/www.pcllawyersfrankston.com.au\/wp-admin\/admin-ajax.php","nonce":"a851a83e58"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://www.pcllawyersfrankston.com.au/wp-content/plugins/analyticswp/Lib/../Lib/analyticswp.min.js?ver=2.0.0" id="analyticswp-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-browser-checker-js-after">
+/* <![CDATA[ */
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+/* ]]> */
+</script>
+<script type="text/javascript" id="rocket-preload-links-js-extra">
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(.+\/)?feed\/?.+\/?|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/wp-admin\/|\/logout\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|php|pdf|html|htm","siteUrl":"https:\/\/www.pcllawyersfrankston.com.au","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-preload-links-js-after">
+/* <![CDATA[ */
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://www.pcllawyersfrankston.com.au/wp-includes/js/dist/dom-ready.min.js?ver=f77871ff7694fffea381" id="wp-dom-ready-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://www.pcllawyersfrankston.com.au/wp-includes/js/dist/hooks.min.js?ver=4d63a3d491d11ffd8ac6" id="wp-hooks-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://www.pcllawyersfrankston.com.au/wp-includes/js/dist/i18n.min.js?ver=5e580eb46a90c2b997e6" id="wp-i18n-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="wp-i18n-js-after">
+/* <![CDATA[ */
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://www.pcllawyersfrankston.com.au/wp-includes/js/dist/a11y.min.js?ver=3156534cc54473497e14" id="wp-a11y-js"></script>
+<script type="text/javascript" src="https://www.pcllawyersfrankston.com.au/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script type="text/javascript" src="https://www.pcllawyersfrankston.com.au/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" defer="defer" src="https://www.pcllawyersfrankston.com.au/wp-content/plugins/gravityforms/js/jquery.json.min.js?ver=2.9.4" id="gform_json-js"></script>
+<script type="text/javascript" id="gform_gravityforms-js-extra">
+/* <![CDATA[ */
+var gform_i18n = {"datepicker":{"days":{"monday":"Mo","tuesday":"Tu","wednesday":"We","thursday":"Th","friday":"Fr","saturday":"Sa","sunday":"Su"},"months":{"january":"January","february":"February","march":"March","april":"April","may":"May","june":"June","july":"July","august":"August","september":"September","october":"October","november":"November","december":"December"},"firstDay":1,"iconText":"Select date"}};
+var gf_legacy_multi = [];
+var gform_gravityforms = {"strings":{"invalid_file_extension":"This type of file is not allowed. Must be one of the following:","delete_file":"Delete this file","in_progress":"in progress","file_exceeds_limit":"File exceeds size limit","illegal_extension":"This type of file is not allowed.","max_reached":"Maximum number of files reached","unknown_error":"There was a problem while saving the file on the server","currently_uploading":"Please wait for the uploading to complete","cancel":"Cancel","cancel_upload":"Cancel this upload","cancelled":"Cancelled"},"vars":{"images_url":"https:\/\/www.pcllawyersfrankston.com.au\/wp-content\/plugins\/gravityforms\/images"}};
+var gf_global = {"gf_currency_config":{"name":"Australian Dollar","symbol_left":"$","symbol_right":"","symbol_padding":" ","thousand_separator":",","decimal_separator":".","decimals":2,"code":"AUD"},"base_url":"https:\/\/www.pcllawyersfrankston.com.au\/wp-content\/plugins\/gravityforms","number_formats":[],"spinnerUrl":"https:\/\/www.pcllawyersfrankston.com.au\/wp-content\/plugins\/gravityforms\/images\/spinner.svg","version_hash":"a34ed8d11e867da77e2ce847bb6010a0","strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" defer="defer" src="https://www.pcllawyersfrankston.com.au/wp-content/plugins/gravityforms/js/gravityforms.min.js?ver=2.9.4" id="gform_gravityforms-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" defer="defer" src="https://www.pcllawyersfrankston.com.au/wp-content/plugins/gravityforms/js/placeholders.jquery.min.js?ver=2.9.4" id="gform_placeholder-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" defer="defer" src="https://www.pcllawyersfrankston.com.au/wp-content/plugins/gravityforms/assets/js/dist/utils.min.js?ver=501a987060f4426fb517400c73c7fc1e" id="gform_gravityforms_utils-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" defer="defer" src="https://www.pcllawyersfrankston.com.au/wp-content/plugins/gravityforms/assets/js/dist/vendor-theme.min.js?ver=639b4ac21c17c9dc304b05db4a3d3293" id="gform_gravityforms_theme_vendors-js"></script>
+<script type="text/javascript" id="gform_gravityforms_theme-js-extra">
+/* <![CDATA[ */
+var gform_theme_config = {"common":{"form":{"honeypot":{"version_hash":"a34ed8d11e867da77e2ce847bb6010a0"},"ajax":{"ajaxurl":"https:\/\/www.pcllawyersfrankston.com.au\/wp-admin\/admin-ajax.php","ajax_submission_nonce":"ceee865428","i18n":{"step_announcement":"Step %1$s of %2$s, %3$s","unknown_error":"There was an unknown error processing your request. Please try again."}}}},"hmr_dev":"","public_path":"https:\/\/www.pcllawyersfrankston.com.au\/wp-content\/plugins\/gravityforms\/assets\/js\/dist\/","config_nonce":"edd3b33104"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" defer="defer" src="https://www.pcllawyersfrankston.com.au/wp-content/plugins/gravityforms/assets/js/dist/scripts-theme.min.js?ver=dc91b64a15c979eb9acace3fe2754b5f" id="gform_gravityforms_theme-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+/* <![CDATA[ */
+ gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 2) {if(typeof Placeholders != 'undefined'){
+                        Placeholders.enable();
+                    }				gform.utils.addAsyncFilter('gform/submission/pre_submission', async (data) => {
+				    const input = document.createElement('input');
+				    input.type = 'hidden';
+				    input.name = 'gf_zero_spam_key';
+				    input.value = '8s7YCiXLxs5yrnGEGzKqwrNxct890lmO6rUNojLvdxdoAIlEXvRh5fcEempQa4Ld';
+				    input.setAttribute('autocomplete', 'new-password');
+				    data.form.appendChild(input);
+				
+				    return data;
+				});} } );jQuery(document).on('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } ); 
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+/* <![CDATA[ */
+ gform.initializeOnLoaded( function() {jQuery(document).trigger("gform_pre_post_render", [{ formId: "2", currentPage: "1", abort: function() { this.preventDefault(); } }]);                if (event && event.defaultPrevented) {                return;         }        const gformWrapperDiv = document.getElementById( "gform_wrapper_2" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_2";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_2" );        let postRenderFired = false;                function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            jQuery( document ).trigger( 'gform_post_render', [2, 1] );            gform.utils.trigger( { event: 'gform/postRender', native: false, data: { formId: 2, currentPage: 1 } } );            gform.utils.trigger( { event: 'gform/post_render', native: false, data: { formId: 2, currentPage: 1 } } );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } ); 
+/* ]]> */
+</script>
+<script>window.lazyLoadOptions={elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async="" src="https://www.pcllawyersfrankston.com.au/wp-content/plugins/wp-rocket/assets/js/lazyload/16.1/lazyload.min.js"></script><script src="https://www.pcllawyersfrankston.com.au/wp-content/themes/lawyer-theme/assets/js/jquery-2.2.4.min.js"></script>
+<script src="https://www.pcllawyersfrankston.com.au/wp-content/themes/lawyer-theme/assets/js/bootstrap.min.js"></script>
+<script src="https://www.pcllawyersfrankston.com.au/wp-content/themes/lawyer-theme/assets/js/jquery.validate.min.js"></script>
+<script src="https://www.pcllawyersfrankston.com.au/wp-content/themes/lawyer-theme/assets/js/swiper.min.js"></script>
+<script src="https://www.pcllawyersfrankston.com.au/wp-content/themes/lawyer-theme/assets/js/jquery.js"></script>
+<script src="https://www.pcllawyersfrankston.com.au/wp-content/themes/lawyer-theme/assets/js/custom.js"></script>
+</div>
+
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">jQuery('a[href^="tel"]').click(function()
+   {
+    gtag('event', 'Call', {'event_category' : 'Click to Call', 'event_label': location.href});
+   }
+);
+jQuery('a[href^="mailto"]').click(function()
+   {
+  gtag('event', 'Mail', {'event_category' : 'Click to Mail', 'event_label': location.href});
+   }
+);
+</script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@id": "https://www.pcllawyersfrankston.com.au/",
+  "@type": "Organization",
+  "name": "PCL Lawyers Frankston",
+  "description": "We can help SMEs and Individuals with their legal Needs. Our Lawyers at PCL Lawyers' Frankston Office Can Provide You With Concise and Commercially Sound Advice.",
+  "url" : "https://www.pcllawyersfrankston.com.au/",
+  "logo" : "https://www.pcllawyersfrankston.com.au/wp-content/uploads/2020/10/logo.png",
+  "sameAs" : [ "https://www.facebook.com/PCL-Lawyers-108153577300515", "https://au.linkedin.com/company/pcl-lawyers" ], 
+  "location":
+   [
+    {
+     "@type": "LegalService",
+     "parentOrganization": {
+      "name": "PCL Lawyers"
+     },
+     "name" : "PCL Lawyers Melbourne CBD",
+	 "priceRange": "$$",
+     "image": "https://www.pcllawyersfrankston.com.au/wp-content/uploads/2020/10/logo.png",
+     "address":
+	 {
+       "@type": "PostalAddress",
+	   "streetAddress": "Level 15, 440 Collins Street",
+	   "addressLocality": "Melbourne",
+       "addressRegion": "VIC",
+	   "addressCountry": "AU",
+       "postalCode":"3000",
+	   "telephone" : "1300 907 335"
+	  },
+	  "openingHoursSpecification":
+	  {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek":
+		[
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+	    "Friday"
+        ],
+        "opens": "08:45",
+        "closes": "17:00"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+   	    "latitude": "-37.817314",
+    	"longitude": "144.959506"
+ 	  },
+	  "hasmap" : "https://www.google.com/maps/place/PCL+Lawyers/@-37.817067,144.959725,14z/data=!4m5!3m4!1s0x0:0xb7dfcf0c1fa4639c!8m2!3d-37.8172315!4d144.9597962"
+   },
+   {
+     "@type": "LegalService",
+     "parentOrganization": {
+      "name": "PCL Lawyers"
+     },
+     "name" : "PCL Lawyers Moorabbin",
+	 "priceRange": "$$",
+     "image": "https://www.pcllawyersfrankston.com.au/wp-content/uploads/2020/10/logo.png",
+     "address":
+	 {
+       "@type": "PostalAddress",
+	   "streetAddress": "1/441 South Rd",
+	   "addressLocality": "Moorabbin",
+       "addressRegion": "VIC",
+	   "addressCountry": "AU",
+       "postalCode":"3189",
+	   "telephone" : "1300 907 335"
+	  },
+	  "openingHoursSpecification":
+	  {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek":
+		[
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+	    "Friday"
+        ],
+        "opens": "08:45",
+        "closes": "17:00"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+   	    "latitude": "-37.933091",
+    	"longitude": "145.036761"
+ 	  },
+      "hasmap" : "https://www.google.com/maps/place/PCL+Lawyers+Moorabbin/@-37.933091,145.036761,15z/data=!4m5!3m4!1s0x0:0xdd6669565d4a2dec!8m2!3d-37.9330911!4d145.0367607"
+   },
+   {
+     "@type": "LegalService",
+     "parentOrganization": {
+      "name": "PCL Lawyers"
+     },
+     "name" : "PCL Lawyers Chadstone",
+	 "priceRange": "$$",
+     "image": "https://www.pcllawyersfrankston.com.au/wp-content/uploads/2020/10/logo.png",
+     "address":
+	 {
+       "@type": "PostalAddress",
+	   "streetAddress": "Level 8, 1341 Dandenong Road",
+	   "addressLocality": "Chadstone",
+       "addressRegion": "VIC",
+	   "addressCountry": "AU",
+       "postalCode":"3148",
+	   "telephone" : "1300 907 335"
+	  },
+	  "openingHoursSpecification":
+	  {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek":
+		[
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+	    "Friday"
+        ],
+        "opens": "08:45",
+        "closes": "17:00"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+   	    "latitude": "-37.88658",
+    	"longitude": "145.082406"
+ 	  },
+      "hasmap" : "https://www.google.com/maps/place/Chadstone+-+The+Fashion+Capital/@-37.88658,145.082406,15z/data=!4m5!3m4!1s0x6ad66a66054c293f:0xf0456760532d460!8m2!3d-37.8862515!4d145.0829675"
+   },
+   {
+     "@type": "LegalService",
+     "parentOrganization": {
+      "name": "PCL Lawyers"
+     },
+     "name" : "PCL Lawyers Dandenong",
+	 "priceRange": "$$",
+     "image": "https://www.pcllawyersfrankston.com.au/wp-content/uploads/2020/10/logo.png",
+     "address":
+	 {
+       "@type": "PostalAddress",
+	   "streetAddress": "Level 2/311 Lonsdale St",
+	   "addressLocality": "Dandenong",
+       "addressRegion": "VIC",
+	   "addressCountry": "AU",
+       "postalCode":"3175",
+	   "telephone" : "1300 907 335"
+	  },
+	  "openingHoursSpecification":
+	  {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek":
+		[
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+	    "Friday"
+        ],
+        "opens": "08:45",
+        "closes": "17:00"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+   	    "latitude": "-37.986337",
+    	"longitude": "145.213579"
+ 	  },
+      "hasmap" : "https://www.google.com/maps/place/LEVEL+2%2F311+Lonsdale+St,+Dandenong+VIC+3175/@-37.986337,145.213579,16z/data=!4m5!3m4!1s0x6ad61408b46ca77d:0x944d102c276fe376!8m2!3d-37.9863368!4d145.2135793"
+   },
+   {
+     "@type": "LegalService",
+     "parentOrganization": {
+      "name": "PCL Lawyers"
+     },
+     "name" : "PCL Lawyers Frankston",
+	 "priceRange": "$$",
+     "image": "https://www.pcllawyersfrankston.com.au/wp-content/uploads/2020/10/logo.png",
+     "address":
+	 {
+       "@type": "PostalAddress",
+	   "streetAddress": "Ground Floor, 435 Nepean Hwy",
+	   "addressLocality": "Frankston",
+       "addressRegion": "VIC",
+	   "addressCountry": "AU",
+       "postalCode":"3199",
+	   "telephone" : "1300 907 335"
+	  },
+	  "openingHoursSpecification":
+	  {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek":
+		[
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+	    "Friday"
+        ],
+        "opens": "08:45",
+        "closes": "17:00"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+   	    "latitude": "-38.142245",
+    	"longitude": "145.121547"
+ 	  },
+      "hasmap" : "https://www.google.com/maps/place/PCL+Lawyers+Frankston/@-38.142245,145.121547,15z/data=!4m5!3m4!1s0x0:0xba32bd05c053d0af!8m2!3d-38.142245!4d145.121547"
+   },
+   {
+     "@type": "LegalService",
+     "parentOrganization": {
+      "name": "PCL Lawyers"
+     },
+     "name" : "PCL Lawyers Preston",
+	 "priceRange": "$$",
+     "image": "https://www.pcllawyersfrankston.com.au/wp-content/uploads/2020/10/logo.png",
+     "address":
+	 {
+       "@type": "PostalAddress",
+	   "streetAddress": "Ground Floor, 84 Hotham Street",
+	   "addressLocality": "Preston",
+       "addressRegion": "VIC",
+	   "addressCountry": "AU",
+       "postalCode":"3072",
+	   "telephone" : "1300 907 335"
+	  },
+	  "openingHoursSpecification":
+	  {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek":
+		[
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+	    "Friday"
+        ],
+        "opens": "08:45",
+        "closes": "17:00"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+   	    "latitude": "-37.741645",
+    	"longitude": "145.009081"
+ 	  },
+      "hasmap" : "https://www.google.com/maps/place/Preston+VIC+3072/@-37.741645,145.009081,15z/data=!4m5!3m4!1s0x6ad644f2b22f0e1f:0x1c045678462e3700!8m2!3d-37.7399362!4d145.0107588"
+   },
+   {
+     "@type": "LegalService",
+     "parentOrganization": {
+      "name": "PCL Lawyers"
+     },
+     "name" : "PCL Lawyers Sunshine",
+	 "priceRange": "$$",
+     "image": "https://www.pcllawyersfrankston.com.au/wp-content/uploads/2020/10/logo.png",
+     "address":
+	 {
+       "@type": "PostalAddress",
+	   "streetAddress": "Level 5/12 Clarke St",
+	   "addressLocality": "Sunshine",
+       "addressRegion": "VIC",
+	   "addressCountry": "AU",
+       "postalCode":"3020",
+	   "telephone" : "1300 907 335"
+	  },
+	  "openingHoursSpecification":
+	  {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek":
+		[
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+	    "Friday"
+        ],
+        "opens": "08:45",
+        "closes": "17:00"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+   	    "latitude": "-37.786147",
+    	"longitude": "144.833335"
+ 	  },
+      "hasmap" : "https://www.google.com/maps/place/Level+5%2F12+Clarke+St,+Sunshine+VIC+3020/@-37.786147,144.833335,16z/data=!4m5!3m4!1s0x6ad65e2a14af59c3:0x27985128c1471311!8m2!3d-37.7861474!4d144.8333354"
+   }
+   ]
+ }
+</script>
+
+
+
+
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+      var swiper_service = new Swiper('.testimonials_slider', {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    parallax: true,
+    autoplay:false,
+    speed: 1000,
+    loop:true,
+    autoplay: {
+      delay: 6000,
+  },
+    navigation: {
+        nextEl: '.testimonials-swiper-button-next',
+        prevEl: '.testimonials-swiper-button-prev',
+    },
+    
+    breakpoints: {
+        1024: {
+            slidesPerView: 3,
+        },
+        990: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+        },
+        768: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+
+        },
+        575: {
+            slidesPerView: 2,
+            spaceBetween: 15,
+
+        },
+        375: {
+            slidesPerView: 1,
+            spaceBetween: 0,
+        },
+    }
+});
+</script>
+
+
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1741343138 --></body></html>

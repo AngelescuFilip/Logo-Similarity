@@ -1,0 +1,989 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head><style>.pac-container{background-color:#fff;position:absolute!important;z-index:1000;border-radius:2px;border-top:1px solid #d9d9d9;font-family:Arial,sans-serif;-webkit-box-shadow:0 2px 6px rgba(0,0,0,.3);box-shadow:0 2px 6px rgba(0,0,0,.3);-webkit-box-sizing:border-box;box-sizing:border-box;overflow:hidden}.pac-logo:after{content:"";padding:1px 1px 1px 0;height:18px;-webkit-box-sizing:border-box;box-sizing:border-box;text-align:right;display:block;background-image:url(https://maps.gstatic.com/mapfiles/api-3/images/powered-by-google-on-white3.png);background-position:right;background-repeat:no-repeat;-webkit-background-size:120px 14px;background-size:120px 14px}.hdpi.pac-logo:after{background-image:url(https://maps.gstatic.com/mapfiles/api-3/images/powered-by-google-on-white3_hdpi.png)}.pac-item{cursor:default;padding:0 4px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;line-height:30px;text-align:left;border-top:1px solid #e6e6e6;font-size:11px;color:#515151}.pac-item:hover{background-color:#fafafa}.pac-item-selected,.pac-item-selected:hover{background-color:#ebf2fe}.pac-matched{font-weight:700}.pac-item-query{font-size:13px;padding-right:3px;color:#000}.pac-icon{width:15px;height:20px;margin-right:7px;margin-top:6px;display:inline-block;vertical-align:top;background-image:url(https://maps.gstatic.com/mapfiles/api-3/images/autocomplete-icons.png);-webkit-background-size:34px 34px;background-size:34px}.hdpi .pac-icon{background-image:url(https://maps.gstatic.com/mapfiles/api-3/images/autocomplete-icons_hdpi.png)}.pac-icon-search{background-position:-1px -1px}.pac-item-selected .pac-icon-search{background-position:-18px -1px}.pac-icon-marker{background-position:-1px -161px}.pac-item-selected .pac-icon-marker{background-position:-18px -161px}.pac-placeholder{color:gray}sentinel{}
+</style>
+    <!-- Google Tag Manager -->
+<script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-5NRJ3F5V"></script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5NRJ3F5V');</script>
+<!-- End Google Tag Manager -->
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="csrf-token" content="dCGn5ApSw1YM4MtKaikZHOjqjMxZPMgYI9tBDI8b">
+<link rel="icon" type="image/x-icon" href="https://www.mateco.ro/favicon.ico">
+<style>
+    .no-scroll {
+        overflow: hidden;
+    }
+    .hidden {
+        display: none;
+    }
+    .splash {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        z-index: 1000;
+        background-color: #f2f2f2;
+        pointer-events: none;
+    }
+</style>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet">
+<title>Home - mateco</title><meta name="title" content="Home"><meta property="og:title" content="Home"><meta name="twitter:title" content="Home"><link rel="image_src" href=""><meta name="image" content=""><meta property="og:image" content=""><meta name="twitter:image" content="">
+
+<link media="all" type="text/css" rel="stylesheet" href="https://www.mateco.ro/css/front/bootstrap.min.css?id=9934de6fbedc8af74543">
+<link media="all" type="text/css" rel="stylesheet" href="https://www.mateco.ro/css/front/app.min.css?id=e458153c7afe15997f26">
+
+
+    <!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-N8CLPZTZSB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-N8CLPZTZSB');
+</script>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjs6MRnsUkTkbxFP4FIAUqLuek8Gpd3wU&amp;libraries=places"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+    
+
+  <script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/60/4/common.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/60/4/util.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/60/4/controls.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/60/4/places_impl.js"></script></head>
+<body class="no-scroll">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5NRJ3F5V"
+                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="splash"></div>
+    <script>
+        document.querySelector('body').classList.add('no-scroll');
+        document.querySelector('.splash').classList.remove('hidden');
+    </script>
+    <div class="page-backdrop hidden"></div>
+    <header class="header">
+    <div class="header-mid-stripe">
+        <div class="container spread">
+            <a href="https://www.mateco.ro" class="header-logo">
+               <img src="https://www.mateco.ro/images/front/logo.svg" alt="Mateco" width="360" height="100">
+            </a>
+            <div class="header-mid-stripe-controls">
+                <div class="header-phone-list">
+                    <a class="phone-menu-trigger">
+                        <i class="fas fa-phone"></i>
+                    </a>
+                                            <div class="phone-menu phone-ro">
+                                                            <a href="tel:+40788622352" class="phone">
+                                    <i class="fas fa-phone"></i>
+                                    B2B Sales: +40 788 NACELA (+40 788 62 23 52)
+                                </a>
+                                                            <a href="tel:+40746911003" class="phone">
+                                    <i class="fas fa-phone"></i>
+                                    B2B Service: +40 746 911 003 (Helpline)
+                                </a>
+                                                            <a href="tel:+40745474723" class="phone">
+                                    <i class="fas fa-phone"></i>
+                                    IPAF Training: +40 745 474 723
+                                </a>
+                                                    </div>
+                                        <ul class="top-nav-links social hide-desktop">
+                        <li class="top-nav-link">
+                            <a target="_blank" href="https://www.facebook.com/matecoRomania" onclick="">
+                                <i class="social-icon fab fa-facebook"></i></a>
+                        </li>
+                        <li class="top-nav-link">
+                            <a target="_blank" href="https://www.linkedin.com/company/mateco-romania/?originalSubdomain=ro" onclick="">
+                                <i class="social-icon fab fa-linkedin"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="top-nav-link language hide-desktop">
+                        <i class="fas fa-flag"></i>
+                        <a class="" href="https://mateco.ro">
+                            RO
+                        </a>
+                        <a class="" href="https://mateco.ro/en">
+                            EN
+                        </a>
+                        <a class="" href="https://mateco.md">
+                            MD
+                        </a>
+                        <a class="" href="https://mateco.bg">
+                            BG
+                        </a>
+                    </div>
+                </div>
+                <a href="https://www.mateco.ro/cart" class="header-mid-stripe-control shop"></a>
+                <span id="items">
+                    0
+                </span>
+                <button class="mobile-menu"></button>
+            </div>
+        </div>
+    </div>
+    <div class="header-nav-wrapper">
+                <div class="container spread no-padding-tablet main-header-nav" style="position: relative;">
+            <nav class="main-nav">
+                <div class="container spread" style="padding: 0">
+                    <ul class="main-nav-links">
+                        <li id="rent-link" class="main-nav-link hide-mob">
+                            <a href="https://www.mateco.ro/inchiriere">Inchiriaza</a>
+                        </li>
+
+                        <li class="main-nav-link has-sublinks hide-desktop">
+                            <a href="https://www.mateco.ro/inchiriere">Inchiriaza</a>
+                            <ul class="main-nav-sublinks">
+                                <li class="main-nav-sublink">
+                                    <a href="https://www.mateco.ro/inchiriere-echipamente"> Inchiriaza Echipament </a>
+                                </li>
+                                <li class="main-nav-sublink">
+                                    <a href="https://www.mateco.ro/inchiriere-unelte"> Inchiriaza unelte </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="main-nav-link has-sublinks">
+                            <a href="https://www.mateco.ro/cumpara">Vanzari</a>
+                            <ul class="main-nav-sublinks">
+                                <li class="main-nav-sublink">
+                                    <a href="https://www.mateco.ro/cumpara-echipamente-noi">Cumpara Echipamente Noi</a>
+                                </li>
+                                <li class="main-nav-sublink">
+                                    <a href="https://www.mateco.ro/echipamente-sh">Cumpara Echipamente Uzate</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="main-nav-link has-sublinks">
+                            <a href="https://www.mateco.ro/training/ipaf">Training</a>
+                            <ul class="main-nav-sublinks">
+                                <li class="main-nav-sublink">
+                                    <a href="https://www.mateco.ro/training/ipaf">IPAF Training</a>
+                                </li>
+                                <li class="main-nav-sublink">
+                                    <a href="https://www.mateco.ro/training/training-operatori">Training Operatori</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                                                                                                                        
+                                    <li class="main-nav-link has-sublinks">
+                                                                                <a href="https://www.mateco.ro/companie/despre-noi">
+                                            Companie
+                                        </a>
+                                                                                    <ul class="main-nav-sublinks">
+                                                                                                                                                        <li class="main-nav-sublink">
+                                                        <a href="https://www.mateco.ro/companie/despre-noi">
+                                                            Despre noi
+                                                        </a>
+                                                    </li>
+                                                                                                                                                        <li class="main-nav-sublink">
+                                                        <a href="https://mateco.mingle.ro/en/apply">
+                                                            Cariere
+                                                        </a>
+                                                    </li>
+                                                                                                                                                        <li class="main-nav-sublink">
+                                                        <a href="https://www.mateco.ro/companie/centru-service">
+                                                            Centru Service
+                                                        </a>
+                                                    </li>
+                                                                                                                                                        <li class="main-nav-sublink">
+                                                        <a href="https://www.mateco.ro/companie/livrare-si-returnare">
+                                                            Livrare si Returnare
+                                                        </a>
+                                                    </li>
+                                                                                                                                                        <li class="main-nav-sublink">
+                                                        <a href="https://www.mateco.ro/companie/certificari">
+                                                            Certificari
+                                                        </a>
+                                                    </li>
+                                                                                                                                                        <li class="main-nav-sublink">
+                                                        <a href="https://www.mateco.ro/companie/premii-si-recunoastere/2016-iapa-shortlist-announced">
+                                                            Premii si Recunoastere
+                                                        </a>
+                                                    </li>
+                                                                                                                                                        <li class="main-nav-sublink">
+                                                        <a href="https://www.mateco.ro/companie/news/press">
+                                                            Presa
+                                                        </a>
+                                                    </li>
+                                                                                            </ul>
+                                                                            </li>
+                                                                                    
+                        <li class="main-nav-link has-sublinks">
+                            <a href="https://www.mateco.ro/solutii">Solutii</a>
+                            <ul class="main-nav-sublinks">
+                                <li class="main-nav-sublink">
+                                    <a href="https://www.mateco.ro/solutii">Aplicatii</a>
+                                </li>
+                                <li class="main-nav-sublink">
+                                    <a href="https://www.mateco.ro/bim">BIM</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                                                    <li class="main-nav-link login">
+                                <a href="https://www.mateco.ro/login" class="sign-in">Autentificare</a>
+                            </li>
+                                            </ul>
+                </div>
+            </nav>
+            <div class="rent-overview" style="top: 84px;">
+                <ul class="row">
+                    <li class="col-6 rent-overview-item">
+                        <a href="https://www.mateco.ro/inchiriere-echipamente/acces-si-lucru-la-inaltime" style="display: block;">
+                            <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" class="replace-inline svg-icon replaced-svg">
+                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M18 7l-1.41-1.41-6.34 6.34 1.41 1.41L18 7zm4.24-1.41L11.66 16.17 7.48 12l-1.41 1.41L11.66 19l12-12-1.42-1.41zM.41 13.41L6 19l1.41-1.41L1.83 12 .41 13.41z"></path>
+                            </svg>
+                            <div class="overview-content">
+                                <h3>Asistent inchirieri</h3>
+                                <p>Inchiriaza echipamentul in 3 pasi simpli</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="col-6 rent-overview-item">
+                        <a href="https://www.mateco.ro/inchiriere" style="display: block;">
+                            <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" class="replace-inline svg-icon replaced-svg">
+                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"></path>
+                            </svg>
+                            <div class="overview-content">
+                                <h3>Gama produse</h3>
+                                <p>Catalog produse</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+                            <div class="division-overview" style="top: 155px;">
+                    <ul class="row">
+                                                    <li class="col-3 division-overview-item">
+                                                                <a href="https://www.mateco.ro/inchiriere-echipamente/acces-si-lucru-la-inaltime" style="display: block;">
+                                    <div class="division-overview-content">
+                                        <img src="https://www.mateco.ro/uploads/product_categories/icon/31x31/45_1512380127_45_1508939191_icon_equipment1.png" alt="">
+                                        <h5 style="font-size: 15px;margin-top: 10px;">Acces si lucru la inaltime</h5>
+                                    </div>
+                                </a>
+                            </li>
+                                                    <li class="col-3 division-overview-item">
+                                                                <a href="https://www.mateco.ro/inchiriere-echipamente/echipamente-terasiere" style="display: block;">
+                                    <div class="division-overview-content">
+                                        <img src="https://www.mateco.ro/uploads/product_categories/icon/31x31/66_1512380334_66_1508939913_icon_equipment2.png" alt="">
+                                        <h5 style="font-size: 15px;margin-top: 10px;">Echipamente terasiere</h5>
+                                    </div>
+                                </a>
+                            </li>
+                                                    <li class="col-3 division-overview-item">
+                                                                <a href="https://www.mateco.ro/inchiriere-echipamente/echipamente-de-constructii" style="display: block;">
+                                    <div class="division-overview-content">
+                                        <img src="https://www.mateco.ro/uploads/product_categories/icon/31x31/35_1512380438_35_1508939991_icon_equipment3.png" alt="">
+                                        <h5 style="font-size: 15px;margin-top: 10px;">Echipamente de construcții</h5>
+                                    </div>
+                                </a>
+                            </li>
+                                                    <li class="col-3 division-overview-item">
+                                                                <a href="https://www.mateco.ro/inchiriere-echipamente/echipamente-organizare-santier" style="display: block;">
+                                    <div class="division-overview-content">
+                                        <img src="https://www.mateco.ro/uploads/product_categories/icon/31x31/107_1512380587_107_1508940070_icon_equipment4.png" alt="">
+                                        <h5 style="font-size: 15px;margin-top: 10px;">Echipamente organizare șantier</h5>
+                                    </div>
+                                </a>
+                            </li>
+                                                    <li class="col-3 division-overview-item">
+                                                                <a href="https://www.mateco.ro/inchiriere-unelte/unelte-electrice" style="display: block;">
+                                    <div class="division-overview-content">
+                                        <img src="https://www.mateco.ro/uploads/product_categories/icon/31x31/105_1512380693_105_1508940091_icon_equipment5.png" alt="">
+                                        <h5 style="font-size: 15px;margin-top: 10px;">Unelte electrice</h5>
+                                    </div>
+                                </a>
+                            </li>
+                                                    <li class="col-3 division-overview-item">
+                                                                <a href="https://www.mateco.ro/inchiriere-echipamente/automacarale" style="display: block;">
+                                    <div class="division-overview-content">
+                                        <img src="https://www.mateco.ro/uploads/product_categories/icon/31x31/109_1512380935_109_1508940134_icon_equipment7.png" alt="">
+                                        <h5 style="font-size: 15px;margin-top: 10px;">Automacarale</h5>
+                                    </div>
+                                </a>
+                            </li>
+                                                    <li class="col-3 division-overview-item">
+                                                                <a href="https://www.mateco.ro/inchiriere-unelte/miscellanous" style="display: block;">
+                                    <div class="division-overview-content">
+                                        <img src="https://www.mateco.ro/uploads/product_categories/icon/31x31/111_1512381015_111_1508940151_icon_equipment8.png" alt="">
+                                        <h5 style="font-size: 15px;margin-top: 10px;">Miscellanous</h5>
+                                    </div>
+                                </a>
+                            </li>
+                                            </ul>
+                </div>
+                    </div>
+                <nav class="top-nav">
+            <div class="container spread">
+                <ul class="top-nav-links top-nav-info">
+                    <li class="top-nav-link">
+                        <a href="https://www.mateco.ro" id="home">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="#97a6a7" height="20" viewBox="0 0 24 24" width="20">
+                                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path>
+                                <path d="M0 0h24v24H0z" fill="none"></path>
+                            </svg>
+                        </a>
+                    </li>
+
+                    <li class="top-nav-link">
+                        <a href="https://www.mateco.ro/depots" id="findCities" style="z-index: 11">
+                            <i class="fas fa-map-marker-alt"></i>
+                            LOCATII
+                        </a>
+
+                        <form action="https://www.mateco.ro/depots" id="searchLocation" class="search-location-form" method="GET">
+                            <input type="text" name="location" value="" id="searchPlace" placeholder="Cod postal sau oras" class="search-input pac-target-input" autocomplete="off">
+                            <div class="flex spaced mb-20">
+                                <a href="https://www.mateco.ro/depots" class="btn btn-view btn-small"> Harta </a>
+                                <button type="submit" href="" class="btn btn-view btn-small"> Cautare </button>
+                            </div>
+                        </form>
+                    </li>
+
+                    <li class="top-nav-link">
+                        <a href="https://www.mateco.ro/contact">
+                            <i class="fas fa-comments"></i>
+                            CONTACT
+                        </a>
+                    </li>
+
+                    <li class="top-nav-link">
+                        <a href="https://www.mateco.ro/inchiriere-echipamente/acces-si-lucru-la-inaltime">
+                            <i class="fas fa-question-circle"></i>
+                            SOLICITARE CHIRIE
+                        </a>
+                    </li>
+
+                    <li class="top-nav-link">
+                        <a href="https://www.mateco.ro/search">
+                            <i class="fas fa-search"></i>
+                            Cautare
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="top-nav-links">
+
+                    
+                    <ul class="top-nav-links social hide-tablet">
+                        <li class="top-nav-link">
+                            <a target="_blank" href="https://www.facebook.com/matecoRomania" onclick="">
+                                <i class="social-icon fab fa-facebook"></i></a>
+                        </li>
+                        <li class="top-nav-link">
+                            <a target="_blank" href="https://www.linkedin.com/company/mateco-romania/?originalSubdomain=ro" onclick="">
+                                <i class="social-icon fab fa-linkedin"></i>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <li class="top-nav-link language hide-tablet">
+                        <i class="fas fa-flag"></i>
+                        <a class="" href="https://www.mateco.ro/">
+                            RO
+                        </a>
+                        <a class="" href="https://www.mateco.ro/en/">
+                            EN
+                        </a>
+                        <a class="" href="https://www.mateco.md/">
+                            MD
+                        </a>
+                        <a class="" href="https://www.mateco.bg/">
+                            BG
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<script>
+    $(function() {
+        let rentOverviewPositionTop = $('.main-header-nav').height() -1;
+        $('.rent-overview').css({ top: rentOverviewPositionTop + 'px' });
+
+        let divisionOverviewPositionTop = 59 + $('.rent-overview').height();
+        $('.division-overview').css({ top: divisionOverviewPositionTop + 'px' });
+
+        $(document).on('mouseenter', '#rent-link, .rent-overview, .division-overview', function() {
+            if ($('.header').hasClass('sticky')) {
+                newRentOverviewPositionTop = rentOverviewPositionTop - 23;
+            } else {
+                newRentOverviewPositionTop = rentOverviewPositionTop;
+            }
+
+            $('.rent-overview').css({ top: newRentOverviewPositionTop + 'px' });
+            $(".rent-overview").show();
+        }).on('mouseleave', '#rent-link, .rent-overview, .division-overview', function() {
+            $(".rent-overview").hide();
+        });
+
+        $(document).on('mouseenter', '.rent-overview-item:first, .division-overview', function() {
+            if ($('.header').hasClass('sticky')) {
+                newDivisionOverviewPositionTop = divisionOverviewPositionTop - 23;
+            } else {
+                newDivisionOverviewPositionTop = divisionOverviewPositionTop;
+            }
+
+            $('.division-overview').css({ top: newDivisionOverviewPositionTop + 'px' });
+            $(".division-overview").show();
+        }).on('mouseleave', '.rent-overview-item:first, .division-overview', function() {
+            $(".division-overview").hide();
+        });
+
+        $('#findCities').on('click', function (e) {
+            if (window.screen.availWidth < 980) {
+                return;
+            }
+
+            e.preventDefault();
+            $(this).toggleClass('active');
+
+            $(document).click(function(e) {
+                 if (!$("#searchLocation").is(e.target) && $("#searchLocation").has(e.target).length === 0 && $(e.target).attr('id') !== 'findCities' ) {
+                     $('#findCities').removeClass('active');
+                 }
+            })
+        });
+
+        const input = $("#searchPlace")[0];
+        const autocomplete = new google.maps.places.Autocomplete(input, {
+            types: ['(cities)'],
+            componentRestrictions: {country: ["ro", "bg", "md"]}
+        });
+
+        google.maps.event.addListener(autocomplete, 'place_changed', function () {
+            const address = autocomplete.getPlace().formatted_address;
+            $('#searchPlace').val(address);
+        });
+    });
+</script>
+
+    <main class="main homepage">
+        
+        
+<style>
+		.main-banner .promo-carousel {
+			height: 497px;
+		}
+
+		.main-banner .promo-carousel .caption {
+			position: absolute;
+			top: 220px;
+			left: 50%;
+			transform: translateX(-50%);
+			right: auto;
+		}
+
+		.main-banner .promo-carousel .caption a {
+			background: red;
+            opacity: .85;
+			padding: 10px 40px;
+			color: #ffffff;
+			font-weight: bold;
+			line-height: 1.5;
+			display: block;
+		}
+
+		.arrow-img {
+			width: 24px !important;
+			height: 24px !important;
+			display: inline-block !important;
+			vertical-align: middle !important;
+		}
+
+		@media  only screen and (max-width: 768px) {
+			.main-banner {
+				padding: 0 15px;
+				margin-top: 15px;
+			}
+
+			.main-banner .promo-carousel {
+				height: auto;
+			}
+
+			.promo-carousel .slick-dots {
+				display: none !important;
+			}
+
+			.main-banner .promo-carousel .caption {
+				position: relative;
+				transform: none;
+				top: auto;
+				left: auto;
+				right: auto;
+			}
+
+			.main-banner .promo-carousel .caption a {
+				text-align: center;
+			}
+		}
+	</style>
+
+	<section class="main-banner">
+		<div class="container no-padding-mob">
+			<div class="promo-carousel slick-initialized slick-slider slick-dotted"><div class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 5100px; transform: translate3d(-1020px, 0px, 0px);"><div class="slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" tabindex="-1" style="width: 1020px;"><div><div class="promo-carousel-item" style="width: 100%; display: inline-block;">
+							<img style="max-height: 100%;" src="https://www.mateco.ro/uploads/2019/12/10/1200x524/Nze8Js2ACcXl4iyS7WvDHjWcQ0nFrku6rY1dYEOS.jpg" alt="Carousel img">
+
+							<div class="caption">
+																	<a href="https://www.mateco.ro/inchiriere-echipamente" tabindex="-1">
+										Cumpara Echipament
+										<img class="arrow-img" src="https://www.mateco.ro/images/front/arrow-right-white.svg" alt="">
+									</a>
+															</div>
+						</div></div></div><div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" role="tabpanel" id="slick-slide00" style="width: 1020px;"><div><div class="promo-carousel-item" style="width: 100%; display: inline-block;">
+							<img style="max-height: 100%;" src="https://www.mateco.ro/uploads/2020/02/21/1200x524/Jm8ZpwcHlnWfbZlcJYXoshRVHlLj4ZxcwW3SduOZ.jpg" alt="Carousel img" width="1200" height="524">
+
+							<div class="caption">
+																	<a href="https://www.mateco.ro/inchiriere-echipamente" tabindex="0">
+										Inchiriaza acum
+										<img class="arrow-img" src="https://www.mateco.ro/images/front/arrow-right-white.svg" alt="">
+									</a>
+															</div>
+						</div></div></div><div class="slick-slide" data-slick-index="1" aria-hidden="true" tabindex="-1" role="tabpanel" id="slick-slide01" style="width: 1020px;"><div><div class="promo-carousel-item" style="width: 100%; display: inline-block;">
+							<img style="max-height: 100%;" src="https://www.mateco.ro/uploads/2019/12/10/1200x524/Nze8Js2ACcXl4iyS7WvDHjWcQ0nFrku6rY1dYEOS.jpg" alt="Carousel img">
+
+							<div class="caption">
+																	<a href="https://www.mateco.ro/inchiriere-echipamente" tabindex="-1">
+										Cumpara Echipament
+										<img class="arrow-img" src="https://www.mateco.ro/images/front/arrow-right-white.svg" alt="">
+									</a>
+															</div>
+						</div></div></div><div class="slick-slide slick-cloned" data-slick-index="2" aria-hidden="true" tabindex="-1" style="width: 1020px;"><div><div class="promo-carousel-item" style="width: 100%; display: inline-block;">
+							<img style="max-height: 100%;" src="https://www.mateco.ro/uploads/2020/02/21/1200x524/Jm8ZpwcHlnWfbZlcJYXoshRVHlLj4ZxcwW3SduOZ.jpg" alt="Carousel img" width="1200" height="524">
+
+							<div class="caption">
+																	<a href="https://www.mateco.ro/inchiriere-echipamente" tabindex="-1">
+										Inchiriaza acum
+										<img class="arrow-img" src="https://www.mateco.ro/images/front/arrow-right-white.svg" alt="">
+									</a>
+															</div>
+						</div></div></div><div class="slick-slide slick-cloned" data-slick-index="3" aria-hidden="true" tabindex="-1" style="width: 1020px;"><div><div class="promo-carousel-item" style="width: 100%; display: inline-block;">
+							<img style="max-height: 100%;" src="https://www.mateco.ro/uploads/2019/12/10/1200x524/Nze8Js2ACcXl4iyS7WvDHjWcQ0nFrku6rY1dYEOS.jpg" alt="Carousel img">
+
+							<div class="caption">
+																	<a href="https://www.mateco.ro/inchiriere-echipamente" tabindex="-1">
+										Cumpara Echipament
+										<img class="arrow-img" src="https://www.mateco.ro/images/front/arrow-right-white.svg" alt="">
+									</a>
+															</div>
+						</div></div></div></div></div><ul class="slick-dots" style="" role="tablist"><li class="slick-active" role="presentation"><button type="button" role="tab" id="slick-slide-control00" aria-controls="slick-slide00" aria-label="1 of 2" tabindex="0" aria-selected="true">1</button></li><li role="presentation"><button type="button" role="tab" id="slick-slide-control01" aria-controls="slick-slide01" aria-label="2 of 2" tabindex="-1">2</button></li></ul></div>
+		</div>
+	</section>
+
+
+<style>
+	.commitment-section h1 {
+		padding: 0;
+		margin: 0 0 5px;
+		font-size: 16px;
+		color: #333;
+		letter-spacing: 0;
+	}
+
+	.commitment-section p {
+		text-align: left;
+		color: #6f7c7c;
+	}
+
+	#homeModal .modal-dialog {
+		max-width: 930px !important;
+	}
+
+	#homeModal .modal-title {
+		text-align: center !important;
+		margin: auto;
+		width: 100%;
+	}
+
+	#homeModal .modal-body .box-image {
+		width: 100%;
+		max-width: 115px;
+	}
+
+	#homeModal .modal-body .qr-image {
+		max-width: 100px;
+	}
+
+
+	#homeModal .modal-body .row a {
+		text-align: center;
+	}
+
+	#homeModal .modal-body .row a h5 {
+		margin-top: 10px;
+	}
+
+	.separator {
+		display: none;
+	}
+
+	@media (max-width: 768px) {
+		#homeModal .modal-body .row a h5 {
+
+		}
+
+		#homeModal .modal-body .qr-container {
+			display: none;
+		}
+
+		.separator {
+			display: block;
+			border-top: 1px solid #ddd;
+			height: 32px;
+			width: 100%;
+		}
+	}
+</style>
+
+<section class="commitment-section">
+	<div class="container">
+		<div class="row">
+			<div class="col-4 col-md-6 col-sm-12">
+				<h1 class="text-left">Inchiriaza platforme de lucru de la profesionisti.</h1>
+				<p>
+					Flota noastra este compusa din peste 12 000 de platforme de lucru disponibile intr-o gama de peste 700 modele diferite.
+					Cu peste 60 de locatii proprii in Europa si peste 80 de parteneri globali, urmarim un scop clar: sa furnizam cele mai bune solutii de acces la inaltime pentru clientii nostrii.
+				</p>
+			</div>
+			<div class="col-4 col-md-6 col-sm-12">
+				<p>
+					Cu platformele noastre ajungem la inaltimi de pana la 90 m, extinderi laterale de pana la 41 m si capacitati de incarcare de pana la 7200 kg.
+					Indiferent de provocarea dvs. de acces suntem pregatiti sa va ajutam.
+					Fie ca vorbim de platforme montate pe camioane sau trailere, fie ca vorbim de nacele cu brat articulat, telescopic sau nacele de tip foarfeca - mateco te poate ajuta.
+				</p>
+			</div>
+			<div class="col-4 col-md-12">
+				<div class="promo-carousel slick-initialized slick-slider slick-dotted"><div class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 1600px; transform: translate3d(-320px, 0px, 0px);"><div class="slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" tabindex="-1" style="width: 320px;"><div><div class="promo-carousel-item" style="width: 100%; display: inline-block;">
+						<h3 class="promo-carousel-item-text">
+							Fisiere BIM disponibile! <br>
+						</h3>
+						<img src="https://www.mateco.ro/images/front/mateco_bim.jpg" alt="BIM Files">
+						<a href="https://www.mateco.ro/bim" class="btn-view promo-carousel-item-btn" tabindex="-1"> Mai mult </a>
+					</div></div></div><div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" role="tabpanel" id="slick-slide10" style="width: 320px;"><div><div class="promo-carousel-item" style="width: 100%; display: inline-block;">
+						<h3 class="promo-carousel-item-text">
+							Echipamente pentru o gama larga de aplicatii<br>
+						</h3>
+						<img src="https://www.mateco.ro/images/front/mateco_applications.jpg" alt="Solutii">
+						<a href="https://www.mateco.ro/solutii" class="btn-view promo-carousel-item-btn" tabindex="0"> Mai mult </a>
+					</div></div></div><div class="slick-slide" data-slick-index="1" aria-hidden="true" tabindex="-1" role="tabpanel" id="slick-slide11" style="width: 320px;"><div><div class="promo-carousel-item" style="width: 100%; display: inline-block;">
+						<h3 class="promo-carousel-item-text">
+							Fisiere BIM disponibile! <br>
+						</h3>
+						<img src="https://www.mateco.ro/images/front/mateco_bim.jpg" alt="BIM Files">
+						<a href="https://www.mateco.ro/bim" class="btn-view promo-carousel-item-btn" tabindex="-1"> Mai mult </a>
+					</div></div></div><div class="slick-slide slick-cloned" data-slick-index="2" aria-hidden="true" tabindex="-1" style="width: 320px;"><div><div class="promo-carousel-item" style="width: 100%; display: inline-block;">
+						<h3 class="promo-carousel-item-text">
+							Echipamente pentru o gama larga de aplicatii<br>
+						</h3>
+						<img src="https://www.mateco.ro/images/front/mateco_applications.jpg" alt="Solutii">
+						<a href="https://www.mateco.ro/solutii" class="btn-view promo-carousel-item-btn" tabindex="-1"> Mai mult </a>
+					</div></div></div><div class="slick-slide slick-cloned" data-slick-index="3" aria-hidden="true" tabindex="-1" style="width: 320px;"><div><div class="promo-carousel-item" style="width: 100%; display: inline-block;">
+						<h3 class="promo-carousel-item-text">
+							Fisiere BIM disponibile! <br>
+						</h3>
+						<img src="https://www.mateco.ro/images/front/mateco_bim.jpg" alt="BIM Files">
+						<a href="https://www.mateco.ro/bim" class="btn-view promo-carousel-item-btn" tabindex="-1"> Mai mult </a>
+					</div></div></div></div></div><ul class="slick-dots" style="" role="tablist"><li class="slick-active" role="presentation"><button type="button" role="tab" id="slick-slide-control10" aria-controls="slick-slide10" aria-label="1 of 2" tabindex="0" aria-selected="true">1</button></li><li role="presentation"><button type="button" role="tab" id="slick-slide-control11" aria-controls="slick-slide11" aria-label="2 of 2" tabindex="-1">2</button></li></ul></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+    </main>
+
+    <footer class="footer">
+    <nav class="footer-nav container spread">
+        <div class="footer-separator">
+            <p class="copyright">© 2025 <span style="font-weight: bold;font-size: 10px;font-style: italic;font-family: Arial,sans-serif;">mateco<span> S.R.L</span></span></p>
+        </div>
+        <div class="footer-separator">
+                            <ul class="footer-links-legal">
+                    <li class="footer-link-legal">
+                        <a href="https://www.mateco.ro/sitemap">
+                            HARTA SITE
+                        </a>
+                    </li>
+                                                                        <li class="footer-link-legal">
+                                <a href="https://www.mateco.ro/protectia-datelor">
+                                    PROTECTIA DATELOR
+                                </a>
+                            </li>
+                                                                                                <li class="footer-link-legal">
+                                <a href="https://www.mateco.ro/politica-cookie">
+                                    POLITICA COOKIE
+                                </a>
+                            </li>
+                                                                                                <li class="footer-link-legal">
+                                <a href="https://www.mateco.ro/aviz-juridic">
+                                    AVIZ JURIDIC
+                                </a>
+                            </li>
+                                                            </ul>
+                    </div>
+    </nav>
+</footer>
+
+<script type="text/javascript" src="https://www.mateco.ro/js/front/vendor.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script type="text/javascript" src="https://www.mateco.ro/js/front/app.min.js"></script>
+    <style>
+    #cookieModal .modal-dialog {
+        max-width: 640px;
+        background-color: #f2f2f2;
+    }
+
+    #cookieModal .modal-dialog .modal-content {
+        border-radius: 0;
+        /*padding: 1em 24px 1em 1em;*/
+    }
+
+    #cookieModal .modal-dialog .modal-content .modal-header {
+        display: block!important;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        padding: 1em 24px 1em 1em;
+        border-bottom: 1px solid black;
+    }
+
+    #cookieModal .modal-dialog .modal-content .modal-header .modal-title {
+        font-size: 28px;
+        font-weight: 100 !important;
+        line-height: 30px;
+        margin-bottom: 10px;
+    }
+
+    #cookieModal .modal-dialog .modal-content .modal-header p {
+        font-size: 14px;
+        line-height: 21px;
+    }
+
+    #cookieModal .modal-dialog .modal-content .modal-body {
+        padding: 1em;
+        border-bottom: 1px solid black;
+    }
+
+    #cookieModal .modal-dialog .modal-content .modal-body .service {
+        position: relative;
+        line-height: 20px;
+        vertical-align: middle;
+        min-height: 40px;
+        margin-bottom: 10px;
+        padding: 10px 0;
+    }
+
+    #cookieModal .modal-dialog .modal-content .modal-body .service .list-input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        width: 50px;
+        height: 30px;
+    }
+
+    #cookieModal .text-red {
+        color: red;
+    }
+
+    .cm-switch {
+        height: 30px;
+        position: absolute;
+        left: 0;
+    }
+
+    .cm-list-title {
+        font-weight: bold;
+    }
+
+    .cm-list-description {
+        color: rgb(124, 124, 124);
+    }
+
+    .purposes {
+        font-size: 11.2px;
+        line-height: 20px;
+        color: rgb(160, 160, 160);
+    }
+
+    #cookieModal .modal-dialog .modal-content .modal-body .service span {
+        display: inline-block;
+        width: auto;
+        font-size: 12px;
+        line-height: 20px;
+    }
+
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 55px;
+        height: 28px;
+        float: left;
+        margin-top: 5px;
+    }
+
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 20px;
+        width: 20px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    input:checked + .slider {
+        background-color: #ff0000;
+    }
+
+    input:focus + .slider {
+        box-shadow: 0 0 1px #ff0000;
+    }
+
+    input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+        border-radius: 34px;
+    }
+
+    .slider.round:before {
+        border-radius: 50%;
+    }
+
+    .service-item-analytics-description {
+        width: 500px;
+        float: left;
+        margin-left: 15px;
+    }
+
+    .clear {
+        clear: both!important;
+    }
+
+    .cm-required {
+        font-size: 11.2px;
+        line-height: 20px;
+        color: rgb(92, 92, 92);
+    }
+
+    .modal-footer {
+        justify-content: unset;
+    }
+
+    .modal-footer .modal-btns a {
+        font-size: 14px;
+        padding: 8px;
+        margin-right: 15px;
+        margin-bottom: 15px;
+    }
+
+    .modal-footer .modal-btns button {
+        background-color: red;
+        color: white;
+        font-size: 14px;
+        padding: 8px;
+        margin-right: 15px;
+        margin-bottom: 15px;
+    }
+
+</style>
+
+<div class="modal show" id="cookieModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form action="https://www.mateco.ro/consent-cookie-policy" method="POST">
+                <input type="hidden" name="_token" value="dCGn5ApSw1YM4MtKaikZHOjqjMxZPMgYI9tBDI8b">
+                <div class="modal-header">
+                    <h4 class="modal-title">Descriere Cookies</h4>
+                    <p>
+                        Aici puteti vedea si personaliza informatiile pe care le colectam in timpul sesiunii dvs. de pe website. Pentru mai multe detalii va rugam sa cititi
+                        <a class="text-red" target="_blank" href="https://www.mateco.ro/politica-cookie">Politica Cookies</a>
+                    </p>
+                </div>
+
+                <div class="modal-body">
+                    <div class="service">
+                        <label for="service-item-analytics" class="switch">
+                            <input class="list-input" name="statistics" value="1" type="checkbox" checked="" id="service-item-analytics">
+                            <span class="slider round"></span>
+                        </label>
+                        <div class="service-item-analytics-description">
+                            <span class="cm-list-title">Statistici</span>
+                            <p class="cm-list-description">
+                                <span>
+                                    Cookie-urile statistice colecteaza informatii din statisticile vizitatorilor pentru a imbunatatii utilizabilitatea si performanta website-ului.
+                                </span>
+                            </p>
+                            <p class="purposes">Scop: Analiza statistica</p>
+                        </div>
+                    </div>
+
+                    <div class="clear"></div>
+
+                    <div class="service">
+                        <label for="service-item-analytics-2" class="switch">
+                            <input class="list-input" name="essential" value="1" type="checkbox" checked="" disabled="" id="service-item-analytics-2">
+                            <span class="slider round"></span>
+                        </label>
+                        <div class="service-item-analytics-description">
+                            <span class="cm-list-title">Esentiale</span>
+                            <span class="cm-required"> - Necesare</span>
+                            <p class="cm-list-description">
+                                <span>
+                                    Cookie-urile esentiale permit funtionarea facilitatilor minime ale website-ului si sunt necesare pentru o functionare adecvata. Acestea includ deasemenea utilizarea facilitatii de ReCaptcha..
+                                </span>
+                            </p>
+                        <p class="purposes">Scop: Obligatorii</p>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="modal-footer">
+                    <div class="modal-btns">
+                        <button type="submit">Salvati selectia</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="pac-container pac-logo" style="display: none;"></div></body></html>

@@ -1,0 +1,2597 @@
+<!DOCTYPE html><html lang="en"><head>
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" href="/assets/favicon.ico">
+    <style>
+                :root {
+  --blue: #205076;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #cda320;
+  --green: #7ed321;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-light: #d1d1d1;
+  --gray-dark: #343a40;
+  --primary: #205076;
+  --secondary: #6c757d;
+  --success: #7ed321;
+  --info: #17a2b8;
+  --warning: #cda320;
+  --danger: #dc3545;
+  --light: #9b9b9b;
+  --dark: #343a40;
+  --white-gray: #f5f5f5;
+  --white: #fff;
+  --green: #7ed321;
+  --blue: #205076;
+  --yellow: #cda320;
+  --black: #151a14;
+  --green-dark: #207629;
+  --red: #8d1e1e;
+  --gray: #4a4a4a;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-xxl: 1366px;
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+}
+@-ms-viewport {
+  width: device-width;
+}
+header,
+section {
+  display: block;
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.125rem;
+  font-weight: normal;
+  line-height: 1.5;
+  color: #9b9b9b;
+  text-align: left;
+  background-color: #efefef;
+}
+h1,
+h2 {
+  margin-top: 0;
+  margin-bottom: 1.875rem;
+}
+p {
+  margin-top: 0;
+  margin-bottom: 1.875rem;
+}
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+::-webkit-file-upload-button {
+  font: inherit;
+  -webkit-appearance: button;
+}
+h1,
+h2 {
+  margin-bottom: 1.875rem;
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+  line-height: 1.1;
+  color: inherit;
+}
+h1 {
+  font-size: 3.6rem;
+}
+h2 {
+  font-size: 3rem;
+}
+.container-fluid {
+  width: 100%;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -0.75rem;
+  margin-left: -0.75rem;
+}
+.col-12 {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+}
+.col-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+.justify-content-end {
+  justify-content: flex-end !important;
+}
+.w-75 {
+  width: 75% !important;
+}
+.w-100 {
+  width: 100% !important;
+}
+.m-0 {
+  margin: 0 !important;
+}
+.pr-0 {
+  padding-right: 0 !important;
+}
+.pl-0 {
+  padding-left: 0 !important;
+}
+.pt-100 {
+  padding-top: 6.25rem !important;
+}
+.pb-60 {
+  padding-bottom: 3.75rem !important;
+}
+.pt-90 {
+  padding-top: 5.625rem !important;
+}
+@media (min-width: 576px) {
+  .pt-sm-80 {
+    padding-top: 5rem !important;
+  }
+  .pb-sm-100 {
+    padding-bottom: 6.25rem !important;
+  }
+}
+.text-white {
+  color: #fff !important;
+}
+.text-white {
+  color: #fff !important;
+}
+.bg-multiply-green {
+  background-blend-mode: multiply;
+  background-color: rgba(126, 211, 33, 0.24);
+  background-color: rgba(123, 193, 27, 0.35);
+  background-color: rgba(46, 74, 7, 0.4);
+  position: relative;
+}
+.bg-multiply-green::before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 20rem;
+  background: -moz-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(125, 185, 232, 0) 100%
+  );
+  background: -webkit-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(125, 185, 232, 0) 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(125, 185, 232, 0) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#000000", endColorstr="#007db9e8",GradientType=0 );
+}
+@media (max-width: 1199.98px) {
+  html {
+    font-size: 96%;
+  }
+}
+@media (max-width: 575.98px) {
+  html {
+    font-size: 94%;
+  }
+}
+.container-fluid {
+  max-width: 1600px;
+}
+.container-limited {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+@media (max-width: 1365.98px) {
+  .container-limited {
+    width: 84%;
+  }
+}
+@media (max-width: 991.98px) {
+  .container-limited {
+    width: 90%;
+  }
+}
+.container-fluid {
+  padding: 0;
+}
+@media (max-width: 991.98px) {
+  body #navigation {
+    background: rgba(0, 0, 0, 0);
+  }
+}
+body {
+  -webkit-font-smoothing: antialiased;
+}
+h1,
+h2 {
+  letter-spacing: -0.5px;
+}
+@media (max-width: 1199.98px) {
+  h1 {
+    font-size: 3.125rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 575.98px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 2.25rem;
+  }
+}
+header + #navigation .container-fluid {
+  background-color: rgba(0, 0, 0, 0);
+  box-shadow: none;
+}
+#navigation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1020;
+}
+@media (max-width: 991.98px) {
+  #navigation {
+    display: none;
+  }
+}
+#navigation .container-fluid {
+  position: relative;
+  background-color: #6cb61c;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1333333333);
+}
+#navigation #logo {
+  width: 5rem;
+  position: absolute;
+  top: 0.9375rem;
+  left: 1.5rem;
+  z-index: 10;
+}
+#navigation #logo h1 {
+  text-align: center;
+}
+@media (max-width: 1199.98px) {
+  #navigation #logo {
+    left: 1rem;
+  }
+}
+@media (min-width: 992px) {
+  #navigation #logo img {
+    height: 5rem;
+    width: auto !important;
+  }
+  #navigation.sticky {
+    position: fixed;
+  }
+  #navigation.sticky .container-fluid {
+    background-color: #6cb61c;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1333333333);
+  }
+  #navigation.sticky #logo img {
+    height: 4.6875rem;
+    width: auto !important;
+  }
+  #navigation .separator {
+    position: relative;
+    padding-left: 8.33333%;
+    height: 1px;
+    width: 100%;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  #navigation .separator {
+    padding-left: 9.6666%;
+  }
+}
+@media (min-width: 992px) {
+  #navigation .separator > div {
+    height: 1px;
+    width: 100%;
+    padding: 0 1.125rem;
+  }
+  #navigation .separator > div::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
+@media (min-width: 992px) {
+  #navigation #main-navigation {
+    position: relative;
+    z-index: 1;
+  }
+  #navigation #main-navigation > .nav {
+    padding-left: 8.33333%;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  #navigation #main-navigation > .nav {
+    padding-left: 9.6666%;
+    padding-right: 0.75rem;
+  }
+}
+@media (min-width: 992px) {
+  #navigation #main-navigation > .nav.open > .nav-item:hover > .nav-link,
+  #navigation #main-navigation > .nav .nav-item.hover > .nav-link {
+    color: #7ed321 !important;
+    background-color: #fff;
+    border-radius: 0.3rem 0.3rem 0 0;
+    position: relative;
+    z-index: 2;
+  }
+  #navigation
+    #main-navigation
+    > .nav.open
+    > .nav-item:hover
+    > .nav-link::before,
+  #navigation #main-navigation > .nav .nav-item.hover > .nav-link::before {
+    content: "";
+    position: absolute;
+    background: rgba(0, 0, 0, 0);
+    bottom: -10px;
+    top: -15px;
+    left: -100px;
+    right: -100px;
+    z-index: 2;
+  }
+  #navigation #main-navigation > .nav.open > .nav-item:hover > .nav.second,
+  #navigation #main-navigation > .nav .nav-item.hover > .nav.second {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+@media (min-width: 992px) {
+  #navigation #main-navigation > .nav > .nav-item.active > .nav-link {
+    border-bottom: 3px solid #fff;
+  }
+  #navigation #main-navigation > .nav > .nav-item:hover > .nav-link {
+    color: #fff;
+  }
+  #navigation #main-navigation > .nav > .nav-item > .nav-link {
+    color: #fff;
+    font-weight: bold;
+    position: relative;
+    padding: 0.875rem;
+    z-index: 3;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  #navigation #main-navigation > .nav > .nav-item > .nav-link {
+    padding-right: 0.3125rem;
+    padding-left: 0.3125rem;
+    font-size: 1rem;
+  }
+}
+@media (min-width: 992px) {
+  #navigation #main-navigation > .nav > .nav-item > .nav.second {
+    z-index: 1;
+    padding: 1.875rem 0;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-image: linear-gradient(-180deg, #ffffff 4%, #d8d8d8 100%);
+    clip-path: ellipse(200% 100% at 50% 0%);
+    -webkit-clip-path: ellipse(200% 100% at 50% 0%);
+  }
+  #navigation
+    #main-navigation
+    > .nav
+    > .nav-item
+    > .nav.second
+    > .nav-item
+    > .nav-link {
+    padding: 0;
+    border-radius: 0 0 0.3rem 0.3rem;
+    background-color: #fff;
+    font-family: "Oswald", sans-serif;
+    font-size: 1.5rem;
+    color: #9b9b9b;
+    line-height: 1.75rem;
+  }
+  #navigation
+    #main-navigation
+    > .nav
+    > .nav-item
+    > .nav.second
+    > .nav-item
+    > .nav-link
+    .img {
+    border-radius: 0.3rem 0.3rem 0 0;
+  }
+  #navigation
+    #main-navigation
+    > .nav
+    > .nav-item
+    > .nav.second
+    > .nav-item
+    > .nav-link
+    .link {
+    position: relative;
+    color: #757575;
+  }
+  #navigation
+    #main-navigation
+    > .nav
+    > .nav-item
+    > .nav.second
+    > .nav-item
+    > .nav-link
+    .link::after {
+    content: "";
+    font-size: 1.125rem;
+    line-height: 1.875rem;
+    font-family: "Font Awesome 5 Pro", sans-serif;
+    position: absolute;
+    top: 0.9375rem;
+    right: 0.3125rem;
+    margin-top: -1.0625rem;
+  }
+  #navigation
+    #main-navigation
+    > .nav
+    > .nav-item
+    > .nav.second
+    > .nav-item
+    > .nav-link
+    .text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+  #navigation
+    #main-navigation
+    > .nav
+    > .nav-item
+    > .nav.second
+    > .nav-item
+    > .nav-link:hover
+    .link {
+    color: #7ed321;
+  }
+  #navigation #main-navigation > .nav > .nav-item > .nav.second .nav.third {
+    padding-top: 0.625rem;
+  }
+  #navigation
+    #main-navigation
+    > .nav
+    > .nav-item
+    > .nav.second
+    .nav.third
+    > .nav-item
+    > .nav-link {
+    padding: 0.75rem 2rem 0.75rem 1rem;
+    font-size: 0.875rem;
+    color: #9b9b9b;
+    line-height: 1.4;
+    position: relative;
+  }
+  #navigation
+    #main-navigation
+    > .nav
+    > .nav-item
+    > .nav.second
+    .nav.third
+    > .nav-item
+    > .nav-link:hover {
+    color: #7ed321;
+  }
+  #navigation
+    #main-navigation
+    > .nav
+    > .nav-item
+    > .nav.second
+    .nav.third
+    > .nav-item
+    > .nav-link::after {
+    content: "";
+    font-size: 1.125rem;
+    font-family: "Font Awesome 5 Pro", sans-serif;
+    position: absolute;
+    right: 1rem;
+    line-height: 1.875rem;
+    top: 50%;
+    margin-top: -1.0625rem;
+  }
+  #navigation
+    #main-navigation
+    > .nav
+    > .nav-item
+    > .nav.second
+    .nav.third
+    > .nav-item:hover {
+    border-radius: 0.3rem;
+    background-color: #fff;
+  }
+  #navigation
+    #main-navigation
+    > .nav
+    > .nav-item
+    > .nav.second
+    .nav.third
+    > .nav-item:hover
+    + .nav-item
+    > .nav-link {
+    border-color: rgba(0, 0, 0, 0);
+  }
+  #navigation
+    #main-navigation
+    > .nav
+    > .nav-item
+    > .nav.second
+    .nav.third
+    > .nav-item:hover
+    > .nav-link {
+    border-color: rgba(0, 0, 0, 0) !important;
+  }
+  #navigation
+    #main-navigation
+    > .nav
+    > .nav-item
+    > .nav.second
+    .nav.third
+    > .nav-item
+    + .nav-item
+    > .nav-link {
+    border-top: 1px solid rgba(151, 151, 151, 0.3);
+  }
+}
+@media (min-width: 992px) {
+  #navigation #secondary-navigation {
+    padding: 0 1.125rem;
+    padding-left: 8.33333%;
+    position: relative;
+    z-index: 2;
+  }
+  #navigation #secondary-navigation > .nav {
+    padding-left: 1.125rem;
+    position: relative;
+  }
+  #navigation #secondary-navigation > .nav > .nav-item {
+    position: relative;
+  }
+  #navigation #secondary-navigation > .nav > .nav-item.has-pages .nav-link {
+    position: relative;
+  }
+  #navigation
+    #secondary-navigation
+    > .nav
+    > .nav-item.has-pages:hover
+    .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    left: 0.875rem;
+    right: 0.875rem;
+    height: 3px;
+    background-color: #fff;
+  }
+  #navigation #secondary-navigation > .nav > .nav-item:hover > .nav-link {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  #navigation #secondary-navigation > .nav > .nav-item.active > .nav-link {
+    border-bottom: 1px;
+    color: #fff;
+    font-weight: bold;
+  }
+  #navigation #secondary-navigation > .nav > .nav-item > .nav-link {
+    padding: 0.875rem;
+    font-size: 0.875rem;
+    color: #e8e8e8;
+  }
+  #navigation #secondary-navigation > .nav > .nav-item > .nav-link:hover {
+    color: #fff;
+  }
+  #navigation #secondary-navigation > .nav > .nav-item > .nav {
+    border-radius: 0.2rem;
+    border-top-left-radius: 0;
+    display: none;
+    background-color: #fff;
+    position: absolute;
+    top: 3rem;
+    left: 0.875rem;
+    padding: 0.4375rem;
+  }
+  #navigation
+    #secondary-navigation
+    > .nav
+    > .nav-item
+    > .nav
+    > .nav-item:hover
+    > .nav-link {
+    color: #7ed321;
+  }
+  #navigation
+    #secondary-navigation
+    > .nav
+    > .nav-item
+    > .nav
+    > .nav-item
+    > .nav-link {
+    font-size: 0.875rem;
+    color: #9b9b9b;
+  }
+  #navigation #secondary-navigation > .nav > .nav-item.last > .nav {
+    right: 0.875rem;
+    left: auto;
+    border-top-left-radius: 0.2rem;
+    border-top-right-radius: 0;
+  }
+  #navigation
+    #secondary-navigation
+    > .nav
+    > .nav-item:nth-last-child(-n + 1)
+    .nav-link {
+    padding-right: 0;
+  }
+}
+#navigation-mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0);
+}
+#navigation-mobile.sticky {
+  background-color: #6cb61c;
+}
+#navigation-mobile i {
+  font-size: 1.875rem;
+  color: #fff;
+}
+#navigation-mobile .col-logo {
+  max-width: 4.0625rem;
+}
+#navigation-mobile #mobile-nav {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  opacity: 0;
+}
+header {
+  background-color: #fff;
+}
+header .item {
+  background-position: center center;
+  background-size: cover;
+  clip-path: ellipse(180% 100% at 50% 0%);
+  -webkit-clip-path: ellipse(180% 100% at 50% 0%);
+}
+header .item h2 {
+  font-size: 4.5rem;
+}
+@media (max-width: 1199.98px) {
+  header .item h2 {
+    font-size: 3.5rem;
+  }
+}
+@media (max-width: 991.98px) {
+  header .item h2 {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 575.98px) {
+  header .item h2 {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 767.98px) {
+  header .item .w-75 {
+    width: 100% !important;
+  }
+}
+header .item p {
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+@media (max-width: 575.98px) {
+  header .item p {
+    font-size: 1.125rem;
+  }
+}
+@media (max-width: 575.98px) {
+  header .item h2 {
+    font-size: 2.5rem;
+  }
+  header .item p {
+    font-size: 1.125rem;
+    width: 100% !important;
+  }
+}
+            </style>
+    <meta charset="UTF-8">    <title>PEFC España</title>                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.5.0/css/lightgallery-bundle.min.css" integrity="sha512-lgRFGedXdci5Ykc5Wbgd8QCzt3lBmnkWcMRAS8myln2eMCDwQBrHmjqvUj9rBcKOyWMC+EYJnvEppggw1v+m8Q==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body class="has-header">
+
+<!--consent banner-->
+<section id="consent-banner" class="d-print-none active added">
+    <div class="container p-30">
+        <div class="row">
+            <div class="col-12">
+                <p class="text-center d-none d-md-block">
+                    <img width="80" height="80" style="opacity: 0.8" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9JzIwMCcgd2lkdGg9JzIwMCcgIGZpbGw9IiNmZmZmZmYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZlcnNpb249IjEuMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMDAgMTAwIiB4bWw6c3BhY2U9InByZXNlcnZlIj48Zz48Zz48Zz48cGF0aCBkPSJNNDUuMzM3LDcwLjEwNGMtMC45NC0wLjQ3MS0xLjg5OS0wLjYxOS0yLjk0LTAuNzA5Yy0xLjA4LTAuMDkyLTEuODQsMC4yNS0yLjY3LDAuOTA4Yy0wLjUyLDAuNDIyLTEuMDM5LDAuODMtMS41NiwxLjI1ICAgICBjLTAuMTQ5LDAuMTIxLTAuMjksMC4yMy0wLjQ0LDAuMzUybC0wLjAxLDAuMDFjMCwwLDAsMC4wMS0wLjAxLDAuMDFjLTAuNCwwLjQxLTAuNjcsMC45NzEtMC43NiwxLjUzOSAgICAgYzAsMC4wNy0wLjAxLDAuMTMxLTAuMDEsMC4yMDFjMCwwLjUsMC4xMjksMS4wMSwwLjM2OSwxLjQzOWMwLjAxLDAuMDIsMC4wMjEsMC4wMjksMC4wMywwLjA1MSAgICAgYzAuMTEsMC4xNDgsMC4yMiwwLjI5OSwwLjM0MSwwLjQzOWMwLjAxLDAuMDIsMC4wMiwwLjAyOSwwLjAzOSwwLjA1MWMxLjMzLDEuNzA5LDMuMDcsMy4wMiw1LjEzMSwzLjc2ICAgICBjMC43OTksMC4yOTksMi4wMjktMC4wMSwyLjU2OS0wLjY4YzEuMTItMS4zNzEsMi4wNS0yLjc4MSwyLjIyOS00LjU4QzQ3LjgxNiw3Mi40NzUsNDYuODE2LDcwLjg0NCw0NS4zMzcsNzAuMTA0eiAgICAgIE00My4wMjcsNzMuNTk0Yy0wLjAxLTAuMDItMC4wMy0wLjAyOS0wLjA1MS0wLjA1MWMwLjAyMSwwLjAxLDAuMDMxLDAuMDIxLDAuMDUxLDAuMDQxVjczLjU5NHoiPjwvcGF0aD48L2c+PGc+PHBhdGggZD0iTTM3LjcwNyw3MS45MjRjLTAuNCwwLjQxLTAuNjcsMC45NzEtMC43NiwxLjUzOUMzNi45ODcsNzIuODczLDM3LjIyNyw3Mi4zMDMsMzcuNzA3LDcxLjkyNHoiPjwvcGF0aD48L2c+PGc+PHBhdGggZD0iTTM3LjMwNyw3NS4xMDRjLTAuMzEtMC40My0wLjQyLTAuOTM5LTAuMzY5LTEuNDM5QzM2LjkzOCw3NC4xNjQsMzcuMDY2LDc0LjY3NCwzNy4zMDcsNzUuMTA0eiI+PC9wYXRoPjwvZz48Zz48cGF0aCBkPSJNNDMuMDI3LDczLjU4NHYwLjAxYy0wLjAxLTAuMDItMC4wMy0wLjAyOS0wLjA1MS0wLjA1MUM0Mi45OTcsNzMuNTUzLDQzLjAwOCw3My41NjQsNDMuMDI3LDczLjU4NHoiPjwvcGF0aD48L2c+PC9nPjxnPjxnPjxwYXRoIGQ9Ik02Ny42MjcsNjcuMTMxYy0xLjU4LTEuMTA5LTMuNTUtMS4zNzktNS4yOS0yLjE5OWMtMS4wNS0wLjQ5LTEuNTEtMS45Mi0xLjIxLTIuOThjMC4yOS0xLjAyOSwwLjU5LTIuMDQ5LDAuODgtMy4wOCAgICAgYzAuMTcxLTAuNjA5LDAuNDktMS4wNDksMC44OS0xLjM1bDAuMTIxLTAuMDljMS4wNDktMC43ODksMi4zNzktMC41MjksMy40MSwwLjI3YzIsMS41NjEsMy4zMjksMy44MTEsNC44MSw1LjgyICAgICBDNzIuODA3LDY1LjYzMSw2OS43MzcsNjguNjIxLDY3LjYyNyw2Ny4xMzF6Ij48L3BhdGg+PC9nPjwvZz48Zz48Zz48cGF0aCBkPSJNMzIuMTY3LDUzLjQ4NnYwLjAzMWMwLDEuNTU5LTAuMTQsMi45NjktMC44LDQuNDFjLTAuMzcsMC44MDktMS40MiwxLjMyLTIuMjgsMS4zMDljLTIuMDMtMC4wMjktMy43MjktMC42Ny00Ljk3OS0yLjI5OSAgICAgYy0xLjAxMS0xLjMxMS0xLjE3LTMuMTYtMS4xODEtNC43NWMtMC4wMjEtMS42NSwxLjctMy4wODEsMy4zNDEtMi41NDFjMS4zMTksMC40NCwyLjYzOSwwLjg4LDMuOTU5LDEuMzIgICAgIGMwLjIyMSwwLjA3LDAuNDMsMC4xNjksMC42MiwwLjNjMC42ODEsMC40LDEuMTUsMS4wNTksMS4yOCwxLjgyQzMyLjE1Niw1My4yMTcsMzIuMTY3LDUzLjM0OCwzMi4xNjcsNTMuNDg2eiI+PC9wYXRoPjwvZz48Zz48cGF0aCBkPSJNMzIuMTI3LDUzLjA4OGMtMC4xMy0wLjc2Mi0wLjYtMS40Mi0xLjI4LTEuODJDMzEuNDk3LDUxLjU5OCwzMi4wMDcsNTIuMjA3LDMyLjEyNyw1My4wODh6Ij48L3BhdGg+PC9nPjwvZz48Zz48Zz48cGF0aCBkPSJNNTEuODIyLDU2LjM1NGMtMC40MDktMC44Mi0xLjI2LTIuMzMtMS4xOC0yLjV2LTAuMDFjMC4xNi0wLjUsMC4yMTEtMC45OSwwLjI4LTEuNTFjMC4xNi0xLjE5OS0wLjkzLTIuMjItMS45NC0yLjU1ICAgICBjLTAuNTY5LTAuMi0xLjE4OS0wLjIyLTEuNzctMC40MWMtMS4wNjEtMC4zNS0yLjQ3LDAuMjEtMi45OCwxLjIyMWMtMC4yMDksMC40MS0wLjQzOSwwLjg1OS0wLjY4LDEuMzMgICAgIGMtMC44LDAuMTctMS40MzksMC42NDEtMS45NDksMS4zMmMtMC40NzEsMC42MjktMC41NTEsMS40NDktMC41MTEsMi4yMDljMC4wMywwLjU2MSwwLjIxLDAuOTksMC40NiwxLjM4MSAgICAgYy0wLjQsMS42MTktMC40MzksMy4yNCwwLjMwMSw0LjY1YzEuMzksMi42Niw0Ljc2LDEuODY5LDYuNzk5LDAuNjM5QzUwLjYwNCw2MC45NzUsNTMuMDgzLDU4Ljg3Myw1MS44MjIsNTYuMzU0eiI+PC9wYXRoPjwvZz48L2c+PGc+PGc+PHBhdGggZD0iTTUwLjE2NCwzNi4xOTNjLTEuMjYtMS4zOC0zLjQyLTEuNjg5LTUuMTgtMS43MWMtMS4xMDktMC4wMS0yLjMyLDAuODExLTIuNTUsMS45NGMtMC4xNCwwLjcyOS0wLjI5LDEuNDctMC40NCwyLjIgICAgIGMtMC4wMSwwLjA2LTAuMDIsMC4xMTktMC4wMiwwLjE4Yy0wLjAxLDAuMDEtMC4wMSwwLjAyLTAuMDEsMC4wM2MtMC4xMiwwLjg4LDAuMTMsMS43NSwwLjcxLDIuMzU5YzAuMDEsMCwwLjAxLDAsMC4wMSwwLjAxICAgICBjMC4wMTEsMC4wMTEsMC4wMjEsMC4wMjEsMC4wMywwLjAzYzEuMTYsMS4xMSwyLjY4OSwxLjk1LDQuMzQsMS44OGMxLjUyLTAuMDY5LDMuMTA5LTAuODU5LDMuODExLTIuMjcgICAgIEM1MS42NjQsMzkuMjMzLDUxLjM3NSwzNy41MTMsNTAuMTY0LDM2LjE5M3oiPjwvcGF0aD48L2c+PGc+PHBhdGggZD0iTTQyLjY3NSw0MS4xOTNjLTAuNjQtMC42Mi0wLjg3LTEuNTItMC43MS0yLjM1OUM0MS44NDUsMzkuNzEzLDQyLjA5NSw0MC41ODMsNDIuNjc1LDQxLjE5M3oiPjwvcGF0aD48L2c+PC9nPjxnPjxnPjxwYXRoIGQ9Ik03NC4yMjMsMTkuNDU1YzMuNDA4LDAsMy40MDgtNS4yODcsMC01LjI4N0M3MC44MTYsMTQuMTY3LDcwLjgxNiwxOS40NTUsNzQuMjIzLDE5LjQ1NUw3NC4yMjMsMTkuNDU1eiI+PC9wYXRoPjwvZz48L2c+PGc+PGc+PHBhdGggZD0iTTcxLjY2OCwzMi4zNjNjMy40MDcsMCwzLjQwNy01LjI4MiwwLTUuMjgyQzY4LjI2LDI3LjA4MSw2OC4yNiwzMi4zNjMsNzEuNjY4LDMyLjM2M0w3MS42NjgsMzIuMzYzeiI+PC9wYXRoPjwvZz48L2c+PGc+PGc+PHBhdGggZD0iTTg0LjIwNCw0MC4wMTNjMS45MTQsMCwxLjkxNC0yLjk2NywwLTIuOTY3QzgyLjI4OSwzNy4wNDYsODIuMjg5LDQwLjAxMyw4NC4yMDQsNDAuMDEzTDg0LjIwNCw0MC4wMTN6Ij48L3BhdGg+PC9nPjwvZz48Zz48cGF0aCBkPSJNNTAsOTEuMzgzYy0yMC40MDIsMC0zNy0xNi41OTgtMzctMzdjMC0yMC40MDIsMTYuNTk4LTM3LDM3LTM3YzEuODgxLDAsMy43NDIsMC4xNCw1LjUzMywwLjQxNGwyLjQ0OCwwLjM3NUw1Ny4xLDIwLjQ4NiAgICBjLTAuMTg2LDAuNDg2LTAuMjc5LDEuMDEtMC4yNzksMS41NThjMCwxLjgwMSwxLjAwMiwzLjQwNywyLjYxNCw0LjE5MWwxLjk5LDAuOTY5bC0xLjE2NCwxLjg4MyAgICBjLTEuMDQ3LDEuNjkxLTEuNjAxLDMuNjM3LTEuNjAxLDUuNjI3YzAsNS44ODQsNC43ODYsMTAuNjcsMTAuNjcsMTAuNjdjMS4zNTIsMCwyLjY0NS0wLjI0NCwzLjg0NS0wLjcyNmwxLjg4MS0wLjc1NmwwLjczLDEuODkyICAgIGMwLjk4LDIuNTQyLDMuNDc0LDQuMjUsNi4yMDQsNC4yNWMwLjc2MywwLDEuNTEzLTAuMTI5LDIuMjI5LTAuMzg0bDIuNDY4LTAuODc5bDAuMTk3LDIuNjEyQzg2Ljk2MSw1Mi40MSw4Nyw1My40MTgsODcsNTQuMzgzICAgIEM4Nyw3NC43ODUsNzAuNDAyLDkxLjM4Myw1MCw5MS4zODN6IE01MCwyMS4zODNjLTE4LjE5NiwwLTMzLDE0LjgwNC0zMywzM2MwLDE4LjE5NywxNC44MDQsMzMsMzMsMzNzMzMtMTQuODAzLDMzLTMzICAgIGMwLTAuMTI3LTAuMDAxLTAuMjU4LTAuMDAyLTAuMzg3Yy0wLjMzNCwwLjAzMS0wLjY3LDAuMDQ3LTEuMDA4LDAuMDQ3Yy0zLjcyNywwLTcuMTc5LTEuOTg4LTkuMDg5LTUuMDk5ICAgIGMtMS4xNTEsMC4yOTItMi4zNDcsMC40MzktMy41NzEsMC40MzljLTguMDg5LDAtMTQuNjctNi41ODEtMTQuNjctMTQuNjdjMC0yLjA3NywwLjQzOC00LjEyLDEuMjgtNi4wMDEgICAgYy0xLjk2MS0xLjYxOC0zLjEyLTQuMDMxLTMuMTItNi42NjljMC0wLjE4MiwwLjAwNi0wLjM2MSwwLjAxNy0wLjU0MUM1MS45MDMsMjEuNDIzLDUwLjk1NSwyMS4zODMsNTAsMjEuMzgzeiI+PC9wYXRoPjwvZz48L2c+PC9zdmc+" alt="">
+                </p>
+                <p class="text-white">
+                    En nuestra web utilizamos cookies propias y de terceros para obtener datos estadísticos de la navegación de nuestros usuarios y mejorar nuestros servicios.
+                    Puede elegir entre aceptar todas las cookies o personalizar su configuración.
+                    Puede cambiar la configuración de las cookies en cualquier momento.                </p>
+            </div>
+
+            <div class="col-8 offset-2 pb-15 pt-15" id="consent-items">
+                <p class="consent-item text-white">
+                    <label class="switch float-left">
+                        <input type="checkbox" name="consent-ga">
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="ml-10">
+                        Google Analytics                    </span>
+                    <span class="clearfix"></span>
+                </p>
+                <p class="consent-item text-white">
+                    <label class="switch float-left">
+                        <input type="checkbox" name="consent-youtube">
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="ml-10">
+                        Vídeos de youtube                    </span>
+                    <span class="clearfix"></span>
+                </p>
+            </div>
+
+
+            <div class="col-12 text-center mt-md-15 mt-5">
+                <button class="btn btn-sm btn-green font-weight-bold text-white consent-btn" id="consent-allow">
+                    Aceptar cookies                </button>
+                <button class="btn btn-link font-weight-bold consent-btn" id="consent-customize">
+                    Ajustes de cookies                </button>
+                <button class="btn btn-sm btn-green font-weight-bold text-white consent-apply">
+                    Aplicar ajustes                </button>
+                <button class="btn btn-link font-weight-bold consent-close">
+                    Cancelar                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Search Box-->
+<div id="search-box">
+    <div class="wrapper d-flex align-items-top close-box">
+        <div class="container-fluid bg-white">
+            <form action="/buscar" method="get" autocomplete="off">
+                <div class="row justify-content-center pt-30">
+                    <div class="col-5">
+                        <div class="form-group material m-0">
+                            <input type="text" id="search-input" class="form-control" name="q" placeholder="Buscar término.">
+                        </div>
+                    </div>
+                    <div class="col-1">
+                        <button type="submit" class="btn btn-green w-100 text-white btn-sm">
+                            <i class="far fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid" id="site">
+
+    <!--Carousel-->
+<header class="container-fluid p-0 d-print-none owl-carousel owl-loaded" id="carousel">
+
+    
+                
+    
+                
+    
+                
+    
+                
+    
+                
+    
+                
+    
+                
+    
+                
+    
+<div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-4320px, 0px, 0px); transition: all; width: 17280px;"><div class="owl-item cloned" style="width: 1080px;"><div class="item d-flex align-items-center w-100 bg-multiply-green" style="background-image: url(https://cdn.pefc.org/igen/pefc.es/media/2023-02/d4a685bb-fb06-4b6b-b4d9-4f62db5948dc/1a87f150-08e7-510d-a734-83dd7a3a3dcf.jpg?m%5B%5D=t%28cover%2C1600%2C540%29);" id="slide_67e4702ad4f03">
+            <div class="w-100">
+
+                <div class="container-limited">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="text-white mb-0">
+                                GO Bosques 3.0                            </h2>
+                                                            <div class="text-white m-0 w-75 mt-lg-24 mt-12">
+                                    <p>Grupo Operativo Boques 3.0. Digitalización y teledetección del uso sostenible, biodiversidad y resiliencia de los bosques españoles</p>                                </div>
+                                                                                        <div class="mt-24">
+                                                                            <a href="/que-hacemos/nuestro-impacto-colectivo/nuestros-proyectos/go-bosques-3-0" class="btn btn-md btn-success mr-5 text-white pr-sm-60 pl-sm-60 pr-30 pl-30 pt-sm-15 pb-sm-15">
+                                            <strong>Más información</strong>
+                                        </a>
+                                    
+                                                                    </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div></div><div class="owl-item cloned" style="width: 1080px;"><div class="item d-flex align-items-center w-100 bg-multiply-green" style="background-image: url(https://cdn.pefc.org/igen/pefc.es/media/2022-09/6003c460-0863-4716-a9f4-5ee3279c81a1/4ada63ad-130d-54c4-9c65-984aec7a05f9.jpg?m%5B%5D=t%28cover%2C1600%2C540%29);" id="slide_67e4702ad4f08">
+            <div class="w-100">
+
+                <div class="container-limited">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="text-white mb-0">
+                                Packaging Responsable                            </h2>
+                                                            <div class="text-white m-0 w-75 mt-lg-24 mt-12">
+                                    <p>La solución para envases y embalajes de bosques sostenibles</p>                                </div>
+                                                                                        <div class="mt-24">
+                                                                            <a href="/que-hacemos/nuestro-impacto-colectivo/nuestras-campanas/packaging-responsable-la-solucion-para-envases-y-embalajes-de-bosques-sostenibles" class="btn btn-md btn-success mr-5 text-white pr-sm-60 pl-sm-60 pr-30 pl-30 pt-sm-15 pb-sm-15">
+                                            <strong>Más información</strong>
+                                        </a>
+                                    
+                                                                    </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div></div><div class="owl-item cloned" style="width: 1080px;"><div class="item d-flex align-items-center w-100 bg-multiply-green" style="background-image: url(https://cdn.pefc.org/igen/pefc.es/media/2022-02/49702716-5fc0-44d8-88c9-4e6154f8f901/7e379ac8-3bde-59cc-929f-4235fdbce5c1.jpg?m%5B%5D=t%28cover%2C1600%2C540%29);" id="slide_67e4702ad4f0d">
+            <div class="w-100">
+
+                <div class="container-limited">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="text-white mb-0">
+                                Los bosques son nuestro hogar                            </h2>
+                                                            <div class="text-white m-0 w-75 mt-lg-24 mt-12">
+                                    <p>A través de esta campaña, PEFC quiere promover la sostenibilidad en toda la cadena de valor del sector del mueble </p>                                </div>
+                                                                                        <div class="mt-24">
+                                                                            <a href="que-hacemos/nuestro-impacto-colectivo/nuestras-campanas/los-bosques-son-nuestro-hogar" class="btn btn-md btn-success mr-5 text-white pr-sm-60 pl-sm-60 pr-30 pl-30 pt-sm-15 pb-sm-15">
+                                            <strong>Más información</strong>
+                                        </a>
+                                    
+                                                                    </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div></div><div class="owl-item cloned" style="width: 1080px;"><div class="item d-flex align-items-center w-100 bg-multiply-green" style="background-image: url(https://cdn.pefc.org/igen/pefc.es/media/2020-05/9fc5e5de-e604-4729-af18-e1a449b396fd/9723e707-b8ce-5a05-99b4-ad5af9282a1c.jpg?m%5B%5D=t%28cover%2C1600%2C540%29);" id="slide_67e4702ad4f12">
+            <div class="w-100">
+
+                <div class="container-limited">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="text-white mb-0">
+                                Objetivos de desarrollo sostenible                            </h2>
+                                                            <div class="text-white m-0 w-75 mt-lg-24 mt-12">
+                                    <p>Hay vínculos evidentes entre los Objetivos de Desarrollo Sostenible y el trabajo de PEFC en base a la visión de un mundo en el que las personas gestionen los bosques de forma sostenible. </p>                                </div>
+                                                                                        <div class="mt-24">
+                                                                            <a href="/que-hacemos/objetivos-de-desarrollo-sostenible" class="btn btn-md btn-success mr-5 text-white pr-sm-60 pl-sm-60 pr-30 pl-30 pt-sm-15 pb-sm-15">
+                                            <strong>Más información</strong>
+                                        </a>
+                                    
+                                                                    </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div></div><div class="owl-item active" style="width: 1080px;"><div class="item d-flex align-items-center w-100 bg-multiply-green" style="background-image: url(https://cdn.pefc.org/igen/pefc.es/media/2024-10/b2e1fa00-3bec-42cb-bb73-b686825c96cf/3d598a85-3a90-580a-a5c6-fb3e3ad13845.jpg?m%5B%5D=t%28cover%2C1600%2C540%29);" id="slide_67e4702ad4ee4">
+            <div class="w-100">
+
+                <div class="container-limited">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="text-white mb-0">
+                                25 años cuidando los bosques                            </h2>
+                                                            <div class="text-white m-0 w-75 mt-lg-24 mt-12">
+                                    <p>Cumplimos 25 años cuidando los bosques y trabajando junto a selvicultores, gestores y empresas del sector forestal para promover la gestión forestal sostenible</p>                                </div>
+                                                                                        <div class="mt-24">
+                                                                            <a href="https://www.pefc.es/noticias/25-anos-cuidando-los-bosques" class="btn btn-md btn-success mr-5 text-white pr-sm-60 pl-sm-60 pr-30 pl-30 pt-sm-15 pb-sm-15">
+                                            <strong>Más información</strong>
+                                        </a>
+                                    
+                                                                    </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div></div><div class="owl-item" style="width: 1080px;"><div class="item d-flex align-items-center w-100 bg-multiply-green" style="background-image: url(https://cdn.pefc.org/igen/pefc.es/media/2024-02/7e924cf7-f92d-41e3-b5e0-30e442e3f771/9dc65871-8cbf-565e-aa52-b45c711903f2.jpg?m%5B%5D=t%28cover%2C1600%2C540%29);" id="slide_67e4702ad4ef2">
+            <div class="w-100">
+
+                <div class="container-limited">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="text-white mb-0">
+                                PEFC, tu aliado para aplicar con éxito la regulación EUDR                            </h2>
+                                                                                        <div class="mt-24">
+                                                                            <a href="https://pefc.es/pefc-eudr" class="btn btn-md btn-success mr-5 text-white pr-sm-60 pl-sm-60 pr-30 pl-30 pt-sm-15 pb-sm-15">
+                                            <strong>Más información</strong>
+                                        </a>
+                                    
+                                                                    </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div></div><div class="owl-item" style="width: 1080px;"><div class="item d-flex align-items-center w-100 bg-multiply-green" style="background-image: url(https://cdn.pefc.org/igen/pefc.es/media/2023-08/9e73865e-a813-4991-9a0a-9610679c11d8/e9b05c91-8725-5d08-bc2b-a5d8b026bdac.jpg?m%5B%5D=t%28cover%2C1600%2C540%29);" id="slide_67e4702ad4ef8">
+            <div class="w-100">
+
+                <div class="container-limited">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="text-white mb-0">
+                                Educación Ambiental                            </h2>
+                                                            <div class="text-white m-0 w-75 mt-lg-24 mt-12">
+                                    <p>Actividades y materiales para educar en la importancia y beneficios de la gestión sostenible de los bosques y sus recursos.</p>                                </div>
+                                                                                        <div class="mt-24">
+                                                                            <a href="https://pefc.es/que-hacemos/educacion-ambiental" class="btn btn-md btn-success mr-5 text-white pr-sm-60 pl-sm-60 pr-30 pl-30 pt-sm-15 pb-sm-15">
+                                            <strong>Más información</strong>
+                                        </a>
+                                    
+                                                                    </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div></div><div class="owl-item" style="width: 1080px;"><div class="item d-flex align-items-center w-100 bg-multiply-green" style="background-image: url(https://cdn.pefc.org/igen/pefc.es/media/2023-06/0a173cf0-ecaa-4a8d-951b-99968f6a6624/ee6bc1dc-07de-530c-abe6-f6ff2ff27052.jpg?m%5B%5D=t%28cover%2C1600%2C540%29);" id="slide_67e4702ad4efd">
+            <div class="w-100">
+
+                <div class="container-limited">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="text-white mb-0">
+                                Red de Entidades Responsables con los Bosques (RER)                            </h2>
+                                                            <div class="text-white m-0 w-75 mt-lg-24 mt-12">
+                                    <p>RER es una plataforma profesional de entidades y personas capaces de actuar para lograr un mundo más sostenible, en un espacio de diálogo, conocimiento y creación de alianzas. </p>                                </div>
+                                                                                        <div class="mt-24">
+                                                                            <a href="https://pefc.es/red-entidades-responsables" class="btn btn-md btn-success mr-5 text-white pr-sm-60 pl-sm-60 pr-30 pl-30 pt-sm-15 pb-sm-15">
+                                            <strong>Más información</strong>
+                                        </a>
+                                    
+                                                                    </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div></div><div class="owl-item" style="width: 1080px;"><div class="item d-flex align-items-center w-100 bg-multiply-green" style="background-image: url(https://cdn.pefc.org/igen/pefc.es/media/2023-02/d4a685bb-fb06-4b6b-b4d9-4f62db5948dc/1a87f150-08e7-510d-a734-83dd7a3a3dcf.jpg?m%5B%5D=t%28cover%2C1600%2C540%29);" id="slide_67e4702ad4f03">
+            <div class="w-100">
+
+                <div class="container-limited">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="text-white mb-0">
+                                GO Bosques 3.0                            </h2>
+                                                            <div class="text-white m-0 w-75 mt-lg-24 mt-12">
+                                    <p>Grupo Operativo Boques 3.0. Digitalización y teledetección del uso sostenible, biodiversidad y resiliencia de los bosques españoles</p>                                </div>
+                                                                                        <div class="mt-24">
+                                                                            <a href="/que-hacemos/nuestro-impacto-colectivo/nuestros-proyectos/go-bosques-3-0" class="btn btn-md btn-success mr-5 text-white pr-sm-60 pl-sm-60 pr-30 pl-30 pt-sm-15 pb-sm-15">
+                                            <strong>Más información</strong>
+                                        </a>
+                                    
+                                                                    </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div></div><div class="owl-item" style="width: 1080px;"><div class="item d-flex align-items-center w-100 bg-multiply-green" style="background-image: url(https://cdn.pefc.org/igen/pefc.es/media/2022-09/6003c460-0863-4716-a9f4-5ee3279c81a1/4ada63ad-130d-54c4-9c65-984aec7a05f9.jpg?m%5B%5D=t%28cover%2C1600%2C540%29);" id="slide_67e4702ad4f08">
+            <div class="w-100">
+
+                <div class="container-limited">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="text-white mb-0">
+                                Packaging Responsable                            </h2>
+                                                            <div class="text-white m-0 w-75 mt-lg-24 mt-12">
+                                    <p>La solución para envases y embalajes de bosques sostenibles</p>                                </div>
+                                                                                        <div class="mt-24">
+                                                                            <a href="/que-hacemos/nuestro-impacto-colectivo/nuestras-campanas/packaging-responsable-la-solucion-para-envases-y-embalajes-de-bosques-sostenibles" class="btn btn-md btn-success mr-5 text-white pr-sm-60 pl-sm-60 pr-30 pl-30 pt-sm-15 pb-sm-15">
+                                            <strong>Más información</strong>
+                                        </a>
+                                    
+                                                                    </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div></div><div class="owl-item" style="width: 1080px;"><div class="item d-flex align-items-center w-100 bg-multiply-green" style="background-image: url(https://cdn.pefc.org/igen/pefc.es/media/2022-02/49702716-5fc0-44d8-88c9-4e6154f8f901/7e379ac8-3bde-59cc-929f-4235fdbce5c1.jpg?m%5B%5D=t%28cover%2C1600%2C540%29);" id="slide_67e4702ad4f0d">
+            <div class="w-100">
+
+                <div class="container-limited">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="text-white mb-0">
+                                Los bosques son nuestro hogar                            </h2>
+                                                            <div class="text-white m-0 w-75 mt-lg-24 mt-12">
+                                    <p>A través de esta campaña, PEFC quiere promover la sostenibilidad en toda la cadena de valor del sector del mueble </p>                                </div>
+                                                                                        <div class="mt-24">
+                                                                            <a href="que-hacemos/nuestro-impacto-colectivo/nuestras-campanas/los-bosques-son-nuestro-hogar" class="btn btn-md btn-success mr-5 text-white pr-sm-60 pl-sm-60 pr-30 pl-30 pt-sm-15 pb-sm-15">
+                                            <strong>Más información</strong>
+                                        </a>
+                                    
+                                                                    </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div></div><div class="owl-item" style="width: 1080px;"><div class="item d-flex align-items-center w-100 bg-multiply-green" style="background-image: url(https://cdn.pefc.org/igen/pefc.es/media/2020-05/9fc5e5de-e604-4729-af18-e1a449b396fd/9723e707-b8ce-5a05-99b4-ad5af9282a1c.jpg?m%5B%5D=t%28cover%2C1600%2C540%29);" id="slide_67e4702ad4f12">
+            <div class="w-100">
+
+                <div class="container-limited">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="text-white mb-0">
+                                Objetivos de desarrollo sostenible                            </h2>
+                                                            <div class="text-white m-0 w-75 mt-lg-24 mt-12">
+                                    <p>Hay vínculos evidentes entre los Objetivos de Desarrollo Sostenible y el trabajo de PEFC en base a la visión de un mundo en el que las personas gestionen los bosques de forma sostenible. </p>                                </div>
+                                                                                        <div class="mt-24">
+                                                                            <a href="/que-hacemos/objetivos-de-desarrollo-sostenible" class="btn btn-md btn-success mr-5 text-white pr-sm-60 pl-sm-60 pr-30 pl-30 pt-sm-15 pb-sm-15">
+                                            <strong>Más información</strong>
+                                        </a>
+                                    
+                                                                    </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div></div><div class="owl-item cloned" style="width: 1080px;"><div class="item d-flex align-items-center w-100 bg-multiply-green" style="background-image: url(https://cdn.pefc.org/igen/pefc.es/media/2024-10/b2e1fa00-3bec-42cb-bb73-b686825c96cf/3d598a85-3a90-580a-a5c6-fb3e3ad13845.jpg?m%5B%5D=t%28cover%2C1600%2C540%29);" id="slide_67e4702ad4ee4">
+            <div class="w-100">
+
+                <div class="container-limited">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="text-white mb-0">
+                                25 años cuidando los bosques                            </h2>
+                                                            <div class="text-white m-0 w-75 mt-lg-24 mt-12">
+                                    <p>Cumplimos 25 años cuidando los bosques y trabajando junto a selvicultores, gestores y empresas del sector forestal para promover la gestión forestal sostenible</p>                                </div>
+                                                                                        <div class="mt-24">
+                                                                            <a href="https://www.pefc.es/noticias/25-anos-cuidando-los-bosques" class="btn btn-md btn-success mr-5 text-white pr-sm-60 pl-sm-60 pr-30 pl-30 pt-sm-15 pb-sm-15">
+                                            <strong>Más información</strong>
+                                        </a>
+                                    
+                                                                    </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div></div><div class="owl-item cloned" style="width: 1080px;"><div class="item d-flex align-items-center w-100 bg-multiply-green" style="background-image: url(https://cdn.pefc.org/igen/pefc.es/media/2024-02/7e924cf7-f92d-41e3-b5e0-30e442e3f771/9dc65871-8cbf-565e-aa52-b45c711903f2.jpg?m%5B%5D=t%28cover%2C1600%2C540%29);" id="slide_67e4702ad4ef2">
+            <div class="w-100">
+
+                <div class="container-limited">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="text-white mb-0">
+                                PEFC, tu aliado para aplicar con éxito la regulación EUDR                            </h2>
+                                                                                        <div class="mt-24">
+                                                                            <a href="https://pefc.es/pefc-eudr" class="btn btn-md btn-success mr-5 text-white pr-sm-60 pl-sm-60 pr-30 pl-30 pt-sm-15 pb-sm-15">
+                                            <strong>Más información</strong>
+                                        </a>
+                                    
+                                                                    </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div></div><div class="owl-item cloned" style="width: 1080px;"><div class="item d-flex align-items-center w-100 bg-multiply-green" style="background-image: url(https://cdn.pefc.org/igen/pefc.es/media/2023-08/9e73865e-a813-4991-9a0a-9610679c11d8/e9b05c91-8725-5d08-bc2b-a5d8b026bdac.jpg?m%5B%5D=t%28cover%2C1600%2C540%29);" id="slide_67e4702ad4ef8">
+            <div class="w-100">
+
+                <div class="container-limited">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="text-white mb-0">
+                                Educación Ambiental                            </h2>
+                                                            <div class="text-white m-0 w-75 mt-lg-24 mt-12">
+                                    <p>Actividades y materiales para educar en la importancia y beneficios de la gestión sostenible de los bosques y sus recursos.</p>                                </div>
+                                                                                        <div class="mt-24">
+                                                                            <a href="https://pefc.es/que-hacemos/educacion-ambiental" class="btn btn-md btn-success mr-5 text-white pr-sm-60 pl-sm-60 pr-30 pl-30 pt-sm-15 pb-sm-15">
+                                            <strong>Más información</strong>
+                                        </a>
+                                    
+                                                                    </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div></div><div class="owl-item cloned" style="width: 1080px;"><div class="item d-flex align-items-center w-100 bg-multiply-green" style="background-image: url(https://cdn.pefc.org/igen/pefc.es/media/2023-06/0a173cf0-ecaa-4a8d-951b-99968f6a6624/ee6bc1dc-07de-530c-abe6-f6ff2ff27052.jpg?m%5B%5D=t%28cover%2C1600%2C540%29);" id="slide_67e4702ad4efd">
+            <div class="w-100">
+
+                <div class="container-limited">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="text-white mb-0">
+                                Red de Entidades Responsables con los Bosques (RER)                            </h2>
+                                                            <div class="text-white m-0 w-75 mt-lg-24 mt-12">
+                                    <p>RER es una plataforma profesional de entidades y personas capaces de actuar para lograr un mundo más sostenible, en un espacio de diálogo, conocimiento y creación de alianzas. </p>                                </div>
+                                                                                        <div class="mt-24">
+                                                                            <a href="https://pefc.es/red-entidades-responsables" class="btn btn-md btn-success mr-5 text-white pr-sm-60 pl-sm-60 pr-30 pl-30 pt-sm-15 pb-sm-15">
+                                            <strong>Más información</strong>
+                                        </a>
+                                    
+                                                                    </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div></div></div></div><div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><i class="far fa-arrow-left"></i></button><button type="button" role="presentation" class="owl-next"><i class="far fa-arrow-right"></i></button></div><div class="owl-dots"><button role="button" class="owl-dot active"><span></span></button><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot"><span></span></button></div></header>
+<!--Carousel-->
+
+    <!--Navigation-->
+    <section id="navigation" class="w-100 d-print-none">
+        <div class="container-fluid">
+            <div class="row justify-content-end m-0">
+                <div id="logo">
+                    <h1>
+                        <a href="/" title="Homepage">
+                                                            <img src="/assets/logo/pefc-14-01-01.svg" height="75" alt="PEFC España">
+                                                    </a>
+                    </h1>
+                </div>
+                <i class="fal fa-bars open-menu d-block d-lg-none cursor-pointer"></i>
+                <div class="col-12 d-flex d-lg-block flex-column p-0" id="navigation_wrapper">
+
+                    <i class="fal fa-times d-block d-lg-none close-menu"></i>
+                    <nav id="secondary-navigation" class="order-3">
+    <ul class="nav flex-column flex-lg-row justify-content-lg-end">
+                
+                        
+            <li class="nav-item   ">
+                                <a id="menu-10000740" class=" nav-link" href="/noticias">Noticias</a>
+
+
+                            </li>
+
+        
+                        
+            <li class="nav-item   ">
+                                <a id="menu-10002155" class=" nav-link" href="/que-hacemos/nuestro-impacto-colectivo/nuestros-proyectos" target="_blank">Proyectos</a>
+
+
+                            </li>
+
+        
+                        
+            <li class="nav-item   ">
+                                <a id="menu-10002157" class=" nav-link" href="/pefc-eudr">PEFC &amp; EUDR</a>
+
+
+                            </li>
+
+        
+                        
+            <li class="nav-item  has-pages ">
+                                <a id="menu-10001388" class=" nav-link" href="/documentacion">Documentación</a>
+
+
+                                    <ul class="nav flex-column">
+                                                    <li class="nav-item ">
+                                                                <a href="/documentacion/documentacion-tecnica" target="" class=" nav-link">
+                                    Documentación&nbsp;técnica                                </a>
+                            </li>
+                                                    <li class="nav-item ">
+                                                                <a href="/documentacion/materiales-divulgativos" target="" class=" nav-link">
+                                    Materiales&nbsp;divulgativos                                </a>
+                            </li>
+                                            </ul>
+                            </li>
+
+        
+                        
+            <li class="nav-item   ">
+                                <a id="menu-10001442" class=" nav-link" href="/red-entidades-responsables">Entidades RER</a>
+
+
+                            </li>
+
+        
+                        
+            <li class="nav-item  has-pages ">
+                                <a id="menu-10000796" class=" nav-link" href="/comunicacion">Comunicación</a>
+
+
+                                    <ul class="nav flex-column">
+                                                    <li class="nav-item ">
+                                                                <a href="/comunicacion/boletines" target="" class=" nav-link">
+                                    Boletines                                </a>
+                            </li>
+                                                    <li class="nav-item ">
+                                                                <a href="/comunicacion/casos-de-exito" target="" class=" nav-link">
+                                    Casos&nbsp;de&nbsp;éxito                                </a>
+                            </li>
+                                                    <li class="nav-item ">
+                                                                <a href="/comunicacion/memorias-anuales" target="" class=" nav-link">
+                                    Memorias&nbsp;Anuales                                </a>
+                            </li>
+                                                    <li class="nav-item ">
+                                                                <a href="/comunicacion/materiales-divulgativos" target="" class=" nav-link">
+                                    Materiales&nbsp;divulgativos                                </a>
+                            </li>
+                                                    <li class="nav-item ">
+                                                                <a href="/que-hacemos/nuestro-impacto-colectivo/nuestras-campanas" target="_blank" class=" nav-link">
+                                    Campañas                                </a>
+                            </li>
+                                            </ul>
+                            </li>
+
+        
+                        
+            <li class="nav-item   ">
+                                <a id="menu-10000802" class=" nav-link" href="/eventos">Eventos</a>
+
+
+                            </li>
+
+        
+                        
+                        
+            <li class="nav-item   ">
+                                <a id="menu-10000996" class=" nav-link" href="/buscadores">Buscadores</a>
+
+
+                            </li>
+
+        
+                        
+            <li class="nav-item   ">
+                                <a id="menu-10001477" class=" nav-link" href="/suscribete">Suscríbete</a>
+
+
+                            </li>
+
+        
+                        
+            <li class="nav-item   ">
+                                <a id="menu-10001620" class=" nav-link" href="/area-privada">Área privada</a>
+
+
+                            </li>
+
+        
+                        
+            <li class="nav-item   last">
+                                <a id="menu-10001440" class=" nav-link" href="/contacto">Contacto</a>
+
+
+                            </li>
+
+        
+                <li class="nav-item">
+            <a class="nav-link" href="#" id="open-search-box"><i class="fal fa-search"></i></a>
+        </li>
+    </ul>
+</nav>
+                    <div class="separator d-none d-lg-block">
+                        <div></div>
+                    </div>
+                    
+<nav id="main-navigation" class="order-2">
+    <ul class="nav flex-column flex-lg-row justify-content-lg-between">
+
+        
+            
+                        <li class="nav-item ">
+                                <a id="menu-10000774" class=" nav-link text-uppercase" href="/que-hacemos">Qué hacemos</a>
+
+
+
+                                                        
+                    
+                                            <ul class="nav flex-column flex-lg-row second justify-content-lg-left pr-lg-120 pl-lg-120 pb-60 pt-0">
+                            
+                            
+
+                            
+
+                                
+                                <li class="nav-item col mt-30 ">
+                                    <a class="nav-link h-100" href="/que-hacemos/por-que-los-bosques-son-importantes">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.es/media/2020-05/e73d7868-2019-4c2a-849a-96cac03dc920/d6794bfd-6132-58fa-8eb2-dcb956d7eae1.jpg?m%5B%5D=t%28cover%2C248%2C104%29" alt="Por qué los bosques son importantes">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                Por qué los bosques son importantes                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    Los bosques desempeñan un papel fundamental para el medio ambiente, la población y la economía mundiales.                                                 </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col mt-30 ">
+                                    <a class="nav-link h-100" href="/que-hacemos/nuestro-enfoque">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.es/media/2020-11/ac64cbaf-9f35-41bb-b8d4-f07564e7d90b/c5193e8b-9202-548b-8c33-5e7e4e6f9fba.jpg?m%5B%5D=t%28cover%2C248%2C104%29" alt="Nuestro enfoque">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                Nuestro enfoque                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    A través de nuestros proyectos y campañas promovemos la gestión forestal sostenible y la certificación forestal y de cadena de custodia.                                                </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col mt-30 ">
+                                    <a class="nav-link h-100" href="/que-hacemos/nuestro-impacto-colectivo">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.es/media/2020-05/d62e1d8a-6a2d-467e-ad9e-c2f3003f94d1/484a7935-99f1-534f-bdef-d25efb846cc5.jpg?m%5B%5D=t%28cover%2C248%2C104%29" alt="Nuestro impacto colectivo">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                Nuestro impacto colectivo                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    A través de nuestros proyectos y campañas, colaboramos con organizaciones locales y mundiales para promover el crecimiento de la gestión forestal sostenible y la certificación forestal.                                                </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col mt-30 ">
+                                    <a class="nav-link h-100" href="/que-hacemos/objetivos-de-desarrollo-sostenible">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.es/media/2020-09/b9716970-52d7-4a1f-89dc-968d81c43844/d3f0ee20-575a-50e5-962a-0659f82f00c8.png?m%5B%5D=t%28cover%2C248%2C104%29" alt="Objetivos de desarrollo sostenible">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                Objetivos de desarrollo sostenible                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    PEFC contribuye a lograr los ODS trabajando para promover todo el potencial de los bosques para un mundo sostenible.                                                </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col mt-30 ">
+                                    <a class="nav-link h-100" href="/que-hacemos/educacion-ambiental">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.es/media/2023-08/9e73865e-a813-4991-9a0a-9610679c11d8/e9b05c91-8725-5d08-bc2b-a5d8b026bdac.jpg?m%5B%5D=t%28cover%2C248%2C104%29" alt="Educación Ambiental" width="248" height="104">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                Educación Ambiental                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    Actividades y materiales para educar en la importancia y beneficios de la gestión sostenible de los bosques y sus recursos.                                                </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+                                                    </ul>
+                                                </li>
+        
+                        <li class="nav-item ">
+                                <a id="menu-10000789" class=" nav-link text-uppercase" href="/que-puedes-hacer">Qué puedes hacer</a>
+
+
+
+                                                        
+                    
+                                            <ul class="nav flex-column flex-lg-row second justify-content-lg-left pr-lg-120 pl-lg-120 pb-60 pt-0">
+                            
+                            
+
+                            
+
+                                
+                                <li class="nav-item col mt-30 ">
+                                    <a class="nav-link h-100" href="/que-puedes-hacer/busca-la-etiqueta-pefc">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.es/media/2020-06/e09c26f7-de7e-432b-a3cc-adb133b63fc5/09929b14-7c7d-52b0-ac7b-dc8b7c5de193.jpg?m%5B%5D=t%28cover%2C248%2C104%29" alt="Busca la etiqueta PEFC">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                Busca la etiqueta PEFC                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    Una de las formas más simples de ayudar a proteger nuestros bosques es buscar la etiqueta PEFC en los productos.                                                 </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col mt-30 ">
+                                    <a class="nav-link h-100" href="/que-puedes-hacer/compra-productos-certificados">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.es/media/2020-06/46020bb2-8714-4b7d-83ef-b194fc1f3c2a/18be804b-00bc-5058-ae75-bc9d0c59f48b.jpg?m%5B%5D=t%28cover%2C248%2C104%29" alt="Compra productos certificados">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                Compra productos certificados                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    Comprar productos PEFC es comprar de forma responsable, ya que proteges nuestros bosques                                                 </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col mt-30 ">
+                                    <a class="nav-link h-100" href="/que-puedes-hacer/certificate">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.es/media/2020-06/6f51b7df-0747-40b7-8833-dfd642f99fe0/a4c7e4dc-9912-5a79-8037-a7fe12591759.jpg?m%5B%5D=t%28cover%2C248%2C104%29" alt="Certifícate">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                Certifícate                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    Si eres selvicultor, gestionas un bosque o tienes una empresa de la cadena de suministro certifica tus productos con PEFC y protege los bosques del mundo                                                </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col mt-30 ">
+                                    <a class="nav-link h-100" href="/que-puedes-hacer/como-se-revisa-el-sistema-espanol">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.es/media/2020-06/1ca3b00d-ba59-4e82-b898-4ff89eab1c36/9981b84e-0a87-563e-9573-ec981b30fbd2.jpg?m%5B%5D=t%28cover%2C248%2C104%29" alt="Cómo se revisa el Sistema Español">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                Cómo se revisa el Sistema Español                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    Desde enviar comentarios a través de una consulta pública online, hasta ayudar a impulsar el desarrollo de un sistema uniéndote a un grupo de trabajo.                                                </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col mt-30 ">
+                                    <a class="nav-link h-100" href="/que-puedes-hacer/hazte-miembro-de-pefc-espana">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.es/media/2020-06/47125d5b-a44a-4fdf-973c-b0535efdfc0a/d23d21c2-58e3-5a23-bf89-195186c60bf5.jpg?m%5B%5D=t%28cover%2C248%2C104%29" alt="Hazte miembro de PEFC España">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                Hazte miembro de PEFC España                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    Demuestra tu compromiso y moviliza tu apoyo a los bosques convirtiéndote en miembro de PEFC.                                                </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+                                                    </ul>
+                                                </li>
+        
+                        <li class="nav-item ">
+                                <a id="menu-10000790" class=" nav-link text-uppercase" href="/propietarios-forestales">Propietarios forestales</a>
+
+
+
+                                                        
+                    
+                                            <ul class="nav flex-column flex-lg-row second justify-content-lg-center pr-lg-120 pl-lg-120 pb-60 pt-0">
+                            
+                            
+
+                            
+
+                                
+                                <li class="nav-item col-lg-4 mt-30 ">
+                                    <a class="nav-link h-100" href="/propietarios-forestales/por-que-certificar-tu-monte">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.es/media/2020-06/f18b9f3f-042c-4bc3-a1f8-5284e7e78022/da28ea9d-3fd1-500d-98d1-4bc85b6431bb.jpg?m%5B%5D=t%28cover%2C430%2C180%29" alt="¿Por qué certificar tu monte?">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                ¿Por qué certificar tu monte?                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    La certificación de gestión forestal sostenible PEFC te proporciona un reconocimiento independiente de tus prácticas de gestión responsable.                                                </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col-lg-4 mt-30 ">
+                                    <a class="nav-link h-100" href="/propietarios-forestales/como-certificar-tu-monte">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.es/media/2020-06/bac81aba-8eac-48d2-80b2-53800e53b7a7/f2b15f80-188e-5bac-8d00-3c067ab1beaf.jpg?m%5B%5D=t%28cover%2C430%2C180%29" alt="¿Cómo certificar tu monte?">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                ¿Cómo certificar tu monte?                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    Descubra los pasos que debes dar para conseguir la certificación  de gestión forestal sostenible PEFC.                                                </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col-lg-4 mt-30 ">
+                                    <a class="nav-link h-100" href="/propietarios-forestales/certificacion-adaptada-a-las-pequenas-superficies">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.es/media/2020-06/fdc4a8ff-f9d5-460c-910f-59c33e60f7f9/6950ca2e-292b-5c3b-9b91-a30a9874b6f1.jpg?m%5B%5D=t%28cover%2C430%2C180%29" alt="Certificación adaptada a las pequeñas superficies">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                Certificación adaptada a las pequeñas superficies                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    La certificación de grupo o regional permite la certificación de múltiples propietarios de bosques.                                                 </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+                                                            <div class="col-12"></div>
+                                
+                                    
+                                    
+                                
+                                    
+                                    
+                                
+                                    
+                                    
+                                                                                    </ul>
+                                                </li>
+        
+                        <li class="nav-item ">
+                                <a id="menu-10000791" class=" nav-link text-uppercase" href="/empresas">Empresas</a>
+
+
+
+                                                        
+                    
+                                            <ul class="nav flex-column flex-lg-row second justify-content-lg-center pr-lg-120 pl-lg-120 pb-60 pt-0">
+                            
+                            
+
+                            
+
+                                
+                                <li class="nav-item col-lg-4 mt-30 ">
+                                    <a class="nav-link h-100" href="/empresas/como-conseguir-la-certificacion-de-cadena-de-custodia-pefc">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.es/media/2020-06/3eaf8922-91dc-4216-9cc9-6d9d9d49b160/dd318d63-f3fd-501c-b70c-ce1406353d2a.jpg?m%5B%5D=t%28cover%2C430%2C180%29" alt="Cómo conseguir la certificación de Cadena de Custodia PEFC">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                Cómo conseguir la certificación de Cadena de Custodia PEFC                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    La certificación de cadena de custodia PEFC permite demostrar a tus clientes el origen legal y sostenible de los productos forestales.                                                </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col-lg-4 mt-30 ">
+                                    <a class="nav-link h-100" href="/empresas/propietarios-de-marcas-y-minoristas">
+
+                                                                                    <img class="img w-100" src="/assets/background/menu-hover.png" loading="lazy" alt="Propietarios de marcas y minoristas" width="340" height="142">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                Propietarios de marcas y minoristas                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    Para las empresas que se encuentran al final de la cadena de suministro, como los propietarios de marcas y los minoristas, la certificación PEFC  ofrece muchos beneficios.                                                </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col-lg-4 mt-30 ">
+                                    <a class="nav-link h-100" href="/empresas/entidades-de-certificacion-y-de-acreditacion">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.es/media/2020-06/11d2ff92-559b-4183-b253-fdc30aaa11f5/1aaecf1f-9b4c-5382-bd10-851d7f222e83.jpg?m%5B%5D=t%28cover%2C430%2C180%29" alt="Entidades de certificación y de acreditación" width="430" height="180">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                Entidades de certificación y de acreditación                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    ¿Eres un organismo de certificación que quiere ofrecer la certificación PEFC a los propietarios de bosques y/o empresas de la cadena de suministro?                                                </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+                                                            <div class="col-12"></div>
+                                
+                                    
+                                                                            <div class="col-lg-4 mb-30">
+                                            <ul class="nav third flex-column">
+                                                
+                                                    
+                                                    <li class="nav-item ">
+                                                                                                                <a id="menu-10000813" class=" nav-link" href="/empresas/como-conseguir-la-certificacion-de-cadena-de-custodia-pefc/por-que-certificar-tu-empresa">¿Por qué certificar tu empresa?</a>
+                                                    </li>
+                                                
+                                                    
+                                                    <li class="nav-item ">
+                                                                                                                <a id="menu-10000814" class=" nav-link" href="/empresas/como-conseguir-la-certificacion-de-cadena-de-custodia-pefc/la-certificacion-de-la-cadena-de-custodia">La certificación de la cadena de custodia</a>
+                                                    </li>
+                                                
+                                                    
+                                                    <li class="nav-item ">
+                                                                                                                <a id="menu-10000815" class=" nav-link" href="/empresas/como-conseguir-la-certificacion-de-cadena-de-custodia-pefc/uso-de-la-etiqueta-pefc">Uso de la etiqueta PEFC</a>
+                                                    </li>
+                                                
+                                                    
+                                                    <li class="nav-item ">
+                                                                                                                <a id="menu-10002169" class=" nav-link" href="/pefc-eudr">Alineación con EUDR</a>
+                                                    </li>
+                                                
+                                                    
+                                                    <li class="nav-item ">
+                                                                                                                <a id="menu-10000818" class=" nav-link" href="/empresas/como-conseguir-la-certificacion-de-cadena-de-custodia-pefc/certificacion-para-las-pequenas-empresas">Certificación para las pequeñas empresas</a>
+                                                    </li>
+                                                
+                                                    
+                                                    <li class="nav-item ">
+                                                                                                                <a id="menu-10000819" class=" nav-link" href="/empresas/como-conseguir-la-certificacion-de-cadena-de-custodia-pefc/certificacion-de-empresas-con-multiples-instalaciones">Certificación de empresas con múltiples instalaciones</a>
+                                                    </li>
+                                                
+                                                    
+                                                    <li class="nav-item ">
+                                                                                                                <a id="menu-10000820" class=" nav-link" href="/empresas/como-conseguir-la-certificacion-de-cadena-de-custodia-pefc/certifica-un-proyecto-constructivo">Certifica un proyecto constructivo</a>
+                                                    </li>
+                                                                                            </ul>
+                                        </div>
+                                    
+                                
+                                    
+                                                                            <div class="col-lg-4 mb-30">
+                                            <ul class="nav third flex-column">
+                                                
+                                                    
+                                                    <li class="nav-item ">
+                                                                                                                <a id="menu-10000822" class=" nav-link" href="/empresas/propietarios-de-marcas-y-minoristas/beneficiate-de-la-certificacion-pefc">Beneficiate de la certificación PEFC</a>
+                                                    </li>
+                                                
+                                                    
+                                                    <li class="nav-item ">
+                                                                                                                <a id="menu-10000823" class=" nav-link" href="/empresas/propietarios-de-marcas-y-minoristas/promociona-tus-productos-certificados">Promociona tus productos certificados</a>
+                                                    </li>
+                                                
+                                                    
+                                                    <li class="nav-item ">
+                                                                                                                <a id="menu-10000824" class=" nav-link" href="/empresas/propietarios-de-marcas-y-minoristas/elige-productos-certificados-pefc">Elige productos certificados PEFC</a>
+                                                    </li>
+                                                                                            </ul>
+                                        </div>
+                                    
+                                
+                                    
+                                                                            <div class="col-lg-4 mb-30">
+                                            <ul class="nav third flex-column">
+                                                
+                                                    
+                                                    <li class="nav-item ">
+                                                                                                                <a id="menu-10000826" class=" nav-link" href="/empresas/entidades-de-certificacion-y-de-acreditacion/como-obtener-la-autorizacion-pefc-para-entidades-de-certific">Cómo obtener la autorización PEFC para entidades de certificación</a>
+                                                    </li>
+                                                
+                                                    
+                                                    <li class="nav-item ">
+                                                                                                                <a id="menu-10000828" class=" nav-link" href="/empresas/entidades-de-certificacion-y-de-acreditacion/formacion-para-las-entidades-de-certificacion">Formación para las entidades de certificación</a>
+                                                    </li>
+                                                
+                                                    
+                                                    <li class="nav-item ">
+                                                                                                                <a id="menu-10000829" class=" nav-link" href="/empresas/entidades-de-certificacion-y-de-acreditacion/emision-de-acreditaciones-reconocidas-por-pefc">Emisión de acreditaciones reconocidas por PEFC </a>
+                                                    </li>
+                                                                                            </ul>
+                                        </div>
+                                    
+                                                                                    </ul>
+                                                </li>
+        
+                        <li class="nav-item ">
+                                <a id="menu-10001000" class=" nav-link text-uppercase" href="/normativa">Normativa</a>
+
+
+
+                                                        
+                    
+                                            <ul class="nav flex-column flex-lg-row second justify-content-lg-center pr-lg-120 pl-lg-120 pb-60 pt-0">
+                            
+                            
+
+                            
+
+                                
+                                <li class="nav-item col-lg-4 mt-30 ">
+                                    <a class="nav-link h-100" href="/normativa/normativa-y-guias">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.es/media/2020-06/0fe15ab5-0b8f-4ce5-9871-8a826df4ae66/666ab806-8fb4-54f6-bcce-a48a2574e690.jpg?m%5B%5D=t%28cover%2C430%2C180%29" alt="Normativa y guías">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                Normativa y guías                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    Consulta nuestras normas y guías de ámbito nacional e internacional                                                </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col-lg-4 mt-30 ">
+                                    <a class="nav-link h-100" href="/normativa/revision-del-sistema-espanol">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.es/media/2020-06/63e5f4cb-891d-4a4a-87b5-dc91135418d0/56d1df90-c94a-52c3-af44-214e6be27e65.jpg?m%5B%5D=t%28cover%2C430%2C180%29" alt="Revisión del Sistema Español" width="430" height="180">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                Revisión del Sistema Español                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    Revisión del Sistema Español de Certificación Forestal y de las Normas UNE de Gestión Forestal Sostenible                                                </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+                                                            <div class="col-12"></div>
+                                
+                                    
+                                    
+                                
+                                    
+                                    
+                                                                                    </ul>
+                                                </li>
+        
+                        <li class="nav-item ">
+                                <a id="menu-10000793" class=" nav-link text-uppercase" href="/descubre-pefc">Descubre PEFC</a>
+
+
+
+                                                        
+                    
+                                            <ul class="nav flex-column flex-lg-row second justify-content-lg-left pr-lg-120 pl-lg-120 pb-60 pt-0">
+                            
+                            
+
+                            
+
+                                
+                                <li class="nav-item col mt-30 ">
+                                    <a class="nav-link h-100" href="/descubre-pefc/que-es-pefc">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.es/media/2020-06/ba11273b-f4af-4a1a-a089-bc017250d9a3/b67864c3-b4c4-50af-9812-0381dd50b410.jpg?m%5B%5D=t%28cover%2C248%2C104%29" alt="¿Qué es pefc?">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                ¿Qué es pefc?                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    PEFC España es una organización no gubernamental sin ánimo de lucro que promueve y divulga la Gestión Forestal Sostenible, a través de la certificación forestal y de la cadena de custodia de los productos del bosque. Esto contribuye a la conservación ambiental y de la biodiversidad y promueve la economía social, la circularidad y el desarrollo sostenible.                                                </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col mt-30 ">
+                                    <a class="nav-link h-100" href="/descubre-pefc/datos-y-estadisticas">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.es/media/2020-09/cc8e3291-d4f9-48b0-8075-0c2fbbd3a4dd/6cc9360b-39e2-5d5b-a256-bd560ff62257.jpg?m%5B%5D=t%28cover%2C248%2C104%29" alt="Datos y estadísticas">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                Datos y estadísticas                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    Con más de 295 millones de hectáreas de bosques certificados, PEFC es el sistema de certificación forestal más implantado del mundo.                                                 </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col mt-30 ">
+                                    <a class="nav-link h-100" href="/descubre-pefc/gobernanza-pefc-espana">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.es/media/2020-09/4801a264-1ff3-49ba-b96b-22417901329d/b9290b27-46ac-58bd-98de-2526d18340f0.jpg?m%5B%5D=t%28cover%2C248%2C104%29" alt="Gobernanza PEFC España">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                Gobernanza PEFC España                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    PEFC España es una organización profesional sin ánimo de lucro adscrita a la mayor asociación forestal del mundo. Descubre su estructura.                                                </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col mt-30 ">
+                                    <a class="nav-link h-100" href="/descubre-pefc/miembros-de-pefc-espana">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.es/media/2024-12/c93efaed-1a6a-450b-9323-3acc9537732c/e572b085-2c28-5a3a-be64-b1026002bd5b.jpeg?m%5B%5D=t%28cover%2C248%2C104%29" alt="Miembros de PEFC España">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                Miembros de PEFC España                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    PEFC España es una entidad sin ánimo de lucro, equilibrada en su constitución y abierta a la participación.                                                 </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+
+                                
+                                <li class="nav-item col mt-30 ">
+                                    <a class="nav-link h-100" href="/descubre-pefc/equipo-pefc">
+
+                                                                                    <img class="img w-100" loading="lazy" src="https://cdn.pefc.org/igen/pefc.es/media/2020-06/e2c5342b-de0f-4118-ad39-107f4f13ae67/bc6794cf-2aed-5cab-a759-25af6514e44e.jpg?m%5B%5D=t%28cover%2C248%2C104%29" alt="Conoce al equipo PEFC España">
+                                                                                <div class="col-12 pt-15 pb-15">
+                                            <p class="link m-0 text-uppercase pr-30">
+                                                Conoce al equipo PEFC España                                            </p>
+                                                                                            <p class="text mb-0 mt-3">
+                                                    Conoce a las personas que hay detrás de PEFC España                                                </p>
+                                                                                    </div>
+                                    </a>
+                                </li>
+                            
+                                                    </ul>
+                                                </li>
+        
+            
+                </ul>
+</nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Navigation-->
+
+
+    <section id="content">
+                
+    <div class="container-fluid mb-60 d-print-none">
+        <div id="top-home" class="bg-white-gray pt-30 ">
+            <div class="slide-top">
+
+                <!--Find Certified-->
+<div class="container-limited mb-60" id="find-certified">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row p-sm-10">
+                        <div class="col-12 col-lg-5">
+                            <h1 class="text-green text-uppercase m-0"><i class="fal fa-search mr-12 small"></i>
+                                ENCUENTRA EMPRESAS CERTIFICADAS PEFC
+                            </h1>
+                            <p class="m-0 mt-12">
+                                PEFC mantiene bases de datos completas para garantizar un fácil acceso a información relevante sobre titulares de certificados, usuarios de logotipos y etiquetas, productos certificados, organismos de certificación acreditados y esquemas de certificación nacionales respaldados por PEFC.                            </p>
+                        </div>
+                        <div class="col-12 col-lg-7 pt-5 d-flex align-items-center mt-30 mt-md-0">
+                            <form action="/find-certified" autocomplete="off" method="get" class="w-100" id="find-certified-widget-search">
+                                <div class="form-group material">
+                                    <input type="text" class="form-control form-control pl-0" name="certificate_number" placeholder="Número de licencia de logo, número de certificado o nombre de la empresa">
+                                    <input type="hidden" name="licence_number">
+                                    <input type="hidden" name="name">
+                                </div>
+                                <div class="mt-30">
+                                    <div class="row justify-content-center">
+                                        <div class="col-sm-4 col-12">
+                                            <button class="btn btn-md btn-green mr-5 text-white w-100 pt-sm-15 pb-sm-15" type="submit">
+                                                <strong>Buscar<i class="fal fa-search ml-12 small"></i></strong>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Find Certified-->
+
+                <!--Tunels Top-->
+                <div class="container-limited pb-60 pb-lg-0">
+                    <div class="row tunnels">
+                        
+
+<div class="col-12 mb-30 mb-lg-0 col-lg-4 h-100 tunnel pb-60">
+    <div class="card w-100">
+        <a href="https://buscadorproductos.pefc.es/index.php" target="_blank">
+            <div class="bg-image-wrapper h-100">
+                <div class="bg-image" style="background-image: url(https://cdn.pefc.org/igen/pefc.es/media/2021-04/fe1cada8-b87f-43c4-8fcd-1e941a9e4658/f9266c6d-ca29-5b00-82ae-cbd523313286.jpg?m%5B%5D=t%28inside%2C400%2C400%29)">
+                    <div class="p-24 h-100 text-right">
+                        <h4 class="mb-12 text-uppercase  text-green">Buscador de productos certificados PEFC</h4>
+                        <div class="line-height-1-2 m-0  ">
+                                                    </div>
+                        <p class="mt-6 m-0 line-height-1-2 small text-uppercase pt-6  ">
+                            <strong class="text-dark">Leer más</strong> <i class="fal fa-angle-double-right"></i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+
+
+<div class="col-12 mb-30 mb-lg-0 col-lg-4 h-100 tunnel pb-60">
+    <div class="card w-100">
+        <a href="https://buscador-gfs.pefc.es/" target="_blank">
+            <div class="bg-image-wrapper h-100">
+                <div class="bg-image" style="background-image: url(https://cdn.pefc.org/igen/pefc.es/media/2021-03/9caae77f-896d-428e-859c-34ba4cd47542/71b55c36-c5ee-51c6-afc6-e71aff8d3744.jpg?m%5B%5D=t%28inside%2C400%2C400%29)">
+                    <div class="p-24 h-100 text-right">
+                        <h4 class="mb-12 text-uppercase  text-green">Buscador de certificados de Gestión Forestal Sostenible PEFC</h4>
+                        <div class="line-height-1-2 m-0  ">
+                                                    </div>
+                        <p class="mt-6 m-0 line-height-1-2 small text-uppercase pt-6  ">
+                            <strong class="text-dark">Leer más</strong> <i class="fal fa-angle-double-right"></i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+
+
+<div class="col-12 mb-30 mb-lg-0 col-lg-4 h-100 tunnel pb-60">
+    <div class="card w-100">
+        <a href="https://buscador-montes.pefc.es/" target="_blank">
+            <div class="bg-image-wrapper h-100">
+                <div class="bg-image" style="background-image: url(https://cdn.pefc.org/igen/pefc.es/media/2021-04/79b86a11-6fa0-48b1-8674-d8eea51dfd45/52cf657d-f7f9-59ef-b566-05b6cc6590b8.png?m%5B%5D=t%28inside%2C400%2C400%29)">
+                    <div class="p-24 h-100 text-right">
+                        <h4 class="mb-12 text-uppercase  text-green">Buscador de superficies certificadas PEFC</h4>
+                        <div class="line-height-1-2 m-0  ">
+                                                    </div>
+                        <p class="mt-6 m-0 line-height-1-2 small text-uppercase pt-6  ">
+                            <strong class="text-dark">Leer más</strong> <i class="fal fa-angle-double-right"></i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+
+
+<div class="col-12 mb-30 mb-lg-0 col-lg-4 h-100 tunnel pb-60">
+    <div class="card w-100">
+        <a href="/documentacion/documentacion-tecnica" target="">
+            <div class="bg-image-wrapper h-100">
+                <div class="bg-image" style="background-image: url(https://cdn.pefc.org/igen/pefc.es/media/2021-04/e3abd8f3-b9c0-49f4-8c7b-81d5abef6ce3/800d6eee-4ffa-57e2-b48b-7cf878e551d9.jpg?m%5B%5D=t%28inside%2C400%2C400%29)">
+                    <div class="p-24 h-100 text-right">
+                        <h4 class="mb-12 text-uppercase  text-green">Documentación técnica</h4>
+                        <div class="line-height-1-2 m-0  ">
+                            <p>Accede a toda la documentación técnica</p>                        </div>
+                        <p class="mt-6 m-0 line-height-1-2 small text-uppercase pt-6  ">
+                            <strong class="text-dark">Leer más</strong> <i class="fal fa-angle-double-right"></i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+
+
+<div class="col-12 mb-30 mb-lg-0 col-lg-4 h-100 tunnel pb-60">
+    <div class="card w-100">
+        <a href="/que-puedes-hacer/certificate" target="">
+            <div class="bg-image-wrapper h-100">
+                <div class="bg-image" style="background-image: url(https://cdn.pefc.org/igen/pefc.es/media/2021-04/153c2b8d-9bed-4c8d-aa23-1e6c2d451a7d/d32e8b6f-1870-5f69-9c60-642f06156d7b.jpg?m%5B%5D=t%28inside%2C400%2C400%29)">
+                    <div class="p-24 h-100 text-right">
+                        <h4 class="mb-12 text-uppercase  text-green">Certifícate</h4>
+                        <div class="line-height-1-2 m-0  ">
+                            <p>Consigue la certificación PEFC y ayuda a proteger los bosques del mundo</p>                        </div>
+                        <p class="mt-6 m-0 line-height-1-2 small text-uppercase pt-6  ">
+                            <strong class="text-dark">Leer más</strong> <i class="fal fa-angle-double-right"></i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+
+
+<div class="col-12 mb-30 mb-lg-0 col-lg-4 h-100 tunnel pb-60">
+    <div class="card w-100">
+        <a href="https://labelgenerator.pefc.org/" target="">
+            <div class="bg-image-wrapper h-100">
+                <div class="bg-image" style="background-image: url(https://cdn.pefc.org/igen/pefc.es/media/2021-04/6ca88d22-4954-4196-a6fa-752b5f355444/03fe5b01-4b71-595e-8166-ac6dffa77be5.jpg?m%5B%5D=t%28inside%2C400%2C400%29)">
+                    <div class="p-24 h-100 text-right">
+                        <h4 class="mb-12 text-uppercase  text-green">Generador de etiquetas PEFC</h4>
+                        <div class="line-height-1-2 m-0  ">
+                            <p>(PEFC ST 2002:2020)</p>                        </div>
+                        <p class="mt-6 m-0 line-height-1-2 small text-uppercase pt-6  ">
+                            <strong class="text-dark">Leer más</strong> <i class="fal fa-angle-double-right"></i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+
+
+
+
+
+
+    
+    <div class="col-12 widget widget-block mb-20">
+
+        <div class="bg-background rounded block-item bg-block-green d-md-flex">
+                            <div class="col-12 col-md-4 bg-image" style="background-image: url(https://cdn.pefc.org/igen/pefc.es/media/2020-06/ba11273b-f4af-4a1a-a089-bc017250d9a3/b67864c3-b4c4-50af-9812-0381dd50b410.jpg?m%5B%5D=t%28cover%2C400%2C400%29);"></div>
+                        <div class="col-12 col-md-8 p-24 d-flex flex-column">
+
+                                    <a href="https://observapefc.es" class="d-block" target="_blank">
+                                                    <h3 class="m-0 mb-24">OBSERVA PEFC</h3>
+                                            </a>
+                                            <p>Accede a Observa PEFC, portal de acceso libre en el que encontrar información sobre los bosques certificados PEFC en España, ofreciendo datos claros y actualizados sobre la Gestión Forestal Sostenible y su contribución a la conservación y la sociedad.</p><p><br></p>                                                </div>
+        </div>
+
+    </div>
+
+
+<p><br></p><p><br></p>                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<div class="container-fluid">
+    <div class="container-limited">
+        <div class="row">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-12 widget-title ">
+            <h2 class="underline text-green mb-36 text-center">
+            <span>NUESTRO IMPACTO COLECTIVO</span>
+        </h2>
+        </div>
+
+
+
+
+
+
+    <div class="col-12 col-md-6 widget widget-block mb-60">
+
+        
+        <a href="/que-hacemos/nuestro-impacto-colectivo/nuestros-proyectos" class="d-block" target="">
+            <div class="image-wrapper format_16_9 ">
+                <div class="content rounded bg-image bg-multiply-black" style="background-image: url(https://cdn.pefc.org/igen/pefc.es/media/2020-05/d25e7e43-8b05-4d88-af28-464b1d8e5633/f3b1c01f-8d5b-503a-a47c-eed63900ce8a.jpg?m%5B%5D=t%28cover%2C1200%2C678%29)">
+                    <div class="p-24 d-flex flex-column h-100">
+                        <h3 class="m-0 mt-auto text-white d-none">Nuestros proyectos</h3>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="/que-hacemos/nuestro-impacto-colectivo/nuestros-proyectos" class="d-block">
+                            <h3 class="mt-20 mb-6 text-dark">Nuestros proyectos</h3>
+                    </a>
+                    <p>Utilizamos nuestros proyectos y asociaciones para apoyar el crecimiento de la certificación forestal en todo el mundo. </p>                <p class="m-0 mt-12 text-right">
+            <a href="/que-hacemos/nuestro-impacto-colectivo/nuestros-proyectos" class="text-uppercase read-more">Leer más <i class="fal fa-angle-double-right"></i></a>
+        </p>
+    </div>
+
+
+
+
+
+
+
+
+    <div class="col-12 col-md-6 widget widget-block mb-60">
+
+        
+        <a href="/que-hacemos/nuestro-impacto-colectivo/nuestras-campanas" class="d-block" target="">
+            <div class="image-wrapper format_16_9 ">
+                <div class="content rounded bg-image bg-multiply-black" style="background-image: url(https://cdn.pefc.org/igen/pefc.es/media/2020-05/e79ae387-de39-4987-8810-0db8f18f8c92/160b5b0f-c010-57d4-bacd-702713ea8f6e.jpg?m%5B%5D=t%28cover%2C1200%2C678%29)">
+                    <div class="p-24 d-flex flex-column h-100">
+                        <h3 class="m-0 mt-auto text-white d-none">Nuestras campañas</h3>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="/que-hacemos/nuestro-impacto-colectivo/nuestras-campanas" class="d-block">
+                            <h3 class="mt-20 mb-6 text-dark">Nuestras campañas</h3>
+                    </a>
+                    <p>Desarrollamos campañas dirigidas a diferentes sectores para promover la certificación forestal de los bosques y sus productos. </p>                <p class="m-0 mt-12 text-right">
+            <a href="/que-hacemos/nuestro-impacto-colectivo/nuestras-campanas" class="text-uppercase read-more">Leer más <i class="fal fa-angle-double-right"></i></a>
+        </p>
+    </div>
+
+
+
+    <div class="container-limited mb-60 w-100">
+        <div class="row">
+            <div class="col-12">
+
+                <h2 class="underline text-center text-uppercase text-green mb-48">
+                    <span>Noticias</span>
+                </h2>
+
+                <div class="row items-list">
+
+
+                                            <div class=" col-12 col-sm-6 col-lg-4 mb-30 content-item">
+    <a href="/noticias/pefc-espana-celebra-el-dia-internacional-de-los-bosques-poniendo-en-valor-los-sabores-de-bosques-sostenibles" target="">
+                    <div class="image-container rectangle-landscape rounded">
+                                    <div class="content" style="background-image: url(https://cdn.pefc.org/igen/pefc.es/media/2025-03/d75fce18-76b4-4f3c-842d-443a355f39fb/82f92b5b-66e5-56b5-a9e4-81780c272933.jpg?m%5B%5D=t%28inside%2C400%2C300%29)"></div>
+                            </div>
+            </a>
+
+            <p class="text-green text-uppercase mb-0 mt-lg-24 mt-12 date line-height-1">
+            <strong>20 de marzo de 2025</strong>
+        </p>
+
+        <h2 class="mt-12 mb-0">
+            <a href="/noticias/pefc-espana-celebra-el-dia-internacional-de-los-bosques-poniendo-en-valor-los-sabores-de-bosques-sostenibles" class="text-gray">
+                PEFC España celebra el Día Internacional de los Bosques poniendo en valor los sabores de bosques sostenibles            </a>
+        </h2>
+
+                    <p class="mt-6 mb-0 small text">
+                <span class="category text-uppercase">Alimentos</span>
+            </p>
+        
+            
+</div>
+                                            <div class=" col-12 col-sm-6 col-lg-4 mb-30 content-item">
+    <a href="/noticias/pefc-espana-lanza-el-concurso-de-buenas-practicas-en-bioeconomia-forestal" target="">
+                    <div class="image-container rectangle-landscape rounded">
+                                    <div class="content" style="background-image: url(https://cdn.pefc.org/igen/pefc.es/media/2025-03/bbe0f9d7-2172-4f6e-907c-78e656880bde/7661ad2f-919a-5b79-8237-735b1ff84640.jpg?m%5B%5D=t%28inside%2C400%2C300%29)"></div>
+                            </div>
+            </a>
+
+            <p class="text-green text-uppercase mb-0 mt-lg-24 mt-12 date line-height-1">
+            <strong>19 de marzo de 2025</strong>
+        </p>
+
+        <h2 class="mt-12 mb-0">
+            <a href="/noticias/pefc-espana-lanza-el-concurso-de-buenas-practicas-en-bioeconomia-forestal" class="text-gray">
+                PEFC España lanza el Concurso de Buenas Prácticas en Bioeconomía Forestal            </a>
+        </h2>
+
+                    <p class="mt-6 mb-0 small text">
+                <span class="category text-uppercase">Gestión Forestal Sostenible</span>
+            </p>
+        
+            
+</div>
+                                            <div class=" col-12 col-sm-6 col-lg-4 mb-30 content-item">
+    <a href="/noticias/se-inicia-la-consulta-publica-de-los-proyectos-de-norma-une-de-gestion-forestal-sostenible-de-espana-1" target="">
+                    <div class="image-container rectangle-landscape rounded">
+                                    <div class="content" style="background-image: url(https://cdn.pefc.org/igen/pefc.es/media/2024-03/fa17eb62-1e07-4722-8bb2-6f2bc3feb299/5d3f162e-2146-5501-a742-afd85810f8fe.jpg?m%5B%5D=t%28inside%2C400%2C300%29)"></div>
+                            </div>
+            </a>
+
+            <p class="text-green text-uppercase mb-0 mt-lg-24 mt-12 date line-height-1">
+            <strong>12 de marzo de 2025</strong>
+        </p>
+
+        <h2 class="mt-12 mb-0">
+            <a href="/noticias/se-inicia-la-consulta-publica-de-los-proyectos-de-norma-une-de-gestion-forestal-sostenible-de-espana-1" class="text-gray">
+                Se inicia la consulta pública de los proyectos de norma UNE  de Gestión Forestal Sostenible de España            </a>
+        </h2>
+
+                    <p class="mt-6 mb-0 small text">
+                <span class="category text-uppercase">Asuntos técnicos</span>
+            </p>
+        
+            
+</div>
+                    
+                </div>
+            </div>
+
+            <div class="col-12 text-right mt-24">
+                <p class="m-0 text-uppercase">
+                    <a class="read-more" href="/noticias">
+                        Mostrar todas las noticias<i class="fal fa-angle-double-right"></i>
+                    </a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+<!--Widget MAP Figures -->
+
+<div class="container-limited mb-60 w-100" id="pefc-certified">
+
+            <div class="row">
+            <div class="col-12">
+                <h2 class="underline text-center text-uppercase text-green mb-48">
+                    <span>Datos y cifras</span>
+                </h2>
+            </div>
+        </div>
+        <div class="row">
+        <div class="col-12">
+            <div class="row">
+
+                                    <div class="col-12 col-sm-6">
+                        <div class="numbers left">
+                            <span class="number float-sm-left pr-12 d-block d-sm-inline-block">2.844.447</span>
+                            <span class="text-green">(ha)</span>
+                            <br>
+                            <br>
+Superficie total certificada PEFC                        </div>
+                    </div>
+                                                    <div class="col-12 col-sm-6">
+                        <div class="numbers right text-sm-right">
+                            <span class="number d-block d-sm-inline-block ">75.540</span>
+                            <span class="text-green float-sm-right pl-sm-12">
+                                                            </span> <br>
+                            Selvicultores / gestores                        </div>
+                    </div>
+                            </div>
+        </div>
+    </div>
+    <div class="row mt-30 mb-30 d-none d-sm-flex">
+        <div class="col-12">
+            <script id="mapFiguresJson" type="application/json">
+                {"lon":-8.8204799,"lat":37.2558163,"zoom":9,"country":"ES","regions":[{"region_id":"ES-VC","title":"Comunidad Valenciana","text":"<p>&Aacute;rea certificada (ha) : 1.216<br id=\"isPasted\"><br>Selvicultores \/ gestores : 2<br><br>Empresas certificadas CdC: 144<\/p>"},{"region_id":"ES-PV","title":"Pa\u00eds Vasco","text":"<p>&Aacute;rea certificada (ha) : 114.043<br id=\"isPasted\"><br>Selvicultores \/ gestores: 4.402<br><br>Empresas certificadas CdC: 146<\/p>"},{"region_id":"ES-IB","title":"Islas Baleares","text":"<p>Empresas certificadas CdC: 5<\/p>"},{"region_id":"ES-NC","title":"Navarra","text":"<p>&Aacute;rea certificada (ha) : 326.257<br id=\"isPasted\"><br>Selvicultores \/ gestores : 487<br><br>Empresas certificadas CdC: 71<\/p>"},{"region_id":"ES-MC","title":"Murcia","text":"<p>&Aacute;rea certificada (ha) : 30.020<br id=\"isPasted\"><br>Gestores: 10<br><br>Empresas certificadas CdC: 46<\/p>"},{"region_id":"ES-MD","title":"Comunidad de Madrid","text":"<p>&Aacute;rea certificada (ha) :1.807<br id=\"isPasted\"><br>Gestores: 2<br><br>Empresas certificadas CdC: 170<\/p>"},{"region_id":"ES-RI","title":"La Rioja","text":"<p>&Aacute;rea certificada (ha) : 72.125<br id=\"isPasted\"><br>Gestores: 4<br><br>Empresas certificadas CdC: 29<\/p>"},{"region_id":"ES-GA","title":"Galicia","text":"<p>&Aacute;rea certificada (ha) : 495.203<br id=\"isPasted\"><br>Selvicultores \/ gestores : 61.715<br><br>Empresas certificadas CdC: 466<\/p>"},{"region_id":"ES-EX","title":"Extremadura","text":"<p>&Aacute;rea certificada (ha) : 108.958<br id=\"isPasted\"><br>Selvicultores \/ gestores : 35<br><br>Empresas certificadas CdC: 13<\/p>"},{"region_id":"ES-CT","title":"Catalu\u00f1a","text":"<p id=\"isPasted\">&Aacute;rea certificada (ha) : 267.669<\/p><p>Selvicultores \/ gestores : 1.738<br><br>Empresas certificadas CdC: 292<\/p>"},{"region_id":"ES-CN","title":"Islas Canarias","text":"<p>Empresas certificadas CdC: 6<\/p>"},{"region_id":"ES-CM","title":"Castilla-La Mancha","text":"<p>&Aacute;rea certificada (ha) : 51.956<br id=\"isPasted\"><br>Selvicultores \/ gestores : 3<br><br>Empresas certificadas CdC: 70<\/p>"},{"region_id":"ES-CL","title":"Castilla y Le\u00f3n","text":"<p id=\"isPasted\">&Aacute;rea certificada (ha) : 840.136<\/p><p>Selvicultores \/ gestores : 225<br><br>Empresas certificadas CdC: 122<\/p>"},{"region_id":"ES-CB","title":"Cantabria","text":"<p id=\"isPasted\">&Aacute;rea certificada (ha) : 54.024<\/p><p>Selvicultores \/ gestores : 572<br><br>Empresas certificadas CdC: 24<\/p>"},{"region_id":"ES-AS","title":"Asturias","text":"<p>&Aacute;rea certificada (ha) : 56.944<br id=\"isPasted\"><br>Selvicultores \/ gestores : 6.330<br><br>Empresas certificadas CdC: 52<\/p>"},{"region_id":"ES-AR","title":"Arag\u00f3n","text":"<p>&Aacute;rea certificada (ha) : 172.222<br id=\"isPasted\"><br>Selvicultores \/ gestores :55<br><br>Empresas certificadas CdC: 47<\/p>"},{"region_id":"ES-AN","title":"Andaluc\u00eda","text":"<p id=\"isPasted\">&Aacute;rea certificada (ha) : 247.865<\/p><p>Selvicultores \/ gestores : 160<br>Empresas certificadas CdC: 114<\/p><p><br><br><\/p>"}]}            </script>
+            <div id="map-figures"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="row">
+                                    <div class="col-12 col-sm-6">
+                        <div class="numbers left">
+                            <span class="number float-sm-left pr-12 d-block d-sm-inline-block">1.819</span>
+                            <span class="text-green">Empresas certificadas</span>
+                            <br>
+                            con cadena de custodia                        </div>
+                    </div>
+                                                    <div class="col-12 col-sm-6">
+                        <div class="numbers right text-sm-right">
+                            <span class="number d-block d-sm-inline-block "></span>
+                            <span class="text-green float-sm-right pl-sm-12">
+                                                            </span> <br>
+                                                    </div>
+                    </div>
+                            </div>
+        </div>
+    </div>
+</div>
+<!--Widget MAP Figures-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                    </section>
+
+
+    <!--Footer-->
+    <!--Newsletter-->
+<div class="container-fluid bg-white d-print-none" id="keep-in-touch">
+    <div class="container-limited">
+        <div class="row pt-30 pb-30 pt-md-60 pb-md-60">
+            <div class="col-12 col-md-6 col-xl-7 mb-12 mb-md-0">
+                <h2 class="mb-0 text-uppercase pt-10">Sigamos en contacto</h2>
+                <p class="text-uppercase m-0">Suscríbete a nuestro boletín de noticias</p>
+            </div>
+            <div class="col-12 col-md-6 col-xl-5 d-flex align-items-center">
+                <div class="form-group material m-0 w-100">
+                    <div class="input-group keep-in-touch-newsletter" id="keep-in-touch-input">
+
+                        <input type="email" class="keep-in-touch-input form-control pl-0 pt-0" id="newsletter_email" data-url="/cms/2754ad6d-7a5a-4933-acb8-4a52dbcde958/newsletter" data-list_id="10004390" placeholder="Dirección de email">
+                        <div class="input-group-prepend" id="keep-in-touch-send">
+                            <div class="input-group-text keep-in-touch-send"><i class="fal text-green fa-paper-plane"></i></div>
+                        </div>
+
+                    </div>
+                    <p class="m-0 text-center keep-in-touch-loading" id="keep-in-touch-loading" style="display: none">
+                        <i class="fas fa-spinner-third text-green fa-spin"></i> <br>
+                        <span class="small text-uppercase pt-5">por favor, espere</span>
+                    </p>
+
+                    <p class="m-0 text-center text-green keep-in-touch-success" id="keep-in-touch-success" style="display: none">
+                        <i class="fal fa-check-circle"></i> <br>
+                        Su registro se ha realizado con éxito.                    </p>
+
+                    <p class="m-0 text-center text-danger keep-in-touch-error" id="keep-in-touch-error" style="display: none">
+                        <i class="fal fa-exclamation-triangle"></i> <br>
+                        Ha habido un problema durante su registro. <br> Por favor, inténtelo de nuevo más tarde.                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Newsletter-->
+<!--Tunnel Footer-->
+<section class="container-fluid bg-green d-print-none" id="tunnels-footer">
+
+    <div class="container-limited pt-60">
+
+        <div class="row">
+            <div class="col-12 col-sm-4">
+                                <a href="/que-puedes-hacer/certificate">
+                                        <h3 class="text-white m-0 text-uppercase">
+                        <i class="fal fa-file-certificate mr-20 float-left"></i>
+                        CERTIFÍCATE                    </h3>
+                                    </a>
+                            <p class="text-white d-block d-sm-none">
+                    Si eres selvicultor, gestor o propietario de un bosque o si tienes una empresa de la cadena de suministro, consigue la certificación PEFC y ayuda a proteger los bosques del mundo.                </p>
+            </div>
+
+            <div class="col-12 col-sm-4">
+                                <a href="/que-puedes-hacer/como-se-revisa-el-sistema-espanol">
+                                    <h3 class="text-white m-0 text-uppercase">
+                    <i class="fal fa-hand-holding-seedling mr-20 float-left"></i>
+                    COLABORA                </h3>
+                                    </a>
+                            <p class="text-white d-block d-sm-none">
+                    Envíanos tus comentarios para mejorar nuestro Sistema Español de Certificación Forestal.                </p>
+            </div>
+
+            <div class="col-12 col-sm-4">
+                                <a href="/home/actua-por-el-clima">
+                                    <h3 class="text-white m-0 text-uppercase">
+                    <i class="fal fa-temperature-high mr-20 float-left"></i>
+                    ACTÚA POR EL CLIMA                </h3>
+                                    </a>
+                            <p class="text-white d-block d-sm-none">
+                    PEFC te ayuda a compensar las emisiones de CO2 de tu actividad con proyectos de reforestación en bosques afectados por el cambio climático (incendios, plagas, fenómenos meteorológicos, etc.).                </p>
+            </div>
+        </div>
+        <div class="row mt-12 d-none d-sm-flex">
+            <div class="col-4">
+                <p class="text-white m-0 pr-20">
+                    Si eres selvicultor, gestor o propietario de un bosque o si tienes una empresa de la cadena de suministro, consigue la certificación PEFC y ayuda a proteger los bosques del mundo.                </p>
+            </div>
+            <div class="col-4">
+                <p class="text-white m-0 pr-20">
+                    Envíanos tus comentarios para mejorar nuestro Sistema Español de Certificación Forestal.                </p>
+            </div>
+            <div class="col-4">
+                <p class="text-white m-0 pr-20">
+                    PEFC te ayuda a compensar las emisiones de CO2 de tu actividad con proyectos de reforestación en bosques afectados por el cambio climático (incendios, plagas, fenómenos meteorológicos, etc.).                </p>
+            </div>
+
+            <div class="col-12 mt-48">
+                <hr class="m-0">
+            </div>
+        </div>
+    </div>
+</section>
+<section class="container-fluid bg-green d-print-none" id="social-medias">
+
+    <div class="container-limited">
+
+        <div class="row pt-30 pb-30">
+            <div class="col col-logo">
+                                    <img class="w-100" height="75" loading="lazy" src="/assets/logo/pefc-14-01-01.svg" alt="PEFC España">
+                            </div>
+            <div class="col pl-0 pl-sm-auto align-items-center d-flex justify-content-end">
+                <nav>
+                    <ul class="nav justify-content-end">
+                        <li class="nav-item d-flex align-items-center mr-15 mr-sm-30">
+                            <a class="nav-link p-0 text-white">Seguir</a>
+                        </li>
+                                                    <li class="nav-item d-flex justify-content-center align-items-center icon">
+                                <a class="nav-link text-white" href="https://www.facebook.com/pefcspain/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            </li>
+                                                                            <li class="nav-item d-flex justify-content-center align-items-center icon">
+                                <!-- Use two <a> HTML element to deal with show / hide in order to display correct svg icon -->
+                                <a id="twitter-x-green" class="justify-content-center align-items-center nav-link h-50 w-50" href="https://twitter.com/PEFCSpain" target="_blank">
+                                    <img class="d-block" src="/assets/icons/twitter-x-green.svg" alt="Twitter X">
+                                </a>
+                                <a id="twitter-x-white" class="justify-content-center align-items-center nav-link h-50 w-50" href="https://twitter.com/PEFCSpain" target="_blank">
+                                    <img class="d-block" src="/assets/icons/twitter-x-white.svg" alt="Twitter X">
+                                </a>
+                            </li>
+                                                                            <li class="nav-item d-flex justify-content-center align-items-center icon">
+                                <a class="nav-link text-white" href="https://www.linkedin.com/company/pefc-espa%C3%B1a/?hl=es" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            </li>
+                                                                            <li class="nav-item d-flex justify-content-center align-items-center icon">
+                                <a class="nav-link text-white" href="https://www.instagram.com/pefcspain/?hl=es" target="_blank"><i class="fab fa-instagram"></i></a>
+                            </li>
+                                                                            <li class="nav-item d-flex justify-content-center align-items-center icon">
+                                <a class="nav-link text-white" href="https://www.youtube.com/user/PEFCSpain" target="_blank"><i class="fab fa-youtube"></i></a>
+                            </li>
+                                            </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+    <!--Footer-->
+
+    <!--Footer Navigation-->
+    <footer class="container-fluid d-print-none">
+        <div class="container-limited">
+
+            <div class="row opacity-90" id="footer-mentions">
+                <div class="col-12">
+
+
+                    <div class="row d-none d-sm-flex pt-60 justify-content-center">
+                                    <div class="col-sm-4 col-md d-none d-sm-block mb-30 mb-md-0">
+                                <h5 class="text-green text-uppercase mb-20 d-flex align-items-end"><a id="menu-10000774" href="/que-hacemos">Qué hacemos</a></h5>
+                                    <ul class="nav flex-column">
+                                                                                    <li class="nav-item">
+                                                                        <a id="menu-10000775" class=" nav-link text-white" href="/que-hacemos/por-que-los-bosques-son-importantes">Por qué los bosques son importantes</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10000779" class=" nav-link text-white" href="/que-hacemos/nuestro-enfoque">Nuestro enfoque</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10000785" class=" nav-link text-white" href="/que-hacemos/nuestro-impacto-colectivo">Nuestro impacto colectivo</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10000788" class=" nav-link text-white" href="/que-hacemos/objetivos-de-desarrollo-sostenible">Objetivos de desarrollo sostenible</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10002109" class=" nav-link text-white" href="/que-hacemos/educacion-ambiental">Educación Ambiental</a>
+                                </li>
+                                                                        </ul>
+                            </div>
+                                <div class="col-sm-4 col-md d-none d-sm-block mb-30 mb-md-0">
+                                <h5 class="text-green text-uppercase mb-20 d-flex align-items-end"><a id="menu-10000789" href="/que-puedes-hacer">Qué puedes hacer</a></h5>
+                                    <ul class="nav flex-column">
+                                                                                    <li class="nav-item">
+                                                                        <a id="menu-10000803" class=" nav-link text-white" href="/que-puedes-hacer/busca-la-etiqueta-pefc">Busca la etiqueta PEFC</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10000804" class=" nav-link text-white" href="/que-puedes-hacer/compra-productos-certificados">Compra productos certificados</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10000806" class=" nav-link text-white" href="/que-puedes-hacer/certificate">Certifícate</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10000805" class=" nav-link text-white" href="/que-puedes-hacer/como-se-revisa-el-sistema-espanol">Cómo se revisa el Sistema Español</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10000807" class=" nav-link text-white" href="/que-puedes-hacer/hazte-miembro-de-pefc-espana">Hazte miembro de PEFC España</a>
+                                </li>
+                                                                        </ul>
+                            </div>
+                                <div class="col-sm-4 col-md d-none d-sm-block mb-30 mb-md-0">
+                                <h5 class="text-green text-uppercase mb-20 d-flex align-items-end"><a id="menu-10000790" href="/propietarios-forestales">Propietarios forestales</a></h5>
+                                    <ul class="nav flex-column">
+                                                                                    <li class="nav-item">
+                                                                        <a id="menu-10000809" class=" nav-link text-white" href="/propietarios-forestales/por-que-certificar-tu-monte">¿Por qué certificar tu monte?</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10000810" class=" nav-link text-white" href="/propietarios-forestales/como-certificar-tu-monte">¿Cómo certificar tu monte?</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10000811" class=" nav-link text-white" href="/propietarios-forestales/certificacion-adaptada-a-las-pequenas-superficies">Certificación adaptada a las pequeñas superficies</a>
+                                </li>
+                                                                        </ul>
+                            </div>
+                                <div class="col-sm-4 col-md d-none d-sm-block mb-30 mb-md-0">
+                                <h5 class="text-green text-uppercase mb-20 d-flex align-items-end"><a id="menu-10000791" href="/empresas">Empresas</a></h5>
+                                    <ul class="nav flex-column">
+                                                                                    <li class="nav-item">
+                                                                        <a id="menu-10000812" class=" nav-link text-white" href="/empresas/como-conseguir-la-certificacion-de-cadena-de-custodia-pefc">Cómo conseguir la certificación de Cadena de Custodia PEFC</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10000821" class=" nav-link text-white" href="/empresas/propietarios-de-marcas-y-minoristas">Propietarios de marcas y minoristas</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10000825" class=" nav-link text-white" href="/empresas/entidades-de-certificacion-y-de-acreditacion">Entidades de certificación y de acreditación</a>
+                                </li>
+                                                                        </ul>
+                            </div>
+                                <div class="col-sm-4 col-md d-none d-sm-block mb-30 mb-md-0">
+                                <h5 class="text-green text-uppercase mb-20 d-flex align-items-end"><a id="menu-10001000" href="/normativa">Normativa</a></h5>
+                                    <ul class="nav flex-column">
+                                                                                    <li class="nav-item">
+                                                                        <a id="menu-10001466" class=" nav-link text-white" href="/normativa/normativa-y-guias">Normativa y guías</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10001441" class=" nav-link text-white" href="/normativa/revision-del-sistema-espanol">Revisión del Sistema Español</a>
+                                </li>
+                                                                        </ul>
+                            </div>
+                                <div class="col-sm-4 col-md d-none d-sm-block mb-30 mb-md-0">
+                                <h5 class="text-green text-uppercase mb-20 d-flex align-items-end"><a id="menu-10000793" href="/descubre-pefc">Descubre PEFC</a></h5>
+                                    <ul class="nav flex-column">
+                                                                                    <li class="nav-item">
+                                                                        <a id="menu-10000988" class=" nav-link text-white" href="/descubre-pefc/que-es-pefc">¿Qué es pefc?</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10000835" class=" nav-link text-white" href="/descubre-pefc/datos-y-estadisticas">Datos y estadísticas</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10001383" class=" nav-link text-white" href="/descubre-pefc/gobernanza-pefc-espana">Gobernanza PEFC España</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10000836" class=" nav-link text-white" href="/descubre-pefc/miembros-de-pefc-espana">Miembros de PEFC España</a>
+                                </li>
+                                                                                                                <li class="nav-item">
+                                                                        <a id="menu-10001005" class=" nav-link text-white" href="/descubre-pefc/equipo-pefc">Conoce al equipo PEFC España</a>
+                                </li>
+                                                                        </ul>
+                            </div>
+                                    </div>
+
+                    <div class="row pt-24 pb-24">
+                        <div class="col-12">
+                            <hr class="">
+                        </div>
+                        <div class="col-12 col-md-7">
+                            <ul class="nav justify-content-center justify-content-md-start signature_copyright_nav mb-12 mb-md-0">
+                                                                    <li class="nav-item">
+                                        <a class="nav-link open-cookie-settings">Ajustes de cookies</a>
+                                    </li>
+                                                                            <li class="nav-item">
+                        <a id="menu-10001464" class=" nav-link" href="/aviso-legal">Aviso Legal</a>        </li>
+                <li class="nav-item">
+                        <a id="menu-10001465" class=" nav-link" href="/politica-de-privacidad-y-proteccion-de-datos">Política de privacidad y protección de datos</a>        </li>
+                <li class="nav-item">
+                        <a id="menu-10002181" class=" nav-link" href="/politica-de-cookies">Política de cookies</a>        </li>
+                                </ul>
+                        </div>
+
+                        <div class="col-12 col-md-5">
+                            <p class="mb-0 text-md-right text-center small mb-6 mb-sm-0">
+                                Idea, diseño y desarrollo por <a href="https://nimeo.io" target="_blank">nimeo creative solutions</a>
+                                <br>
+                                © copyright 2025 PEFC. Todos los derechos reservados                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--Footer Navigation-->
+    </div>
+
+<link href="/dist/website.css?ck=aef-default-20250319t110453-5wjv" rel="stylesheet">
+<!--<link href="/dist/search-engine/search-engine.widget.css" rel="stylesheet">-->
+<link href="/dist/fontawesome.css?ck=aef-default-20250319t110453-5wjv" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<script defer="" src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="/dist/main.js?ck=aef-default-20250319t110453-5wjv" defer="" type="application/javascript"></script>
+<!--<script type="module" src="/dist/search-engine/search-engine.widget.js"></script>-->
+<script type="application/javascript" defer="defer" src="//cdn.amcharts.com/lib/4/core.js"></script>
+<script type="application/javascript" defer="defer" src="//cdn.amcharts.com/lib/4/maps.js"></script>
+<script type="application/javascript" defer="defer" src="/dist/map-and-figures.js"></script>
+<script type="application/javascript" defer="defer" src="/dist/cookie-consent.js"></script>
+<script type="application/javascript" defer="defer" src="/dist/carousel.js"></script>
+<script type="application/javascript" defer="defer" src="/dist/newsletter.js"></script>
+
+</body></html>

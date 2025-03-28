@@ -1,0 +1,645 @@
+<!DOCTYPE html><html lang="en-US"><head><meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",(e=>{this.persisted=e.persisted})),window.addEventListener("DOMContentLoaded",(()=>{this._preconnect3rdParties()})),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e._triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"))}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{if(t.hasAttribute("src")){const n=new URL(t.src).origin;n!==location.origin&&e.push({src:n,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}})),e=[...new Map(e.map((e=>[JSON.stringify(e),e]))).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(e){}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._littleBreath(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t());try{e.parentNode.replaceChild(n,e)}catch(e){t()}}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var n=document.createDocumentFragment();e.forEach((e=>{if(e.src){const i=document.createElement("link");i.href=e.src,i.rel=t,"preconnect"!==t&&(i.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(i.crossOrigin=!0),e.crossOrigin&&(i.crossOrigin=e.crossOrigin),n.appendChild(i)}})),document.head.appendChild(n)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),await this._littleBreath();const e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+
+	<title>Habitat for Humanity Vietnam</title><link rel="stylesheet" href="https://habitatvietnam.org/wp-content/cache/min/1/83d5a93d1af44d7cc76eedf36d24c9ce.css" media="all" data-minify="1">
+<meta name="robots" content="max-image-preview:large">
+<link rel="dns-prefetch" href="//static.addtoany.com">
+<link rel="dns-prefetch" href="//maps.googleapis.com">
+<link rel="dns-prefetch" href="//maps.gstatic.com">
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+<link rel="dns-prefetch" href="//ajax.googleapis.com">
+<link rel="dns-prefetch" href="//apis.google.com">
+<link rel="dns-prefetch" href="//google-analytics.com">
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+<link rel="dns-prefetch" href="//ssl.google-analytics.com">
+<link rel="dns-prefetch" href="//youtube.com">
+<link rel="dns-prefetch" href="//api.pinterest.com">
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+<link rel="dns-prefetch" href="//pixel.wp.com">
+<link rel="dns-prefetch" href="//connect.facebook.net">
+<link rel="dns-prefetch" href="//platform.twitter.com">
+<link rel="dns-prefetch" href="//syndication.twitter.com">
+<link rel="dns-prefetch" href="//platform.instagram.com">
+<link rel="dns-prefetch" href="//disqus.com">
+<link rel="dns-prefetch" href="//sitename.disqus.com">
+<link rel="dns-prefetch" href="//s7.addthis.com">
+<link rel="dns-prefetch" href="//platform.linkedin.com">
+<link rel="dns-prefetch" href="//w.sharethis.com">
+<link rel="dns-prefetch" href="//s0.wp.com">
+<link rel="dns-prefetch" href="//s1.wp.com">
+<link rel="dns-prefetch" href="//s2.wp.com">
+<link rel="dns-prefetch" href="//s.gravatar.com">
+<link rel="dns-prefetch" href="//0.gravatar.com">
+<link rel="dns-prefetch" href="//2.gravatar.com">
+<link rel="dns-prefetch" href="//1.gravatar.com">
+<link rel="dns-prefetch" href="//stats.wp.com">
+
+<link rel="alternate" type="application/rss+xml" title="Habitat for Humanity Vietnam » Feed" href="https://habitatvietnam.org/feed/">
+<link rel="alternate" type="application/rss+xml" title="Habitat for Humanity Vietnam » Comments Feed" href="https://habitatvietnam.org/comments/feed/">
+		<!-- This site uses the Google Analytics by MonsterInsights plugin v8.10.0 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+							<script type="rocketlazyloadscript" src="//www.googletagmanager.com/gtag/js?id=UA-202311495-1" data-cfasync="false" data-wpfc-render="false" data-rocket-type="text/javascript" async=""></script>
+			<script type="rocketlazyloadscript" data-cfasync="false" data-wpfc-render="false" data-rocket-type="text/javascript">
+				var mi_version = '8.10.0';
+				var mi_track_user = true;
+				var mi_no_track_reason = '';
+				
+								var disableStrs = [
+															'ga-disable-UA-202311495-1',
+									];
+
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						if (document.cookie.indexOf(disableStrs[index] + '=true') > -1) {
+							return true;
+						}
+					}
+
+					return false;
+				}
+
+				/* Disable tracking if the opt-out cookie exists. */
+				if (__gtagTrackerIsOptedOut()) {
+					for (var index = 0; index < disableStrs.length; index++) {
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						document.cookie = disableStrs[index] + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				if ('undefined' === typeof gaOptout) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+
+				window.MonsterInsightsDualTracker = {
+					helpers: {},
+					trackers: {},
+				};
+				if (mi_track_user) {
+					function __gtagDataLayer() {
+						dataLayer.push(arguments);
+					}
+
+					function __gtagTracker(type, name, parameters) {
+						if (!parameters) {
+							parameters = {};
+						}
+
+						if (parameters.send_to) {
+							__gtagDataLayer.apply(null, arguments);
+							return;
+						}
+
+						if (type === 'event') {
+							
+														parameters.send_to = monsterinsights_frontend.ua;
+							__gtagDataLayer(type, name, parameters);
+													} else {
+							__gtagDataLayer.apply(null, arguments);
+						}
+					}
+
+					__gtagTracker('js', new Date());
+					__gtagTracker('set', {
+						'developer_id.dZGIzZG': true,
+											});
+															__gtagTracker('config', 'UA-202311495-1', {"forceSSL":"true","link_attribution":"true"} );
+										window.gtag = __gtagTracker;										(function () {
+						/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+						/* ga and __gaTracker compatibility shim. */
+						var noopfn = function () {
+							return null;
+						};
+						var newtracker = function () {
+							return new Tracker();
+						};
+						var Tracker = function () {
+							return null;
+						};
+						var p = Tracker.prototype;
+						p.get = noopfn;
+						p.set = noopfn;
+						p.send = function () {
+							var args = Array.prototype.slice.call(arguments);
+							args.unshift('send');
+							__gaTracker.apply(null, args);
+						};
+						var __gaTracker = function () {
+							var len = arguments.length;
+							if (len === 0) {
+								return;
+							}
+							var f = arguments[len - 1];
+							if (typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function') {
+								if ('send' === arguments[0]) {
+									var hitConverted, hitObject = false, action;
+									if ('event' === arguments[1]) {
+										if ('undefined' !== typeof arguments[3]) {
+											hitObject = {
+												'eventAction': arguments[3],
+												'eventCategory': arguments[2],
+												'eventLabel': arguments[4],
+												'value': arguments[5] ? arguments[5] : 1,
+											}
+										}
+									}
+									if ('pageview' === arguments[1]) {
+										if ('undefined' !== typeof arguments[2]) {
+											hitObject = {
+												'eventAction': 'page_view',
+												'page_path': arguments[2],
+											}
+										}
+									}
+									if (typeof arguments[2] === 'object') {
+										hitObject = arguments[2];
+									}
+									if (typeof arguments[5] === 'object') {
+										Object.assign(hitObject, arguments[5]);
+									}
+									if ('undefined' !== typeof arguments[1].hitType) {
+										hitObject = arguments[1];
+										if ('pageview' === hitObject.hitType) {
+											hitObject.eventAction = 'page_view';
+										}
+									}
+									if (hitObject) {
+										action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+										hitConverted = mapArgs(hitObject);
+										__gtagTracker('event', action, hitConverted);
+									}
+								}
+								return;
+							}
+
+							function mapArgs(args) {
+								var arg, hit = {};
+								var gaMap = {
+									'eventCategory': 'event_category',
+									'eventAction': 'event_action',
+									'eventLabel': 'event_label',
+									'eventValue': 'event_value',
+									'nonInteraction': 'non_interaction',
+									'timingCategory': 'event_category',
+									'timingVar': 'name',
+									'timingValue': 'value',
+									'timingLabel': 'event_label',
+									'page': 'page_path',
+									'location': 'page_location',
+									'title': 'page_title',
+								};
+								for (arg in args) {
+																		if (!(!args.hasOwnProperty(arg) || !gaMap.hasOwnProperty(arg))) {
+										hit[gaMap[arg]] = args[arg];
+									} else {
+										hit[arg] = args[arg];
+									}
+								}
+								return hit;
+							}
+
+							try {
+								f.hitCallback();
+							} catch (ex) {
+							}
+						};
+						__gaTracker.create = newtracker;
+						__gaTracker.getByName = newtracker;
+						__gaTracker.getAll = function () {
+							return [];
+						};
+						__gaTracker.remove = noopfn;
+						__gaTracker.loaded = true;
+						window['__gaTracker'] = __gaTracker;
+					})();
+									} else {
+										console.log("");
+					(function () {
+						function __gtagTracker() {
+							return null;
+						}
+
+						window['__gtagTracker'] = __gtagTracker;
+						window['gtag'] = __gtagTracker;
+					})();
+									}
+			</script>
+				<!-- / Google Analytics by MonsterInsights -->
+				<style type="text/css">
+		</style>
+		<style id="wp-emoji-styles-inline-css" type="text/css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+
+<style id="classic-theme-styles-inline-css" type="text/css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id="global-styles-inline-css" type="text/css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+
+
+
+
+<style id="rs-plugin-settings-inline-css" type="text/css">
+#rs-demo-id {}
+</style>
+
+
+
+
+
+
+
+
+
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://habitatvietnam.org/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://habitatvietnam.org/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js" defer=""></script>
+<script type="text/javascript" id="fts_clear_cache_script-js-extra">
+/* <![CDATA[ */
+var ftsAjax = {"ajaxurl":"https:\/\/habitatvietnam.org\/wp-admin\/admin-ajax.php"};
+var ftsAjax = {"ajaxurl":"https:\/\/habitatvietnam.org\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" src="https://habitatvietnam.org/wp-content/cache/min/1/wp-content/plugins/feed-them-social/admin/js/admin.js?ver=1655099413" id="fts_clear_cache_script-js" defer=""></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://habitatvietnam.org/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend-gtag.min.js?ver=8.10.0" id="monsterinsights-frontend-script-js" defer=""></script>
+<script data-cfasync="false" data-wpfc-render="false" type="text/javascript" id="monsterinsights-frontend-script-js-extra">/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[{\"path\":\"\\\/go\\\/\",\"label\":\"affiliate\"},{\"path\":\"\\\/recommend\\\/\",\"label\":\"affiliate\"}]","home_url":"https:\/\/habitatvietnam.org","hash_tracking":"false","ua":"UA-202311495-1","v4_id":""};/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="addtoany-core-js-before">
+/* <![CDATA[ */
+window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" async="" src="https://habitatvietnam.org/wp-content/cache/min/1/menu/page.js?ver=1655099413" id="addtoany-core-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" async="" src="https://habitatvietnam.org/wp-content/plugins/add-to-any/addtoany.min.js?ver=1.1" id="addtoany-jquery-js"></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" src="https://habitatvietnam.org/wp-content/cache/min/1/wp-content/plugins/feed-them-social/feeds/js/powered-by.js?ver=1632903642" id="fts_powered_by_js-js" defer=""></script>
+<script type="text/javascript" id="fts-global-js-extra">
+/* <![CDATA[ */
+var fts_twitter_ajax = {"ajax_url":"https:\/\/habitatvietnam.org\/wp-admin\/admin-ajax.php"};
+var fts_twitter_ajax = {"ajax_url":"https:\/\/habitatvietnam.org\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" src="https://habitatvietnam.org/wp-content/cache/min/1/wp-content/plugins/feed-them-social/feeds/js/fts-global.js?ver=1632903642" id="fts-global-js" defer=""></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://habitatvietnam.org/wp-content/plugins/revslider/public/assets/js/revolution.tools.min.js?ver=6.0" id="tp-tools-js" defer=""></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://habitatvietnam.org/wp-content/plugins/revslider/public/assets/js/rs6.min.js?ver=6.1.5" id="revmin-js" defer=""></script>
+<link rel="https://api.w.org/" href="https://habitatvietnam.org/wp-json/"><link rel="alternate" type="application/json" href="https://habitatvietnam.org/wp-json/wp/v2/pages/2525"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://habitatvietnam.org/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.5.5">
+<link rel="canonical" href="https://habitatvietnam.org/">
+<link rel="shortlink" href="https://habitatvietnam.org/">
+<link rel="alternate" type="application/json+oembed" href="https://habitatvietnam.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fhabitatvietnam.org%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://habitatvietnam.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fhabitatvietnam.org%2F&amp;format=xml">
+<meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress.">
+<meta name="generator" content="Powered by Slider Revolution 6.1.5 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface.">
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">function setREVStartSize(t){try{var h,e=document.getElementById(t.c).parentNode.offsetWidth;if(e=0===e||isNaN(e)?window.innerWidth:e,t.tabw=void 0===t.tabw?0:parseInt(t.tabw),t.thumbw=void 0===t.thumbw?0:parseInt(t.thumbw),t.tabh=void 0===t.tabh?0:parseInt(t.tabh),t.thumbh=void 0===t.thumbh?0:parseInt(t.thumbh),t.tabhide=void 0===t.tabhide?0:parseInt(t.tabhide),t.thumbhide=void 0===t.thumbhide?0:parseInt(t.thumbhide),t.mh=void 0===t.mh||""==t.mh||"auto"===t.mh?0:parseInt(t.mh,0),"fullscreen"===t.layout||"fullscreen"===t.l)h=Math.max(t.mh,window.innerHeight);else{for(var i in t.gw=Array.isArray(t.gw)?t.gw:[t.gw],t.rl)void 0!==t.gw[i]&&0!==t.gw[i]||(t.gw[i]=t.gw[i-1]);for(var i in t.gh=void 0===t.el||""===t.el||Array.isArray(t.el)&&0==t.el.length?t.gh:t.el,t.gh=Array.isArray(t.gh)?t.gh:[t.gh],t.rl)void 0!==t.gh[i]&&0!==t.gh[i]||(t.gh[i]=t.gh[i-1]);var r,a=new Array(t.rl.length),n=0;for(var i in t.tabw=t.tabhide>=e?0:t.tabw,t.thumbw=t.thumbhide>=e?0:t.thumbw,t.tabh=t.tabhide>=e?0:t.tabh,t.thumbh=t.thumbhide>=e?0:t.thumbh,t.rl)a[i]=t.rl[i]<window.innerWidth?0:t.rl[i];for(var i in r=a[0],a)r>a[i]&&0<a[i]&&(r=a[i],n=i);var d=e>t.gw[n]+t.tabw+t.thumbw?1:(e-(t.tabw+t.thumbw))/t.gw[n];h=t.gh[n]*d+(t.tabh+t.thumbh)}void 0===window.rs_init_css&&(window.rs_init_css=document.head.appendChild(document.createElement("style"))),document.getElementById(t.c).height=h,window.rs_init_css.innerHTML+="#"+t.c+"_wrapper { height: "+h+"px }"}catch(t){console.log("Failure at Presize of Slider:"+t)}};</script>
+<style type="text/css" data-type="vc_shortcodes-custom-css">.vc_custom_1657857105228{background: rgba(0,0,0,0.5) url(https://habitatvietnam.org/wp-content/uploads/2022/01/Picture1.jpg?id=4108) !important;background-position: center !important;background-repeat: no-repeat !important;background-size: cover !important;*background-color: rgb(0,0,0) !important;}.vc_custom_1575356469540{padding-right: 7% !important;padding-left: 7% !important;background-color: #ffffff !important;}.vc_custom_1575392219576{background-color: #00b5df !important;}.vc_custom_1575716690595{background-color: #ffffff !important;}.vc_custom_1575899841722{background-image: url(https://habitatvietnam.org//wp-content/uploads/2019/12/image-59.jpg?id=2710) !important;background-position: center !important;background-repeat: no-repeat !important;background-size: cover !important;}.vc_custom_1575944660906{padding-top: 10px !important;}.vc_custom_1575381269000{padding-top: 0px !important;padding-right: 4% !important;padding-left: 4% !important;}.vc_custom_1575382228374{padding-top: 0px !important;}.vc_custom_1575188472989{background-position: center !important;background-repeat: no-repeat !important;background-size: cover !important;}.vc_custom_1582106295097{background-color: #00b5df !important;background-position: center !important;background-repeat: no-repeat !important;background-size: cover !important;}.vc_custom_1575202118528{background-color: rgba(77,77,84,0.83) !important;*background-color: rgb(77,77,84) !important;}</style><noscript><style> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+
+	<script type="rocketlazyloadscript" async="" src="https://www.googletagmanager.com/gtag/js?id=UA-74658423-1"></script>
+
+	<script type="rocketlazyloadscript">
+
+	  window.dataLayer = window.dataLayer || [];
+
+	  function gtag(){dataLayer.push(arguments);}
+
+	  gtag('js', new Date());
+
+	 
+
+	  gtag('config', 'UA-74658423-1');
+
+	</script>
+
+<link href="https://www.googletagmanager.com" rel="preconnect"></head>
+
+<body data-rsssl="1" class="home page-template page-template-one-page page-template-one-page-php page page-id-2525 wpb-js-composer js-comp-ver-6.4.0 vc_responsive">
+<div id="page" class="site">
+	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+	<header id="masthead" class="site-header">
+		<!-- <div class="site-branding">
+							<p class="site-title"><a href="https://habitatvietnam.org/" rel="home">Habitat for Humanity Vietnam</a></p>
+						</div> --><!-- .site-branding -->
+			<nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+		  <a class="navbar-brand" href="https://habitatvietnam.org"><img src="https://habitatvietnam.org//wp-content/uploads/2019/11/image-36.png" alt=""></a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarNav">
+		    	<div class="menu-main-menu-container"><ul id="menu-main-menu" class="navbar-nav"><li id="menu-item-2919" class="nav-item menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2919"><a href="https://habitatvietnam.org/about-us/">About Us</a>
+<ul class="sub-menu">
+	<li id="menu-item-3088" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3088"><a href="https://habitatvietnam.org/about-us/#block-2">Who we are</a></li>
+	<li id="menu-item-3090" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3090"><a href="https://habitatvietnam.org/about-us/#block-3">What we do</a></li>
+	<li id="menu-item-3091" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3091"><a href="https://habitatvietnam.org/about-us/#block-4">Where we work</a></li>
+	<li id="menu-item-3092" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3092"><a href="https://habitatvietnam.org/about-us/#publication-block-1">Reports</a></li>
+</ul>
+</li>
+<li id="menu-item-2974" class="nav-item menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2974"><a href="https://habitatvietnam.org/event/">Events</a>
+<ul class="sub-menu">
+	<li id="menu-item-3586" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3586"><a href="https://habitatvietnam.org/category/big-build/">Big build</a></li>
+	<li id="menu-item-3587" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3587"><a href="https://habitatvietnam.org/category/special-build/">Special build</a></li>
+	<li id="menu-item-3588" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3588"><a href="https://habitatvietnam.org/category/upcoming-build/">Upcoming build</a></li>
+</ul>
+</li>
+<li id="menu-item-3686" class="nav-item menu-item menu-item-type-post_type menu-item-object-page menu-item-3686"><a href="https://habitatvietnam.org/story/">Our Stories</a></li>
+<li id="menu-item-3693" class="nav-item menu-item menu-item-type-post_type menu-item-object-page menu-item-3693"><a href="https://habitatvietnam.org/get-engaged/">Get Engaged</a></li>
+<li id="menu-item-3198" class="nav-item donate-btn menu-item menu-item-type-post_type menu-item-object-page menu-item-3198"><a href="https://habitatvietnam.org/donate-2/">Donate</a></li>
+</ul></div>			    <form class="search-form searchbar" role="search" id="hiddenSearchBox" action="" method="get">
+		          <div class="input-group">
+		            <input type="hidden" name="id" value="63">
+		            <input type="search" name="keywords" class="form-control" placeholder="Search..">
+		            <div class="input-group-btn">
+		              <button type="submit" class="btn btn-default" data-toggle="searchbar" data-target="#hiddenSearchBox">
+		                <i class="fas fa-search"></i> <span class="sr-only">Submit</span>
+		              </button>
+		            </div>
+		          </div>
+		        </form>
+		  </div>
+		</nav>
+		</header><!-- #masthead -->
+
+	<div id="content" class="site-content">
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main">
+
+		
+<article id="post-2525" class="post-2525 page type-page status-publish hentry">
+	<header class="entry-header">
+		<!-- <h1 class="entry-title">One page</h1> -->
+	</header><!-- .entry-header -->
+
+	
+	<div class="entry-content">
+		<div id="mcw_full_page" class="mcw_full_page"><div id="block-1" data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid big-title vc_custom_1657857105228 vc_row-has-fill vc_row-no-padding vc_row-o-equal-height vc_row-o-content-middle vc_row-flex mcw_fp_section" data-anchor="section0"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper">
+	<div class="wpb_raw_code wpb_content_element wpb_raw_html">
+		<div class="wpb_wrapper">
+			<div class="block-1-overlay"></div>
+		</div>
+	</div>
+</div></div></div></div><div class="vc_row-full-width vc_clearfix"></div><div id="section-2" data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid section vc_custom_1575356469540 vc_row-has-fill vc_row-no-padding vc_row-o-content-middle vc_row-flex mcw_fp_section fp-auto-height-responsive" data-anchor="section1"><div class="wpb_column vc_column_container vc_col-sm-7" id="section-2-col-left"><div class="vc_column-inner vc_custom_1575944660906"><div class="wpb_wrapper">
+	<div class="wpb_raw_code wpb_content_element wpb_raw_html" id="section-2-left-title">
+		<div class="wpb_wrapper">
+			<p id="section-2-text-1"><a href="about-us-3">about us</a></p>
+<!-- <p id="section-2-text-2">where everyone has a decent place to live</p> -->
+		</div>
+	</div>
+
+	<div class="wpb_text_column wpb_content_element " id="section-2-left-content">
+		<div class="wpb_wrapper">
+			<p>Habitat for Humanity International began its work in Vietnam in 2001. Over the years, Habitat Vietnam has been delivering holistic approach to housing by supporting and empowering communities to take ownership in improving their living conditions and eliminate poverty housing. With our housing services, we have engaged many stakeholders to support families and community members to build strength, stability, and self-reliance by increasing the access to affordable, safe shelter through these thematic areas: inclusive housing; safe, smart, and resilient communities; housing affordability; and government-people engagement. Our project presence in Vietnam is in Thai Nguyen, Hoa Binh, Phu Tho, Thai Binh in the north; Ha Tinh and Quang Nam in the central; and Long An, Dong Thap and Tien Giang in the south.</p>
+
+		</div>
+	</div>
+</div></div></div><div class="wpb_column vc_column_container vc_col-sm-5" id="section-2-col-right"><div class="vc_column-inner"><div class="wpb_wrapper">
+	<div class="wpb_single_image wpb_content_element vc_align_center">
+		
+		<figure class="wpb_wrapper vc_figure">
+			<div class="vc_single_image-wrapper   vc_box_border_grey"><img fetchpriority="high" decoding="async" width="640" height="427" src="https://habitatvietnam.org/wp-content/uploads/2021/12/054_Habitat-for-Humanity-Vietnam-0432.jpg" class="vc_single_image-img attachment-large" alt="" srcset="https://habitatvietnam.org/wp-content/uploads/2021/12/054_Habitat-for-Humanity-Vietnam-0432.jpg 1000w, https://habitatvietnam.org/wp-content/uploads/2021/12/054_Habitat-for-Humanity-Vietnam-0432-300x200.jpg 300w, https://habitatvietnam.org/wp-content/uploads/2021/12/054_Habitat-for-Humanity-Vietnam-0432-768x512.jpg 768w" sizes="(max-width: 640px) 100vw, 640px"></div>
+		</figure>
+	</div>
+</div></div></div></div><div class="vc_row-full-width vc_clearfix"></div><div id="section-4" data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid section vc_row-no-padding vc_row-o-equal-height vc_row-o-content-middle vc_row-flex mcw_fp_section fp-auto-height-responsive" data-anchor="section2"><div class="wpb_column vc_column_container vc_col-sm-6" id="section-4-col-left"><div class="vc_column-inner vc_custom_1575381269000"><div class="wpb_wrapper">
+	<div class="wpb_raw_code wpb_content_element wpb_raw_html" id="section-4-left-text-1">
+		<div class="wpb_wrapper">
+			<p><a href="/about-us-3/#block-3">what we do</a></p>
+<!--<p>Programming</p>
+<p>priorities</p>-->
+		</div>
+	</div>
+<ul><li><a href="https://habitatvietnam.org/priority/inclusive-housing-thematic-focus/">Inclusive housing thematic focus</a></li><li><a href="https://habitatvietnam.org/priority/safe-smart-resilient-communities/">Safe, smart &amp; resilient communities</a></li><li><a href="https://habitatvietnam.org/priority/housing-affordability-thematic-focus/">Housing affordability thematic focus</a></li><li><a href="https://habitatvietnam.org/priority/government-people-engagement/">Government- people engagement</a></li></ul><div class="vc_btn3-container vc_btn3-inline" id="section-4-btn"><a style="background-color:#00b5df; color:#ffffff;" class="vc_general vc_btn3 vc_btn3-size-md vc_btn3-shape-square vc_btn3-style-custom" href="https://habitatvietnam.org/about-us/#block-3" title="">See More</a></div></div></div></div><div class="wpb_column vc_column_container vc_col-sm-6" id="section-4-col-right"><div class="vc_column-inner vc_custom_1575382228374"><div class="wpb_wrapper"><div class="custom-grid-container"><div class="custom-grid-item"></div><div class="custom-grid-item"></div><div class="custom-grid-item"><a href="https://habitatvietnam.org/priority/inclusive-housing-thematic-focus/"><img decoding="async" src="https://habitatvietnam.org/wp-content/uploads/2019/11/about-prio-1-342x270_c.jpg" alt="Inclusive housing thematic focus"><div class="section-4-overlay">Inclusive housing thematic focus</div></a></div><div class="custom-grid-item"><a href="https://habitatvietnam.org/priority/safe-smart-resilient-communities/"><img decoding="async" src="https://habitatvietnam.org/wp-content/uploads/2019/11/about-prio-2-342x270_c.jpg" alt="Safe, smart &amp; resilient communities"><div class="section-4-overlay">Safe, smart &amp; resilient communities</div></a></div><div class="custom-grid-item"><a href="https://habitatvietnam.org/priority/housing-affordability-thematic-focus/"><img decoding="async" src="https://habitatvietnam.org/wp-content/uploads/2019/11/about-prio-3-342x270_c.jpg" alt="Housing affordability thematic focus"><div class="section-4-overlay">Housing affordability thematic focus</div></a></div><div class="custom-grid-item"><a href="https://habitatvietnam.org/priority/government-people-engagement/"><img decoding="async" src="https://habitatvietnam.org/wp-content/uploads/2019/11/about-prio-4-342x270_c.jpg" alt="Government- people engagement"><div class="section-4-overlay">Government- people engagement</div></a></div><div class="custom-grid-item"></div><div class="custom-grid-item"></div></div></div></div></div></div><div class="vc_row-full-width vc_clearfix"></div><div id="section-6" data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid section vc_custom_1575392219576 vc_row-has-fill vc_row-no-padding vc_row-o-equal-height vc_row-o-content-middle vc_row-flex mcw_fp_section fp-auto-height-responsive" data-anchor="section3"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper">
+	<div class="wpb_single_image wpb_content_element vc_align_center  vc_custom_1575188472989">
+		
+		<figure class="wpb_wrapper vc_figure">
+			<div class="vc_single_image-wrapper   vc_box_border_grey"><img decoding="async" width="890" height="435" src="https://habitatvietnam.org/wp-content/uploads/2019/12/image-55.jpg" class="vc_single_image-img attachment-full" alt="" srcset="https://habitatvietnam.org/wp-content/uploads/2019/12/image-55.jpg 890w, https://habitatvietnam.org/wp-content/uploads/2019/12/image-55-300x147.jpg 300w, https://habitatvietnam.org/wp-content/uploads/2019/12/image-55-768x375.jpg 768w" sizes="(max-width: 890px) 100vw, 890px"></div>
+		</figure>
+	</div>
+
+	<div class="wpb_text_column wpb_content_element  vc_custom_1582106295097" id="section-6-text">
+		<div class="wpb_wrapper">
+			<p style="text-align: center;"><strong>GET ENGAGED</strong></p>
+
+		</div>
+	</div>
+<div id="section-6-group-btn" class="vc_row wpb_row vc_inner vc_row-fluid vc_row-o-equal-height vc_row-o-content-middle vc_row-flex"><div class="wpb_column vc_column_container vc_col-sm-12" id="section-6-group-btn-inner-col"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="vc_btn3-container  section-6-btn vc_btn3-inline" id="section-6-btn-1"><a style="background-color:#ffffff; color:#00b5df;" class="vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-square vc_btn3-style-custom" href="https://habitatvietnam.org/donate-2/" title="">DONATE</a></div><div class="vc_btn3-container  section-6-btn vc_btn3-inline" id="section-6-btn-2"><a style="background-color:#ffffff; color:#00b5df;" class="vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-square vc_btn3-style-custom" href="https://www.facebook.com/HFHVietnam/" title="" target="_blank">FOLLOW US</a></div><div class="vc_btn3-container  section-6-btn vc_btn3-inline" id="section-6-btn-3"><a style="background-color:#ffffff; color:#00b5df;" class="vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-square vc_btn3-style-custom" href="https://habitatvietnam.org/volunteer-3/" title="">VOLUNTEER</a></div></div></div></div></div></div></div></div></div><div class="vc_row-full-width vc_clearfix"></div><div id="section-7" data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid section vc_custom_1575716690595 vc_row-has-fill vc_row-no-padding vc_row-o-equal-height vc_row-o-content-middle vc_row-flex mcw_fp_section fp-auto-height-responsive" data-anchor="section4"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper">
+	<div class="wpb_single_image wpb_content_element vc_align_center">
+		
+		<figure class="wpb_wrapper vc_figure">
+			<div class="vc_single_image-wrapper   vc_box_border_grey"><img decoding="async" width="1366" height="415" src="https://habitatvietnam.org/wp-content/uploads/2019/12/image-57.jpg" class="vc_single_image-img attachment-full" alt="" srcset="https://habitatvietnam.org/wp-content/uploads/2019/12/image-57.jpg 1366w, https://habitatvietnam.org/wp-content/uploads/2019/12/image-57-300x91.jpg 300w, https://habitatvietnam.org/wp-content/uploads/2019/12/image-57-1024x311.jpg 1024w, https://habitatvietnam.org/wp-content/uploads/2019/12/image-57-768x233.jpg 768w" sizes="(max-width: 1366px) 100vw, 1366px"></div>
+		</figure>
+	</div>
+
+	<div id="section-7-logo" class="wpb_single_image wpb_content_element vc_align_center">
+		
+		<figure class="wpb_wrapper vc_figure">
+			<div class="vc_single_image-wrapper   vc_box_border_grey"><img loading="lazy" decoding="async" width="502" height="161" src="https://habitatvietnam.org/wp-content/uploads/2019/12/Group-41.png" class="vc_single_image-img attachment-large" alt="" srcset="https://habitatvietnam.org/wp-content/uploads/2019/12/Group-41.png 502w, https://habitatvietnam.org/wp-content/uploads/2019/12/Group-41-300x96.png 300w" sizes="(max-width: 502px) 100vw, 502px"></div>
+		</figure>
+	</div>
+<div class="logo-slide-container"><div><img loading="lazy" decoding="async" width="402" height="171" src="https://habitatvietnam.org/wp-content/uploads/2017/01/HKSAR_2.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://habitatvietnam.org/wp-content/uploads/2017/01/HKSAR_2.png 402w, https://habitatvietnam.org/wp-content/uploads/2017/01/HKSAR_2-300x128.png 300w" sizes="(max-width: 402px) 100vw, 402px"></div><div><img loading="lazy" decoding="async" width="1000" height="593" src="https://habitatvietnam.org/wp-content/uploads/2017/01/JOAC_LOGO_RGB.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://habitatvietnam.org/wp-content/uploads/2017/01/JOAC_LOGO_RGB.jpg 1000w, https://habitatvietnam.org/wp-content/uploads/2017/01/JOAC_LOGO_RGB-300x178.jpg 300w, https://habitatvietnam.org/wp-content/uploads/2017/01/JOAC_LOGO_RGB-768x455.jpg 768w" sizes="(max-width: 1000px) 100vw, 1000px"></div><div><img loading="lazy" decoding="async" width="1381" height="588" src="https://habitatvietnam.org/wp-content/uploads/2016/10/SMEC-Foundation.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://habitatvietnam.org/wp-content/uploads/2016/10/SMEC-Foundation.jpg 1381w, https://habitatvietnam.org/wp-content/uploads/2016/10/SMEC-Foundation-300x128.jpg 300w, https://habitatvietnam.org/wp-content/uploads/2016/10/SMEC-Foundation-1024x436.jpg 1024w, https://habitatvietnam.org/wp-content/uploads/2016/10/SMEC-Foundation-768x327.jpg 768w" sizes="(max-width: 1381px) 100vw, 1381px"></div><div><img loading="lazy" decoding="async" width="1884" height="169" src="https://habitatvietnam.org/wp-content/uploads/2016/09/MetLife_Foundation_4C.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://habitatvietnam.org/wp-content/uploads/2016/09/MetLife_Foundation_4C.jpg 1884w, https://habitatvietnam.org/wp-content/uploads/2016/09/MetLife_Foundation_4C-300x27.jpg 300w, https://habitatvietnam.org/wp-content/uploads/2016/09/MetLife_Foundation_4C-1024x92.jpg 1024w, https://habitatvietnam.org/wp-content/uploads/2016/09/MetLife_Foundation_4C-768x69.jpg 768w, https://habitatvietnam.org/wp-content/uploads/2016/09/MetLife_Foundation_4C-1536x138.jpg 1536w" sizes="(max-width: 1884px) 100vw, 1884px"></div><div><img loading="lazy" decoding="async" width="2057" height="934" src="https://habitatvietnam.org/wp-content/uploads/2015/07/SCBK.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://habitatvietnam.org/wp-content/uploads/2015/07/SCBK.jpg 2057w, https://habitatvietnam.org/wp-content/uploads/2015/07/SCBK-300x136.jpg 300w, https://habitatvietnam.org/wp-content/uploads/2015/07/SCBK-1024x465.jpg 1024w, https://habitatvietnam.org/wp-content/uploads/2015/07/SCBK-768x349.jpg 768w, https://habitatvietnam.org/wp-content/uploads/2015/07/SCBK-1536x697.jpg 1536w, https://habitatvietnam.org/wp-content/uploads/2015/07/SCBK-2048x930.jpg 2048w" sizes="(max-width: 2057px) 100vw, 2057px"></div><div><img loading="lazy" decoding="async" width="827" height="405" src="https://habitatvietnam.org/wp-content/uploads/2015/07/KPMG.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://habitatvietnam.org/wp-content/uploads/2015/07/KPMG.jpg 827w, https://habitatvietnam.org/wp-content/uploads/2015/07/KPMG-300x147.jpg 300w, https://habitatvietnam.org/wp-content/uploads/2015/07/KPMG-768x376.jpg 768w" sizes="(max-width: 827px) 100vw, 827px"></div><div><img loading="lazy" decoding="async" width="2560" height="942" src="https://habitatvietnam.org/wp-content/uploads/2015/07/USG-Boral-scaled.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://habitatvietnam.org/wp-content/uploads/2015/07/USG-Boral-scaled.jpg 2560w, https://habitatvietnam.org/wp-content/uploads/2015/07/USG-Boral-scaled-300x110.jpg 300w, https://habitatvietnam.org/wp-content/uploads/2015/07/USG-Boral-scaled-1024x377.jpg 1024w, https://habitatvietnam.org/wp-content/uploads/2015/07/USG-Boral-scaled-768x283.jpg 768w, https://habitatvietnam.org/wp-content/uploads/2015/07/USG-Boral-scaled-1536x565.jpg 1536w, https://habitatvietnam.org/wp-content/uploads/2015/07/USG-Boral-scaled-2048x754.jpg 2048w" sizes="(max-width: 2560px) 100vw, 2560px"></div><div><img loading="lazy" decoding="async" width="600" height="87" src="https://habitatvietnam.org/wp-content/uploads/2015/07/w_nvr-01u_cmyk-e1435826935164.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://habitatvietnam.org/wp-content/uploads/2015/07/w_nvr-01u_cmyk-e1435826935164.jpg 600w, https://habitatvietnam.org/wp-content/uploads/2015/07/w_nvr-01u_cmyk-e1435826935164-300x44.jpg 300w" sizes="(max-width: 600px) 100vw, 600px"></div><div><img loading="lazy" decoding="async" width="888" height="592" src="https://habitatvietnam.org/wp-content/uploads/2015/03/pfizer.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://habitatvietnam.org/wp-content/uploads/2015/03/pfizer.png 888w, https://habitatvietnam.org/wp-content/uploads/2015/03/pfizer-300x200.png 300w, https://habitatvietnam.org/wp-content/uploads/2015/03/pfizer-768x512.png 768w" sizes="(max-width: 888px) 100vw, 888px"></div><div><img loading="lazy" decoding="async" width="402" height="171" src="https://habitatvietnam.org/wp-content/uploads/2015/06/DFAT-logo_transparent.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://habitatvietnam.org/wp-content/uploads/2015/06/DFAT-logo_transparent.jpg 402w, https://habitatvietnam.org/wp-content/uploads/2015/06/DFAT-logo_transparent-300x128.jpg 300w" sizes="(max-width: 402px) 100vw, 402px"></div></div></div></div></div></div><div class="vc_row-full-width vc_clearfix"></div><div id="section-8" data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid section vc_custom_1575899841722 vc_row-has-fill vc_row-no-padding vc_row-o-equal-height vc_row-o-content-middle vc_row-flex mcw_fp_section fp-auto-height-responsive" data-anchor="section5"><div class="wpb_column vc_column_container vc_col-sm-5 vc_col-has-fill" id="section-8-col-left"><div class="vc_column-inner vc_custom_1575202118528"><div class="wpb_wrapper">
+	<div class="wpb_raw_code wpb_content_element wpb_raw_html">
+		<div class="wpb_wrapper">
+			<p class="section-8-text-1">GET IN</p>
+<p class="section-8-text-1">TOUCH</p>
+		</div>
+	</div>
+
+	<div class="wpb_raw_code wpb_content_element wpb_raw_html" id="section-8-group-2">
+		<div class="wpb_wrapper">
+			<p class="section-8-title">CONTACT</p>
+<p class="section-8-content">Tel: <a href="tel:842835265005">+84 28 3526 5005</a></p>
+<p class="section-8-content">Fax: <a href="fax:842835265323">+84 28 3526 5323</a></p>
+
+<p class="section-8-title">LOCATION</p>
+<p class="section-8-content">53/10 Tran Khanh Du,</p>
+<p class="section-8-content">Tan Dinh Ward, District 1,</p>
+<p class="section-8-content">Ho Chi Minh City, Vietnam</p>
+
+<p class="section-8-title">FOLLOW US</p>
+		</div>
+	</div>
+<ul><li><a href="https://www.facebook.com/HFHVietnam/"><img decoding="async" src="/wp-content/themes/habitat/images/fb-icon.png" class="habitat-icon-facebook"></a></li><li><a href="https://www.instagram.com/vietnamhabitat/"><img decoding="async" src="/wp-content/themes/habitat/images/instagram.png" class="habitat-icon-instagram"></a></li><li><a href="https://twitter.com/HabitatVietnam"><img decoding="async" src="/wp-content/themes/habitat/images/twitter.png" class="habitat-icon-twitter"></a></li><li><a href="https://www.linkedin.com/company/habitat-for-humanity-vietnam/"><img decoding="async" src="/wp-content/themes/habitat/images/linked.png" class="habitat-icon-linked"></a></li></ul></div></div></div><div class="wpb_column vc_column_container vc_col-sm-1"><div class="vc_column-inner"><div class="wpb_wrapper"></div></div></div><div class="wpb_column vc_column_container vc_col-sm-6" id="section-8-col-right"><div class="vc_column-inner"><div class="wpb_wrapper">
+	<div class="wpb_text_column wpb_content_element " id="section-8-col-right-text">
+		<div class="wpb_wrapper">
+			<p style="text-align: right;">Habitat for Humanity Vietnam (Habitat Vietnam) works in partnership with like-minded people around the world to make a change in the community in Vietnam. By collaboraing with us, together we can help Vietnamese people improve their living conditions and eliminate poverty housing across the country and take action to affiliate with people around the world to highlight “A world where everyone has a decent place to live”.</p>
+
+		</div>
+	</div>
+<div role="form" class="wpcf7" id="wpcf7-f2724-p1124-o1" lang="en-US" dir="ltr">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="/#wpcf7-f2724-p1124-o1" method="post" class="wpcf7-form init" novalidate="novalidate" data-status="init">
+<div style="display: none;">
+<input type="hidden" name="_wpcf7" value="2724">
+<input type="hidden" name="_wpcf7_version" value="5.5.6.1">
+<input type="hidden" name="_wpcf7_locale" value="en_US">
+<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f2724-p1124-o1">
+<input type="hidden" name="_wpcf7_container_post" value="1124">
+<input type="hidden" name="_wpcf7_posted_data_hash" value="">
+</div>
+<p><label> Name<br>
+    <span class="wpcf7-form-control-wrap your-name"><input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false"></span> </label></p>
+<p><label> Email<br>
+    <span class="wpcf7-form-control-wrap your-email"><input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false"></span> </label></p>
+<p><label> Message<br>
+    <span class="wpcf7-form-control-wrap your-message"><textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false"></textarea></span> </label></p>
+<p><input type="submit" value="Send" class="wpcf7-form-control has-spinner wpcf7-submit"></p>
+<p style="display: none !important;"><label>Δ<textarea name="_wpcf7_ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="_wpcf7_ak_js" value="243"><script type="rocketlazyloadscript">document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p><div class="wpcf7-response-output" aria-hidden="true"></div></form></div>
+	<div id="btn-move-top" class="wpb_single_image wpb_content_element vc_align_left">
+		
+		<figure class="wpb_wrapper vc_figure">
+			<a href="#section0" target="_self" class="vc_single_image-wrapper   vc_box_border_grey"><img loading="lazy" decoding="async" width="56" height="56" src="https://habitatvietnam.org/wp-content/uploads/2019/12/Group-17.png" class="vc_single_image-img attachment-full" alt=""></a>
+		</figure>
+	</div>
+</div></div></div></div><div class="vc_row-full-width vc_clearfix"></div>
+</div>	</div><!-- .entry-content -->
+
+	</article><!-- #post-1124 -->
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+	</div><!-- #content -->
+
+	<footer id="colophon" class="site-footer">
+		<!-- <div class="site-info">
+			<a href="https://wordpress.org/">
+				Proudly powered by WordPress			</a>
+			<span class="sep"> | </span>
+				Theme: habitat by <a href="http://underscores.me/">Underscores.me</a>.		</div> --><!-- .site-info -->
+			</footer><!-- #colophon -->
+</div><!-- #page -->
+
+<script type="rocketlazyloadscript">
+	jQuery(document).ready(function(){
+			jQuery('nav').mouseenter(function(){
+			jQuery(this).css('opacity',1);
+		});
+		jQuery('nav').mouseleave(function(){
+			jQuery(this).css('opacity',0.4);
+		});
+
+		jQuery('.custom-grid-item').mouseenter(function() {
+			jQuery(this).find('.section-4-overlay').addClass('section-4-overlay-show');
+		});
+		jQuery('.custom-grid-item').mouseleave(function() {
+			jQuery(this).find('.section-4-overlay').removeClass('section-4-overlay-show');
+		});
+
+		jQuery('.logo-slide-container').slick({
+			infinite: true,
+			dot: false,
+			slidesToShow: 6,
+			slidesToScroll: 6,
+			prevArrow: '<img class="slick-prev-custom" src="https://habitatvietnam.org/wp-content/themes/habitat/images/Vector2.png">',
+			nextArrow: '<img class="slick-next-custom" src="https://habitatvietnam.org/wp-content/themes/habitat/images/Vector.png">',
+		});
+			jQuery('.habitat-icon-facebook').mouseenter(function() {
+			jQuery(this).attr('src','/wp-content/uploads/2019/12/fb-icon-hover.png');
+		});
+		jQuery('.habitat-icon-facebook').mouseleave(function() {
+			jQuery(this).attr('src','/wp-content/uploads/2019/12/fb-icon-1.png');
+		});
+		jQuery('.habitat-icon-instagram').mouseenter(function() {
+			jQuery(this).attr('src','/wp-content/uploads/2019/12/instagram-hover.png');
+		});
+		jQuery('.habitat-icon-instagram').mouseleave(function() {
+			jQuery(this).attr('src','/wp-content/uploads/2019/12/instagram-1.png');
+		});
+		jQuery('.habitat-icon-twitter').mouseenter(function() {
+			jQuery(this).attr('src','/wp-content/uploads/2019/12/twitter-hover.png');
+		});
+		jQuery('.habitat-icon-twitter').mouseleave(function() {
+			jQuery(this).attr('src','/wp-content/uploads/2019/12/twitter-1.png');
+		});
+		jQuery('.habitat-icon-youtube').mouseenter(function() {
+			jQuery(this).attr('src','/wp-content/uploads/2019/12/youtube-hover.png');
+		});
+		jQuery('.habitat-icon-youtube').mouseleave(function() {
+			jQuery(this).attr('src','/wp-content/uploads/2019/12/yt-1.png');
+		});
+		jQuery('.habitat-icon-linked').mouseenter(function() {
+			jQuery(this).attr('src','/wp-content/uploads/2019/12/linked-hover.png');
+		});
+		jQuery('.habitat-icon-linked').mouseleave(function() {
+			jQuery(this).attr('src','/wp-content/uploads/2019/12/instagram.png');
+		});
+				// 
+	
+	});
+
+	
+</script>
+
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://habitatvietnam.org/wp-includes/js/dist/vendor/wp-polyfill-inert.min.js?ver=3.1.2" id="wp-polyfill-inert-js" defer=""></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://habitatvietnam.org/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.14.0" id="regenerator-runtime-js" defer=""></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://habitatvietnam.org/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0" id="wp-polyfill-js"></script>
+<script type="text/javascript" id="contact-form-7-js-extra">
+/* <![CDATA[ */
+var wpcf7 = {"api":{"root":"https:\/\/habitatvietnam.org\/wp-json\/","namespace":"contact-form-7\/v1"},"cached":"1"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" src="https://habitatvietnam.org/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/js/index.js?ver=1632903642" id="contact-form-7-js" defer=""></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://habitatvietnam.org/wp-content/plugins/mcw_fullpage/fullpage/fullpage.min.js?ver=3.0.4" id="mcw_fp_js-js" defer=""></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-browser-checker-js-after">
+/* <![CDATA[ */
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+/* ]]> */
+</script>
+<script type="text/javascript" id="rocket-preload-links-js-extra">
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/wp-admin\/|\/logout\/|\/wp-login.php|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/habitatvietnam.org","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-preload-links-js-after">
+/* <![CDATA[ */
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://habitatvietnam.org/wp-content/themes/habitat/js/popper.min.js?ver=1.16.0" id="bootstrap-popper-js" defer=""></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://habitatvietnam.org/wp-content/themes/habitat/js/bootstrap.min.js?ver=4.4.0" id="bootstrap-js-js" defer=""></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" src="https://habitatvietnam.org/wp-content/cache/min/1/wp-content/themes/habitat/js/fullpage.js?ver=1632903642" id="fullpage-js" defer=""></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" src="https://habitatvietnam.org/wp-content/cache/min/1/wp-content/themes/habitat/js/slick.js?ver=1632903642" id="slick-js" defer=""></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" src="https://habitatvietnam.org/wp-content/cache/min/1/wp-content/themes/habitat/js/navigation.js?ver=1632903642" id="habitat-navigation-js" defer=""></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" src="https://habitatvietnam.org/wp-content/cache/min/1/wp-content/themes/habitat/js/skip-link-focus-fix.js?ver=1632903642" id="habitat-skip-link-focus-fix-js" defer=""></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" src="https://habitatvietnam.org/wp-content/cache/min/1/wp-content/themes/habitat/js/my-javascript.js?ver=1632903642" id="my-javascript-js" defer=""></script>
+<script type="text/javascript" id="my_loadmore-js-extra">
+/* <![CDATA[ */
+var misha_loadmore_params = {"ajax_url":"https:\/\/habitatvietnam.org\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" src="https://habitatvietnam.org/wp-content/cache/min/1/wp-content/themes/habitat/js/myloadmore.js?ver=1632903642" id="my_loadmore-js" defer=""></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://habitatvietnam.org/wp-content/plugins/js_composer/assets/js/dist/js_composer_front.min.js?ver=6.4.0" id="wpb_composer_front_js-js" defer=""></script>
+<style type="text/css">.fp-section {margin:0 !important;opacity:1 !important}.fp-sr-only{visibility:hidden}</style><script type="rocketlazyloadscript" data-rocket-type="text/javascript">(function($){$('.mcw_fp_section .mcw_fp_section').removeClass('mcw_fp_section');new fullpage(".mcw_full_page", {licenseKey:"FE218AD9-CA7948FB-A9A25B87-28826BBE",lazyLoading:false,sectionSelector:".mcw_full_page>.mcw_fp_section",slideSelector:".mcw_fp_slide",navigation:false,slidesNavigation:false,controlArrows:true,lockAnchors:false,animateAnchor:true,keyboardScrolling:true,recordHistory:true,autoScrolling:true,fitToSection:true,fitToSectionDelay:1000,scrollBar:false,scrollOverflow:false,continuousVertical:false,loopBottom:false,loopTop:false,loopHorizontal:true,scrollingSpeed:700,css3:true,easingcss3:"ease",verticalCentered:false,responsiveWidth:992,responsiveHeight:0,paddingTop:(typeof mcwPaddingTop!=="undefined")?mcwPaddingTop:"0px",paddingBottom:"0px",fixedElements:".mcw_fp_fixed_top,.mcw_fp_fixed_bottom"});})(jQuery);</script>
+
+
+
+</body></html>

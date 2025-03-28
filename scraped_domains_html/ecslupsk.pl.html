@@ -1,0 +1,727 @@
+<!DOCTYPE html><html class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths" lang="en" style=""><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ENGIE</title>
+	
+	<link rel="stylesheet" href="stylesheets/app.css">
+
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link href="http://fonts.googleapis.com/css?family=Titillium+Web:400,300,400italic,700,700italic,900&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+	<link rel="stylesheet" href="bower_components/flexslider/flexslider.css">
+	<link rel="stylesheet" href="bower_components/lightbox/dist/css/lightbox.css">
+
+	<link rel="icon" type="image/png" href="img/favicon.png" sizes="150x150">
+	
+	<script src="bower_components/modernizr/modernizr.js"></script>
+
+<script>
+	window.activeMenuElement = 1;
+</script>
+<style>
+	.rst{
+		display: block;		
+	}	
+	#indexAktualnosci .prev,
+	#indexAktualnosci .next{
+		padding: 0px 10px 0px;
+		text-align: center;
+		background: white;
+		width: 35px;
+		height: 35px;
+		right: 0px;
+		color: #009ee2;
+		font-size: 22px;
+		/* font-weight: bold; */
+		position: absolute;
+		z-index: 3;
+		cursor: pointer;
+	}
+	#indexAktualnosci .prev{
+		right: 45px;
+	}
+	#indexAktualnosci li.active{
+		display: block !important;
+	}
+	#indexAktualnosci {
+		padding: 0px;
+	}
+	#indexAktualnosci ul:after{
+		display:none;
+	}
+	.kafelki > .column .inner h4{
+		/*color: white;*/
+		padding-bottom: 10px;
+		    text-align: left !important;
+		width: 100%;
+	}
+	.overflowing{
+		height: 300px;
+		transition: all .3s ease-out;
+	}
+	#indexAktualnosci ul{
+		margin:0px;
+	}
+	#indexAktualnosci li{
+		list-style: none;
+		/*display: none;*/
+	}
+</style>
+
+<style>
+@media (min-width: 751px){
+	.l-text-right{
+		text-align: right !important;
+	}
+}	
+@media (max-width: 750px){
+	.rstrss{
+		display: block;
+		width: 184px;
+		margin: 0px auto;
+	}
+}	
+</style>
+<meta class="foundation-data-attribute-namespace"><meta class="foundation-mq-xxlarge"><meta class="foundation-mq-xlarge-only"><meta class="foundation-mq-xlarge"><meta class="foundation-mq-large-only"><meta class="foundation-mq-large"><meta class="foundation-mq-medium-only"><meta class="foundation-mq-medium"><meta class="foundation-mq-small-only"><meta class="foundation-mq-small"><style></style><meta class="foundation-mq-topbar"></head>
+<body class="">
+
+
+
+        <div id="allWrapper"><div class="sticky">
+	<nav class="top-bar hide-for-large-up" data-topbar="" role="navigation">
+		<ul class="title-area">
+			<li class="name">
+				<h1><a href="#">Engie</a></h1>
+			</li>
+			<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+		</ul>
+		
+	<section class="top-bar-section">
+			<ul class="text-center">
+				<li><a href="o-firmie.php">O nas</a></li>
+				<li><a href="cofely-w-polsce.php">Engie w Polsce</a></li>
+				<li><a href="oferta.php">Oferta</a></li>
+				<li><a href="strefa-klienta.php">Strefa klienta</a></li>
+				<li><a href="dla-otoczenia.php">Dla otoczenia</a></li>
+				<li><a href="kariera.php">Oferty pracy</a></li>
+				<li><a href="kontakt.php">Kontakt</a></li>
+			</ul>
+		</section></nav>
+</div>
+<nav class="topBar">
+	<div class="topArea">
+		<div class="row">
+			<div class="column medium-4">
+				<a href="index.php" class="rstrss"><img src="img/logo-cofely.svg" alt="Engie" class="logo-image" width="454" height="147"></a>
+			</div>
+			<div class="column medium-8 text-center">
+				<p class="alert text-center l-text-right">POGOTOWIE CIEPŁOWNICZE: <a href="tel://993">993</a> lub&nbsp;<a href="tel://598422297">59&nbsp;84&nbsp;22&nbsp;297</a></p>
+				<!-- <a href="" class="menuButton tiny button secondary round ">menu <i class="fa fa-bars"></i></a>
+				<span class="buttonContainer"> -->
+				<a href="http://precate.pl/player/?src=slupsk%2Fcam1" class="button radius" style="background-color:#fcc200; color:white; border:none; float:right; margin-right:10px; margin-bottom:0px;">Sokoły - na żywo</a>
+				<span class="buttonContainer">
+				<a href="https://ebok.ecslupsk.pl" class="button radius" style="background-color:#009ee2; color:white; border:none; float:right; margin-right:10px; margin-bottom:0px;">eBOK</a>
+			</span></div>
+		</div>
+		<div class="contain-to-grid sticky show-for-large-up">
+			<nav class="top-bar" data-topbar="" role="navigation">
+				<div class="top-menu-wrapper">
+					<div class="row">
+						<div class="dotWrap">
+							<img src="img/topbar.png" alt=" " class="nav-img" width="5161" height="76">
+							<div class="topbarWhiteDot transition" style="left: 2px;"></div>
+						</div>
+					</div>
+					<div class="row ">
+						<div class="">
+							<div id="wrap-menu">
+								<div id="outer-menu">
+									<a href="index.php" class="active"></a><a href="o-firmie.php">O nas</a><a href="cofely-w-polsce.php">ENGIE w Polsce</a><a href="oferta.php">Oferta</a><a href="strefa-klienta.php">Strefa Klienta</a><a href="dla-otoczenia.php" class="">Dla otoczenia</a><a href="kariera.php">Praca / praktyki</a><a href="kontakt.php">Kontakt</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div> <!-- .top-menu-wrapper -->
+			</nav>
+		</div>
+	</div><!-- /.topArea -->
+</nav><!-- /.topBar -->
+	<div class="nanner-load">
+	<div class="row">
+		<div class="inner">
+			<a href="#" class="cllosse alert" style="float:right;"><h4>X</h4></a>
+			<a href="strefa-klienta-rekompensata.php"><img src="img/kotek2024.jpg" width="1750" height="480"></a>
+		</div>
+	</div>
+</div>
+<style>
+	.nanner-load .row{
+		position: relative;
+		height: 100%;
+	}
+	.nanner-load .inner{
+		background: white;
+		position: absolute;
+		top: calc(50% - 160px);
+		width: 900px;
+		left: calc(50% - 450px);
+		/*width: 100%;*/
+		height: 340px;
+		border-radius: 30px;
+		padding: 50px;
+		padding-top: 30px;
+
+	}
+	.cllosse:before{
+		display: none;
+	}
+	@media (max-width:800px){		
+		.nanner-load{
+			width: 100%;
+			left: 0px;
+			/*top:0px;*/
+			display: none;
+		}
+	}
+	.nanner-load{
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		z-index: 9999999999999999999999999999;
+		background: rgba(0,0,0,.8);
+		top:0px;
+		text-align: left !important;
+	}
+</style>
+<section class="mainHeader rel darkBG " id="mainHeader_01">
+	<div class="below-bg" id="particles-js"><canvas class="particles-js-canvas-el" width="1080" height="600" style="width: 100%; height: 100%;"></canvas></div>
+	<div class="row text-center">
+			<span class="buttonContainer"><a href="strefa-klienta-przylacz-sie.php" class="button radius">przyłącz się</a> <a href="strefa-klienta-awaria.php" class="button alert radius">zgłoś awarię</a></span>
+	</div>
+	<!-- <div class="arrow-container"><div class="arrow-show-hide" data-id-to-toggle="mainHeader_01"><img src="img/strzalka.svg" alt="" class="svg"></div></div> -->
+</section>
+<!-- <div class="row">
+	<div class="flex-container">
+		<div class="flex-item">1</div>
+		<div class="flex-item">2</div>
+		<div class="flex-item">3</div>
+		<div class="flex-item double">4</div>
+		<div class="flex-item">5</div>
+	</div>
+	
+</div> -->
+<br>
+<!-- <div class="row">
+	<div class="column small-12">
+		<h4 class='kreska rightPadding leftMargin clearfix'>
+			Ważne komunikaty
+		</h4>
+	</div>
+</div>
+<div class="row collapse kafelki wazneKomunikaty">
+<div class="column small-12 large-12 top-left-radius bottom-left-radius top-right-radius bottom-right-radius">
+		<div class="inner grey clearfix" >
+			<div style="border-radius: 2.5rem;">
+				<h4>eBOK</h4>
+				<p>Do dnia 31 maja 2024r. niedostępna będzie aplikacja eBOK - aplikacja jest w trakcie modyfikowania.<br>Przepraszamy za ewentulane utrudnienia wynikające z braku dostępu do eBOK<br>
+				<br>Dział BOK</p>
+				</p>
+				<div class="koleczka"></div>
+			</div>
+		</div>
+	</div>
+</div>
+</div> -->
+
+
+
+<div class="clearfix row">
+		<span><center><a href="o-firmie-unijne-kogeneracja.php"><img src="img/projekt_ue.jpg" width="600" height="78"></a></center></span>
+</div>
+<div class="row collapse kafelki">
+	<div class="column small-12 large-6 xlarge-4 show-for-large-up top-left-radius" style="height: 363px;">
+		<div class="overflowing" style="height: 100%;">
+			<div class="inner clearfix" style="height: 100%;">
+				<h3 class="h3_special" style="height: 80px;">poradnik o&nbsp;cieple</h3>
+				<p style="height: 122px;">Ponieważ dbamy o środowisko naturalne, od lat doradzamy mieszkańcom Słupska jak można racjonalnie ogrzewać mieszkania oraz jak ograniczać zużycie ciepłej wody.</p>
+				<a href="poradnik.php" class="right moreLink">więcej <img src="img/wPrawo.png" alt=""></a>
+				<div class="koleczka">
+					<div class="kolko-1"></div>
+					<div class="kolko-2"></div>
+					<div class="kolko-3"></div>
+					<div class="kolko-4"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="column small-12 large-6 xlarge-4 show-for-large-up" style="height: 363px;">
+		<div class="overflowing" style="height: 100%;">
+			<div class="inner clearfix" style="height: 100%;">
+				<h3 class="h3_special" style="height: 80px;">taryfy i&nbsp;cenniki</h3>
+				<p style="height: 122px;">Aktualne ceny i stawki opłat dla odbiorców korzystających z usług związanych z zaopatrzeniem w ciepło oraz warunki ich stosowania.</p>
+				<a href="strefa-klienta-taryfa.php" class="right moreLink">więcej <img src="img/wPrawo.png" alt=""></a>
+				<div class="koleczka">
+					<div class="kolko-1"></div>
+					<div class="kolko-2"></div>
+					<div class="kolko-3"></div>
+					<div class="kolko-4"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="column small-12 large-6 xlarge-4 top-right-radius" style="height: 363px;">
+		<div class="overflowing" style="height: 100%;">
+			<div class="inner alertBox clearfix" style="height: 100%;">
+				<h3>BIURO OBSŁUGI KLIENTA</h3>
+				<h4>
+					<a href="tel://598486362">59&nbsp;84&nbsp;86&nbsp;362</a> <span>lub</span> <a href="tel://598486363">363</a>
+					<a href="tel://598486330">59&nbsp;84&nbsp;86&nbsp;330</a>
+
+				</h4>
+				<h3>Pogotowie ciepłownicze</h3>
+				<h4><a href="tel://993">993</a> <span>lub</span> <a href="tel://598422297">59&nbsp;84&nbsp;22&nbsp;297</a> </h4>
+				<div class="koleczka">
+					<div class="kolko-1"></div>
+					<div class="kolko-2"></div>
+					<div class="kolko-3"></div>
+					<div class="kolko-4"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="column small-12 large-6 xlarge-4 xlarge-push-8 show-for-large-up bottom-right-radius" style="height: 370px;">
+		<div class="overflowing" style="height: 100%;">
+			<div class="inner clearfix" style="height: 100%;">
+			<span class="rst mp4mp" style="height: 270px;"> 
+				<h3>Dokumenty do&nbsp;pobrania</h3>
+				<div class="umowyContainer">
+					<a class="umowa" href="download/wp_2020_formularz.docx" target="_blank">
+						<div class="imgContainer"><img src="img/filetype/f.doc.png" alt=""></div>
+						<div class="txtContainer"><span>Wniosek o przyłączenie do m.s.c.</span></div>
+					</a>
+					<a class="umowa" href="download/UP_szablon.pdf" target="_blank">
+						<div class="imgContainer"><img src="img/filetype/f.pdf.png" alt=""></div>
+						<div class="txtContainer"><span>Umowa przyłączeniowa</span></div>
+					</a>
+					<a class="umowa" href="download/wzor-umowy-sprzedazy-ciepla-2018.doc" target="_blank">
+						<div class="imgContainer"><img src="img/filetype/f.doc.png" alt=""></div>
+						<div class="txtContainer"><span>Umowa sprzedaży ciepła</span></div>
+					</a>
+				</div>
+			</span>
+				<a href="strefa-klienta-druki.php" class="right moreLink">więcej <img src="img/wPrawo.png" alt=""></a>
+				<div class="koleczka">
+					<div class="kolko-1"></div>
+					<div class="kolko-2"></div>
+					<div class="kolko-3"></div>
+					<div class="kolko-4"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="column small-12 large-12 xlarge-8 xlarge-pull-4 bottom-left-radius" style="height: 370px;">
+		<div class="overflowing" style="height: 100%;">
+			<div class="inner newsContainer clearfix" style="height: 100%;">			
+				<div class="row">
+					<!-- <div class="column medium-6 large-5">
+					<span class="rst">
+								
+						<h3 class="h3_akt">Aktualności</h3>
+						<ul class="list_p">							
+							
+							
+						</ul>
+						</span>
+						<a href="o-firmie-aktualnosci.php" class="right moreLink">wszystkie <img src="img/wPrawo.png" alt=""></a>
+					</div> -->
+					<div class="column medium-12 large-12 mp4mp" id="indexAktualnosci">					
+						<div class="next hide-for-small-only">&gt;</div> <div class="prev hide-for-small-only">&lt;</div>
+						<ul>
+												<li class="pprt active" style="display: none;">								
+							<span class="rst" style="height: 270px;">
+							<h3 class="h3_akt" style="">Aktualności</h3>
+							01/07/2024							<h4 class="text-right h3_akt" style="">DOPŁATA DO CIEPŁA SYSTEMOWEGO</h4>
+							<span class="list_p" style=""><p style="">Z dniem 01 lipca 2024r. wchodzi w życie ustawa o bonie energetycznym oraz o zmianie niektórych ustaw w celu ograniczenia cen energii elektrycznej, gazu ziemnego i ciepła systemowego (D.U. 2024 poz. 859) wydłużająca czas wsparcia do ciepła systemowego do dnia 30 czerwca 2025r.<br></p></span>
+							</span>
+							<a href="o-firmie-aktualnosci.php" class="right moreLink">więcej <img src="img/wPrawo.png" alt=""></a>
+						</li>								
+													<li class="pprt" style="display: none;">		
+								<span class="rst" style="">
+								<h3 class="h3_akt" style="">Aktualności</h3>						
+								22/12/2021								<h4 class="text-right h3_akt" style="">Komunikat</h4>
+								<span class="list_p" style=""><pre class="moz-quote-pre">24.12.2021 r. jest dniem wolnym od pracy dla pracowników ENGIE EC Słupsk. <br>Przepraszamy za ewentualne utrudnienia i zapraszamy do kontaktu w dniu 27.12.2021r.<br><br>W sprawach pilnych zgłoszeń prosimy o kontakt <br>z Pogotowiem Ciepłowniczym pod numerami 993 lub 59 84 22 297.</pre></span>
+								</span>
+								<a href="o-firmie-aktualnosci.php" class="right moreLink">więcej <img src="img/wPrawo.png" alt=""></a>
+							</li>								
+														<li class="pprt" style="display: none;">		
+								<span class="rst" style="">
+								<h3 class="h3_akt" style="">Aktualności</h3>						
+								28/05/2021								<h4 class="text-right h3_akt" style="">Wmurowanie kamienia węgielnego - CHP Słoneczna</h4>
+								<span class="list_p" style=""><pre class="moz-quote-pre" wrap="">W dniu 28 maja 2021r. w Słupsku odbyło się uroczyste wmurowanie kamienia węgielnego pod budowę elektrociepłowni CHP Słoneczna. Wydarzenie ze względu na obostrzenia epidemiczne miało charakter symboliczny. Nie mniej jednak dla Spółki było to niezwykle ważne wydarzenie.<br>Została otwarta kolejna karta historii słupskiego ciepłownictwa. Jest to pierwsza z inwestycji w procesie dekarbonizacji produkcji ciepła w Słupsku oraz dywersyfikacji produktów Naszej spółki. Nowe źródło pozwoli na rozszerzenie naszej dotychczasowej oferty o energię elektryczną i wyprodukowanie 8 MW energii cieplnej i tyleż samo energii elektrycznej.<br>Warto podkreślić, że Projekt jest elementem Słupskiego Klastra Bioenergetycznego, którego jednym z celów jest budowa lokalnej społeczności energetycznej. Oznacza to, że wyprodukowana przez elektrociepłownię energia trafi do naszej słupskiej społeczności.<br>Elektrociepłownia "CHP Słoneczna" będzie produkować energię cieplną oraz energię elektryczną w wielkości odpowiadającej zużyciu ponad 20 tys. gospodarstw domowych.<br>Nowe źródło kogeneracyjne pozwoli ograniczyć emisję CO2 w ilości 60 tys. ton rocznie . Dla zobrazowania, do pochłonięcia takiej ilości emisji CO2 potrzeba ok. 9000 drzew zajmujących powierzchnię ok. 3 ha.<br>Społeczna Odpowiedzialność Biznesu jest dla Spółki bardzo istotnym elementem działalności. Czyste powietrze dla mieszkańców naszego miasta, stabilność cen ciepła oraz wysoki komfort naszych klientów to dla nas priorytet.<br>Inwestycja finansowana jest ze środków Grupy ENGIE oraz dofinansowana kwotą ponad 20MPLN ze środków Narodowego Funduszu Ochrony Środowiska i Gospodarki Wodnej.<br><br>Relację z uroczystości wmurowania kamienia węgielnego można zobaczyć: <a class="moz-txt-link-freetext" href="https://gp24.pl/wmurowanie-kamienia-wegielnego-pod-budowe-elektrocieplowni-przy-ulicy-slonecznej-w-slupsku/ar/c3-15636894">https://gp24.pl/wmurowanie-kamienia-wegielnego-pod-budowe-elektrocieplowni-przy-ulicy-slonecznej-w-slupsku/ar/c3-15636894</a><a class="moz-txt-link-rfc2396E" href="https://urldefense.com/v3/__https:/gp24.pl/wmurowanie-kamienia-wegielnego-pod-budowe-elektrocieplowni-przy-ulicy-slonecznej-w-slupsku/ar/c3-15636894__;!!La4veWw!gSweflP2SLoGi1BWplNr4bVcYrto8OTsFOLGFYNkclCRhbGrtGoFhKOeESiNMsWTdVw$">
+								
+								</a><a href="o-firmie-aktualnosci.php" class="right moreLink">więcej <img src="img/wPrawo.png" alt=""></a>
+							</pre></span></span></li>								
+														
+						</ul>
+					</div>
+				</div>
+				<div class="koleczka">
+					<div class="kolko-1"></div>
+					<div class="kolko-2"></div>
+					<div class="kolko-3"></div>
+					<div class="kolko-4"></div>
+					<div class="kolko-topCenter"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div> <!-- kafelki -->
+<!-- <div class="row">
+	<div class="column small-12">
+		<h4 class='kreska rightPadding leftMargin clearfix'>
+			Ważne komunikaty
+			 <a href="o-firmie-wazne-komunikaty.php" class="right">zobacz wszystkie</a>
+		</h4>
+
+
+	</div>
+</div> -->
+<!-- <div class="row collapse kafelki wazneKomunikaty">
+<div class="column small-12 large-12 top-left-radius bottom-left-radius top-right-radius bottom-right-radius">
+		<div class="inner grey clearfix" >
+			<div style="border-radius: 2.5rem;">
+				<h4>Awaria sieci ciepłowniczej</h4>
+				<p>W dniu 27.12.2021r. zlokalizowano awarię na przyłączu ciepłowniczym do budynku Koszalińska 14. <br>
+				W związku z usuwaniem awarii wstrzymana będzie dostawa ciepła i ciepłej wody do  budynków Koszalińska 14, Braci Gierymskich 4A, 4, 2.<br>
+				Ponowne wznowienie dostaw ciepła planowane jest w dniu dzisiejszym w godzinach nocnych.
+				<br><br>Za wynikłe utrudnienia przepraszamy.<br>Dział BOK</p>
+				<h4>Aktualizacja</h4>
+					<p>Mimo niskich temperatur na zewnątrz i dużego zakresu prac niezbędnych do usunięcia awarii, służby ENGIE usunęły awarię zgodnie z planem. Dostawę ciepła wznowiono w dniu 27 grudnia o godz. 20.30</p>
+				</p>
+				<div class="koleczka"></div>
+			</div>
+		</div>
+	</div>
+</div>
+</div> -->
+
+
+
+<!-- <div class="row collapse kafelki wazneKomunikaty">
+	 <div class="column small-12 large-12 top-left-radius bottom-left-radius">		<div class="overflowing">			<div class="inner grey clearfix" style="border-radius: 2.5rem;">				<h4></h4>				<p></p>				<div class="koleczka">														</div>			</div>		</div>	</div></div> -->
+
+
+<section class="footer">
+	<div class="row">
+		<div class="first-line"><img src="img/topbar.png" alt=" " class="nav-img" width="5161" height="76"></div>
+	</div>
+	<div class="row">
+
+		<div class="column large-3 text-center">
+			<img src="img/logo-cofely.svg" alt="Engie" class="logo-footer" width="454" height="147">
+
+		</div>
+
+		<div class="column large-3">
+
+			<div class="element"><strong>ENGIE EC Słupsk Sp. z o.o.</strong></div>
+			<div class="element">ul. Koszalińska 3D</div>
+			<div class="element">76-200 Słupsk</div>
+			<hr>
+			<div class="element">KRS 0000094197</div>
+			<div class="element">NIP 839 000 77 28</div>
+			<div class="element">REGON 770528220</div>
+			
+
+
+
+		</div>
+
+		<div class="column large-3">
+			<div class="element"><strong>Pogotowie ciepłownicze:</strong></div>
+			<a href="tel://+993">tel. 993</a>
+			<a href="tel://+48598422297">tel. 59 842 22 97</a>
+			<hr>
+			<div class="element"><strong>Biuro Obsługi Klienta:</strong></div>
+			<a href="tel://+48598486362">tel. 59 848 63 62 lub 63</a>
+			<a href="mailto:bok@engie.com">e-mail: bok@engie.com</a>
+			<!-- <hr>	 -->
+
+		</div>
+		<div class="column large-3 last show-for-large-up">
+			<div class="show-for-large-up"></div><h5>Inne spółki Engie</h5>
+			<a href="engie-ec-serwis.php">ENGIE EC serwis</a>
+			<a href="engie-zlotow.php">ENGIE Złotów</a>
+			<a href="engie-services.php">ENGIE Services</a>
+			<a href="engie-elektromontaz.php">ENGIE Elektromontaż</a>
+			<a href="engie-ZE.php">ENGIE Zielona Energia</a>
+			<a href="engie-SAR.php">ENGIE SAR</a>
+			<br>
+		</div>
+
+		
+
+		
+	</div>
+		<div class="copyrights">
+		<div class="row">
+			<div class="copy column small-12 medium-6 large-9">© 2015  – 2025 <span>Engie EC Słupsk</span></div>
+			<div class="opracowanie column small-12 medium-6 large-3 hide-for-small hide-for-medium text-right">
+				zasilane przez: <a href="//www.promodesign.pl" target="_blank">promodesign.pl</a>
+			</div>
+		</div>
+	</div>
+</section>
+<div id="politics">
+	<div class="row">
+		<div class="column large-12">
+			<!-- <a href="" class="button radius">Przeczytaj</a> -->
+			<a href="#" id="clossss" class="button alert radius">Zamknij</a>
+			W ramach naszej witryny stosujemy <a href="http://www.ecslupsk.pl/cookies.php" style="float:none;">pliki cookies</a>.<br>
+			Kontynuując przeglądanie strony, wyrażasz zgodę na używanie przez nas <a href="http://www.ecslupsk.pl/cookies.php" style="float:none;">plików cookies</a>.
+		</div>
+	</div>		
+</div>
+<style>
+	#politics .button:before{
+		display: none;
+	}
+	#politics .button.alert{
+		background: #e5212d;
+	}
+	#politics .button{
+		border: none;
+		background: #494e9b;
+		color: white;
+	}
+	#politics a{
+		float: right;
+		margin-bottom: 0px;
+		margin-left: 10px;
+	}
+	#politics{
+		position: fixed;
+		bottom: 0px;
+		left: 0px;
+		width: 100%;
+		background: white;
+		box-shadow: 0px 0px 15px rgba(0,0,0,.3);
+		padding: 10px;
+		z-index: 9;
+	}
+</style>
+</div><!-- /#allWrapper -->
+
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<!-- <script src="bower_components/jquery.mb.YTPlayer/dist/jquery.mb.YTPlayer.min.js"></script> -->
+<script src="bower_components/foundation/js/foundation.min.js"></script>
+<!-- <script src="bower_components/foundation/js/foundation/foundation.orbit.js"></script> -->
+<script src="bower_components/particles.js/particles.min.js"></script>
+<script src="bower_components/matchHeight/jquery.matchHeight-min.js"></script>
+<script src="bower_components/flexslider/jquery.flexslider-min.js"></script>
+<script src="bower_components/lightbox/dist/js/lightbox.min.js"></script><div id="lightboxOverlay" class="lightboxOverlay" style="display: none;"></div><div id="lightbox" class="lightbox" style="display: none;"><div class="lb-outerContainer"><div class="lb-container"><img class="lb-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="><div class="lb-nav"><a class="lb-prev" href=""></a><a class="lb-next" href=""></a></div><div class="lb-loader"><a class="lb-cancel"></a></div></div></div><div class="lb-dataContainer"><div class="lb-data"><div class="lb-details"><span class="lb-caption"></span><span class="lb-number"></span></div><div class="lb-closeContainer"><a class="lb-close"></a></div></div></div></div>
+<!-- <script src="http://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script> -->
+
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+
+<script src="js/app.js"></script>
+
+<script>
+	$('#clossss').click(function () {
+		$('#politics').hide();
+		function setCookie(cname, cvalue, exdays) {
+		    var d = new Date();
+		    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+		    var expires = "expires="+d.toUTCString();
+		    document.cookie = cname + "=" + cvalue + "; " + expires;
+		}
+		setCookie("cookie_s", true, 25);
+	});
+	$('.cllosse').click(function () {
+		$('.nanner-load').hide();
+	});
+</script>
+<script>
+	
+	$('.kafelki>.column').matchHeight();
+	// $('.kafelki>.column .inner').matchHeight();
+	$('.kafelki>.column .overflowing').css({height:"100%"});
+	$('.kafelki>.column .inner').css({height:"100%"});
+	$('.kafelki>.column .inner h3.h3_special').matchHeight();
+	$('.kafelki .list_p').matchHeight();
+	$('.kafelki .h3_akt').matchHeight();
+	// $('#indexAktualnosci ul li').css({height: '0px'})
+	$('.kafelki .rst').matchHeight();
+	$('#indexAktualnosci li').css({display: 'none'});
+	// $('.kafelki .rst').css({'display': 'block !important'});
+	$('.kafelki>.column .inner .column').matchHeight();
+	$('.kafelki>.column .inner p').matchHeight();
+
+	$('.kafelki>.column>.newsContainer>.row .inner>*:first-child').matchHeight();
+
+</script>
+
+<script>
+	$(".arrow-container").click(function(){
+		var id_to_tooggle = $(this).children().attr("data-id-to-toggle");
+		console.log(id_to_tooggle);
+		$('#'+id_to_tooggle).toggleClass('hidden');
+
+		// $(this).toggleClass('hidden');
+	});
+</script>
+
+<script>
+	
+	particlesJS('particles-js',
+{
+  "particles": {
+    "number": {
+      "value": 80,
+      "density": {
+        "enable": true,
+        "value_area": 710.2342786683108
+      }
+    },
+    "color": {
+      "value": "#ffffff"
+    },
+    "shape": {
+      "type": "circle",
+      "stroke": {
+        "width": 0,
+        "color": "#000000"
+      },
+      "polygon": {
+        "nb_sides": 5
+      },
+      "image": {
+        "src": "img/github.svg",
+        "width": 100,
+        "height": 100
+      }
+    },
+    "opacity": {
+      "value": 0.7776525115871227,
+      "random": false,
+      "anim": {
+        "enable": false,
+        "speed": 1.1369115594467707,
+        "opacity_min": 0.1,
+        "sync": false
+      }
+    },
+    "size": {
+      "value": 3,
+      "random": true,
+      "anim": {
+        "enable": false,
+        "speed": 40,
+        "size_min": 0.1,
+        "sync": false
+      }
+    },
+    "line_linked": {
+      "enable": true,
+      "distance": 208.4429412501566,
+      "color": "#00f0ff",
+      "opacity": 0.2565451584617312,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 4,
+      "direction": "none",
+      "random": false,
+      "straight": false,
+      "out_mode": "out",
+      "bounce": false,
+      "attract": {
+        "enable": false,
+        "rotateX": 600,
+        "rotateY": 1200
+      }
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": {
+        "enable": true,
+        "mode": "grab"
+      },
+      "onclick": {
+        "enable": true,
+        "mode": "push"
+      },
+      "resize": true
+    },
+    "modes": {
+      "grab": {
+        "distance": 167.83216783216784,
+        "line_linked": {
+          "opacity": 0.7042752339994941
+        }
+      },
+      "bubble": {
+        "distance": 400,
+        "size": 40,
+        "duration": 2,
+        "opacity": 8,
+        "speed": 3
+      },
+      "repulse": {
+        "distance": 200,
+        "duration": 0.4
+      },
+      "push": {
+        "particles_nb": 4
+      },
+      "remove": {
+        "particles_nb": 2
+      }
+    }
+  },
+  "retina_detect": true
+}
+
+);
+function initPinit(){
+	$('.newsContainer> .row>div>ul>li>.rst').css({'height' : '100%'});
+	$('.newsContainer> .row>div>ul>li').css({'height' : '100%'});
+	$('.newsContainer> .row>div>ul').css({'height' : '100%'});
+	$('.newsContainer> .row>div').css({'height' : '100%'});
+	$('.newsContainer> .row').css({ 'height' : 'calc(100% - 41px)'});
+}
+$('#indexAktualnosci .next').click(function(){	
+	var index = $('#indexAktualnosci .active').index();
+	if(index==1){
+		$('#indexAktualnosci>ul>li.active').attr({class : 'pprt'});
+		$('#indexAktualnosci>ul>li').eq(0).attr({class : 'pprt active'});
+	}else{
+		$('#indexAktualnosci>ul>li.active').attr({class : 'pprt'});
+		$('#indexAktualnosci>ul>li').eq(index+1).attr({class : 'pprt active'});
+	}
+	initPinit();
+	// $('.mp4mp').matchHeight();
+});
+$('#indexAktualnosci .prev').click(function(){	
+	var index = $('#indexAktualnosci .active').index();
+	if(index==0){
+		$('#indexAktualnosci>ul>li.active').attr({class : 'pprt'});
+		$('#indexAktualnosci>ul>li').eq(2).attr({class : 'pprt active'});
+	}else{
+		$('#indexAktualnosci>ul>li.active').attr({class : 'pprt'});
+		$('#indexAktualnosci>ul>li').eq(index-1).attr({class : 'pprt active'});
+	}
+	initPinit();
+	// $('.pprt').matchHeight();
+	// console.log($('.pprt').parent());
+});
+
+</script>
+
+
+  
+</body></html>

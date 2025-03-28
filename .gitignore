@@ -1,0 +1,16 @@
+.env
+
+#folders
+archive/
+favicone/
+inputs/
+node_modules/
+logo_venv/
+
+
+# files
+proxies.json
+improvements.txt
+
+
+
