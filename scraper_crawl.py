@@ -1,26 +1,28 @@
 import os
 import asyncio
 from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, CacheMode
+import random
+from urllib.parse import urlparse
 
-# ✅ Step 1: Input URLs to crawl
+# ✅ Input URLs
 with open("domains.txt", "r", encoding="utf-8") as f:
     urls = [line.strip() for line in f if line.strip()]
 
-# ✅ Step 2: Utility to clean filename
+# ✅ Clean filename
 def sanitize_filename(url):
     return url.replace("https://", "").replace("http://", "").replace("/", "_")
 
-# ✅ Step 3: Load already scraped domains into a set
+# ✅ Load already scraped domains
 def load_scraped_domains():
-    scraped_domains = set()
+    scraped = set()
     if os.path.exists("scraped_domains_html"):
         for file in os.listdir("scraped_domains_html"):
             if file.endswith(".html"):
                 domain = file.replace(".html", "").replace("www.", "")
-                scraped_domains.add(domain)
-    return scraped_domains
+                scraped.add(domain)
+    return scraped
 
-# ✅ Step 4: Create URL variants (4 possibilities)
+# ✅ Generate variants
 def generate_url_variants(domain):
     return [
         f"https://{domain}",
@@ -29,57 +31,76 @@ def generate_url_variants(domain):
         f"http://www.{domain}",
     ]
 
-# ✅ Step 5: Crawl one URL, return HTML (try variants until one works)
-async def crawl_url(url, crawler, scraped_domains):
-    domain = sanitize_filename(url)
+# ✅ Crawl one domain
+async def crawl_url_variants(domain, crawler, scraped_domains, sem):
+    sanitized = sanitize_filename(domain)
+    if sanitized in scraped_domains:
+        print(f"⚡ Skipping {domain} — already scraped!")
+        return True
 
-    # Check if this domain has already been scraped
-    if domain in scraped_domains:
-        print(f"⚡ Skipping {url} — already scraped!")
-        return None
+    variants = generate_url_variants(domain)
 
-    variants = generate_url_variants(url)
-    for variant in variants:
-        try:
-            print(f"🌐 Crawling: {variant}")
-            result = await crawler.arun(
-                url=variant,
-                config=CrawlerRunConfig(
-                    cache_mode=CacheMode.BYPASS,
-                    session_id="html_batch_session"
+    async with sem:
+        for variant in variants:
+            try:
+                print(f"🌐 Crawling: {variant}")
+                result = await crawler.arun(
+                    url=variant,
+                    config=CrawlerRunConfig(
+                        cache_mode=CacheMode.BYPASS,
+                        session_id="html_batch_session",
+                        wait_until="load",
+                        page_timeout=15000
+                    )
                 )
-            )
+                html = result.html
+                if not html.strip():
+                    print(f"⚠️ No HTML returned for {variant}")
+                    await asyncio.sleep(random.uniform(1, 2))
+                    continue
 
-            html = result.html
-            if not html.strip():
-                print(f"⚠️ No HTML returned for {variant}")
-                continue  # Skip to the next variant if no HTML returned
+                base_domain = urlparse(variant).netloc.replace("www.", "")
+                filename = sanitize_filename(base_domain) + ".html"
 
-            # Save HTML to file
-            filename = sanitize_filename(variant) + ".html"
-            path = f"scraped_domains_html/{filename}"
-            os.makedirs(os.path.dirname(path), exist_ok=True)
+                path = os.path.join("scraped_domains_html", filename)
+                os.makedirs("scraped_domains_html", exist_ok=True)
 
-            with open(path, "w", encoding="utf-8") as f:
-                f.write(html)
-            print(f"✅ Saved: {path}")
+                with open(path, "w", encoding="utf-8") as f:
+                    f.write(html)
+                print(f"✅ Saved: {path}")
 
-            return path  # Return the path once successful
-        except Exception as e:
-            print(f"❌ Error scraping {variant}: {e}")
-            continue  # Try the next variant if error occurs
-    return None  # If no variant works
+                await asyncio.sleep(random.uniform(0.5, 1.5))
+                return True
 
-# ✅ Step 6: Run it all
+            except Exception as e:
+                print(f"❌ Error scraping {variant}: {e}")
+                await asyncio.sleep(random.uniform(2, 4))
+                continue
+
+    print(f"🔍 No valid result for {domain}")
+    return False
+
+# ✅ Run all crawls in parallel
 async def run_all():
-    scraped_domains = load_scraped_domains()  # Load the existing scraped domains
-    async with AsyncWebCrawler() as crawler:
-        for url in urls:
-            html_path = await crawl_url(url, crawler, scraped_domains)
-            if html_path:
-                print(f"✅ Scraped {url} and saved HTML to {html_path}")
-            else:
-                print(f"🔍 No valid results for {url}")
+    scraped = load_scraped_domains()
+    sem = asyncio.Semaphore(5)  # Max 10 concurrent crawls
 
-# ✅ Step 7: Run the async main
+    failed_domains = []
+
+    async with AsyncWebCrawler() as crawler:
+        print("🚀 Running initial crawl...")
+        tasks = [crawl_url_variants(url, crawler, scraped, sem) for url in urls]
+        results = await asyncio.gather(*tasks)
+
+        for url, success in zip(urls, results):
+            if not success:
+                failed_domains.append(url)
+
+        # Retry pass
+        if failed_domains:
+            print(f"\n🔁 Retrying {len(failed_domains)} failed domains...\n")
+            retry_tasks = [crawl_url_variants(domain, crawler, scraped, sem) for domain in failed_domains]
+            await asyncio.gather(*retry_tasks)
+
+# ✅ Go!
 asyncio.run(run_all())

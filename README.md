@@ -26,11 +26,16 @@ Eventually, we landed on a combo of:
 ---
 
 ## Key Features
+You can explore the API in action via the test_api.ipynb notebook. The API exposes two endpoints:
+- /run-scraper — for logo scraping only
+- /extract-logos — for scraping + logo clustering
+
 
 ### ⚡ Efficiency
 - Smart **caching** (via JSON file) to reduce API calls
 - **async scraping and downloading** to maximize speed
 - JSON was used for simplicity during rapid iteration, but the system is adaptable to SQLite/MySQL if scaling up
+- Concurrent scraping and logo downloading have been implemented for significantly faster runtime and better performance.
 
 ### 🎯 Accuracy
 - Many websites require testing multiple domain formats: `http`, `https`, `www.`, etc.
@@ -116,8 +121,6 @@ While it's already showing strong results in terms of accuracy, speed, and scrap
 
 At its core, this is a **skeleton framework** — a solid base with working logic and a proven pipeline, ready to be scaled and refined further.  
 With the right resources, more development time, and technical guidance, this project could evolve into a robust system with production-level performance.
-
-While I didn’t get to finalize the API layer within the time limit, the key components — scraping, logo downloading, clustering — are fully functional and tested on a large dataset.  
 The code is modular and adaptable, leaving a clear path for future improvements in latency, accuracy, and resilience.
 
 Thanks again for taking the time to review this project — it’s been a challenging and exciting technical deep dive, and I hope it gives you a good sense of how I think, build, and iterate under pressure.

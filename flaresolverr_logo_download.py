@@ -2,19 +2,23 @@ import requests
 import os
 import mimetypes
 import json
-from urllib.parse import urlparse
 import base64
+from urllib.parse import urlparse
+from concurrent.futures import ThreadPoolExecutor
 from playwright_logo_fallback import download_playwright_fallback, get_country_from_domain
 
 FLARESOLVERR_URL = "http://localhost:8191/v1"
 output_dir = "logos"
 os.makedirs(output_dir, exist_ok=True)
 
-# Load from logos.json
+# Load input
 with open("logos_image_paths.json", "r", encoding="utf-8") as f:
     json_input = json.load(f)
 
 prefixes = ["https://", "http://", "https://www.", "http://www."]
+
+# Track already downloaded files
+already_downloaded = {os.path.splitext(f)[0].lower() for f in os.listdir(output_dir)}
 
 def get_extension(url, content_type):
     ext_from_url = os.path.splitext(url)[-1]
@@ -23,94 +27,71 @@ def get_extension(url, content_type):
     ext_from_type = mimetypes.guess_extension(content_type)
     return ext_from_type or ".img"
 
-def download_direct_image(url: str, domain: str, output_dir: str) -> bool:
+def download_direct_image(url: str, domain: str) -> bool:
     try:
         headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
         }
-        resp = requests.get(url, headers=headers, stream=True, timeout=15)
+        resp = requests.get(url, headers=headers, stream=True, timeout=10)
         if resp.status_code == 200:
-            os.makedirs(output_dir, exist_ok=True)
             file_path = os.path.join(output_dir, f"{domain}.png")
             with open(file_path, "wb") as f:
                 for chunk in resp.iter_content(1024):
                     f.write(chunk)
-            print(f"✅ Image saved directly as PNG: {file_path}")
+            print(f"✅ Direct image: {file_path}")
             return True
-        else:
-            print(f"❌ Failed direct image download: {url} (Status {resp.status_code})")
     except Exception as e:
-        print(f"❌ Exception in direct image download: {e}")
+        print(f"❌ Direct download error: {e}")
     return False
 
-def download_image(url, filename_base):
+def download_image(url, domain):
     if "logo.clearbit.com" in url:
-        print(f"🔁 Bypassing FlareSolverr for Clearbit logo: {url}")
-        return download_direct_image(url, filename_base, output_dir)
+        return download_direct_image(url, domain)
 
     payload = {
         "cmd": "request.get",
         "url": url,
-        "maxTimeout": 60000,
+        "maxTimeout": 30000,
         "download": True
     }
 
     try:
-        resp = requests.post(FLARESOLVERR_URL, json=payload)
+        resp = requests.post(FLARESOLVERR_URL, json=payload, timeout=30)
         data = resp.json()
-
         if data.get("status") == "ok":
             content_type = data["solution"].get("headers", {}).get("Content-Type", "")
             body = data["solution"].get("response")
 
-            print(f"📥 FlareSolverr content-type: {content_type}")
-            print(f"🔗 FlareSolverr resolved URL: {data['solution'].get('url')}")
-
             if body and "image" in content_type:
                 ext = get_extension(url, content_type)
-                filename = os.path.join(output_dir, f"{filename_base}{ext}")
-                with open(filename, "wb") as f:
+                file_path = os.path.join(output_dir, f"{domain}{ext}")
+                with open(file_path, "wb") as f:
                     f.write(base64.b64decode(body))
-                print(f"✅ Saved from FlareSolverr: {filename}")
+                print(f"✅ FlareSolverr: {file_path}")
                 return True
-            else:
-                print(f"❌ Not an image or missing content: {url}")
-
         else:
-            print(f"❌ FlareSolverr error for {url}: {data.get('message')}")
-
+            print(f"❌ FlareSolverr error: {data.get('message')}")
     except Exception as e:
-        print(f"❌ Exception for {url}: {e}")
+        print(f"❌ FlareSolverr exception: {e}")
 
-    print(f"🔁 Trying Playwright fallback for: {url}")
-    country_code = get_country_from_domain(urlparse(url).netloc)
-    return download_playwright_fallback(url, filename_base, output_dir, country_code)
+    print(f"🔁 Falling back to Playwright for: {url}")
+    country = get_country_from_domain(urlparse(url).netloc)
+    return download_playwright_fallback(url, domain, output_dir, country)
 
-# Get already downloaded logos (without extension)
-downloaded = set()
-for file in os.listdir(output_dir):
-    name, _ = os.path.splitext(file)
-    downloaded.add(name.lower())
-
-for entry in json_input:
+def process_entry(entry):
     domain = entry.get("domain")
     raw_url = entry.get("logo_url")
-    if not domain or not raw_url:
-        print(f"⚠️ Skipping invalid entry: {entry}")
-        continue
 
-    if domain.lower() in downloaded:
-        print(f"⏭️  Already downloaded: {domain}")
-        continue
+    if not domain or not raw_url or domain.lower() in already_downloaded:
+        return
 
-    print(f"\n🔍 Trying variants for: {domain} -> {raw_url}")
-
-    success = False
+    print(f"\n🔍 Processing: {domain}")
     for prefix in prefixes:
         full_url = prefix + raw_url.lstrip("/")
-        if download_image(full_url, filename_base=domain):
-            success = True
-            break
+        if download_image(full_url, domain):
+            return
+    print(f"❌ All attempts failed for: {domain}")
 
-    if not success:
-        print(f"❌ All variants failed for: {domain}")
+# Run in parallel
+with ThreadPoolExecutor(max_workers=5) as executor:
+    executor.map(process_entry, json_input)

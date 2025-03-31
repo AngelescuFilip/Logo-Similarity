@@ -148,11 +148,16 @@ def is_valid_logo(logo_url, domain_name):
     else:
         return "NO_LOGO_FOUND"
 
-def extract_logo_url_from_html(folder_path):
+def extract_logo_url_from_html(folder_path, domains):
+    domains = set(d.strip().lower() for d in domains)
     logo_data = []
+
     for file in os.listdir(folder_path):
         if file.endswith(".html"):
-            domain = file.replace(".html", "")
+            domain = file.replace(".html", "").lower()
+            if domain not in domains:
+                continue
+
             path = os.path.join(folder_path, file)
 
             with open(path, "r", encoding="utf-8") as f:
@@ -164,4 +169,6 @@ def extract_logo_url_from_html(folder_path):
                     logo_data.append({"domain": domain, "logo_url": logo_url})
                 else:
                     logo_data.append({"domain": domain, "logo_url": "NO_LOGO_FOUND"})
+
     return logo_data
+
