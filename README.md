@@ -96,7 +96,6 @@ Edit
     "password": "pass",
     "country": "US"
   },
-  ...
 ]
 (Windows only) Install GTK3 Runtime
 
