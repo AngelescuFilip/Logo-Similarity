@@ -97,6 +97,7 @@ Edit
     "country": "US"
   },
 ]
+```
 (Windows only) Install GTK3 Runtime
 
 
