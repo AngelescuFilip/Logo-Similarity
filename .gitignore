@@ -8,6 +8,8 @@ node_modules/
 logo_venv/
 saved/
 scraped_domains_html/
+__pycache__/
+
 
 
 # files

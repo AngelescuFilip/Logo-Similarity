@@ -175,25 +175,20 @@ def get_logos(domains):
         for domain in domains:
             f.write(domain + "\n")
 
-    print("Got here 1")  
     ## Scrape domains using crawl4ai
     run_scraper()
 
-    print("Got here 2")  
     ## Extract logo paths from html
     extract_logo_paths_from_html('scraped_domains_html', domains)
 
-    print("Got here 3")  
     ## Download logos 
     download_logos_from_logo_paths()
 
-    print("Got here 4")  
     ## Get failed domains
     failed_domains = get_failed_domains(domains)
 
     ## Fallback to Logo.dev and Clearbit for failed domains
     failed_domains = fetch_logos_for_domains(failed_domains)
-
-    print("Got here 5")  
+ 
     download_logos(failed_domains)
 
